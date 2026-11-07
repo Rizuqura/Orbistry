@@ -106,7 +106,29 @@ function validateRunRecord(value) {
     });
   if (value.schemaVersion === 2) {
     try {
-      validateContextIdentity(value.contextIdentity);
+      if (
+        value.diagnostics?.engineOnly === true &&
+        value.diagnostics.engineToolTurn !== true
+      )
+        throw new Error("Source-free runs require the Engine runtime.");
+      if (value.diagnostics?.engineToolTurn === true) {
+        require("./schemas.cjs").parse(
+          require("./schemas.cjs")
+            .z.array(require("./engine-chat.cjs").reportSchema)
+            .max(1),
+          value.diagnostics.engineReports,
+        );
+        if (value.sourcesAvailable?.length || value.sourcesActuallyRead?.length)
+          throw new Error(
+            "Engine reports are attachments, not reviewed evidence.",
+          );
+      }
+      if (value.diagnostics?.engineOnly === true)
+        require("./context-identity.cjs").validateEngineIdentity(
+          value.contextIdentity,
+          value.diagnostics.agentId,
+        );
+      else validateContextIdentity(value.contextIdentity);
       validateSettings(value.settings);
       if (
         !value.diagnostics ||

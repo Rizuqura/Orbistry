@@ -50,7 +50,7 @@ function requireVaultBridge() {
     !vault.search
   ) {
     throw new Error(
-      "The QTerminal desktop bridge is outdated. Stop the running app and restart npm run dev.",
+      "The Orbistry desktop bridge is outdated. Stop the running app and restart npm run dev.",
     );
   }
   return vault;
@@ -64,7 +64,7 @@ function requireKnowledgeBridge() {
     !desktop.ai?.chat
   )
     throw new Error(
-      "The QTerminal desktop bridge is outdated. Stop the app and restart npm run dev.",
+      "The Orbistry desktop bridge is outdated. Stop the app and restart npm run dev.",
     );
   return desktop;
 }
@@ -271,7 +271,7 @@ export function AppShell() {
       setVaultError(
         error instanceof Error
           ? error.message
-          : "QTerminal could not scan the active vault.",
+          : "Orbistry could not scan the active vault.",
       );
     } finally {
       if (version === vaultLoadVersion.current) setIsScanning(false);
@@ -304,7 +304,7 @@ export function AppShell() {
       setVaultError(
         error instanceof Error
           ? error.message
-          : "QTerminal could not change the active vault.",
+          : "Orbistry could not change the active vault.",
       );
     } finally {
       if (version === vaultLoadVersion.current) setIsScanning(false);
@@ -431,7 +431,7 @@ export function AppShell() {
         setWorkspaceError(
           error instanceof Error
             ? error.message
-            : "QTerminal could not open this file.",
+            : "Orbistry could not open this file.",
         );
         setView("workspace");
       }
@@ -454,7 +454,7 @@ export function AppShell() {
     try {
       const bridge = requireVaultBridge();
       if (!bridge.saveMarkdown)
-        throw new Error("Restart QTerminal to enable Markdown saving.");
+        throw new Error("Restart Orbistry to enable Markdown saving.");
       const content = openedFile.content.includes("\r\n")
         ? markdownDraft.replace(/\n/g, "\r\n")
         : markdownDraft;
@@ -646,18 +646,10 @@ export function AppShell() {
     >
       <button
         className="vault-window-toggle"
-        aria-label={
-          vaultMinimized
-            ? "Restore knowledge vault"
-            : "Minimize knowledge vault"
-        }
+        aria-label={vaultMinimized ? "Restore Universe" : "Minimize Universe"}
         aria-expanded={!vaultMinimized}
         aria-controls="knowledge-vault-content"
-        title={
-          vaultMinimized
-            ? "Restore knowledge vault"
-            : "Minimize knowledge vault"
-        }
+        title={vaultMinimized ? "Restore Universe" : "Minimize Universe"}
         onClick={() => setVaultMinimized((value) => !value)}
       >
         {vaultMinimized ? "›" : "−"}
@@ -697,7 +689,7 @@ export function AppShell() {
         <div
           className="sidebar-resize-handle"
           role="separator"
-          aria-label="Resize knowledge vault"
+          aria-label="Resize Universe"
           aria-orientation="vertical"
           tabIndex={0}
           aria-valuemin={160}
@@ -750,7 +742,7 @@ export function AppShell() {
               : isScanning
                 ? snapshot
                   ? "Loading Stations and approved context"
-                  : "Scanning knowledge vault"
+                  : "Scanning Universe"
                 : startupMatchesVault
                   ? chat.startup.label
                   : "Connecting desktop services"

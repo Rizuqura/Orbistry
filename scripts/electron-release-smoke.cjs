@@ -60,10 +60,7 @@ async function main() {
         .every((p) => !p.configured),
     );
     if (phase !== "before") {
-      assert.equal(
-        state.snapshot.rootPath,
-        path.join(documents, "QTerminal Vault"),
-      );
+      assert.equal(state.snapshot.rootPath, path.join(documents, "Universe"));
       assert.equal(
         await page.locator(".version").textContent(),
         `v${require("../package.json").version} Victoria Beta`,
@@ -75,13 +72,11 @@ async function main() {
       .waitFor();
     const metrics = await app.evaluate(({ app }) => ({
       versions: process.versions,
-      processes: app
-        .getAppMetrics()
-        .map((p) => ({
-          type: p.type,
-          workingSetKB: p.memory.workingSetSize,
-          privateKB: p.memory.privateBytes,
-        })),
+      processes: app.getAppMetrics().map((p) => ({
+        type: p.type,
+        workingSetKB: p.memory.workingSetSize,
+        privateKB: p.memory.privateBytes,
+      })),
     }));
     assert.deepEqual(errors, []);
     const report = {

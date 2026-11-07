@@ -10,6 +10,7 @@ const kinds = [
   "Workflow",
   "Knowledge",
   "Output",
+  "Engine",
 ];
 const identifier = z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/);
 const contextBoxBindingSchema = z
@@ -101,6 +102,8 @@ const nodeSchema = z
           .optional(),
         modelId: z.string().trim().max(240).optional(),
         skillId: z.enum(["knowledge-consolidation"]).optional(),
+        engineId: z.literal("chronoz").optional(),
+        instanceId: z.string().uuid().optional(),
         mode: z
           .enum(["bound-only", "single-pass", "preview-only", "text"])
           .optional(),
@@ -119,7 +122,7 @@ const configSchema = z
     description: z.string().trim().max(240),
     personality: z.string().max(2000),
     instructions: z.string().max(8000),
-    nodes: z.array(nodeSchema).max(7),
+    nodes: z.array(nodeSchema).max(8),
     edges: z
       .array(z.object({ from: identifier, to: identifier }).strict())
       .max(12),
@@ -208,9 +211,16 @@ function validateConstruction(value, agentId, apply = false) {
   const nodes = new Map(config.nodes.map((node) => [node.id, node]));
   if (
     nodes.size !== config.nodes.length ||
-    new Set(config.nodes.map((node) => node.kind)).size !== config.nodes.length
+    new Set(
+      config.nodes
+        .filter((node) => node.kind !== "Engine")
+        .map((node) => node.kind),
+    ).size !== config.nodes.filter((node) => node.kind !== "Engine").length
   )
     invalid("Use unique node IDs and at most one node of each category.");
+  const engines = config.nodes.filter((node) => node.kind === "Engine");
+  if (engines.length > 1)
+    invalid("Only one CHronoZ instance is supported in v0.1.");
   const fields = {
     Context: ["mode", "contextBox", "contextFile"],
     Personality: ["instructions", "contextBox", "contextFile"],
@@ -219,6 +229,7 @@ function validateConstruction(value, agentId, apply = false) {
     Workflow: ["mode", "instructions", "contextBox", "contextFile"],
     Knowledge: ["mode", "maxTokens", "contextBox", "contextFile"],
     Output: ["mode", "instructions", "contextBox", "contextFile"],
+    Engine: ["engineId", "instanceId"],
   };
   const modes = {
     Context: "bound-only",
@@ -227,6 +238,13 @@ function validateConstruction(value, agentId, apply = false) {
     Output: "text",
   };
   for (const node of config.nodes) {
+    if (
+      node.kind === "Engine" &&
+      (!node.config.instanceId || (apply && node.config.engineId !== "chronoz"))
+    )
+      invalid(
+        "Choose the registered CHronoZ engine before applying; each engine needs an instance ID.",
+      );
     if (
       Object.keys(node.config).some((key) => !fields[node.kind].includes(key))
     )

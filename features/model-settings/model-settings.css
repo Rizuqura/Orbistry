@@ -17,6 +17,73 @@
   max-width: 1020px;
   margin: 0 auto;
 }
+/* Two catalog cards per desktop row; keep the full catalog in the page scroll. */
+.ai-terminal .model-list.ai-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-height: none;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.ai-terminal .ai-catalog-grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #293542;
+  border-radius: 9px;
+  background: #111923;
+  min-width: 0;
+}
+.ai-terminal .ai-catalog-grid article:last-child {
+  border-bottom: 1px solid #293542;
+}
+.ai-terminal .ai-catalog-grid .ai-model-name strong {
+  font-size: 16px;
+  font-weight: 650;
+}
+.ai-catalog-grid .ai-empty {
+  grid-column: 1 / -1;
+}
+.ai-capabilities,
+.ai-catalog-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ai-capabilities {
+  margin: 6px 0;
+}
+.ai-catalog-tabs {
+  margin: 16px 0;
+}
+.ai-catalog-tabs button[aria-pressed="true"] {
+  border-color: #99d7bf;
+  color: #99d7bf;
+}
+.ai-terminal select {
+  font: inherit;
+  border: 1px solid #2b3542;
+  border-radius: 7px;
+  background: #0d141d;
+  color: #d9e1ec;
+  padding: 9px 12px;
+}
+.ai-terminal select:focus-visible {
+  outline: 2px solid #7dcdb3;
+  outline-offset: 3px;
+}
+@media (max-width: 680px) {
+  .ai-terminal .model-list.ai-catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ai-terminal .ai-catalog-grid .ai-row-actions {
+    flex-wrap: wrap;
+  }
+}
 .settings-vault-card {
   margin-bottom: 24px;
 }
@@ -166,39 +233,6 @@
 .ai-chip.success {
   border-color: #31574b;
   color: #99d7bf;
-}
-.ai-provider-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.ai-provider-tabs button {
-  text-align: left;
-  display: grid;
-  gap: 5px;
-  padding: 16px;
-  background: #111821;
-}
-.ai-provider-tabs button[aria-pressed="true"] {
-  border-color: #86c9b2;
-  background: #162722;
-  box-shadow: inset 0 0 0 1px #86c9b220;
-}
-.ai-provider-mark {
-  font-size: 19px;
-  font-weight: 650;
-  color: #9cc8ba;
-  margin-bottom: 7px;
-}
-.ai-provider-tabs strong {
-  font-size: 13px;
-  font-weight: 600;
-}
-.ai-provider-tabs small {
-  color: #8292a3;
-  font-size: 11px;
-  white-space: normal;
 }
 .ai-connect-card,
 .ai-models {
@@ -421,9 +455,6 @@
   white-space: nowrap;
 }
 @media (max-width: 800px) {
-  .ai-provider-tabs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .ai-key-form {
     flex-wrap: wrap;
   }

@@ -50,11 +50,11 @@ async function main() {
     await borderless(page.locator(".knowledge-sidebar"));
     await borderless(page.locator(".search-box"));
     const change = page
-      .getByRole("button", { name: "CHANGE VAULT", exact: true })
+      .getByRole("button", { name: "Change Universe", exact: true })
       .first();
     await borderless(change);
     await change.hover();
-    assert.notEqual(
+    assert.equal(
       await change.evaluate((el) => getComputedStyle(el).boxShadow),
       "none",
     );
@@ -118,31 +118,34 @@ async function main() {
     await page.getByRole("button", { name: "SETTINGS", exact: true }).click();
     await borderless(page.locator(".ai-connect-card").first());
     const providers = page.getByRole("navigation", {
-      name: "AI providers",
+      name: "Model catalogs",
       exact: true,
     });
-    const openrouter = providers.getByRole("button", { name: /OpenRouter/ });
-    await borderless(openrouter);
-    await openrouter.hover();
+    const modelsTab = providers.getByRole("button", {
+      name: "Provided Models",
+      exact: true,
+    });
+    await borderless(modelsTab);
+    await modelsTab.hover();
     assert.notEqual(
-      await openrouter.evaluate((el) => getComputedStyle(el).boxShadow),
+      await modelsTab.evaluate((el) => getComputedStyle(el).boxShadow),
       "none",
     );
     await page.keyboard.press("Tab");
-    await openrouter.focus();
+    await modelsTab.focus();
     assert.match(
-      await openrouter.evaluate((el) => getComputedStyle(el).boxShadow),
+      await modelsTab.evaluate((el) => getComputedStyle(el).boxShadow),
       /130, 190, 180/,
     );
     assert.ok(
-      await openrouter.evaluate(
+      await modelsTab.evaluate(
         (el) =>
           el.matches(":focus-visible") &&
           getComputedStyle(el).outlineStyle === "none" &&
           getComputedStyle(el).boxShadow !== "none",
       ),
     );
-    await openrouter.click();
+    await modelsTab.click();
     const key = page.getByLabel(/API key/i).first();
     await borderless(key);
     await page.screenshot({ path: "test-results/soft-settings.png" });

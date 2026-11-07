@@ -17,7 +17,7 @@ async function main() {
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.WONNYY_SMOKE_DATA;
     app = await electron.launch({
-      executablePath: path.resolve("dist/win-unpacked/QTerminal.exe"),
+      executablePath: path.resolve("dist/win-unpacked/Orbistry.exe"),
       args: [`--user-data-dir=${profile}`, "--hidden"],
       env,
       timeout: 60000,
@@ -122,7 +122,7 @@ async function main() {
       JSON.stringify(
         {
           passed: true,
-          executable: "Windows x64 QTerminal.exe",
+          executable: "Windows x64 Orbistry.exe",
           emptyState: true,
           csp: true,
           nativeImageOcr: true,

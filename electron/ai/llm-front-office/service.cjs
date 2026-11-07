@@ -162,10 +162,15 @@ class FrontOfficeService {
   }
 
   /** Run one idempotent, owner-cancellable experiment; full history is preflighted and never truncated. */
-  async run(vault, ownerId, raw, emit = () => {}) {
+  async run(vault, ownerId, raw, emit = () => {}, requestLogger) {
     const request = normalizeRequest(raw);
+    requestLogger?.step("REQUEST_VALIDATED", {
+      messageCharacters: request.userMessage.length,
+    });
     this.service.assertIdle();
+    requestLogger?.step("ADMISSION_ACCEPTED");
     const runId = randomUUID();
+    requestLogger?.update({ runId });
     const controller = new AbortController();
     let done;
     const active = {
@@ -184,6 +189,7 @@ class FrontOfficeService {
       conversationId: request.conversationId,
       providerId: "unknown",
       modelId: "unknown",
+      requestLogger,
     });
     observer.stage("REQUEST_RECEIVED");
     observer.stage("REQUEST_VALIDATED");
@@ -316,6 +322,11 @@ class FrontOfficeService {
     });
     try {
       config = await this.config();
+      requestLogger?.step("FRONT_OFFICE_PATH", {
+        routingMode: config.routing.mode,
+        routerActive: true,
+        transport: request.transport,
+      });
       if (!config.enabled)
         throw new ModelRuntimeError(
           "MODEL_INVALID_REQUEST",
@@ -338,6 +349,9 @@ class FrontOfficeService {
       conversation = validateExperimentalConversation(
         await store.read(request.conversationId),
       );
+      requestLogger?.step("CONVERSATION_LOADED", {
+        historyMessages: conversation.messages.length,
+      });
       // Global auto-mode changes apply to new unpinned sessions; existing
       // manual conversations retain their explicit deployment choice.
       if (conversation.selection) {
@@ -348,6 +362,7 @@ class FrontOfficeService {
         (a) => a.requestId === request.requestId,
       );
       if (previous) {
+        requestLogger?.step("REQUEST_REPLAYED");
         if (
           conversation.messages.find((m) => m.id === previous.userMessageId)
             ?.content !== request.userMessage
@@ -378,6 +393,12 @@ class FrontOfficeService {
         config,
         conversation.selection ?? config.routing.selectedDeploymentId,
       );
+      requestLogger?.step("BUDGET_CHECKING", {
+        inputTokensEstimated: requirements.expectedInputTokens,
+        outputTokenCap: config.generation.maxOutputTokens,
+        contextWindow: config.generation.contextWindow,
+        historyMessages: requirements.historyMessages,
+      });
       if (config.routing.mode === "manual" && !requirements.userModelOverride)
         throw new ModelRuntimeError(
           "MODEL_INVALID_REQUEST",
@@ -436,6 +457,18 @@ class FrontOfficeService {
         provider: plan.primary.model.providerId,
         model: plan.primary.model.modelId,
       });
+      requestLogger?.update({
+        provider: plan.primary.model.providerId,
+        model: plan.primary.model.modelId,
+      });
+      requestLogger?.step("BUDGET_CHECKED", {
+        inputTokensEstimated: plan.primary.budget.estimatedInputTokens,
+        outputTokenCap: plan.primary.budget.reservedOutputTokens,
+        headroomTokens: plan.primary.budget.headroomTokens,
+      });
+      requestLogger?.step("PROMPT_READY", {
+        historyMessages: requirements.historyMessages,
+      });
       event({
         type: "routing",
         routing: {
@@ -488,6 +521,15 @@ class FrontOfficeService {
         {
           signal: controller.signal,
           onAttempt: (attempt) => {
+            const deployment = attempt.deploymentId.split(":");
+            requestLogger?.update({
+              provider: deployment.shift(),
+              model: deployment.join(":"),
+            });
+            requestLogger?.step(
+              attempt.fallback ? "FALLBACK_SELECTED" : "MODEL_SELECTED",
+              { attempt: attempt.index, fallback: attempt.fallback },
+            );
             attempts.push(attempt);
             event({ type: "attempt", attempt });
           },
@@ -512,8 +554,11 @@ class FrontOfficeService {
       observer.stage("REQUEST_COMPLETED");
       observer.finish("succeeded");
       const run = record("succeeded");
+      requestLogger?.step("STORAGE_WRITING");
       await createModelRun(root, run);
+      requestLogger?.step("RUN_SAVED");
       published = true;
+      requestLogger?.step("CONVERSATION_SAVING");
       conversation = await store.update(conversation.id, (c) =>
         applyRun(
           c,
@@ -521,6 +566,7 @@ class FrontOfficeService {
           run,
         ),
       );
+      requestLogger?.step("CONVERSATION_SAVED");
       try {
         await recordTrace(
           root,
@@ -544,7 +590,17 @@ class FrontOfficeService {
           estimatedCostUsd: run.diagnostics.frontOffice.estimatedCostUsd,
         },
       });
-      event({ type: "finish", trace: run.diagnostics.frontOffice, validation });
+      requestLogger?.step("RENDERER_EVENT_DISPATCHING");
+      const delivered = event({
+        type: "finish",
+        trace: run.diagnostics.frontOffice,
+        validation,
+      });
+      requestLogger?.step(
+        delivered === false ? "RENDERER_EVENT_SKIPPED" : "RENDERER_EVENT_SENT",
+        {},
+        delivered === false ? "skipped" : "ok",
+      );
       return { conversation, run };
     } catch (error) {
       const original = controller.signal.aborted
@@ -572,6 +628,34 @@ class FrontOfficeService {
       }
       attempts = original?.frontOfficeAttempts ?? attempts;
       const failure = publicError(original);
+      requestLogger?.fail(original);
+      for (const row of rejections.slice(0, 5)) {
+        const categories = [
+          "context",
+          "output",
+          "cost",
+          "credential",
+          "provider",
+          "circuit",
+          "parameter",
+          "capability",
+          "stale",
+          "evidence",
+        ].filter((category) =>
+          row.reasons.some((reason) => reason.toLowerCase().includes(category)),
+        );
+        const [provider, ...model] = row.deploymentId.split(":");
+        requestLogger?.step(
+          "ROUTING_REJECTED",
+          {
+            provider,
+            model: model.join(":"),
+            reasonCategories: categories.length ? categories : ["other"],
+            rejectedCount: rejections.length,
+          },
+          "error",
+        );
+      }
       observer.stage(
         observer.snapshot().stages.at(-1)?.stage ?? "REQUEST_RECEIVED",
         "error",

@@ -151,6 +151,8 @@ export type ContextIdentity = {
   sources: ModelSourceReference[];
 };
 export type ChatMessage = {
+  engineToolTurn?: boolean;
+  engineReports?: ChatEngineReport[];
   contextFile?: { relativePath: string };
   knowledgeBox?: { id: string; name: string };
   contextIdentity?: ContextIdentity;
@@ -201,10 +203,11 @@ export type ContextBoxEdit = {
   relativePath?: string;
 };
 export type Conversation = {
+  engineOnly?: boolean;
   agentKnowledge?: ConstructionSourceBinding;
   contextFile?: ConstructionFileBinding;
   agentId?: string;
-  schemaVersion: 1 | 2 | 3 | 4;
+  schemaVersion: 1 | 2 | 3 | 4 | 6;
   contextBoxId?: string;
   contextBoxRevision?: number;
   id: string;
@@ -222,7 +225,33 @@ export type AgentNodeKind =
   | "LLM"
   | "Workflow"
   | "Knowledge"
+  | "Engine"
   | "Output";
+export type EngineState = {
+  id: "chronoz";
+  name: string;
+  version: string;
+  operations: string[];
+  nativeToolCalling: boolean;
+  bundlePath: string | null;
+  status: string;
+  probe: { status: string; diagnostic: string; at: string } | null;
+};
+export type EngineReportResult = {
+  status: string;
+  diagnostic: string;
+  attachment: null | {
+    runId: string;
+    month: string;
+    researchStatus: string;
+    sha256: string;
+    sourcePath: string;
+  };
+};
+export type ChatEngineReport = NonNullable<EngineReportResult["attachment"]> & {
+  engineId: "chronoz";
+  instanceId: string;
+};
 export type ConstructionBoxBinding = {
   vaultPath: string;
   boxId: string;
@@ -270,6 +299,8 @@ export type AgentConstructionConfig = {
       providerId?: ModelSettings["providerId"];
       modelId?: string;
       skillId?: "knowledge-consolidation";
+      engineId?: "chronoz";
+      instanceId?: string;
       mode?: "bound-only" | "single-pass" | "preview-only" | "text";
     };
   }[];
@@ -394,6 +425,8 @@ export type ModelDescriptor = {
   outputLimit?: number | null;
   warnings: string[];
   pricingClass: "unknown";
+  inputUsdPerMillion?: number | null;
+  outputUsdPerMillion?: number | null;
 };
 export type ProviderStatus = {
   id: ModelSettings["providerId"];
@@ -470,6 +503,9 @@ export interface OpenRouterUsageSnapshot {
   errorMessage?: string;
 }
 export interface AiBridge {
+  connectCredential(input: { apiKey: string }): Promise<ProviderConnection>;
+  providedModels(): Promise<ProvidedModelPreview[]>;
+  modelFavorites(): Promise<string[]>;
   frontOfficeState(
     task?: "general" | "finance" | "format" | "retrieval" | "conversation",
   ): Promise<FrontOfficeState>;
@@ -504,6 +540,22 @@ export interface AiBridge {
   }): Promise<ExperimentResult>;
   onFrontOfficeEvent(callback: (event: ExperimentEvent) => void): () => void;
   listConstructionFiles?(): Promise<string[]>;
+  engineState?(): Promise<EngineState>;
+  chooseEngineFolder?(): Promise<EngineState | null>;
+  probeEngine?(): Promise<EngineState>;
+  executeEngine?(input: {
+    agentId: string;
+    instanceId: string;
+    engineId: "chronoz";
+    operation: "get_report";
+    arguments: { month?: string };
+  }): Promise<EngineReportResult>;
+  cancelEngine?(): Promise<boolean>;
+  openEngineReport?(input: {
+    agentId: string;
+    instanceId: string;
+    runId: string;
+  }): Promise<{ opened: boolean }>;
   previewConstructionFile?(input: {
     relativePath: string;
   }): Promise<ConstructionFilePreview>;
@@ -583,6 +635,7 @@ export interface AiBridge {
   context(input: ScopeSelection): Promise<ContextIdentity>;
   listConversations(): Promise<Conversation[]>;
   createConversation(input: {
+    engineOnly?: boolean;
     includeAgentKnowledge?: boolean;
     agentId?: string;
     contextBoxId?: string;
@@ -605,6 +658,36 @@ export interface AiBridge {
   cancel(requestId?: string): Promise<boolean>;
   onEvent(callback: (event: ChatEvent) => void): () => void;
 }
+export type ProviderVerification =
+  | "unrecognized"
+  | "ambiguous"
+  | "identified_unverified"
+  | "verified"
+  | "invalid"
+  | "unreachable";
+export type CredentialScope =
+  "user_byok" | "developer_local" | "managed_server";
+export type ProviderConnection = {
+  providerId: "gemini" | "nvidia" | "openrouter" | null;
+  state: ProviderVerification;
+  saved: boolean;
+  credentialScope: "user_byok";
+  message: string;
+};
+/** Metadata only. There is intentionally no managed execution API. */
+export type ProvidedModelPreview = {
+  providerId: "openrouter" | "nvidia";
+  modelId: string;
+  displayName: string;
+  contextLength: number | null;
+  outputLimit: number | null;
+  capabilities: string[];
+  inputUsdPerMillion: number | null;
+  outputUsdPerMillion: number | null;
+  isFavorite: true;
+  availability: "unverified";
+  executable: false;
+};
 export type ModelCheckResult = {
   providerId: "gemini" | "nvidia" | "openrouter";
   model: string;

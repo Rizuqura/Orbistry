@@ -58,7 +58,7 @@ export function DocumentWorkspace({
           <div className="document-inner">
             <header className="document-header">
               <h1>
-                Select a file<span> — from your knowledge vault</span>
+                Select a file<span> — from your Universe</span>
               </h1>
               <p>
                 Open a <b>.md</b>, <b>.csv</b>, <b>.pdf</b>, <b>.png</b> or{" "}

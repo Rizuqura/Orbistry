@@ -14,6 +14,7 @@ import { AgentAvatar } from "../agent/agent-avatar";
 import { ChatMarkdown } from "./chat-markdown";
 import { bannerStyle, wallpaperStyle } from "./chat-presentation";
 import { KnowledgeProposal } from "../agent/knowledge-proposal";
+import { EngineReportAttachment } from "./engine-report-attachment";
 
 export type { ChatMessage } from "../../types/ai";
 export type ChatPanelProps = {
@@ -377,7 +378,10 @@ export function ChatPanel({
         <span className="agent-drag-title">
           {agentName}
           <span className="agent-chat-subtitle">
-            {chat.agent?.description || "Strict Context Analysis"} ·{" "}
+            {chat.conversation?.engineOnly
+              ? "Engine report retrieval"
+              : chat.agent?.description || "Strict Context Analysis"}{" "}
+            ·{" "}
             {chat.runtime.state === "CONTEXT_TOO_LARGE"
               ? "Over Budget"
               : chat.unavailableReason
@@ -586,7 +590,9 @@ export function ChatPanel({
       >
         {!!chat.conversation && !messages.length && (
           <p className="chat-message-system">
-            Ask a question about the approved sources.
+            {chat.conversation?.engineOnly
+              ? "Ask for a research PDF from the agent?s engine. No research context is required."
+              : "Ask a question about the approved sources."}
           </p>
         )}
         {transcript.map(({ message, modelChanged, attempt }) => (
@@ -649,6 +655,13 @@ export function ChatPanel({
                       : "Response failed"}
                 </span>
               )}
+            {message.engineReports?.map((report) => (
+              <EngineReportAttachment
+                key={report.runId}
+                report={report}
+                agentId={chat.conversation?.agentId ?? chat.activeAgentId}
+              />
+            ))}
             {message.contextBox && (
               <small className="chat-context-provenance">
                 Context: {message.contextBox.name}
@@ -687,6 +700,7 @@ export function ChatPanel({
               </span>
             )}
             {message.role === "assistant" &&
+              !message.engineToolTurn &&
               message.runId &&
               chat.conversation?.agentId === "wonnyy-agent" &&
               chat.agent?.skills.includes("knowledge-consolidation") && (
@@ -817,7 +831,9 @@ export function ChatPanel({
           placeholder={
             chat.retryOnSubmit
               ? "Press Enter to retry the last message…"
-              : "Ask about the attached Context Box…"
+              : chat.conversation?.engineOnly
+                ? "Get my October 2026 macro report…"
+                : "Ask about the attached Context Box…"
           }
           aria-label="Chat question"
         />

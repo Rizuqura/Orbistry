@@ -12,7 +12,7 @@ export function StartupProgress({
   onContinue,
 }: StartupProgressProps) {
   return (
-    <section className="startup-screen" aria-label="QTerminal startup">
+    <section className="startup-screen" aria-label="Orbistry startup">
       <div className="startup-card">
         <img
           className="startup-brand"
@@ -21,7 +21,7 @@ export function StartupProgress({
           width={128}
           height={128}
         />
-        <h1>QTerminal</h1>
+        <h1>Orbistry</h1>
         <p className="startup-version">v1.0.1 Victoria Beta</p>
         <p className="startup-stage" role="status" aria-live="polite">
           {label}

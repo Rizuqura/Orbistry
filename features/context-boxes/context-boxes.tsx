@@ -139,11 +139,12 @@ export function ContextBoxes({
       >
         <section className="context-boxes" aria-label="Context Boxes">
           <div className="pane-heading">
-            <span>CONTEXT BOXES</span>
+            <span>Context Boxes</span>
             <button
               disabled={busy}
               onClick={() => void setup(true)}
               aria-label="Create Context Box"
+              title="Create Context Box"
             >
               +
             </button>
@@ -181,7 +182,9 @@ export function ContextBoxes({
                   onClick={() => void details(b.id)}
                 >
                   <strong>{b.name}</strong>
-                  <small>{b.items.length} files</small>
+                  <small>
+                    {b.items.length} {b.items.length === 1 ? "file" : "files"}
+                  </small>
                 </button>
               ))}
             {!chat.contextBoxes.length && (
@@ -351,7 +354,7 @@ export function ContextBoxes({
         )}
         {mode === "details" && box && !loading && (
           <>
-            <p>
+            <p className="context-box-meta">
               {box.items.length} files · revision {box.revision} · {available}{" "}
               readable
             </p>
@@ -367,7 +370,7 @@ export function ContextBoxes({
               answers retain their original hashes. Files stay in the vault when
               removed from a box.
             </p>
-            <div className="agent-actions">
+            <div className="agent-actions context-box-toolbar">
               <button disabled={busy} onClick={() => setRenaming(!renaming)}>
                 Rename Context Box
               </button>
@@ -377,7 +380,26 @@ export function ContextBoxes({
               >
                 Add selection
               </button>
+              <label className="context-box-agent-picker">
+                Attach to agent
+                <select
+                  aria-label="Agent to attach Context Box to"
+                  value={chat.agent?.id ?? ""}
+                  disabled={busy || !chat.agents.length}
+                  onChange={(event) =>
+                    void chat.selectAgent(event.target.value)
+                  }
+                >
+                  {!chat.agent && <option value="">Choose an agent</option>}
+                  {chat.agents.map((agent) => (
+                    <option key={agent.id} value={agent.id}>
+                      {agent.displayName}
+                    </option>
+                  ))}
+                </select>
+              </label>
               <button
+                className="context-box-attach"
                 disabled={
                   busy ||
                   !chat.agent ||
@@ -392,9 +414,7 @@ export function ContextBoxes({
                   onAttach();
                 }}
               >
-                {chat.agent
-                  ? `Attach to ${chat.agent.displayName}`
-                  : "Create an agent first"}
+                {chat.agent ? "Attach to agent" : "Create an agent first"}
               </button>
             </div>
             {renaming && (
@@ -512,13 +532,14 @@ export function ContextBoxes({
                 </li>
               ))}
             </ul>
-            <p>
+            <p className="context-box-note">
               Source token counts are estimates. CSV uses computed profiles and
               queries; provider limits are checked on the assembled prompt
               before answer generation. No box sources are silently truncated.
             </p>
-            <div className="agent-actions">
+            <div className="agent-actions context-box-footer">
               <button
+                className="context-box-delete"
                 disabled={busy}
                 onClick={async () => {
                   if (

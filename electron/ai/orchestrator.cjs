@@ -235,6 +235,7 @@ function createContextOrchestrator({
         conversationId: options.conversationId,
         providerId: providerName,
         modelId: request.model,
+        requestLogger: options.requestLogger,
       });
       // Share one retry across loading, initial generation and answer repair.
       // The ChatService signal still owns the original absolute deadline.
@@ -254,6 +255,10 @@ function createContextOrchestrator({
           )
             throw error;
           diagnostics.timeoutRetryCount = 1;
+          options.requestLogger?.step("RETRY_SCHEDULED", {
+            attempt: 2,
+            errorCode: error.code,
+          });
           diagnostics.attempt = 2;
           diagnostics.maxAttempts = 2;
           diagnostics.timeoutRetryPhase = error.details?.phase ?? state;
@@ -274,6 +279,16 @@ function createContextOrchestrator({
       };
       const stage = (state) => {
         options.signal?.throwIfAborted();
+        const terminalStage = {
+          PREPARING_CONTEXT: "CONTEXT_PREPARING",
+          MODEL_LOADING: "MODEL_PREPARING",
+          REMOTE_CONNECTING: "MODEL_PREPARING",
+          MODEL_READY: "MODEL_READY",
+          GENERATING: "GENERATION_PREPARING",
+          VALIDATING: "OUTPUT_VALIDATING",
+          RECORDING: "STORAGE_WRITING",
+        }[state];
+        if (terminalStage) options.requestLogger?.step(terminalStage);
         const messages = {
           MODEL_LOADING: "Loading the selected model into memory.",
           MODEL_READY: "Model is ready.",
@@ -339,6 +354,9 @@ function createContextOrchestrator({
         sourcesAvailable = Array.isArray(scope?.sources)
           ? scope.sources.map(sourceReference)
           : [];
+        options.requestLogger?.step("CONTEXT_READY", {
+          sourceCount: sourcesAvailable.length,
+        });
         options.onEvent?.({
           state: "CONTEXT_READING",
           status: {
@@ -354,6 +372,11 @@ function createContextOrchestrator({
         const sources = [];
         for (const manifestSource of scope.sources) {
           options.signal?.throwIfAborted();
+          options.requestLogger?.step("SOURCE_READING", {
+            sourceIndex: sources.length + 1,
+            sourceCount: scope.sources.length,
+            sourceType: manifestSource.type,
+          });
 
           const source = await measure("sourceReadMs", () =>
             readSource({
@@ -377,6 +400,12 @@ function createContextOrchestrator({
             );
           }
           sources.push(source);
+          options.requestLogger?.step("SOURCE_READ", {
+            sourceIndex: sources.length,
+            sourceCount: scope.sources.length,
+            contentCharacters: source.content.length,
+            sourceType: source.type,
+          });
           sourcesActuallyRead.push(sourceReference(source));
           options.onEvent?.({
             state: "CONTEXT_READING",
@@ -395,6 +424,9 @@ function createContextOrchestrator({
           userMessage: request.userMessage,
           history: request.history,
           agentId: options.agentConfig?.id,
+        });
+        options.requestLogger?.step("POLICY_PREPARED", {
+          sourceCount: policySelection.sources.length,
         });
         sources.splice(0, sources.length, ...policySelection.sources);
         diagnostics.compactedPolicySources = policySelection.compacted;
@@ -518,7 +550,16 @@ function createContextOrchestrator({
           userMessage: request.userMessage,
           sources,
         });
+        options.requestLogger?.step("BUDGET_CHECKING", {
+          outputTokenCap: settings.outputLimit,
+          contextWindow: settings.contextWindow,
+        });
         const preflightBudget = budgetHistory(preflight.messages, [], settings);
+        options.requestLogger?.step("BUDGET_CHECKED", {
+          inputTokensEstimated:
+            preflightBudget.diagnostics.estimatedPromptTokens,
+          outputTokenCap: settings.outputLimit,
+        });
         diagnostics.contextChanged = Boolean(options.contextChanged);
         diagnostics.preflightPromptTokens =
           preflightBudget.diagnostics.estimatedPromptTokens;
@@ -668,6 +709,12 @@ function createContextOrchestrator({
           statistics: diagnostics.statistics,
         });
         promptVersion = prompt.promptVersion;
+        options.requestLogger?.step("PROMPT_READY", {
+          historyMessages: budget.history.length,
+          inputTokensEstimated: budget.diagnostics.estimatedPromptTokens,
+          includedExchanges: diagnostics.includedExchanges,
+          droppedExchanges: diagnostics.droppedExchanges,
+        });
         diagnostics.runtimePolicy = {
           ...prompt.runtimePolicy,
           compactedPolicySources: policySelection.compacted,
@@ -764,7 +811,15 @@ function createContextOrchestrator({
         };
         try {
           answer = validate(response);
+          options.requestLogger?.step("OUTPUT_VALIDATED", {
+            contentCharacters: answer.length,
+          });
         } catch (error) {
+          options.requestLogger?.step(
+            "OUTPUT_VALIDATION_FAILED",
+            { errorCode: error.code },
+            "error",
+          );
           if (
             diagnostics.timeoutRetryCount ||
             ![
@@ -778,6 +833,10 @@ function createContextOrchestrator({
           // One bounded final-answer repair within the same authorized run. Never
           // append rejected content to conversation history or execute tools.
           diagnostics.validationRepairCount = 1;
+          options.requestLogger?.step("ANSWER_REPAIR_STARTED", {
+            attempt: 2,
+            errorCode: error.code,
+          });
           diagnostics.initialValidationFailure = error.details.reason;
           diagnostics.initialUsage = response.usage;
           options.onEvent?.({ state: "VALIDATING", content: "" });
@@ -831,6 +890,9 @@ function createContextOrchestrator({
           );
           stage("VALIDATING");
           answer = validate(response);
+          options.requestLogger?.step("OUTPUT_VALIDATED", {
+            contentCharacters: answer.length,
+          });
         }
         if (response.diagnostics) diagnostics.provider = response.diagnostics;
         if (diagnostics.statistics?.results.length) {
@@ -931,6 +993,7 @@ function createContextOrchestrator({
         });
         return result;
       } catch (error) {
+        options.requestLogger?.fail(error);
         if (
           error.code === "MODEL_CONTEXT_TOO_LARGE" &&
           diagnostics.sourceBudget

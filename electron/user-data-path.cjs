@@ -16,7 +16,7 @@ function selectUserDataPath(
   if (
     explicit ||
     path.resolve(path.dirname(current)) !== path.resolve(appData) ||
-    !["qterminal", "qterminal 1.0.0 victoria"].includes(
+    !["orbistry", "qterminal", "qterminal 1.0.0 victoria"].includes(
       path.basename(current).toLowerCase(),
     ) ||
     populated(current)

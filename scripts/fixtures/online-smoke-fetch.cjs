@@ -1,5 +1,6 @@
 // Synthetic transports for the dedicated hidden Electron test entry only.
 function createOnlineSmokeFetch() {
+  const nativeFetch = globalThis.fetch;
   const state = {
     requests: [],
     localRequests: [],
@@ -9,6 +10,7 @@ function createOnlineSmokeFetch() {
     openrouterCatalogStatus: 200,
     usageStatus: 200,
     usageRequests: 0,
+    engineToolMode: "mock",
     usageData: {
       limit: 100,
       limit_remaining: 74.5,
@@ -31,6 +33,33 @@ function createOnlineSmokeFetch() {
   const fetchImpl = async (url, init = {}) => {
     const endpoint = new URL(url);
     const body = init.body ? JSON.parse(init.body) : null;
+    if (
+      body?.tools &&
+      endpoint.hostname === "127.0.0.1" &&
+      endpoint.pathname === "/api/chat"
+    ) {
+      state.localRequests.push(body);
+      if (state.engineToolMode === "live") return nativeFetch(url, init);
+      return Response.json({
+        model: body.model,
+        done: true,
+        done_reason: "stop",
+        message: {
+          role: "assistant",
+          content: "",
+          tool_calls: [
+            {
+              function: {
+                name: "chronoz_get_report",
+                arguments: { month: "2026-10" },
+              },
+            },
+          ],
+        },
+        prompt_eval_count: 100,
+        eval_count: 20,
+      });
+    }
     if (endpoint.hostname === "openrouter.ai") {
       if (init.headers.Authorization !== "Bearer sk-or-v1-synthetic-smoke-key")
         return new Response("Invalid key", { status: 401 });

@@ -91,7 +91,7 @@ test("OpenRouter discovers text-capable model slugs and limits without exposing 
         init.headers.Authorization,
         "Bearer sk-or-synthetic-private-key",
       );
-      assert.equal(init.headers["X-OpenRouter-Title"], "QTerminal");
+      assert.equal(init.headers["X-OpenRouter-Title"], "Orbistry");
       assert.equal(init.redirect, "error");
       assert.equal(init.body, undefined);
       return Response.json({

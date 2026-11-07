@@ -6,14 +6,14 @@ export async function connectAi(): Promise<AiBridge> {
   const desktop = window.wonnyyDesktop;
   if (desktop?.apiVersion !== AI_API_VERSION || !desktop.ai?.handshake) {
     throw Object.assign(
-      new Error("Restart QTerminal to load the updated desktop backend."),
+      new Error("Restart Orbistry to load the updated desktop backend."),
       { code: "MODEL_RESTART_REQUIRED" },
     );
   }
   const result = await desktop.ai.handshake(AI_API_VERSION);
   if (result.apiVersion !== AI_API_VERSION)
     throw Object.assign(
-      new Error("Restart QTerminal: renderer and backend versions differ."),
+      new Error("Restart Orbistry: renderer and backend versions differ."),
       { code: "MODEL_RESTART_REQUIRED" },
     );
   return desktop.ai;

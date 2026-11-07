@@ -389,7 +389,7 @@ async function main() {
         name: "Context Box Manager",
         exact: true,
       });
-      await manager.getByText("CONTEXT BOX MANAGER", { exact: true }).waitFor();
+      await manager.getByText("CONTEXT BOXES", { exact: true }).waitFor();
       assert.equal(
         await manager
           .getByRole("button", { name: "BUILD PACKAGE", exact: true })
@@ -899,7 +899,7 @@ async function main() {
       return;
     }
     await panel().getByText("No active chat", { exact: true }).waitFor();
-    assert.equal(await page.title(), "QTerminal");
+    assert.equal(await page.title(), "Orbistry");
     assert.equal(await countChats(), 0);
     await panel()
       .getByRole("button", { name: "+ New Chat", exact: true })

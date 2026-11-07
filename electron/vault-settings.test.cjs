@@ -4,6 +4,14 @@ const test = require("node:test"),
   path = require("node:path"),
   os = require("node:os");
 const { initializeVault, saveVault } = require("./vault-settings.cjs");
+test("Orbistry preserves the existing default QTerminal vault", async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-vault-"));
+  t.after(() => fs.rm(root, { recursive: true, force: true }));
+  const docs = path.join(root, "Documents");
+  const legacy = path.join(docs, "QTerminal Vault");
+  await fs.mkdir(legacy, { recursive: true });
+  assert.equal(await initializeVault(path.join(root, "profile"), docs), legacy);
+});
 test("fresh vault is empty and user-owned; explicit folder selection persists without importing developer data", async (t) => {
   const root = await fs.mkdtemp(
     path.join(os.tmpdir(), "qterminal-vault-settings-"),
@@ -12,7 +20,7 @@ test("fresh vault is empty and user-owned; explicit folder selection persists wi
   const profile = path.join(root, "profile"),
     docs = path.join(root, "Documents");
   const first = await initializeVault(profile, docs);
-  assert.equal(first, path.join(docs, "QTerminal Vault"));
+  assert.equal(first, path.join(docs, "Universe"));
   assert.deepEqual(await fs.readdir(first), []);
   const selected = path.join(root, "selected");
   await saveVault(profile, selected);

@@ -84,7 +84,7 @@ export function KnowledgeProposal({
       <h2 id="knowledge-proposal-title">Knowledge proposal</h2>
       <p>
         Capture structured observations from this completed run. Saving creates
-        pending candidates in the app outbox, outside the Bank Vault. Approval
+        pending candidates in the app outbox, outside the Universe. Approval
         requires the separate operator review tool.
       </p>
       <p>

@@ -1,7 +1,8 @@
-import type { CSSProperties, KeyboardEvent } from "react";
+import { memo, type CSSProperties, type KeyboardEvent } from "react";
 import type { KnowledgeNode, NodeLayout } from "../types/graph";
 
 export interface PlanetNodeProps {
+  anchor: boolean;
   node: KnowledgeNode;
   layout: NodeLayout;
   selected: boolean;
@@ -12,7 +13,6 @@ export interface PlanetNodeProps {
   activeContext: boolean;
   structural: boolean;
   semanticBand: "far" | "normal" | "near";
-  showLabel: boolean;
   childFiles: number;
   childDirs: number;
   onHover: (id: string | null) => void;
@@ -20,7 +20,8 @@ export interface PlanetNodeProps {
   onOpen: (id: string) => void;
 }
 
-export function PlanetNode({
+export const PlanetNode = memo(function PlanetNode({
+  anchor,
   node,
   layout,
   selected,
@@ -31,7 +32,6 @@ export function PlanetNode({
   activeContext,
   structural,
   semanticBand,
-  showLabel,
   childFiles,
   childDirs,
   onHover,
@@ -42,6 +42,7 @@ export function PlanetNode({
   const isAsteroid = node.fileType === "other";
   const className = [
     "pnode",
+    anchor ? "panchor" : "",
     isDir ? "pdir" : "pfile",
     isAsteroid ? "pasteroid" : "",
     !isDir && node.fileType ? `pfile-${node.fileType}` : "",
@@ -53,7 +54,6 @@ export function PlanetNode({
     activeContext ? "active-context" : "",
     structural ? "station-structural" : "",
     `semantic-${semanticBand}`,
-    showLabel ? "label-always" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -80,17 +80,50 @@ export function PlanetNode({
         }
       }}
     >
-      <span className="porb" style={{ width: `${layout.size}px`, height: `${layout.size}px` }} />
-      <span className="plabel">{node.name}</span>
+      <span
+        className="porb"
+        style={{ width: `${layout.size}px`, height: `${layout.size}px` }}
+      >
+        <svg
+          width={layout.size}
+          height={layout.size}
+          viewBox={`0 0 ${layout.size} ${layout.size}`}
+          aria-hidden="true"
+          className="planet-orb-svg"
+        >
+          <circle
+            className="planet-orb-shape"
+            cx={layout.size / 2}
+            cy={layout.size / 2}
+            r={Math.max(0.5, layout.size / 2 - 0.6)}
+          />
+        </svg>
+      </span>
       {(hovered || selected) && (
         <div className="ptip" role="tooltip">
           <div className="ptip-title">
-            <span className={isDir ? "ptip-star" : isAsteroid ? "ptip-asteroid" : "ptip-planet"}>{isDir ? "★" : isAsteroid ? "◆" : "○"}</span>
+            <span
+              className={
+                isDir
+                  ? "ptip-star"
+                  : isAsteroid
+                    ? "ptip-asteroid"
+                    : "ptip-planet"
+              }
+            >
+              {isDir ? "★" : isAsteroid ? "◆" : "○"}
+            </span>
             {node.name}
           </div>
           <div className="ptip-row">
             <span>TYPE</span>
-            <b>{isDir ? "Directory" : isAsteroid ? `Asteroid · ${node.extension || "unknown"}` : node.fileType?.toUpperCase() ?? "File"}</b>
+            <b>
+              {isDir
+                ? "Directory"
+                : isAsteroid
+                  ? `Asteroid · ${node.extension || "unknown"}`
+                  : (node.fileType?.toUpperCase() ?? "File")}
+            </b>
           </div>
           <div className="ptip-row">
             <span>PATH</span>
@@ -123,4 +156,4 @@ export function PlanetNode({
       )}
     </div>
   );
-}
+});

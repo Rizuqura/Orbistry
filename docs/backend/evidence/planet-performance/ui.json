@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "geometry": {
+    "canvasWidth": 840,
+    "canvasHeight": 904,
+    "worldWidth": 0,
+    "willChange": "auto",
+    "edgeWidth": 840,
+    "edgeHeight": 904,
+    "edgeOverflow": "hidden",
+    "all": 211,
+    "rendered": 211,
+    "visibleOrbs": 211
+  },
+  "renderedAfterZoom": 1,
+  "checks": [
+    "engine storage excluded",
+    "planets visible on Fit View",
+    "low GPU default and persisted opt-out",
+    "viewport-size edge SVG and no forced world layer",
+    "offscreen node culling",
+    "zoom/pan/reset",
+    "stale folder focus recovery",
+    "keyboard file opening"
+  ]
+}

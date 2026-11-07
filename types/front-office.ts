@@ -290,6 +290,8 @@ export type LLMResponse = {
   diagnostics?: { firstTokenMs: number | null };
 };
 export type LLMRequest = {
+  /** Main-process diagnostic callback; never serialized into provider payloads. */
+  onDiagnostic?: import("../electron/ai/request-logger.cjs").DiagnosticCallback;
   id?: string;
   onStage?: (
     stage: RequestStageName,

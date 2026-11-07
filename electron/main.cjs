@@ -71,7 +71,7 @@ function changeVaultKnowledge(operation) {
 
 async function selectVaultFolder() {
   const result = await dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), {
-    title: "Select QTerminal knowledge vault",
+    title: "Select Orbistry Universe",
     defaultPath: activeVaultPath,
     properties: ["openDirectory"],
   });
@@ -100,7 +100,7 @@ function createWindow() {
     minWidth: 1100,
     minHeight: 700,
     backgroundColor: "#0a0d0e",
-    title: "QTerminal",
+    title: "Orbistry",
     icon: path.join(__dirname, "..", "build", "icon.png"),
     autoHideMenuBar: true,
     webPreferences: {
@@ -164,7 +164,7 @@ app.setPath(
     app.commandLine.hasSwitch("user-data-dir"),
   ),
 );
-app.setName("QTerminal");
+app.setName("Orbistry");
 
 app.whenReady().then(async () => {
   activeVaultPath = await initializeVault(
@@ -287,7 +287,24 @@ app.whenReady().then(async () => {
       ? agents.prepareAvatar(bytes, extension)
       : agents.prepareBackdrop(bytes, extension, kind);
   };
+  const engines = new (require("./ai/engine-registry.cjs").EngineRegistry)(
+    app.getPath("userData"),
+    {
+      agents,
+      chooseFolder: async () => {
+        const selected = await dialog.showOpenDialog({
+          title: "Choose CHronoZ Online portable bundle",
+          properties: ["openDirectory"],
+        });
+        return selected.canceled ? null : (selected.filePaths[0] ?? null);
+      },
+      openPath: (file) => shell.openPath(file),
+    },
+  );
+  app.once("before-quit", () => engines.shutdown());
+  chatService.engines = engines;
   registerAiIpc({
+    engines,
     researchKnowledge:
       new (require("./ai/research-knowledge.cjs").ResearchKnowledge)(
         app.getPath("userData"),

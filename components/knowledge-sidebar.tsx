@@ -40,6 +40,7 @@ export function KnowledgeSidebar({
 }>) {
   const [collapsed, setCollapsed] = useState<ReadonlySet<string>>(new Set());
   const ready = snapshot?.status === "ready";
+  const vaultName = snapshot?.rootPath.split(/[\\/]/).filter(Boolean).pop();
   const filteredEntries = ready
     ? filterEntries(readableEntries(snapshot.entries), query)
     : [];
@@ -64,12 +65,13 @@ export function KnowledgeSidebar({
   return (
     <aside className="knowledge-sidebar">
       <div className="pane-heading">
-        <span>KNOWLEDGE VAULT</span>
+        <span>Universe</span>
         <button
           className="refresh-button"
           onClick={onRescan}
           disabled={isScanning}
-          aria-label="Rescan vault"
+          aria-label="Rescan Universe"
+          title="Rescan Universe"
         >
           ↻
         </button>
@@ -79,20 +81,19 @@ export function KnowledgeSidebar({
         <input
           value={query}
           onChange={(event) => onQueryChange(event.target.value)}
-          placeholder="Search vault…"
-          aria-label="Search vault"
+          placeholder="Search Universe…"
+          aria-label="Search Universe"
           disabled={!ready}
         />
       </label>
       <div
         className="vault-title"
-        title={snapshot?.rootPath ?? "Choose a vault"}
+        title={snapshot?.rootPath ?? "Choose a Universe"}
       >
-        ▾ <span className="folder">▰</span>{" "}
-        {snapshot?.rootPath ?? "Choose a vault"}
+        {vaultName ?? "Choose a Universe"}
       </div>
       <button className="vault-change" onClick={onChangeVault}>
-        CHANGE VAULT
+        Change Universe
       </button>
       <div className="tree">
         {isScanning ? (
@@ -152,10 +153,8 @@ export function KnowledgeSidebar({
         ) : null}
       </div>
       <div className="sidebar-footer">
-        {isScanning
-          ? "SCANNING"
-          : `${snapshot?.totalFiles ?? 0} FILES · ${snapshot?.totalDirectories ?? 0} DIRS`}{" "}
-        <span>{ready ? "VAULT READY" : "OFFLINE"}</span>
+        {isScanning ? "Scanning…" : `${snapshot?.totalFiles ?? 0} files`}{" "}
+        <span>{ready ? "Ready" : "Offline"}</span>
       </div>
     </aside>
   );
@@ -255,12 +254,14 @@ function VaultTree({
               <button
                 className="tree-twist"
                 aria-label={`Toggle ${entry.name}`}
+                aria-expanded={!collapsed.has(entry.relativePath)}
                 onClick={() => onToggle(entry.relativePath)}
               >
                 {collapsed.has(entry.relativePath) ? "▸" : "▾"}
               </button>
               <button
                 className="tree-folder-name"
+                title={entry.relativePath}
                 onClick={(event) =>
                   onSelect(entry, event.ctrlKey || event.metaKey)
                 }

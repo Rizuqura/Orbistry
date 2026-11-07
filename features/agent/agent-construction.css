@@ -595,3 +595,22 @@
     11px/1.6 ui-monospace,
     monospace;
 }
+.studio-engine-controls {
+  display: grid;
+  gap: 10px;
+}
+.studio-engine-controls label {
+  display: grid;
+  gap: 6px;
+}
+.studio-engine-path {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.studio-engine-report {
+  padding: 12px;
+  border: 1px solid #718b83;
+}
+.studio-node.studio-engine {
+  --studio-node-line: #789c92;
+}

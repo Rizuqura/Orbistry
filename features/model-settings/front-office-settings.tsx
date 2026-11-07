@@ -14,7 +14,7 @@ import { sortProfiles } from "../../electron/ai/llm-front-office/catalog-sort.cj
 function bridge(): AiBridge {
   const ai = window.wonnyyDesktop?.ai;
   if (!ai?.frontOfficeState)
-    throw new Error("Restart QTerminal to load the experimental backend.");
+    throw new Error("Restart Orbistry to load the experimental backend.");
   return ai;
 }
 const display = (value: number | null | undefined, suffix = "") =>
@@ -121,7 +121,7 @@ export function FrontOfficeSettings({
       .catch(() => {
         if (!disposed)
           setError(
-            "Cannot load backend settings. Restart QTerminal and check local metadata.",
+            "Cannot load backend settings. Restart Orbistry and check local metadata.",
           );
       });
     if (hasVault)
@@ -596,7 +596,7 @@ export function FrontOfficeSettings({
               Check local gateway
             </button>
             <p>
-              No proxy is started by QTerminal. Run the pinned optional service
+              No proxy is started by Orbistry. Run the pinned optional service
               separately; see
               docs/architecture/pre-llm/03-provider-setup-openrouter-nvidia.md.
             </p>

@@ -10,6 +10,20 @@ test("renaming the app reuses legacy credentials/settings without moving files",
     target === path.join(legacy, "provider-credentials.json");
   assert.equal(selectUserDataPath(root, current, exists), legacy);
 });
+test("Orbistry reuses populated QTerminal profiles and prefers its own populated profile", () => {
+  const orbistry = path.join(root, "Orbistry");
+  const oldExists = (target) => target === path.join(current, "agents.json");
+  assert.equal(selectUserDataPath(root, orbistry, oldExists), current);
+  assert.equal(
+    selectUserDataPath(
+      root,
+      orbistry,
+      (target) =>
+        oldExists(target) || target === path.join(orbistry, "agents.json"),
+    ),
+    orbistry,
+  );
+});
 test("existing QTerminal settings take precedence over legacy state", () => {
   const exists = (target) =>
     [current, legacy].some(

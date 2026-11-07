@@ -47,23 +47,23 @@ async function main() {
     page.on("pageerror", (error) => errors.push(error.message));
     await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
     await page.getByRole("button", { name: "WORKSPACE", exact: true }).click();
-    assert.equal(await page.title(), "QTerminal");
+    assert.equal(await page.title(), "Orbistry");
     assert.deepEqual(
       await app.evaluate(({ app, BrowserWindow }) => ({
         name: app.getName(),
         title: BrowserWindow.getAllWindows()[0].getTitle(),
       })),
-      { name: "QTerminal", title: "QTerminal" },
+      { name: "Orbistry", title: "Orbistry" },
     );
     assert.equal(
       await page.locator(".version").innerText(),
       `v${require("../package.json").version} Victoria Beta`,
     );
     await page
-      .getByRole("button", { name: "Minimize knowledge vault", exact: true })
+      .getByRole("button", { name: "Minimize Universe", exact: true })
       .click();
     await page
-      .getByRole("button", { name: "Restore knowledge vault", exact: true })
+      .getByRole("button", { name: "Restore Universe", exact: true })
       .click();
     await page
       .getByRole("button", { name: "Rescan vault", exact: true })

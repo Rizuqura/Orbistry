@@ -1,0 +1,22 @@
+{
+  "before": {
+    "nodes": 6350,
+    "layoutMs": 94,
+    "metadataAndLayoutMs": 350,
+    "worldWidth": 2427224,
+    "worldHeight": 1230273,
+    "oldFitInViewport": 0,
+    "newFitInViewport": 6350,
+    "fitScale": 0.0003724419095143793
+  },
+  "after": {
+    "nodes": 180,
+    "layoutMs": 1,
+    "metadataAndLayoutMs": 6,
+    "worldWidth": 4166,
+    "worldHeight": 1791,
+    "oldFitInViewport": 180,
+    "newFitInViewport": 180,
+    "fitScale": 0.2169967098098727
+  }
+}

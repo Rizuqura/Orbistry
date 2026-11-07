@@ -228,6 +228,10 @@
   --node-tone: #50b9b0;
   --node-fill: #102524;
 }
+.studio-workbench .studio-node.studio-engine {
+  --node-tone: #91b0a8;
+  --node-fill: #14221f;
+}
 .studio-workbench .studio-node.studio-output,
 .studio-workbench .studio-node.studio-knowledge {
   --node-tone: #69c2a7;

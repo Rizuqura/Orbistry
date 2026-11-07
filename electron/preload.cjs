@@ -61,6 +61,15 @@ contextBridge.exposeInMainWorld("wonnyyDesktop", {
     readBrainSource: (input) => invokeBrain("brain:readSource", input),
   },
   ai: {
+    engineState: () => invokeModel("ai:engineState"),
+    chooseEngineFolder: () => invokeModel("ai:chooseEngineFolder"),
+    probeEngine: () => invokeModel("ai:probeEngine"),
+    executeEngine: (input) => invokeModel("ai:executeEngine", input),
+    cancelEngine: () => invokeModel("ai:cancelEngine"),
+    openEngineReport: (input) => invokeModel("ai:openEngineReport", input),
+    connectCredential: (input) => invokeModel("ai:connectCredential", input),
+    providedModels: () => invokeModel("ai:providedModels"),
+    modelFavorites: () => invokeModel("ai:modelFavorites"),
     frontOfficeState: (task) => invokeModel("ai:frontOfficeState", task),
     frontOfficeConfig: (input) => invokeModel("ai:frontOfficeConfig", input),
     frontOfficeRefresh: (provider) =>

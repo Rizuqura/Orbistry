@@ -1,5 +1,5 @@
 {
-  "name": "qterminal",
+  "name": "orbistry",
   "version": "1.0.1",
   "description": "Local-first AI-native knowledge and research workspace",
   "private": true,
@@ -45,6 +45,9 @@
     "test:startup:electron": "npm run build && node scripts/electron-startup-smoke.cjs",
     "test:knowledge:electron": "npm run build && node scripts/electron-knowledge-smoke.cjs",
     "test:construction:electron": "npm run build && node scripts/electron-construction-smoke.cjs",
+    "test:engine:electron": "npm run build && node scripts/electron-engine-smoke.cjs",
+    "test:engine:chat:live": "node scripts/engine-chat-live.cjs",
+    "test:planet:electron": "npm run build && node scripts/electron-planet-performance-smoke.cjs && node scripts/electron-planet-neutral-smoke.cjs",
     "test:appearance:electron": "npm run build && node scripts/electron-appearance-smoke.cjs",
     "test:box-agents:electron": "npm run build && node scripts/electron-box-agents-smoke.cjs",
     "test:add-agent:electron": "npm run build && node scripts/electron-add-agent-smoke.cjs",
@@ -86,12 +89,12 @@
   "build": {
     "asar": true,
     "compression": "maximum",
-    "artifactName": "QTerminal-${version}-Victoria-Beta-${os}-${arch}.${ext}",
+    "artifactName": "Orbistry-${version}-Victoria-Beta-${os}-${arch}.${ext}",
     "asarUnpack": [
       "electron/windows-ocr.ps1"
     ],
     "appId": "com.wonnyy.amadeus",
-    "productName": "QTerminal",
+    "productName": "Orbistry",
     "files": [
       "out/**/*",
       "electron/**/*",

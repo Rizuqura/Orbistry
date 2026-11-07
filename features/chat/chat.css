@@ -899,3 +899,20 @@ dialog.knowledge-proposal-dialog {
   flex: 0 0 auto;
   margin-top: 4px;
 }
+.chat-engine-attachment {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #638e83;
+  border-radius: 6px;
+  background: #13251f;
+}
+.chat-engine-attachment span,
+.chat-engine-attachment small {
+  display: block;
+  font-size: 11px;
+}
+.chat-engine-attachment details {
+  overflow-wrap: anywhere;
+}

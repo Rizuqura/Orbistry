@@ -84,7 +84,7 @@ export function PlanetUsageBadge({
       try {
         const client = await connectAi();
         if (!client.openRouterUsage)
-          throw new Error("Restart QTerminal to enable usage monitoring.");
+          throw new Error("Restart Orbistry to enable usage monitoring.");
         const result = await client.openRouterUsage({ refresh: manual });
         if (alive && current === generation) {
           setSnapshot(result);
@@ -94,7 +94,7 @@ export function PlanetUsageBadge({
         if (alive && current === generation) {
           setSnapshot(null);
           setError(
-            "Usage unavailable. Restart QTerminal if it was recently updated.",
+            "Usage unavailable. Restart Orbistry if it was recently updated.",
           );
         }
       } finally {
@@ -126,7 +126,7 @@ export function PlanetUsageBadge({
       .catch(() => {
         if (alive) {
           setBusy(false);
-          setError("Restart QTerminal to enable usage monitoring.");
+          setError("Restart Orbistry to enable usage monitoring.");
         }
       });
     const interval = setInterval(wake, 60000);

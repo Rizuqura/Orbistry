@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "transport": "LIVE local Ollama + LIVE bundled CHronoZ Python",
+  "model": "qwen3:4b",
+  "contextFiles": 0,
+  "question": "Get my October 2026 CHronoZ macro report.",
+  "nativeFunction": "chronoz_get_report",
+  "arguments": {
+    "month": "2026-10"
+  },
+  "researchStatus": "PARTIAL",
+  "month": "2026-10",
+  "sha256": "dd85790de3ba02ae2569a7611164f58f748e3ba6a46287754a015d81d733b2cd",
+  "bytes": 4552137,
+  "llmUsage": {
+    "promptTokens": 313,
+    "completionTokens": 754,
+    "totalDurationNs": null
+  },
+  "durationMs": 203246,
+  "engineDurationMs": 15998,
+  "attachmentPersisted": true,
+  "opener": "Verified boundary tested; visible PDF app not launched"
+}

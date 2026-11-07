@@ -88,7 +88,7 @@ export function ContextBoxManager({
   }, [chat.contextBoxes, state, estimateRevision]);
   return (
     <section className="context-box-manager" aria-label="Context Box Manager">
-      <div className="pd-section-title">CONTEXT BOX MANAGER</div>
+      <div className="pd-section-title">CONTEXT BOXES</div>
       <button
         className="pd-action context-library-action"
         onClick={onOpenLibrary}
@@ -104,9 +104,55 @@ export function ContextBoxManager({
         </svg>
         Open Context Box library
       </button>
-      <p className="context-summary">
-        Select and review sources, then save them as a reusable Context Box.
-      </p>
+      {!!chat.contextBoxes.length && (
+        <button
+          className="station-secondary context-estimates-refresh"
+          disabled={chat.contextBoxes.some((box) => !estimates[box.id])}
+          onClick={() => setEstimateRevision((value) => value + 1)}
+        >
+          Refresh token estimates
+        </button>
+      )}
+      {!chat.contextBoxes.length && (
+        <p className="context-summary">Your saved boxes will appear here.</p>
+      )}
+      <div className="context-manager-boxes">
+        {chat.contextBoxes.map((box) => (
+          <div
+            className={`context-manager-box-row${activeBoxIds.has(box.id) ? " is-highlighted" : ""}`}
+            key={box.id}
+          >
+            <button
+              className={`station-filter${activeBoxIds.has(box.id) ? " on" : ""}`}
+              aria-label={`Filter ${box.name} on Planet`}
+              aria-pressed={activeBoxIds.has(box.id)}
+              onClick={() => onToggleFilter(box.id)}
+              title="Toggle this box in the Station ANY/ALL filter"
+            >
+              {activeBoxIds.has(box.id) ? "●" : "○"}
+            </button>
+            <button disabled={disabled} onClick={() => onManageBox(box.id)}>
+              <strong>{box.name}</strong>
+              <small>
+                {box.items.length} files ·{" "}
+                {estimates[box.id]
+                  ? estimates[box.id].unavailable
+                    ? `${estimates[box.id].unavailable} unavailable · ~${estimates[box.id].tokens.toLocaleString()} readable source tokens`
+                    : `~${estimates[box.id].tokens.toLocaleString()} est. tokens`
+                  : "Estimating tokens…"}
+              </small>
+              {estimates[box.id]?.error && (
+                <small
+                  className="context-estimate-error"
+                  style={{ color: "#efad95" }}
+                >
+                  {estimates[box.id].error}
+                </small>
+              )}
+            </button>
+          </div>
+        ))}
+      </div>
       <div className="pd-section-title context-selected-heading">
         SELECTED CONTEXT
       </div>
@@ -264,55 +310,6 @@ export function ContextBoxManager({
         usage; CSV sends computed profiles. Creating a box does not start a
         chat.
       </p>
-      <div className="pd-section-title context-saved-heading">
-        SAVED CONTEXT BOXES
-      </div>
-      {!!chat.contextBoxes.length && (
-        <button
-          className="station-secondary"
-          disabled={chat.contextBoxes.some((box) => !estimates[box.id])}
-          onClick={() => setEstimateRevision((value) => value + 1)}
-        >
-          Refresh token estimates
-        </button>
-      )}
-      {!chat.contextBoxes.length && (
-        <p className="context-summary">Your saved boxes will appear here.</p>
-      )}
-      <div className="context-manager-boxes">
-        {chat.contextBoxes.map((box) => (
-          <div className="context-manager-box-row" key={box.id}>
-            <button
-              className={`station-filter${activeBoxIds.has(box.id) ? " on" : ""}`}
-              aria-label={`Filter ${box.name} on Planet`}
-              aria-pressed={activeBoxIds.has(box.id)}
-              onClick={() => onToggleFilter(box.id)}
-              title="Toggle this box in the Station ANY/ALL filter"
-            >
-              {activeBoxIds.has(box.id) ? "●" : "○"}
-            </button>
-            <button disabled={disabled} onClick={() => onManageBox(box.id)}>
-              <strong>{box.name}</strong>
-              <small>
-                {box.items.length} files ·{" "}
-                {estimates[box.id]
-                  ? estimates[box.id].unavailable
-                    ? `${estimates[box.id].unavailable} unavailable · ~${estimates[box.id].tokens.toLocaleString()} readable source tokens`
-                    : `~${estimates[box.id].tokens.toLocaleString()} est. tokens`
-                  : "Estimating tokens…"}
-              </small>
-              {estimates[box.id]?.error && (
-                <small
-                  className="context-estimate-error"
-                  style={{ color: "#efad95" }}
-                >
-                  {estimates[box.id].error}
-                </small>
-              )}
-            </button>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }

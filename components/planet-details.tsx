@@ -20,7 +20,7 @@ export function PlanetDetails({
         <p className="pd-empty">
           Vault offline.
           <br />
-          Open QTerminal and choose a knowledge vault.
+          Open Orbistry and choose a Universe.
         </p>
       </div>
     );
@@ -112,7 +112,7 @@ export function PlanetDetails({
           {isAsteroid ? (
             <p className="pd-empty">
               This file is mapped for structure only and cannot be opened in
-              QTerminal.
+              Orbistry.
             </p>
           ) : (
             <button

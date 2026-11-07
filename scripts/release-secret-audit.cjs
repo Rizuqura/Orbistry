@@ -37,6 +37,24 @@ const untracked = execFileSync("git", [
 for (const file of untracked)
   if (fs.statSync(file).isFile())
     inspect(fs.readFileSync(file), { scope: "new-source-file", path: file });
+// Inspect the current static release artifact too; source-only scans cannot
+// detect a secret injected while bundling. Report locations, never values.
+let exportedFilesScanned = 0;
+function inspectExport(directory) {
+  if (!fs.existsSync(directory)) return;
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) inspectExport(file);
+    else if (entry.isFile()) {
+      exportedFilesScanned++;
+      inspect(fs.readFileSync(file), {
+        scope: "static-release",
+        path: path.relative(process.cwd(), file),
+      });
+    }
+  }
+}
+inspectExport(path.resolve("out"));
 const objects = execFileSync("git", ["rev-list", "--objects", "--all"], {
   encoding: "utf8",
 })
@@ -68,6 +86,7 @@ while (offset < batch.length) {
 const report = {
   trackedFilesScanned: tracked.length,
   untrackedFilesScanned: untracked.length,
+  exportedFilesScanned,
   historicalBlobsScanned: blobs,
   findings,
   limitations:

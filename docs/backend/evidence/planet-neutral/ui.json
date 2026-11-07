@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "visual": {
+    "background": "rgb(14, 23, 29)",
+    "root": {
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "rgb(255, 255, 255)",
+      "strokeWidth": "1.2px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "folder": {
+      "fill": "none",
+      "stroke": "rgb(237, 240, 242)",
+      "strokeWidth": "1.2px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "csv": {
+      "fill": "none",
+      "stroke": "rgb(143, 210, 225)",
+      "strokeWidth": "1.2px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "pdf": {
+      "fill": "none",
+      "stroke": "rgb(230, 155, 152)",
+      "strokeWidth": "1.2px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "md": {
+      "fill": "none",
+      "stroke": "rgb(207, 211, 214)",
+      "strokeWidth": "1.2px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "connection": {
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "rgba(224, 233, 238, 0.42)",
+      "strokeWidth": "0.4px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "orbit": {
+      "fill": "none",
+      "stroke": "rgba(171, 195, 210, 0.28)",
+      "strokeWidth": "0.45px",
+      "vectorEffect": "non-scaling-stroke"
+    },
+    "orbits": 3,
+    "shadow": "none",
+    "edgesWidth": 840,
+    "canvasWidth": 840,
+    "anchorWidth": 46.13348388671875,
+    "guideOpen": false
+  },
+  "labelChecks": [
+    {
+      "lineOpacity": 0.626118,
+      "count": 6,
+      "fontSizes": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "heights": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "overlaps": 0
+    },
+    {
+      "lineOpacity": 0.652632,
+      "count": 6,
+      "fontSizes": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "heights": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "overlaps": 0
+    },
+    {
+      "lineOpacity": 0.682327,
+      "count": 6,
+      "fontSizes": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "heights": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "overlaps": 0
+    },
+    {
+      "lineOpacity": 0.652632,
+      "count": 6,
+      "fontSizes": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "heights": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "overlaps": 0
+    }
+  ],
+  "checks": [
+    "solid white active parent",
+    "hollow child folders and files",
+    "CSV/PDF/Markdown colors preserved",
+    "complete circular orbit guides",
+    "thin constant-screen-width connections",
+    "focus changes the filled parent",
+    "neutral style in both GPU modes",
+    "viewport-bounded SVG and no glow",
+    "fixed screen-size labels without overlaps across zoom levels",
+    "opt-in animation moves nodes without changing the camera",
+    "turn off freezes motion and preferences survive reload",
+    "animation pauses on hover and respects reduced motion"
+  ]
+}

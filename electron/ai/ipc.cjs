@@ -11,7 +11,9 @@ const {
 const { checkRemoteModel } = require("./model-check.cjs");
 const { ModelPullService } = require("./model-pull.cjs");
 const { OpenRouterUsageService } = require("./openrouter-usage.cjs");
+const { ModelAccess, providedPreview } = require("./model-access.cjs");
 const API_VERSION = 18;
+const { createRequestLogger } = require("./request-logger.cjs");
 
 function registerAiIpc({
   ipcMain,
@@ -23,7 +25,9 @@ function registerAiIpc({
   agents,
   chooseAvatar,
   chooseBackdrop,
+  engines,
   researchKnowledge,
+  requestLoggerFactory = createRequestLogger,
 }) {
   const compatible = new Set();
   const frontOffice =
@@ -38,6 +42,7 @@ function registerAiIpc({
   const checks = new Map();
   const clients = new Map();
   const usage = new OpenRouterUsageService({ credentials, registry });
+  const modelAccess = new ModelAccess(credentials);
   const usageChanged = () => {
     for (const sender of clients.values())
       if (!sender.isDestroyed?.()) sender.send?.("ai:usageChanged");
@@ -62,6 +67,7 @@ function registerAiIpc({
           compatible.delete(event.sender.id);
           pulls.cancelOwner(event.sender.id);
           void service.cancel?.(event.sender.id);
+          engines?.cancel(event.sender.id);
         });
       }
     } else {
@@ -72,20 +78,40 @@ function registerAiIpc({
   });
   const handle = (name, operation) =>
     ipcMain.handle(`ai:${name}`, async (event, input) => {
+      const requestLogger = ["chat", "frontOfficeChat"].includes(name)
+        ? requestLoggerFactory({
+            requestId: input?.requestId,
+            mode: name === "chat" ? "agent" : "experiment",
+          })
+        : null;
+      requestLogger?.step("REQUEST_RECEIVED", {
+        messageCharacters:
+          typeof input?.userMessage === "string"
+            ? input.userMessage.length
+            : null,
+      });
       try {
         if (!compatible.has(event.sender.id))
           throw new ModelRuntimeError(
             "MODEL_RESTART_REQUIRED",
-            "Restart QTerminal to load the matching desktop backend.",
+            "Restart Orbistry to load the matching desktop backend.",
           );
-        return { ok: true, value: await operation(event, input) };
+        const value = await operation(event, input, requestLogger);
+        requestLogger?.step("RESULT_RETURNED");
+        requestLogger?.finish();
+        return { ok: true, value };
       } catch (error) {
+        requestLogger?.fail(error);
+        requestLogger?.finish(
+          error?.code === "MODEL_CANCELLED" ? "cancelled" : "error",
+          error,
+        );
         if (
           !(error instanceof ModelRuntimeError) &&
           error?.name !== "BrainScopeError"
         )
           console.error(
-            "QTerminal runtime operation failed.",
+            "Orbistry runtime operation failed.",
             error?.name ?? "Error",
           );
         return { ok: false, error: serializeModelError(error) };
@@ -96,11 +122,32 @@ function registerAiIpc({
     if (!frontOffice)
       throw new ModelRuntimeError(
         "MODEL_RESTART_REQUIRED",
-        "Restart QTerminal to load the experimental backend.",
+        "Restart Orbistry to load the experimental backend.",
       );
     return frontOffice;
   };
   handle("frontOfficeState", (_, task) => front().state(task ?? "general"));
+  handle(
+    "modelFavorites",
+    async () => (await front().catalog.read()).favorites,
+  );
+  handle("providedModels", async () =>
+    providedPreview(await front().catalog.state(), (id) => ({
+      failures:
+        front().reliability.state(id).failures ||
+        Number(modelAccess.failedCheck(id)),
+    })),
+  );
+  handle("connectCredential", (_, input) =>
+    service.exclusive(async () => {
+      const result = await modelAccess.connect(input);
+      if (result.saved) {
+        usage.invalidate();
+        usageChanged();
+      }
+      return result;
+    }),
+  );
   handle("frontOfficeConfig", (_, input) => front().saveConfig(input));
   handle("frontOfficeRefresh", (_, input) => front().refresh(input));
   handle("frontOfficeOverride", (_, input) =>
@@ -120,11 +167,18 @@ function registerAiIpc({
   handle("frontOfficeExport", (_, format) =>
     front().export(getVault(), parse(z.enum(["json", "csv"]), format)),
   );
-  handle("frontOfficeChat", (event, input) =>
-    front().run(getVault(), event.sender.id, input, (value) => {
-      if (!event.sender.isDestroyed())
+  handle("frontOfficeChat", (event, input, requestLogger) =>
+    front().run(
+      getVault(),
+      event.sender.id,
+      input,
+      (value) => {
+        if (event.sender.isDestroyed()) return false;
         event.sender.send("ai:frontOfficeEvent", value);
-    }),
+        return true;
+      },
+      requestLogger,
+    ),
   );
   handle("pullModel", (event, model) => {
     service.assertIdle();
@@ -152,6 +206,19 @@ function registerAiIpc({
   );
   handle("models", () => registry.state());
   handle("getAgent", (_, id) => agents.get(id));
+  if (engines) {
+    handle("engineState", () => engines.state());
+    handle("chooseEngineFolder", (event) => engines.configure(event.sender.id));
+    handle("probeEngine", (event) => engines.probe(event.sender.id));
+    handle("executeEngine", (event, input) =>
+      engines.execute(event.sender.id, input),
+    );
+    handle("cancelEngine", (event) => {
+      engines.cancel(event.sender.id);
+      return true;
+    });
+    handle("openEngineReport", (_, input) => engines.open(input));
+  }
   handle("listAgents", () => agents.list());
   handle("createAgent", (_, input) =>
     service.exclusive(() => agents.create(input)),
@@ -209,12 +276,14 @@ function registerAiIpc({
       checks.set(event.sender.id, abort);
       event.sender.once?.("destroyed", abort);
       try {
-        return await checkRemoteModel(
+        const result = await checkRemoteModel(
           registry.providerFor(providerId),
           providerId,
           model,
           controller.signal,
         );
+        modelAccess.recordCheck(result);
+        return result;
       } finally {
         checks.delete(event.sender.id);
         event.sender.removeListener?.("destroyed", abort);
@@ -230,6 +299,7 @@ function registerAiIpc({
   handle("saveCredential", (_, input) =>
     service.exclusive(async () => {
       const value = await credentials.save(parseCredential(input));
+      modelAccess.clearChecks(input.providerId);
       usage.invalidate();
       usageChanged();
       return value;
@@ -238,6 +308,7 @@ function registerAiIpc({
   handle("removeCredential", (_, input) =>
     service.exclusive(async () => {
       const value = await credentials.remove(parse(credentialProvider, input));
+      modelAccess.clearChecks(input.providerId);
       usage.invalidate();
       usageChanged();
       return value;
@@ -279,7 +350,7 @@ function registerAiIpc({
   handle("resumeConversation", (_, id) => service.resume(getVault(), id));
   handle("refreshSource", () => service.refreshSource(getVault()));
   handle("cancel", (event, id) => service.cancel(event.sender.id, id));
-  handle("chat", (event, input) =>
+  handle("chat", (event, input, requestLogger) =>
     pulls.list().some((p) => p.phase === "model-pulling")
       ? Promise.reject(
           new ModelRuntimeError(
@@ -287,9 +358,17 @@ function registerAiIpc({
             "A model is downloading. Finish or cancel the download first.",
           ),
         )
-      : service.run(getVault(), event.sender.id, input, (value) => {
-          if (!event.sender.isDestroyed()) event.sender.send("ai:event", value);
-        }),
+      : service.run(
+          getVault(),
+          event.sender.id,
+          input,
+          (value) => {
+            if (event.sender.isDestroyed()) return false;
+            event.sender.send("ai:event", value);
+            return true;
+          },
+          requestLogger,
+        ),
   );
 }
 

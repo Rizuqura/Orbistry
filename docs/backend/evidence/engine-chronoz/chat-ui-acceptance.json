@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "transport": "real local bundled Python; provider network mocked",
+  "chatToolTransport": "synthetic native Ollama function call",
+  "chatAttachmentPersisted": true,
+  "researchStatus": "PARTIAL",
+  "month": "2026-10",
+  "sha256": "dd85790de3ba02ae2569a7611164f58f748e3ba6a46287754a015d81d733b2cd",
+  "bytes": 4552137,
+  "opening": "Electron shell.openPath intercepted; verified managed-copy path asserted",
+  "checks": [
+    "Engine palette drag/drop",
+    "native folder picker and real status probe",
+    "keyboard connector",
+    "draft/apply isolation",
+    "real October PARTIAL report and SHA-256",
+    "per-agent denial",
+    "restart persistence",
+    "disconnect validation and removal"
+  ]
+}

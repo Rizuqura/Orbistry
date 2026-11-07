@@ -1,5 +1,6 @@
 const path = require("node:path");
 const fs = require("node:fs/promises");
+const { existsSync } = require("node:fs");
 const { readJson, writeJson } = require("./ai/json-store.cjs");
 const { z, parse } = require("./ai/schemas.cjs");
 const schema = z
@@ -17,7 +18,11 @@ async function initializeVault(directory, documents, override) {
     null,
   );
   if (saved) return saved.vaultPath;
-  const vault = path.join(documents, "QTerminal Vault");
+  // Preserve an existing default vault across the Orbistry rename.
+  const legacyVault = path.join(documents, "QTerminal Vault");
+  const vault = existsSync(legacyVault)
+    ? legacyVault
+    : path.join(documents, "Universe");
   await fs.mkdir(vault, { recursive: true });
   return vault;
 }

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import type {
   AiBridge,
+  ProviderConnection,
   AgentConfig,
   AgentConstructionConfig,
   ConstructionFileBinding,
@@ -318,7 +319,11 @@ export function useChatRuntime({
       }
     } catch {}
     if (!conversation) return;
-    if (!conversation.contextBoxId && !conversation.contextFile) {
+    if (
+      !conversation.engineOnly &&
+      !conversation.contextBoxId &&
+      !conversation.contextFile
+    ) {
       setContextError(
         "Legacy chat is read-only. Create a bound chat with a Context Box.",
       );
@@ -416,7 +421,10 @@ export function useChatRuntime({
     [],
   );
   const attached = Boolean(
-    context && (conversation?.contextBoxId || conversation?.contextFile),
+    context &&
+    (conversation?.engineOnly ||
+      conversation?.contextBoxId ||
+      conversation?.contextFile),
   );
   const run = useCallback(
     async (text: string, retryOf?: string) => {
@@ -571,13 +579,20 @@ export function useChatRuntime({
     creationId: string,
     includeAgentKnowledge = false,
     contextFile?: ConstructionFileBinding,
+    engineOnly = false,
   ) =>
     operate(async (client, current) => {
       const value = await client.createConversation({
         agentId: agentRef.current,
-        ...(contextFile ? { contextFile } : { contextBoxId }),
+        ...(engineOnly
+          ? { engineOnly: true }
+          : contextFile
+            ? { contextFile }
+            : { contextBoxId }),
         creationId,
-        ...(includeAgentKnowledge ? { includeAgentKnowledge } : {}),
+        ...(!engineOnly && includeAgentKnowledge
+          ? { includeAgentKnowledge }
+          : {}),
       });
       if (!current()) return;
       setContext(value.contextIdentity);
@@ -734,7 +749,7 @@ export function useChatRuntime({
     const message = conversation.messages.find((item) => item.id === messageId);
     void operate(async (client, current) => {
       if (!client.deleteMessage)
-        throw new Error("Restart QTerminal to enable message deletion.");
+        throw new Error("Restart Orbistry to enable message deletion.");
       const value = await client.deleteMessage({
         conversationId: id,
         messageId,
@@ -928,15 +943,6 @@ export function useChatRuntime({
       if (!current()) return;
       setRegistry(value);
       dispatch({ type: "reset", state: "READY" });
-      if (providerId !== "openrouter")
-        await scanModels(
-          client,
-          current,
-          providerId,
-          value.models
-            .filter((m) => m.providerId === providerId)
-            .map((m) => m.modelId),
-        );
     });
   const removeCredential = (
     providerId: "gemini" | "nvidia" | "openrouter" = "gemini",
@@ -953,40 +959,32 @@ export function useChatRuntime({
         dispatch({ type: "reset", state: "READY" });
       }
     });
-  useEffect(() => {
-    // Check stored credentials once per mounted workspace, after startup context
-    // preparation. A stopped/limited scan is resumed only by an explicit recheck.
-    if (
-      !connected ||
-      working ||
-      mutation.current ||
-      request.current ||
-      !["READY", "CONTEXT_NEEDED"].includes(runtime.state) ||
-      !registry
-    )
-      return;
-    const provider = registry.providers.find(
-      (p) =>
-        p.id !== "ollama" &&
-        p.id !== "openrouter" &&
-        p.configured &&
-        p.online &&
-        !checkedLoadedKeys.current.has(p.id),
-    );
-    if (!provider || provider.id === "ollama") return;
-    const providerId = provider.id;
-    checkedLoadedKeys.current.add(providerId);
-    void operate((client, current) =>
-      scanModels(
-        client,
-        current,
-        providerId,
-        registry.models
-          .filter((m) => m.providerId === providerId)
-          .map((m) => m.modelId),
-      ),
-    );
-  }, [connected, working, runtime.state, registry]);
+  // Inference checks are explicit actions: startup and key saving must not
+  // consume provider quota just to determine whether a catalog is reachable.
+  const connectCredential = async (
+    input: Parameters<AiBridge["connectCredential"]>[0],
+  ) => {
+    let result: ProviderConnection | null = null;
+    await operate(async (client, current) => {
+      const connection = await client.connectCredential(input);
+      result = connection;
+      if (!connection.saved || !connection.providerId || !current()) return;
+      clearChecks(connection.providerId);
+      checkedLoadedKeys.current.add(connection.providerId);
+      try {
+        const value = await client.models();
+        if (current()) setRegistry(value);
+      } catch {
+        // The key is already committed. A later catalog failure must not make
+        // the connection look unsaved or leave the secret in the input.
+        result = {
+          ...connection,
+          message: `${connection.message} Refresh models to retry catalog discovery.`,
+        };
+      }
+    }, false);
+    return result as ProviderConnection | null;
+  };
 
   const effectiveSettings = registry
     ? {
@@ -1019,7 +1017,7 @@ export function useChatRuntime({
     createAgent: (name: string, creationId: string) =>
       operate(async (client, current) => {
         if (!client.createAgent)
-          throw new Error("Restart QTerminal to add agents.");
+          throw new Error("Restart Orbistry to add agents.");
         const profile = await client.createAgent({ name, creationId });
         if (!current()) return;
         agentDrafts.current.set(agentRef.current, draft);
@@ -1064,20 +1062,20 @@ export function useChatRuntime({
     previewConstructionBox: async (boxId: string) => {
       if (!bridge.current?.previewConstructionBox)
         throw new Error(
-          "Restart QTerminal to use Context Boxes in agent construction.",
+          "Restart Orbistry to use Context Boxes in agent construction.",
         );
       await interruptChecks();
       return bridge.current.previewConstructionBox({ boxId });
     },
     listConstructionFiles: async () => {
       if (!bridge.current?.listConstructionFiles)
-        throw new Error("Restart QTerminal to select node files.");
+        throw new Error("Restart Orbistry to select node files.");
       await interruptChecks();
       return bridge.current.listConstructionFiles();
     },
     previewConstructionFile: async (relativePath: string) => {
       if (!bridge.current?.previewConstructionFile)
-        throw new Error("Restart QTerminal to review node files.");
+        throw new Error("Restart Orbistry to review node files.");
       await interruptChecks();
       return bridge.current.previewConstructionFile({ relativePath });
     },
@@ -1094,7 +1092,7 @@ export function useChatRuntime({
       },
     ) => {
       if (!bridge.current?.saveAgentConstruction)
-        throw new Error("Restart QTerminal to load Agent Construction.");
+        throw new Error("Restart Orbistry to load Agent Construction.");
       const owner = agentRef.current;
       const version = session.current;
       await interruptChecks();
@@ -1148,9 +1146,7 @@ export function useChatRuntime({
     startup,
     proposeKnowledge: async (runId: string, extraction: unknown) => {
       if (!bridge.current?.proposeKnowledge)
-        throw new Error(
-          "Restart QTerminal to load knowledge proposal support.",
-        );
+        throw new Error("Restart Orbistry to load knowledge proposal support.");
       return bridge.current.proposeKnowledge({ runId, extraction });
     },
     retrieveKnowledge: async (query: {
@@ -1161,7 +1157,7 @@ export function useChatRuntime({
     }) => {
       if (!bridge.current?.retrieveKnowledge || !selected.current)
         throw new Error(
-          "Select a bound Wonnyy chat and restart QTerminal if it was updated.",
+          "Select a bound Wonnyy chat and restart Orbistry if it was updated.",
         );
       return bridge.current.retrieveKnowledge({
         conversationId: selected.current.id,
@@ -1198,7 +1194,7 @@ export function useChatRuntime({
     chooseAgentBackdrop: async (kind: "banner" | "wallpaper") => {
       if (!bridge.current?.chooseAgentBackdrop)
         throw new Error(
-          "Restart QTerminal to load banner and wallpaper settings.",
+          "Restart Orbistry to load banner and wallpaper settings.",
         );
       return bridge.current.chooseAgentBackdrop(kind);
     },
@@ -1246,6 +1242,9 @@ export function useChatRuntime({
     editContextBox,
     switchContextBox,
     creatingChat,
+    hasEngine: !!agent?.construction?.active?.nodes.some(
+      (n) => n.kind === "Engine" && n.config.engineId === "chronoz",
+    ),
     createChat,
     saveContextBox,
     renameContextBox,
@@ -1270,6 +1269,7 @@ export function useChatRuntime({
     refreshModels,
     saveSettings,
     saveCredential,
+    connectCredential,
     modelChecks,
     modelScan,
     checkModel,

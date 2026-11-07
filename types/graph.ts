@@ -69,10 +69,17 @@ export interface NodeLayout {
 }
 
 export interface LayoutResult {
+  orbits?: PlanetOrbit[];
   positions: Map<string, NodeLayout>;
   width: number;
   height: number;
   minX: number;
   minY: number;
   contextHubs?: Map<string, ContextHubLayout>;
+}
+export interface PlanetOrbit {
+  parentId: string;
+  x: number;
+  y: number;
+  radius: number;
 }

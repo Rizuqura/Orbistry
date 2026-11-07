@@ -1,4 +1,4 @@
-/** Diagnostic orchestrator: launch actual QTerminal with real fetch and existing encrypted keys,
+/** Diagnostic orchestrator: launch actual Orbistry with real fetch and existing encrypted keys,
  * confined to a disposable profile/vault. Only fixed, non-private test output is persisted. */
 const { _electron: electron } = require("playwright");
 const fs = require("node:fs/promises"),

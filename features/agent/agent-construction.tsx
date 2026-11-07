@@ -8,6 +8,7 @@ import type {
 } from "../../types/ai";
 import type { ChatController } from "../chat/use-chat-runtime";
 import { ConstructionSourcePicker } from "./construction-source-picker";
+import { EngineInspector } from "./engine-inspector";
 import { AgentAvatar } from "./agent-avatar";
 import "./agent-construction.css";
 import "./agent-workbench.css";
@@ -20,6 +21,7 @@ const kinds: AgentNodeKind[] = [
   "Workflow",
   "Knowledge",
   "Output",
+  "Engine",
 ];
 const marks: Record<AgentNodeKind, string> = {
   Context: "▤",
@@ -29,6 +31,7 @@ const marks: Record<AgentNodeKind, string> = {
   Workflow: "⇢",
   Knowledge: "◇",
   Output: "▧",
+  Engine: "⚙",
 };
 const explanations: Record<AgentNodeKind, string> = {
   Context:
@@ -44,6 +47,8 @@ const explanations: Record<AgentNodeKind, string> = {
     "Attach a single file or Context Box to offer its reviewed research sources when creating a new chat. Existing chats are not silently expanded.",
   Output:
     "Attach a full template file or Context Box of output examples. Format preferences cannot override evidence or citation requirements.",
+  Engine:
+    "Bind the registered report engine to this agent. A connection represents an available tool, not sequential execution.",
 };
 export function AgentConstruction({
   chat,
@@ -120,7 +125,7 @@ export function AgentConstruction({
     onBusyChange(busy);
   }, [busy, onBusyChange]);
   if (profile && !profile.construction)
-    return <p role="alert">Restart QTerminal to load Agent Construction.</p>;
+    return <p role="alert">Restart Orbistry to load Agent Construction.</p>;
   if (!profile || !config)
     return <p role="status">Loading agent construction...</p>;
   const construction = profile.construction;
@@ -196,8 +201,14 @@ export function AgentConstruction({
             ? { mode: "preview-only" as const }
             : kind === "Output"
               ? { mode: "text" as const }
-              : {};
-    const id = kind.toLowerCase();
+              : kind === "Engine"
+                ? {
+                    engineId: "chronoz" as const,
+                    instanceId: crypto.randomUUID(),
+                  }
+                : {};
+    const id =
+      kind === "Engine" ? "engine-" + crypto.randomUUID() : kind.toLowerCase();
     const freePosition = [368, 0, 520, 160]
       .flatMap((y) => [64, 352, 640, 880].map((x) => ({ x, y })))
       .find((candidate) =>
@@ -717,20 +728,24 @@ export function AgentConstruction({
                                   ? item.config.skillId
                                     ? "Configured"
                                     : "Not configured"
-                                  : (item.config.mode ?? "Preferences")}
+                                  : item.kind === "Engine"
+                                    ? "CHronoZ · get_report"
+                                    : (item.config.mode ?? "Preferences")}
                         </small>
                         <span className="studio-node-caption">
-                          {item.kind === "LLM"
-                            ? "PROVIDER / MODEL"
-                            : item.kind === "Output"
-                              ? "STREAMED / TEXT"
-                              : item.config.contextBox ||
-                                  item.config.contextFile
-                                ? "SOURCE / ATTACHED"
-                                : "NODE / CONFIGURE"}
+                          {item.kind === "Engine"
+                            ? "AVAILABLE TOOL"
+                            : item.kind === "LLM"
+                              ? "PROVIDER / MODEL"
+                              : item.kind === "Output"
+                                ? "STREAMED / TEXT"
+                                : item.config.contextBox ||
+                                    item.config.contextFile
+                                  ? "SOURCE / ATTACHED"
+                                  : "NODE / CONFIGURE"}
                         </span>
                       </div>
-                      {item.kind !== "Context" && (
+                      {!["Context", "Engine"].includes(item.kind) && (
                         <button
                           className="studio-port studio-input"
                           aria-label={`Connect to ${item.kind}`}
@@ -816,7 +831,31 @@ export function AgentConstruction({
             {node ? (
               <>
                 <p>{explanations[node.kind]}</p>
-                {node.kind !== "LLM" && (
+                {node.kind === "Engine" && node.config.instanceId && (
+                  <EngineInspector
+                    key={profile.id + node.config.instanceId}
+                    agentId={profile.id}
+                    instanceId={node.config.instanceId}
+                    applied={
+                      !!construction.active?.nodes.some(
+                        (n) =>
+                          n.kind === "Engine" &&
+                          n.config.instanceId === node.config.instanceId &&
+                          construction.active?.edges.some(
+                            (e) =>
+                              e.from === n.id &&
+                              construction.active?.nodes.some(
+                                (target) =>
+                                  target.id === e.to && target.kind === "LLM",
+                              ),
+                          ),
+                      )
+                    }
+                    blocked={blocked}
+                    onBusy={setBusy}
+                  />
+                )}
+                {!["LLM", "Engine"].includes(node.kind) && (
                   <ConstructionSourcePicker
                     key={node.id}
                     node={node}

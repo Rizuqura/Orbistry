@@ -249,7 +249,7 @@ async function main() {
       1,
     );
     const vaultSettings = page.getByRole("region", {
-      name: "Knowledge vault",
+      name: "Universe",
       exact: true,
     });
     await vaultSettings.getByText(root, { exact: true }).waitFor();
@@ -366,12 +366,12 @@ async function main() {
       await page.getByRole("textbox", { name: "Chat question" }).isHidden(),
     );
     await page.getByRole("button", { name: "Restore chat window" }).click();
-    await page.getByRole("textbox", { name: "Search vault" }).fill("abc");
+    await page.getByRole("textbox", { name: "Search Universe" }).fill("abc");
     assert.equal(
-      await page.getByRole("textbox", { name: "Search vault" }).inputValue(),
+      await page.getByRole("textbox", { name: "Search Universe" }).inputValue(),
       "abc",
     );
-    await page.getByRole("textbox", { name: "Search vault" }).fill("");
+    await page.getByRole("textbox", { name: "Search Universe" }).fill("");
     checks.push(
       "Floating drag, resize, minimize, restore and scoped keyboard focus",
     );
@@ -578,7 +578,7 @@ async function main() {
     await page.getByRole("button", { name: "Rescan vault" }).click();
     await application.evaluate(() => globalThis.vaultSmokeGate.started);
     await page
-      .getByRole("button", { name: "CHANGE VAULT", exact: true })
+      .getByRole("button", { name: "Change Universe", exact: true })
       .first()
       .click();
     await application.evaluate(() => globalThis.vaultSmokeGate.selected);

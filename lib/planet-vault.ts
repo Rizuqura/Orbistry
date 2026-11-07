@@ -1,8 +1,10 @@
 import type { VaultEntry, VaultSnapshot } from "../types/electron";
 import type { KnowledgeNode, PlanetEdge, PlanetGraph } from "../types/graph";
 
-// Build the Planet View graph from the real indexed vault (the /bank folder
-// structure). Falls back to the mock graph when the desktop bridge is absent.
+const INTERNAL_PLANET_FOLDERS = new Set([".engine", "agentcontext.memory"]);
+
+// Visual exclusions are separate from reviewed source permissions: agent memory
+// remains available to explicit construction bindings and Settings.
 export function buildGraphFromVault(
   snapshot: VaultSnapshot,
 ): PlanetGraph | null {
@@ -24,6 +26,7 @@ export function buildGraphFromVault(
     level: 0,
   };
   nodes.push(root);
+  const byId = new Map<string, KnowledgeNode>([[rootId, root]]);
 
   const walk = (
     entries: VaultEntry[],
@@ -31,6 +34,12 @@ export function buildGraphFromVault(
     level: number,
   ): void => {
     for (const entry of entries) {
+      if (
+        entry.relativePath
+          .split(/[\\/]/)
+          .some((part) => INTERNAL_PLANET_FOLDERS.has(part.toLowerCase()))
+      )
+        continue;
       const isDir = entry.kind === "folder";
       const fileType =
         entry.extension === ".csv"
@@ -57,7 +66,8 @@ export function buildGraphFromVault(
         level,
       };
       nodes.push(node);
-      (nodes.find((n) => n.id === parentId)?.children ?? []).push(node.id);
+      byId.set(node.id, node);
+      byId.get(parentId)?.children.push(node.id);
       edges.push({ source: parentId, target: node.id, kind: "hierarchy" });
       if (isDir && entry.children) walk(entry.children, node.id, level + 1);
     }
@@ -65,7 +75,6 @@ export function buildGraphFromVault(
 
   walk(snapshot.entries, rootId, 1);
 
-  const byId = new Map(nodes.map((node) => [node.id, node]));
   const directories = nodes.filter((node) => node.type === "directory").length;
   const files = nodes.length - directories;
 

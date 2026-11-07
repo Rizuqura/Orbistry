@@ -45,7 +45,7 @@ class OpenRouterProvider extends OpenAIChatProvider {
       modelSchema: modelId,
       consumeTrailingUsage: true,
       maxMessages: 64,
-      headers: { "X-OpenRouter-Title": "QTerminal" },
+      headers: { "X-OpenRouter-Title": "Orbistry" },
     });
   }
   async listModels({ signal } = {}) {

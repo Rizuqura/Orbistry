@@ -65,6 +65,10 @@ class ModelRegistry {
             : "online",
         recommended: status.id === "ollama" && model.name === "qwen3:4b",
         pricingClass: "unknown",
+        inputUsdPerMillion:
+          model.frontOfficeMetadata?.inputUsdPerMillion ?? null,
+        outputUsdPerMillion:
+          model.frontOfficeMetadata?.outputUsdPerMillion ?? null,
         capabilities: model.capabilities,
         contextLength: model.contextLength,
         outputLimit: model.outputLimit,

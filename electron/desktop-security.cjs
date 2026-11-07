@@ -23,7 +23,7 @@ function guardedIpc(ipcMain, getContents, entryUrl) {
         )
           throw new ModelRuntimeError(
             "MODEL_INVALID_REQUEST",
-            "This desktop operation is only available to the QTerminal main frame.",
+            "This desktop operation is only available to the Orbistry main frame.",
           );
         return handler(event, ...args);
       });

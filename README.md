@@ -1,4 +1,4 @@
-# QTerminal
+# Orbistry
 
 A local-first AI research workspace and agent environment.
 
@@ -6,11 +6,11 @@ A local-first AI research workspace and agent environment.
 
 [v1.0.1 release notes](big-context/release-1.0.1.md): provider compatibility, backend experiments and diagnostics. Token/credit savings remain unverified end-to-end; see the [comparison status](report/QTerminal_Token_Credit_Comparison_Status.md).
 
-This README covers using QTerminal and learning how its software works. Start with installation and the first research workflow, then follow the learning guide to trace inputs, processing, outputs and code.
+This README covers using Orbistry and learning how its software works. Start with installation and the first research workflow, then follow the learning guide to trace inputs, processing, outputs and code.
 
 ## Contents
 
-- [What QTerminal is](#what-qterminal-is) and [current capabilities](#current-capabilities)
+- [What Orbistry is](#what-orbistry-is) and [current capabilities](#current-capabilities)
 - [Installation](#installation) and [development commands](#development)
 - [First research workflow](#first-research-workflow)
 - [Edit Markdown in the file reader](#edit-markdown-in-the-file-reader)
@@ -24,11 +24,11 @@ This README covers using QTerminal and learning how its software works. Start wi
 - [Troubleshooting](#troubleshooting-while-learning)
 - [Self-study path](#suggested-self-study-path)
 
-## What QTerminal is
+## What Orbistry is
 
-QTerminal brings a user-owned file vault, Planet View, reviewed Context Boxes and configurable agents into a desktop workspace. Model access is optional: connect a local Ollama model or bring your own key for a supported external provider. There is no required QTerminal account, subscription, hosted database or cloud sync.
+Orbistry brings a user-owned file vault, Planet View, reviewed Context Boxes and configurable agents into a desktop workspace. Model access is optional: connect a local Ollama model or bring your own key for a supported external provider. There is no required Orbistry account, subscription, hosted database or cloud sync.
 
-Fresh installations start with **no agents, chats, Context Boxes, API keys or research files**. An empty `Documents/QTerminal Vault` folder is created. Choose another folder in Settings, or add your own files, then create an agent. Existing profiles and explicitly chosen vaults are preserved when upgrading.
+Fresh installations start with **no agents, chats, Context Boxes, API keys or research files**. An empty `Documents/Universe` folder is created. Choose another folder in Settings, or add your own files, then create an agent. Existing profiles and explicitly chosen vaults are preserved when upgrading.
 
 ## Current capabilities
 
@@ -40,10 +40,11 @@ Fresh installations start with **no agents, chats, Context Boxes, API keys or re
 - Markdown, CSV and PDF text reading; PNG/JPG/JPEG and scanned-PDF OCR on Windows with an installed OCR language.
 - Bounded local CSV inspection, filtering, grouping, aggregation, date trends and basic statistics. No arbitrary Python or user-code execution.
 - Ollama, Gemini, NVIDIA NIM and OpenRouter; manual context/output budgets and provider usage information where available.
+- [CHronoZ Engine node](docs/ENGINE_NODE_CHRONOZ_SETUP.md): bind a verified local portable bundle to an applied agent, then ask a tool-capable LLM for existing monthly PDFs in chat. Source-free Engine chats return verified PDF attachments; Construction also provides direct report controls.
 
 ## Installation
 
-Windows x64 is the currently validated release target. When a verified Victoria Beta release is available, use its `QTerminal-1.0.1-Victoria-Beta-win-x64.exe` installer. Source commits and tags do not automatically publish an installer. Unsigned beta installers may trigger Windows reputation warnings; verify the published SHA-256 before installing.
+Windows x64 is the currently validated release target. When a verified Victoria Beta release is available, use its `Orbistry-1.0.1-Victoria-Beta-win-x64.exe` installer. Source commits and tags do not automatically publish an installer. Unsigned beta installers may trigger Windows reputation warnings; verify the published SHA-256 before installing.
 
 To build from source, use Node.js **22.18 or newer** and npm on Windows:
 
@@ -96,7 +97,7 @@ Enter keys in **Settings → provider → API key**. Keys are encrypted with Ele
 
 Research files remain in your chosen vault. `.wonnyy/` inside that vault stores local Stations, Context Boxes, chat history and immutable model-run records. The Electron profile stores settings, agents, managed images and encrypted credentials; Chromium stores UI preferences/caches there. The selected vault path persists in `vault-settings.json`. Upgrades can reuse historical QTerminal/Wonnyy profiles to preserve existing encrypted keys.
 
-With a remote provider, the request includes reviewed research/guidance text, questions and included history; CSV requests can include column profiles, samples and computed results. That provider's policies apply. Ollama communicates with a separately running loopback service. Model discovery/usage checks may contact configured providers. There is no mandatory QTerminal telemetry or cloud storage.
+With a remote provider, the request includes reviewed research/guidance text, questions and included history; CSV requests can include column profiles, samples and computed results. That provider's policies apply. Ollama communicates with a separately running loopback service. Model discovery/usage checks may contact configured providers. There is no mandatory Orbistry telemetry or cloud storage.
 
 Run records can retain questions, answers and analysis evidence after chat deletion. Source hashes identify historical versions, but complete source snapshots are not retained; source links open current files. Protect and back up both your vault and application profile. Do not use the app as a guarantee of confidentiality or factual accuracy.
 
@@ -147,7 +148,9 @@ There are three main inputs: **research evidence**, **configuration**, and **you
 | Model settings / key | Select provider/model and budgets; encrypt credentials | Saved configuration and authorized provider requests |
 | Question and included history | Combine with approved evidence and host instructions | Streaming Markdown answer, source links, status and diagnostics |
 
-Unsupported extensions are not research inputs. Scanning skips `.git`, `.wonnyy` and `node_modules`. Files must pass backend access and size checks; visibility in the explorer does not guarantee processing succeeds.
+Unsupported extensions are not research inputs. Scanning skips `.git`, `.wonnyy`, `.engine`, `node_modules` and recognized CHronoZ portable bundles. Engine runtimes are not research documents; copy a report PDF into a regular research folder to review it. Files must pass backend access and size checks; visibility in the explorer does not guarantee processing succeeds.
+
+Planet View also hides `agentContext.memory` and its contents, while retaining those files for explicit agent bindings and vault browsing. Add research by dragging/copying files from your device into an ordinary vault folder in File Explorer, then click **Rescan vault**.
 
 The main user-facing output is the chat answer. Persistent outputs also include Station metadata, Context Boxes, conversations and model-run records. Generated answers do not automatically rewrite your research documents. Image research receives OCR text rather than general visual chart/photo understanding.
 
@@ -267,7 +270,7 @@ Research knowledge consolidation is a specialized feature registered for the `wo
 | `scripts/` | Build preparation, export hardening, acceptance checks, audits and operator tools |
 | `docs/`, `big-context/` | Release evidence and design/history documents; check dates and scope |
 
-Some names still say **Wonnyy** or **Amadeus** because they are historical internal identifiers. The current product name is QTerminal. Follow actual imports from `app/page.tsx` and `app-shell.tsx` to identify active components rather than assuming similarly named files are interchangeable.
+Some names still say **Wonnyy** or **Amadeus** because they are historical internal identifiers. The current product name is Orbistry. Follow actual imports from `app/page.tsx` and `app-shell.tsx` to identify active components rather than assuming similarly named files are interchangeable.
 
 ## Software development workflow
 
@@ -388,7 +391,7 @@ Read the [audit](docs/architecture/pre-llm/00-existing-architecture-audit.md), [
 
 ## LLM Provider Infrastructure & Troubleshooting
 
-The normal agent path supports Ollama, Gemini, NVIDIA NIM and OpenRouter. The context-free experiment path supports OpenRouter/NVIDIA and an optional externally managed LiteLLM proxy. LiteLLM is an authenticated loopback HTTP transport; QTerminal does not install/start a Python sidecar. It is disabled by default and was not enabled in QT-RCA-001.
+The normal agent path supports Ollama, Gemini, NVIDIA NIM and OpenRouter. The context-free experiment path supports OpenRouter/NVIDIA and an optional externally managed LiteLLM proxy. LiteLLM is an authenticated loopback HTTP transport; Orbistry does not install/start a Python sidecar. It is disabled by default and was not enabled in QT-RCA-001.
 
 For basic diagnostic chat, launch Electron, select a vault, open **Settings → LLM Backend / Front Office**, refresh a configured provider, enable experiments, choose an exact manual model, save and create a **New experiment**. Send `Reply with exactly: QTERMINAL_OK`. This path needs no Context Box, agent personality, skills or augmented memory. Disable **Stream generated text** to isolate real non-streaming JSON completion. The normal Agent Chat retains its existing context requirements.
 

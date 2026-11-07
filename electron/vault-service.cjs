@@ -16,7 +16,40 @@ const { recognizeFile } = require("./local-ocr.cjs");
 const imageIndexes = new Map();
 const pdfOcrJobs = new Map();
 const TEXT_EXTENSIONS = new Set([".md", ".markdown", ".csv"]);
-const IGNORED_DIRECTORIES = new Set([".git", ".wonnyy", "node_modules"]);
+const IGNORED_DIRECTORIES = new Set([
+  ".git",
+  ".wonnyy",
+  ".engine",
+  "node_modules",
+]);
+async function isEngineBundle(directory) {
+  // Recognition only, never registration or execution. Avoid traversing an
+  // extracted Python distribution even when it is outside the reserved .engine.
+  try {
+    const file = path.join(directory, "package_manifest.json");
+    const stat = await fs.lstat(file);
+    if (!stat.isFile() || stat.isSymbolicLink() || stat.size > 8 * 1024 * 1024)
+      return false;
+    const manifest = JSON.parse(await fs.readFile(file, "utf8"));
+    if (
+      manifest.integration_version !== "1.0.0" ||
+      manifest.platform !== "Windows x64" ||
+      !Array.isArray(manifest.files)
+    )
+      return false;
+    for (const relative of [
+      "runtime/python.exe",
+      "src/chronoz/issue/trigger.py",
+      "chronoz-tool.json",
+    ]) {
+      const entry = await fs.lstat(path.join(directory, relative));
+      if (!entry.isFile() || entry.isSymbolicLink()) return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
 const MAX_PDF_BYTES = 100 * 1024 * 1024;
 const PDFJS_DIRECTORY = path.dirname(
   require.resolve("pdfjs-dist/package.json"),
@@ -124,7 +157,7 @@ async function recognizePdfPages(absolutePath, requested) {
       ({ createCanvas } = require("@napi-rs/canvas"));
     } catch {
       throw new Error(
-        "The local PDF image renderer is unavailable. Reinstall QTerminal with its PDF rendering dependencies.",
+        "The local PDF image renderer is unavailable. Reinstall Orbistry with its PDF rendering dependencies.",
       );
     }
     const os = require("node:os");
@@ -303,7 +336,22 @@ async function scanDirectory(
       entry.name,
     );
     if (entry.isDirectory()) {
-      if (IGNORED_DIRECTORIES.has(entry.name)) continue;
+      // Settings owns agent memory. Keep it on disk and directly readable by
+      // settings, but never publish it as vault knowledge or search results.
+      if (entry.name.toLowerCase() === "agentcontext.memory") continue;
+      if (
+        entry.name.toLowerCase() === ".engine" ||
+        (await isEngineBundle(absolutePath))
+      ) {
+        issues.push(
+          issue(
+            childRelativePath,
+            "External engine storage excluded from research indexing and Planet View. Register the bundle in Agent settings; copy a report PDF into a research folder to review it.",
+          ),
+        );
+        continue;
+      }
+      if (IGNORED_DIRECTORIES.has(entry.name.toLowerCase())) continue;
       const children = await scanDirectory(
         rootPath,
         absolutePath,
@@ -592,7 +640,7 @@ async function saveMarkdownFile(rootPath, input) {
       .split(path.sep);
     let current = path.resolve(rootPath);
     for (const part of parts) {
-      if ([".wonnyy", ".git", "node_modules"].includes(part.toLowerCase()))
+      if (IGNORED_DIRECTORIES.has(part.toLowerCase()))
         throw new Error("Application metadata cannot be edited.");
       current = path.join(current, part);
       if ((await fs.lstat(current)).isSymbolicLink())

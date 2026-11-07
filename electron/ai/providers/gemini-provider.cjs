@@ -96,7 +96,7 @@ class GeminiProvider {
     resource,
     init,
     operation,
-    { signal, timeoutMs = 15000, absoluteMs = timeoutMs } = {},
+    { signal, timeoutMs = 15000, absoluteMs = timeoutMs, onDiagnostic } = {},
   ) {
     const controller = new AbortController();
     const timeout = () =>
@@ -118,9 +118,12 @@ class GeminiProvider {
     try {
       signal?.throwIfAborted();
       touch();
+      onDiagnostic?.("CREDENTIAL_CHECKING");
       const apiKey = await this.credentials.get();
+      onDiagnostic?.("CREDENTIAL_READY");
       controller.signal.throwIfAborted();
       controller.signal.throwIfAborted();
+      onDiagnostic?.("HTTP_REQUEST_STARTED");
       response = await this.fetch(BASE_URL + resource, {
         ...init,
         redirect: "error",
@@ -130,6 +133,7 @@ class GeminiProvider {
           "x-goog-api-key": apiKey,
         },
       });
+      onDiagnostic?.("HTTP_RESPONSE_RECEIVED", { httpStatus: response.status });
       if (!response.ok) {
         if (response.status === 400) {
           let body = "";
@@ -335,6 +339,7 @@ class GeminiProvider {
           !response.headers.get("content-type")?.includes("text/event-stream")
         )
           throw invalid();
+        request.onDiagnostic?.("STREAM_STARTED", { wireStreaming: true });
         const reader = response.body.getReader();
         const decoder = new TextDecoder("utf-8", { fatal: true });
         let buffer = "",
@@ -344,7 +349,8 @@ class GeminiProvider {
           modelVersion = model,
           firstTokenMs = null,
           usage = {};
-        let totalBytes = 0;
+        let totalBytes = 0,
+          reasoningCharacters = 0;
         const event = () => {
           if (!data.length) return;
           let value;
@@ -366,8 +372,20 @@ class GeminiProvider {
           const candidate = value.candidates?.[0];
           if (candidate?.index && candidate.index !== 0) throw invalid();
           for (const part of candidate?.content?.parts ?? []) {
-            if (part.thought || !part.text) continue;
+            if (part.thought) {
+              if (!reasoningCharacters && part.text)
+                request.onDiagnostic?.("REASONING_STARTED", {
+                  reasoningCharacters: part.text.length,
+                });
+              reasoningCharacters += part.text?.length ?? 0;
+              continue;
+            }
+            if (!part.text) continue;
             if (finishReason) throw invalid();
+            if (!content)
+              request.onDiagnostic?.("FIRST_CONTENT_RECEIVED", {
+                contentCharacters: part.text.length,
+              });
             content += part.text;
             firstTokenMs ??= Math.round(performance.now() - started);
             touch(); // Thinking/keep-alive traffic does not extend answer inactivity.
@@ -406,6 +424,12 @@ class GeminiProvider {
             }
             if (finishReason) break;
           }
+          request.onDiagnostic?.("STREAM_COMPLETED", {
+            bytesReceived: totalBytes,
+            contentCharacters: content.length,
+            reasoningCharacters,
+            finishReason: finishReason ?? "unknown",
+          });
           if (!finishReason) throw invalid();
           if (finishReason !== "STOP") {
             if (finishReason === "MAX_TOKENS")
@@ -420,6 +444,9 @@ class GeminiProvider {
             );
           }
           if (!content.trim()) throw invalid();
+          request.onDiagnostic?.("RESPONSE_NORMALIZED", {
+            contentCharacters: content.length,
+          });
           return {
             id: request.id ?? randomUUID(),
             provider: "gemini",
@@ -448,6 +475,7 @@ class GeminiProvider {
         signal: request.signal,
         timeoutMs: settings.inactivityTimeoutMs,
         absoluteMs: settings.absoluteTimeoutMs,
+        onDiagnostic: request.onDiagnostic,
       },
     );
   }

@@ -63,4 +63,27 @@ function validateContextIdentity(value) {
     );
   return expected;
 }
-module.exports = { contextIdentity, validateContextIdentity };
+// Explicitly isolated source-free identity; never accepted by research bindings.
+function engineIdentity(agentId) {
+  return {
+    id: createHash("sha256")
+      .update(JSON.stringify({ mode: "engine-only", agentId }))
+      .digest("hex"),
+    mode: "active-context",
+    sources: [],
+  };
+}
+function validateEngineIdentity(value, agentId) {
+  if (JSON.stringify(value) !== JSON.stringify(engineIdentity(agentId)))
+    throw new ModelRuntimeError(
+      "MODEL_STORAGE_INVALID",
+      "Invalid source-free Engine chat identity.",
+    );
+  return value;
+}
+module.exports = {
+  contextIdentity,
+  validateContextIdentity,
+  engineIdentity,
+  validateEngineIdentity,
+};

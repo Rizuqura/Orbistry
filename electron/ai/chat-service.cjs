@@ -264,6 +264,14 @@ class ChatService {
   async switchBox(vault, input) {
     assertFields(input, ["conversationId", "contextBoxId"]);
     return this.exclusive(async () => {
+      if (
+        (await (await this.store(vault)).store.read(input.conversationId))
+          .engineOnly
+      )
+        throw new ModelRuntimeError(
+          "MODEL_INVALID_REQUEST",
+          "Start a new research chat to attach sources. Engine chats keep their source-free history.",
+        );
       const { root, store, boxes } = await this.store(vault),
         box = await boxes.get(input.contextBoxId);
       const identity = contextIdentity(
@@ -359,6 +367,11 @@ class ChatService {
   }
   async checkConversation(vault, id) {
     const { root, store } = await this.store(vault);
+    const candidate = await store.read(id);
+    if (candidate.engineOnly)
+      return require("./context-identity.cjs").engineIdentity(
+        candidate.agentId,
+      );
     return contextIdentity(
       await this.boundScope(root, await store.read(id), {
         ownerId: "check:" + randomUUID(),
@@ -374,8 +387,23 @@ class ChatService {
         "creationId",
         "agentId",
         "includeAgentKnowledge",
+        "engineOnly",
       ]);
-      if (Boolean(input.contextBoxId) === Boolean(input.contextFile))
+      if (
+        input.engineOnly !== undefined &&
+        typeof input.engineOnly !== "boolean"
+      )
+        throw new ModelRuntimeError(
+          "MODEL_INVALID_REQUEST",
+          "Invalid Engine chat mode.",
+        );
+      if (
+        input.engineOnly
+          ? input.contextBoxId ||
+            input.contextFile ||
+            input.includeAgentKnowledge
+          : Boolean(input.contextBoxId) === Boolean(input.contextFile)
+      )
         throw new ModelRuntimeError(
           "MODEL_INVALID_REQUEST",
           "Choose a Context Box or a reviewed single file for this chat.",
@@ -404,12 +432,18 @@ class ChatService {
       )
         throw new ModelRuntimeError("MODEL_INVALID_REQUEST", "Unknown agent.");
       const agent = this.agents ? await this.agents.get(agentId) : null;
+      if (input.engineOnly && !require("./engine-chat.cjs").engineNode(agent))
+        throw new ModelRuntimeError(
+          "MODEL_INVALID_REQUEST",
+          "Apply an Engine binding for this agent before creating an Engine chat.",
+        );
       validId(input.creationId);
       const existing = (await store.list()).find(
         (c) => c.creationId === input.creationId,
       );
       if (existing) {
         if (
+          Boolean(existing.engineOnly) !== Boolean(input.engineOnly) ||
           existing.contextBoxId !== input.contextBoxId ||
           existing.contextFile?.contextIdentity.id !==
             input.contextFile?.contextIdentity?.id ||
@@ -424,6 +458,16 @@ class ChatService {
         return existing;
       }
       const { readBinding } = require("./construction-context.cjs");
+      if (input.engineOnly)
+        return store.create(
+          require("./context-identity.cjs").engineIdentity(agentId),
+          null,
+          input.creationId,
+          agentId,
+          null,
+          null,
+          true,
+        );
       const contextFile = input.contextFile
         ? (await readBinding(this, root, input.contextFile)).binding
         : null;
@@ -539,7 +583,7 @@ class ChatService {
       this.knowledge.refreshChatSource((await this.store(vault)).root),
     );
   }
-  async run(vault, ownerId, input, sendEvent = () => {}) {
+  async run(vault, ownerId, input, sendEvent = () => {}, requestLogger) {
     assertFields(input, [
       "conversationId",
       "requestId",
@@ -552,12 +596,16 @@ class ChatService {
     validId(input.requestId);
     validId(input.conversationId);
     const question = validateUserMessage(input.userMessage);
+    requestLogger?.step("REQUEST_VALIDATED", {
+      messageCharacters: question.length,
+    });
     if (/^\/loop(?:\s|$)/i.test(question))
       throw new ModelRuntimeError(
         "MODEL_INVALID_REQUEST",
         "This repository has no /loop extraction workflow. Use a normal research question, then Create knowledge proposal on a completed Wonnyy answer. No loop was executed.",
       );
     this.assertIdle();
+    requestLogger?.step("ADMISSION_ACCEPTED");
     let finish;
     const active = {
       ownerId,
@@ -569,6 +617,11 @@ class ChatService {
     };
     this.active = active;
     const runId = randomUUID();
+    requestLogger?.update({ runId });
+    requestLogger?.step("FRONT_OFFICE_PATH", {
+      routingMode: "agent",
+      routerActive: false,
+    });
     const emit = (event) =>
       sendEvent({
         ...event,
@@ -584,6 +637,9 @@ class ChatService {
     try {
       ({ root, store } = await this.store(vault));
       let conversation = await store.read(input.conversationId);
+      requestLogger?.step("CONVERSATION_LOADED", {
+        historyMessages: conversation.messages.length,
+      });
       if (conversation.schemaVersion === 5)
         throw new ModelRuntimeError(
           "MODEL_INVALID_REQUEST",
@@ -596,6 +652,7 @@ class ChatService {
         (attempt) => attempt.requestId === input.requestId,
       );
       if (previous) {
+        requestLogger?.step("REQUEST_REPLAYED");
         const original = conversation.messages.find(
           (message) => message.id === previous.userMessageId,
         );
@@ -617,7 +674,7 @@ class ChatService {
               : await readModelRun(root, previous.runId),
         };
       }
-      if (agentConfig?.construction?.active)
+      if (!conversation.engineOnly && agentConfig?.construction?.active)
         agentConfig.configurationReferences =
           await require("./construction-context.cjs").constructionReferences(
             this,
@@ -626,17 +683,23 @@ class ChatService {
           );
       let identity;
       try {
-        identity = contextIdentity(
-          await this.boundScope(root, conversation, {
-            ownerId: "check:" + runId,
-          }),
-        );
+        requestLogger?.step("BINDING_VALIDATING");
+        identity = conversation.engineOnly
+          ? require("./context-identity.cjs").engineIdentity(
+              conversation.agentId,
+            )
+          : contextIdentity(
+              await this.boundScope(root, conversation, {
+                ownerId: "check:" + runId,
+              }),
+            );
       } catch (error) {
         if (error.code === "BRAIN_SOURCE_CHANGED")
           throw new ModelRuntimeError("MODEL_CONTEXT_INVALID", error.message);
         throw error;
       }
       const contextChanged = identity.id !== conversation.contextIdentity.id;
+      requestLogger?.step("BINDING_VALIDATED", { contextChanged });
       if (
         ![identity.id, conversation.contextIdentity.id].includes(
           input.expectedContextId,
@@ -646,9 +709,10 @@ class ChatService {
           "MODEL_CONTEXT_INVALID",
           "This chat's binding changed while the request was prepared. Recheck the attached box before sending.",
         );
-      const boxForTurn = conversation.contextFile
-        ? null
-        : await (await this.store(root)).boxes.get(conversation.contextBoxId);
+      const boxForTurn =
+        conversation.engineOnly || conversation.contextFile
+          ? null
+          : await (await this.store(root)).boxes.get(conversation.contextBoxId);
       const sharedSettings = await this.registry.read();
       const settings =
         agentConfig?.runtimeModel?.providerId &&
@@ -659,6 +723,16 @@ class ChatService {
               modelId: agentConfig.runtimeModel.modelId,
             }
           : sharedSettings;
+      requestLogger?.update({
+        provider: settings.providerId,
+        model: settings.modelId,
+      });
+      requestLogger?.step("MODEL_CHECKING", {
+        outputTokenCap: settings.outputLimit,
+        contextWindow: settings.contextWindow,
+        streaming: settings.streaming,
+        deadlineMs: settings.absoluteTimeoutMs,
+      });
       active.controller.signal.throwIfAborted();
       timer = setTimeout(
         () =>
@@ -679,6 +753,7 @@ class ChatService {
       await this.registry.validateSelection(settings, {
         signal: active.controller.signal,
       });
+      requestLogger?.step("MODEL_SELECTED");
       const history = [];
       for (const answer of conversation.messages.filter(
         (message) =>
@@ -784,6 +859,7 @@ class ChatService {
             : "Reading this chat's Context Box.",
         },
       });
+      let engineSelection = null;
       const orchestrator = createContextOrchestrator({
         prepareScope: (scope) =>
           this.boundScope(root, conversation, scope, true),
@@ -791,36 +867,75 @@ class ChatService {
         provider:
           this.registry.providerFor?.(settings.providerId) ?? this.provider,
         providerName: settings.providerId,
-        recordRun: (record) => createModelRun(root, record),
+        recordRun: (record) =>
+          createModelRun(
+            root,
+            engineSelection
+              ? {
+                  ...record,
+                  diagnostics: {
+                    ...record.diagnostics,
+                    engineToolSelection: engineSelection,
+                  },
+                }
+              : record,
+          ),
       });
-      await orchestrator.run(
-        {
-          model: settings.modelId,
-          userMessage: question,
-          history: history.slice(-24),
-          activeStationIds: input.activeStationIds,
-          matchMode: input.matchMode,
+      const engineHandled = await require("./engine-chat.cjs").runEngineTurn({
+        provider:
+          this.registry.providerFor?.(settings.providerId) ?? this.provider,
+        providerId: settings.providerId,
+        settings,
+        question,
+        history: history.slice(-24),
+        signal: active.controller.signal,
+        engines: this.engines,
+        agent: agentConfig,
+        ownerId,
+        conversationId: conversation.id,
+        runId,
+        requestId: input.requestId,
+        identity,
+        engineOnly: conversation.engineOnly,
+        recordRun: (record) => createModelRun(root, record),
+        onEvent: emit,
+        onDiagnostic: (step, details) => requestLogger?.step(step, details),
+        onSelection: (selection) => {
+          engineSelection = selection;
         },
-        {
-          runId,
-          requestId: input.requestId,
-          conversationId: conversation.id,
-          contextIdentity: identity,
-          contextChanged,
-          datasetHistory,
-          contextBox: boxForTurn,
-          contextFile: conversation.contextFile,
-          agentKnowledge: conversation.agentKnowledge,
-          agentConfig,
-          earlierExchangesDropped: Math.max(0, history.length / 2 - 12),
-          settings,
-          prepareModel: true,
-          signal: active.controller.signal,
-          onEvent: emit,
-        },
-      );
+      });
+      if (!engineHandled)
+        await orchestrator.run(
+          {
+            model: settings.modelId,
+            userMessage: question,
+            history: history.slice(-24),
+            activeStationIds: input.activeStationIds,
+            matchMode: input.matchMode,
+          },
+          {
+            runId,
+            requestId: input.requestId,
+            requestLogger,
+            conversationId: conversation.id,
+            contextIdentity: identity,
+            contextChanged,
+            datasetHistory,
+            contextBox: boxForTurn,
+            contextFile: conversation.contextFile,
+            agentKnowledge: conversation.agentKnowledge,
+            agentConfig,
+            earlierExchangesDropped: Math.max(0, history.length / 2 - 12),
+            settings,
+            prepareModel: true,
+            signal: active.controller.signal,
+            onEvent: emit,
+          },
+        );
       committed = true;
+      requestLogger?.step("RUN_SAVED");
       const run = await readModelRun(root, runId);
+      requestLogger?.step("CONVERSATION_SAVING");
       conversation = await store.update(conversation.id, (value) =>
         applyRun(
           value,
@@ -828,7 +943,9 @@ class ChatService {
           run,
         ),
       );
-      emit({
+      requestLogger?.step("CONVERSATION_SAVED");
+      requestLogger?.step("RENDERER_EVENT_DISPATCHING");
+      const delivered = emit({
         state: run.diagnostics?.contextInsufficient
           ? "CONTEXT_INSUFFICIENT"
           : run.diagnostics?.limitedContext
@@ -837,8 +954,14 @@ class ChatService {
         conversation,
         diagnostics: run.diagnostics,
       });
+      requestLogger?.step(
+        delivered === false ? "RENDERER_EVENT_SKIPPED" : "RENDERER_EVENT_SENT",
+        {},
+        delivered === false ? "skipped" : "ok",
+      );
       return { conversation, run };
     } catch (error) {
+      requestLogger?.fail(error);
       if (pending && !committed) {
         // Preserve pending references if recording failed: restart recovery owns them.
         try {

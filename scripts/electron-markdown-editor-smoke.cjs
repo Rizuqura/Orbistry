@@ -53,7 +53,7 @@ async function main() {
     });
     await open("note.md");
     await edit();
-    await editor.fill("# Saved\n\nEdited in QTerminal.\n");
+    await editor.fill("# Saved\n\nEdited in Orbistry.\n");
     const closePrompt = await app.evaluate(
       ({ dialog, BrowserWindow }) =>
         new Promise((resolve) => {
@@ -67,18 +67,12 @@ async function main() {
         }),
     );
     assert.match(closePrompt, /without saving Markdown/);
-    assert.equal(
-      await editor.inputValue(),
-      "# Saved\n\nEdited in QTerminal.\n",
-    );
+    assert.equal(await editor.inputValue(), "# Saved\n\nEdited in Orbistry.\n");
     await page
       .getByRole("button", { name: "PLANET VIEW", exact: true })
       .click();
     await page.getByRole("button", { name: "WORKSPACE", exact: true }).click();
-    assert.equal(
-      await editor.inputValue(),
-      "# Saved\n\nEdited in QTerminal.\n",
-    );
+    assert.equal(await editor.inputValue(), "# Saved\n\nEdited in Orbistry.\n");
     await close();
     await discard.getByRole("button", { name: "Cancel", exact: true }).click();
     assert.equal(await editor.count(), 1);
@@ -88,7 +82,7 @@ async function main() {
       .waitFor();
     assert.equal(
       await fs.readFile(path.join(vault, "note.md"), "utf8"),
-      "# Saved\r\n\r\nEdited in QTerminal.\r\n",
+      "# Saved\r\n\r\nEdited in Orbistry.\r\n",
     );
     await edit();
     await editor.fill("# Unsaved");

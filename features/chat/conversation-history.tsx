@@ -32,6 +32,7 @@ export function ConversationHistory({
   const availableFile =
     chat.researchDefaults.contextFile ?? chat.conversation?.contextFile;
   const [includeKnowledge, setIncludeKnowledge] = useState(false);
+  const [engineOnly, setEngineOnly] = useState(false);
   const [name, setName] = useState("");
   const [edit, setEdit] = useState<"chat" | "box" | "save" | null>(null);
   const [editId, setEditId] = useState("");
@@ -48,6 +49,7 @@ export function ConversationHistory({
           chat.conversation?.contextBoxId) ||
         "";
       setIncludeKnowledge(Boolean(chat.researchDefaults.knowledge));
+      setEngineOnly(false);
       setBoxId(preferred);
       setSelectedFile(preferred ? null : (availableFile ?? null));
       setBoxQuery("");
@@ -344,120 +346,143 @@ export function ConversationHistory({
         }}
       >
         <h2 id="agent-create-title">New {agentName} chat</h2>
-        <p>Confirm the research sources for this new {agentName} chat.</p>
-        {availableFile && (
-          <label className="agent-knowledge-choice">
-            <input
-              type="radio"
-              name="context-box"
-              checked={Boolean(selectedFile)}
-              onChange={() => {
-                setSelectedFile(availableFile);
-                setBoxId("");
-              }}
-            />
-            Agent Context file: {availableFile.relativePath} · ~
-            {availableFile.estimatedTokens.toLocaleString()} tokens. Uses the
-            reviewed full file.
-          </label>
-        )}
-        <input
-          aria-label="Search Context Boxes"
-          placeholder="Search Context Boxes"
-          value={boxQuery}
-          onChange={(e) => setBoxQuery(e.target.value)}
-        />
-        <div className="agent-box-list">
-          {chat.contextBoxes
-            .filter((b) =>
-              b.name.toLowerCase().includes(boxQuery.toLowerCase()),
-            )
-            .map((b) => (
-              <label key={b.id}>
-                <input
-                  type="radio"
-                  name="context-box"
-                  value={b.id}
-                  checked={boxId === b.id}
-                  onChange={() => {
-                    setBoxId(b.id);
-                    setSelectedFile(null);
-                  }}
-                />
-                <span>
-                  {b.name}
-                  <small>
-                    {b.items.length} files · ~
-                    {b.items
-                      .reduce(
-                        (sum, item) => sum + (item.estimatedTokens ?? 0),
-                        0,
-                      )
-                      .toLocaleString()}{" "}
-                    tokens ·{" "}
-                    {b.items.some((item) => item.status === "unavailable")
-                      ? "Missing sources"
-                      : !b.items.length
-                        ? "Empty box"
-                        : "Reviewed sources"}{" "}
-                    · revision {b.revision}
-                  </small>
-                </span>
-                <button
-                  disabled={chat.busy}
-                  onClick={() => {
-                    chat.cancelCreation();
-                    startRename(b.id, b.name, "box");
-                  }}
-                >
-                  Rename
-                </button>
-              </label>
-            ))}
-        </div>
-        {!chat.contextBoxes.length && !availableFile && (
-          <p>
-            Create a Context Box first. Cancel to create one from selected files
-            in Planet View’s context manager, or save reviewed Active Context
-            below.
-          </p>
-        )}
-        {!chat.contextBoxes.length && !availableFile && onManageContext && (
-          <button
-            onClick={() => {
-              chat.cancelCreation();
-              onManageContext();
-            }}
-          >
-            Open Context Box manager
-          </button>
-        )}
-        {chat.unavailableReason && <p role="alert">{chat.unavailableReason}</p>}
-        {chat.researchDefaults.knowledge && (
-          <label className="agent-knowledge-choice">
+        <p>
+          Choose research sources, or start an Engine chat without research
+          context.
+        </p>
+        {chat.hasEngine && (
+          <label>
             <input
               type="checkbox"
-              checked={includeKnowledge}
-              onChange={(event) => setIncludeKnowledge(event.target.checked)}
+              aria-label="Engine chat without research context"
+              checked={engineOnly}
+              onChange={(event) => setEngineOnly(event.target.checked)}
             />
-            Include agent Knowledge{" "}
-            {"relativePath" in chat.researchDefaults.knowledge ? "file" : "box"}
-            : {constructionSourceLabel(chat.researchDefaults.knowledge)} (
-            {chat.researchDefaults.knowledge.contextIdentity.sources.length}{" "}
-            reviewed sources). Adds these sources to this new chat only.
+            Engine chat — no research context. Ask the model to retrieve a
+            research PDF from the agent?s engine.
           </label>
         )}
-        {chat.runtime.error && <p role="alert">{chat.runtime.error}</p>}
+        <div hidden={engineOnly}>
+          {availableFile && (
+            <label className="agent-knowledge-choice">
+              <input
+                type="radio"
+                name="context-box"
+                checked={Boolean(selectedFile)}
+                onChange={() => {
+                  setSelectedFile(availableFile);
+                  setBoxId("");
+                }}
+              />
+              Agent Context file: {availableFile.relativePath} · ~
+              {availableFile.estimatedTokens.toLocaleString()} tokens. Uses the
+              reviewed full file.
+            </label>
+          )}
+          <input
+            aria-label="Search Context Boxes"
+            placeholder="Search Context Boxes"
+            value={boxQuery}
+            onChange={(e) => setBoxQuery(e.target.value)}
+          />
+          <div className="agent-box-list">
+            {chat.contextBoxes
+              .filter((b) =>
+                b.name.toLowerCase().includes(boxQuery.toLowerCase()),
+              )
+              .map((b) => (
+                <label key={b.id}>
+                  <input
+                    type="radio"
+                    name="context-box"
+                    value={b.id}
+                    checked={boxId === b.id}
+                    onChange={() => {
+                      setBoxId(b.id);
+                      setSelectedFile(null);
+                    }}
+                  />
+                  <span>
+                    {b.name}
+                    <small>
+                      {b.items.length} files · ~
+                      {b.items
+                        .reduce(
+                          (sum, item) => sum + (item.estimatedTokens ?? 0),
+                          0,
+                        )
+                        .toLocaleString()}{" "}
+                      tokens ·{" "}
+                      {b.items.some((item) => item.status === "unavailable")
+                        ? "Missing sources"
+                        : !b.items.length
+                          ? "Empty box"
+                          : "Reviewed sources"}{" "}
+                      · revision {b.revision}
+                    </small>
+                  </span>
+                  <button
+                    disabled={chat.busy}
+                    onClick={() => {
+                      chat.cancelCreation();
+                      startRename(b.id, b.name, "box");
+                    }}
+                  >
+                    Rename
+                  </button>
+                </label>
+              ))}
+          </div>
+          {!chat.contextBoxes.length && !availableFile && (
+            <p>
+              Create a Context Box first. Cancel to create one from selected
+              files in Planet View’s context manager, or save reviewed Active
+              Context below.
+            </p>
+          )}
+          {!chat.contextBoxes.length && !availableFile && onManageContext && (
+            <button
+              onClick={() => {
+                chat.cancelCreation();
+                onManageContext();
+              }}
+            >
+              Open Context Box manager
+            </button>
+          )}
+          {chat.unavailableReason && (
+            <p role="alert">{chat.unavailableReason}</p>
+          )}
+          {chat.researchDefaults.knowledge && (
+            <label className="agent-knowledge-choice">
+              <input
+                type="checkbox"
+                checked={includeKnowledge}
+                onChange={(event) => setIncludeKnowledge(event.target.checked)}
+              />
+              Include agent Knowledge{" "}
+              {"relativePath" in chat.researchDefaults.knowledge
+                ? "file"
+                : "box"}
+              : {constructionSourceLabel(chat.researchDefaults.knowledge)} (
+              {chat.researchDefaults.knowledge.contextIdentity.sources.length}{" "}
+              reviewed sources). Adds these sources to this new chat only.
+            </label>
+          )}
+          {chat.runtime.error && <p role="alert">{chat.runtime.error}</p>}
+        </div>
         <div className="agent-actions">
           <button
             disabled={
               chat.busy ||
-              (!selectedFile &&
+              (!engineOnly &&
+                !selectedFile &&
                 (!boxId ||
                   !chat.contextBoxes.find((b) => b.id === boxId)?.items
                     .length)) ||
-              (chat.contextBoxes.find((b) => b.id === boxId)?.items.length ??
-                0) > 32
+              (!engineOnly &&
+                (chat.contextBoxes.find((b) => b.id === boxId)?.items.length ??
+                  0) > 32)
             }
             onClick={() => {
               void chat
@@ -466,6 +491,7 @@ export function ConversationHistory({
                   creationId.current,
                   includeKnowledge,
                   selectedFile ?? undefined,
+                  engineOnly,
                 )
                 .then(onCompose);
             }}

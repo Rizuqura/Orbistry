@@ -23,6 +23,7 @@ export function createBaselineObserver(options: {
   conversationId?: string;
   providerId: string;
   modelId: string;
+  requestLogger?: import("../request-logger.cjs").RequestLogger;
   wallClock?: () => number;
   clock?: () => number;
 }): {

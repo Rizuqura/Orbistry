@@ -19,7 +19,7 @@ export function TopBar({
           width={16}
           height={16}
         />
-        <span>QTerminal</span>
+        <span>Orbistry</span>
         <span className="version">v1.0.1 Victoria Beta</span>
       </div>
       <nav className="top-nav" aria-label="Primary">

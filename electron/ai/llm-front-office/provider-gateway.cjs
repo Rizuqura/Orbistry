@@ -19,6 +19,8 @@ const chunkSchema = z.object({
         index: z.number().int().optional(),
         delta: z.object({
           content: z.string().nullable().optional(),
+          reasoning: z.string().nullable().optional(),
+          reasoning_content: z.string().nullable().optional(),
           refusal: z.string().nullable().optional(),
           tool_calls: z.unknown().optional(),
         }),
@@ -54,6 +56,7 @@ async function consumeStream(
   if (!response.headers.get("content-type")?.includes("text/event-stream"))
     throw invalid();
   request.onStage?.("STREAM_STARTED", "ok");
+  request.onDiagnostic?.("STREAM_STARTED", { wireStreaming: true });
   const start = performance.now();
   const decoder = new TextDecoder("utf-8", { fatal: true });
   let buffer = "",
@@ -66,6 +69,7 @@ async function consumeStream(
     actualModel = null,
     firstTokenMs = null,
     refusal = false;
+  let reasoningCharacters = 0;
   const event = () => {
     if (!data.length) return;
     const raw = data.join("\n");
@@ -87,15 +91,26 @@ async function consumeStream(
       );
     const chunk = parse(chunkSchema, parsed, "MODEL_INVALID_RESPONSE");
     const choice = chunk.choices[0];
+    const reasoning =
+      choice?.delta.reasoning_content ?? choice?.delta.reasoning ?? "";
+    if (reasoning && !reasoningCharacters)
+      request.onDiagnostic?.("REASONING_STARTED", {
+        reasoningCharacters: reasoning.length,
+      });
+    reasoningCharacters += reasoning.length;
     if ((choice?.index && choice.index !== 0) || choice?.delta.tool_calls)
       throw invalid();
     if (choice?.delta.refusal) refusal = true;
     if (choice?.delta.content) {
       if (finishReason) throw invalid();
-      if (!content)
+      if (!content) {
         request.onStage?.("FIRST_CONTENT_RECEIVED", "ok", {
           contentCharacters: choice.delta.content.length,
         });
+        request.onDiagnostic?.("FIRST_CONTENT_RECEIVED", {
+          contentCharacters: choice.delta.content.length,
+        });
+      }
       content += choice.delta.content;
       firstTokenMs ??= Math.round(performance.now() - start);
       request.onGenerationStarted?.();
@@ -135,6 +150,12 @@ async function consumeStream(
       event();
     }
     if (!finishReason) throw invalid();
+    request.onDiagnostic?.("STREAM_COMPLETED", {
+      bytesReceived: bytes,
+      contentCharacters: content.length,
+      reasoningCharacters,
+      finishReason,
+    });
     return {
       provider: providerId,
       model: actualModel ?? requestedModel,
@@ -196,6 +217,8 @@ async function consumeCompletion(
                 .nullable()
                 .optional(),
               refusal: z.string().nullable().optional(),
+              reasoning: z.string().nullable().optional(),
+              reasoning_content: z.string().nullable().optional(),
               tool_calls: z.unknown().optional(),
             }),
             finish_reason: z.string().nullable().optional(),
@@ -207,6 +230,12 @@ async function consumeCompletion(
     });
     const data = parse(schema, JSON.parse(raw), "MODEL_INVALID_RESPONSE");
     const choice = data.choices[0];
+    const reasoning =
+      choice.message.reasoning_content ?? choice.message.reasoning ?? "";
+    if (reasoning)
+      request.onDiagnostic?.("REASONING_STARTED", {
+        reasoningCharacters: reasoning.length,
+      });
     if (choice.message.tool_calls) throw invalid();
     const parts = choice.message.content;
     const content =
@@ -218,10 +247,14 @@ async function consumeCompletion(
               .map((p) => p.text ?? "")
               .join("")
           : "";
-    if (content)
+    if (content) {
       request.onStage?.("FIRST_CONTENT_RECEIVED", "buffered", {
         contentCharacters: content.length,
       });
+      request.onDiagnostic?.("FIRST_CONTENT_RECEIVED", {
+        contentCharacters: content.length,
+      });
+    }
     return {
       provider: providerId,
       model:
@@ -307,6 +340,15 @@ function createLLMClient({ model, transport, config, registry, credentials }) {
           : {}),
       };
       request.onStage?.("GATEWAY_REQUEST_STARTED", "ok");
+      request.onDiagnostic?.("GATEWAY_REQUEST_STARTED", { transport });
+      request.onDiagnostic?.("GENERATION_SETTINGS_APPLIED", {
+        wireStreaming: g.streaming,
+        outputTokenCap: g.maxOutputTokens,
+        thinkingDisabled:
+          body.chat_template_kwargs?.enable_thinking === false
+            ? true
+            : undefined,
+      });
       let received = false;
       try {
         const result = await adapter.request(
@@ -329,13 +371,22 @@ function createLLMClient({ model, transport, config, registry, credentials }) {
             signal: request.signal,
             timeoutMs: config.reliability.deadlineMs,
             absoluteMs: config.reliability.deadlineMs,
+            onDiagnostic: request.onDiagnostic,
           },
         );
         request.onStage?.("RESPONSE_NORMALIZED", "ok", {
           contentCharacters: result.content.length,
         });
+        request.onDiagnostic?.("RESPONSE_NORMALIZED", {
+          contentCharacters: result.content.length,
+        });
         return result;
       } catch (error) {
+        request.onDiagnostic?.(
+          "RESPONSE_NORMALIZED",
+          { errorCode: error?.code },
+          "error",
+        );
         request.onStage?.(
           received ? "RESPONSE_NORMALIZED" : "PROVIDER_RESPONSE_RECEIVED",
           "error",

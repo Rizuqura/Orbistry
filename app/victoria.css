@@ -88,18 +88,18 @@ body {
   outline-offset: -2px;
 }
 
-/* Navigation is legible; the context library below it remains a terminal. */
+/* Quiet, legible Universe navigation. */
 .app-shell .knowledge-sidebar {
   background: var(--ui-panel);
   border-color: var(--ui-line);
 }
 .app-shell .knowledge-sidebar > .pane-heading {
   padding: 10px 44px 10px 12px;
-  min-height: 44px;
   align-items: center;
-  font: 11px var(--ui-font);
-  letter-spacing: 0.05em;
-  color: #a8b7c8;
+  min-height: 48px;
+  font: 600 13px var(--ui-font);
+  letter-spacing: 0;
+  color: #c5cdd6;
 }
 .app-shell .vault-window-toggle {
   top: 10px;
@@ -127,12 +127,14 @@ body {
   right: 6px;
 }
 .app-shell .knowledge-sidebar .search-box {
-  min-height: 36px;
   border: 1px solid #2c3846;
   background: #0d131c;
-  border-radius: 7px;
   padding: 6px 9px;
   margin: 0 12px 12px;
+  min-height: 34px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  color: #85919f;
 }
 .app-shell .knowledge-sidebar .search-box input {
   color: #dce4ee;
@@ -141,11 +143,12 @@ body {
 .app-shell .knowledge-sidebar .vault-title {
   margin: 0 12px;
   padding: 4px 0;
-  color: #8a9bac;
   font-size: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #b6c0cb;
+  font: 500 12px/1.5 var(--ui-font);
 }
 .app-shell .vault-change {
   margin: 4px 12px 12px;
@@ -174,6 +177,69 @@ body {
 .app-shell .sidebar-footer {
   padding: 8px 12px;
   color: #7b8e9e;
+}
+
+/* Quiet vault navigation, scoped to the left sidebar. */
+.app-shell .knowledge-sidebar .search-box input::placeholder {
+  color: #85919f;
+}
+.app-shell .knowledge-sidebar .vault-change {
+  align-self: flex-start;
+  margin: 0 12px 14px;
+  padding: 4px 0;
+  min-height: 28px;
+  color: #8c99a8;
+  letter-spacing: 0;
+  background: transparent;
+}
+.app-shell .knowledge-sidebar .vault-change:hover {
+  color: #d3dce5;
+}
+.app-shell .knowledge-sidebar .tree {
+  padding: 0 6px 12px;
+}
+.app-shell .knowledge-sidebar :is(.file-row, .tree-folder) {
+  min-height: 34px;
+  align-items: center;
+  border-radius: 5px;
+  color: #aab5c2;
+  gap: 7px;
+}
+.app-shell .knowledge-sidebar :is(.file-row, .tree-folder):hover {
+  background: #19222d;
+}
+.app-shell .knowledge-sidebar :is(.file-row, .tree-folder).active {
+  background: #24313d;
+  color: #e1e7ed;
+}
+.app-shell .knowledge-sidebar :is(.folder, .file-icon, .tree-twist) {
+  color: #8492a1;
+  flex-shrink: 0;
+}
+.app-shell .knowledge-sidebar .tree-folder-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.app-shell .knowledge-sidebar .file-name {
+  flex: 1;
+}
+.app-shell .knowledge-sidebar .ticker {
+  color: #8c99a8;
+  font: 9px var(--ui-font);
+  letter-spacing: 0.02em;
+}
+.app-shell .knowledge-sidebar .sidebar-footer {
+  padding: 12px;
+  color: #8c99a8;
+  font: 10px var(--ui-font);
+}
+.app-shell .knowledge-sidebar .sidebar-footer span {
+  color: #8c99a8;
+}
+.app-shell .knowledge-sidebar button:hover:not(:disabled) {
+  box-shadow: none !important;
 }
 
 /* Reader: a quiet document column and explicit review action for every file. */
@@ -648,6 +714,130 @@ body {
 .context-box-host {
   display: contents;
 }
+/* Floating context details share the quiet navigation palette. */
+.app-shell .context-box-dialog {
+  border: 0;
+  border-radius: 12px;
+  background: #14191f;
+  color: #c5cdd6;
+  font: 13px/1.6 var(--ui-font);
+  overflow-wrap: anywhere;
+  width: min(680px, calc(100vw - 42px));
+  padding: var(--context-space-lg);
+}
+.app-shell .context-box-dialog h2 {
+  margin: 0 0 6px;
+  color: #e1e7ed;
+  font: 600 18px/1.4 var(--ui-font);
+}
+.app-shell .context-box-dialog p {
+  margin: 12px 0;
+}
+.app-shell .context-box-dialog .context-box-meta {
+  margin-top: 0;
+  color: #96a1ae;
+  font-size: 12px;
+}
+.app-shell .context-box-dialog .context-token-estimate {
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #1d252d;
+  color: #b8c8cf;
+  font: 12px/1.5 var(--ui-font);
+}
+.app-shell .context-box-dialog button {
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 6px;
+  background: #232b34;
+  color: #c5cdd6;
+  font: 12px/1.5 var(--ui-font);
+  cursor: pointer;
+}
+.app-shell .context-box-dialog button:hover:not(:disabled) {
+  background: #303b46;
+  box-shadow: none !important;
+}
+.app-shell .context-box-dialog button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.app-shell .context-box-dialog .agent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.app-shell .context-box-dialog .context-box-toolbar {
+  margin: 18px 0;
+  align-items: end;
+}
+.app-shell .context-box-dialog .context-box-agent-picker {
+  flex: 1 0 100%;
+  margin: 8px 0 0;
+  color: #96a1ae;
+  font-size: 12px;
+}
+.app-shell .context-box-dialog .context-box-agent-picker select {
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: #d4dde5;
+  font: 13px var(--ui-font);
+}
+.app-shell .context-box-dialog .context-box-attach {
+  background: #ffad00;
+  color: #19150d;
+  font-weight: 600;
+}
+.app-shell .context-box-dialog .context-box-attach:hover:not(:disabled) {
+  background: #ffbb2e;
+}
+.app-shell .context-box-dialog .box-source-list {
+  max-height: 32dvh;
+  scrollbar-color: #46515d transparent;
+  margin: var(--context-space-md) 0;
+}
+.app-shell .context-box-dialog .box-source-list > li {
+  border: 0;
+  border-radius: 8px;
+  background: #1a2129;
+  padding: var(--context-space-sm);
+  margin-bottom: var(--context-space-xs);
+}
+.app-shell .context-box-dialog .box-source-list > li > button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  overflow-wrap: anywhere;
+  color: #d4dde5;
+}
+.app-shell .context-box-dialog .box-source-list small {
+  margin: 6px 0 12px;
+  color: #96a1ae;
+  font: 11px/1.5 var(--ui-font);
+}
+.app-shell .context-box-dialog .context-box-note {
+  color: #96a1ae;
+  font-size: 12px;
+}
+.app-shell .context-box-dialog .context-box-footer {
+  margin-top: 20px;
+}
+.app-shell .context-box-dialog .context-box-delete {
+  margin-right: auto;
+  background: transparent;
+  color: #d0a09a;
+}
+@media (max-width: 480px) {
+  .app-shell .context-box-dialog {
+    padding: 18px;
+  }
+}
 .app-shell .context-library-dialog .context-boxes {
   max-height: none;
   min-height: 0;
@@ -827,4 +1017,120 @@ body {
   flex: 0 0 16px;
   background: transparent;
   object-fit: contain;
+}
+/* Context windows use a rounded golden-ratio scale: 8, 13, 21, 34, 55. */
+.app-shell :is(.context-library-dialog, .context-box-dialog) {
+  --context-space-xs: 8px;
+  --context-space-sm: 13px;
+  --context-space-md: 21px;
+  --context-space-lg: 34px;
+  --context-space-xl: 55px;
+}
+.app-shell .agent-create-dialog.context-library-dialog {
+  width: min(720px, calc(100vw - 42px));
+  max-height: calc(100dvh - 42px);
+  padding: var(--context-space-lg);
+  border: 0;
+  border-radius: 13px;
+  background: #14191f;
+  color: #c5cdd6;
+  font: 13px/1.618 var(--ui-font);
+}
+.app-shell .context-library-dialog .context-boxes {
+  overflow: visible;
+  background: transparent;
+  font: inherit;
+}
+.app-shell .context-library-dialog .pane-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--context-space-md);
+  padding: 0;
+  margin-bottom: var(--context-space-md);
+  color: #e1e7ed;
+  font: 600 21px/1.4 var(--ui-font);
+  letter-spacing: 0;
+}
+.app-shell .context-library-dialog button {
+  min-height: 34px;
+  margin: 0;
+  padding: var(--context-space-xs) var(--context-space-sm);
+  border: 0;
+  border-radius: 8px;
+  background: #232b34;
+  color: #c5cdd6;
+  font: 13px/1.618 var(--ui-font);
+}
+.app-shell .context-library-dialog button:hover:not(:disabled) {
+  background: #303b46;
+  box-shadow: none !important;
+}
+.app-shell .context-library-dialog .pane-heading button {
+  min-width: 34px;
+  background: #ffad00;
+  color: #19150d;
+  font-size: 21px;
+  line-height: 1;
+}
+.app-shell .context-library-dialog .box-selection-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--context-space-sm);
+  margin-bottom: var(--context-space-md);
+}
+.app-shell .context-library-dialog .box-selection-actions small {
+  grid-column: 1 / -1;
+  color: #96a1ae;
+  font: 12px/1.618 var(--ui-font);
+}
+.app-shell .context-library-dialog input:not([type="checkbox"]) {
+  min-height: 42px;
+  padding: var(--context-space-sm);
+  border: 0;
+  border-radius: 8px;
+  color: #d4dde5;
+  font: 13px/1.618 var(--ui-font);
+}
+.app-shell .context-library-dialog input::placeholder {
+  color: #96a1ae;
+}
+.app-shell .context-library-dialog .context-box-sidebar-list {
+  gap: var(--context-space-sm);
+  padding-top: var(--context-space-md);
+  max-height: 42dvh;
+  overflow-y: auto;
+}
+.app-shell .context-library-dialog .context-box-sidebar-list button {
+  min-height: var(--context-space-xl);
+  padding: var(--context-space-sm) var(--context-space-md);
+  align-items: center;
+  background: #1d252d;
+  gap: var(--context-space-md);
+}
+.app-shell .context-library-dialog .context-box-sidebar-list button:hover {
+  background: #303b46;
+}
+.app-shell .context-library-dialog .context-box-sidebar-list strong {
+  font-weight: 500;
+}
+.app-shell .context-library-dialog .context-box-sidebar-list small {
+  color: #96a1ae;
+  font-size: 12px;
+}
+.app-shell .context-library-dialog > button {
+  display: block;
+  margin: var(--context-space-lg) 0 0 auto;
+}
+.app-shell .context-box-dialog :is(.context-box-toolbar, .context-box-footer) {
+  gap: var(--context-space-xs);
+  margin-top: var(--context-space-md);
+}
+@media (max-width: 540px) {
+  .app-shell
+    .agent-create-dialog:is(.context-library-dialog, .context-box-dialog) {
+    padding: var(--context-space-md);
+  }
+  .app-shell .context-library-dialog .box-selection-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

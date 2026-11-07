@@ -25,15 +25,15 @@ async function main() {
     });
     const page = await app.firstWindow();
     page.setDefaultTimeout(20000);
-    const screen = page.getByRole("region", { name: "QTerminal startup" });
+    const screen = page.getByRole("region", { name: "Orbistry startup" });
     for (let run = 0; run < 2; run++) {
       if (run) {
         await app.evaluate(() => globalThis.holdStartup());
         await page.reload();
       }
       await screen.waitFor();
-      assert.equal(await page.title(), "QTerminal");
-      assert.equal(await app.evaluate(({ app }) => app.getName()), "QTerminal");
+      assert.equal(await page.title(), "Orbistry");
+      assert.equal(await app.evaluate(({ app }) => app.getName()), "Orbistry");
       assert.equal(
         await app.evaluate(
           ({ nativeImage }, iconPath) =>

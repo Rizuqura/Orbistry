@@ -36,18 +36,37 @@ function validateConversation(value) {
   }
   if (
     !value ||
-    ![1, 2, 3, 4].includes(value.schemaVersion) ||
+    ![1, 2, 3, 4, 6].includes(value.schemaVersion) ||
     !ID.test(value.id) ||
     typeof value.title !== "string" ||
     !Number.isFinite(Date.parse(value.createdAt)) ||
     !Number.isFinite(Date.parse(value.updatedAt)) ||
     !/^[a-f0-9]{64}$/.test(value.contextIdentity?.id ?? "") ||
     value.contextIdentity.mode !== "active-context" ||
-    !value.contextIdentity.sources?.length ||
+    (!value.contextIdentity.sources?.length && value.schemaVersion !== 6) ||
     !Array.isArray(value.messages) ||
     !Array.isArray(value.attempts)
   )
     throw new Error("Invalid conversation schema.");
+  const checkIdentity =
+    value.schemaVersion === 6
+      ? (identity) =>
+          require("./context-identity.cjs").validateEngineIdentity(
+            identity,
+            value.agentId,
+          )
+      : validateContextIdentity;
+  if (
+    value.schemaVersion === 6 &&
+    (value.engineOnly !== true ||
+      !ID.test(value.creationId) ||
+      value.contextBoxId !== undefined ||
+      value.contextFile !== undefined ||
+      value.agentKnowledge !== undefined)
+  )
+    throw new Error("Invalid Engine-only conversation.");
+  if (value.schemaVersion !== 6 && value.engineOnly !== undefined)
+    throw new Error("Engine-only mode requires schema 6.");
   if (
     value.agentId !== undefined &&
     (typeof value.agentId !== "string" || !ID.test(value.agentId))
@@ -79,14 +98,31 @@ function validateConversation(value) {
   } else if (value.contextFile !== undefined)
     throw new Error("Direct file chats require schema 4.");
   const source = value.contextIdentity.sources[0];
-  validateContextIdentity(value.contextIdentity);
+  checkIdentity(value.contextIdentity);
   if (
-    typeof source.sourceId !== "string" ||
-    typeof source.relativePath !== "string" ||
-    !/^[a-f0-9]{64}$/.test(source.contentHash)
+    value.schemaVersion !== 6 &&
+    (typeof source.sourceId !== "string" ||
+      typeof source.relativePath !== "string" ||
+      !/^[a-f0-9]{64}$/.test(source.contentHash))
   )
     throw new Error("Invalid conversation source.");
   for (const message of value.messages) {
+    if (
+      message.engineToolTurn !== undefined &&
+      typeof message.engineToolTurn !== "boolean"
+    )
+      throw new Error("Invalid Engine turn marker.");
+    if (message.engineReports !== undefined) {
+      if (message.role !== "assistant" || message.engineToolTurn !== true)
+        throw new Error("Invalid Engine attachment owner.");
+      require("./schemas.cjs").parse(
+        require("./schemas.cjs")
+          .z.array(require("./engine-chat.cjs").reportSchema)
+          .max(1),
+        message.engineReports,
+        "MODEL_STORAGE_INVALID",
+      );
+    }
     if (
       !ID.test(message.id) ||
       message.conversationId !== value.id ||
@@ -97,8 +133,7 @@ function validateConversation(value) {
       throw new Error("Invalid conversation message.");
   }
   for (const attempt of value.attempts) {
-    if (value.schemaVersion >= 3)
-      validateContextIdentity(attempt.contextIdentity);
+    if (value.schemaVersion >= 3) checkIdentity(attempt.contextIdentity);
     if (
       !ID.test(attempt.requestId) ||
       !ID.test(attempt.runId) ||
@@ -124,8 +159,7 @@ function validateConversation(value) {
   for (const message of value.messages.filter(
     (item) => item.role === "assistant",
   )) {
-    if (value.schemaVersion >= 3)
-      validateContextIdentity(message.contextIdentity);
+    if (value.schemaVersion >= 3) checkIdentity(message.contextIdentity);
     if (
       typeof message.model !== "string" ||
       (message.provider !== undefined &&
@@ -143,7 +177,9 @@ function validateConversation(value) {
       ) ||
       JSON.stringify(message.sources) !==
         JSON.stringify(
-          (message.contextIdentity ?? value.contextIdentity).sources,
+          message.engineToolTurn
+            ? []
+            : (message.contextIdentity ?? value.contextIdentity).sources,
         )
     )
       throw new Error(
@@ -206,6 +242,12 @@ function applyRun(conversation, attempt, record) {
       sources: record.sourcesActuallyRead,
       model: record.model,
       provider: record.provider,
+      ...(record.diagnostics?.engineToolTurn
+        ? {
+            engineToolTurn: true,
+            engineReports: record.diagnostics.engineReports ?? [],
+          }
+        : {}),
       ...(record.diagnostics?.agentKnowledge
         ? {
             knowledgeBox: {
@@ -278,11 +320,13 @@ class ConversationStore {
     agentId = "wonnyy-agent",
     agentKnowledge = null,
     contextFile = null,
+    engineOnly = false,
   ) {
     return this.queue(async () => {
       const timestamp = new Date().toISOString();
       const value = {
-        schemaVersion: contextFile ? 4 : box ? 3 : 1,
+        schemaVersion: engineOnly ? 6 : contextFile ? 4 : box ? 3 : 1,
+        ...(engineOnly ? { engineOnly: true, creationId } : {}),
         agentId: validId(agentId),
         ...(agentKnowledge ? { agentKnowledge } : {}),
         ...(contextFile ? { contextFile, creationId } : {}),
@@ -294,8 +338,9 @@ class ConversationStore {
             }
           : {}),
         id: randomUUID(),
-        title:
-          box || contextFile
+        title: engineOnly
+          ? "Engine chat"
+          : box || contextFile
             ? "Untitled chat"
             : path.basename(contextIdentity.sources[0].relativePath),
         createdAt: timestamp,

@@ -133,6 +133,7 @@ class OllamaProvider {
   }
 
   async request(pathname, options = {}, timeoutMs = this.statusTimeoutMs) {
+    const { onDiagnostic, maxResponseBytes, ...transportOptions } = options;
     const controller = new AbortController();
     const externalSignal = options.signal;
     let timedOut = false;
@@ -147,9 +148,13 @@ class OllamaProvider {
     try {
       let response;
       try {
+        onDiagnostic?.("HTTP_REQUEST_STARTED");
         response = await this.fetch(`${this.baseUrl}${pathname}`, {
-          ...options,
+          ...transportOptions,
           signal: controller.signal,
+        });
+        onDiagnostic?.("HTTP_RESPONSE_RECEIVED", {
+          httpStatus: response.status,
         });
       } catch (error) {
         if (
@@ -175,7 +180,9 @@ class OllamaProvider {
       }
       let body;
       try {
-        body = await response.json();
+        body = maxResponseBytes
+          ? await require("../engine-chat.cjs").readJson(response)
+          : await response.json();
       } catch {
         if (externalSignal?.aborted)
           throw new ModelRuntimeError(
@@ -368,11 +375,15 @@ class OllamaProvider {
       ),
     );
     try {
+      request.onDiagnostic?.("HTTP_REQUEST_STARTED");
       const response = await this.fetch(`${this.baseUrl}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
         signal: controller.signal,
+      });
+      request.onDiagnostic?.("HTTP_RESPONSE_RECEIVED", {
+        httpStatus: response.status,
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
@@ -381,7 +392,25 @@ class OllamaProvider {
           body.error || `Ollama HTTP ${response.status}`,
         );
       }
-      return await readChatStream(response, request.onContent, activity);
+      request.onDiagnostic?.("STREAM_STARTED", { wireStreaming: true });
+      let first = true;
+      const onContent = request.onDiagnostic
+        ? (content) => {
+            if (first) {
+              first = false;
+              request.onDiagnostic("FIRST_CONTENT_RECEIVED", {
+                contentCharacters: content.length,
+              });
+            }
+            request.onContent?.(content);
+          }
+        : request.onContent;
+      const result = await readChatStream(response, onContent, activity);
+      request.onDiagnostic?.("STREAM_COMPLETED", {
+        contentCharacters: result.message.content.length,
+        finishReason: result.done_reason ?? "unknown",
+      });
+      return result;
     } catch (error) {
       if (signal?.aborted)
         throw new ModelRuntimeError(
@@ -507,6 +536,7 @@ class OllamaProvider {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
             signal: rawRequest.signal,
+            onDiagnostic: rawRequest.onDiagnostic,
           },
           settings?.inactivityTimeoutMs ?? this.completionTimeoutMs,
         );
@@ -520,6 +550,9 @@ class OllamaProvider {
         "Ollama returned an incomplete chat response.",
       );
     }
+    rawRequest.onDiagnostic?.("RESPONSE_NORMALIZED", {
+      contentCharacters: body.message.content.length,
+    });
     return {
       id:
         typeof rawRequest.id === "string" && rawRequest.id

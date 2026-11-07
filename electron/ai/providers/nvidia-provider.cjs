@@ -7,7 +7,7 @@ const INSTRUCT_MODE_MODELS = new Set([
   "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
 ]);
 class NvidiaProvider extends OpenAIChatProvider {
-  /** Ordinary QTerminal chat requests ask for final answers, not hidden thinking.
+  /** Ordinary Orbistry chat requests ask for final answers, not hidden thinking.
    * These documented NIM deployments enable thinking with a 16K reasoning
    * budget, which can exhaust a smaller max_tokens before emitting any content.
    * Use its documented switch; do not increase user caps or guess other models.

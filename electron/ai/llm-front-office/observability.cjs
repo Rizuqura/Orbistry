@@ -40,6 +40,7 @@ function createBaselineObserver({
   conversationId,
   providerId,
   modelId,
+  requestLogger,
   wallClock = Date.now,
   clock = () => performance.now(),
 }) {
@@ -96,6 +97,20 @@ function createBaselineObserver({
      * Unknown stages/metadata are ignored, never copied into errors or exports. */
     stage(name, status = "ok", metadata = {}) {
       if (
+        ![
+          "GATEWAY_REQUEST_STARTED",
+          "PROVIDER_RESPONSE_RECEIVED",
+          "STREAM_STARTED",
+          "FIRST_CONTENT_RECEIVED",
+          "RESPONSE_NORMALIZED",
+        ].includes(name)
+      )
+        requestLogger?.step(
+          name === "REQUEST_COMPLETED" ? "BACKEND_GENERATION_COMPLETED" : name,
+          metadata,
+          status === "error" ? "error" : "ok",
+        );
+      if (
         !enabled ||
         !contracts.stageName.safeParse(name).success ||
         trace.stages.length >= 128
@@ -133,7 +148,7 @@ function createBaselineObserver({
      * Provider errors and callback exceptions propagate unchanged; never retried.
      */
     async complete(provider, request, phase = "generation") {
-      if (!enabled) return provider.complete(request);
+      if (!enabled && !requestLogger) return provider.complete(request);
       const callStarted = clock();
       let estimate = null;
       try {
@@ -164,13 +179,50 @@ function createBaselineObserver({
         errorCode: null,
       };
       trace.calls.push(call);
+      const callMetadata = {
+        callIndex: call.index,
+        callType: phase,
+        model: request.model,
+      };
+      requestLogger?.step("LLM_REQUEST_STARTED", {
+        ...callMetadata,
+        inputTokensEstimated: estimate,
+        outputTokenCap: call.outputTokenCap,
+        streaming: call.streamingRequested,
+      });
+      let waitingFor = "http_response";
+      const stopWaiting = requestLogger?.waiting(
+        callMetadata,
+        () => waitingFor,
+      );
       try {
         const response = await provider.complete({
           ...request,
+          ...(requestLogger
+            ? {
+                onDiagnostic: (stage, metadata, status) => {
+                  if (stage === "HTTP_RESPONSE_RECEIVED")
+                    waitingFor = "visible_content";
+                  if (stage === "FIRST_CONTENT_RECEIVED")
+                    waitingFor = "completion";
+                  requestLogger.step(
+                    stage,
+                    { ...metadata, ...callMetadata },
+                    status,
+                  );
+                  request.onDiagnostic?.(stage, metadata, status);
+                },
+              }
+            : {}),
           ...(typeof request.onContent === "function"
             ? {
                 onContent: (content) => {
                   if (typeof content === "string" && content.length) {
+                    waitingFor = "completion";
+                    requestLogger?.step("FIRST_CONTENT_RECEIVED", {
+                      ...callMetadata,
+                      contentCharacters: content.length,
+                    });
                     call.firstContentMs ??= elapsed(clock, callStarted);
                     call.contentCallbackObserved = true;
                   }
@@ -206,13 +258,26 @@ function createBaselineObserver({
             : "other"
           : null;
         call.status = "succeeded";
+        requestLogger?.step("LLM_RESPONSE_RECEIVED", {
+          ...callMetadata,
+          actualModel: response?.model,
+          contentCharacters: response?.content?.length,
+          inputTokensReported: call.reportedPromptTokens,
+          outputTokensReported: call.reportedCompletionTokens,
+          finishReason: call.finishReason,
+          usageKnown:
+            call.reportedPromptTokens !== null &&
+            call.reportedCompletionTokens !== null,
+        });
         return response;
       } catch (error) {
+        requestLogger?.fail(error, callMetadata);
         call.errorCode = safeError(error);
         call.status =
           call.errorCode === "MODEL_CANCELLED" ? "cancelled" : "failed";
         throw error;
       } finally {
+        stopWaiting?.();
         call.durationMs = elapsed(clock, callStarted);
       }
     },

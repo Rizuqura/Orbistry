@@ -1,14 +1,44 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent, PointerEvent } from "react";
-import type { KnowledgeNode, PlanetGraph, StationCluster } from "../types/graph";
-import { boxSelectPlanetNodes, pickPlanetNode } from "../lib/planet-hit-testing";
-import { ancestorPath, computeLayout, computeStationLayout, subtreeIds } from "../lib/planet-layout";
+import type {
+  KnowledgeNode,
+  PlanetGraph,
+  StationCluster,
+} from "../types/graph";
+import {
+  boxSelectPlanetNodes,
+  pickPlanetNode,
+} from "../lib/planet-hit-testing";
+import {
+  ancestorPath,
+  computeLayout,
+  computeStationLayout,
+  subtreeIds,
+} from "../lib/planet-layout";
 import { PlanetNode } from "./planet-node";
 import { PlanetMinimap } from "./planet-minimap";
 import { PlanetControls } from "./planet-controls";
-import { interpolatePlanetCamera, type PlanetCamera } from "../lib/planet-navigation";
+import {
+  interpolatePlanetCamera,
+  type PlanetCamera,
+} from "../lib/planet-navigation";
 import { ChatPanel, type ChatPanelProps } from "./chat-panel";
 import { PlanetUsageBadge } from "../features/usage-monitor/planet-usage-badge";
+import { withPlanetOrbits, orbitInPlanetViewport } from "../lib/planet-orbits";
+import { animatePlanetLayout, preparePlanetMotion } from "../lib/planet-motion";
+import { usePlanetAnimation } from "../lib/use-planet-animation";
+import {
+  layoutPlanetLabels,
+  planetLabelFontSize,
+  type PlanetLabelCandidate,
+} from "../lib/planet-labels";
+import {
+  edgeInPlanetViewport,
+  fitPlanetCamera,
+  inPlanetViewport,
+} from "../lib/planet-rendering";
+const EMPTY_IDS: ReadonlySet<string> = new Set();
+const EMPTY_CLUSTERS: readonly StationCluster[] = [];
 
 export interface PlanetSceneProps {
   graph: PlanetGraph;
@@ -36,53 +66,123 @@ function clamp(value: number, min: number, max: number): number {
 type SemanticZoomBand = "far" | "normal" | "near";
 
 function isSceneOverlay(target: EventTarget | null): boolean {
-  return target instanceof Element && Boolean(target.closest(".pmini, .pctrl, .chat-panel, .planet-usage, .planet-view-header"));
+  return (
+    target instanceof Element &&
+    Boolean(
+      target.closest(
+        ".pmini, .pctrl, .chat-panel, .planet-usage, .planet-view-header",
+      ),
+    )
+  );
 }
 
-export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, onSelectMany, onOpenFile, focusId, onFocus, stationMatchIds = new Set(), activeContextIds = new Set(), projectionIds = null, stationClusters = [], chatProps, onOpenSettings, canvasFocus, onToggleCanvasFocus }: Readonly<PlanetSceneProps>) {
+export function PlanetScene({
+  graph,
+  navigationTarget,
+  selectedIds,
+  onSelect,
+  onSelectMany,
+  onOpenFile,
+  focusId,
+  onFocus,
+  stationMatchIds = EMPTY_IDS,
+  activeContextIds = EMPTY_IDS,
+  projectionIds = null,
+  stationClusters = EMPTY_CLUSTERS,
+  chatProps,
+  onOpenSettings,
+  canvasFocus,
+  onToggleCanvasFocus,
+}: Readonly<PlanetSceneProps>) {
   const canvasRef = useRef<HTMLDivElement>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [canvas, setCanvas] = useState({ w: 0, h: 0 });
   const [transform, updateTransform] = useState({ x: 0, y: 0, k: 1 });
   const transformRef = useRef(transform);
-  const setTransform = useCallback((next: PlanetCamera | ((current: PlanetCamera) => PlanetCamera)) => {
-    const value = typeof next === "function" ? next(transformRef.current) : next;
-    transformRef.current = value;
-    updateTransform(value);
-  }, []);
+  const setTransform = useCallback(
+    (next: PlanetCamera | ((current: PlanetCamera) => PlanetCamera)) => {
+      const value =
+        typeof next === "function" ? next(transformRef.current) : next;
+      transformRef.current = value;
+      updateTransform(value);
+    },
+    [],
+  );
   const animationRef = useRef<number | null>(null);
   const cancelFlight = useCallback(() => {
-    if (animationRef.current !== null) cancelAnimationFrame(animationRef.current);
+    if (animationRef.current !== null)
+      cancelAnimationFrame(animationRef.current);
     animationRef.current = null;
   }, []);
   useEffect(() => cancelFlight, [cancelFlight]);
-  const [flatMode, setFlatMode] = useState(false);
+  const [flatMode, setFlatMode] = useState(true);
   useEffect(() => {
-    try { setFlatMode(localStorage.getItem("planetview-flat-mode") === "true"); } catch { /* Storage may be unavailable. */ }
+    try {
+      setFlatMode(localStorage.getItem("planetview-flat-mode") !== "false");
+    } catch {
+      /* Storage may be unavailable. */
+    }
   }, []);
   const toggleFlatMode = () => {
     const next = !flatMode;
     setFlatMode(next);
-    try { localStorage.setItem("planetview-flat-mode", String(next)); } catch { /* Keep the session preference. */ }
+    try {
+      localStorage.setItem("planetview-flat-mode", String(next));
+    } catch {
+      /* Keep the session preference. */
+    }
   };
   const [asteroidsVisible, setAsteroidsVisible] = useState(true);
-  const [selectionBox, setSelectionBox] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+  const [selectionBox, setSelectionBox] = useState<{
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  } | null>(null);
   const [panMode, setPanMode] = useState(false);
   const spaceHeld = useRef(false);
   const [spacePanning, setSpacePanning] = useState(false);
+  const [interacting, setInteracting] = useState(false);
+  const motion = usePlanetAnimation(
+    Boolean(hoveredId) || interacting || spacePanning,
+    graph.nodes.length,
+  );
   useEffect(() => {
-    const clear = () => { spaceHeld.current = false; setSpacePanning(false); };
+    const clear = () => {
+      spaceHeld.current = false;
+      setSpacePanning(false);
+    };
     const down = (event: KeyboardEvent) => {
-      if (event.code !== "Space" || event.ctrlKey || event.metaKey || event.altKey) return;
+      if (
+        event.code !== "Space" ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.altKey
+      )
+        return;
       const target = event.target;
-      if (target instanceof Element && (target.closest("input, textarea, select, [contenteditable], dialog") || isSceneOverlay(target))) return;
+      if (
+        target instanceof Element &&
+        (target.closest("input, textarea, select, [contenteditable], dialog") ||
+          isSceneOverlay(target))
+      )
+        return;
       const canvas = canvasRef.current;
-      if (!canvas || !(canvas.matches(":hover") || (target instanceof Node && canvas.contains(target)))) return;
+      if (
+        !canvas ||
+        !(
+          canvas.matches(":hover") ||
+          (target instanceof Node && canvas.contains(target))
+        )
+      )
+        return;
       event.preventDefault();
       spaceHeld.current = true;
       setSpacePanning(true);
     };
-    const up = (event: KeyboardEvent) => { if (event.code === "Space") clear(); };
+    const up = (event: KeyboardEvent) => {
+      if (event.code === "Space") clear();
+    };
     window.addEventListener("keydown", down);
     window.addEventListener("keyup", up);
     window.addEventListener("blur", clear);
@@ -92,17 +192,42 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
       window.removeEventListener("blur", clear);
     };
   }, []);
-  const dragStart = useRef<{ px: number; py: number; ox: number; oy: number; moved: boolean; box: boolean; additive: boolean; pointerId: number } | null>(null);
+  const dragStart = useRef<{
+    px: number;
+    py: number;
+    ox: number;
+    oy: number;
+    moved: boolean;
+    box: boolean;
+    additive: boolean;
+    pointerId: number;
+  } | null>(null);
 
-  const layout = useMemo(
-    () => graph.projection === "station" ? computeStationLayout(graph, stationMatchIds, stationClusters) : computeLayout(graph, "orbital"),
+  const baseLayout = useMemo(
+    () =>
+      graph.projection === "station"
+        ? computeStationLayout(graph, stationMatchIds, stationClusters)
+        : withPlanetOrbits(graph, computeLayout(graph, "orbital")),
     [graph, stationClusters, stationMatchIds],
   );
-  const semanticBand: SemanticZoomBand = transform.k < 0.55 ? "far" : transform.k < 1.15 ? "normal" : "near";
+  const motionPlan = useMemo(
+    () => preparePlanetMotion(graph, baseLayout),
+    [graph, baseLayout],
+  );
+  const layout = useMemo(
+    () => animatePlanetLayout(baseLayout, motionPlan, motion.seconds),
+    [baseLayout, motionPlan, motion.seconds],
+  );
+  const layoutRef = useRef(layout);
+  layoutRef.current = layout;
+  const semanticBand: SemanticZoomBand =
+    transform.k < 0.55 ? "far" : transform.k < 1.15 ? "normal" : "near";
 
   useEffect(() => {
-    if (semanticBand !== "far" || !hoveredId) return;
-    if (graph.byId.get(hoveredId)?.type === "file") setHoveredId(null);
+    if (!hoveredId) return;
+    const hovered = graph.byId.get(hoveredId);
+    if (!hovered || (semanticBand === "far" && hovered.type === "file"))
+      setHoveredId(null);
   }, [graph, hoveredId, semanticBand]);
 
   const childCounts = useMemo(() => {
@@ -131,9 +256,41 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
   }, [graph]);
 
   const visibleIds = useMemo(() => {
-    if (focusId) return subtreeIds(graph, focusId);
+    if (focusId && graph.byId.has(focusId)) return subtreeIds(graph, focusId);
     return null;
   }, [graph, focusId]);
+  useEffect(() => {
+    if (focusId && !graph.byId.has(focusId)) onFocus(null);
+  }, [focusId, graph, onFocus]);
+  const sceneNodes = useMemo(
+    () =>
+      graph.nodes.filter((node) => {
+        if (
+          (!asteroidsVisible && node.fileType === "other") ||
+          (visibleIds && !visibleIds.has(node.id)) ||
+          (projectionIds && !projectionIds.has(node.id))
+        )
+          return false;
+        const position = layout.positions.get(node.id);
+        return (
+          !!position &&
+          inPlanetViewport(position, transform, canvas.w, canvas.h)
+        );
+      }),
+    [
+      graph,
+      asteroidsVisible,
+      visibleIds,
+      projectionIds,
+      layout.positions,
+      transform,
+      canvas,
+    ],
+  );
+  const minimumZoom = Math.min(
+    0.2,
+    fitPlanetCamera(canvas.w, canvas.h, layout.width, layout.height).k,
+  );
 
   // Measure the canvas.
   useEffect(() => {
@@ -146,67 +303,81 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
     return () => observer.disconnect();
   }, []);
 
-  const pickAt = useCallback((clientX: number, clientY: number) => {
-    const canvasElement = canvasRef.current;
-    if (!canvasElement) return null;
-    const rect = canvasElement.getBoundingClientRect();
-    const candidates = graph.nodes.filter((node) => {
-      if (!asteroidsVisible && node.fileType === "other") return false;
-      if (visibleIds && !visibleIds.has(node.id)) return false;
-      if (projectionIds && !projectionIds.has(node.id)) return false;
-      return true;
-    });
-    return pickPlanetNode(
-      candidates,
-      layout.positions,
-      transform,
-      { x: clientX - rect.left, y: clientY - rect.top },
-      semanticBand,
-    );
-  }, [asteroidsVisible, graph, layout.positions, projectionIds, semanticBand, transform, visibleIds]);
+  const pickAt = useCallback(
+    (clientX: number, clientY: number) => {
+      const canvasElement = canvasRef.current;
+      if (!canvasElement) return null;
+      const rect = canvasElement.getBoundingClientRect();
+      return pickPlanetNode(
+        sceneNodes,
+        layout.positions,
+        transform,
+        { x: clientX - rect.left, y: clientY - rect.top },
+        semanticBand,
+      );
+    },
+    [sceneNodes, layout.positions, semanticBand, transform],
+  );
 
   const fitView = useCallback(() => {
     cancelFlight();
     if (canvas.w === 0 || canvas.h === 0) return;
-    const pad = 48;
-    const k = clamp(Math.min((canvas.w - pad * 2) / layout.width, (canvas.h - pad * 2) / layout.height), 0.2, 1.5);
-    setTransform({ x: canvas.w / 2 - (layout.width / 2) * k, y: canvas.h / 2 - (layout.height / 2) * k, k });
-  }, [canvas, layout, cancelFlight, setTransform]);
+    setTransform(
+      fitPlanetCamera(canvas.w, canvas.h, baseLayout.width, baseLayout.height),
+    );
+  }, [canvas, baseLayout, cancelFlight, setTransform]);
 
   // Fit on first measurement and whenever the layout changes (mode switch).
   useEffect(() => {
     fitView();
-  }, [fitView, layout]);
+  }, [fitView, baseLayout]);
 
   const focusOnNode = useCallback(
     (id: string) => {
-      const pos = layout.positions.get(id);
+      const pos = layoutRef.current.positions.get(id);
       if (!pos || canvas.w === 0) return;
       cancelFlight();
       const from = transformRef.current;
       const k = clamp(Math.max(from.k, 1.6), 0.2, 4);
-      const to = { x: canvas.w / 2 - pos.x * k, y: canvas.h / 2 - pos.y * k, k };
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const to = {
+        x: canvas.w / 2 - pos.x * k,
+        y: canvas.h / 2 - pos.y * k,
+        k,
+      };
+      if (
+        flatMode ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
         setTransform(to);
         return;
       }
       const started = performance.now();
       const step = (now: number) => {
         const progress = Math.min(1, (now - started) / 1100);
-        setTransform(interpolatePlanetCamera(from, to, canvas.w, canvas.h, progress));
-        animationRef.current = progress < 1 ? requestAnimationFrame(step) : null;
+        setTransform(
+          interpolatePlanetCamera(from, to, canvas.w, canvas.h, progress),
+        );
+        animationRef.current =
+          progress < 1 ? requestAnimationFrame(step) : null;
       };
       animationRef.current = requestAnimationFrame(step);
     },
-    [layout, canvas, cancelFlight, setTransform],
+    [baseLayout, canvas, cancelFlight, setTransform, flatMode],
   );
 
   const lastNavigation = useRef<typeof navigationTarget>(null);
   useEffect(() => {
-    if (!navigationTarget || navigationTarget === lastNavigation.current || !canvas.w || !canvas.h) return;
+    if (
+      !navigationTarget ||
+      navigationTarget === lastNavigation.current ||
+      !canvas.w ||
+      !canvas.h
+    )
+      return;
     if (!layout.positions.has(navigationTarget.id)) return;
     lastNavigation.current = navigationTarget;
-    if (graph.byId.get(navigationTarget.id)?.fileType === "other") setAsteroidsVisible(true);
+    if (graph.byId.get(navigationTarget.id)?.fileType === "other")
+      setAsteroidsVisible(true);
     focusOnNode(navigationTarget.id);
   }, [navigationTarget, canvas, layout, graph, focusOnNode]);
 
@@ -233,15 +404,22 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
     if (focusId) focusOnNode(focusId);
   }, [focusId, focusOnNode]);
 
-  const zoomBy = useCallback((factor: number) => {
-    cancelFlight();
-    setTransform((t) => {
-      const k = clamp(t.k * factor, 0.2, 4);
-      const cx = canvas.w / 2;
-      const cy = canvas.h / 2;
-      return { x: cx - (cx - t.x) * (k / t.k), y: cy - (cy - t.y) * (k / t.k), k };
-    });
-  }, [canvas, cancelFlight, setTransform]);
+  const zoomBy = useCallback(
+    (factor: number) => {
+      cancelFlight();
+      setTransform((t) => {
+        const k = clamp(t.k * factor, minimumZoom, 4);
+        const cx = canvas.w / 2;
+        const cy = canvas.h / 2;
+        return {
+          x: cx - (cx - t.x) * (k / t.k),
+          y: cy - (cy - t.y) * (k / t.k),
+          k,
+        };
+      });
+    },
+    [canvas, cancelFlight, setTransform, minimumZoom],
+  );
 
   // Native non-passive wheel listener so we can preventDefault.
   useEffect(() => {
@@ -257,20 +435,39 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
       const my = event.clientY - rect.top;
       setTransform((t) => {
         const factor = event.deltaY < 0 ? 1.12 : 1 / 1.12;
-        const k = clamp(t.k * factor, 0.2, 4);
-        return { x: mx - (mx - t.x) * (k / t.k), y: my - (my - t.y) * (k / t.k), k };
+        const k = clamp(t.k * factor, minimumZoom, 4);
+        return {
+          x: mx - (mx - t.x) * (k / t.k),
+          y: my - (my - t.y) * (k / t.k),
+          k,
+        };
       });
     };
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
-  }, [cancelFlight, setTransform]);
+  }, [cancelFlight, setTransform, minimumZoom]);
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (isSceneOverlay(event.target) || dragStart.current || ![0, 1].includes(event.button)) return;
+    if (
+      isSceneOverlay(event.target) ||
+      dragStart.current ||
+      ![0, 1].includes(event.button)
+    )
+      return;
     event.preventDefault();
     event.currentTarget.focus();
     cancelFlight();
-    dragStart.current = { px: event.clientX, py: event.clientY, ox: transform.x, oy: transform.y, moved: false, box: event.button === 0 && !spaceHeld.current && !panMode, additive: event.shiftKey, pointerId: event.pointerId };
+    setInteracting(true);
+    dragStart.current = {
+      px: event.clientX,
+      py: event.clientY,
+      ox: transform.x,
+      oy: transform.y,
+      moved: false,
+      box: event.button === 0 && !spaceHeld.current && !panMode,
+      additive: event.shiftKey,
+      pointerId: event.pointerId,
+    };
     event.currentTarget.setPointerCapture(event.pointerId);
   };
 
@@ -294,21 +491,38 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
     if (start.box) {
       if (start.moved) {
         const rect = event.currentTarget.getBoundingClientRect();
-        setSelectionBox({ x: Math.min(start.px, event.clientX) - rect.left, y: Math.min(start.py, event.clientY) - rect.top, w: Math.abs(dx), h: Math.abs(dy) });
+        setSelectionBox({
+          x: Math.min(start.px, event.clientX) - rect.left,
+          y: Math.min(start.py, event.clientY) - rect.top,
+          w: Math.abs(dx),
+          h: Math.abs(dy),
+        });
       }
     } else setTransform((t) => ({ ...t, x: start.ox + dx, y: start.oy + dy }));
   };
 
   const onPointerUp = (event: PointerEvent<HTMLDivElement>) => {
-    if (!dragStart.current || dragStart.current.pointerId !== event.pointerId) return;
+    if (!dragStart.current || dragStart.current.pointerId !== event.pointerId)
+      return;
     const start = dragStart.current;
     const moved = dragStart.current?.moved ?? false;
     dragStart.current = null;
+    setInteracting(false);
     setSelectionBox(null);
     if (moved && start.box) {
       const rect = event.currentTarget.getBoundingClientRect();
-      const ids = boxSelectPlanetNodes(graph.nodes.filter(isVisible), layout.positions, transform, { x: start.px - rect.left, y: start.py - rect.top }, { x: event.clientX - rect.left, y: event.clientY - rect.top }, semanticBand);
-      onSelectMany(ids.filter((id) => id !== graph.rootId), start.additive);
+      const ids = boxSelectPlanetNodes(
+        graph.nodes.filter(isVisible),
+        layout.positions,
+        transform,
+        { x: start.px - rect.left, y: start.py - rect.top },
+        { x: event.clientX - rect.left, y: event.clientY - rect.top },
+        semanticBand,
+      );
+      onSelectMany(
+        ids.filter((id) => id !== graph.rootId),
+        start.additive,
+      );
     } else if (!moved && event.button === 0 && start.box) {
       const picked = pickAt(event.clientX, event.clientY);
       onSelect(picked?.id ?? null, picked ? event.shiftKey : false);
@@ -322,8 +536,13 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
   const cancelDrag = () => {
     const pointerId = dragStart.current?.pointerId;
     dragStart.current = null;
+    setInteracting(false);
     setSelectionBox(null);
-    if (pointerId !== undefined && canvasRef.current?.hasPointerCapture(pointerId)) canvasRef.current.releasePointerCapture(pointerId);
+    if (
+      pointerId !== undefined &&
+      canvasRef.current?.hasPointerCapture(pointerId)
+    )
+      canvasRef.current.releasePointerCapture(pointerId);
   };
 
   const onDoubleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -333,15 +552,18 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
   };
 
   // Derived visibility + highlight sets.
-  const selectedId = [...selectedIds].at(-1) ?? null;
-  const activeId = hoveredId ?? selectedId;
+  const selectedId =
+    [...selectedIds].filter((id) => graph.byId.has(id)).at(-1) ?? null;
+  const activeId =
+    hoveredId && graph.byId.has(hoveredId) ? hoveredId : selectedId;
   const related = useMemo(() => {
     if (!activeId) return null;
     const set = new Set<string>([activeId]);
     for (const neighbor of adjacency.get(activeId) ?? []) set.add(neighbor);
-    for (const cluster of stationClusters) if (cluster.memberIds.includes(activeId)) {
-      for (const memberId of cluster.memberIds) set.add(memberId);
-    }
+    for (const cluster of stationClusters)
+      if (cluster.memberIds.includes(activeId)) {
+        for (const memberId of cluster.memberIds) set.add(memberId);
+      }
     return set;
   }, [activeId, adjacency, stationClusters]);
 
@@ -352,7 +574,71 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
     return true;
   };
 
-  const breadcrumb = useMemo(() => (focusId ? ancestorPath(graph, focusId) : []), [graph, focusId]);
+  const breadcrumb = useMemo(
+    () => (focusId ? ancestorPath(graph, focusId) : []),
+    [graph, focusId],
+  );
+
+  const labels = useMemo(() => {
+    const candidates: PlanetLabelCandidate[] = [];
+    for (const node of sceneNodes) {
+      const position = layout.positions.get(node.id);
+      if (
+        !position ||
+        (!asteroidsVisible && node.fileType === "other") ||
+        (visibleIds && !visibleIds.has(node.id)) ||
+        (projectionIds && !projectionIds.has(node.id))
+      )
+        continue;
+      const hovered = hoveredId === node.id;
+      const anchor = node.id === (focusId ?? graph.rootId);
+      const selected = selectedIds.has(node.id);
+      if (
+        !hovered &&
+        !selected &&
+        node.type !== "directory" &&
+        (semanticBand !== "near" || node.fileType === "other")
+      )
+        continue;
+      candidates.push({
+        id: node.id,
+        name: node.name,
+        position,
+        priority: hovered
+          ? 5
+          : anchor
+            ? 4
+            : selected
+              ? 3
+              : node.type === "directory"
+                ? 2
+                : 0,
+      });
+    }
+    for (const hub of layout.contextHubs?.values() ?? []) {
+      candidates.push({
+        id: `hub:${hub.id}`,
+        name: hub.name,
+        position: hub,
+        priority: 2,
+      });
+    }
+    return layoutPlanetLabels(candidates, transform, canvas.w, canvas.h);
+  }, [
+    sceneNodes,
+    layout,
+    asteroidsVisible,
+    visibleIds,
+    projectionIds,
+    hoveredId,
+    focusId,
+    graph.rootId,
+    selectedIds,
+    semanticBand,
+    transform,
+    canvas.w,
+    canvas.h,
+  ]);
 
   const viewport = {
     x: (0 - transform.x) / transform.k,
@@ -364,16 +650,32 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
   const jump = useCallback(
     (worldX: number, worldY: number) => {
       cancelFlight();
-      setTransform((t) => ({ ...t, x: canvas.w / 2 - worldX * t.k, y: canvas.h / 2 - worldY * t.k }));
+      setTransform((t) => ({
+        ...t,
+        x: canvas.w / 2 - worldX * t.k,
+        y: canvas.h / 2 - worldY * t.k,
+      }));
     },
     [canvas, cancelFlight, setTransform],
   );
 
   return (
-    <section className={`planet-view${flatMode ? " planet-flat" : ""}`}>
+    <section
+      className={`planet-view planet-neutral${flatMode ? " planet-flat" : ""}`}
+      data-animation-state={
+        motion.enabled ? (motion.running ? "running" : "paused") : "off"
+      }
+    >
       <div className="planet-view-header">
         <span>PLANET VIEW</span>
-        <button aria-label="Focus canvas" aria-pressed={canvasFocus} onClick={onToggleCanvasFocus} title="Toggle side panels and minimize chat for selection space">{canvasFocus ? "Exit focus" : "Focus canvas"}</button>
+        <button
+          aria-label="Focus canvas"
+          aria-pressed={canvasFocus}
+          onClick={onToggleCanvasFocus}
+          title="Toggle side panels and minimize chat for selection space"
+        >
+          {canvasFocus ? "Exit focus" : "Focus canvas"}
+        </button>
         {breadcrumb.length > 0 ? (
           <span className="pv-crumbs">
             {breadcrumb.map((id, index) => {
@@ -389,10 +691,21 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
             })}
           </span>
         ) : (
-          <span className="planet-view-hint">Drag to {panMode ? "pan" : "select"} · Shift adds · Space + drag pans</span>
+          <span className="planet-view-hint">
+            Drag to {panMode ? "pan" : "select"} · Shift adds · Space + drag
+            pans
+          </span>
         )}
-        <button type="button" aria-pressed={panMode} onClick={() => setPanMode(!panMode)}>{panMode ? "Pan mode" : "Select mode"}</button>
-        <span className="pv-count">{selectedIds.size} SELECTED · {graph.nodes.length} NODES</span>
+        <button
+          type="button"
+          aria-pressed={panMode}
+          onClick={() => setPanMode(!panMode)}
+        >
+          {panMode ? "Pan mode" : "Select mode"}
+        </button>
+        <span className="pv-count">
+          {selectedIds.size} SELECTED · {graph.nodes.length} NODES
+        </span>
       </div>
 
       <div
@@ -400,8 +713,16 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
         ref={canvasRef}
         tabIndex={0}
         aria-label="Planet View selection canvas"
-        style={{ touchAction: "none", cursor: panMode || spacePanning ? "grab" : "crosshair" }}
-        onKeyDown={(event) => { if (event.key === "Escape" && !isSceneOverlay(event.target)) { cancelDrag(); cancelFlight(); } }}
+        style={{
+          touchAction: "none",
+          cursor: panMode || spacePanning ? "grab" : "crosshair",
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && !isSceneOverlay(event.target)) {
+            cancelDrag();
+            cancelFlight();
+          }
+        }}
         onPointerCancel={cancelDrag}
         onLostPointerCapture={cancelDrag}
         onPointerDown={onPointerDown}
@@ -413,54 +734,128 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
         onDoubleClick={onDoubleClick}
       >
         <PlanetUsageBadge onOpenSettings={onOpenSettings} />
+        <svg
+          className={`pedges semantic-${semanticBand}${stationMatchIds.size ? " has-station-matches" : ""}`}
+          width={canvas.w}
+          height={canvas.h}
+          opacity={
+            0.5 + 0.25 * Math.min(1, Math.max(0, (transform.k - 0.55) / 1.45))
+          }
+          viewBox={`${viewport.x} ${viewport.y} ${Math.max(viewport.w, 1)} ${Math.max(viewport.h, 1)}`}
+          aria-hidden="true"
+        >
+          <g className="planet-orbits">
+            {layout.orbits?.map((orbit) => {
+              const parent = graph.byId.get(orbit.parentId);
+              if (
+                !parent ||
+                !isVisible(parent) ||
+                !orbitInPlanetViewport(orbit, transform, canvas.w, canvas.h)
+              )
+                return null;
+              return (
+                <circle
+                  key={orbit.parentId}
+                  className={`planet-orbit${orbit.parentId === (focusId ?? graph.rootId) ? " planet-orbit-anchor" : ""}`}
+                  cx={orbit.x}
+                  cy={orbit.y}
+                  r={orbit.radius}
+                />
+              );
+            })}
+          </g>
+          {stationClusters.flatMap((cluster) => {
+            const hub = layout.contextHubs?.get(cluster.id);
+            if (!hub) return [];
+            return cluster.memberIds.map((memberId) => {
+              const member = layout.positions.get(memberId);
+              const node = graph.byId.get(memberId);
+              if (
+                !member ||
+                !node ||
+                !isVisible(node) ||
+                !edgeInPlanetViewport(
+                  hub,
+                  member,
+                  transform,
+                  canvas.w,
+                  canvas.h,
+                )
+              )
+                return null;
+              return (
+                <line
+                  key={`${cluster.id}->${memberId}`}
+                  className="pedge pedge-station-member"
+                  x1={hub.x}
+                  y1={hub.y}
+                  x2={member.x}
+                  y2={member.y}
+                />
+              );
+            });
+          })}
+          {graph.edges.map((edge) => {
+            // Structure mode shows its hierarchy; Context Sorting shows
+            // only semantic links between direct Station matches.
+            if (graph.projection === "station" && edge.kind !== "secondary")
+              return null;
+            const a = layout.positions.get(edge.source);
+            const b = layout.positions.get(edge.target);
+            if (!a || !b) return null;
+            if (!edgeInPlanetViewport(a, b, transform, canvas.w, canvas.h))
+              return null;
+            const sNode = graph.byId.get(edge.source);
+            const tNode = graph.byId.get(edge.target);
+            if (!sNode || !tNode) return null;
+            if (!isVisible(sNode) || !isVisible(tNode)) return null;
+            const dim =
+              related &&
+              !(related.has(edge.source) && related.has(edge.target));
+            const cls = [
+              "pedge",
+              edge.kind === "secondary"
+                ? "pedge-sec"
+                : tNode.type === "file"
+                  ? "pedge-file"
+                  : "pedge-dir",
+              tNode.fileType === "other" ? "pedge-asteroid" : "",
+              dim ? "dim" : "",
+            ]
+              .filter(Boolean)
+              .join(" ");
+            return (
+              <line
+                key={`${edge.source}->${edge.target}`}
+                className={cls}
+                x1={a.x}
+                y1={a.y}
+                x2={b.x}
+                y2={b.y}
+              />
+            );
+          })}
+        </svg>
         <div
           className={`pworld semantic-${semanticBand}`}
-          style={{ width: `${layout.width}px`, height: `${layout.height}px`, transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})` }}
+          data-rendered-nodes={sceneNodes.length}
+          data-total-nodes={graph.nodes.length}
+          style={{
+            transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`,
+          }}
         >
-          <svg className="pedges" width={layout.width} height={layout.height}>
-              {stationClusters.flatMap((cluster) => {
-                const hub = layout.contextHubs?.get(cluster.id);
-                if (!hub) return [];
-                return cluster.memberIds.map((memberId) => {
-                  const member = layout.positions.get(memberId);
-                  const node = graph.byId.get(memberId);
-                  if (!member || !node || !isVisible(node)) return null;
-                  return <line key={`${cluster.id}->${memberId}`} className="pedge pedge-station-member" x1={hub.x} y1={hub.y} x2={member.x} y2={member.y} />;
-                });
-              })}
-              {graph.edges.map((edge) => {
-                // Structure mode shows its hierarchy; Context Sorting shows
-                // only semantic links between direct Station matches.
-                if (graph.projection === "station" && edge.kind !== "secondary") return null;
-                const a = layout.positions.get(edge.source);
-                const b = layout.positions.get(edge.target);
-                if (!a || !b) return null;
-                const sNode = graph.byId.get(edge.source);
-                const tNode = graph.byId.get(edge.target);
-                if (!sNode || !tNode) return null;
-                if (!isVisible(sNode) || !isVisible(tNode)) return null;
-                const dim = related && !(related.has(edge.source) && related.has(edge.target));
-                const cls = [
-                  "pedge",
-                  edge.kind === "secondary" ? "pedge-sec" : tNode.type === "file" ? "pedge-file" : "pedge-dir",
-                  tNode.fileType === "other" ? "pedge-asteroid" : "",
-                  dim ? "dim" : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ");
-                return <line key={`${edge.source}->${edge.target}`} className={cls} x1={a.x} y1={a.y} x2={b.x} y2={b.y} />;
-              })}
-            </svg>
-
-          {graph.nodes.map((node) => {
+          {sceneNodes.map((node) => {
             const pos = layout.positions.get(node.id);
             if (!pos) return null;
             if (!isVisible(node)) return null;
             const counts = childCounts.get(node.id) ?? { files: 0, dirs: 0 };
             const dimmed = related ? !related.has(node.id) : false;
-            const emphasized = related ? related.has(node.id) && node.id !== activeId : false;
+            const emphasized = related
+              ? related.has(node.id) && node.id !== activeId
+              : false;
             return (
               <PlanetNode
+                anchor={node.id === (focusId ?? graph.rootId)}
                 key={node.id}
                 node={node}
                 layout={pos}
@@ -470,9 +865,10 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
                 emphasized={emphasized}
                 stationMatch={stationMatchIds.has(node.id)}
                 activeContext={activeContextIds.has(node.id)}
-                structural={Boolean(projectionIds && !stationMatchIds.has(node.id))}
+                structural={Boolean(
+                  projectionIds && !stationMatchIds.has(node.id),
+                )}
                 semanticBand={semanticBand}
-                showLabel={node.type === "directory" || (semanticBand === "near" && node.fileType !== "other")}
                 childFiles={counts.files}
                 childDirs={counts.dirs}
                 onHover={setHoveredId}
@@ -483,16 +879,66 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
           })}
 
           {[...(layout.contextHubs?.values() ?? [])].map((hub) => (
-            <div key={hub.id} className="pcontext-hub" style={{ left: hub.x, top: hub.y }}>
+            <div
+              key={hub.id}
+              className="pcontext-hub"
+              style={{ left: hub.x, top: hub.y }}
+            >
               <span className="pcontext-hub-orb" />
-              <span>{hub.name}</span>
             </div>
           ))}
         </div>
 
-        {selectionBox ? <div aria-hidden="true" style={{ position: "absolute", pointerEvents: "none", zIndex: 5, left: selectionBox.x, top: selectionBox.y, width: selectionBox.w, height: selectionBox.h, border: "1px solid #b4d8bb", background: "rgba(140, 190, 150, 0.18)" }} /> : null}
-        <PlanetMinimap graph={graph} layout={layout} viewport={viewport} focusId={focusId} asteroidsVisible={asteroidsVisible} onJump={jump} />
-        <ChatPanel variant="floating" {...chatProps} minimizeForCanvas={canvasFocus} />
+        <div
+          className="planet-labels"
+          aria-hidden="true"
+          style={{ fontSize: planetLabelFontSize(transform.k) }}
+        >
+          {labels.map((label) => (
+            <span
+              key={label.id}
+              className={`planet-screen-label${label.id === (focusId ?? graph.rootId) || label.id === hoveredId || selectedIds.has(label.id) ? " is-active" : ""}${related && graph.byId.has(label.id) && !related.has(label.id) ? " is-dim" : ""}`}
+              style={{
+                left: label.x,
+                top: label.y,
+                width: label.width,
+                height: label.height,
+              }}
+            >
+              {label.name}
+            </span>
+          ))}
+        </div>
+
+        {selectionBox ? (
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              pointerEvents: "none",
+              zIndex: 5,
+              left: selectionBox.x,
+              top: selectionBox.y,
+              width: selectionBox.w,
+              height: selectionBox.h,
+              border: "1px solid #b4d8bb",
+              background: "rgba(140, 190, 150, 0.18)",
+            }}
+          />
+        ) : null}
+        <PlanetMinimap
+          graph={graph}
+          layout={baseLayout}
+          viewport={viewport}
+          focusId={focusId}
+          asteroidsVisible={asteroidsVisible}
+          onJump={jump}
+        />
+        <ChatPanel
+          variant="floating"
+          {...chatProps}
+          minimizeForCanvas={canvasFocus}
+        />
         <PlanetControls
           onZoomIn={() => zoomBy(1.01)}
           onZoomOut={() => zoomBy(1 / 1.01)}
@@ -502,13 +948,20 @@ export function PlanetScene({ graph, navigationTarget, selectedIds, onSelect, on
           asteroidsVisible={asteroidsVisible}
           flatMode={flatMode}
           onToggleFlatMode={toggleFlatMode}
+          animationEnabled={motion.enabled}
+          animationRunning={motion.running}
+          onToggleAnimation={motion.toggle}
           onToggleAsteroids={() => {
-            if (asteroidsVisible && selectedId && graph.byId.get(selectedId)?.fileType === "other") onSelect(null);
+            if (
+              asteroidsVisible &&
+              selectedId &&
+              graph.byId.get(selectedId)?.fileType === "other"
+            )
+              onSelect(null);
             setAsteroidsVisible((visible) => !visible);
           }}
         />
       </div>
-
-      </section>
+    </section>
   );
 }

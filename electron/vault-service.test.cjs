@@ -22,6 +22,90 @@ async function withVault(run) {
     await fs.rm(vaultPath, { recursive: true, force: true });
   }
 }
+test("engine storage and relocated portable bundles never become research planets or indexed PDF text", async () => {
+  await withVault(async (vault) => {
+    await fs.mkdir(path.join(vault, ".engine", "runtime"), { recursive: true });
+    await fs.writeFile(
+      path.join(vault, ".engine", "runtime", "internal.md"),
+      "not research",
+    );
+    const bundle = path.join(vault, "portable-engine");
+    for (const file of [
+      "runtime/python.exe",
+      "src/chronoz/issue/trigger.py",
+      "chronoz-tool.json",
+      "outputs/2026-10/report.pdf",
+    ]) {
+      await fs.mkdir(path.dirname(path.join(bundle, file)), {
+        recursive: true,
+      });
+      await fs.writeFile(
+        path.join(bundle, file),
+        "engine file must not be indexed",
+      );
+    }
+    await fs.writeFile(
+      path.join(bundle, "package_manifest.json"),
+      JSON.stringify({
+        integration_version: "1.0.0",
+        platform: "Windows x64",
+        files: [],
+      }),
+    );
+    await fs.mkdir(path.join(vault, "runtime"));
+    await fs.writeFile(
+      path.join(vault, "runtime", "research.md"),
+      "normal folder remains research",
+    );
+    await fs.writeFile(path.join(vault, "note.md"), "Reviewed research");
+    const snapshot = await scanVault(vault);
+    assert.deepEqual(snapshot.entries.map((entry) => entry.name).sort(), [
+      "note.md",
+      "runtime",
+    ]);
+    assert.equal(snapshot.totalFiles, 2);
+    assert.equal(snapshot.issues.length, 2);
+    assert.deepEqual(searchPdfText(vault, "engine file"), []);
+    await assert.rejects(
+      saveMarkdownFile(vault, {
+        vaultPath: vault,
+        relativePath: ".engine/runtime/internal.md",
+        originalContent: "not research",
+        content: "changed",
+      }),
+      /metadata/,
+    );
+    assert.equal(
+      await fs.readFile(
+        path.join(vault, ".engine/runtime/internal.md"),
+        "utf8",
+      ),
+      "not research",
+    );
+  });
+});
+
+test("agent memory stays on disk and readable through settings but is excluded from vault indexing", async () => {
+  await withVault(async (vault) => {
+    const memoryPath = "agentContext.memory/profile.md";
+    await fs.mkdir(path.join(vault, "agentContext.memory"));
+    await fs.writeFile(path.join(vault, memoryPath), "# Agent memory");
+    await fs.writeFile(path.join(vault, "research.md"), "# Research");
+    const snapshot = await scanVault(vault);
+    assert.deepEqual(
+      snapshot.entries.map((entry) => entry.name),
+      ["research.md"],
+    );
+    assert.equal(snapshot.totalFiles, 1);
+    assert.equal(snapshot.totalDirectories, 0);
+    assert.equal(snapshot.issues.length, 0);
+    assert.equal(
+      await fs.readFile(path.join(vault, memoryPath), "utf8"),
+      "# Agent memory",
+    );
+    await readVaultFile(vault, memoryPath);
+  });
+});
 
 test("Markdown saves preserve text, reject stale edits and leave no temporary files", async () => {
   await withVault(async (vaultPath) => {

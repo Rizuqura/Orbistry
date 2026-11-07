@@ -122,7 +122,7 @@ class OpenAIChatProvider {
     resource,
     init,
     consume,
-    { signal, timeoutMs = 15000, absoluteMs = timeoutMs } = {},
+    { signal, timeoutMs = 15000, absoluteMs = timeoutMs, onDiagnostic } = {},
   ) {
     const controller = new AbortController();
     const expire = () =>
@@ -144,10 +144,13 @@ class OpenAIChatProvider {
     try {
       signal?.throwIfAborted();
       touch();
+      onDiagnostic?.("CREDENTIAL_CHECKING");
       const key = await this.credentials.get(this.providerId);
+      onDiagnostic?.("CREDENTIAL_READY");
       controller.signal.throwIfAborted();
       controller.signal.throwIfAborted();
       touch();
+      onDiagnostic?.("HTTP_REQUEST_STARTED");
       response = await this.fetch(this.baseUrl + "/" + resource, {
         ...init,
         redirect: "error",
@@ -158,6 +161,7 @@ class OpenAIChatProvider {
           Authorization: "Bearer " + key,
         },
       });
+      onDiagnostic?.("HTTP_RESPONSE_RECEIVED", { httpStatus: response.status });
       if (!response.ok)
         throw remoteError(
           response.status,
@@ -344,6 +348,17 @@ class OpenAIChatProvider {
     messages[0].content += datasetPlan
       ? `\nReturn only a JSON object matching this schema, without Markdown fences: ${JSON.stringify(request.format)}`
       : "\nWrite the completed answer directly as text or Markdown. Do not wrap it in an answer JSON object. Do not include reasoning or planning. Wonnyy handles response serialization.";
+    request.onDiagnostic?.("GENERATION_SETTINGS_APPLIED", {
+      wireStreaming: true,
+      thinkingDisabled:
+        this.generationParameters(model).chat_template_kwargs
+          ?.enable_thinking === false
+          ? true
+          : undefined,
+      outputTokenCap: settings.outputLimit,
+      idleTimeoutMs: settings.inactivityTimeoutMs,
+      deadlineMs: settings.absoluteTimeoutMs,
+    });
     return this.request(
       "chat/completions",
       {
@@ -362,6 +377,7 @@ class OpenAIChatProvider {
           !response.headers.get("content-type")?.includes("text/event-stream")
         )
           throw invalid(this.label);
+        request.onDiagnostic?.("STREAM_STARTED", { wireStreaming: true });
         let buffer = "",
           data = [],
           content = "",
@@ -403,13 +419,19 @@ class OpenAIChatProvider {
           const choice = value.choices[0];
           if (choice?.index && choice.index !== 0) throw invalid(this.label);
           // Count activity, never retain or forward hidden reasoning to the UI.
-          reasoningCharacters += (
-            choice?.delta.reasoning_content ??
-            choice?.delta.reasoning ??
-            ""
-          ).length;
+          const reasoning =
+            choice?.delta.reasoning_content ?? choice?.delta.reasoning ?? "";
+          if (reasoning && !reasoningCharacters)
+            request.onDiagnostic?.("REASONING_STARTED", {
+              reasoningCharacters: reasoning.length,
+            });
+          reasoningCharacters += reasoning.length;
           if (choice?.delta.content) {
             if (finish) throw invalid(this.label);
+            if (!content)
+              request.onDiagnostic?.("FIRST_CONTENT_RECEIVED", {
+                contentCharacters: choice.delta.content.length,
+              });
             request.onGenerationStarted?.();
             content += choice.delta.content;
             // Separate reasoning fields are discarded. Inline reasoning is rejected.
@@ -457,6 +479,12 @@ class OpenAIChatProvider {
             }
             if (streamDone || (finish && !this.consumeTrailingUsage)) break;
           }
+          request.onDiagnostic?.("STREAM_COMPLETED", {
+            contentCharacters: content.length,
+            reasoningCharacters,
+            bytesReceived: bytes,
+            finishReason: finish ?? "unknown",
+          });
           if (finish === "length")
             throw new ModelRuntimeError(
               "MODEL_INVALID_RESPONSE",
@@ -473,6 +501,9 @@ class OpenAIChatProvider {
           const normalized = datasetPlan
             ? content.trim()
             : normalizeAnswer(content, this.label);
+          request.onDiagnostic?.("RESPONSE_NORMALIZED", {
+            contentCharacters: normalized.length,
+          });
           request.onGenerationStarted?.();
           if (settings.streaming) request.onContent?.(normalized);
           return {
@@ -504,6 +535,7 @@ class OpenAIChatProvider {
         signal: request.signal,
         timeoutMs: settings.inactivityTimeoutMs,
         absoluteMs: settings.absoluteTimeoutMs,
+        onDiagnostic: request.onDiagnostic,
       },
     );
   }
