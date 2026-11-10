@@ -6,7 +6,7 @@ const path = require("node:path");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-empty-agents-"),
+    path.join(os.tmpdir(), "orbistry-empty-agents-"),
   );
   const data = path.join(root, "profile");
   let app;
@@ -14,8 +14,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: data,
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -48,7 +48,7 @@ async function main() {
       .waitFor();
     assert.equal(await page.locator(".agent-bot-row").count(), 0);
     assert.deepEqual(
-      await page.evaluate(() => window.wonnyyDesktop.ai.listAgents()),
+      await page.evaluate(() => window.orbistryDesktop.ai.listAgents()),
       [],
     );
     await app.close();
@@ -70,7 +70,7 @@ async function main() {
       .waitFor();
     assert.equal(await page.locator(".agent-bot-row").count(), 1);
     assert.deepEqual(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listAgents())).map(
+      (await page.evaluate(() => window.orbistryDesktop.ai.listAgents())).map(
         (agent) => agent.displayName,
       ),
       ["My agent"],

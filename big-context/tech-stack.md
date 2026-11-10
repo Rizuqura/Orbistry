@@ -1,8 +1,8 @@
-# Technology Stack — Wonnyy V0.0.1-Amadeus
+# Technology Stack — Orbistry V0.0.1-Amadeus
 
 ## 1. Purpose
 
-This document defines the technology stack for Wonnyy V0.0.1-Amadeus.
+This document defines the technology stack for Orbistry V0.0.1-Amadeus.
 
 It describes:
 
@@ -1119,7 +1119,7 @@ Model Provider
 
 ## Why We Use It
 
-Wonnyy's architecture requires model independence.
+Orbistry's architecture requires model independence.
 
 OpenRouter allows the initial implementation to experiment with multiple models without hard-coding the application around one provider.
 
@@ -1154,7 +1154,7 @@ Selected Model
 ↓
 HTTP Response
 ↓
-Wonnyy
+Orbistry
 ↓
 UI
 ```
@@ -2203,7 +2203,7 @@ The engineering objective is not to maximize technical sophistication.
 
 The objective is:
 
-> **Build the smallest technology stack capable of proving Wonnyy's core thesis.**
+> **Build the smallest technology stack capable of proving Orbistry's core thesis.**
 
 The system should demonstrate:
 

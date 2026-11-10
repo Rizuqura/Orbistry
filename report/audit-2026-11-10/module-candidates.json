@@ -1,0 +1,33 @@
+{
+  "method": "AST literal local require/import/export reachability only. Runtime string paths, workers, CLI/bootstrap and Next conventions can be false negatives. Candidates are not proven unused.",
+  "roots": [
+    "electron/main.cjs",
+    "electron/preload.cjs",
+    "app/layout.tsx",
+    "app/page.tsx"
+  ],
+  "productionReachable": 131,
+  "candidates": [
+    {
+      "path": "electron/ai/dataset-engine.cjs",
+      "classification": "Test/tool reachable; check dynamic runtime registration before deletion"
+    },
+    {
+      "path": "electron/ai/dataset-worker.cjs",
+      "classification": "Uncertain; inspect runtime paths before deletion"
+    },
+    {
+      "path": "electron/ai/llm-front-office/evaluation/fixtures.cjs",
+      "classification": "Test/tool reachable; check dynamic runtime registration before deletion"
+    },
+    {
+      "path": "electron/ai/llm-front-office/evaluation/harness.cjs",
+      "classification": "Test/tool reachable; check dynamic runtime registration before deletion"
+    },
+    {
+      "path": "electron/launch.cjs",
+      "classification": "Uncertain; inspect runtime paths before deletion"
+    }
+  ],
+  "dynamic": []
+}

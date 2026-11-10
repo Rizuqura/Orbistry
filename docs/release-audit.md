@@ -1,4 +1,4 @@
-# QTerminal v1.0.0 — Victoria Beta release audit
+# Orbistry v1.0.0 — Victoria Beta release audit
 
 Audit completed on 2026-10-29 against the local Windows x64 checkout. Measurements are logical bytes, not allocated disk blocks. Existing uncommitted empty-agent work was preserved and incorporated. No GitHub publication or history rewrite was performed.
 
@@ -12,10 +12,10 @@ The clean baseline builds, essential regression checks pass, and an actual Windo
 - Electron main/preload use CommonJS and Node. A sandboxed renderer has context isolation and no Node integration. Explicit IPC connects the renderer to main-process stores/providers.
 - User-selected research files remain in the user's vault. Supported Markdown, CSV, PDF and image input feeds explicit review/Context Box workflows. Vault-local `.wonnyy/` holds Stations, Context Boxes, conversations and immutable run audits as versioned JSON; there is no SQL database.
 - Electron userData holds model settings, encrypted provider credentials, agents and managed profile assets. Chromium maintains local UI storage, indexes and caches there. The old default vault was the developer's `C:\bank`; this must not be the public first-run default.
-- Ollama is a separately installed local service. Gemini, NVIDIA NIM and OpenRouter are optional BYOK HTTPS providers, behind ProviderRegistry. No QTerminal account, mandatory hosted service or billing backend exists.
+- Ollama is a separately installed local service. Gemini, NVIDIA NIM and OpenRouter are optional BYOK HTTPS providers, behind ProviderRegistry. No Orbistry account, mandatory hosted service or billing backend exists.
 - CSV/statistics run in bounded local JavaScript worker threads. No Python runtime, virtual environment, scientific Python dependency or model weights were found in the measured checkout. Windows OCR uses a fixed PowerShell/WinRT script; PDF rasterization uses PDF.js plus native `@napi-rs/canvas`. Electron supplies Chromium/Node; the canvas binary is platform-specific.
 - `public/` has branding, a CSS/SVG startup background and generated PDF.js resources. `build/` has required installer/window icons. `app/icon.png` is the Next metadata icon; these icon copies have different consumers. `scripts/fixtures/` and `*.test.cjs` are synthetic acceptance/unit-test inputs, not release data.
-- `big-context/` contains design/history/handoff Markdown. `test-results/`, `.cache/`, `.next/`, `out/` and `dist/` are generated, ignored development/output trees. Existing `dist/` contains an obsolete Wonnyy 0.1.0 installer and unpacked app.
+- `big-context/` contains design/history/handoff Markdown. `test-results/`, `.cache/`, `.next/`, `out/` and `dist/` are generated, ignored development/output trees. Existing `dist/` contains an obsolete Orbistry 0.1.0 installer and unpacked app.
 - Packaging previously allowed all `electron/**/*` (including tests), `out/**/*` and icons. Next/React were production dependencies even though the renderer is statically bundled. This unnecessarily expanded packaged dependencies. Native dependencies must remain available for PDF/OCR behavior.
 - Knowledge proposals use a separate local research-outbox through KnowledgeStore/ResearchKnowledge, with explicit approval. There is no advanced hosted memory layer. Main-process startup was missing the existing outbox/backdrop wiring; it is audited as a pre-existing regression, not a future feature.
 
@@ -61,7 +61,7 @@ The initial report was captured before cleanup; the after report was captured af
 | Frontend export out                                   |                          6.423 MB |                                6.426 MB | Functionality retained; no cosmetic bundle target                                |
 | Same-version unpacked package built during audit      |                         739.74 MB |                               443.35 MB | **40.07% smaller**, including installer-added elevation helper                   |
 | Application ASAR                                      |                         243.21 MB |                                29.31 MB | Next/build dependencies, tests and maps excluded                                 |
-| Installer                                             | 153.82 MB (old Wonnyy 0.1.0 only) |               138.07 MB (Victoria Beta) | Old installer is a different version; no same-version before installer was built |
+| Installer                                             | 153.82 MB (old Orbistry 0.1.0 only) |               138.07 MB (Victoria Beta) | Old installer is a different version; no same-version before installer was built |
 | Python environment/model weights                      |                         Not found |                               Not found | CSV/statistics remain JavaScript, OCR remains native Windows                     |
 
 The old 0.1.0 unpacked app was 731.10 MB; it is distinct from the 739.74 MB same-version baseline built here. The final installed payload measurement is the unpacked directory, not an actual measured post-install footprint including shortcuts/registry/uninstaller. That clean-machine measurement remains untested.
@@ -72,7 +72,7 @@ Recommended current-architecture budgets: roughly **140 MB installer**, **445 MB
 
 Meaningful removals:
 
-- Old `dist/` Wonnyy 0.1.0 installer, blockmap, icon scratch and unpacked application after recording their measured sizes; replaced by the new release outputs.
+- Old `dist/` Orbistry 0.1.0 installer, blockmap, icon scratch and unpacked application after recording their measured sizes; replaced by the new release outputs.
 - Temporary `.cache/release-before/` unpacked baseline after recording same-version package sizes.
 - Inactive `.next/dev/` and `.next/cache/turbopack/v16.3.2-d0ac8828/`; checked that no matching workspace dev server or dev lock was active before removing the former.
 - Audit-created npm/download scratch after installation; no dependencies or source removed with those caches.
@@ -107,9 +107,9 @@ Security reference: [Electron's official security guidance](https://www.electron
 
 ## First run, privacy and compatibility
 
-The production AgentStore fallback is empty; compatibility test fixtures explicitly opt into historical built-ins. Saved legacy profiles remain readable without automatic rewrites. The already requested local empty-agent reset remains respected. A new install does not seed Wonnyy, CHronoZ, personal images, research knowledge or a hidden chat. The UI supports no selected agent and invites the user to create one.
+The production AgentStore fallback is empty; compatibility test fixtures explicitly opt into historical built-ins. Saved legacy profiles remain readable without automatic rewrites. The already requested local empty-agent reset remains respected. A new install does not seed Orbistry, CHronoZ, personal images, research knowledge or a hidden chat. The UI supports no selected agent and invites the user to create one.
 
-First boot creates an empty `Documents/QTerminal Vault`, never `C:\bank`. An explicit folder choice is persisted locally. Environment overrides remain available to development/test launches; they do not copy or ship the referenced data. Existing installed secrets and vault files were preserved. The clean-default requirement applies to release inputs and fresh profiles, not destructive erasure of the developer's real keys.
+First boot creates an empty `Documents/Orbistry Vault`, never `C:\bank`. An explicit folder choice is persisted locally. Environment overrides remain available to development/test launches; they do not copy or ship the referenced data. Existing installed secrets and vault files were preserved. The clean-default requirement applies to release inputs and fresh profiles, not destructive erasure of the developer's real keys.
 
 Vault `.wonnyy/` owns Station/Context Box/chat/run JSON, while profile storage owns agents/settings/encrypted credentials/assets/UI caches. Research files stay user-owned. Configured remote providers receive approved request content and included history; provider retention/billing apply. There are no new accounts, mandatory cloud services, subscriptions or telemetry. Provider discovery can contact configured endpoints; Ollama uses loopback. Grounding/citation checks do not guarantee a factually correct model answer.
 
@@ -119,7 +119,7 @@ Vault `.wonnyy/` owns Station/Context Box/chat/run JSON, while profile storage o
 - **PASS:** `npm ci --dry-run --ignore-scripts` validates lockfile consistency. Standard install/update completed; packaging uses the locked runtime. Reproducibility means dependency/input/process reproducibility, not byte-identical NSIS output across machines/timestamps.
 - **PASS:** clean isolated first boot with no agents/boxes/chats/remote keys/research; empty default Documents vault; visible `v1.0.0 Victoria Beta`.
 - **PASS:** empty-agent restart and first custom-agent UI; provider settings/key encryption/model discovery/streaming/retry/cancel/history restart; PDF/image/scanned-PDF OCR and token estimates; usage indicator/reset countdown. Transports for model answers in those acceptance tests are synthetic and no real keys or paid models were used.
-- **PASS:** actual `dist/win-unpacked/QTerminal.exe` under an isolated profile/vault: empty state and keys, export CSP, native PNG/scanned-PDF OCR, first custom agent/Context Box, and known-answer CSV aggregation in the ASAR-packaged worker.
+- **PASS:** actual `dist/win-unpacked/Orbistry.exe` under an isolated profile/vault: empty state and keys, export CSP, native PNG/scanned-PDF OCR, first custom agent/Context Box, and known-answer CSV aggregation in the ASAR-packaged worker.
 - **PASS:** archive contents audited: 1,466 entries, no tests, source maps, Next server/build packages, personal research/credentials/profile databases, scripts, docs, caches, Git data or model weights. Required policy, PDF resources, canvas native binary and unpacked OCR helper are present.
 - **NOT TESTED:** fresh Windows VM installer/uninstaller end to end, macOS/Linux distributions, live-provider grounding/answer-quality benchmark, full penetration testing.
 
@@ -170,7 +170,7 @@ Working-set sums can double-count shared memory; these are Electron's process me
 
 ProviderRegistry and provider adapters already separate the runtime from Ollama/Gemini/NVIDIA/OpenRouter. Capability metadata, manual budgets, timeouts and retries remain runtime-owned; routing/model-intelligence policy and commercial billing are future layers. Do not substitute a hosted gateway in this baseline.
 
-Memory is local and concrete: ConversationStore/RunStore and knowledge proposal/outbox storage use filesystem JSON/Markdown; KnowledgeStore is coupled to profile/vault identities, and the reviewed-proposal skill remains tied to legacy Wonnyy. A future explicit memory interface can isolate those implementations, but was not introduced merely for release preparation. Context Box review/version identities and protected evidence boundaries remain intact; semantic retrieval and document snapshots are not added.
+Memory is local and concrete: ConversationStore/RunStore and knowledge proposal/outbox storage use filesystem JSON/Markdown; KnowledgeStore is coupled to profile/vault identities, and the reviewed-proposal skill remains tied to legacy Orbistry. A future explicit memory interface can isolate those implementations, but was not introduced merely for release preparation. Context Box review/version identities and protected evidence boundaries remain intact; semantic retrieval and document snapshots are not added.
 
 Remaining hardening includes a dedicated local protocol, stronger native/worker isolation, more repeated startup profiling, explicit retained-audit management and test maintenance for legacy built-ins vs new empty defaults. Observability remains local run diagnostics, not mandatory hosted collection. There are no Redis/Kubernetes/databases/accounts/paid-memory or billing dependencies to remove.
 
@@ -180,7 +180,7 @@ Remaining hardening includes a dedicated local protocol, stronger native/worker 
 
 Local, ignored outputs:
 
-- `dist/QTerminal-1.0.0-Victoria-Beta-win-x64.exe` — 138,073,467 bytes, unsigned.
+- `dist/Orbistry-1.0.0-Victoria-Beta-win-x64.exe` — 138,073,467 bytes, unsigned.
 - `dist/win-unpacked/` — 443,353,508 bytes at audit (includes elevation helper).
 - `dist/SHA256SUMS.txt` and installer blockmap.
 - Installer SHA-256: `9701cbb3082480eb629bab78637a90bdcad2b68ad6c626a5859c6993bca3412f`.
@@ -212,7 +212,7 @@ These are source-file sizes from Git-index membership at measurement time. Pendi
 | electron/station-service.cjs                                                   |  32,148 |
 | electron/ai/chat-service.cjs                                                   |  29,022 |
 | features/model-settings/model-settings.tsx                                     |  27,655 |
-| big-context/feature/QTerminal_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md |  26,822 |
+| big-context/feature/Orbistry_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md |  26,822 |
 
 ## Top 20 largest directories (after cleanup snapshot)
 

@@ -1,4 +1,4 @@
-# QTerminal 1.0.0 Victoria - project state
+# Orbistry 1.0.0 Victoria - project state
 
 ## Latest increment: single-file agent node sources
 
@@ -26,15 +26,15 @@ Each agent's three-dot menu now opens its own floating Agent Construction editor
 
 ## Latest increment: persistent knowledge proposals (2026-10-26)
 
-Wonnyy-only `knowledge-consolidation` is registered as a reviewed proposal capability. Completed runs can stage structured observations in an app-owned outbox outside the Bank Vault; a separate operator CLI approves versioned Markdown. Session-bound deterministic retrieval is preview-only. No `/loop` executor exists; invoking it now fails explicitly rather than suggesting a loop ran. Automatic extraction and Context Box/prompt injection remain unimplemented. See [knowledge-consolidation-handoff.md](feature/knowledge-consolidation-handoff.md) for permissions, schema, recovery and acceptance gaps. This supersedes earlier descriptions of Wonnyy's empty skill list; CHronoZ remains empty.
+Orbistry-only `knowledge-consolidation` is registered as a reviewed proposal capability. Completed runs can stage structured observations in an app-owned outbox outside the Bank Vault; a separate operator CLI approves versioned Markdown. Session-bound deterministic retrieval is preview-only. No `/loop` executor exists; invoking it now fails explicitly rather than suggesting a loop ran. Automatic extraction and Context Box/prompt injection remain unimplemented. See [knowledge-consolidation-handoff.md](feature/knowledge-consolidation-handoff.md) for permissions, schema, recovery and acceptance gaps. This supersedes earlier descriptions of Orbistry's empty skill list; CHronoZ remains empty.
 
 ## Victoria release UI - 2026-10-26
 
 CHronoZ is now a real selectable chat agent with blank custom instructions/skills/PFP and separate conversations/preferences. Planet View gains wider orbital spacing, larger picking assistance and a Focus canvas toggle. Desktop bridge is **18**. See [CHronoZ and Planet handoff](./feature/chronoz-planet-handoff.md); earlier dummy-only descriptions below are historical.
 
-Follow-up fixes restore usable vault header geometry, remove the library beneath the vault, add dark scrollbars and a single-row minimized Wonnyy bar with safe restore geometry. Context Boxes remain available through the Planet context manager’s library dialog. CHronoZ appears as a non-executing placeholder contact. See [UI polish handoff](./feature/ui-polish-handoff.md).
+Follow-up fixes restore usable vault header geometry, remove the library beneath the vault, add dark scrollbars and a single-row minimized Orbistry bar with safe restore geometry. Context Boxes remain available through the Planet context manager’s library dialog. CHronoZ appears as a non-executing placeholder contact. See [UI polish handoff](./feature/ui-polish-handoff.md).
 
-App identity is now **QTerminal 1.0.0 Victoria**. Workspace, navigation and shared docked/floating chat use clearer system typography and minimal dark surfaces; context building retains retro controls. Markdown/CSV readers add explicit context review, with no automatic session creation. Existing storage directories and app ID remain compatible. See [Victoria workspace handoff](./feature/victoria-workspace-handoff.md) for workflow, persistence and verification.
+App identity is now **Orbistry 1.0.0 Victoria**. Workspace, navigation and shared docked/floating chat use clearer system typography and minimal dark surfaces; context building retains retro controls. Markdown/CSV readers add explicit context review, with no automatic session creation. Existing storage directories and app ID remain compatible. See [Victoria workspace handoff](./feature/victoria-workspace-handoff.md) for workflow, persistence and verification.
 
 ## OpenRouter usage monitor - 2026-10-25
 
@@ -42,9 +42,9 @@ Planet View now includes a compact collapsible allowance monitor below its toolb
 
 ## AGENT workspace update - 2026-10-25
 
-The Agent view now matches the minimal Settings palette and typography. Wonnyy appears as a contact with its own initially collapsed, searchable chat-history dropdown; Context / Details opens on demand. Static surfaces avoid animation/blur/canvas, and memoized contacts do not redraw for every streamed token. No hardware GPU benchmark is claimed. Existing chat, provider, context and agent-settings persistence remain unchanged.
+The Agent view now matches the minimal Settings palette and typography. Orbistry appears as a contact with its own initially collapsed, searchable chat-history dropdown; Context / Details opens on demand. Static surfaces avoid animation/blur/canvas, and memoized contacts do not redraw for every streamed token. No hardware GPU benchmark is claimed. Existing chat, provider, context and agent-settings persistence remain unchanged.
 
-The new AGENT tab shares Wonnyy Agent sessions with the floating/docked views. It adds searchable history, explicit Context Box creation flow, bound-source details, resizable panes/drawers and per-agent instructions/PFP settings. Agent settings and assets are application-owned by stable ID, with lazy non-writing legacy history association and immutable per-run policy provenance. Desktop bridge is **17**. See [Agent workspace handoff](./feature/agent-workspace-handoff.md) for implementation, migration and verification.
+The new AGENT tab shares Orbistry Agent sessions with the floating/docked views. It adds searchable history, explicit Context Box creation flow, bound-source details, resizable panes/drawers and per-agent instructions/PFP settings. Agent settings and assets are application-owned by stable ID, with lazy non-writing legacy history association and immutable per-run policy provenance. Desktop bridge is **17**. See [Agent workspace handoff](./feature/agent-workspace-handoff.md) for implementation, migration and verification.
 
 ## OpenRouter and AI Terminal update - 2026-10-25
 
@@ -52,9 +52,9 @@ Live-catalog fix: accepted `~` aliases and isolated malformed catalog rows; sepa
 
 AI Terminal now uses provider cards, one connection form, searchable models and collapsed advanced settings. OpenRouter supports encrypted keys, catalog discovery, streaming, synthetic checks, credit-limit errors and the existing bound-chat lifecycle. Desktop bridge is **16**. See [OpenRouter handoff](./openrouter-handoff.md). Earlier provider and UI descriptions below are historical.
 
-## Wonnyy Agent update - 2026-10-25
+## Orbistry Agent update - 2026-10-25
 
-QTerminal now has integrated editable Context Boxes in the shared Explorer/Planet sidebar, reviewed selection additions, source details with remove/relink, confirmed box deletion, explicit agent preselection and confirmed chat switching. Each turn resolves the latest permitted files and records an immutable source/hash manifest; previous messages keep their original evidence. Empty boxes persist but cannot start chats. Schema 1 boxes and schema 1/2 conversations remain readable without eager rewriting; explicit use migrates metadata as needed. Desktop bridge version is **15**. See [the implementation handoff](./feature/wonnyy-agent-handoff.md) for ownership, migration and verification; older single-source/automatic-chat descriptions below are historical. Full pinned/budgeted Context Windows remain separate roadmap work.
+Orbistry now has integrated editable Context Boxes in the shared Explorer/Planet sidebar, reviewed selection additions, source details with remove/relink, confirmed box deletion, explicit agent preselection and confirmed chat switching. Each turn resolves the latest permitted files and records an immutable source/hash manifest; previous messages keep their original evidence. Empty boxes persist but cannot start chats. Schema 1 boxes and schema 1/2 conversations remain readable without eager rewriting; explicit use migrates metadata as needed. Desktop bridge version is **15**. See [the implementation handoff](./feature/orbistry-agent-handoff.md) for ownership, migration and verification; older single-source/automatic-chat descriptions below are historical. Full pinned/budgeted Context Windows remain separate roadmap work.
 
 Updated: **2026-09-10**. Release checkpoint: **0.0.5**, tag **`v0.0.5-amadeus`**. Previous baseline: `80ffb5e` / `v0.0.4-amadeus`.
 
@@ -72,11 +72,11 @@ At the user's request, part of model consumption has moved forward ahead of the 
 
 This supersedes the single-Markdown-only limits and M9-B sequencing described in the earlier status sections below. Named reusable Context Windows, pins, window-specific budgets and semantic retrieval remain unfinished. See [Station model context handoff](./station-model-context-handoff.md) for the exact workflow, boundaries and verification. This work is included in the 0.0.5 checkpoint; the 0.0.4 tag remains on the previous baseline.
 
-Wonnyy now integrates local Ollama and online Gemini/NVIDIA models into a shared, persistent, single-source chat runtime. Model switching, secure online credentials, streaming, cancellation, and restart recovery are implemented. The full research-workspace MVP is still in development: natural conversation quality needs sustained acceptance, and multi-source context plus several reading/search requirements remain unfinished.
+Orbistry now integrates local Ollama and online Gemini/NVIDIA models into a shared, persistent, single-source chat runtime. Model switching, secure online credentials, streaming, cancellation, and restart recovery are implemented. The full research-workspace MVP is still in development: natural conversation quality needs sustained acceptance, and multi-source context plus several reading/search requirements remain unfinished.
 
 Product principle: **AI models should be replaceable. Knowledge should be permanent.**
 
-Current product priority: **make context building, inspection, refinement and reuse comfortable and easy inside Wonnyy.** The [Context Engineering specification](./context-engineering-experience.md) sets the order: **M8 Chat Reliability → M9 Context Windows + Station Grouping → M9.5 Semantic Retrieval → M10 CSV / Analytics Tools → M11 Tool-Using Agent**. M8 acceptance remains pending; M9 is planned, not implemented.
+Current product priority: **make context building, inspection, refinement and reuse comfortable and easy inside Orbistry.** The [Context Engineering specification](./context-engineering-experience.md) sets the order: **M8 Chat Reliability → M9 Context Windows + Station Grouping → M9.5 Semantic Retrieval → M10 CSV / Analytics Tools → M11 Tool-Using Agent**. M8 acceptance remains pending; M9 is planned, not implemented.
 
 M9 introduces a persistent, named, versioned `ContextWindow` with authorized objects/Stations, pinned sources and a token budget. **Selected, Authorized, Pinned and Used must remain distinct.** Current Active Context and one-source chat do not yet implement this object or its complete interaction model.
 

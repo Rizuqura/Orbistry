@@ -96,7 +96,7 @@ test("verified NVIDIA instruct modes disable thinking without changing output ca
           body.chat_template_kwargs,
           supported.includes(model) ? { enable_thinking: false } : undefined,
         );
-        return stream([part("QTERMINAL_OK", "stop")]);
+        return stream([part("ORBISTRY_OK", "stop")]);
       },
     });
     assert.equal(
@@ -107,7 +107,7 @@ test("verified NVIDIA instruct modes disable thinking without changing output ca
           settings: { ...request().settings, outputLimit: 6000 },
         }),
       ),
-      "QTERMINAL_OK",
+      "ORBISTRY_OK",
     );
   }
 });
@@ -159,7 +159,7 @@ test("active reasoning resets inactivity timeout while the total deadline stays 
               const value =
                 count++ < 5
                   ? { choices: [{ delta: { reasoning_content: "hidden" } }] }
-                  : part("QTERMINAL_OK", "stop");
+                  : part("ORBISTRY_OK", "stop");
               controller.enqueue(
                 new TextEncoder().encode(`data: ${JSON.stringify(value)}\n\n`),
               );
@@ -187,7 +187,7 @@ test("active reasoning resets inactivity timeout while the total deadline stays 
       absoluteTimeoutMs: 5000,
     },
   });
-  assert.equal(validateAnswer(value), "QTERMINAL_OK");
+  assert.equal(validateAnswer(value), "ORBISTRY_OK");
   await assert.rejects(
     provider.complete({
       ...request(),

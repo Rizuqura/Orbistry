@@ -40,7 +40,7 @@ const AgentContact = memo(function AgentContact({
   const [editId, setEditId] = useState(""),
     [title, setTitle] = useState("");
   const historyId = useId();
-  const agentName = agent?.displayName ?? "Wonnyy Agent";
+  const agentName = agent?.displayName ?? "Orbistry Agent";
   useEffect(() => {
     if (!active) setExpanded(false);
   }, [active]);
@@ -64,7 +64,7 @@ const AgentContact = memo(function AgentContact({
       aria-label={`${agentName} conversations`}
     >
       <div
-        className={`agent-bot-row${active ? " selected" : ""}`}
+        className={`agent-bot-row${active ? " selected" : ""}${agent?.appearance?.bannerUrl ? " agent-banner" : ""}`}
         data-agent-id={agent?.id}
         style={bannerStyle(agent?.appearance?.bannerUrl)}
       >

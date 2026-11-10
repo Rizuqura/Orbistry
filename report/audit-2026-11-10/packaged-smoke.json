@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "executable": "Windows x64 Orbistry.exe",
+  "emptyState": true,
+  "csp": true,
+  "nativeImageOcr": true,
+  "nativeScannedPdfOcr": true,
+  "packagedCsvWorker": true,
+  "customAgentCreation": true,
+  "contextBoxCreation": true,
+  "realProviderCalls": false,
+  "rendererErrors": []
+}

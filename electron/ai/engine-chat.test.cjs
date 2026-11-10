@@ -147,7 +147,7 @@ for (const id of Object.keys(classes))
   });
 async function chatFixture(t) {
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-engine-chat-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-engine-chat-")),
   );
   t.after(async () => {
     assert.ok(root.startsWith((await fs.realpath(os.tmpdir())) + path.sep));

@@ -221,6 +221,7 @@ export function ContextBoxes({
         )}
         {mode === "add" && (
           <form
+            className="context-box-add-form"
             onSubmit={(e) => {
               e.preventDefault();
               if (loading) return;
@@ -238,103 +239,133 @@ export function ContextBoxes({
               );
             }}
           >
-            <label>
-              Search existing boxes
-              <input
-                aria-label="Search existing Context Boxes"
-                value={destinationQuery}
-                onChange={(e) => setDestinationQuery(e.target.value)}
-              />
-            </label>
-            <label>
-              Destination
-              <select
-                aria-label="Context Box destination"
-                value={target}
-                onChange={(e) => setTarget(e.target.value)}
-              >
-                <option value="">Create a new Context Box</option>
-                {chat.contextBoxes
-                  .filter(
-                    (b) =>
-                      b.id === target ||
-                      b.name
-                        .toLowerCase()
-                        .includes(destinationQuery.toLowerCase()),
-                  )
-                  .map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.name} ({b.items.length} files)
-                    </option>
-                  ))}
-              </select>
-            </label>
-            {!target && (
-              <label>
-                Context Box name
-                <input
-                  autoFocus
-                  aria-label="Context Box name"
-                  required
-                  maxLength={120}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </label>
-            )}
-            <p>
-              Review {files.length} supported files. Folder contents are fixed
-              at this save; later files are never added automatically.
-            </p>
-            <div className="box-source-list">
-              {files.map((file) => (
-                <label key={file}>
+            <fieldset className="box-form-section" disabled={busy}>
+              <legend>1. Choose a destination</legend>
+              <p className="box-form-hint">
+                Create a new box or choose an existing one.
+              </p>
+              {chat.contextBoxes.length > 0 && (
+                <label>
+                  Search existing boxes{" "}
+                  <span className="box-field-optional">Optional</span>
                   <input
-                    type="checkbox"
-                    checked={checked.has(file)}
-                    onChange={(e) =>
-                      setChecked((previous) => {
-                        const next = new Set(previous);
-                        if (e.target.checked) next.add(file);
-                        else next.delete(file);
-                        return next;
-                      })
-                    }
+                    aria-label="Search existing Context Boxes"
+                    placeholder="Search by box name"
+                    type="search"
+                    value={destinationQuery}
+                    onChange={(e) => setDestinationQuery(e.target.value)}
                   />
-                  <span>{file}</span>
                 </label>
-              ))}
-            </div>
-            {!!skipped.length && (
-              <details>
-                <summary>
-                  {skipped.length} unsupported or unavailable selections skipped
-                </summary>
-                {skipped.map((file) => (
-                  <p key={file}>{file}</p>
-                ))}
-              </details>
-            )}
-            {!!duplicateCount && (
-              <p>
-                {duplicateCount} already in this box; duplicates will be
-                skipped.
+              )}
+              <label>
+                Destination
+                <select
+                  aria-label="Context Box destination"
+                  value={target}
+                  onChange={(e) => setTarget(e.target.value)}
+                >
+                  <option value="">Create a new Context Box</option>
+                  {chat.contextBoxes
+                    .filter(
+                      (b) =>
+                        b.id === target ||
+                        b.name
+                          .toLowerCase()
+                          .includes(destinationQuery.toLowerCase()),
+                    )
+                    .map((b) => (
+                      <option key={b.id} value={b.id}>
+                        {b.name} ({b.items.length} files)
+                      </option>
+                    ))}
+                </select>
+              </label>
+              {!target && (
+                <label>
+                  Context Box name
+                  <input
+                    autoFocus
+                    aria-label="Context Box name"
+                    required
+                    maxLength={120}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </label>
+              )}
+            </fieldset>
+            <fieldset
+              className="box-form-section box-review-section"
+              disabled={busy}
+            >
+              <legend>2. Review knowledge</legend>
+              <div className="box-review-summary">
+                <strong>
+                  {checked.size} of {files.length} files selected
+                </strong>
+                <span>Supported files</span>
+              </div>
+              <p className="box-form-hint">
+                Choose which files to include. Files added to a folder later are
+                not included automatically.
               </p>
-            )}
-            {!files.length && !loading && (
-              <p>
-                You can create an empty box and add Markdown, CSV or text PDF
-                files later. Empty boxes cannot start a chat.
-              </p>
-            )}
-            <p>
-              Saving changes box membership only. No chat or model request is
-              created.
+              {!!files.length && (
+                <div className="box-source-list">
+                  {files.map((file) => (
+                    <label key={file}>
+                      <input
+                        type="checkbox"
+                        checked={checked.has(file)}
+                        onChange={(e) =>
+                          setChecked((previous) => {
+                            const next = new Set(previous);
+                            if (e.target.checked) next.add(file);
+                            else next.delete(file);
+                            return next;
+                          })
+                        }
+                      />
+                      <span>{file}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+              {!!skipped.length && (
+                <details>
+                  <summary>
+                    {skipped.length} unsupported or unavailable selections
+                    skipped
+                  </summary>
+                  {skipped.map((file) => (
+                    <p key={file}>{file}</p>
+                  ))}
+                </details>
+              )}
+              {!!duplicateCount && (
+                <p>
+                  {duplicateCount} already in this box; duplicates will be
+                  skipped.
+                </p>
+              )}
+              {!files.length && !loading && (
+                <div className="box-empty-state">
+                  <strong>No files selected</strong>
+                  <p>
+                    You can create an empty box and add Markdown, CSV or text
+                    PDF files later. Add knowledge before starting a chat.
+                  </p>
+                </div>
+              )}
+            </fieldset>
+            <p className="box-save-note">
+              Saving updates this box. It does not start a chat or send a model
+              request.
             </p>
-            <div className="agent-actions">
+            <div className="agent-actions box-form-actions">
               <button
+                className="box-primary-action"
                 disabled={
-                  chat.busy ||
+                  busy ||
                   loading ||
                   (!target && !name.trim()) ||
                   (!!target && !checked.size)

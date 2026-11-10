@@ -20,7 +20,7 @@ const { ChatService } = require("../electron/ai/chat-service.cjs");
     path.join(root, ".wonnyy", "settings"),
   );
   await registry.save({
-    modelId: process.env.WONNYY_DATASET_MODEL || "qwen3:4b",
+    modelId: process.env.ORBISTRY_DATASET_MODEL || "qwen3:4b",
     temperature: 0,
     contextWindow: 8192,
     outputLimit: 1200,

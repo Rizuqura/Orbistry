@@ -10,7 +10,10 @@ const {
 } = require("./schemas.cjs");
 const { checkRemoteModel } = require("./model-check.cjs");
 const { ModelPullService } = require("./model-pull.cjs");
-const { OpenRouterUsageService } = require("./openrouter-usage.cjs");
+const {
+  ProviderUsageService,
+  observeProviderUsage,
+} = require("./provider-usage.cjs");
 const { ModelAccess, providedPreview } = require("./model-access.cjs");
 const API_VERSION = 18;
 const { createRequestLogger } = require("./request-logger.cjs");
@@ -41,18 +44,22 @@ function registerAiIpc({
       : null;
   const checks = new Map();
   const clients = new Map();
-  const usage = new OpenRouterUsageService({ credentials, registry });
+  const usage = new ProviderUsageService({ credentials, registry, agents });
   const modelAccess = new ModelAccess(credentials);
   const usageChanged = () => {
     for (const sender of clients.values())
       if (!sender.isDestroyed?.()) sender.send?.("ai:usageChanged");
   };
-  const openrouter = registry?.providerFor?.("openrouter");
-  if (openrouter)
-    openrouter.onUsage = async (value, key) => {
-      await usage.record(value, key);
-      usageChanged();
-    };
+  for (const id of ["ollama", "gemini", "nvidia", "openrouter"]) {
+    let adapter;
+    try {
+      adapter =
+        registry?.providerFor?.(id) ?? (id === "ollama" ? provider : null);
+    } catch {
+      continue;
+    }
+    observeProviderUsage(adapter, id, credentials, usage, usageChanged);
+  }
   const pulls = new ModelPullService(provider, (status) => {
     for (const sender of clients.values())
       if (!sender.isDestroyed()) sender.send("ai:pull", status);
@@ -142,7 +149,7 @@ function registerAiIpc({
     service.exclusive(async () => {
       const result = await modelAccess.connect(input);
       if (result.saved) {
-        usage.invalidate();
+        usage.invalidate(result.providerId);
         usageChanged();
       }
       return result;
@@ -196,6 +203,18 @@ function registerAiIpc({
   handle("openRouterUsage", (_, input) => {
     const options = parse(
       z.object({ refresh: z.boolean().optional() }).strict(),
+      input ?? {},
+    );
+    return usage.legacyGet(options);
+  });
+  handle("providerUsage", (_, input) => {
+    const options = parse(
+      z
+        .object({
+          refresh: z.boolean().optional(),
+          agentId: z.string().min(1).max(120).optional(),
+        })
+        .strict(),
       input ?? {},
     );
     return usage.get(options);
@@ -300,7 +319,7 @@ function registerAiIpc({
     service.exclusive(async () => {
       const value = await credentials.save(parseCredential(input));
       modelAccess.clearChecks(input.providerId);
-      usage.invalidate();
+      usage.invalidate(input.providerId);
       usageChanged();
       return value;
     }),
@@ -309,7 +328,7 @@ function registerAiIpc({
     service.exclusive(async () => {
       const value = await credentials.remove(parse(credentialProvider, input));
       modelAccess.clearChecks(input.providerId);
-      usage.invalidate();
+      usage.invalidate(input.providerId);
       usageChanged();
       return value;
     }),
@@ -317,7 +336,7 @@ function registerAiIpc({
   handle("settings", (_, input) =>
     service.exclusive(async () => {
       const value = await registry.save(input);
-      usage.invalidate();
+      usage.selectionChanged();
       usageChanged();
       return value;
     }),

@@ -1,0 +1,16 @@
+{
+  "unpackedBytes": 444519873,
+  "asarBytes": 30644946,
+  "entries": 1522,
+  "forbiddenEntries": [],
+  "files": [
+    {
+      "name": "Orbistry-1.0.1-Victoria-Beta-win-x64.exe",
+      "bytes": 138570375
+    },
+    {
+      "name": "Orbistry-1.0.1-Victoria-Beta-win-x64.exe.blockmap",
+      "bytes": 146818
+    }
+  ]
+}

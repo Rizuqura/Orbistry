@@ -8,7 +8,7 @@ const {
   canonicalHash,
 } = require("../electron/ai/runtime-context.cjs");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-kernel-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-kernel-"));
   let app, page;
   const errors = [];
   try {
@@ -23,8 +23,8 @@ async function main() {
     );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -41,7 +41,7 @@ async function main() {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     const box = await page.evaluate(async () => {
-      const ai = window.wonnyyDesktop.ai;
+      const ai = window.orbistryDesktop.ai;
       await ai.settings({ contextWindow: 32768 });
       const box = await ai.editContextBox({
         action: "create",
@@ -80,7 +80,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: /Kernel research/ }).check();
     await picker
       .getByRole("button", { name: "Start Chat", exact: true })
@@ -94,7 +94,7 @@ async function main() {
         .getByRole("button", { name: "Send message", exact: true })
         .click();
       await page.waitForFunction(async (n) => {
-        const c = (await window.wonnyyDesktop.ai.listConversations())[0];
+        const c = (await window.orbistryDesktop.ai.listConversations())[0];
         return (
           c?.attempts.length === n && c.attempts.at(-1).status === "succeeded"
         );
@@ -142,7 +142,7 @@ async function main() {
     assert.equal(compacted.content, undefined);
     assert.equal(compacted.policyReference.canonicalHash, canonicalHash);
     const chat = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     const run = await require("../electron/ai/run-store.cjs").readModelRun(
       root,
@@ -165,12 +165,12 @@ async function main() {
     await page.reload();
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     const restored = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     assert.equal(restored.messages.length, 6);
     assert.equal(restored.contextBoxId, box.id);
     const savedBox = await page.evaluate(
-      (id) => window.wonnyyDesktop.ai.inspectContextBox(id),
+      (id) => window.orbistryDesktop.ai.inspectContextBox(id),
       box.id,
     );
     assert.deepEqual(

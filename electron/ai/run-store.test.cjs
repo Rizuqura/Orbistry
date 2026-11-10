@@ -13,7 +13,7 @@ const {
 } = require("./run-store.cjs");
 
 async function withVault(run) {
-  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-runs-"));
+  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-runs-"));
   try {
     await run(vaultPath);
   } finally {

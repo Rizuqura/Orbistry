@@ -14,7 +14,7 @@ assert.deepEqual(found, [], "Unexpected development/user files in package");
 for (const file of [
   "electron/main.cjs",
   "electron/preload.cjs",
-  "electron/ai/policies/Wonnyy_Strict_Context_Bound_Research_Agent_v1.1.md",
+  "electron/ai/policies/Orbistry_Strict_Context_Bound_Research_Agent_v1.1.md",
   "out/index.html",
   "out/pdf.worker.min.mjs",
   "node_modules/zod/package.json",
@@ -37,7 +37,7 @@ assert.ok(
 const html = asar.extractFile(archive, "out/index.html").toString();
 assert.match(html, /Content-Security-Policy/);
 const releaseVersion = require("../package.json").version;
-assert.ok(html.includes(`v${releaseVersion} Victoria Beta`));
+assert.ok(html.includes(`v${releaseVersion} Victoria (Beta)`));
 assert.equal(
   JSON.parse(asar.extractFile(archive, "package.json").toString()).version,
   releaseVersion,

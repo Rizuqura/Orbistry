@@ -2,10 +2,10 @@
 const { app } = require("electron");
 const fs = require("node:fs"),
   path = require("node:path");
-if (!process.env.WONNYY_SMOKE_DATA)
+if (!process.env.ORBISTRY_SMOKE_DATA)
   throw new Error("Isolated profile required");
-app.setPath("userData", process.env.WONNYY_SMOKE_DATA);
-fs.mkdirSync(process.env.WONNYY_SMOKE_DATA, { recursive: true });
+app.setPath("userData", process.env.ORBISTRY_SMOKE_DATA);
+fs.mkdirSync(process.env.ORBISTRY_SMOKE_DATA, { recursive: true });
 const { createOnlineSmokeFetch } = require("./fixtures/online-smoke-fetch.cjs");
 const fallback = createOnlineSmokeFetch();
 const state = {

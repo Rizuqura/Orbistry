@@ -14,12 +14,12 @@ export function AgentAvatar({
   return (
     <span
       className="agent-avatar"
-      aria-label={`${agent?.displayName ?? "Wonnyy Agent"} profile picture`}
+      aria-label={`${agent?.displayName ?? "Orbistry Agent"} profile picture`}
     >
       {url && !failed ? (
         <img
           src={url}
-          alt={agent?.displayName ?? "Wonnyy Agent"}
+          alt={agent?.displayName ?? "Orbistry Agent"}
           onError={() => setFailed(true)}
         />
       ) : (

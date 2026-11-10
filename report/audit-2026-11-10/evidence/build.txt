@@ -1,0 +1,38 @@
+
+> orbistry@1.0.1 build
+> npm run prepare:icons && npm run prepare:pdf && next build && node scripts/secure-export.cjs
+
+
+> orbistry@1.0.1 prepare:icons
+> node scripts/prepare-icons.cjs
+
+Prepared desktop, Windows and web icons from public/orbistry-icon.
+
+> orbistry@1.0.1 prepare:pdf
+> node scripts/prepare-pdf-worker.cjs
+
+Prepared local PDF.js worker, character maps, fonts, and decoders.
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 192ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.2s
+  Running TypeScript ...
+  Finished TypeScript in 3.2s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+  Generating static pages using 5 workers (1/4) 
+  Generating static pages using 5 workers (2/4) 
+  Generating static pages using 5 workers (3/4) 
+✓ Generating static pages using 5 workers (4/4) in 959ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ○ /icon.png
+
+
+○  (Static)  prerendered as static content
+
+Secured static export with inline-script hashes and local-only resource policy.

@@ -8,9 +8,9 @@ const assert = require("node:assert/strict");
 
 async function main() {
   const vault = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-live-catalog-"),
+    path.join(os.tmpdir(), "orbistry-live-catalog-"),
   );
-  const env = { ...process.env, WONNYY_VAULT_PATH: vault };
+  const env = { ...process.env, ORBISTRY_VAULT_PATH: vault };
   delete env.ELECTRON_RUN_AS_NODE;
   delete env.ELECTRON_START_URL;
   let app;

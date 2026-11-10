@@ -77,6 +77,9 @@ export function PlanetDetails({
       />
       <Detail label="PATH" value={selected.path} wrap />
       {parent ? <Detail label="PARENT" value={parent.name} /> : null}
+      {selected.size && isDir ? (
+        <Detail label="CONTENT SIZE" value={selected.size} />
+      ) : null}
       <div className="pd-rule" />
       {isDir ? (
         <>

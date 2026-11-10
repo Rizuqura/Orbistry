@@ -5,7 +5,7 @@ const assert = require("node:assert/strict"),
   os = require("node:os");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-agent-workspace-"),
+    path.join(os.tmpdir(), "orbistry-agent-workspace-"),
   );
   const data = path.join(root, ".wonnyy", "app-data"),
     checks = [],
@@ -14,9 +14,9 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_OLLAMA_URL: "http://127.0.0.1:11434",
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_OLLAMA_URL: "http://127.0.0.1:11434",
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -31,7 +31,7 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (error) => errors.push(error.message));
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
       .getByRole("region", { name: "Agent workspace", exact: true })
@@ -42,7 +42,7 @@ async function main() {
         ?.textContent.includes("Ollama"),
     );
     const contact = page.getByRole("button", {
-      name: "Wonnyy Agent chats",
+      name: "Orbistry Agent chats",
       exact: true,
     });
     assert.equal(await contact.getAttribute("aria-expanded"), "false");
@@ -66,10 +66,10 @@ async function main() {
   };
   const settings = async () => {
     await page
-      .getByRole("button", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("button", { name: "Orbistry Agent settings", exact: true })
       .click();
     return page.getByRole("dialog", {
-      name: "Wonnyy Agent settings",
+      name: "Orbistry Agent settings",
       exact: true,
     });
   };
@@ -82,7 +82,7 @@ async function main() {
     );
     await launch();
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       0,
     );
@@ -96,18 +96,18 @@ async function main() {
       .first()
       .click();
     let picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await picker.getByText(/Create a Context Box first/).waitFor();
     await page.keyboard.press("Escape");
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       0,
     );
     const box = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Agent evidence",
         paths: ["a.md"],
@@ -126,7 +126,7 @@ async function main() {
       });
     await picker.waitFor({ state: "hidden" });
     let chats = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     assert.equal(chats.length, 1);
     assert.equal(chats[0].contextBoxId, box.id);
@@ -166,19 +166,19 @@ async function main() {
       .getByRole("searchbox", { name: "Search agent conversations" })
       .fill("");
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .click();
     assert.equal(
       await page.locator(".agent-conversation-list article").count(),
       0,
     );
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       1,
     );
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .press("Enter");
     let dialog = await settings();
     await dialog
@@ -226,7 +226,7 @@ async function main() {
       .click();
     await dialog.locator(".agent-avatar img").waitFor();
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent())).avatar
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent())).avatar
         .type,
       "letter",
     );
@@ -245,7 +245,7 @@ async function main() {
     await dialog.waitFor({ state: "hidden" });
     await page.locator(".agent-bot-row .agent-avatar img").waitFor();
     const profile = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.getAgent(),
+      window.orbistryDesktop.ai.getAgent(),
     );
     assert.equal(profile.avatar.type, "local-asset");
     assert.equal(profile.customInstructions, "Use concise numbered findings.");
@@ -273,7 +273,7 @@ async function main() {
       .filter({ hasText: /valid PNG, JPG or WebP/ })
       .waitFor();
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent())).avatarUrl,
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent())).avatarUrl,
       profile.avatarUrl,
     );
     await dialog
@@ -291,7 +291,7 @@ async function main() {
       .click();
     await dialog.waitFor({ state: "hidden" });
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent()))
         .customInstructions,
       profile.customInstructions,
     );
@@ -317,7 +317,7 @@ async function main() {
       1,
     );
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .click();
     assert.equal(
       await page
@@ -342,7 +342,7 @@ async function main() {
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/agent-contact-collapsed.png" });
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .press("Enter");
     checks.push(
       "Contact-style agent row owns a keyboard-accessible collapsed chat dropdown; Settings palette, static surfaces and no canvas/blur verified",
@@ -431,7 +431,7 @@ async function main() {
       .filter({ hasText: "Agent research" })
       .waitFor();
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent()))
         .customInstructions,
       profile.customInstructions,
     );
@@ -454,13 +454,13 @@ async function main() {
       "260",
     );
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       1,
     );
     await page.evaluate(
       (id) =>
-        window.wonnyyDesktop.ai.renameContextBox({
+        window.orbistryDesktop.ai.renameContextBox({
           id,
           name: "Renamed evidence",
         }),
@@ -471,11 +471,11 @@ async function main() {
       .click();
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .click();
     assert.equal(
       (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0].id,
       chatId,
     );
@@ -524,7 +524,7 @@ async function main() {
       "Restart restores profile/preferences, chats and pane widths; independent box rename, profile reset and confirmed deletion",
     );
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Empty evidence",
         paths: ["empty.md"],
@@ -535,7 +535,7 @@ async function main() {
       .first()
       .click();
     const emptyPicker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await emptyPicker.getByRole("radio", { name: /Empty evidence/ }).check();

@@ -8,7 +8,7 @@ const { once } = require("node:events");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "wonnyy-dataset-electron-"),
+    path.join(os.tmpdir(), "orbistry-dataset-electron-"),
   );
   const requests = [];
   const server = http.createServer(async (req, res) => {
@@ -82,9 +82,9 @@ async function main() {
     );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -96,10 +96,10 @@ async function main() {
     app.process().stderr.on("data", (data) => process.stderr.write(data));
     process.stdout.write("Electron launched.\n");
     const page = await app.firstWindow();
-    await page.waitForFunction(() => Boolean(window.wonnyyDesktop?.ai));
+    await page.waitForFunction(() => Boolean(window.orbistryDesktop?.ai));
     process.stdout.write("Preload ready; running CSV chat.\n");
     const result = await page.evaluate(async () => {
-      const desktop = window.wonnyyDesktop;
+      const desktop = window.orbistryDesktop;
       await desktop.ai.handshake(desktop.apiVersion);
       await desktop.ai.settings({ modelId: "qwen3:4b" });
       await desktop.context.add(["sales.csv"]);

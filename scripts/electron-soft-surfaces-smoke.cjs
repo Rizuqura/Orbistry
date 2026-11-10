@@ -4,7 +4,7 @@ const fs = require("node:fs/promises"),
   path = require("node:path"),
   os = require("node:os");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-soft-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-soft-"));
   let app, page;
   const errors = [];
   const transparent = (color) =>
@@ -30,8 +30,8 @@ async function main() {
     await fs.writeFile(path.join(root, "a.md"), "ALPHA allocation is 25%.");
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -107,10 +107,10 @@ async function main() {
       "none",
     );
     await page
-      .getByRole("button", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("button", { name: "Orbistry Agent settings", exact: true })
       .click();
     const agentSettings = page.getByRole("dialog", {
-      name: "Wonnyy Agent settings",
+      name: "Orbistry Agent settings",
       exact: true,
     });
     await borderless(agentSettings);
@@ -135,7 +135,7 @@ async function main() {
     await modelsTab.focus();
     assert.match(
       await modelsTab.evaluate((el) => getComputedStyle(el).boxShadow),
-      /130, 190, 180/,
+      /203, 215, 217/,
     );
     assert.ok(
       await modelsTab.evaluate(

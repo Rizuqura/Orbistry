@@ -8,8 +8,6 @@ export interface PlanetControlsProps {
   onReset: () => void;
   asteroidsVisible: boolean;
   onToggleAsteroids: () => void;
-  flatMode: boolean;
-  onToggleFlatMode: () => void;
   animationEnabled: boolean;
   animationRunning: boolean;
   onToggleAnimation: () => void;
@@ -23,8 +21,6 @@ export function PlanetControls({
   onReset,
   asteroidsVisible,
   onToggleAsteroids,
-  flatMode,
-  onToggleFlatMode,
   animationEnabled,
   animationRunning,
   onToggleAnimation,
@@ -64,6 +60,12 @@ export function PlanetControls({
           </div>
         </dl>
         <p>
+          Seven evenly spaced orbits surround the vault. Folders and files share
+          size-ranked bands; larger content sits closer to its parent. Folder
+          size includes all nested files. Lines link folders to files only; the
+          vault has no spokes.
+        </p>
+        <p>
           Use Pan mode for ordinary dragging. After selecting, use + beside a
           Station to assign the group.
         </p>
@@ -80,16 +82,6 @@ export function PlanetControls({
         ANIMATION:{" "}
         {animationEnabled ? (animationRunning ? "ON" : "PAUSED") : "OFF"}
       </button>
-      <label
-        className="pctrl-check"
-        title="Simple flat colors without shadows, glow, or 3D shading"
-      >
-        <input type="checkbox" checked={flatMode} onChange={onToggleFlatMode} />
-        <span className="pctrl-box" aria-hidden="true">
-          {flatMode ? "[x]" : "[ ]"}
-        </span>
-        FLAT VIEW (LOW GPU)
-      </label>
       <label className="pctrl-check">
         <input
           type="checkbox"

@@ -1,6 +1,6 @@
 # Project progress cross-check - 2026-09-10
 
-Wonnyy has a working, provider-independent single-source chat foundation. It has not yet completed the broader research-workspace MVP in `goal.md`. Engineering progress is strongest in model execution, authorization, persistence, and failure handling; the largest remaining gaps are sustained conversational quality, multi-source context, and basic reading/search workflows.
+Orbistry has a working, provider-independent single-source chat foundation. It has not yet completed the broader research-workspace MVP in `goal.md`. Engineering progress is strongest in model execution, authorization, persistence, and failure handling; the largest remaining gaps are sustained conversational quality, multi-source context, and basic reading/search workflows.
 
 Baseline: commit `80ffb5e`, package version `0.0.4`, published tag `v0.0.4-amadeus`. This is a document-to-code progress audit, not an exhaustive security audit or a fresh hosted-model benchmark. The existing `next-env.d.ts` working-tree change was left untouched.
 

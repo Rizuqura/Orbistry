@@ -16,14 +16,17 @@ function selectUserDataPath(
   if (
     explicit ||
     path.resolve(path.dirname(current)) !== path.resolve(appData) ||
-    !["orbistry", "qterminal", "qterminal 1.0.0 victoria"].includes(
-      path.basename(current).toLowerCase(),
-    ) ||
+    ![
+      "orb terminal",
+      "orbistry",
+      "qterminal",
+      "qterminal 1.0.0 victoria",
+    ].includes(path.basename(current).toLowerCase()) ||
     populated(current)
   )
     return current;
   return (
-    ["QTerminal", "wonnyy-amadeus", "Wonnyy"]
+    ["Orbistry", "QTerminal", "wonnyy-amadeus", "Wonnyy"]
       .map((name) => path.join(appData, name))
       .find(populated) ?? current
   );

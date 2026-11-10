@@ -15,7 +15,7 @@ const {
 } = require("../electron/ai/providers/gemini-provider.cjs");
 const { ProviderRegistry } = require("../electron/ai/provider-registry.cjs");
 const online = process.argv.includes("--gemini");
-const selectedModel = online ? process.env.WONNYY_GEMINI_MODEL : "qwen3:4b";
+const selectedModel = online ? process.env.ORBISTRY_GEMINI_MODEL : "qwen3:4b";
 
 const scope = { activeStationIds: [], matchMode: "any" };
 const questions = [
@@ -34,9 +34,9 @@ const questions = [
 async function main() {
   if (online && (!process.env.GEMINI_API_KEY || !selectedModel))
     throw new Error(
-      "Set GEMINI_API_KEY and WONNYY_GEMINI_MODEL to run the online benchmark against isolated synthetic sources.",
+      "Set GEMINI_API_KEY and ORBISTRY_GEMINI_MODEL to run the online benchmark against isolated synthetic sources.",
     );
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-chat-live-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-chat-live-"));
   const report = {
     startedAt: new Date().toISOString(),
     passed: false,

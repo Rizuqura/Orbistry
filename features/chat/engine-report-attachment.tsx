@@ -23,7 +23,7 @@ export function EngineReportAttachment({
           setBusy(true);
           setError("");
           try {
-            const open = window.wonnyyDesktop?.ai.openEngineReport;
+            const open = window.orbistryDesktop?.ai.openEngineReport;
             if (!open)
               throw new Error("Restart Orbistry to open Engine attachments.");
             await open({

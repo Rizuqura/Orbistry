@@ -10,7 +10,7 @@ test(
   "native OCR supplies real image/PDF text and Context Box token estimates without sessions",
   { skip: process.platform !== "win32", timeout: 120000 },
   async (t) => {
-    const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-ocr-"));
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-ocr-"));
     t.after(() => fs.rm(root, { recursive: true, force: true }));
     for (const extension of ["png", "jpg", "jpeg"])
       await fs.copyFile(

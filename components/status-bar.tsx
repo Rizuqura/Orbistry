@@ -39,7 +39,7 @@ export function StatusBar({
       {view === "agent" ? (
         <>
           <span>
-            AGENT: {(agentName ?? "Wonnyy").replace(" Agent", "").toUpperCase()}
+            AGENT: {(agentName ?? "Orbistry").replace(" Agent", "").toUpperCase()}
           </span>
           <span className="agent-footer-context" title={agentContext}>
             CONTEXT: {agentContext ?? "No Context"}

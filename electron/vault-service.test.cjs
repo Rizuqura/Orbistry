@@ -15,7 +15,7 @@ const {
 } = require("./vault-service.cjs");
 
 async function withVault(run) {
-  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-vault-"));
+  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-vault-"));
   try {
     await run(vaultPath);
   } finally {
@@ -234,7 +234,7 @@ test("scanVault recursively returns supported files and folders", async () => {
   await withVault(async (vaultPath) => {
     await fs.mkdir(path.join(vaultPath, "research"));
     await fs.writeFile(path.join(vaultPath, "research", "note.md"), "# Note");
-    await fs.writeFile(path.join(vaultPath, "data.csv"), "name\nWonnyy");
+    await fs.writeFile(path.join(vaultPath, "data.csv"), "name\nOrbistry");
     await fs.writeFile(
       path.join(vaultPath, "report.pdf"),
       minimalPdf("Revenue outlook"),

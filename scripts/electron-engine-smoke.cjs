@@ -12,7 +12,7 @@ async function main() {
     );
   const bundle = await fs.realpath(path.resolve(supplied));
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-engine-electron-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-engine-electron-")),
   );
   const data = path.join(root, "profile"),
     vault = path.join(root, "vault");
@@ -21,8 +21,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: vault,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -54,11 +54,11 @@ async function main() {
     }, bundle);
   };
   const get = () =>
-    page.evaluate(() => window.wonnyyDesktop.ai.getAgent("wonnyy-agent"));
+    page.evaluate(() => window.orbistryDesktop.ai.getAgent("wonnyy-agent"));
   const open = async () => {
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
-      .getByRole("button", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("button", { name: "Orbistry Agent settings", exact: true })
       .click();
     await page
       .getByRole("region", { name: "Agent Construction Studio" })
@@ -125,7 +125,7 @@ async function main() {
     };
     const deniedDraft = await page.evaluate(async (input) => {
       try {
-        await window.wonnyyDesktop.ai.executeEngine(input);
+        await window.orbistryDesktop.ai.executeEngine(input);
         return null;
       } catch (e) {
         return e.message;
@@ -171,7 +171,7 @@ async function main() {
     );
     const otherDenied = await page.evaluate(async (input) => {
       try {
-        await window.wonnyyDesktop.ai.executeEngine({
+        await window.orbistryDesktop.ai.executeEngine({
           ...input,
           agentId: "chronoz",
         });
@@ -186,16 +186,16 @@ async function main() {
       .click();
     await app.evaluate((_, live) => {
       globalThis.onlineSmoke.engineToolMode = live ? "live" : "mock";
-    }, process.env.QTERMINAL_ENGINE_LIVE === "1");
+    }, process.env.ORBISTRY_ENGINE_LIVE === "1");
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Agent",
+      name: "Orbistry Agent",
       exact: true,
     });
     await panel
       .getByRole("button", { name: "+ New Chat", exact: true })
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await picker
@@ -222,7 +222,7 @@ async function main() {
     await chatPdf.click();
     await chatPdf.waitFor();
     const chats = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     const engineChat = chats.find((c) => c.engineOnly);
     assert.deepEqual(engineChat.contextIdentity.sources, []);
@@ -286,7 +286,7 @@ async function main() {
     );
     profile = await get();
     const restoredChats = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     assert.equal(
       restoredChats.find((c) => c.id === engineChat.id).messages.at(-1)
@@ -334,7 +334,7 @@ async function main() {
           passed: true,
           transport: "real local bundled Python; provider network mocked",
           chatToolTransport:
-            process.env.QTERMINAL_ENGINE_LIVE === "1"
+            process.env.ORBISTRY_ENGINE_LIVE === "1"
               ? "LIVE Ollama qwen3:4b native function call"
               : "synthetic native Ollama function call",
           chatAttachmentPersisted: true,

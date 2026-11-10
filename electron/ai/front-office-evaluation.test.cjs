@@ -224,14 +224,14 @@ test("LiteLLM HTTP adapter authenticates loopback and preserves A/B payload opti
 for (const provider of ["openrouter", "nvidia"]) {
   const prefix = provider === "openrouter" ? "OPENROUTER" : "NVIDIA";
   const enabled =
-    process.env.QTERMINAL_FRONT_OFFICE_LIVE === "1" &&
+    process.env.ORBISTRY_FRONT_OFFICE_LIVE === "1" &&
     process.env[`${prefix}_API_KEY`] &&
     process.env[`${prefix}_TEST_MODEL`];
   test(
     `optional live ${provider} experiment`,
     {
       skip: !enabled
-        ? `Live ${provider} skipped: explicit QTERMINAL_FRONT_OFFICE_LIVE=1 and dedicated key/test-model environment settings are required. Account entitlement/quota was not assumed.`
+        ? `Live ${provider} skipped: explicit ORBISTRY_FRONT_OFFICE_LIVE=1 and dedicated key/test-model environment settings are required. Account entitlement/quota was not assumed.`
         : false,
     },
     async () => {
@@ -257,11 +257,11 @@ for (const provider of ["openrouter", "nvidia"]) {
         registry: { providerFor: () => adapter },
       }).complete({
         messages: [
-          { role: "user", content: "Reply exactly QTERMINAL ONLINE." },
+          { role: "user", content: "Reply exactly ORBISTRY ONLINE." },
         ],
       });
       assert.equal(response.finishReason, "stop");
-      assert.equal(response.content.trim(), "QTERMINAL ONLINE.");
+      assert.equal(response.content.trim(), "ORBISTRY ONLINE.");
     },
   );
 }

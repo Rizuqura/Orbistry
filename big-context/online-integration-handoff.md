@@ -13,7 +13,7 @@ Baseline: `04ff5c9` (0.0.4). Implements the first Gemini vertical slice in `mode
 - Remote authentication, network, unavailable-model, quota, timeout, and server failures have sanitized actionable errors. Retry-After is displayed when supplied. Remote transport failures do not automatically replay or fail over. The existing single answer-format correction remains possible within the same run and deadline.
 - AI Terminal contains encrypted key setup/removal, provider discovery, explicit Use online selection, privacy/data-use notes, and generation controls. Chat shows execution location, provider/model transitions, and the 12-exchange history policy; errors retain the draft.
 - Runs retain provider/model, requested model in settings, execution location and included/dropped history in diagnostics, source hashes, usage, and timing. Gemini diagnostics include first visible response-text latency and resolved model version. Assistant snapshots now add provider identity; old messages without it are displayed as legacy Ollama messages.
-- IPC is version 9; restart Electron after updating. Prompt version is `wonnyy-conversation-v5` with provider-neutral assistant wording. Stored conversation/run schema versions remain readable; old files are not bulk rewritten.
+- IPC is version 9; restart Electron after updating. Prompt version is `orbistry-conversation-v5` with provider-neutral assistant wording. Stored conversation/run schema versions remain readable; old files are not bulk rewritten.
 
 ## Verification and next acceptance
 
@@ -35,7 +35,7 @@ Deterministic coverage exercises real Gemini adapter parsing with synthetic HTTP
 
 `npm run test:chat:online:electron` builds and launches the dedicated hidden Electron entry. Synthetic transports exist only in that test entry, while production main/preload/renderer and OS encryption are exercised. It checks key setup/removal, disclosure, streaming, local/online continuity, retained drafts on rate limits, explicit retry, and restart. Reports/screenshots are ignored under `test-results/`.
 
-`npm run test:chat:online` reuses the local acceptance questions with Gemini and adds turns beyond the memory window. It requires `GEMINI_API_KEY` and an explicitly selected `WONNYY_GEMINI_MODEL`. The key is read only into benchmark process memory; no developer key is bundled. The script uses isolated synthetic Markdown sources and writes the actual answers/timings for review. Real local/online model comparison and live Gemini acceptance remain pending until credentials are configured and those runs are reviewed.
+`npm run test:chat:online` reuses the local acceptance questions with Gemini and adds turns beyond the memory window. It requires `GEMINI_API_KEY` and an explicitly selected `ORBISTRY_GEMINI_MODEL`. The key is read only into benchmark process memory; no developer key is bundled. The script uses isolated synthetic Markdown sources and writes the actual answers/timings for review. Real local/online model comparison and live Gemini acceptance remain pending until credentials are configured and those runs are reviewed.
 
 The one-Markdown-source restriction, 12-exchange policy, and unchanged-source requirement for resumption remain. Online inference does not by itself solve these product limitations. Keep Groq, multi-source research, and autonomous actions deferred until the first provider passes product acceptance.
 

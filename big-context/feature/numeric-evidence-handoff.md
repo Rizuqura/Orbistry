@@ -15,7 +15,7 @@ An unshown `40` still fails if only `25` and `15` were supplied. Wrong arithmeti
 
 Arithmetic verification is bounded to 256-character expressions, 64 parser steps, 32 equality candidates and 16 verified equations per answer. Percent/scale display is supported on a result; expression inputs use ordinary numeric literals. Symbolic formulas, natural-language calculations and advanced functions should use the existing planning/local calculation engine. Dataset-wide totals, grouping and statistics must still come from the full-dataset engine, not extrapolated sample rows.
 
-`diagnostics.answerNumberValidation` stores policy `numeric-evidence-v2` and the expression, inputs, recomputed value and displayed value for each accepted equation. Prompt version is `wonnyy-conversation-v18-numeric-evidence`. Unsupported values retain `MODEL_INVALID_RESPONSE` and stable repair reason `dataset_unsupported_number`; details include rejected values/calculations and policy. The error now explains what to correct. One bounded final-answer correction remains; rejected text is not published as a successful response.
+`diagnostics.answerNumberValidation` stores policy `numeric-evidence-v2` and the expression, inputs, recomputed value and displayed value for each accepted equation. Prompt version is `orbistry-conversation-v18-numeric-evidence`. Unsupported values retain `MODEL_INVALID_RESPONSE` and stable repair reason `dataset_unsupported_number`; details include rejected values/calculations and policy. The error now explains what to correct. One bounded final-answer correction remains; rejected text is not published as a successful response.
 
 ## Limits and verification
 

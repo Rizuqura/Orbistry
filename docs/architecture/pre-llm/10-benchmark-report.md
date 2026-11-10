@@ -4,7 +4,7 @@ Date: 2026-10-30 (Asia/Jakarta). Command executed: `node scripts/front-office-be
 
 | Item | Observed result |
 | --- | --- |
-| Fixture version | qterminal-synthetic-v1 |
+| Fixture version | orbistry-synthetic-v1 |
 | Task cases | 40 |
 | Turns per repetition | 112, including three separate 25-turn conversations |
 | Repetitions | 3 |

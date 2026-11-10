@@ -100,7 +100,7 @@ test("M7.1 connectivity proof sends no vault context and requires the exact resp
       json(response, 200, {
         model: "qwen3:4b",
         created_at: "2026-09-03T00:00:00Z",
-        message: { role: "assistant", content: '{"status":"WONNYY ONLINE"}' },
+        message: { role: "assistant", content: '{"status":"ORBISTRY ONLINE"}' },
         done: true,
         done_reason: "stop",
         prompt_eval_count: 14,
@@ -120,7 +120,7 @@ test("M7.1 connectivity proof sends no vault context and requires the exact resp
       assert.equal(chatBody.think, false);
       assert.equal(chatBody.options.num_ctx, 8192);
       assert.equal(chatBody.options.num_predict, 768);
-      assert.equal(chatBody.format.properties.status.const, "WONNYY ONLINE");
+      assert.equal(chatBody.format.properties.status.const, "ORBISTRY ONLINE");
       assert.equal("tools" in chatBody, false);
       assert.equal("context" in chatBody, false);
     },

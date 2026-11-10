@@ -4,12 +4,12 @@ const fs = require("node:fs/promises"),
   path = require("node:path"),
   os = require("node:os");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-victoria-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-victoria-"));
   let app, page;
   const errors = [];
   const countChats = () =>
     page
-      .evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      .evaluate(() => window.orbistryDesktop.ai.listConversations())
       .then((items) => items.length);
   const composerInView = async () =>
     page.waitForFunction(() => {
@@ -29,8 +29,8 @@ async function main() {
     );
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -45,7 +45,7 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (error) => errors.push(error.message));
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
     await page.getByRole("button", { name: "WORKSPACE", exact: true }).click();
     assert.equal(await page.title(), "Orbistry");
     assert.deepEqual(
@@ -57,7 +57,7 @@ async function main() {
     );
     assert.equal(
       await page.locator(".version").innerText(),
-      `v${require("../package.json").version} Victoria Beta`,
+      `v${require("../package.json").version} Victoria (Beta)`,
     );
     await page
       .getByRole("button", { name: "Minimize Universe", exact: true })
@@ -129,7 +129,7 @@ async function main() {
       .first()
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await picker.getByRole("radio", { name: /Victoria research/ }).check();
@@ -168,7 +168,10 @@ async function main() {
     await page.getByRole("button", { name: "History", exact: true }).click();
     await tools.locator("summary").click();
     await page
-      .getByRole("combobox", { name: "Wonnyy Agent Context Box", exact: true })
+      .getByRole("combobox", {
+        name: "Orbistry Agent Context Box",
+        exact: true,
+      })
       .waitFor();
     await tools.locator("summary").click();
     const divider = page.getByRole("separator", {

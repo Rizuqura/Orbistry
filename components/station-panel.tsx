@@ -54,7 +54,7 @@ export function StationPanel(props: Readonly<Props>) {
     setEditingName("");
   };
   const repairOrphans = async () => {
-    const bridge = window.wonnyyDesktop?.stations;
+    const bridge = window.orbistryDesktop?.stations;
     if (!bridge) return;
     const suggestions = await bridge.suggestions();
     const actionable = suggestions.filter(

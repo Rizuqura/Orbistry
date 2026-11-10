@@ -1,0 +1,18 @@
+  • electron-builder  version=26.18.0 os=10.0.26200
+  • loaded configuration  file=package.json ("build" field)
+  • author is missed in the package.json  appPackageFile=C:\Users\HYPE AMD\Desktop\Orbistry\package.json
+  • executing @electron/rebuild  electronVersion=45.1.0 arch=x64 buildFromSource=false workspaceRoot=C:\Users\HYPE AMD\Desktop\Orbistry projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=45.1.0 appOutDir=tmp\audit-package-2026-11-10\win-unpacked
+  • downloaded      label=electron progress=100%
+  • downloaded electron zip extracted successfully  output=C:\Users\HYPE AMD\Desktop\Orbistry\tmp\audit-package-2026-11-10\win-unpacked
+  • searching for node modules  pm=npm searchDir=C:\Users\HYPE AMD\Desktop\Orbistry
+  • duplicate dependency references  dependencies=["@napi-rs/canvas@1.0.13"]
+  • updating asar integrity executable resource  executablePath=tmp\audit-package-2026-11-10\win-unpacked\Orbistry.exe
+  • no code signing certificate configured, signing is skipped  path=tmp\audit-package-2026-11-10\win-unpacked\Orbistry.exe
+  • building        target=nsis file=tmp\audit-package-2026-11-10\Orbistry-1.0.1-Victoria-Beta-win-x64.exe archs=x64 oneClick=false perMachine=false
+  • no code signing certificate configured, signing is skipped  path=C:\Users\HYPEAM~1\AppData\Local\Temp\t-XuFHtQ\elevate-staging-1\resources\elevate.exe
+  • no code signing certificate configured, signing is skipped  path=tmp\audit-package-2026-11-10\Orbistry-1.0.1-Victoria-Beta-win-x64.__uninstaller.exe
+  • no code signing certificate configured, signing is skipped  path=tmp\audit-package-2026-11-10\Orbistry-1.0.1-Victoria-Beta-win-x64.exe
+  • building block map  blockMapFile=tmp\audit-package-2026-11-10\Orbistry-1.0.1-Victoria-Beta-win-x64.exe.blockmap

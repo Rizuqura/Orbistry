@@ -37,7 +37,7 @@ test("explicit empty agent setup stays empty across reads and only adds user-cre
   await assert.rejects(store.get("wonnyy-agent"), /Unknown agent/);
   await assert.rejects(store.get("chronoz"), /Unknown agent/);
   const agent = await store.create({
-    name: "Wonnyy Agent",
+    name: "Orbistry Agent",
     creationId: "00000000-0000-4000-8000-000000000001",
   });
   assert.equal(agent.avatar.type, "letter");
@@ -140,7 +140,7 @@ test("agent creation is idempotent and name validation cannot mutate existing pr
   for (const patch of [
     { ...request, name: "Different" },
     { name: "analyst", creationId: require("node:crypto").randomUUID() },
-    { name: " Wonnyy Agent ", creationId: require("node:crypto").randomUUID() },
+    { name: " Orbistry Agent ", creationId: require("node:crypto").randomUUID() },
     { name: "", creationId: require("node:crypto").randomUUID() },
     { name: " ", creationId: require("node:crypto").randomUUID() },
     { name: "x".repeat(121), creationId: require("node:crypto").randomUUID() },
@@ -194,7 +194,7 @@ test("custom agents can apply independent construction and reset an uploaded PFP
   });
   assert.equal((await store.get(a.id)).avatarUrl, null);
 });
-test("CHronoZ defaults are blank, read without writes, and persist independently from Wonnyy", async (t) => {
+test("CHronoZ defaults are blank, read without writes, and persist independently from Orbistry", async (t) => {
   const { root, store } = await fixture(t);
   const chrono = await store.get("chronoz");
   assert.equal(chrono.displayName, "CHronoZ");
@@ -238,17 +238,17 @@ test("CHronoZ defaults are blank, read without writes, and persist independently
 });
 async function fixture(t) {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-agent-store-"),
+    path.join(os.tmpdir(), "orbistry-agent-store-"),
   );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   return { root, store: new AgentStore(root, () => image) };
 }
-test("Wonnyy defaults read without storage writes; preferences persist and remain isolated by ID", async (t) => {
+test("Orbistry defaults read without storage writes; preferences persist and remain isolated by ID", async (t) => {
   const { root, store } = await fixture(t);
   const first = await store.get();
   assert.equal(first.id, AGENT_ID);
-  assert.equal(first.displayName, "Wonnyy Agent");
-  assert.deepEqual(first.avatar, { type: "letter", letter: "W" });
+  assert.equal(first.displayName, "Orbistry Agent");
+  assert.deepEqual(first.avatar, { type: "letter", letter: "O" });
   assert.equal(first.protectedInstructions, SYSTEM_PROMPT);
   await assert.rejects(fs.stat(store.file), { code: "ENOENT" });
   await store.save({

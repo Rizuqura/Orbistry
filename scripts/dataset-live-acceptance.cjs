@@ -11,10 +11,10 @@ const {
 } = require("../electron/ai/providers/ollama-provider.cjs");
 
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-dataset-live-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-dataset-live-"));
   const provider = new OllamaProvider();
   const registry = new ModelRegistry(provider, path.join(root, "settings"));
-  const model = process.env.WONNYY_DATASET_MODEL || "qwen3:4b";
+  const model = process.env.ORBISTRY_DATASET_MODEL || "qwen3:4b";
   await registry.save({ modelId: model, temperature: 0 });
   const service = new ChatService({ provider, registry });
   const complete = provider.complete.bind(provider);

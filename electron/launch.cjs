@@ -2,7 +2,7 @@ const { spawn } = require("child_process");
 const path = require("path");
 const electronBinary = require("electron");
 
-// Some host environments set this for Electron tooling. Wonnyy must remove it
+// Some host environments set this for Electron tooling. Orbistry must remove it
 // before launch, otherwise Electron runs its main process as plain Node.js.
 const environment = { ...process.env };
 delete environment.ELECTRON_RUN_AS_NODE;
@@ -15,6 +15,6 @@ const child = spawn(electronBinary, ["."], {
 
 child.on("exit", (code) => process.exit(code ?? 0));
 child.on("error", (error) => {
-  console.error("Could not launch the Wonnyy desktop process:", error.message);
+  console.error("Could not launch the Orbistry desktop process:", error.message);
   process.exit(1);
 });

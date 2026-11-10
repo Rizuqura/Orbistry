@@ -1,11 +1,11 @@
-# Wonnyy Planet View — Anchoring Physics Architecture
+# Orbistry Planet View — Anchoring Physics Architecture
 
 ## Status
 
 Implementation Context / Spatial Architecture Specification
 
 Target:
-Wonnyy Amadeus V0.0.1 Planet View
+Orbistry Amadeus V0.0.1 Planet View
 
 Purpose:
 Define a deterministic anchoring and physics system so Planet View preserves filesystem hierarchy, maintains stable spatial memory, and produces an organic solar-system-like layout without allowing force simulation to destroy structure.

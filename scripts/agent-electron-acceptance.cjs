@@ -10,7 +10,7 @@ const { cmapPdf } = require("./fixtures/cmap-pdf.cjs");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "wonnyy-electron-smoke-"),
+    path.join(os.tmpdir(), "orbistry-electron-smoke-"),
   );
   const requests = [];
   let ollamaOnline = true;
@@ -124,9 +124,9 @@ async function main() {
     process.stdout.write("Launching local desktop regression\n");
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -150,13 +150,13 @@ async function main() {
       void dialog.dismiss();
     });
     await page.getByRole("textbox", { name: "Chat question" }).waitFor();
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
   }
   const panel = () =>
-    page.getByRole("complementary", { name: "Wonnyy Agent", exact: true });
+    page.getByRole("complementary", { name: "Orbistry Agent", exact: true });
   const countChats = () =>
     page
-      .evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      .evaluate(() => window.orbistryDesktop.ai.listConversations())
       .then((list) => list.length);
   async function approve(file) {
     await page.locator(`.file-row[title="${file}"]`).click();
@@ -173,7 +173,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: new RegExp(name) }).check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -215,7 +215,7 @@ async function main() {
     await launch();
     await page.evaluate(() => {
       window.agentErrorEvents = [];
-      window.wonnyyDesktop.ai.onEvent((event) => {
+      window.orbistryDesktop.ai.onEvent((event) => {
         if (event.error)
           window.agentErrorEvents.push({
             state: event.state,
@@ -226,7 +226,7 @@ async function main() {
     });
     if (process.argv.includes("--empty-source")) {
       const box = await page.evaluate(async () =>
-        window.wonnyyDesktop.ai.editContextBox({
+        window.orbistryDesktop.ai.editContextBox({
           action: "create",
           name: "Mixed readable sources",
           paths: ["a.md", "empty.md"],
@@ -235,7 +235,7 @@ async function main() {
       await createChat(box.name);
       await send("Summarize this source.");
       const conversation = (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0];
       assert.equal(conversation.messages.length, 2);
       assert.deepEqual(
@@ -343,7 +343,7 @@ async function main() {
       assert.equal(await countChats(), 0);
       assert.equal(requests.length, 0);
       const persisted = await page.evaluate(() =>
-        window.wonnyyDesktop.stations.getState(),
+        window.orbistryDesktop.stations.getState(),
       );
       assert.equal(
         persisted.stations.length,
@@ -412,7 +412,7 @@ async function main() {
         .fill("Cancelled box");
       await page.keyboard.press("Escape");
       assert.equal(
-        (await page.evaluate(() => window.wonnyyDesktop.ai.listContextBoxes()))
+        (await page.evaluate(() => window.orbistryDesktop.ai.listContextBoxes()))
           .length,
         0,
       );
@@ -431,7 +431,7 @@ async function main() {
       await saved.filter({ hasText: `~${tokens} est. tokens` }).waitFor();
       assert.equal(await countChats(), 0);
       const boxes = await page.evaluate(() =>
-        window.wonnyyDesktop.ai.listContextBoxes(),
+        window.orbistryDesktop.ai.listContextBoxes(),
       );
       assert.equal(boxes.length, 1);
       assert.deepEqual(
@@ -474,7 +474,7 @@ async function main() {
       });
       const boxDialog = () => page.locator(".context-box-dialog[open]");
       const boxes = () =>
-        page.evaluate(() => window.wonnyyDesktop.ai.listContextBoxes());
+        page.evaluate(() => window.orbistryDesktop.ai.listContextBoxes());
       const openLibrary = () =>
         page
           .getByRole("button", {
@@ -609,7 +609,7 @@ async function main() {
         .getByText(/4 files.*4 readable/)
         .waitFor();
       await boxDialog()
-        .getByRole("button", { name: "Attach to Wonnyy Agent", exact: true })
+        .getByRole("button", { name: "Attach to Orbistry Agent", exact: true })
         .click();
       assert.equal(await countChats(), 0);
       await panel()
@@ -617,7 +617,7 @@ async function main() {
         .first()
         .click();
       const picker = page.getByRole("dialog", {
-        name: "New Wonnyy Agent chat",
+        name: "New Orbistry Agent chat",
         exact: true,
       });
       assert.equal(
@@ -632,7 +632,7 @@ async function main() {
       await picker.waitFor({ state: "hidden" });
       await send("Summarize this source.");
       const first = (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0];
       const firstEvidence = first.messages[1].sources;
       checks.push(
@@ -689,7 +689,7 @@ async function main() {
       await openContextTools(page);
       await panel()
         .getByRole("combobox", {
-          name: "Wonnyy Agent Context Box",
+          name: "Orbistry Agent Context Box",
           exact: true,
         })
         .selectOption(beta.id);
@@ -699,13 +699,13 @@ async function main() {
         .click();
       assert.equal(
         (
-          await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+          await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
         )[0].contextBoxId,
         first.contextBoxId,
       );
       await panel()
         .getByRole("combobox", {
-          name: "Wonnyy Agent Context Box",
+          name: "Orbistry Agent Context Box",
           exact: true,
         })
         .selectOption(beta.id);
@@ -715,7 +715,7 @@ async function main() {
         .click();
       await page.waitForFunction(
         (id) =>
-          document.querySelector('[aria-label="Wonnyy Agent Context Box"]')
+          document.querySelector('[aria-label="Orbistry Agent Context Box"]')
             ?.value === id,
         beta.id,
       );
@@ -728,7 +728,7 @@ async function main() {
         0,
       );
       const second = (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0];
       assert.deepEqual(second.messages[1].sources, firstEvidence);
       assert.equal(second.messages[3].contextBox.id, beta.id);
@@ -738,7 +738,7 @@ async function main() {
       );
       await send("Summarize this source.");
       const third = (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0];
       assert.notEqual(
         third.messages[5].sources[0].contentHash,
@@ -771,7 +771,7 @@ async function main() {
             .length === 4,
       );
       const retried = (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0];
       assert.equal(retried.messages.length, 8);
       assert.equal(
@@ -823,7 +823,7 @@ async function main() {
       assert.equal((await boxes())[0].items.length, 4);
       assert.equal(
         (
-          await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+          await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
         )[0].messages.length,
         8,
       );
@@ -906,7 +906,7 @@ async function main() {
       .first()
       .click();
     await page
-      .getByRole("dialog", { name: "New Wonnyy Agent chat" })
+      .getByRole("dialog", { name: "New Orbistry Agent chat" })
       .getByText(/Create a Context Box first/)
       .waitFor();
     await page.keyboard.press("Escape");
@@ -923,7 +923,7 @@ async function main() {
     await panel().getByRole("button", { name: "Save", exact: true }).click();
     await page.waitForFunction(
       async () =>
-        (await window.wonnyyDesktop.ai.listContextBoxes()).length === 1,
+        (await window.orbistryDesktop.ai.listContextBoxes()).length === 1,
     );
     assert.equal(await countChats(), 0);
     await panel()
@@ -931,7 +931,7 @@ async function main() {
       .first()
       .click();
     await page
-      .getByRole("dialog", { name: "New Wonnyy Agent chat" })
+      .getByRole("dialog", { name: "New Orbistry Agent chat" })
       .getByRole("radio")
       .check();
     await page.keyboard.press("Escape");
@@ -965,8 +965,8 @@ async function main() {
       "Explicit double-click creation produces one chat; chat and box rename independently",
     );
     await page.evaluate(async () => {
-      await window.wonnyyDesktop.context.clear();
-      await window.wonnyyDesktop.context.add(["b.md"]);
+      await window.orbistryDesktop.context.clear();
+      await window.orbistryDesktop.context.add(["b.md"]);
     });
     await page
       .getByRole("button", { name: "Rescan vault", exact: true })
@@ -1080,10 +1080,10 @@ async function main() {
     const bounds = await geometry();
     assert.ok(bounds.x >= 0 && bounds.y >= 0);
     await panel()
-      .getByRole("button", { name: "Close Wonnyy Agent", exact: true })
+      .getByRole("button", { name: "Close Orbistry Agent", exact: true })
       .click();
     await page
-      .getByRole("button", { name: "Open Wonnyy Agent", exact: true })
+      .getByRole("button", { name: "Open Orbistry Agent", exact: true })
       .click();
     await panel().waitFor();
     await panel()

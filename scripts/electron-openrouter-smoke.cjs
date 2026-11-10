@@ -6,7 +6,7 @@ const os = require("node:os");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-openrouter-ui-"),
+    path.join(os.tmpdir(), "orbistry-openrouter-ui-"),
   );
   let application, page;
   const errors = [],
@@ -14,9 +14,9 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
-      WONNYY_OLLAMA_URL: "http://127.0.0.1:11434",
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_OLLAMA_URL: "http://127.0.0.1:11434",
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -70,7 +70,7 @@ async function main() {
     await fs.writeFile(path.join(root, "a.md"), "ALPHA allocation is 25%.");
     await launch();
     const box = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Router research",
         paths: ["a.md"],
@@ -80,7 +80,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: /Router research/ }).check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -88,7 +88,7 @@ async function main() {
     await picker.waitFor({ state: "hidden" });
     await send("Summarize this source.");
     const original = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     await setup();
     await provider("OpenRouter");
@@ -164,7 +164,7 @@ async function main() {
     );
     assert.equal(
       (
-        await page.evaluate(() => window.wonnyyDesktop.ai.models())
+        await page.evaluate(() => window.orbistryDesktop.ai.models())
       ).providers.find((provider) => provider.id === "openrouter").configured,
       true,
     );
@@ -215,7 +215,7 @@ async function main() {
     assert.equal(sample.length, 1);
     assert.equal(
       JSON.parse(sample[0].messages[1].content).sourceId,
-      "wonnyy-model-check",
+      "orbistry-model-check",
     );
     await page
       .getByRole("searchbox", { name: "Search models" })
@@ -275,7 +275,7 @@ async function main() {
     await workspace();
     await send("Continue with this source.");
     const online = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     assert.equal(online.id, original.id);
     assert.equal(online.contextBoxId, box.id);
@@ -314,7 +314,7 @@ async function main() {
           .length === 3,
     );
     const retried = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     assert.equal(
       retried.messages.filter(
@@ -327,7 +327,7 @@ async function main() {
     });
     await page.evaluate(() => {
       window.routerStreamEvents = [];
-      window.wonnyyDesktop.ai.onEvent((event) =>
+      window.orbistryDesktop.ai.onEvent((event) =>
         window.routerStreamEvents.push({
           state: event.state,
           content: event.content,
@@ -376,7 +376,7 @@ async function main() {
       .waitFor();
     assert.equal(
       (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0].id,
       original.id,
     );

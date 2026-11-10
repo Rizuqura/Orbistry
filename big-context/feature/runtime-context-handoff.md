@@ -1,10 +1,10 @@
-# Wonnyy runtime context optimization
+# Orbistry runtime context optimization
 
 ## Located policy and request path
 
-The named `Wonnyy_Strict_Context_Bound_Research_Agent_v1.1.md` was not in the repository. The actual active equivalent was found at `C:\bank\agentContext.memory\Wonnyy_Strict_Context_Bound_Research_Agent.md`; its header identifies version **1.1**. Read-only inspection of the existing Wonnyy configuration showed it included in the default Context Box alongside the math/statistics guide. It therefore entered research-source envelopes in addition to the app's separately injected 7,670-character system policy.
+The named `Orbistry_Strict_Context_Bound_Research_Agent_v1.1.md` was not in the repository. The actual active equivalent was found at `C:\bank\agentContext.memory\Orbistry_Strict_Context_Bound_Research_Agent.md`; its header identifies version **1.1**. Read-only inspection of the existing Orbistry configuration showed it included in the default Context Box alongside the math/statistics guide. It therefore entered research-source envelopes in addition to the app's separately injected 7,670-character system policy.
 
-An unchanged, versioned copy is now packaged at `electron/ai/policies/Wonnyy_Strict_Context_Bound_Research_Agent_v1.1.md`. SHA-256: `674b38dcb04aa5f17b1915cd7532dafb1705e870ba4f9354891675b7329fe082`. The former full app system prompt is preserved in `electron/ai/policies/wonnyy-host-policy-v19.md`. Original vault files, agent configurations, Context Box membership and existing chat bindings are not rewritten.
+An unchanged, versioned copy is now packaged at `electron/ai/policies/Orbistry_Strict_Context_Bound_Research_Agent_v1.1.md`. SHA-256: `674b38dcb04aa5f17b1915cd7532dafb1705e870ba4f9354891675b7329fe082`. The former full app system prompt is preserved in `electron/ai/policies/orbistry-host-policy-v19.md`. Original vault files, agent configurations, Context Box membership and existing chat bindings are not rewritten.
 
 ## Three layers
 

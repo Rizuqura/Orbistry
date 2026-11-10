@@ -215,7 +215,8 @@ function createRequestLogger({
   requestId,
   runId,
   mode = "agent",
-  enabled = process.env.QTERMINAL_REQUEST_LOGS !== "0",
+  enabled = (process.env.ORBISTRY_REQUEST_LOGS ??
+    process.env.QTERMINAL_REQUEST_LOGS) !== "0",
   write = (line) => process.stdout?.write(line + "\n"),
   clock = () => performance.now(),
   wallClock = Date.now,

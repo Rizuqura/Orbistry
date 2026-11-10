@@ -1,0 +1,927 @@
+{
+  "generatedAt": "2026-11-09T18:00:17.592Z",
+  "archive": "tmp/audit-package-2026-11-10/win-unpacked/resources/app.asar",
+  "groups": [
+    {
+      "path": "node_modules/@napi-rs/canvas-win32-x64-msvc",
+      "bytes": 39776784
+    },
+    {
+      "path": "node_modules/pdfjs-dist",
+      "bytes": 16052212
+    },
+    {
+      "path": "out",
+      "bytes": 7537975
+    },
+    {
+      "path": "node_modules/zod",
+      "bytes": 5773881
+    },
+    {
+      "path": "electron",
+      "bytes": 664602
+    },
+    {
+      "path": "build",
+      "bytes": 148865
+    },
+    {
+      "path": "node_modules/@napi-rs/canvas",
+      "bytes": 91774
+    },
+    {
+      "path": "package.json",
+      "bytes": 351
+    }
+  ],
+  "largestFiles": [
+    {
+      "path": "node_modules/@napi-rs/canvas-win32-x64-msvc/skia.win32-x64-msvc.node",
+      "bytes": 28806656
+    },
+    {
+      "path": "node_modules/@napi-rs/canvas-win32-x64-msvc/icudtl.dat",
+      "bytes": 10876560
+    },
+    {
+      "path": "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs",
+      "bytes": 2383409
+    },
+    {
+      "path": "node_modules/pdfjs-dist/build/pdf.worker.mjs",
+      "bytes": 2222991
+    },
+    {
+      "path": "node_modules/pdfjs-dist/legacy/build/pdf.worker.min.mjs",
+      "bytes": 1312452
+    },
+    {
+      "path": "out/pdf.worker.min.mjs",
+      "bytes": 1312452
+    },
+    {
+      "path": "node_modules/pdfjs-dist/build/pdf.worker.min.mjs",
+      "bytes": 1262398
+    },
+    {
+      "path": "node_modules/pdfjs-dist/legacy/build/pdf.mjs",
+      "bytes": 1032996
+    },
+    {
+      "path": "node_modules/pdfjs-dist/build/pdf.mjs",
+      "bytes": 853537
+    },
+    {
+      "path": "node_modules/pdfjs-dist/legacy/build/pdf.min.mjs",
+      "bytes": 512483
+    },
+    {
+      "path": "out/_next/static/chunks/1uk20sw6xvdnh.js",
+      "bytes": 506823
+    },
+    {
+      "path": "node_modules/pdfjs-dist/wasm/quickjs-eval.wasm",
+      "bytes": 469105
+    },
+    {
+      "path": "out/pdfjs/wasm/quickjs-eval.wasm",
+      "bytes": 469105
+    },
+    {
+      "path": "node_modules/pdfjs-dist/legacy/web/pdf_viewer.mjs",
+      "bytes": 458290
+    },
+    {
+      "path": "node_modules/pdfjs-dist/build/pdf.min.mjs",
+      "bytes": 454669
+    },
+    {
+      "path": "node_modules/pdfjs-dist/wasm/openjpeg_nowasm_fallback.js",
+      "bytes": 451590
+    },
+    {
+      "path": "out/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+      "bytes": 451590
+    },
+    {
+      "path": "out/orbistry-logo.png",
+      "bytes": 395960
+    }
+  ],
+  "exactDuplicatesOver10KB": [
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/legacy/build/pdf.worker.min.mjs",
+          "bytes": 1312452
+        },
+        {
+          "path": "out/pdf.worker.min.mjs",
+          "bytes": 1312452
+        }
+      ],
+      "redundantBytes": 1312452
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/quickjs-eval.wasm",
+          "bytes": 469105
+        },
+        {
+          "path": "out/pdfjs/wasm/quickjs-eval.wasm",
+          "bytes": 469105
+        }
+      ],
+      "redundantBytes": 469105
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/openjpeg_nowasm_fallback.js",
+          "bytes": 451590
+        },
+        {
+          "path": "out/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+          "bytes": 451590
+        }
+      ],
+      "redundantBytes": 451590
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/openjpeg.wasm",
+          "bytes": 252032
+        },
+        {
+          "path": "out/pdfjs/wasm/openjpeg.wasm",
+          "bytes": 252032
+        }
+      ],
+      "redundantBytes": 252032
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/legacy/web/pdf_viewer.css",
+          "bytes": 163517
+        },
+        {
+          "path": "node_modules/pdfjs-dist/web/pdf_viewer.css",
+          "bytes": 163517
+        }
+      ],
+      "redundantBytes": 163517
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/LiberationSans-Italic.ttf",
+          "bytes": 162036
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+          "bytes": 162036
+        }
+      ],
+      "redundantBytes": 162036
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/jbig2_nowasm_fallback.js",
+          "bytes": 145703
+        },
+        {
+          "path": "out/pdfjs/wasm/jbig2_nowasm_fallback.js",
+          "bytes": 145703
+        }
+      ],
+      "redundantBytes": 145703
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/LiberationSans-Regular.ttf",
+          "bytes": 139512
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+          "bytes": 139512
+        }
+      ],
+      "redundantBytes": 139512
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/LiberationSans-Bold.ttf",
+          "bytes": 137052
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+          "bytes": 137052
+        }
+      ],
+      "redundantBytes": 137052
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/LiberationSans-BoldItalic.ttf",
+          "bytes": 135124
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+          "bytes": 135124
+        }
+      ],
+      "redundantBytes": 135124
+    },
+    {
+      "copies": [
+        {
+          "path": "build/icon.png",
+          "bytes": 56473
+        },
+        {
+          "path": "out/_next/static/media/icon.2ydg2xx6_p2l_.png",
+          "bytes": 56473
+        },
+        {
+          "path": "out/icon.png",
+          "bytes": 56473
+        }
+      ],
+      "redundantBytes": 112946
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/jbig2.wasm",
+          "bytes": 104852
+        },
+        {
+          "path": "out/pdfjs/wasm/jbig2.wasm",
+          "bytes": 104852
+        }
+      ],
+      "redundantBytes": 104852
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/qcms_bg.wasm",
+          "bytes": 96589
+        },
+        {
+          "path": "out/pdfjs/wasm/qcms_bg.wasm",
+          "bytes": 96589
+        }
+      ],
+      "redundantBytes": 96589
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniCNS-UTF8-H.bcmap",
+          "bytes": 53629
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniCNS-UTF8-H.bcmap",
+          "bytes": 53629
+        }
+      ],
+      "redundantBytes": 53629
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniCNS-UTF32-H.bcmap",
+          "bytes": 52679
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniCNS-UTF32-H.bcmap",
+          "bytes": 52679
+        }
+      ],
+      "redundantBytes": 52679
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniCNS-UTF16-H.bcmap",
+          "bytes": 50419
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniCNS-UTF16-H.bcmap",
+          "bytes": 50419
+        }
+      ],
+      "redundantBytes": 50419
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniCNS-UCS2-H.bcmap",
+          "bytes": 48280
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniCNS-UCS2-H.bcmap",
+          "bytes": 48280
+        }
+      ],
+      "redundantBytes": 48280
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniGB-UTF8-H.bcmap",
+          "bytes": 46837
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniGB-UTF8-H.bcmap",
+          "bytes": 46837
+        }
+      ],
+      "redundantBytes": 46837
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniGB-UTF32-H.bcmap",
+          "bytes": 45738
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniGB-UTF32-H.bcmap",
+          "bytes": 45738
+        }
+      ],
+      "redundantBytes": 45738
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniGB-UTF16-H.bcmap",
+          "bytes": 44086
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniGB-UTF16-H.bcmap",
+          "bytes": 44086
+        }
+      ],
+      "redundantBytes": 44086
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniGB-UCS2-H.bcmap",
+          "bytes": 43366
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniGB-UCS2-H.bcmap",
+          "bytes": 43366
+        }
+      ],
+      "redundantBytes": 43366
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS2004-UTF8-H.bcmap",
+          "bytes": 41779
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS2004-UTF8-H.bcmap",
+          "bytes": 41779
+        }
+      ],
+      "redundantBytes": 41779
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS-UTF8-H.bcmap",
+          "bytes": 41695
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS-UTF8-H.bcmap",
+          "bytes": 41695
+        }
+      ],
+      "redundantBytes": 41695
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/Adobe-CNS1-UCS2.bcmap",
+          "bytes": 41193
+        },
+        {
+          "path": "out/pdfjs/cmaps/Adobe-CNS1-UCS2.bcmap",
+          "bytes": 41193
+        }
+      ],
+      "redundantBytes": 41193
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/Adobe-Japan1-UCS2.bcmap",
+          "bytes": 40951
+        },
+        {
+          "path": "out/pdfjs/cmaps/Adobe-Japan1-UCS2.bcmap",
+          "bytes": 40951
+        }
+      ],
+      "redundantBytes": 40951
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS2004-UTF32-H.bcmap",
+          "bytes": 40630
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS2004-UTF32-H.bcmap",
+          "bytes": 40630
+        }
+      ],
+      "redundantBytes": 40630
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJISX02132004-UTF32-H.bcmap",
+          "bytes": 40608
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJISX02132004-UTF32-H.bcmap",
+          "bytes": 40608
+        }
+      ],
+      "redundantBytes": 40608
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS-UTF32-H.bcmap",
+          "bytes": 40539
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS-UTF32-H.bcmap",
+          "bytes": 40539
+        }
+      ],
+      "redundantBytes": 40539
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJISX0213-UTF32-H.bcmap",
+          "bytes": 40517
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJISX0213-UTF32-H.bcmap",
+          "bytes": 40517
+        }
+      ],
+      "redundantBytes": 40517
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS2004-UTF16-H.bcmap",
+          "bytes": 39534
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS2004-UTF16-H.bcmap",
+          "bytes": 39534
+        }
+      ],
+      "redundantBytes": 39534
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS-UTF16-H.bcmap",
+          "bytes": 39443
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS-UTF16-H.bcmap",
+          "bytes": 39443
+        }
+      ],
+      "redundantBytes": 39443
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/Adobe-GB1-UCS2.bcmap",
+          "bytes": 33974
+        },
+        {
+          "path": "out/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
+          "bytes": 33974
+        }
+      ],
+      "redundantBytes": 33974
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitDingbats.pfb",
+          "bytes": 29513
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitDingbats.pfb",
+          "bytes": 29513
+        }
+      ],
+      "redundantBytes": 29513
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniKS-UTF8-H.bcmap",
+          "bytes": 27790
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniKS-UTF8-H.bcmap",
+          "bytes": 27790
+        }
+      ],
+      "redundantBytes": 27790
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/urbanist-normal-200-700.1w7lmqb1yqvf6.woff2",
+          "bytes": 27752
+        },
+        {
+          "path": "out/fonts/urbanist-normal-200-700.woff2",
+          "bytes": 27752
+        }
+      ],
+      "redundantBytes": 27752
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniKS-UTF32-H.bcmap",
+          "bytes": 26451
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniKS-UTF32-H.bcmap",
+          "bytes": 26451
+        }
+      ],
+      "redundantBytes": 26451
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniKS-UTF16-H.bcmap",
+          "bytes": 26327
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniKS-UTF16-H.bcmap",
+          "bytes": 26327
+        }
+      ],
+      "redundantBytes": 26327
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniKS-UCS2-H.bcmap",
+          "bytes": 25783
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniKS-UCS2-H.bcmap",
+          "bytes": 25783
+        }
+      ],
+      "redundantBytes": 25783
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/UniJIS-UCS2-H.bcmap",
+          "bytes": 25439
+        },
+        {
+          "path": "out/pdfjs/cmaps/UniJIS-UCS2-H.bcmap",
+          "bytes": 25439
+        }
+      ],
+      "redundantBytes": 25439
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/Adobe-Korea1-UCS2.bcmap",
+          "bytes": 23293
+        },
+        {
+          "path": "out/pdfjs/cmaps/Adobe-Korea1-UCS2.bcmap",
+          "bytes": 23293
+        }
+      ],
+      "redundantBytes": 23293
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitSerifItalic.pfb",
+          "bytes": 21227
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitSerifItalic.pfb",
+          "bytes": 21227
+        }
+      ],
+      "redundantBytes": 21227
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitSerifBoldItalic.pfb",
+          "bytes": 20733
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb",
+          "bytes": 20733
+        }
+      ],
+      "redundantBytes": 20733
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/GBK2K-H.bcmap",
+          "bytes": 19662
+        },
+        {
+          "path": "out/pdfjs/cmaps/GBK2K-H.bcmap",
+          "bytes": 19662
+        }
+      ],
+      "redundantBytes": 19662
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitSerif.pfb",
+          "bytes": 19469
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitSerif.pfb",
+          "bytes": 19469
+        }
+      ],
+      "redundantBytes": 19469
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitSerifBold.pfb",
+          "bytes": 19395
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitSerifBold.pfb",
+          "bytes": 19395
+        }
+      ],
+      "redundantBytes": 19395
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitFixedBoldItalic.pfb",
+          "bytes": 19151
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb",
+          "bytes": 19151
+        }
+      ],
+      "redundantBytes": 19151
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitFixedItalic.pfb",
+          "bytes": 18746
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitFixedItalic.pfb",
+          "bytes": 18746
+        }
+      ],
+      "redundantBytes": 18746
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitFixedBold.pfb",
+          "bytes": 18055
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitFixedBold.pfb",
+          "bytes": 18055
+        }
+      ],
+      "redundantBytes": 18055
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitFixed.pfb",
+          "bytes": 17597
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitFixed.pfb",
+          "bytes": 17597
+        }
+      ],
+      "redundantBytes": 17597
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/KSC-Johab-H.bcmap",
+          "bytes": 16791
+        },
+        {
+          "path": "out/pdfjs/cmaps/KSC-Johab-H.bcmap",
+          "bytes": 16791
+        }
+      ],
+      "redundantBytes": 16791
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/standard_fonts/FoxitSymbol.pfb",
+          "bytes": 16729
+        },
+        {
+          "path": "out/pdfjs/standard_fonts/FoxitSymbol.pfb",
+          "bytes": 16729
+        }
+      ],
+      "redundantBytes": 16729
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/space-mono-normal-700.3dmnla43cklex.woff2",
+          "bytes": 16724
+        },
+        {
+          "path": "out/fonts/space-mono-normal-700.woff2",
+          "bytes": 16724
+        }
+      ],
+      "redundantBytes": 16724
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/space-mono-normal-400.37_1qewfwlumh.woff2",
+          "bytes": 16520
+        },
+        {
+          "path": "out/fonts/space-mono-normal-400.woff2",
+          "bytes": 16520
+        }
+      ],
+      "redundantBytes": 16520
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/ibm-plex-mono-italic-400.0s6c45rhp1anc.woff2",
+          "bytes": 16448
+        },
+        {
+          "path": "out/fonts/ibm-plex-mono-italic-400.woff2",
+          "bytes": 16448
+        }
+      ],
+      "redundantBytes": 16448
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/ibm-plex-mono-normal-600.30e0eqd5fxn92.woff2",
+          "bytes": 15620
+        },
+        {
+          "path": "out/fonts/ibm-plex-mono-normal-600.woff2",
+          "bytes": 15620
+        }
+      ],
+      "redundantBytes": 15620
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/ibm-plex-mono-normal-700.2dfeoyem8ph0h.woff2",
+          "bytes": 14908
+        },
+        {
+          "path": "out/fonts/ibm-plex-mono-normal-700.woff2",
+          "bytes": 14908
+        }
+      ],
+      "redundantBytes": 14908
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/ibm-plex-mono-normal-500.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "path": "out/fonts/ibm-plex-mono-normal-500.woff2",
+          "bytes": 14888
+        }
+      ],
+      "redundantBytes": 14888
+    },
+    {
+      "copies": [
+        {
+          "path": "out/_next/static/media/ibm-plex-mono-normal-400.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "path": "out/fonts/ibm-plex-mono-normal-400.woff2",
+          "bytes": 14708
+        }
+      ],
+      "redundantBytes": 14708
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/GBK-EUC-H.bcmap",
+          "bytes": 14692
+        },
+        {
+          "path": "out/pdfjs/cmaps/GBK-EUC-H.bcmap",
+          "bytes": 14692
+        }
+      ],
+      "redundantBytes": 14692
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/cmaps/GBKp-EUC-H.bcmap",
+          "bytes": 14686
+        },
+        {
+          "path": "out/pdfjs/cmaps/GBKp-EUC-H.bcmap",
+          "bytes": 14686
+        }
+      ],
+      "redundantBytes": 14686
+    },
+    {
+      "copies": [
+        {
+          "path": "node_modules/pdfjs-dist/wasm/LICENSE_JBIG2",
+          "bytes": 12862
+        },
+        {
+          "path": "out/pdfjs/wasm/LICENSE_JBIG2",
+          "bytes": 12862
+        }
+      ],
+      "redundantBytes": 12862
+    }
+  ],
+  "package": {
+    "unpackedBytes": 444519873,
+    "asarBytes": 30644946,
+    "entries": 1522,
+    "forbiddenEntries": [],
+    "files": [
+      {
+        "name": "Orbistry-1.0.1-Victoria-Beta-win-x64.exe",
+        "bytes": 138570375
+      },
+      {
+        "name": "Orbistry-1.0.1-Victoria-Beta-win-x64.exe.blockmap",
+        "bytes": 146818
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+
+> orbistry@1.0.1 format:check
+> prettier --check "features/**/*.{ts,tsx,cjs,css}" "electron/ai/**/*.cjs" electron/main.cjs electron/preload.cjs types/ai.ts types/electron.d.ts components/app-shell.tsx components/chat-panel.tsx components/top-bar.tsx "scripts/*chat*.cjs" scripts/electron-smoke-main.cjs
+
+Checking formatting...
+npm.cmd : [warn] features/agent/engine-inspector.tsx
+At line:2 char:1
++ npm.cmd run format:check > "$env:TEMP\orbistry-audit-format-2026-11-1 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([warn] features...e-inspector.tsx:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[warn] electron/ai/agent-store.test.cjs
+[warn] electron/ai/credential-store.test.cjs
+[warn] electron/ai/front-office-evaluation.test.cjs
+[warn] electron/ai/nvidia-integration.test.cjs
+[warn] scripts/electron-chat-smoke.cjs
+[warn] scripts/electron-online-chat-smoke.cjs
+[warn] Code style issues found in 7 files. Run Prettier with --write to fix.

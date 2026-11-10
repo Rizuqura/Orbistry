@@ -6,7 +6,7 @@ const path = require("node:path");
 const os = require("node:os");
 
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-online-ui-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-online-ui-"));
   let application, page;
   const checks = [],
     errors = [];
@@ -17,9 +17,9 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
-      WONNYY_OLLAMA_URL: "http://127.0.0.1:11434",
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_OLLAMA_URL: "http://127.0.0.1:11434",
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -112,7 +112,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio").check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -152,7 +152,7 @@ async function main() {
     assert.equal(automaticChecks.length, 1);
     assert.equal(
       JSON.parse(automaticChecks[0].contents[0].parts[0].text).sourceId,
-      "wonnyy-model-check",
+      "orbistry-model-check",
     );
     assert.doesNotMatch(JSON.stringify(automaticChecks), /ALPHA/);
     await page.getByRole("button", { name: "Use online", exact: true }).click();

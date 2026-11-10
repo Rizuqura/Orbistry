@@ -1,6 +1,6 @@
 # OpenRouter and Settings
 
-Updated 2026-10-25. QTerminal desktop bridge is **17** after the AGENT workspace/settings addition; restart Electron after updating. Existing vaults, conversations, credentials and provider settings retain their storage locations.
+Updated 2026-10-25. Orbistry desktop bridge is **17** after the AGENT workspace/settings addition; restart Electron after updating. Existing vaults, conversations, credentials and provider settings retain their storage locations.
 
 ## Setup
 
@@ -12,7 +12,7 @@ Credential entry remains editable during desktop connection, registry refresh an
 
 ## Implementation
 
-- `electron/ai/providers/openrouter-provider.cjs` uses OpenRouter's fixed HTTPS endpoint, bearer authentication and optional QTerminal attribution header. It discovers text-input/text-output models, including colon-qualified IDs, and carries catalog context/output limits into model selection.
+- `electron/ai/providers/openrouter-provider.cjs` uses OpenRouter's fixed HTTPS endpoint, bearer authentication and optional Orbistry attribution header. It discovers text-input/text-output models, including colon-qualified IDs, and carries catalog context/output limits into model selection.
 - `openai-chat-provider.cjs` contains the shared bounded remote transport extracted from NVIDIA. The NVIDIA wrapper preserves its previous behavior. OpenRouter reads SSE comments, content and trailing usage, rejects incomplete/inline-reasoning streams, discards separate reasoning fields, and maps authentication, credit-limit (402), rate-limit and server failures to sanitized errors. Redirects are rejected; keys are never included in URLs, diagnostics or provider error bodies.
 - Settings, credentials, model checks and conversation validation accept `openrouter`. OS `safeStorage` encrypts its key in the existing `provider-credentials.json`; legacy Gemini/NVIDIA fields remain readable and are preserved on removal. IPC exposes save/remove/status only, never key retrieval. Immutable run records and assistant messages retain the actual provider/model and verified box provenance.
 - Generation, cancellation, retries, CSV planning and local statistics use the existing orchestrator. OpenRouter permits the full bounded multi-source/history request. Model selection clips configured context/output limits to discovered capabilities; subsequent prompts still undergo existing budget checks.

@@ -6,37 +6,31 @@
   place-items: center;
   padding: clamp(24px, 5vh, 64px) clamp(24px, 8vw, 120px);
   overflow: auto;
-  background-color: #03060c;
+  background-color: var(--orb-ink);
   background-image:
     linear-gradient(90deg, #0009 0%, #0005 52%, #0004 100%),
     linear-gradient(0deg, #0009 0%, transparent 48%, #0002 100%),
     url("../public/startup-space.svg");
   background-position: center;
   background-size: cover;
-  color: #e5edf8;
+  color: var(--orb-frost);
   font-family: "Segoe UI", sans-serif;
 }
 .startup-card {
   width: min(960px, 100%);
   margin-block: auto;
 }
-.startup-brand {
+.startup-screen .startup-brand {
   display: block;
-  width: clamp(72px, 14vh, 128px);
-  height: clamp(72px, 14vh, 128px);
+  width: clamp(220px, 28vw, 360px);
+  height: auto;
   margin-bottom: clamp(16px, 3vh, 32px);
   object-fit: contain;
-}
-.startup-card h1 {
-  margin: 0;
-  font-size: clamp(36px, 4.4vw, 64px);
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  filter: brightness(0) invert(1) !important;
 }
 .startup-card .startup-version {
   margin: 16px 0 clamp(28px, 5.5vh, 56px);
-  color: #91aacb;
+  color: var(--orb-muted);
   font-size: clamp(12px, 1.5vw, 20px);
   letter-spacing: 0.22em;
 }
@@ -53,15 +47,15 @@
   border-radius: 8px;
   overflow: hidden;
   appearance: none;
-  background: #263447;
-  accent-color: #71d9e0;
-  box-shadow: 0 0 16px #35c9da18;
+  background: var(--orb-hover);
+  accent-color: var(--orb-mist);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--orb-muted) 9%, transparent);
 }
 .startup-card progress::-webkit-progress-bar {
-  background: #263447;
+  background: var(--orb-hover);
 }
 .startup-card progress::-webkit-progress-value {
-  background: linear-gradient(90deg, #24bcc8, #a1eced);
+  background: linear-gradient(90deg, var(--orb-muted), var(--orb-mist));
   border-radius: 8px;
 }
 .startup-caption {
@@ -69,7 +63,7 @@
   justify-content: space-between;
   gap: 16px;
   margin-top: 16px;
-  color: #a0b6d3;
+  color: var(--orb-mist);
   font-size: clamp(12px, 1.5vw, 20px);
   font-variant-numeric: tabular-nums;
 }
@@ -88,11 +82,15 @@
   padding: 12px 20px;
   border: 0;
   border-radius: 18px;
-  background: linear-gradient(120deg, #17394aee, #0d1c2fe8);
-  color: #e2edfb;
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--orb-hover) 93%, transparent),
+    color-mix(in srgb, var(--orb-panel) 91%, transparent)
+  );
+  color: var(--orb-frost);
   box-shadow:
     0 8px 30px #0005,
-    inset 0 1px 12px #5ccdde18;
+    inset 0 1px 12px color-mix(in srgb, var(--orb-mist) 9%, transparent);
   font: inherit;
   font-size: clamp(16px, 1.8vw, 26px);
   cursor: pointer;
@@ -104,18 +102,22 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #4eb1ca12;
-  color: #87ddeb;
+  background: color-mix(in srgb, var(--orb-muted) 7%, transparent);
+  color: var(--orb-mist);
   font-size: 32px;
 }
 .startup-card button:hover {
-  background: linear-gradient(120deg, #20495bee, #142a40ed);
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--orb-slate) 93%, transparent),
+    color-mix(in srgb, var(--orb-raised) 93%, transparent)
+  );
   box-shadow:
     0 10px 36px #0007,
-    0 0 24px #57ccdc12;
+    0 0 24px color-mix(in srgb, var(--orb-mist) 7%, transparent);
 }
 .startup-card button:focus-visible {
-  outline: 2px solid #9bdde2;
+  outline: 2px solid var(--orb-mist);
   outline-offset: 5px;
 }
 @media (max-width: 600px) {
@@ -128,9 +130,9 @@
   }
 }
 @media (max-height: 560px) {
-  .startup-brand {
-    width: 56px;
-    height: 56px;
+  .startup-screen .startup-brand {
+    width: 168px;
+    height: auto;
     margin-bottom: 12px;
   }
   .startup-card .startup-version {

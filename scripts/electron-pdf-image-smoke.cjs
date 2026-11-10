@@ -6,7 +6,7 @@ const fs = require("node:fs/promises"),
 const { textPdf } = require("./fixtures/text-pdf.cjs");
 const { imagePdf } = require("./fixtures/image-pdf.cjs");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-pdf-image-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-pdf-image-"));
   let app, page;
   const errors = [];
   try {
@@ -32,8 +32,8 @@ async function main() {
       );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -50,7 +50,7 @@ async function main() {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     const boxes = await page.evaluate(async (paths) => {
-      const ai = window.wonnyyDesktop.ai;
+      const ai = window.orbistryDesktop.ai;
       const boxes = [];
       for (const file of paths)
         boxes.push(
@@ -98,7 +98,7 @@ async function main() {
     const inspected = await page.evaluate(
       async (ids) =>
         Promise.all(
-          ids.map((id) => window.wonnyyDesktop.ai.inspectContextBox(id)),
+          ids.map((id) => window.orbistryDesktop.ai.inspectContextBox(id)),
         ),
       boxes.map((b) => b.id),
     );
@@ -109,7 +109,7 @@ async function main() {
       ),
     );
     const pdf = await page.evaluate(() =>
-      window.wonnyyDesktop.vault.readPdf("scanned.pdf"),
+      window.orbistryDesktop.vault.readPdf("scanned.pdf"),
     );
     assert.equal(pdf.textStatus, "ready");
     await fs.mkdir("test-results", { recursive: true });
@@ -128,7 +128,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: /image\.png/ }).check();
     await picker
       .getByRole("button", { name: "Start Chat", exact: true })
@@ -142,7 +142,7 @@ async function main() {
       .click();
     await page.waitForFunction(
       async () =>
-        (await window.wonnyyDesktop.ai.listConversations())[0]?.attempts.at(-1)
+        (await window.orbistryDesktop.ai.listConversations())[0]?.attempts.at(-1)
           ?.status === "succeeded",
     );
     const request = await app.evaluate(() =>
@@ -152,7 +152,7 @@ async function main() {
     assert.match(JSON.stringify(request.messages), /ALPHA allocation is 25%/);
     assert.doesNotMatch(JSON.stringify(request.messages), /base64/);
     const chats = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     assert.equal(chats.length, 1);
     assert.equal(chats[0].messages[1].sources[0].relativePath, "image.png");

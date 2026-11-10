@@ -6,7 +6,7 @@ const path = require("node:path");
 const { ContextBoxStore } = require("../electron/ai/context-box-store.cjs");
 
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-add-agent-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-add-agent-"));
   const vault = path.join(root, "vault"),
     data = path.join(root, "app-data");
   let app, page;
@@ -14,8 +14,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: vault,
-      WONNYY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: data,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -34,9 +34,9 @@ async function main() {
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
   };
   const profiles = () =>
-    page.evaluate(() => window.wonnyyDesktop.ai.listAgents());
+    page.evaluate(() => window.orbistryDesktop.ai.listAgents());
   const chats = () =>
-    page.evaluate(() => window.wonnyyDesktop.ai.listConversations());
+    page.evaluate(() => window.orbistryDesktop.ai.listConversations());
   const picker = () =>
     page.getByRole("dialog", { name: "Add agent", exact: true });
   const open = () =>
@@ -93,7 +93,7 @@ async function main() {
     await open();
     await picker()
       .getByRole("textbox", { name: "Agent name", exact: true })
-      .fill("Wonnyy Agent");
+      .fill("Orbistry Agent");
     await picker()
       .getByRole("button", { name: "Create agent", exact: true })
       .click();
@@ -175,10 +175,10 @@ async function main() {
       .getByRole("textbox", { name: "Chat question", exact: true })
       .fill("Research draft");
     await page
-      .getByRole("button", { name: "Wonnyy Agent chats", exact: true })
+      .getByRole("button", { name: "Orbistry Agent chats", exact: true })
       .click();
     await page
-      .getByRole("complementary", { name: "Wonnyy Agent", exact: true })
+      .getByRole("complementary", { name: "Orbistry Agent", exact: true })
       .waitFor();
     assert.equal(
       await page.locator(".chat-message-assistant .chat-run-id").count(),
@@ -186,7 +186,7 @@ async function main() {
     );
     await page
       .getByRole("textbox", { name: "Chat question", exact: true })
-      .fill("Wonnyy draft");
+      .fill("Orbistry draft");
     await page
       .getByRole("button", { name: "Research desk chats", exact: true })
       .click();

@@ -1,0 +1,11 @@
+node : AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+At line:2 char:1
++ node scripts/electron-planet-performance-smoke.cjs > "$env:TEMP\orbis ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (AssertionError ...strictly equal::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+200 !== 201
+
+    at main (C:\Users\HYPE AMD\Desktop\Orbistry\scripts\electron-planet-performance-smoke.cjs:72:12)

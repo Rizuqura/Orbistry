@@ -1,6 +1,6 @@
 # Provider request flow — QT-RCA-001
 
-QTerminal is a static Next.js renderer inside Electron. There is no separate Next API server in the production chat path. The preload bridge exposes narrow IPC methods; only Electron main reads encrypted provider credentials or calls provider HTTP endpoints.
+Orbistry is a static Next.js renderer inside Electron. There is no separate Next API server in the production chat path. The preload bridge exposes narrow IPC methods; only Electron main reads encrypted provider credentials or calls provider HTTP endpoints.
 
 ```mermaid
 flowchart TD
@@ -43,7 +43,7 @@ The experiment panel is the existing basic, context-free chat path. It sends the
 
 `reliability.cjs` owns all experimental retries. It enforces one cumulative deadline, maximum attempts, circuit cooldown and cumulative reservations. It does not retry after visible partial output. Authentication/invalid-request failures are not transient retry candidates. Cross-provider fallback and switching logical models have separate consent controls.
 
-`provider-gateway.cjs` performs one inference call per attempt. Direct calls reuse the existing secure provider adapter without the normal agent envelope. LiteLLM is an optional external, authenticated loopback service; QTerminal neither installs nor starts it. A successful mocked loopback response does not verify an actual LiteLLM installation.
+`provider-gateway.cjs` performs one inference call per attempt. Direct calls reuse the existing secure provider adapter without the normal agent envelope. LiteLLM is an optional external, authenticated loopback service; Orbistry neither installs nor starts it. A successful mocked loopback response does not verify an actual LiteLLM installation.
 
 SSE consumption distinguishes visible `delta.content` from reasoning or metadata, assembles split UTF-8 events, retains trailing usage, and requires completion. Non-streaming consumption parses a bounded JSON message (string or text-array content), retains finish/usage/reasoning counts, and does not invent deltas or time-to-first-token. Empty, refused or incomplete content fails output validation rather than appearing as a successful blank answer.
 

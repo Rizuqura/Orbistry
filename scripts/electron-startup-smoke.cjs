@@ -4,14 +4,14 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-startup-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-startup-"));
   let app;
   try {
     await fs.writeFile(path.join(root, "note.md"), "Startup fixture.");
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -33,6 +33,37 @@ async function main() {
       }
       await screen.waitFor();
       assert.equal(await page.title(), "Orbistry");
+      assert.equal(
+        await page.locator(".desktop-titlebar, .desktop-help-menu").count(),
+        0,
+      );
+      assert.equal(
+        await screen
+          .getByRole("heading", { name: "Orbistry", exact: true })
+          .count(),
+        0,
+      );
+      assert.equal(
+        await screen
+          .getByRole("img", { name: "Orbistry", exact: true })
+          .count(),
+        1,
+      );
+      assert.equal(
+        await page
+          .locator(".app-shell")
+          .evaluate((el) => el.getBoundingClientRect().top),
+        0,
+      );
+      assert.equal(
+        await app.evaluate(
+          ({ nativeImage }, iconPath) =>
+            nativeImage.createFromPath(iconPath).isEmpty(),
+          path.resolve("build/orbistry-window-icon.png"),
+        ),
+        false,
+      );
+
       assert.equal(await app.evaluate(({ app }) => app.getName()), "Orbistry");
       assert.equal(
         await app.evaluate(
@@ -102,8 +133,11 @@ async function main() {
         false,
       );
       assert.equal(
-        (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
-          .length,
+        (
+          await page.evaluate(() =>
+            window.orbistryDesktop.ai.listConversations(),
+          )
+        ).length,
         0,
       );
     }

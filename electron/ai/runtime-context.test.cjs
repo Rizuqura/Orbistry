@@ -20,7 +20,7 @@ const source = (id, content, type = "md") => ({
   contentHash: createHash("sha256").update(content).digest("hex"),
 });
 const policy = source(
-  "agentContext.memory/Wonnyy_Strict_Context_Bound_Research_Agent.md",
+  "agentContext.memory/Orbistry_Strict_Context_Bound_Research_Agent.md",
   canonical,
 );
 const evidence = source("research.md", "ALPHA allocation is 25%.");
@@ -81,7 +81,7 @@ test("routine research compacts only the known policy and leaves evidence, quest
     /## 30\. FINAL OPERATING PRINCIPLES/,
   );
   const legacy = fs.readFileSync(
-    path.join(__dirname, "policies/wonnyy-host-policy-v19.md"),
+    path.join(__dirname, "policies/orbistry-host-policy-v19.md"),
     "utf8",
   );
   const before = estimateTokens([
@@ -102,7 +102,7 @@ test("policy analysis, follow-ups, policy-only chats and unrelated agents preser
     {
       userMessage: "Why?",
       history: [
-        { role: "user", content: "Describe Wonnyy's policy." },
+        { role: "user", content: "Describe Orbistry's policy." },
         { role: "assistant", content: "It is read-only." },
       ],
     },

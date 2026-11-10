@@ -16,7 +16,7 @@ test("both remote providers receive only a synthetic source and bounded check se
           assert.equal(request.messages.length, 3);
           assert.equal(
             JSON.parse(request.messages[1].content).sourceId,
-            "wonnyy-model-check",
+            "orbistry-model-check",
           );
           assert.equal(request.format.properties.answer.type, "string");
           return { content: '{"answer":"40%"}', finishReason: "stop" };

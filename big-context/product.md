@@ -1,4 +1,4 @@
-# Product Context — Wonnyy V0.0.1-Amadeus
+# Product Context — Orbistry V0.0.1-Amadeus
 
 ## Problem
 
@@ -57,7 +57,7 @@ The fundamental question is:
 
 > Why should a user's knowledge belong to an AI model?
 
-Wonnyy's answer is:
+Orbistry's answer is:
 
 > It shouldn't.
 
@@ -67,7 +67,7 @@ Wonnyy's answer is:
 
 > **AI models should be replaceable. Knowledge should be permanent.**
 
-Wonnyy aims to build infrastructure around AI models rather than another AI model itself.
+Orbistry aims to build infrastructure around AI models rather than another AI model itself.
 
 The core philosophy is:
 
@@ -292,11 +292,11 @@ Decision / Action
 
 ## MVP
 
-# Wonnyy V0.0.1 — Amadeus
+# Orbistry V0.0.1 — Amadeus
 
 V0.0.1 is an **internal AI-native knowledge and data workspace**.
 
-Its purpose is to establish the first practical version of Wonnyy's information infrastructure while testing whether AI models can interact meaningfully with a persistent collection of research and data.
+Its purpose is to establish the first practical version of Orbistry's information infrastructure while testing whether AI models can interact meaningfully with a persistent collection of research and data.
 
 ### Feature 1 — Vault / Folder Selection
 
@@ -312,7 +312,7 @@ The initial system should be capable of identifying supported files within the s
 
 ### Feature 2 — Markdown Reading
 
-Wonnyy can read Markdown-based knowledge files.
+Orbistry can read Markdown-based knowledge files.
 
 Example:
 
@@ -323,7 +323,7 @@ research/
 
 ### Feature 3 — CSV Reading
 
-Wonnyy can read CSV datasets as an initial structured-data format.
+Orbistry can read CSV datasets as an initial structured-data format.
 
 Example:
 
@@ -342,7 +342,7 @@ The user should be able to locate relevant information within the selected knowl
 
 ### Feature 5 — AI Model API
 
-Wonnyy connects to external AI models through an API layer.
+Orbistry connects to external AI models through an API layer.
 
 The initial direction is model-agnostic, with OpenRouter identified as the initial model-access layer.
 
@@ -382,7 +382,7 @@ The initial objective is:
 
 Information
 ↓
-Wonnyy
+Orbistry
 ↓
 Information Bank
 ↓
@@ -418,7 +418,7 @@ These exclusions exist to prevent premature expansion of the MVP.
 
 ## Long-Term Vision
 
-Wonnyy is intended to evolve from an internal research and data workspace into a broader **persistent intelligence layer**.
+Orbistry is intended to evolve from an internal research and data workspace into a broader **persistent intelligence layer**.
 
 ### V0.2 — Basic Data Intelligence
 
@@ -441,7 +441,7 @@ Potential capabilities:
 - Observation counts
 - Basic descriptive statistics
 
-This stage should validate whether Wonnyy can move from **reading data** to **performing basic analysis**.
+This stage should validate whether Orbistry can move from **reading data** to **performing basic analysis**.
 
 ### Future Data Science Layer
 

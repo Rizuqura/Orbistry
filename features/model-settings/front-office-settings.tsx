@@ -12,7 +12,7 @@ import type {
 import { sortProfiles } from "../../electron/ai/llm-front-office/catalog-sort.cjs";
 
 function bridge(): AiBridge {
-  const ai = window.wonnyyDesktop?.ai;
+  const ai = window.orbistryDesktop?.ai;
   if (!ai?.frontOfficeState)
     throw new Error("Restart Orbistry to load the experimental backend.");
   return ai;
@@ -107,7 +107,7 @@ export function FrontOfficeSettings({
   };
   useEffect(() => {
     let disposed = false;
-    const ai = window.wonnyyDesktop?.ai;
+    const ai = window.orbistryDesktop?.ai;
     if (!ai?.frontOfficeState) return;
     void ai
       .frontOfficeState()

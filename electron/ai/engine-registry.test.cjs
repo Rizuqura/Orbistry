@@ -11,7 +11,7 @@ const { AgentStore } = require("./agent-store.cjs");
 const { defaults, validateConstruction } = require("./agent-construction.cjs");
 async function fixture(t) {
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-engine-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-engine-")),
   );
   t.after(async () => {
     assert.ok(

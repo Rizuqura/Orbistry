@@ -18,7 +18,7 @@ Completed assistant responses use a dependency-free, React-escaped Markdown subs
 
 The renderer preserves the original saved answer, numbers and source provenance. Computed-source footers retain their separate evidence styling. Factual correctness and citation validation remain runtime responsibilities; Markdown rendering does not establish correctness. Completed-message rendering is memoized; provisional streaming content stays plain text until finalized to avoid reparsing the full stream on every token. No blur, animated wallpaper, shader or new package is introduced. Composer placement, cancellation and timeline scrolling keep their existing behavior.
 
-The system prompt now requests readable Markdown inside the final answer string, while retaining protected grounding and structured response rules (`wonnyy-conversation-v16-readable-markdown`). Appearance choices are never included in that prompt.
+The system prompt now requests readable Markdown inside the final answer string, while retaining protected grounding and structured response rules (`orbistry-conversation-v16-readable-markdown`). Appearance choices are never included in that prompt.
 
 ## Verification
 

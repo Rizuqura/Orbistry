@@ -115,8 +115,8 @@ function buildContextMessages({
     agentId,
   });
   const systemPrompt = policy.system.replaceAll(
-    "Wonnyy Agent",
-    agentName ?? AGENT_DEFINITIONS[agentId]?.displayName ?? "Wonnyy Agent",
+    "Orbistry Agent",
+    agentName ?? AGENT_DEFINITIONS[agentId]?.displayName ?? "Orbistry Agent",
   );
   const approved = selection.sources;
   if (

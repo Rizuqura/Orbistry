@@ -229,7 +229,9 @@ function createContextOrchestrator({
         executionLocation: providerName === "ollama" ? "local" : "remote",
       };
       const baseline = createBaselineObserver({
-        enabled: process.env.QTERMINAL_FRONT_OFFICE_METRICS !== "0",
+        enabled:
+          (process.env.ORBISTRY_FRONT_OFFICE_METRICS ??
+            process.env.QTERMINAL_FRONT_OFFICE_METRICS) !== "0",
         requestId: options.requestId,
         runId,
         conversationId: options.conversationId,

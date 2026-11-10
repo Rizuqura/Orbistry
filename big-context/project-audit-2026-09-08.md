@@ -4,7 +4,7 @@ Reviewed implementation checkpoint: `fb76d97`.
 
 ## Assessment
 
-Wonnyy has functional local model integration and switching, Settings and a dedicated AI Terminal model tab, shared chat surfaces, persistent conversations, and Planet/chat interaction fixes. This is an integration checkpoint, not completion of the intended research experience. The user's current assessment remains authoritative: chat and continuity still have unresolved experience problems.
+Orbistry has functional local model integration and switching, Settings and a dedicated AI Terminal model tab, shared chat surfaces, persistent conversations, and Planet/chat interaction fixes. This is an integration checkpoint, not completion of the intended research experience. The user's current assessment remains authoritative: chat and continuity still have unresolved experience problems.
 
 The product goal remains a coherent local-first research workflow over permanent, user-owned knowledge with replaceable models. The immediate architecture deliberately narrows that goal to one approved Markdown source, natural follow-ups, safe source changes, and recoverable conversations. Multi-file research in `goal.md` remains a broader unmet goal, not a capability delivered by this checkpoint.
 
@@ -39,4 +39,4 @@ This is a focused state/goal and integration review, not an exhaustive security 
 
 Close chat reliability and continuity before adding agent features. Use a representative source for at least ten natural turns, switch to a second source for ten more, return to the original conversation, restart, switch installed models, and cancel/recover. Add a conversation longer than 12 exchanges to expose the memory boundary. Review source accuracy, follow-up relevance, focus/draft behavior, and perceived latency with the user. Record concrete failures and acceptable latency thresholds; do not mark the milestone complete solely because requests return successfully.
 
-After that acceptance, expand to explicit multi-source research. Keep models replaceable and all knowledge authorization owned by Wonnyy; remote providers, autonomous agents, and model-written vault changes remain separate future scope.
+After that acceptance, expand to explicit multi-source research. Keep models replaceable and all knowledge authorization owned by Orbistry; remote providers, autonomous agents, and model-written vault changes remain separate future scope.

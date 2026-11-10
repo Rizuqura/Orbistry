@@ -1,6 +1,6 @@
 {
   "name": "orbistry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Local-first AI-native knowledge and research workspace",
   "private": true,
   "license": "UNLICENSED",
@@ -9,11 +9,12 @@
   },
   "main": "electron/main.cjs",
   "scripts": {
+    "prepare:icons": "node scripts/prepare-icons.cjs",
     "prepare:pdf": "node scripts/prepare-pdf-worker.cjs",
-    "dev": "npm run prepare:pdf && concurrently -k \"npm:dev:web\" \"npm:dev:desktop\"",
+    "dev": "npm run prepare:icons && npm run prepare:pdf && concurrently -k \"npm:dev:web\" \"npm:dev:desktop\"",
     "dev:web": "next dev",
     "dev:desktop": "wait-on tcp:3000 && cross-env ELECTRON_START_URL=http://localhost:3000 node electron/launch.cjs",
-    "build": "npm run prepare:pdf && next build && node scripts/secure-export.cjs",
+    "build": "npm run prepare:icons && npm run prepare:pdf && next build && node scripts/secure-export.cjs",
     "start": "node electron/launch.cjs",
     "desktop:preview": "npm run build && node electron/launch.cjs",
     "desktop:dist": "npm run build && electron-builder",
@@ -89,25 +90,26 @@
   "build": {
     "asar": true,
     "compression": "maximum",
-    "artifactName": "Orbistry-${version}-Victoria-Beta-${os}-${arch}.${ext}",
+    "artifactName": "ORB-Terminal-${version}-Victoria-Beta-${os}-${arch}.${ext}",
     "asarUnpack": [
       "electron/windows-ocr.ps1"
     ],
-    "appId": "com.wonnyy.amadeus",
-    "productName": "Orbistry",
+    "appId": "com.orbistry.desktop",
+    "productName": "ORB Terminal",
     "files": [
       "out/**/*",
       "electron/**/*",
       "!electron/**/*.test.cjs",
       "!electron/**/*.d.cts",
-      "!electron/ai/policies/wonnyy-host-policy-v19.md",
+      "!electron/ai/policies/orbistry-host-policy-v19.md",
       "!**/*.map",
       "!**/node_modules/next/**",
       "!**/node_modules/react/**",
       "!**/node_modules/react-dom/**",
       "!**/node_modules/@next/**",
       "build/icon.png",
-      "build/icon.ico",
+      "build/orbistry-window-icon.png",
+      "build/orb-terminal.ico",
       "package.json"
     ],
     "win": {
@@ -119,7 +121,7 @@
           ]
         }
       ],
-      "icon": "build/icon.ico"
+      "icon": "build/orb-terminal.ico"
     },
     "nsis": {
       "oneClick": false,

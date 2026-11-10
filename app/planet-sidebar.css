@@ -3,11 +3,11 @@
   grid-template-columns: var(--sidebar-width, 240px) minmax(0, 1fr) auto;
 }
 .app-shell .planet-detail-panel {
-  --detail-bg: #0f1213;
-  --detail-surface: #181b1d;
+  --detail-bg: var(--orb-ink);
+  --detail-surface: var(--orb-panel);
   --detail-line: transparent;
-  --detail-text: #d1d9dd;
-  --detail-muted: #97a3a9;
+  --detail-text: var(--orb-mist);
+  --detail-muted: var(--orb-muted);
   --detail-cyan: #88adaf;
   --detail-amber: #ffad00;
   container-type: inline-size;
@@ -16,7 +16,7 @@
   min-width: 0;
   min-height: 0;
   max-height: none;
-  background: linear-gradient(110deg, #111415, var(--detail-bg));
+  background: linear-gradient(110deg, var(--orb-panel), var(--detail-bg));
   color: var(--detail-text);
   border-left: 1px solid var(--detail-line);
   border-left-color: transparent !important;
@@ -38,7 +38,7 @@
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: #464e51 var(--detail-bg);
+  scrollbar-color: var(--orb-slate) var(--detail-bg);
   scrollbar-gutter: stable;
 }
 .app-shell .planet-detail-panel :is(.pd-body, .station-panel) {
@@ -54,14 +54,14 @@
 }
 .app-shell .planet-detail-panel .pd-section-title {
   margin: 0 0 8px;
-  color: #eaeef0;
+  color: var(--orb-frost);
   font: 700 12px/1.4 var(--font-terminal);
   letter-spacing: 0.015em;
   overflow-wrap: anywhere;
 }
 .app-shell .planet-detail-panel .pd-empty {
   margin: 8px 0 18px;
-  color: #bac3c9;
+  color: var(--orb-mist);
   font: inherit;
 }
 .app-shell .planet-detail-panel .pd-detail {
@@ -75,7 +75,7 @@
   color: var(--detail-muted);
 }
 .app-shell .planet-detail-panel .pd-detail-value {
-  color: #dce5e9;
+  color: var(--orb-frost);
 }
 .app-shell .planet-detail-panel .pd-body > .pd-empty + .pd-rule {
   display: none;
@@ -102,7 +102,7 @@
   border-color: transparent !important;
   border-radius: 5px;
   overflow: hidden;
-  background: #16191b;
+  background: var(--orb-panel);
 }
 .app-shell .planet-detail-panel .brain-scope-state > :is(span, b) {
   display: grid;
@@ -115,15 +115,15 @@
 }
 .app-shell .planet-detail-panel .brain-scope-state b {
   color: var(--detail-cyan);
-  background: #21292b;
+  background: var(--orb-raised);
   box-shadow: inset 0 -2px var(--detail-cyan);
 }
 .app-shell .planet-detail-panel .brain-scope p {
   margin: 8px 0 4px;
-  color: #bac3c9;
+  color: var(--orb-mist);
 }
 .app-shell .planet-detail-panel .brain-scope small {
-  color: #dce5e8;
+  color: var(--orb-frost);
   font: inherit;
 }
 .app-shell .planet-detail-panel :is(input, button) {
@@ -183,17 +183,17 @@
   min-height: 34px;
   border: 0;
   color: var(--detail-muted);
-  background: #131618;
+  background: var(--orb-panel);
 }
 .app-shell .planet-detail-panel .station-modes button.on {
-  background: #212c2e;
-  color: #9dc0bf;
-  box-shadow: inset 0 0 0 1px #6f9496;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
+  box-shadow: inset 0 0 0 1px var(--orb-muted);
   border-radius: 4px;
 }
 .app-shell .planet-detail-panel .context-summary {
   margin: 8px 0;
-  color: #bac3c9;
+  color: var(--orb-mist);
   font: inherit;
   font-size: 11px;
   line-height: 1.55;
@@ -207,7 +207,7 @@
   border-color: transparent !important;
   border-radius: 5px;
   background: linear-gradient(115deg, #ffae00, #f2a000);
-  color: #0e0f0e;
+  color: var(--orb-ink);
   font: 700 12px/1.4 var(--font-terminal);
   letter-spacing: 0;
 }
@@ -216,7 +216,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: #101315;
+  background: var(--orb-panel);
   border-color: transparent !important;
   color: var(--detail-amber);
 }
@@ -270,16 +270,16 @@
   border: 1px solid transparent;
   border-color: transparent !important;
   border-radius: 4px;
-  background: #15181a;
+  background: var(--orb-panel);
 }
 .context-source-icon {
   width: 18px;
   height: 22px;
   flex: 0 0 18px;
-  color: #bfc9cf;
+  color: var(--orb-mist);
 }
 .app-shell .planet-detail-panel .context-list span {
-  color: #d1d9dd;
+  color: var(--orb-mist);
   min-width: 0;
   font-size: 11px;
 }
@@ -315,7 +315,7 @@
   background: var(--detail-surface);
 }
 .app-shell .planet-detail-panel .context-manager-box-row.is-highlighted {
-  background: #303b40;
+  background: var(--orb-hover);
   box-shadow: inset 2px 0 var(--detail-amber);
 }
 .app-shell
@@ -330,7 +330,7 @@
   background: transparent;
   border: 0;
   border-radius: 4px;
-  color: #e3e9ec;
+  color: var(--orb-frost);
   padding: 8px 12px;
   gap: 2px;
   font: 11px/1.4 var(--font-terminal);
@@ -343,10 +343,10 @@
 }
 .app-shell .planet-detail-panel .context-manager-box-row > .station-filter.on {
   color: var(--detail-cyan);
-  background: #21292b;
+  background: var(--orb-raised);
 }
 .app-shell .planet-detail-panel .context-manager-boxes small {
-  color: #bac3c9;
+  color: var(--orb-mist);
   font: inherit;
 }
 .app-shell .planet-detail-panel .station-list:empty {
@@ -365,7 +365,7 @@
   border-top: 1px solid var(--detail-line);
   border-top-color: transparent !important;
   text-align: right;
-  color: #bac3c9;
+  color: var(--orb-mist);
   font-size: 11px;
 }
 .planet-detail-footer strong {
@@ -436,8 +436,8 @@
 }
 .planet-detail-resize:hover::after,
 .planet-detail-resize:focus-visible::after {
-  background: #88adaf;
-  box-shadow: 0 0 10px #88adaf50;
+  background: var(--orb-muted);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--orb-muted) 31%, transparent);
 }
 @media (max-width: 760px) {
   .planet-detail-resize {

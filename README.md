@@ -2,9 +2,9 @@
 
 A local-first AI research workspace and agent environment.
 
-**v1.0.1 Victoria Beta** · Version: 1.0.1 · Codename: Victoria · Status: Beta
+**v1.0.2 Victoria (Beta)** · Version: 1.0.2 · Codename: Victoria · Status: Beta
 
-[v1.0.1 release notes](big-context/release-1.0.1.md): provider compatibility, backend experiments and diagnostics. Token/credit savings remain unverified end-to-end; see the [comparison status](report/QTerminal_Token_Credit_Comparison_Status.md).
+[v1.0.2 release notes](big-context/release-1.0.2.md): UI revamp, native agent window, Planet View gravity layout and Orbistry rebranding. Token/credit savings remain unverified end-to-end; see the [comparison status](report/Orbistry_Token_Credit_Comparison_Status.md).
 
 This README covers using Orbistry and learning how its software works. Start with installation and the first research workflow, then follow the learning guide to trace inputs, processing, outputs and code.
 
@@ -44,13 +44,13 @@ Fresh installations start with **no agents, chats, Context Boxes, API keys or re
 
 ## Installation
 
-Windows x64 is the currently validated release target. When a verified Victoria Beta release is available, use its `Orbistry-1.0.1-Victoria-Beta-win-x64.exe` installer. Source commits and tags do not automatically publish an installer. Unsigned beta installers may trigger Windows reputation warnings; verify the published SHA-256 before installing.
+Windows x64 is the currently validated release target. When a verified Victoria Beta release is available, use its `ORB-Terminal-1.0.2-Victoria-Beta-win-x64.exe` installer. Source commits and tags do not automatically publish an installer. Unsigned beta installers may trigger Windows reputation warnings; verify the published SHA-256 before installing.
 
 To build from source, use Node.js **22.18 or newer** and npm on Windows:
 
 ```powershell
-git clone https://github.com/Rizuqura/wonnyy-terminal.git
-cd wonnyy-terminal
+git clone https://github.com/Rizuqura/Orbistry.git
+cd orbistry
 npm ci
 npm run build
 npm start
@@ -95,7 +95,7 @@ Enter keys in **Settings → provider → API key**. Keys are encrypted with Ele
 
 ## Privacy and storage
 
-Research files remain in your chosen vault. `.wonnyy/` inside that vault stores local Stations, Context Boxes, chat history and immutable model-run records. The Electron profile stores settings, agents, managed images and encrypted credentials; Chromium stores UI preferences/caches there. The selected vault path persists in `vault-settings.json`. Upgrades can reuse historical QTerminal/Wonnyy profiles to preserve existing encrypted keys.
+Research files remain in your chosen vault. `.wonnyy/` inside that vault stores local Stations, Context Boxes, chat history and immutable model-run records. The Electron profile stores settings, agents, managed images and encrypted credentials; Chromium stores UI preferences/caches there. The selected vault path persists in `vault-settings.json`. Upgrades can reuse historical application profiles to preserve existing encrypted keys.
 
 With a remote provider, the request includes reviewed research/guidance text, questions and included history; CSV requests can include column profiles, samples and computed results. That provider's policies apply. Ollama communicates with a separately running loopback service. Model discovery/usage checks may contact configured providers. There is no mandatory Orbistry telemetry or cloud storage.
 
@@ -108,7 +108,7 @@ Run records can retain questions, answers and analysis evidence after chat delet
 - CSV analysis is bounded JavaScript computation, not general SQL, joins, forecasting, training or an executable skill marketplace.
 - Image reading supplies OCR text, not general visual chart/photo understanding. OCR is currently Windows-only.
 - Windows x64 packaging is tested here. macOS/Linux, signing and live-model grounding need separate verification.
-- Legacy Wonnyy/CHronoZ profiles may remain visible on upgraded installations; a clean installation has no seeded agent.
+- Legacy Orbistry/CHronoZ profiles may remain visible on upgraded installations; a clean installation has no seeded agent.
 
 ## Project structure
 
@@ -179,7 +179,7 @@ User actions in the Electron window
                  |
 React / Next.js renderer (components and features)
                  |
-window.wonnyyDesktop (explicit preload bridge)
+window.orbistryDesktop (explicit preload bridge)
                  |
 Electron IPC handlers (validated desktop requests)
                  |
@@ -204,7 +204,7 @@ The **renderer** is the interface running in Electron's Chromium window. The **m
 
 1. [app/page.tsx](app/page.tsx) renders [components/app-shell.tsx](components/app-shell.tsx), which connects the workspace, source views, agents and chat.
 2. [use-chat-runtime.ts](features/chat/use-chat-runtime.ts) manages chat actions and interface state. [desktop-client.ts](features/chat/desktop-client.ts) checks renderer/backend API-version compatibility.
-3. The interface calls `window.wonnyyDesktop.ai.chat(...)`. [electron/preload.cjs](electron/preload.cjs) sends `ai:chat` IPC. [electron/ai/ipc.cjs](electron/ai/ipc.cjs) registers AI handlers and returns structured results or errors.
+3. The interface calls `window.orbistryDesktop.ai.chat(...)`. [electron/preload.cjs](electron/preload.cjs) sends `ai:chat` IPC. [electron/ai/ipc.cjs](electron/ai/ipc.cjs) registers AI handlers and returns structured results or errors.
 4. [ChatService](electron/ai/chat-service.cjs) validates the request, resolves the conversation/agent/model, manages cancellation and mutation ordering, and records the pending attempt.
 5. [orchestrator.cjs](electron/ai/orchestrator.cjs) prepares the approved scope, reads sources through controlled readers, and checks identities and hashes. Source/guidance content must fit the configured budget; research sources are not silently shortened just to fit.
 6. Where relevant, the dataset planner and worker compute supported CSV results. Prompt construction combines the question, evidence, app-owned instructions, agent guidance and budgeted history.
@@ -256,7 +256,7 @@ Research knowledge consolidation is a specialized feature registered for the `wo
 | `features/usage-monitor/` | Provider usage presentation |
 | `lib/` | Planet layout/navigation/hit testing, Station projections and related helpers |
 | `electron/main.cjs` | Startup, window security, vault handlers and service wiring |
-| `electron/preload.cjs` | Explicit `window.wonnyyDesktop` API |
+| `electron/preload.cjs` | Explicit `window.orbistryDesktop` API |
 | `electron/vault-service.cjs` | Vault scanning, controlled reads, PDF extraction and image reading |
 | `electron/local-ocr.cjs`, `electron/windows-ocr.ps1` | Local Windows OCR integration |
 | `electron/station-service.cjs` | Stations, source selection, manifests and controlled Brain Scope reads |
@@ -270,7 +270,7 @@ Research knowledge consolidation is a specialized feature registered for the `wo
 | `scripts/` | Build preparation, export hardening, acceptance checks, audits and operator tools |
 | `docs/`, `big-context/` | Release evidence and design/history documents; check dates and scope |
 
-Some names still say **Wonnyy** or **Amadeus** because they are historical internal identifiers. The current product name is Orbistry. Follow actual imports from `app/page.tsx` and `app-shell.tsx` to identify active components rather than assuming similarly named files are interchangeable.
+Some names still say **Orbistry** or **Amadeus** because they are historical internal identifiers. The current product name is Orbistry. Follow actual imports from `app/page.tsx` and `app-shell.tsx` to identify active components rather than assuming similarly named files are interchangeable.
 
 ## Software development workflow
 
@@ -295,7 +295,7 @@ Additional useful commands:
 
 [package.json](package.json) is the command reference. Live-provider tests have additional service/credential requirements and may consume provider allowance; inspect their scripts first. `.env.example` documents an optional live-test key, not normal desktop credential setup. Enter application keys in Settings.
 
-For controlled development/testing, `WONNYY_VAULT_PATH` overrides the vault at startup. `ELECTRON_START_URL` selects an allowed development renderer URL; `dev:desktop` sets it to `http://localhost:3000`. Normal users choose vaults and credentials through Settings.
+For controlled development/testing, `ORBISTRY_VAULT_PATH` overrides the vault at startup. `ELECTRON_START_URL` selects an allowed development renderer URL; `dev:desktop` sets it to `http://localhost:3000`. Normal users choose vaults and credentials through Settings.
 
 ### Build inputs and outputs
 
@@ -385,22 +385,32 @@ Settings exports content-free metrics JSON/CSV. To extract metrics from an exist
 
     node scripts/front-office-metrics-export.cjs "path/to/vault/.wonnyy/model-runs/RUN_ID.json" --format json --output metrics.json
 
-Disable experimental execution through its enable setting. The older normal-agent passive observer can be disabled separately with QTERMINAL_FRONT_OFFICE_METRICS=0 before launch. Schema-5 experiment conversations and schema-3 runs require preserving newer data before rolling back to an older application build.
+Disable experimental execution through its enable setting. The older normal-agent passive observer can be disabled separately with ORBISTRY_FRONT_OFFICE_METRICS=0 before launch. Schema-5 experiment conversations and schema-3 runs require preserving newer data before rolling back to an older application build.
 
-Read the [audit](docs/architecture/pre-llm/00-existing-architecture-audit.md), [flow diagrams](docs/architecture/pre-llm/01-overview-and-flow.md), [module contracts](docs/architecture/pre-llm/02-modules-and-contracts.md), [provider/LiteLLM setup](docs/architecture/pre-llm/03-provider-setup-openrouter-nvidia.md), [ranking](docs/architecture/pre-llm/04-model-registry-and-ranking.md), [budgets](docs/architecture/pre-llm/05-token-economics-and-context.md), [recovery](docs/architecture/pre-llm/06-reliability-errors-and-recovery.md), [metrics/evaluation](docs/architecture/pre-llm/07-observability-and-benchmark.md), [Indonesian tuning guide](docs/architecture/pre-llm/08-front-office-tuning-playbook.md), [security/rollback](docs/architecture/pre-llm/09-security-and-rollback.md), [executed benchmark report](docs/architecture/pre-llm/10-benchmark-report.md), [changelog](docs/architecture/pre-llm/11-changelog.md) and [implementation status](big-context/backend-feature/QTerminal_Backend_Implementation_Status.md).
+Read the [audit](docs/architecture/pre-llm/00-existing-architecture-audit.md), [flow diagrams](docs/architecture/pre-llm/01-overview-and-flow.md), [module contracts](docs/architecture/pre-llm/02-modules-and-contracts.md), [provider/LiteLLM setup](docs/architecture/pre-llm/03-provider-setup-openrouter-nvidia.md), [ranking](docs/architecture/pre-llm/04-model-registry-and-ranking.md), [budgets](docs/architecture/pre-llm/05-token-economics-and-context.md), [recovery](docs/architecture/pre-llm/06-reliability-errors-and-recovery.md), [metrics/evaluation](docs/architecture/pre-llm/07-observability-and-benchmark.md), [Indonesian tuning guide](docs/architecture/pre-llm/08-front-office-tuning-playbook.md), [security/rollback](docs/architecture/pre-llm/09-security-and-rollback.md), [executed benchmark report](docs/architecture/pre-llm/10-benchmark-report.md), [changelog](docs/architecture/pre-llm/11-changelog.md) and [implementation status](big-context/backend-feature/Orbistry_Backend_Implementation_Status.md).
 
 ## LLM Provider Infrastructure & Troubleshooting
 
 The normal agent path supports Ollama, Gemini, NVIDIA NIM and OpenRouter. The context-free experiment path supports OpenRouter/NVIDIA and an optional externally managed LiteLLM proxy. LiteLLM is an authenticated loopback HTTP transport; Orbistry does not install/start a Python sidecar. It is disabled by default and was not enabled in QT-RCA-001.
 
-For basic diagnostic chat, launch Electron, select a vault, open **Settings → LLM Backend / Front Office**, refresh a configured provider, enable experiments, choose an exact manual model, save and create a **New experiment**. Send `Reply with exactly: QTERMINAL_OK`. This path needs no Context Box, agent personality, skills or augmented memory. Disable **Stream generated text** to isolate real non-streaming JSON completion. The normal Agent Chat retains its existing context requirements.
+For basic diagnostic chat, launch Electron, select a vault, open **Settings → LLM Backend / Front Office**, refresh a configured provider, enable experiments, choose an exact manual model, save and create a **New experiment**. Send `Reply with exactly: ORBISTRY_OK`. This path needs no Context Box, agent personality, skills or augmented memory. Disable **Stream generated text** to isolate real non-streaming JSON completion. The normal Agent Chat retains its existing context requirements.
 
 Input and successful local history pass through validated IPC, requirements/budget checks, capability routing, one retry/deadline controller, native provider or optional LiteLLM transport, response validation, local persistence and final assistant rendering. Manual sessions stay pinned. Automatic fallback/model switching require explicit consent; errors include safe diagnostic codes. Experiment actions stop/await existing model checks to avoid shared-admission races.
 
-Desktop keys belong in provider Settings and use OS-encrypted storage. Environment variables in `.env.example` are for opt-in test scripts, not the desktop credential source. `ELECTRON_START_URL` selects a development renderer; `WONNYY_VAULT_PATH` selects a vault. Neither changes provider authentication. `QTERMINAL_FRONT_OFFICE_METRICS=0` disables the older normal-agent passive metrics observer. Never put real keys or authorization headers into logs/config JSON. Gateway URL, enable flag and generation options are configured in the experiment panel; gateway credentials use its separate encrypted field.
+Desktop keys belong in provider Settings and use OS-encrypted storage. Environment variables in `.env.example` are for opt-in test scripts, not the desktop credential source. `ELECTRON_START_URL` selects a development renderer; `ORBISTRY_VAULT_PATH` selects a vault. Neither changes provider authentication. `ORBISTRY_FRONT_OFFICE_METRICS=0` disables the older normal-agent passive metrics observer. Never put real keys or authorization headers into logs/config JSON. Gateway URL, enable flag and generation options are configured in the experiment panel; gateway credentials use its separate encrypted field.
 
 QT-RCA-001 verified real OpenRouter text visibly in both assistant paths and ORBITAL conversation continuity. NVIDIA's saved model timed out; a catalog-listed alternate returned 404. A catalog listing alone does not prove generation works. Actual LiteLLM remains unverified. If there is no answer, inspect the first failed stage: admission, candidate rejection, HTTP, first visible content, normalization, validation or DOM rendering. Minimal output caps accept either advertised `max_tokens` or `max_completion_tokens`; provider/account restrictions still apply.
 
 After building, `node scripts/provider-rca.cjs --ui --multi-turn` runs opt-in real-provider UI diagnostics using existing encrypted credentials in a disposable profile. `--ui --nonstream` isolates C/E; the default invocation probes raw providers. These calls can consume provider quota. `node scripts/electron-front-office-smoke.cjs` instead runs isolated synthetic failure/fallback regressions. Unit/mock success alone is insufficient to certify operation.
 
 See [root causes and evidence](docs/backend/PROVIDER_RCA.md), [request lifecycle](docs/backend/PROVIDER_REQUEST_FLOW.md), and [diagnostic commands A–H](docs/backend/PROVIDER_DIAGNOSTICS.md), including the webpack build command for this nested audit worktree. Audit branch: `audit/qt-rca-001`; comparison baseline: `829d704`.
+
+### Orbistry rebrand compatibility
+
+Orbistry is the product, desktop bridge (`window.orbistryDesktop`) and build identity (`com.orbistry.desktop`). The GitHub repository is `Rizuqura/Orbistry` (https://github.com/Rizuqura/Orbistry).
+
+Existing `.wonnyy/` vault metadata, stored agent IDs, provenance envelope types and `qterminal-*` browser preference keys intentionally retain their storage identifiers so saved work stays readable. Historical profile and default-vault names are detected for upgrades. Runtime settings prefer `ORBISTRY_VAULT_PATH`, `ORBISTRY_OLLAMA_URL`, `ORBISTRY_REQUEST_LOGS` and `ORBISTRY_FRONT_OFFICE_METRICS`, with the previous environment variable names accepted as fallbacks. Existing saved agent names and instructions remain user-owned and are not overwritten.
+
+### Active-provider token budgeting
+
+Planet View's AI BUDGET panel follows the active agent's provider and current key for Ollama, Gemini, NVIDIA and OpenRouter. Completed-request token measurements stay separate for each provider/key. OpenRouter also shows its reported key allowance; other providers' unintegrated balances and reset schedules remain unavailable. See [provider budget monitoring](docs/PROVIDER_BUDGET_MONITOR.md) for measurement scope and verification.

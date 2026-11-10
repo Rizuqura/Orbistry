@@ -5,19 +5,22 @@ const fs = require("node:fs/promises"),
   assert = require("node:assert/strict");
 const { imagePdf } = require("./fixtures/image-pdf.cjs");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-packaged-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-packaged-"));
   const vault = path.join(root, "vault"),
     profile = path.join(root, "profile");
   let app;
   const errors = [];
   try {
     await fs.mkdir(vault);
-    const env = { ...process.env, WONNYY_VAULT_PATH: vault };
+    const env = { ...process.env, ORBISTRY_VAULT_PATH: vault };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
-    delete env.WONNYY_SMOKE_DATA;
+    delete env.ORBISTRY_SMOKE_DATA;
     app = await electron.launch({
-      executablePath: path.resolve("dist/win-unpacked/Orbistry.exe"),
+      executablePath: path.resolve(
+        "dist/win-unpacked",
+        `${require("../package.json").build.productName}.exe`,
+      ),
       args: [`--user-data-dir=${profile}`, "--hidden"],
       env,
       timeout: 60000,
@@ -27,7 +30,7 @@ async function main() {
     page.on("pageerror", (error) => errors.push(error.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     const state = await page.evaluate(async () => {
-      const { ai, vault } = window.wonnyyDesktop;
+      const { ai, vault } = window.orbistryDesktop;
       return {
         agents: await ai.listAgents(),
         boxes: await ai.listContextBoxes(),
@@ -51,7 +54,7 @@ async function main() {
     assert.match(state.csp, /script-src 'self'/);
     assert.equal(
       await page.locator(".version").textContent(),
-      `v${require("../package.json").version} Victoria Beta`,
+      `v${require("../package.json").version} Victoria (Beta)`,
     );
     await fs.copyFile(
       "scripts/fixtures/ocr-text.png",
@@ -59,8 +62,8 @@ async function main() {
     );
     await fs.writeFile(path.join(vault, "scanned.pdf"), imagePdf());
     const extracted = await page.evaluate(async () => ({
-      image: await window.wonnyyDesktop.vault.read("image.png"),
-      pdf: await window.wonnyyDesktop.vault.readPdf("scanned.pdf"),
+      image: await window.orbistryDesktop.vault.read("image.png"),
+      pdf: await window.orbistryDesktop.vault.readPdf("scanned.pdf"),
     }));
     assert.match(extracted.image.content, /ALPHA/i);
     assert.equal(extracted.pdf.textStatus, "ready");
@@ -81,7 +84,7 @@ async function main() {
       .getByRole("complementary", { name: "Research assistant", exact: true })
       .waitFor();
     const box = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "My reviewed context",
         paths: ["image.png", "scanned.pdf"],
@@ -122,7 +125,7 @@ async function main() {
       JSON.stringify(
         {
           passed: true,
-          executable: "Windows x64 Orbistry.exe",
+          executable: `Windows x64 ${require("../package.json").build.productName}.exe`,
           emptyState: true,
           csp: true,
           nativeImageOcr: true,

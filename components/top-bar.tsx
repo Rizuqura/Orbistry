@@ -1,3 +1,5 @@
+import { version } from "../package.json";
+
 export function TopBar({
   view,
   onChangeView,
@@ -14,13 +16,12 @@ export function TopBar({
       <div className="brand">
         <img
           className="brand-mark"
-          src="./qterminal-logo.png"
-          alt=""
-          width={16}
-          height={16}
+          src="./orbistry-logo.png"
+          alt="Orbistry"
+          width={96}
+          height={32}
         />
-        <span>Orbistry</span>
-        <span className="version">v1.0.1 Victoria Beta</span>
+        <span className="version">{`v${version} Victoria (Beta)`}</span>
       </div>
       <nav className="top-nav" aria-label="Primary">
         <button

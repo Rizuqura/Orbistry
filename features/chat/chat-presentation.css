@@ -1,13 +1,33 @@
+.agent-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.app-shell .chat-header.agent-banner,
+.app-shell .agent-bot-row.agent-banner {
+  /* Transparent borders expose the image outside the clipped overlay. */
+  border: 0;
+}
+.agent-banner::before {
+  content: "";
+  position: absolute;
+  /* Overscan fractional border edges at Windows display scaling levels. */
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(rgba(13, 17, 23, 0.66), rgba(13, 17, 23, 0.84));
+  pointer-events: none;
+}
 .app-shell .chat-thread {
   gap: 18px;
   padding: 22px 20px;
-  background-color: #0d141c;
+  background-color: var(--orb-panel);
 }
 .app-shell .chat-thread .chat-message {
   flex-shrink: 0;
   font-family: var(--ui-font, "Segoe UI", sans-serif);
-  font-size: var(--chat-reading-size, 15px);
-  line-height: 1.7;
+  font-size: var(--chat-reading-size, 13px);
+  line-height: 1.65;
   font-weight: 400;
   border: 0;
   overflow-wrap: anywhere;
@@ -19,16 +39,16 @@
   max-width: min(78ch, 100%);
   padding: 16px 18px;
   border-radius: 16px 16px 16px 5px;
-  background: #17232ef5;
-  color: #dfe8f2;
+  background: color-mix(in srgb, var(--orb-raised) 96%, transparent);
+  color: var(--orb-frost);
 }
 .app-shell .chat-thread .chat-message-user {
   width: fit-content;
   max-width: min(62ch, 88%);
   padding: 12px 16px;
   border-radius: 16px 16px 5px 16px;
-  background: #253f49f5;
-  color: #ebf4f5;
+  background: color-mix(in srgb, var(--orb-hover) 96%, transparent);
+  color: var(--orb-frost);
   margin-left: auto;
 }
 .app-shell .chat-thread .chat-message-meta {
@@ -43,7 +63,7 @@
 }
 .chat-rich-text strong {
   font-weight: 700;
-  color: #f3f7fc;
+  color: var(--orb-frost);
 }
 .chat-rich-text em {
   font-style: italic;
@@ -52,7 +72,7 @@
   font-weight: 650;
   line-height: 1.4;
   margin: 1.2em 0 0.5em;
-  color: #eef4fc;
+  color: var(--orb-frost);
 }
 .chat-rich-text h3 {
   font-size: 1.18em;
@@ -81,9 +101,9 @@
 .chat-rich-text blockquote {
   margin: 1em 0;
   padding: 8px 14px;
-  background: #23333e;
+  background: var(--orb-hover);
   border-radius: 8px;
-  color: #bacdd9;
+  color: var(--orb-mist);
   white-space: pre-line;
 }
 .chat-rich-text code {
@@ -93,15 +113,15 @@
     monospace;
   padding: 2px 5px;
   border-radius: 5px;
-  background: #0c1720;
-  color: #c3e3d8;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
   white-space: pre-wrap;
 }
 .chat-rich-text pre {
   margin: 1em 0;
   padding: 14px;
   border-radius: 10px;
-  background: #0c151f;
+  background: var(--orb-panel);
   overflow: auto;
   max-width: 100%;
 }
@@ -112,13 +132,13 @@
   font-size: 0.85em;
 }
 .chat-rich-text a {
-  color: #a8d8e8;
+  color: var(--orb-mist);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .chat-rich-text hr {
   height: 1px;
-  background: #344653;
+  background: var(--orb-slate);
   border: 0;
   margin: 1.1em 0;
 }
@@ -138,24 +158,24 @@
   vertical-align: top;
 }
 .chat-rich-text th {
-  background: #293b47;
+  background: var(--orb-hover);
   font-weight: 650;
 }
 .chat-rich-text tbody tr:nth-child(even) {
-  background: #20303a;
+  background: var(--orb-hover);
 }
 .app-shell .chat-thread .chat-source-evidence {
   margin-top: 12px;
   padding-top: 10px;
   font-size: 0.85em;
-  color: #9db4c4;
+  color: var(--orb-mist);
 }
 .app-shell .chat-thread .chat-source-evidence p {
   white-space: pre-wrap;
 }
 .chat-message-actions {
   margin-top: 6px;
-  color: #8c9dad;
+  color: var(--orb-muted);
   font: 12px/1.5 var(--ui-font, sans-serif);
 }
 .chat-message-actions > summary {
@@ -177,7 +197,7 @@
 .chat-message-actions > button {
   margin-top: 4px;
   padding: 8px 12px;
-  background: #17212c;
+  background: var(--orb-raised);
   color: #e9a99e;
   border: 0;
   border-radius: 6px;
@@ -195,4 +215,188 @@
   .app-shell .chat-thread .chat-message-assistant {
     padding: 14px;
   }
+}
+
+/* Keep window actions and context menus above the profile, away from its art. */
+.app-shell .chat-panel .chat-header {
+  min-height: 40px;
+  height: auto;
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  gap: 6px;
+  flex-wrap: wrap;
+  background: var(--orb-ink);
+  border-radius: 10px 10px 0 0;
+}
+.app-shell
+  .chat-panel:not(.chat-panel-minimized)
+  .chat-header
+  .agent-drag-title {
+  display: none;
+}
+.app-shell .chat-panel .chat-header .chat-runtime-status {
+  margin: 0 auto 0 0;
+  font-size: 10px;
+}
+.app-shell .chat-panel .chat-header button {
+  padding: 5px 8px;
+  font-size: 11px;
+}
+.app-shell .chat-top-menus {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 32%;
+  gap: 6px 10px;
+  padding: 8px 12px;
+  overflow: auto;
+  background: var(--orb-panel);
+}
+.app-shell .chat-top-menus .chat-context {
+  flex: 1 1 170px;
+  padding: 0;
+  margin: 0;
+}
+.app-shell .chat-top-menus .chat-context[open] {
+  flex-basis: 100%;
+}
+.app-shell .chat-top-menus .agent-provider-indicator {
+  padding: 0;
+  background: transparent;
+  font-size: 10px;
+}
+.app-shell .chat-top-menus .agent-session-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1 0 100%;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  gap: 6px 10px;
+}
+.app-shell .chat-top-menus .agent-session-heading {
+  flex: 1 1 140px;
+  margin: 0;
+}
+.app-shell .chat-top-menus .agent-session-heading strong {
+  font-size: 12px;
+}
+.app-shell .chat-top-menus .chat-primary-actions {
+  margin: 0;
+  gap: 6px;
+}
+.app-shell .chat-top-menus .chat-context-tools {
+  flex: 1 0 100%;
+  margin: 0;
+}
+.app-shell .chat-profile {
+  flex: 0 0 auto;
+  min-width: 0;
+  background: var(--orb-ink);
+}
+.app-shell .chat-profile-banner {
+  height: 72px;
+  background: linear-gradient(120deg, var(--orb-hover), var(--orb-panel));
+  background-position: center;
+  background-size: cover;
+}
+.app-shell .chat-profile-identity {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: -44px;
+  padding: 0 16px 12px;
+}
+.app-shell .chat-profile .agent-avatar {
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  border: 4px solid var(--orb-ink);
+  border-color: var(--orb-ink) !important;
+  border-radius: 50%;
+  background: var(--orb-raised);
+  font-size: 30px;
+  overflow: hidden;
+}
+.app-shell .chat-profile .agent-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app-shell .chat-profile-copy {
+  min-width: 0;
+  flex: 1;
+  padding-top: 50px;
+}
+.app-shell .chat-profile-copy h2 {
+  margin: 0;
+  color: var(--orb-frost);
+  font: 600 16px/1.3 var(--font-interface);
+  overflow-wrap: anywhere;
+}
+.app-shell .chat-profile-description {
+  margin: 5px 0 0;
+  color: var(--orb-mist);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.app-shell .chat-profile-context {
+  margin: 4px 0 0;
+  color: var(--orb-muted);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.app-shell .chat-panel-floating.chat-panel-minimized .chat-header {
+  min-height: 50px;
+  flex-wrap: nowrap;
+}
+.app-shell .chat-panel-minimized .chat-header .agent-drag-title {
+  display: block;
+}
+@media (max-width: 700px) {
+  .app-shell .chat-profile-identity {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+  .app-shell .chat-top-menus {
+    padding-inline: 10px;
+  }
+}
+
+/* The native pop-out uses the same chat surface without canvas geometry. */
+.planet-chat-window.app-shell {
+  display: flex;
+  width: 100vw;
+  height: 100dvh;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.planet-chat-window.app-shell .chat-panel-window {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  overflow: hidden;
+}
+.chat-popout-error {
+  position: fixed;
+  bottom: 36px;
+  left: 16px;
+  z-index: 100;
+  max-width: 420px;
+  padding: 12px;
+  color: var(--orb-frost);
+  background: var(--orb-panel);
+  border: 1px solid var(--ui-line);
 }

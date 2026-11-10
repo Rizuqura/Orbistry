@@ -19,6 +19,27 @@ export function clampGeometry(
     height: h,
   };
 }
+export function defaultPlanetChatGeometry(
+  width: number,
+  height: number,
+): PanelGeometry {
+  const geometry = clampGeometry(
+    {
+      x: 12,
+      y: 0,
+      width: 440,
+      height: Math.min(560, Math.max(0, height - 24)),
+    },
+    width,
+    height,
+  );
+  return {
+    ...geometry,
+    x: Math.min(12, Math.max(0, width - geometry.width)),
+    y: Math.max(0, height - geometry.height - 12),
+  };
+}
+
 export function resizeGeometry(
   g: PanelGeometry,
   direction: ResizeDirection,

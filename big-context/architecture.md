@@ -1,8 +1,8 @@
-# Architecture Context — Wonnyy V0.0.1-Amadeus
+# Architecture Context — Orbistry V0.0.1-Amadeus
 
 ## 1. Architecture Objective
 
-Wonnyy V0.0.1-Amadeus is an internal AI-native knowledge and data workspace.
+Orbistry V0.0.1-Amadeus is an internal AI-native knowledge and data workspace.
 
 The architecture should enable the system to:
 
@@ -24,7 +24,7 @@ The architecture should prioritize:
 
 ## 2. Architectural Philosophy
 
-Wonnyy should not be designed around a single AI model.
+Orbistry should not be designed around a single AI model.
 
 The broader product architecture is based on the principle:
 
@@ -116,7 +116,7 @@ When a task requires both knowledge and AI reasoning, the Context Engine connect
 
 ## 5. Core Architectural Components
 
-Wonnyy V0.0.1 consists of the following major components:
+Orbistry V0.0.1 consists of the following major components:
 
 1. Presentation / UI
 2. Knowledge Interface
@@ -158,7 +158,7 @@ The UI requests capabilities from the appropriate application interfaces.
 
 ## 7. Knowledge Interface
 
-The Knowledge Interface represents Wonnyy's connection to the user's information environment.
+The Knowledge Interface represents Orbistry's connection to the user's information environment.
 
 Its responsibility is:
 
@@ -363,7 +363,7 @@ The Context Engine should determine what information is relevant and should be p
 
 ## 13. Model Interface
 
-The Model Interface represents Wonnyy's connection to AI reasoning systems.
+The Model Interface represents Orbistry's connection to AI reasoning systems.
 
 Its responsibility is:
 
@@ -395,7 +395,7 @@ For V0.0.1, OpenRouter can serve as the initial model gateway.
 
 Conceptually:
 
-Wonnyy Model Interface
+Orbistry Model Interface
 ↓
 OpenRouter
 ↓
@@ -427,7 +427,7 @@ AI
 
 Instead:
 
-                     WONNYY
+                     ORBISTRY
                         │
         ┌───────────────┼───────────────┐
         │               │               │
@@ -846,6 +846,6 @@ The central architectural principle is:
 
 > **Knowledge and AI are independent capabilities. The Context Engine connects them when necessary.**
 
-This preserves the core Wonnyy philosophy:
+This preserves the core Orbistry philosophy:
 
 > **The model is the engine. The knowledge system is the infrastructure.**

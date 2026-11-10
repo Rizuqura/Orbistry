@@ -14,11 +14,11 @@ const {
   NvidiaProvider,
 } = require("../electron/ai/providers/nvidia-provider.cjs");
 const { selectUserDataPath } = require("../electron/user-data-path.cjs");
-if (!process.env.QT_RCA_PROFILE || !process.env.WONNYY_VAULT_PATH)
+if (!process.env.QT_RCA_PROFILE || !process.env.ORBISTRY_VAULT_PATH)
   throw new Error("Disposable diagnostic profile/vault required.");
 const sourceProfile = selectUserDataPath(
   app.getPath("appData"),
-  path.join(app.getPath("appData"), "qterminal"),
+  path.join(app.getPath("appData"), "orbistry"),
 );
 const isolated = path.resolve(process.env.QT_RCA_PROFILE);
 app.setPath("userData", isolated);
@@ -99,8 +99,8 @@ const stage = (requestId, name, status, started, metadata = {}) =>
     ...metadata,
   });
 const safeText = (text) =>
-  typeof text === "string" && text.trim() === "QTERMINAL_OK"
-    ? "QTERMINAL_OK"
+  typeof text === "string" && text.trim() === "ORBISTRY_OK"
+    ? "ORBISTRY_OK"
     : typeof text === "string" && text.trim() === "ORBITAL"
       ? "ORBITAL"
       : text
@@ -207,7 +207,7 @@ globalThis.qtRca = {
           body: JSON.stringify({
             model,
             messages: [
-              { role: "user", content: "Reply with exactly: QTERMINAL_OK" },
+              { role: "user", content: "Reply with exactly: ORBISTRY_OK" },
             ],
             temperature: 0.2,
             max_tokens: outputLimit,
@@ -253,7 +253,7 @@ globalThis.qtRca = {
             text ? "nonempty" : "empty",
             started,
           );
-          result.status = text.trim() === "QTERMINAL_OK" ? "PASS" : "FAIL";
+          result.status = text.trim() === "ORBISTRY_OK" ? "PASS" : "FAIL";
           stage(requestId, "OUTPUT_VALIDATED", result.status, started);
           stage(
             requestId,

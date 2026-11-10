@@ -7,6 +7,7 @@ export type VaultEntry = {
   relativePath: string;
   extension?: string;
   readable?: boolean;
+  sizeBytes?: number;
   pdf?: {
     textStatus: "ready" | "empty" | "error" | "too-large";
     pageCount: number | null;
@@ -175,7 +176,7 @@ export interface BrainScopeClientError extends Error {
 }
 declare global {
   interface Window {
-    wonnyyDesktop?: {
+    orbistryDesktop?: {
       apiVersion: number;
       platform: string;
       vault: {

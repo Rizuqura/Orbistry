@@ -70,3 +70,22 @@ test("Victoria display name preserves QTerminal credentials and prefers populate
     current,
   );
 });
+
+test("ORB Terminal preserves the current Orbistry profile before older profiles", () => {
+  const renamed = path.join(root, "ORB Terminal");
+  const orbistry = path.join(root, "Orbistry");
+  const exists = (file) =>
+    [orbistry, current].some(
+      (directory) => file === path.join(directory, "provider-credentials.json"),
+    );
+  assert.equal(selectUserDataPath(root, renamed, exists), orbistry);
+  assert.equal(
+    selectUserDataPath(
+      root,
+      renamed,
+      (file) => exists(file) || file === path.join(renamed, "agents.json"),
+    ),
+    renamed,
+  );
+  assert.equal(selectUserDataPath(root, renamed, exists, true), renamed);
+});

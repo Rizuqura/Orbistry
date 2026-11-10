@@ -10,7 +10,7 @@ const { cmapPdf } = require("./fixtures/cmap-pdf.cjs");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "wonnyy-electron-smoke-"),
+    path.join(os.tmpdir(), "orbistry-electron-smoke-"),
   );
   const requests = [];
   let ollamaOnline = true;
@@ -113,9 +113,9 @@ async function main() {
     process.stdout.write("Launching local desktop regression\n");
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_OLLAMA_URL: `http://127.0.0.1:${server.address().port}`,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -132,7 +132,7 @@ async function main() {
       void dialog.dismiss();
     });
     await page.getByRole("textbox", { name: "Chat question" }).waitFor();
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
   }
   async function createExplicit() {
     await openContextTools(page);
@@ -148,7 +148,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: new RegExp(name) }).check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -196,7 +196,7 @@ async function main() {
           .click();
       await dialog.waitFor({ state: "hidden" });
       assert.equal(
-        (await page.evaluate(() => window.wonnyyDesktop.stations.getState()))
+        (await page.evaluate(() => window.orbistryDesktop.stations.getState()))
           .activeContext.length,
         0,
       );
@@ -274,7 +274,7 @@ async function main() {
       true,
     );
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       0,
     );
@@ -413,7 +413,7 @@ async function main() {
       .click();
     await page.waitForFunction(
       async () =>
-        (await window.wonnyyDesktop.ai.models()).settings.outputLimit === 1024,
+        (await window.orbistryDesktop.ai.models()).settings.outputLimit === 1024,
     );
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/ai-terminal.png" });
@@ -505,7 +505,7 @@ async function main() {
       .click();
     await page.waitForFunction(
       async (id) =>
-        !(await window.wonnyyDesktop.ai.listConversations()).some(
+        !(await window.orbistryDesktop.ai.listConversations()).some(
           (c) => c.id === id,
         ),
       originalId,
@@ -518,7 +518,7 @@ async function main() {
       .getByRole("button", { name: "Clear history", exact: true })
       .click();
     await page.waitForFunction(
-      async () => !(await window.wonnyyDesktop.ai.listConversations()).length,
+      async () => !(await window.orbistryDesktop.ai.listConversations()).length,
     );
     assert.ok(
       (await fs.readdir(path.join(root, ".wonnyy", "model-runs"))).some(
@@ -607,7 +607,7 @@ async function main() {
     );
     assert.deepEqual(pdfWarnings, []);
     const matches = await page.evaluate(() =>
-      window.wonnyyDesktop.vault.search("日本"),
+      window.orbistryDesktop.vault.search("日本"),
     );
     assert.equal(matches[0]?.relativePath, "mapped.pdf");
     checks.push(
@@ -658,7 +658,7 @@ async function main() {
       true,
     );
     await page.evaluate(() => {
-      void window.wonnyyDesktop.ai.pullModel("qwen3:smoke");
+      void window.orbistryDesktop.ai.pullModel("qwen3:smoke");
     });
     await download.getByRole("button", { name: "CANCEL", exact: true }).click();
     await download.getByText(/DOWNLOAD CANCELLED/).waitFor();

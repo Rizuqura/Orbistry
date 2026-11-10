@@ -339,7 +339,7 @@ class OpenAIChatProvider {
         "MODEL_INVALID_REQUEST",
         "A single system instruction must precede the conversation.",
       );
-    // Hosted chat models need not generate Wonnyy's internal transport envelope.
+    // Hosted chat models need not generate Orbistry's internal transport envelope.
     // Normalize their final content here; keep the shared answer validator intact.
     const datasetPlan = Boolean(
       request.format?.properties?.queries ||
@@ -347,7 +347,7 @@ class OpenAIChatProvider {
     );
     messages[0].content += datasetPlan
       ? `\nReturn only a JSON object matching this schema, without Markdown fences: ${JSON.stringify(request.format)}`
-      : "\nWrite the completed answer directly as text or Markdown. Do not wrap it in an answer JSON object. Do not include reasoning or planning. Wonnyy handles response serialization.";
+      : "\nWrite the completed answer directly as text or Markdown. Do not wrap it in an answer JSON object. Do not include reasoning or planning. Orbistry handles response serialization.";
     request.onDiagnostic?.("GENERATION_SETTINGS_APPLIED", {
       wireStreaming: true,
       thinkingDisabled:

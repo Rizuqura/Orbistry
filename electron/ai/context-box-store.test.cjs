@@ -9,7 +9,7 @@ const { ChatService } = require("./chat-service.cjs");
 const { ContextBoxStore } = require("./context-box-store.cjs");
 const { validateAnswer } = require("./response-validation.cjs");
 async function fixture(t) {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-box-test-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-box-test-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   await fs.writeFile(path.join(root, "a.md"), "ALPHA evidence");
   await fs.writeFile(path.join(root, "b.md"), "BETA evidence");

@@ -12,7 +12,7 @@ if (!process.env.QT_NVIDIA_PROBE_PROFILE)
   throw Error("Disposable profile required");
 const source = selectUserDataPath(
   app.getPath("appData"),
-  path.join(app.getPath("appData"), "qterminal"),
+  path.join(app.getPath("appData"), "orbistry"),
 );
 const isolated = path.resolve(process.env.QT_NVIDIA_PROBE_PROFILE);
 app.setPath("userData", isolated);
@@ -74,7 +74,7 @@ const sourceText =
     (_, i) =>
       `Archive record ${i}: category alpha; state normal; reference value ${i % 17}.`,
   ).join("\n") +
-  "\nVerification marker: QTERMINAL_OK.\n";
+  "\nVerification marker: ORBISTRY_OK.\n";
 globalThis.nvidiaProbe = {
   selected: {
     modelId: selected.modelId,
@@ -147,7 +147,7 @@ globalThis.nvidiaProbe = {
             message?.reasoning ??
             ""
           ).length;
-          result.expectedText = content.trim() === "QTERMINAL_OK";
+          result.expectedText = content.trim() === "ORBISTRY_OK";
           result.usage = {
             promptTokens: data.usage?.prompt_tokens ?? null,
             completionTokens: data.usage?.completion_tokens ?? null,

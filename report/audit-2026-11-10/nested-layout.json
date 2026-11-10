@@ -1,0 +1,33 @@
+{
+  "method": "Synthetic chain of empty directories. Existing orbital layout and Fit View at 900x600. Screen diameter is mathematical output; no physical vault or renderer screenshot in this experiment.",
+  "cases": [
+    {
+      "depth": 5,
+      "nodes": 6,
+      "worldWidth": 8949.6,
+      "cameraScale": 0.05631536604987932,
+      "rootDiameterOnScreen": 27.031375703942075
+    },
+    {
+      "depth": 10,
+      "nodes": 11,
+      "worldWidth": 275599.2,
+      "cameraScale": 0.001828742608831956,
+      "rootDiameterOnScreen": 0.8777964522393389
+    },
+    {
+      "depth": 20,
+      "nodes": 21,
+      "worldWidth": 281857576.8,
+      "cameraScale": 0.0000017881371355066585,
+      "rootDiameterOnScreen": 0.000858305825043196
+    },
+    {
+      "depth": 30,
+      "nodes": 31,
+      "worldWidth": 288621802639.2,
+      "cameraScale": 1.7462298252985403e-9,
+      "rootDiameterOnScreen": 8.381903161432993e-7
+    }
+  ]
+}

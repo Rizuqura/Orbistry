@@ -7,7 +7,7 @@ const { promisify } = require("node:util");
 const { execFile } = require("node:child_process");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-knowledge-ui-"),
+    path.join(os.tmpdir(), "orbistry-knowledge-ui-"),
   );
   const vault = path.join(root, "vault"),
     appData = path.join(root, "app-data");
@@ -16,8 +16,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: appData,
-      WONNYY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: appData,
+      ORBISTRY_VAULT_PATH: vault,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -44,18 +44,18 @@ async function main() {
     );
     await launch();
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Synthetic research",
         paths: ["a.md"],
       }),
     );
     await page
-      .getByRole("complementary", { name: "Wonnyy Agent", exact: true })
+      .getByRole("complementary", { name: "Orbistry Agent", exact: true })
       .getByRole("button", { name: "+ New Chat", exact: true })
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await picker.getByRole("radio", { name: /Synthetic research/ }).check();
@@ -67,7 +67,7 @@ async function main() {
       .getByRole("textbox", { name: "Chat question", exact: true })
       .fill("Summarize the synthetic source.");
     await page
-      .getByRole("complementary", { name: "Wonnyy Agent", exact: true })
+      .getByRole("complementary", { name: "Orbistry Agent", exact: true })
       .getByRole("button", { name: "Send message", exact: true })
       .click();
     const capture = page.getByRole("button", {
@@ -76,7 +76,7 @@ async function main() {
     });
     await capture.waitFor();
     const conversations = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     const conversation = conversations[0];
     const before = await fs.readFile(path.join(vault, "a.md"));
@@ -187,7 +187,7 @@ async function main() {
     await dialog.getByRole("button", { name: "Close", exact: true }).click();
     const unsupported = await page.evaluate(async (conversation) => {
       try {
-        await window.wonnyyDesktop.ai.chat({
+        await window.orbistryDesktop.ai.chat({
           conversationId: conversation.id,
           requestId: crypto.randomUUID(),
           userMessage: "/loop synthetic research",
@@ -203,7 +203,7 @@ async function main() {
     assert.match(unsupported, /no \/loop extraction workflow/);
     assert.equal(
       (
-        await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+        await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
       )[0].messages.length,
       2,
     );
@@ -246,7 +246,7 @@ async function main() {
     assert.equal(JSON.parse(listResult.stdout).proposals.length, 1);
     assert.equal(
       await page.evaluate(
-        () => typeof window.wonnyyDesktop.ai.approveKnowledge,
+        () => typeof window.orbistryDesktop.ai.approveKnowledge,
       ),
       "undefined",
     );

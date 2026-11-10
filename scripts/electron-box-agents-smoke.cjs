@@ -7,7 +7,7 @@ const { ContextBoxStore } = require("../electron/ai/context-box-store.cjs");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-box-agents-"),
+    path.join(os.tmpdir(), "orbistry-box-agents-"),
   );
   const vault = path.join(root, "vault"),
     data = path.join(root, "app-data");
@@ -33,8 +33,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: vault,
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -53,12 +53,12 @@ async function main() {
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
   };
   const get = () =>
-    page.evaluate(() => window.wonnyyDesktop.ai.getAgent("wonnyy-agent"));
+    page.evaluate(() => window.orbistryDesktop.ai.getAgent("wonnyy-agent"));
   const conversations = () =>
-    page.evaluate(() => window.wonnyyDesktop.ai.listConversations());
+    page.evaluate(() => window.orbistryDesktop.ai.listConversations());
   const open = async () => {
     await page
-      .getByRole("button", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("button", { name: "Orbistry Agent settings", exact: true })
       .click();
     await page
       .getByRole("textbox", { name: "Agent name", exact: true })
@@ -110,14 +110,14 @@ async function main() {
   };
   const newChat = async (includeKnowledge) => {
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Agent",
+      name: "Orbistry Agent",
       exact: true,
     });
     await panel
       .getByRole("button", { name: "+ New Chat", exact: true })
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     assert.equal(
@@ -140,7 +140,7 @@ async function main() {
   };
   const send = async () => {
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Agent",
+      name: "Orbistry Agent",
       exact: true,
     });
     const before = await panel
@@ -267,7 +267,7 @@ async function main() {
     assert.ok(!JSON.stringify(request).includes("KNOWLEDGE_SENTINEL"));
     let list = await conversations();
     let first = await page.evaluate(
-      (id) => window.wonnyyDesktop.ai.resumeConversation(id),
+      (id) => window.orbistryDesktop.ai.resumeConversation(id),
       list[0].id,
     );
     assert.deepEqual(
@@ -285,7 +285,7 @@ async function main() {
     list = await conversations();
     const bound = list.find((conversation) => conversation.id !== first.id);
     const second = await page.evaluate(
-      (id) => window.wonnyyDesktop.ai.resumeConversation(id),
+      (id) => window.orbistryDesktop.ai.resumeConversation(id),
       bound.id,
     );
     assert.equal(second.agentKnowledge.boxId, boxes.Knowledge.id);
@@ -310,7 +310,7 @@ async function main() {
     );
     await close();
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Agent",
+      name: "Orbistry Agent",
       exact: true,
     });
     await panel.locator(".chat-message-assistant .chat-run-id").waitFor();

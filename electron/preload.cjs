@@ -22,7 +22,7 @@ async function invokeModel(channel, input) {
 
 // Future desktop capabilities must be exposed here deliberately, not by giving
 // renderer components unrestricted Node.js or filesystem access.
-contextBridge.exposeInMainWorld("wonnyyDesktop", {
+contextBridge.exposeInMainWorld("orbistryDesktop", {
   apiVersion: 18,
   platform: process.platform,
   vault: {
@@ -92,6 +92,7 @@ contextBridge.exposeInMainWorld("wonnyyDesktop", {
       ipcRenderer.on("ai:frontOfficeEvent", listener);
       return () => ipcRenderer.removeListener("ai:frontOfficeEvent", listener);
     },
+    providerUsage: (input) => invokeModel("ai:providerUsage", input),
     openRouterUsage: (input) => invokeModel("ai:openRouterUsage", input),
     onUsageChanged: (callback) => {
       const listener = () => callback();

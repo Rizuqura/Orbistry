@@ -1,6 +1,6 @@
-# QTerminal v1.0.1 Victoria Beta
+# Orbistry v1.0.1 Victoria Beta
 
-This source update consolidates backend adjustments and verified provider repairs. The application keeps the QTerminal name and Victoria Beta codename; package version is 1.0.1.
+This source update consolidates backend adjustments and verified provider repairs. The application keeps the Orbistry name and Victoria Beta codename; package version is 1.0.1.
 
 ## Backend adjustments
 
@@ -26,8 +26,8 @@ The pending Markdown editor and vault-write adjustments are preserved: editable 
 
 ## Verification
 
-Release validation runs the complete Node suite, TypeScript, a hardened static build and isolated Electron checks for Front Office, normal agent/context behavior, Markdown editing and clean startup/version branding. Prior real-provider evidence is retained without spending additional provider quota for a version-label change. Final check results are recorded in the [v1.0.1 validation report](../report/QTerminal_v1.0.1_Validation.md).
+Release validation runs the complete Node suite, TypeScript, a hardened static build and isolated Electron checks for Front Office, normal agent/context behavior, Markdown editing and clean startup/version branding. Prior real-provider evidence is retained without spending additional provider quota for a version-label change. Final check results are recorded in the [v1.0.1 validation report](../report/Orbistry_v1.0.1_Validation.md).
 
 This request publishes source commits and a Git tag; it does not itself create an installer or GitHub binary release.
 
-See [provider RCA](../docs/backend/PROVIDER_RCA.md), [Nano Omni repair](../report/QTerminal_NVIDIA_Omni_Fix_QT-RCA-003.md), and [token/credit comparison limits](../report/QTerminal_Token_Credit_Comparison_Status.md).
+See [provider RCA](../docs/backend/PROVIDER_RCA.md), [Nano Omni repair](../report/Orbistry_NVIDIA_Omni_Fix_QT-RCA-003.md), and [token/credit comparison limits](../report/Orbistry_Token_Credit_Comparison_Status.md).

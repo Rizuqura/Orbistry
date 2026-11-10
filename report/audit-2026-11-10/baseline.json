@@ -1,0 +1,63 @@
+{
+  "auditDate": "2026-11-10 Asia/Jakarta",
+  "commit": "18debb9da16c877cd54c6ff023b0b747c42d7da1",
+  "branch": "main",
+  "workingTreeDirtyAtStart": 252,
+  "scope": "Initial audit and baseline only; application source, dependencies and persistence contracts not refactored.",
+  "validation": {
+    "unit": {
+      "passed": 423,
+      "failed": 0,
+      "skipped": 2,
+      "total": 425,
+      "durationMs": 24837.5813
+    },
+    "typecheck": "passed after rerun with correct filesystem permissions",
+    "build": "passed",
+    "format": {
+      "status": "failed",
+      "files": 7
+    },
+    "strictUnusedProbe": "Only two generated Next development declarations reported; no application diagnostics in this probe",
+    "packageBuild": "passed, Windows x64 NSIS, publish never, unsigned",
+    "packageContents": "passed",
+    "packagedSmoke": "passed with isolated executable-path adaptation; no real provider requests",
+    "gravitySmoke": "passed",
+    "providerBudgetSmoke": "passed for NVIDIA, Gemini, OpenRouter; key replacement resets usage",
+    "planetPerformanceSmoke": "failed at stale totalFiles expectation: 200 actual vs 201 expected",
+    "usageMonitorSmoke": "failed: floating agent avatar intercepts Refresh usage click",
+    "dependencyAudit": {
+      "all": {
+        "moderate": 6,
+        "high": 0,
+        "critical": 0
+      },
+      "omitDev": {
+        "total": 0
+      }
+    },
+    "knownPatternSecrets": {
+      "findings": 0,
+      "tracked": 426,
+      "untracked": 44,
+      "exported": 251,
+      "historicalBlobs": 1132
+    }
+  },
+  "measurements": {
+    "trackedExistingBytes": 4558594,
+    "sourceIncludingPendingBytes": 5823112,
+    "developmentInstallBytes": 957777219,
+    "staticExportBytes": 7537975,
+    "unpackedBytes": 444519873,
+    "asarBytes": 30644946,
+    "installerBytes": 138570375,
+    "startupMs": 2692.2683,
+    "earlyIdleProcessWorkingSetKB": 391028,
+    "earlyIdleProcessPrivateKB": 295440,
+    "representativeActiveMemory": "Not measured",
+    "coldStart": "Not measured",
+    "longSessionLeakSlope": "Not measured",
+    "afterOptimization": "Not applicable; audit only"
+  }
+}

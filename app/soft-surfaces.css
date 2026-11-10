@@ -4,7 +4,7 @@
   --surface-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
   --hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
   --focus-shadow:
-    0 0 14px rgba(130, 190, 180, 0.42), 0 4px 14px rgba(0, 0, 0, 0.2);
+    0 0 14px rgba(203, 215, 217, 0.42), 0 4px 14px rgba(0, 0, 0, 0.2);
   --line: transparent;
   --line-soft: transparent;
   --ui-line: transparent;
@@ -44,7 +44,7 @@
     textarea,
     select
   ) {
-  background-color: #131e29 !important;
+  background-color: var(--orb-panel) !important;
   box-shadow: none;
 }
 
@@ -92,11 +92,11 @@
     textarea,
     select
   ):focus-visible {
-  background-color: #1b2b36 !important;
+  background-color: var(--orb-raised) !important;
 }
 
 .app-shell :is(.search-box, .ai-model-search) {
-  background-color: #131e29;
+  background-color: var(--orb-panel);
 }
 .app-shell :is(.search-box, .ai-model-search) input,
 .app-shell :is(.search-box, .ai-model-search) input:focus-visible {
@@ -115,7 +115,7 @@
 }
 
 .app-shell .metrics tbody tr:nth-child(even) {
-  background: #111a24;
+  background: var(--orb-panel);
 }
 
 /* Honor OS high-contrast preferences, where shadows may not be rendered. */
@@ -129,3 +129,12 @@
     box-shadow: none !important;
   }
 }
+
+/* Form affordances stay visible inside the Context Box editor. */
+.app-shell .context-box-add-form .box-form-section { border-color: var(--orb-slate) !important; }
+.app-shell .context-box-add-form .box-form-section :is(input:not([type="checkbox"]), select) { border-color: var(--orb-blue) !important; background-color: var(--orb-ink) !important; }
+.app-shell .context-box-add-form .box-form-section :is(input:not([type="checkbox"]), select):hover:not(:disabled) { border-color: var(--orb-mist) !important; }
+.app-shell .context-box-add-form :is(input, select, button, summary):focus-visible { outline: 2px solid #ffad00 !important; outline-offset: 3px; }
+.app-shell .context-box-add-form .box-form-actions { border-top-color: var(--orb-slate) !important; }
+.app-shell .context-box-add-form .box-form-actions button { border-color: var(--orb-blue) !important; }
+.app-shell .context-box-add-form .box-form-actions .box-primary-action { border-color: #ffad00 !important; }

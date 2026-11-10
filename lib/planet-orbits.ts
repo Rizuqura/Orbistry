@@ -7,6 +7,7 @@ export function withPlanetOrbits(
   layout: LayoutResult,
 ): LayoutResult {
   if (graph.projection === "station") return { ...layout, orbits: [] };
+  if (layout.orbits) return layout;
   const orbits: PlanetOrbit[] = [];
   let minX = 0,
     minY = 0,
@@ -41,7 +42,7 @@ export function withPlanetOrbits(
         ...pos,
         x: pos.x - minX,
         y: pos.y - minY,
-        size: id === graph.rootId ? Math.min(pos.size, 36) : pos.size,
+        size: pos.size,
       },
     ]),
   );

@@ -4,14 +4,14 @@ const fs = require("node:fs/promises"),
   path = require("node:path"),
   os = require("node:os");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-usage-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-usage-"));
   let app, page;
   const errors = [];
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -30,27 +30,27 @@ async function main() {
     await page.evaluate(() => {
       document.hasFocus = () => true;
     });
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
-    await page.evaluate(() => window.wonnyyDesktop.ai.handshake(18));
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
+    await page.evaluate(() => window.orbistryDesktop.ai.handshake(18));
     await page
       .getByRole("button", { name: "PLANET VIEW", exact: true })
       .click();
   };
   const monitor = () =>
     page.getByRole("complementary", {
-      name: "OpenRouter usage monitor",
+      name: /usage monitor$/,
       exact: true,
     });
   try {
     await fs.writeFile(path.join(root, "a.md"), "Monitor test source.");
     await launch();
-    await monitor().getByText("Setup required", { exact: true }).waitFor();
+    await monitor().getByText("Ready", { exact: true }).waitFor();
     await page.evaluate(async () => {
-      await window.wonnyyDesktop.ai.saveCredential({
+      await window.orbistryDesktop.ai.saveCredential({
         providerId: "openrouter",
         apiKey: "sk-or-v1-synthetic-smoke-key",
       });
-      await window.wonnyyDesktop.ai.settings({
+      await window.orbistryDesktop.ai.settings({
         providerId: "openrouter",
         modelId: "~vendor/model-latest",
       });
@@ -131,7 +131,7 @@ async function main() {
     await page.mouse.wheel(0, -100);
     assert.equal(await world.getAttribute("style"), after);
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.checkRemoteModel({
+      window.orbistryDesktop.ai.checkRemoteModel({
         providerId: "openrouter",
         model: "~vendor/model-latest",
       }),
@@ -145,7 +145,7 @@ async function main() {
     await page.screenshot({ path: "test-results/usage-monitor.png" });
     // Keep the independently floating chat from covering controls at narrow widths.
     const closeChat = page.getByRole("button", {
-      name: "Close Wonnyy Agent",
+      name: "Close Orbistry Agent",
       exact: true,
     });
     if (await closeChat.isVisible()) await closeChat.click();
@@ -167,7 +167,7 @@ async function main() {
     await monitor().getByText("$74.50 left", { exact: true }).waitFor();
     // Changing credentials clears prior values immediately; old key money never leaks.
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.saveCredential({
+      window.orbistryDesktop.ai.saveCredential({
         providerId: "openrouter",
         apiKey: "sk-or-v1-other-synthetic-key",
       }),
@@ -185,12 +185,12 @@ async function main() {
       .click();
     await monitor().getByText("Auth required", { exact: true }).waitFor();
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.settings({
+      window.orbistryDesktop.ai.settings({
         providerId: "ollama",
         modelId: "qwen3:4b",
       }),
     );
-    await monitor().getByText("Setup required", { exact: true }).waitFor();
+    await monitor().getByText("Ready", { exact: true }).waitFor();
     // Inactive windows skip automatic provider requests.
     await page.evaluate(() => {
       document.hasFocus = () => false;

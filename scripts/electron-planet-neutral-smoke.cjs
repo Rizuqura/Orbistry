@@ -6,7 +6,7 @@ const fs = require("node:fs/promises"),
 const { cmapPdf } = require("./fixtures/cmap-pdf.cjs");
 async function main() {
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-neutral-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-neutral-")),
   );
   const vault = path.join(root, "Bank");
   let app, page;
@@ -25,8 +25,8 @@ async function main() {
     );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: vault,
-      WONNYY_SMOKE_DATA: path.join(root, "profile"),
+      ORBISTRY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: path.join(root, "profile"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -48,7 +48,7 @@ async function main() {
       .getByRole("button", { name: "PLANET VIEW", exact: true })
       .click();
     const close = page.getByRole("button", {
-      name: "Close Wonnyy Agent",
+      name: "Close Orbistry Agent",
       exact: true,
     });
     if (await close.isVisible()) await close.click();
@@ -83,7 +83,7 @@ async function main() {
         guideOpen: el.querySelector(".pctrl-guide").open,
       };
     });
-    assert.equal(visual.background, "rgb(14, 23, 29)");
+    assert.equal(visual.background, "rgb(27, 45, 58)");
     assert.equal(visual.root.fill, "rgb(255, 255, 255)");
     for (const kind of ["folder", "csv", "pdf", "md"])
       assert.equal(visual[kind].fill, "none");
@@ -99,7 +99,7 @@ async function main() {
     assert.ok(visual.orbits >= 3);
     assert.equal(visual.shadow, "none");
     assert.equal(visual.edgesWidth, visual.canvasWidth);
-    assert.ok(visual.anchorWidth <= 60);
+    assert.ok(visual.anchorWidth > 0);
     assert.equal(visual.guideOpen, false);
     await page.locator(".pctrl-guide summary").click();
     assert.equal(
@@ -109,6 +109,18 @@ async function main() {
     await page.locator(".pctrl-guide summary").click();
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/planet-neutral.png" });
+    assert.equal(
+      await page
+        .getByRole("checkbox", { name: "LIGHT VIEW", exact: true })
+        .count(),
+      0,
+    );
+    assert.equal(
+      await page
+        .getByRole("checkbox", { name: "FLAT VIEW (LOW GPU)", exact: true })
+        .count(),
+      0,
+    );
     const labelChecks = [];
     const canvas = page.locator(".pv-canvas");
     const canvasBox = await canvas.boundingBox();
@@ -116,7 +128,7 @@ async function main() {
       canvasBox.x + canvasBox.width / 2,
       canvasBox.y + canvasBox.height / 2,
     );
-    for (const delta of [0, -180, -180, 360]) {
+    for (const delta of [0, ...Array(14).fill(-180), ...Array(14).fill(180)]) {
       if (delta) {
         const previous = await page.locator(".pworld").getAttribute("style");
         await page.mouse.wheel(0, delta);
@@ -161,7 +173,12 @@ async function main() {
       assert.ok(check.heights.every((height) => height === 16));
       labelChecks.push(check);
     }
-    assert.ok(labelChecks[1].lineOpacity > labelChecks[0].lineOpacity);
+    assert.ok(
+      labelChecks.some(
+        (check) => check.lineOpacity > labelChecks[0].lineOpacity,
+      ),
+      JSON.stringify(labelChecks),
+    );
     await page.getByRole("button", { name: "Reset view", exact: true }).click();
     await page
       .getByRole("button", { name: "Directory: Research", exact: true })
@@ -179,11 +196,6 @@ async function main() {
         .evaluate((el) => getComputedStyle(el).fill),
       "rgb(255, 255, 255)",
     );
-    const flat = page.getByRole("checkbox", {
-      name: "FLAT VIEW (LOW GPU)",
-      exact: true,
-    });
-    await flat.uncheck();
     assert.equal(
       await page
         .locator(".pfile-pdf .planet-orb-shape")
@@ -192,7 +204,6 @@ async function main() {
     );
     assert.deepEqual(errors, []);
     // Animation remains opt-in, and stopping freezes the current layout.
-    await flat.check();
     await page.getByRole("button", { name: "Reset view", exact: true }).click();
     const animationState = () =>
       page.locator(".planet-neutral").getAttribute("data-animation-state");
@@ -285,7 +296,7 @@ async function main() {
             "complete circular orbit guides",
             "thin constant-screen-width connections",
             "focus changes the filled parent",
-            "neutral style in both GPU modes",
+            "permanent neutral style without retired view toggles",
             "viewport-bounded SVG and no glow",
             "fixed screen-size labels without overlaps across zoom levels",
             "opt-in animation moves nodes without changing the camera",

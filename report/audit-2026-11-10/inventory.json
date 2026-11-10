@@ -1,0 +1,1493 @@
+{
+  "capturedAt": "2026-11-09T17:52:36.072Z",
+  "clientDate": "2026-11-10",
+  "commit": "18debb9da16c877cd54c6ff023b0b747c42d7da1",
+  "branch": "main",
+  "dirtyEntries": 252,
+  "trackedFiles": 426,
+  "existingTrackedFiles": 408,
+  "pendingFiles": 42,
+  "sizes": {
+    "unit": "logical bytes, symlinks excluded",
+    "workspace": 1968033715,
+    "tracked": 4558594,
+    "sourceIncludingPending": 5823112,
+    "topLevel": [
+      {
+        "path": "node_modules",
+        "bytes": 957777219,
+        "files": 22921
+      },
+      {
+        "path": "dist",
+        "bytes": 581573882,
+        "files": 84
+      },
+      {
+        "path": "tmp",
+        "bytes": 236384685,
+        "files": 1960
+      },
+      {
+        "path": ".next",
+        "bytes": 150252695,
+        "files": 547
+      },
+      {
+        "path": "test-results",
+        "bytes": 16062850,
+        "files": 230
+      },
+      {
+        "path": "out",
+        "bytes": 7537975,
+        "files": 251
+      },
+      {
+        "path": ".git",
+        "bytes": 6349580,
+        "files": 322
+      },
+      {
+        "path": "public",
+        "bytes": 5791213,
+        "files": 214
+      },
+      {
+        "path": "docs",
+        "bytes": 1261352,
+        "files": 57
+      },
+      {
+        "path": "electron",
+        "bytes": 1101049,
+        "files": 132
+      },
+      {
+        "path": "big-context",
+        "bytes": 700483,
+        "files": 57
+      },
+      {
+        "path": "scripts",
+        "bytes": 525347,
+        "files": 71
+      },
+      {
+        "path": "features",
+        "bytes": 421617,
+        "files": 45
+      },
+      {
+        "path": "app",
+        "bytes": 162005,
+        "files": 11
+      },
+      {
+        "path": "build",
+        "bytes": 148865,
+        "files": 3
+      },
+      {
+        "path": "components",
+        "bytes": 136167,
+        "files": 16
+      },
+      {
+        "path": "lib",
+        "bytes": 88053,
+        "files": 19
+      },
+      {
+        "path": "report",
+        "bytes": 43317,
+        "files": 5
+      },
+      {
+        "path": "types",
+        "bytes": 37593,
+        "files": 5
+      },
+      {
+        "path": ".cache",
+        "bytes": 4567,
+        "files": 4
+      },
+      {
+        "path": ".github",
+        "bytes": 575,
+        "files": 1
+      }
+    ],
+    "largestPackages": [
+      {
+        "path": "node_modules/electron",
+        "bytes": 378041046,
+        "files": 205
+      },
+      {
+        "path": "node_modules/next",
+        "bytes": 192314363,
+        "files": 8760
+      },
+      {
+        "path": "node_modules/@next/swc-win32-x64-msvc",
+        "bytes": 110272005,
+        "files": 3
+      },
+      {
+        "path": "node_modules/@napi-rs/canvas-win32-x64-msvc",
+        "bytes": 39777061,
+        "files": 5
+      },
+      {
+        "path": "node_modules/pdfjs-dist",
+        "bytes": 34497725,
+        "files": 550
+      },
+      {
+        "path": "node_modules/electron-winstaller",
+        "bytes": 32190009,
+        "files": 96
+      },
+      {
+        "path": "node_modules/typescript",
+        "bytes": 23625066,
+        "files": 132
+      },
+      {
+        "path": "node_modules/@img/sharp-win32-x64",
+        "bytes": 19812379,
+        "files": 8
+      },
+      {
+        "path": "node_modules/playwright-core",
+        "bytes": 13453369,
+        "files": 114
+      },
+      {
+        "path": "node_modules/prettier",
+        "bytes": 9954439,
+        "files": 56
+      },
+      {
+        "path": "node_modules/lightningcss-win32-x64-msvc",
+        "bytes": 9514088,
+        "files": 4
+      },
+      {
+        "path": "node_modules/react-dom",
+        "bytes": 8067632,
+        "files": 43
+      },
+      {
+        "path": "node_modules/@electron-internal/extract-zip",
+        "bytes": 7355175,
+        "files": 16
+      },
+      {
+        "path": "node_modules/zod",
+        "bytes": 6148944,
+        "files": 840
+      },
+      {
+        "path": "node_modules/app-builder-lib",
+        "bytes": 5247681,
+        "files": 720
+      },
+      {
+        "path": "node_modules/playwright",
+        "bytes": 5094512,
+        "files": 62
+      },
+      {
+        "path": "node_modules/postject",
+        "bytes": 5041323,
+        "files": 21
+      },
+      {
+        "path": "node_modules/rxjs",
+        "bytes": 4497673,
+        "files": 2277
+      },
+      {
+        "path": "node_modules/@tailwindcss/oxide-win32-x64-msvc",
+        "bytes": 3191981,
+        "files": 4
+      },
+      {
+        "path": "node_modules/node-gyp",
+        "bytes": 3165657,
+        "files": 338
+      }
+    ],
+    "largestTrackedFiles": [
+      {
+        "path": "package-lock.json",
+        "bytes": 213581
+      },
+      {
+        "path": "docs/backend/evidence/planet-performance/planet.png",
+        "bytes": 204377
+      },
+      {
+        "path": "docs/backend/evidence/planet-neutral/planet.png",
+        "bytes": 160607
+      },
+      {
+        "path": "docs/backend/evidence/engine-chronoz/report.png",
+        "bytes": 118228
+      },
+      {
+        "path": "docs/backend/evidence/engine-chronoz/construction.png",
+        "bytes": 116608
+      },
+      {
+        "path": "docs/backend/evidence/nvidia-omni/normal-agent-nvidia.png",
+        "bytes": 70755
+      },
+      {
+        "path": "electron/ai/chat-service.test.cjs",
+        "bytes": 68448
+      },
+      {
+        "path": "docs/backend/evidence/engine-chronoz/chat.png",
+        "bytes": 67146
+      },
+      {
+        "path": "docs/backend/evidence/nvidia-thinking/normal-agent-nvidia.png",
+        "bytes": 59040
+      },
+      {
+        "path": "app/icon.png",
+        "bytes": 56473
+      },
+      {
+        "path": "build/icon.png",
+        "bytes": 56473
+      },
+      {
+        "path": "docs/backend/evidence/verified-ui-streaming.png",
+        "bytes": 49139
+      },
+      {
+        "path": "docs/backend/evidence/verified-ui-nonstreaming.png",
+        "bytes": 49094
+      },
+      {
+        "path": "docs/backend/evidence/verified-multi-turn.png",
+        "bytes": 43909
+      },
+      {
+        "path": "features/agent/agent-construction.tsx",
+        "bytes": 43858
+      },
+      {
+        "path": "big-context/task-model-integration-architecture.md",
+        "bytes": 42383
+      },
+      {
+        "path": "app/globals.css",
+        "bytes": 42380
+      },
+      {
+        "path": "scripts/agent-electron-acceptance.cjs",
+        "bytes": 42339
+      },
+      {
+        "path": "features/chat/use-chat-runtime.ts",
+        "bytes": 42084
+      },
+      {
+        "path": "electron/ai/orchestrator.cjs",
+        "bytes": 41303
+      }
+    ],
+    "largestSourceFiles": [
+      {
+        "path": "electron/ai/chat-service.test.cjs",
+        "bytes": 68448
+      },
+      {
+        "path": "features/agent/agent-construction.tsx",
+        "bytes": 43858
+      },
+      {
+        "path": "app/globals.css",
+        "bytes": 42380
+      },
+      {
+        "path": "scripts/agent-electron-acceptance.cjs",
+        "bytes": 42339
+      },
+      {
+        "path": "features/chat/use-chat-runtime.ts",
+        "bytes": 42084
+      },
+      {
+        "path": "electron/ai/orchestrator.cjs",
+        "bytes": 41303
+      },
+      {
+        "path": "features/model-settings/front-office-settings.tsx",
+        "bytes": 41113
+      },
+      {
+        "path": "components/app-shell.tsx",
+        "bytes": 38379
+      },
+      {
+        "path": "features/chat/chat-panel.tsx",
+        "bytes": 35220
+      },
+      {
+        "path": "electron/ai/front-office-engine.test.cjs",
+        "bytes": 33813
+      },
+      {
+        "path": "electron/ai/chat-service.cjs",
+        "bytes": 33672
+      },
+      {
+        "path": "lib/planet-layout.ts",
+        "bytes": 33305
+      },
+      {
+        "path": "electron/station-service.cjs",
+        "bytes": 32150
+      },
+      {
+        "path": "app/victoria.css",
+        "bytes": 32112
+      },
+      {
+        "path": "components/planet-scene.tsx",
+        "bytes": 29343
+      },
+      {
+        "path": "features/model-settings/model-settings.tsx",
+        "bytes": 28569
+      },
+      {
+        "path": "scripts/electron-chat-smoke.cjs",
+        "bytes": 26076
+      },
+      {
+        "path": "electron/ai/llm-front-office/service.cjs",
+        "bytes": 24871
+      },
+      {
+        "path": "electron/vault-service.cjs",
+        "bytes": 24270
+      },
+      {
+        "path": "electron/ai/dataset.test.cjs",
+        "bytes": 21850
+      }
+    ],
+    "largestAssets": [
+      {
+        "path": "out/pdf.worker.min.mjs",
+        "bytes": 1312452
+      },
+      {
+        "path": "public/pdf.worker.min.mjs",
+        "bytes": 1312452
+      },
+      {
+        "path": "out/_next/static/chunks/1uk20sw6xvdnh.js",
+        "bytes": 506823
+      },
+      {
+        "path": "out/pdfjs/wasm/quickjs-eval.wasm",
+        "bytes": 469105
+      },
+      {
+        "path": "public/pdfjs/wasm/quickjs-eval.wasm",
+        "bytes": 469105
+      },
+      {
+        "path": "out/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+        "bytes": 451590
+      },
+      {
+        "path": "public/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+        "bytes": 451590
+      },
+      {
+        "path": "out/orbistry-logo.png",
+        "bytes": 395960
+      },
+      {
+        "path": "public/orbistry-logo.png",
+        "bytes": 395960
+      },
+      {
+        "path": "out/orbistry-icon",
+        "bytes": 379801
+      },
+      {
+        "path": "public/orbistry-icon",
+        "bytes": 379801
+      },
+      {
+        "path": "out/_next/static/chunks/1bz06c4rewlv2.js",
+        "bytes": 253754
+      },
+      {
+        "path": "out/pdfjs/wasm/openjpeg.wasm",
+        "bytes": 252032
+      },
+      {
+        "path": "public/pdfjs/wasm/openjpeg.wasm",
+        "bytes": 252032
+      },
+      {
+        "path": "out/_next/static/chunks/3wbm-994r45kr.js",
+        "bytes": 229820
+      },
+      {
+        "path": "out/_next/static/chunks/24oq267qibdq3.js",
+        "bytes": 185887
+      },
+      {
+        "path": "out/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+        "bytes": 162036
+      },
+      {
+        "path": "public/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+        "bytes": 162036
+      },
+      {
+        "path": "out/pdfjs/wasm/jbig2_nowasm_fallback.js",
+        "bytes": 145703
+      },
+      {
+        "path": "public/pdfjs/wasm/jbig2_nowasm_fallback.js",
+        "bytes": 145703
+      },
+      {
+        "path": "out/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+        "bytes": 139512
+      },
+      {
+        "path": "public/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+        "bytes": 139512
+      },
+      {
+        "path": "out/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+        "bytes": 137052
+      },
+      {
+        "path": "public/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+        "bytes": 137052
+      },
+      {
+        "path": "out/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+        "bytes": 135124
+      }
+    ]
+  },
+  "runtimeDependencies": [
+    {
+      "name": "@napi-rs/canvas",
+      "version": "1.0.13"
+    },
+    {
+      "name": "pdfjs-dist",
+      "version": "6.2.108"
+    },
+    {
+      "name": "zod",
+      "version": "4.6.7"
+    }
+  ],
+  "staticImportCandidates": [],
+  "importEdges": {
+    "app/globals.css": [
+      "app/layout.tsx"
+    ],
+    "app/palette.css": [
+      "app/layout.tsx"
+    ],
+    "features/chat/chat.css": [
+      "app/layout.tsx"
+    ],
+    "features/model-settings/model-settings.css": [
+      "app/layout.tsx"
+    ],
+    "features/dialogs/confirmation.css": [
+      "app/layout.tsx"
+    ],
+    "app/victoria.css": [
+      "app/layout.tsx"
+    ],
+    "app/soft-surfaces.css": [
+      "app/layout.tsx"
+    ],
+    "app/startup.css": [
+      "app/layout.tsx"
+    ],
+    "features/chat/chat-presentation.css": [
+      "app/layout.tsx"
+    ],
+    "app/planet-sidebar.css": [
+      "app/layout.tsx"
+    ],
+    "app/planet-neutral.css": [
+      "app/layout.tsx"
+    ],
+    "app/typography.css": [
+      "app/layout.tsx"
+    ],
+    "components/app-shell.tsx": [
+      "app/page.tsx"
+    ],
+    "components/document-workspace.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/resizable-chat.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/chat-panel.tsx": [
+      "components/app-shell.tsx",
+      "components/planet-scene.tsx"
+    ],
+    "components/planet-scene.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "lib/planet-navigation.ts": [
+      "components/app-shell.tsx",
+      "components/planet-scene.tsx",
+      "lib/planet-labels.ts",
+      "lib/planet-navigation.test.cjs",
+      "lib/planet-orbits.ts",
+      "lib/planet-rendering.ts"
+    ],
+    "components/planet-details.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/planet-detail-panel.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/knowledge-sidebar.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/status-bar.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/top-bar.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/startup-progress.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "components/station-panel.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "lib/context-box-stations.ts": [
+      "components/app-shell.tsx",
+      "lib/context-box-stations.test.cjs"
+    ],
+    "lib/planet-vault.ts": [
+      "components/app-shell.tsx",
+      "lib/planet-layout.test.cjs",
+      "lib/planet-rendering.test.cjs"
+    ],
+    "lib/station-projection.ts": [
+      "components/app-shell.tsx",
+      "components/station-panel.tsx",
+      "lib/context-box-stations.test.cjs",
+      "lib/planet-layout.test.cjs"
+    ],
+    "features/context-boxes/context-box-manager.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "features/context-boxes/context-boxes.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "features/chat/use-chat-runtime.ts": [
+      "components/app-shell.tsx",
+      "features/agent/add-agent-dialog.tsx",
+      "features/agent/agent-construction.tsx",
+      "features/agent/agent-settings.tsx",
+      "features/agent/agent-workspace.tsx",
+      "features/agent/construction-source-picker.tsx",
+      "features/agent/knowledge-proposal.tsx",
+      "features/chat/chat-panel.tsx",
+      "features/chat/conversation-history.tsx",
+      "features/context-boxes/context-box-manager.tsx",
+      "features/context-boxes/context-boxes.tsx",
+      "features/model-settings/model-settings.tsx"
+    ],
+    "features/model-settings/model-settings.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "features/agent/agent-workspace.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "features/agent/agent-settings.tsx": [
+      "components/app-shell.tsx"
+    ],
+    "features/dialogs/use-confirmation.tsx": [
+      "components/app-shell.tsx",
+      "components/station-panel.tsx",
+      "features/agent/agent-contacts.tsx",
+      "features/agent/agent-settings.tsx",
+      "features/chat/conversation-history.tsx",
+      "features/context-boxes/context-boxes.tsx"
+    ],
+    "features/chat/chat-panel.tsx": [
+      "components/chat-panel.tsx",
+      "components/chat-panel.tsx",
+      "features/agent/agent-workspace.tsx"
+    ],
+    "components/pdf-viewer.tsx": [
+      "components/document-workspace.tsx"
+    ],
+    "types/graph.ts": [
+      "components/planet-details.tsx",
+      "components/planet-minimap.tsx",
+      "components/planet-node.tsx",
+      "components/planet-scene.tsx",
+      "lib/planet-hit-testing.ts",
+      "lib/planet-labels.ts",
+      "lib/planet-layout.ts",
+      "lib/planet-motion.ts",
+      "lib/planet-navigation.ts",
+      "lib/planet-orbits.ts",
+      "lib/planet-rendering.ts",
+      "lib/planet-vault.ts",
+      "lib/station-projection.ts"
+    ],
+    "lib/planet-rendering.ts": [
+      "components/planet-minimap.tsx",
+      "components/planet-scene.tsx",
+      "lib/planet-rendering.test.cjs"
+    ],
+    "lib/planet-hit-testing.ts": [
+      "components/planet-scene.tsx",
+      "lib/planet-hit-testing.test.cjs",
+      "lib/planet-hit-testing.test.cjs"
+    ],
+    "lib/planet-layout.ts": [
+      "components/planet-scene.tsx",
+      "lib/planet-layout.test.cjs"
+    ],
+    "components/planet-node.tsx": [
+      "components/planet-scene.tsx"
+    ],
+    "components/planet-minimap.tsx": [
+      "components/planet-scene.tsx"
+    ],
+    "components/planet-controls.tsx": [
+      "components/planet-scene.tsx"
+    ],
+    "features/usage-monitor/planet-usage-badge.tsx": [
+      "components/planet-scene.tsx"
+    ],
+    "lib/planet-orbits.ts": [
+      "components/planet-scene.tsx",
+      "lib/planet-layout.test.cjs",
+      "lib/planet-orbits.test.cjs"
+    ],
+    "lib/planet-motion.ts": [
+      "components/planet-scene.tsx",
+      "lib/planet-motion.test.cjs"
+    ],
+    "lib/use-planet-animation.ts": [
+      "components/planet-scene.tsx"
+    ],
+    "lib/planet-labels.ts": [
+      "components/planet-scene.tsx",
+      "lib/planet-labels.test.cjs"
+    ],
+    "electron/ai/schemas.cjs": [
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chronoz-adapter.cjs",
+      "electron/ai/construction-context.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/credential-store.cjs",
+      "electron/ai/credential-store.test.cjs",
+      "electron/ai/engine-chat.cjs",
+      "electron/ai/engine-registry.cjs",
+      "electron/ai/ipc.cjs",
+      "electron/ai/knowledge-store.cjs",
+      "electron/ai/llm-front-office/experiment-contracts.cjs",
+      "electron/ai/model-access.cjs",
+      "electron/ai/model-registry.cjs",
+      "electron/ai/providers/gemini-provider.cjs",
+      "electron/ai/providers/openai-chat-provider.cjs",
+      "electron/ai/providers/openrouter-provider.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/vault-settings.cjs"
+    ],
+    "electron/ai/agent-policy.cjs": [
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/prompt-builder.cjs"
+    ],
+    "electron/ai/skills.cjs": [
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/knowledge-store.test.cjs",
+      "electron/ai/knowledge-store.test.cjs"
+    ],
+    "electron/ai/model-errors.cjs": [
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/agent-policy.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/chronoz-adapter.cjs",
+      "electron/ai/construction-context.cjs",
+      "electron/ai/context-box-store.cjs",
+      "electron/ai/context-identity.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/credential-store.cjs",
+      "electron/ai/dataset-evidence.cjs",
+      "electron/ai/dataset-planner.cjs",
+      "electron/ai/dataset-session.cjs",
+      "electron/ai/engine-chat.cjs",
+      "electron/ai/engine-chat.cjs",
+      "electron/ai/engine-registry.cjs",
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/history-budget.cjs",
+      "electron/ai/ipc.cjs",
+      "electron/ai/ipc.test.cjs",
+      "electron/ai/json-store.cjs",
+      "electron/ai/knowledge-store.cjs",
+      "electron/ai/llm-front-office/contracts.cjs",
+      "electron/ai/llm-front-office/conversation-manager.cjs",
+      "electron/ai/llm-front-office/model-registry.cjs",
+      "electron/ai/llm-front-office/model-router.cjs",
+      "electron/ai/llm-front-office/provider-gateway.cjs",
+      "electron/ai/llm-front-office/reliability.cjs",
+      "electron/ai/llm-front-office/request-intake.cjs",
+      "electron/ai/llm-front-office/response-processor.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/model-check.cjs",
+      "electron/ai/model-check.test.cjs",
+      "electron/ai/model-errors.test.cjs",
+      "electron/ai/model-pull.cjs",
+      "electron/ai/model-registry.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/prompt-builder.cjs",
+      "electron/ai/provider-registry.cjs",
+      "electron/ai/providers/gemini-provider.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/providers/ollama-provider.cjs",
+      "electron/ai/providers/ollama-stream.cjs",
+      "electron/ai/providers/openai-chat-provider.cjs",
+      "electron/ai/providers/openrouter-provider.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/response-validation.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/ai/schemas.cjs",
+      "electron/ai/statistics.cjs",
+      "electron/desktop-security.cjs",
+      "electron/main.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/context-identity.cjs": [
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/agent-construction.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/construction-context.cjs",
+      "electron/ai/context-box-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/ai/run-store.cjs"
+    ],
+    "scripts/fixtures/legacy-agents.cjs": [
+      "electron/ai/agent-construction.test.cjs",
+      "electron/ai/agent-store.test.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/chat-service.test.cjs"
+    ],
+    "electron/ai/agent-construction.cjs": [
+      "electron/ai/agent-construction.test.cjs",
+      "electron/ai/agent-store.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/construction-context.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/engine-registry.test.cjs"
+    ],
+    "electron/ai/runtime-context.cjs": [
+      "electron/ai/agent-policy.cjs",
+      "electron/ai/agent-policy.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/prompt-builder.cjs",
+      "electron/ai/runtime-context.test.cjs",
+      "scripts/electron-runtime-kernel-smoke.cjs",
+      "scripts/runtime-kernel-report.cjs"
+    ],
+    "electron/ai/json-store.cjs": [
+      "electron/ai/agent-store.cjs",
+      "electron/ai/context-box-store.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/credential-store.cjs",
+      "electron/ai/engine-registry.cjs",
+      "electron/ai/engine-registry.cjs",
+      "electron/ai/knowledge-store.cjs",
+      "electron/ai/llm-front-office/model-registry.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/llm-front-office/telemetry-store.cjs",
+      "electron/ai/model-registry.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/vault-settings.cjs"
+    ],
+    "electron/ai/prompt-builder.cjs": [
+      "electron/ai/agent-store.cjs",
+      "electron/ai/agent-store.test.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/model-check.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/orchestrator.test.cjs",
+      "electron/ai/prompt-builder.test.cjs",
+      "electron/ai/runtime-context.test.cjs",
+      "scripts/runtime-kernel-report.cjs"
+    ],
+    "electron/ai/agent-store.cjs": [
+      "electron/ai/agent-store.test.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/engine-registry.test.cjs",
+      "electron/main.cjs",
+      "scripts/engine-chat-live.cjs",
+      "scripts/fixtures/legacy-agents.cjs"
+    ],
+    "electron/ai/context-box-store.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/context-box-store.test.cjs",
+      "scripts/electron-add-agent-smoke.cjs",
+      "scripts/electron-box-agents-smoke.cjs"
+    ],
+    "electron/station-service.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/context-box-store.test.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/nvidia-integration.test.cjs",
+      "electron/ai/online-integration.test.cjs",
+      "electron/ai/orchestrator.test.cjs",
+      "electron/document-ocr.test.cjs",
+      "electron/main.cjs",
+      "electron/station-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "scripts/chat-live-acceptance.cjs",
+      "scripts/dataset-live-acceptance.cjs",
+      "scripts/m72-live-proof.cjs",
+      "scripts/statistics-live-acceptance.cjs"
+    ],
+    "electron/ai/conversation-store.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/research-knowledge.cjs"
+    ],
+    "electron/ai/orchestrator.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/model-check.cjs",
+      "electron/ai/orchestrator.test.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/ai/statistics.test.cjs",
+      "scripts/m72-live-proof.cjs"
+    ],
+    "electron/ai/run-store.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/run-store.test.cjs",
+      "scripts/electron-runtime-kernel-smoke.cjs",
+      "scripts/m72-live-proof.cjs",
+      "scripts/nvidia-agent-live.cjs"
+    ],
+    "electron/ai/construction-context.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs"
+    ],
+    "electron/vault-service.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/run-store.test.cjs",
+      "electron/document-ocr.test.cjs",
+      "electron/main.cjs",
+      "electron/station-service.cjs",
+      "electron/station-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "electron/vault-service.test.cjs"
+    ],
+    "electron/ai/engine-chat.cjs": [
+      "electron/ai/chat-service.cjs",
+      "electron/ai/chat-service.cjs",
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/providers/ollama-provider.cjs",
+      "electron/ai/run-store.cjs"
+    ],
+    "electron/ai/chat-service.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/context-box-store.test.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/nvidia-integration.test.cjs",
+      "electron/ai/online-integration.test.cjs",
+      "electron/main.cjs",
+      "scripts/chat-live-acceptance.cjs",
+      "scripts/dataset-live-acceptance.cjs",
+      "scripts/engine-chat-live.cjs",
+      "scripts/statistics-live-acceptance.cjs"
+    ],
+    "electron/ai/model-registry.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/context-limits.test.cjs",
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/model-check.cjs",
+      "electron/ai/nvidia-integration.test.cjs",
+      "electron/ai/online-integration.test.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/providers/ollama-stream.test.cjs",
+      "electron/ai/providers/openai-chat-provider.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/ai/run-store.cjs",
+      "electron/main.cjs",
+      "scripts/chat-live-acceptance.cjs",
+      "scripts/dataset-live-acceptance.cjs",
+      "scripts/engine-chat-live.cjs",
+      "scripts/statistics-live-acceptance.cjs"
+    ],
+    "electron/ai/history-budget.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/context-limits.test.cjs",
+      "electron/ai/dataset-planner.cjs",
+      "electron/ai/llm-front-office/evaluation/harness.cjs",
+      "electron/ai/llm-front-office/observability.cjs",
+      "electron/ai/llm-front-office/request-intake.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/orchestrator.test.cjs",
+      "electron/ai/runtime-context.test.cjs",
+      "electron/ai/statistics.cjs",
+      "scripts/runtime-kernel-report.cjs"
+    ],
+    "electron/ai/response-validation.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/ai/context-box-store.test.cjs",
+      "electron/ai/model-check.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/providers/openai-chat-provider.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs"
+    ],
+    "scripts/fixtures/cmap-pdf.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "scripts/agent-electron-acceptance.cjs",
+      "scripts/electron-chat-smoke.cjs",
+      "scripts/electron-planet-neutral-smoke.cjs"
+    ],
+    "scripts/fixtures/text-pdf.cjs": [
+      "electron/ai/chat-service.test.cjs",
+      "electron/vault-service.test.cjs",
+      "scripts/electron-pdf-image-smoke.cjs",
+      "scripts/statistics-live-acceptance.cjs"
+    ],
+    "electron/ai/context-limits.cjs": [
+      "electron/ai/context-limits.test.cjs",
+      "electron/ai/model-registry.cjs",
+      "electron/ai/schemas.cjs",
+      "features/model-settings/model-settings.tsx"
+    ],
+    "electron/ai/provider-registry.cjs": [
+      "electron/ai/context-limits.test.cjs",
+      "electron/ai/model-registry.cjs",
+      "electron/ai/nvidia-integration.test.cjs",
+      "electron/ai/online-integration.test.cjs",
+      "electron/main.cjs",
+      "scripts/chat-live-acceptance.cjs"
+    ],
+    "electron/ai/llm-front-office/conversation-manager.cjs": [
+      "electron/ai/conversation-store.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/run-store.cjs"
+    ],
+    "electron/ai/credential-store.cjs": [
+      "electron/ai/credential-store.test.cjs",
+      "electron/main.cjs",
+      "scripts/nvidia-thinking-probe-main.cjs",
+      "scripts/provider-rca-main.cjs"
+    ],
+    "electron/ai/numeric-equations.cjs": [
+      "electron/ai/dataset-evidence.cjs"
+    ],
+    "electron/ai/dataset-evidence.cjs": [
+      "electron/ai/dataset-evidence.test.cjs",
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/statistics.test.cjs"
+    ],
+    "electron/ai/dataset-engine.cjs": [
+      "electron/ai/dataset-worker.cjs",
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/statistics.test.cjs"
+    ],
+    "electron/ai/dataset-session.cjs": [
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/orchestrator.cjs"
+    ],
+    "electron/ai/dataset-planner.cjs": [
+      "electron/ai/dataset.test.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/providers/gemini-provider.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs"
+    ],
+    "electron/ai/chronoz-adapter.cjs": [
+      "electron/ai/engine-chat.cjs",
+      "electron/ai/engine-chat.cjs",
+      "electron/ai/engine-registry.cjs",
+      "electron/ai/engine-registry.test.cjs",
+      "scripts/electron-engine-smoke.cjs"
+    ],
+    "electron/ai/providers/ollama-provider.cjs": [
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/model-pull.test.cjs",
+      "electron/ai/providers/ollama-provider.test.cjs",
+      "electron/ai/providers/ollama-stream.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/main.cjs",
+      "scripts/chat-live-acceptance.cjs",
+      "scripts/dataset-live-acceptance.cjs",
+      "scripts/engine-chat-live.cjs",
+      "scripts/m72-live-proof.cjs",
+      "scripts/statistics-live-acceptance.cjs"
+    ],
+    "electron/ai/providers/gemini-provider.cjs": [
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/model-access.cjs",
+      "electron/ai/online-integration.test.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/main.cjs",
+      "scripts/chat-live-acceptance.cjs"
+    ],
+    "electron/ai/providers/nvidia-provider.cjs": [
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/front-office-evaluation.test.cjs",
+      "electron/ai/model-access.cjs",
+      "electron/ai/nvidia-integration.test.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/main.cjs",
+      "scripts/front-office-benchmark.cjs",
+      "scripts/nvidia-thinking-probe-main.cjs",
+      "scripts/provider-rca-main.cjs"
+    ],
+    "electron/ai/providers/openrouter-provider.cjs": [
+      "electron/ai/engine-chat.test.cjs",
+      "electron/ai/front-office-evaluation.test.cjs",
+      "electron/ai/model-access.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/main.cjs",
+      "scripts/front-office-benchmark.cjs",
+      "scripts/provider-rca-main.cjs"
+    ],
+    "electron/ai/engine-registry.cjs": [
+      "electron/ai/engine-registry.test.cjs",
+      "electron/main.cjs",
+      "scripts/engine-chat-live.cjs"
+    ],
+    "electron/ai/llm-front-office/experiment-contracts.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/front-office-evaluation.test.cjs",
+      "electron/ai/llm-front-office/conversation-manager.cjs",
+      "electron/ai/llm-front-office/model-registry.cjs",
+      "electron/ai/llm-front-office/provider-gateway.cjs",
+      "electron/ai/llm-front-office/request-intake.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/request-intake.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/token-budget.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/model-router.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/model-router.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/catalog-sort.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/model-router.cjs",
+      "features/model-settings/front-office-settings.tsx"
+    ],
+    "electron/ai/llm-front-office/long-context-reliability.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/model-router.cjs",
+      "electron/ai/llm-front-office/service.cjs"
+    ],
+    "electron/ai/llm-front-office/reliability.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/service.cjs"
+    ],
+    "electron/ai/llm-front-office/provider-gateway.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/front-office-evaluation.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/response-processor.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/experiment-contracts.cjs",
+      "electron/ai/llm-front-office/service.cjs"
+    ],
+    "electron/ai/llm-front-office/service.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/ipc.cjs"
+    ],
+    "electron/ai/llm-front-office/errors.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/evaluation/harness.cjs",
+      "electron/ai/llm-front-office/service.cjs"
+    ],
+    "electron/ai/llm-front-office/telemetry-store.cjs": [
+      "electron/ai/front-office-engine.test.cjs",
+      "electron/ai/llm-front-office/service.cjs"
+    ],
+    "electron/ai/llm-front-office/evaluation/fixtures.cjs": [
+      "electron/ai/front-office-evaluation.test.cjs",
+      "electron/ai/llm-front-office/evaluation/harness.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/evaluation/harness.cjs": [
+      "electron/ai/front-office-evaluation.test.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/ai/llm-front-office/observability.cjs": [
+      "electron/ai/front-office.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/request-logger.test.cjs"
+    ],
+    "electron/ai/llm-front-office/contracts.cjs": [
+      "electron/ai/front-office.test.cjs",
+      "electron/ai/llm-front-office/conversation-manager.cjs",
+      "electron/ai/llm-front-office/errors.cjs",
+      "electron/ai/llm-front-office/export.cjs",
+      "electron/ai/llm-front-office/observability.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/llm-front-office/telemetry-store.cjs",
+      "electron/ai/request-logger.cjs"
+    ],
+    "electron/ai/llm-front-office/export.cjs": [
+      "electron/ai/front-office.test.cjs",
+      "electron/ai/llm-front-office/service.cjs",
+      "scripts/front-office-metrics-export.cjs"
+    ],
+    "electron/ai/model-check.cjs": [
+      "electron/ai/ipc.cjs",
+      "electron/ai/model-check.test.cjs",
+      "electron/ai/providers/openrouter-provider.test.cjs"
+    ],
+    "electron/ai/model-pull.cjs": [
+      "electron/ai/ipc.cjs",
+      "electron/ai/model-pull.test.cjs"
+    ],
+    "electron/ai/provider-usage.cjs": [
+      "electron/ai/ipc.cjs",
+      "electron/ai/provider-usage.test.cjs"
+    ],
+    "electron/ai/model-access.cjs": [
+      "electron/ai/ipc.cjs",
+      "electron/ai/model-access.test.cjs"
+    ],
+    "electron/ai/request-logger.cjs": [
+      "electron/ai/ipc.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "types/front-office.ts"
+    ],
+    "electron/ai/ipc.cjs": [
+      "electron/ai/ipc.test.cjs",
+      "electron/ai/model-check.test.cjs",
+      "electron/ai/request-logger.test.cjs",
+      "electron/main.cjs"
+    ],
+    "electron/ai/knowledge-store.cjs": [
+      "electron/ai/knowledge-store.test.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "electron/ai/research-knowledge.cjs",
+      "scripts/knowledge-review.cjs"
+    ],
+    "electron/ai/research-knowledge.cjs": [
+      "electron/ai/knowledge-store.test.cjs",
+      "electron/ai/knowledge-store.test.cjs",
+      "electron/main.cjs",
+      "scripts/knowledge-review.cjs"
+    ],
+    "electron/ai/llm-front-office/config/defaults.json": [
+      "electron/ai/llm-front-office/experiment-contracts.cjs",
+      "features/model-settings/front-office-settings.tsx"
+    ],
+    "types/front-office.ts": [
+      "electron/ai/llm-front-office/observability.cjs",
+      "features/model-settings/front-office-settings.tsx",
+      "types/ai.ts",
+      "types/ai.ts"
+    ],
+    "electron/ai/providers/openai-chat-provider.cjs": [
+      "electron/ai/llm-front-office/provider-gateway.cjs",
+      "electron/ai/providers/nvidia-provider.cjs",
+      "electron/ai/providers/openrouter-provider.cjs"
+    ],
+    "electron/ai/llm-front-office/model-registry.cjs": [
+      "electron/ai/llm-front-office/service.cjs",
+      "electron/ai/model-access.test.cjs",
+      "scripts/front-office-benchmark.cjs"
+    ],
+    "electron/brain-errors.cjs": [
+      "electron/ai/model-errors.test.cjs",
+      "electron/ai/orchestrator.test.cjs",
+      "electron/main.cjs",
+      "electron/station-service.cjs"
+    ],
+    "scripts/fixtures/online-smoke-fetch.cjs": [
+      "electron/ai/nvidia-integration.test.cjs",
+      "scripts/electron-front-office-smoke-main.cjs",
+      "scripts/electron-online-smoke-main.cjs"
+    ],
+    "electron/ai/openrouter-usage.cjs": [
+      "electron/ai/openrouter-usage.test.cjs",
+      "electron/ai/provider-usage.cjs"
+    ],
+    "electron/ai/statistics.cjs": [
+      "electron/ai/orchestrator.cjs",
+      "electron/ai/providers/gemini-provider.cjs",
+      "electron/ai/providers/gemini-provider.test.cjs",
+      "electron/ai/providers/nvidia-provider.test.cjs",
+      "electron/ai/statistics.test.cjs"
+    ],
+    "electron/ai/providers/ollama-stream.cjs": [
+      "electron/ai/providers/ollama-provider.cjs",
+      "electron/ai/providers/ollama-stream.test.cjs"
+    ],
+    "electron/desktop-security.cjs": [
+      "electron/desktop-security.test.cjs",
+      "electron/main.cjs"
+    ],
+    "scripts/fixtures/image-pdf.cjs": [
+      "electron/document-ocr.test.cjs",
+      "scripts/electron-packaged-smoke.cjs",
+      "scripts/electron-pdf-image-smoke.cjs"
+    ],
+    "electron/vault-settings.cjs": [
+      "electron/main.cjs",
+      "electron/vault-settings.test.cjs"
+    ],
+    "electron/user-data-path.cjs": [
+      "electron/main.cjs",
+      "electron/user-data-path.test.cjs",
+      "scripts/electron-openrouter-live-main.cjs",
+      "scripts/nvidia-thinking-probe-main.cjs",
+      "scripts/provider-rca-main.cjs"
+    ],
+    "electron/local-ocr.cjs": [
+      "electron/vault-service.cjs"
+    ],
+    "types/ai.ts": [
+      "features/agent/agent-avatar.tsx",
+      "features/agent/agent-construction.tsx",
+      "features/agent/agent-contacts.tsx",
+      "features/agent/agent-workspace.tsx",
+      "features/agent/construction-source-picker.tsx",
+      "features/agent/engine-inspector.tsx",
+      "features/chat/chat-panel.tsx",
+      "features/chat/chat-presentation.ts",
+      "features/chat/conversation-history.tsx",
+      "features/chat/desktop-client.ts",
+      "features/chat/engine-report-attachment.tsx",
+      "features/chat/runtime-state.ts",
+      "features/chat/source-label.ts",
+      "features/chat/use-chat-runtime.ts",
+      "features/context-boxes/context-boxes.tsx",
+      "features/model-settings/front-office-settings.tsx",
+      "features/model-settings/model-settings.tsx",
+      "features/model-settings/provided-models.tsx",
+      "features/model-settings/provider-key-form.tsx",
+      "features/usage-monitor/planet-usage-badge.tsx",
+      "features/usage-monitor/usage-view.ts",
+      "lib/context-box-stations.ts",
+      "types/electron.d.ts",
+      "types/electron.d.ts"
+    ],
+    "features/agent/construction-source-picker.tsx": [
+      "features/agent/agent-construction.tsx"
+    ],
+    "features/agent/engine-inspector.tsx": [
+      "features/agent/agent-construction.tsx"
+    ],
+    "features/agent/agent-avatar.tsx": [
+      "features/agent/agent-construction.tsx",
+      "features/agent/agent-contacts.tsx",
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/agent/agent-construction.css": [
+      "features/agent/agent-construction.tsx"
+    ],
+    "features/agent/agent-workbench.css": [
+      "features/agent/agent-construction.tsx"
+    ],
+    "features/chat/chat-presentation.ts": [
+      "features/agent/agent-construction.tsx",
+      "features/agent/agent-contacts.tsx",
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/chat/source-label.ts": [
+      "features/agent/agent-contacts.tsx",
+      "features/chat/conversation-history.tsx"
+    ],
+    "features/agent/agent-construction.tsx": [
+      "features/agent/agent-settings.tsx"
+    ],
+    "features/agent/agent-contacts.tsx": [
+      "features/agent/agent-workspace.tsx"
+    ],
+    "features/agent/add-agent-dialog.tsx": [
+      "features/agent/agent-workspace.tsx"
+    ],
+    "features/agent/agent-layout.ts": [
+      "features/agent/agent-workspace.tsx",
+      "features/chat/agent-layout.test.cjs"
+    ],
+    "features/agent/agent.css": [
+      "features/agent/agent-workspace.tsx"
+    ],
+    "features/chat/markdown-format.ts": [
+      "features/chat/chat-markdown.tsx",
+      "features/chat/markdown-format.test.cjs"
+    ],
+    "features/chat/panel-geometry.ts": [
+      "features/chat/chat-panel.tsx",
+      "features/chat/panel-geometry.test.cjs",
+      "features/chat/panel-geometry.test.cjs"
+    ],
+    "features/chat/conversation-history.tsx": [
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/chat/chat-markdown.tsx": [
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/agent/knowledge-proposal.tsx": [
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/chat/engine-report-attachment.tsx": [
+      "features/chat/chat-panel.tsx"
+    ],
+    "features/chat/context-readiness.ts": [
+      "features/chat/context-readiness.test.cjs",
+      "features/chat/use-chat-runtime.ts"
+    ],
+    "features/chat/runtime-state.ts": [
+      "features/chat/runtime-state.test.cjs",
+      "features/chat/use-chat-runtime.ts"
+    ],
+    "features/usage-monitor/usage-view.ts": [
+      "features/chat/usage-view.test.cjs",
+      "features/usage-monitor/planet-usage-badge.tsx"
+    ],
+    "features/chat/desktop-client.ts": [
+      "features/chat/use-chat-runtime.ts",
+      "features/usage-monitor/planet-usage-badge.tsx"
+    ],
+    "features/model-settings/provider-key-form.tsx": [
+      "features/model-settings/model-settings.tsx"
+    ],
+    "features/model-settings/provided-models.tsx": [
+      "features/model-settings/model-settings.tsx"
+    ],
+    "features/model-settings/front-office-settings.tsx": [
+      "features/model-settings/model-settings.tsx"
+    ],
+    "features/usage-monitor/usage-monitor.css": [
+      "features/usage-monitor/planet-usage-badge.tsx"
+    ],
+    ".next/types/routes.d.ts": [
+      "next-env.d.ts"
+    ],
+    ".next/types/root-params.d.ts": [
+      "next-env.d.ts"
+    ],
+    "scripts/fixtures/chat-context-tools.cjs": [
+      "scripts/agent-electron-acceptance.cjs",
+      "scripts/electron-chat-smoke.cjs",
+      "scripts/electron-online-chat-smoke.cjs"
+    ],
+    "package.json": [
+      "scripts/audit-package.cjs",
+      "scripts/electron-packaged-smoke.cjs",
+      "scripts/electron-release-smoke.cjs",
+      "scripts/electron-victoria-smoke.cjs"
+    ],
+    "electron/main.cjs": [
+      "scripts/electron-front-office-smoke-main.cjs",
+      "scripts/electron-online-smoke-main.cjs",
+      "scripts/electron-openrouter-live-main.cjs",
+      "scripts/electron-smoke-main.cjs",
+      "scripts/nvidia-thinking-probe-main.cjs",
+      "scripts/provider-rca-main.cjs"
+    ],
+    "scripts/electron-online-smoke-main.cjs": [
+      "scripts/electron-release-smoke-main.cjs",
+      "scripts/electron-startup-smoke-main.cjs"
+    ]
+  },
+  "errors": []
+}

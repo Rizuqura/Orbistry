@@ -5,7 +5,7 @@ const fs = require("node:fs/promises"),
   os = require("node:os");
 async function main() {
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-planet-performance-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-planet-performance-")),
   );
   const vault = path.join(root, "vault"),
     profile = path.join(root, "profile");
@@ -38,8 +38,8 @@ async function main() {
     );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: vault,
-      WONNYY_SMOKE_DATA: profile,
+      ORBISTRY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: profile,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -60,14 +60,14 @@ async function main() {
       .getByRole("button", { name: "PLANET VIEW", exact: true })
       .click();
     const close = page.getByRole("button", {
-      name: "Close Wonnyy Agent",
+      name: "Close Orbistry Agent",
       exact: true,
     });
     if (await close.isVisible()) await close.click();
     const canvas = page.locator(".pv-canvas");
     await page.locator(".pworld .pnode").first().waitFor();
     const snapshot = await page.evaluate(() =>
-      window.wonnyyDesktop.vault.getSnapshot(),
+      window.orbistryDesktop.vault.getSnapshot(),
     );
     assert.equal(snapshot.totalFiles, 201);
     assert.ok(snapshot.entries.some((e) => e.name === "agentContext.memory"));
@@ -89,17 +89,18 @@ async function main() {
       0,
     );
     const memory = await page.evaluate(() =>
-      window.wonnyyDesktop.vault.read("agentContext.memory/personality.md"),
+      window.orbistryDesktop.vault.read("agentContext.memory/personality.md"),
     );
     assert.ok(
       JSON.stringify(memory).includes("Explicitly reviewed agent guidance"),
     );
     assert.ok(!snapshot.entries.some((e) => e.name === ".engine"));
-    const flat = page.getByRole("checkbox", {
-      name: "FLAT VIEW (LOW GPU)",
-      exact: true,
-    });
-    assert.equal(await flat.isChecked(), true);
+    assert.equal(
+      await page
+        .getByRole("checkbox", { name: "FLAT VIEW (LOW GPU)", exact: true })
+        .count(),
+      0,
+    );
     const geometry = await page.locator(".pv-canvas").evaluate((el) => {
       const world = el.querySelector(".pworld"),
         edges = el.querySelector(".pedges");
@@ -168,12 +169,15 @@ async function main() {
         Number(document.querySelector(".pworld").dataset.renderedNodes) ===
         Number(document.querySelector(".pworld").dataset.totalNodes),
     );
-    // Explicit visual preferences survive remounting the renderer.
-    await flat.uncheck();
+    // Permanent flat styling survives remounting the renderer.
     await page.reload();
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
-    assert.equal(await flat.isChecked(), false);
-    await flat.check();
+    assert.equal(
+      await page
+        .getByRole("checkbox", { name: "FLAT VIEW (LOW GPU)", exact: true })
+        .count(),
+      0,
+    );
     // Focusing a folder that disappears must recover to the full graph.
     await page
       .getByRole("button", { name: "Directory: Research-0", exact: true })

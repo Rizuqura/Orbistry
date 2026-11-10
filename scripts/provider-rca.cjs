@@ -18,11 +18,11 @@ async function main() {
     const env = {
       ...process.env,
       QT_RCA_PROFILE: path.join(root, "app-data"),
-      WONNYY_VAULT_PATH: path.join(root, "vault"),
+      ORBISTRY_VAULT_PATH: path.join(root, "vault"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
-    await fs.mkdir(env.WONNYY_VAULT_PATH, { recursive: true });
+    await fs.mkdir(env.ORBISTRY_VAULT_PATH, { recursive: true });
     app = await electron.launch({
       args: [path.resolve("scripts/provider-rca-main.cjs"), "--hidden"],
       env,
@@ -66,7 +66,7 @@ async function main() {
         .locator(`option[value="${provider}:${model}"]`)
         .waitFor({ state: "attached" });
       const config = await page.evaluate(
-        async () => (await window.wonnyyDesktop.ai.frontOfficeState()).config,
+        async () => (await window.orbistryDesktop.ai.frontOfficeState()).config,
       );
       config.enabled = true;
       config.routing.mode = "manual";
@@ -111,7 +111,7 @@ async function main() {
         )
         .catch(() => {});
       const admission = await page.evaluate(async () => {
-        const ai = window.wonnyyDesktop.ai;
+        const ai = window.orbistryDesktop.ai;
         let list;
         try {
           list = (await ai.frontOfficeList()).map((c) => ({
@@ -140,7 +140,7 @@ async function main() {
         throw new Error("UI conversation admission failed before inference.");
       await page.evaluate(() => {
         globalThis.rcaEvents = [];
-        globalThis.rcaUnsubscribe = window.wonnyyDesktop.ai.onFrontOfficeEvent(
+        globalThis.rcaUnsubscribe = window.orbistryDesktop.ai.onFrontOfficeEvent(
           (event) =>
             globalThis.rcaEvents.push({
               requestId: event.requestId,
@@ -155,7 +155,7 @@ async function main() {
       checkpoint("SUBMIT_UI");
       await page
         .getByLabel("Experiment question", { exact: true })
-        .fill("Reply with exactly: QTERMINAL_OK");
+        .fill("Reply with exactly: ORBISTRY_OK");
       await page
         .getByRole("button", { name: "Send experiment", exact: true })
         .click();
@@ -175,7 +175,7 @@ async function main() {
         .filter({
           has: page.locator("strong").filter({ hasText: /^assistant$/ }),
         });
-      const marker = assistant.getByText("QTERMINAL_OK", { exact: true });
+      const marker = assistant.getByText("ORBISTRY_OK", { exact: true });
       await marker
         .waitFor({ state: "visible", timeout: 10000 })
         .catch(() => {});
@@ -187,7 +187,7 @@ async function main() {
         model,
         status:
           visible && events.some((e) => e.type === "finish") ? "PASS" : "FAIL",
-        visibleText: visible ? "QTERMINAL_OK" : "",
+        visibleText: visible ? "ORBISTRY_OK" : "",
         events,
         stages: [],
       };

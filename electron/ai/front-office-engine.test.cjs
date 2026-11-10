@@ -242,7 +242,7 @@ test("native experimental gateway uses the NVIDIA deployment thinking switch too
 
 async function fixture(t, behavior) {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-front-office-"),
+    path.join(os.tmpdir(), "orbistry-front-office-"),
   );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const calls = [];

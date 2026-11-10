@@ -161,7 +161,7 @@ async function recognizePdfPages(absolutePath, requested) {
       );
     }
     const os = require("node:os");
-    temporary = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-pdf-ocr-"));
+    temporary = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-pdf-ocr-"));
     const pages = [];
     for (const number of numbers) {
       const page = await document.getPage(number);
@@ -370,18 +370,21 @@ async function scanDirectory(
 
     const extension = path.extname(entry.name).toLowerCase();
     if (!entry.isFile()) continue;
+    const fileStats = await fs.stat(absolutePath).catch(() => null);
+    const sizeBytes = fileStats?.isFile() ? fileStats.size : undefined;
     if (!SUPPORTED_EXTENSIONS.has(extension)) {
       entries.push({
         kind: "file",
         name: entry.name,
         relativePath: childRelativePath,
         extension,
+        sizeBytes,
         readable: false,
       });
       continue;
     }
     if (extension === ".pdf") {
-      const stats = await fs.stat(absolutePath).catch(() => null);
+      const stats = fileStats;
       if (!stats) {
         issues.push(
           issue(childRelativePath, "Could not inspect PDF metadata."),
@@ -391,6 +394,7 @@ async function scanDirectory(
           name: entry.name,
           relativePath: childRelativePath,
           extension,
+          sizeBytes,
         });
         continue;
       }
@@ -407,6 +411,7 @@ async function scanDirectory(
         name: entry.name,
         relativePath: childRelativePath,
         extension,
+        sizeBytes,
         readable: true,
         pdf,
       });
@@ -417,6 +422,7 @@ async function scanDirectory(
       name: entry.name,
       relativePath: childRelativePath,
       extension,
+      sizeBytes,
       readable: true,
     });
   }
@@ -657,7 +663,7 @@ async function saveMarkdownFile(rootPath, input) {
     );
   const temporary = path.join(
     path.dirname(absolutePath),
-    `.qterminal-${require("node:crypto").randomUUID()}.tmp`,
+    `.orbistry-${require("node:crypto").randomUUID()}.tmp`,
   );
   try {
     await fs.writeFile(temporary, input.content, {

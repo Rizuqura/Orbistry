@@ -1,0 +1,963 @@
+{
+  "method": "TypeScript AST production source only; counts bodies outside blocks, excluding else-if links. Nested conditional count is direct nesting; stylistic signals, not bugs.",
+  "files": [
+    {
+      "path": "features/chat/use-chat-runtime.ts",
+      "lines": 1284,
+      "unbracedBodies": 91,
+      "nestedTernaries": 2,
+      "conditionals": 30
+    },
+    {
+      "path": "features/model-settings/front-office-settings.tsx",
+      "lines": 1154,
+      "unbracedBodies": 21,
+      "nestedTernaries": 0,
+      "conditionals": 16
+    },
+    {
+      "path": "features/agent/agent-construction.tsx",
+      "lines": 1142,
+      "unbracedBodies": 19,
+      "nestedTernaries": 13,
+      "conditionals": 50
+    },
+    {
+      "path": "components/app-shell.tsx",
+      "lines": 1120,
+      "unbracedBodies": 42,
+      "nestedTernaries": 6,
+      "conditionals": 52
+    },
+    {
+      "path": "electron/ai/orchestrator.cjs",
+      "lines": 1081,
+      "unbracedBodies": 24,
+      "nestedTernaries": 1,
+      "conditionals": 29
+    },
+    {
+      "path": "electron/station-service.cjs",
+      "lines": 1005,
+      "unbracedBodies": 65,
+      "nestedTernaries": 0,
+      "conditionals": 8
+    },
+    {
+      "path": "electron/ai/chat-service.cjs",
+      "lines": 1002,
+      "unbracedBodies": 53,
+      "nestedTernaries": 2,
+      "conditionals": 25
+    },
+    {
+      "path": "features/chat/chat-panel.tsx",
+      "lines": 977,
+      "unbracedBodies": 28,
+      "nestedTernaries": 16,
+      "conditionals": 62
+    },
+    {
+      "path": "lib/planet-layout.ts",
+      "lines": 953,
+      "unbracedBodies": 39,
+      "nestedTernaries": 4,
+      "conditionals": 23
+    },
+    {
+      "path": "components/planet-scene.tsx",
+      "lines": 931,
+      "unbracedBodies": 53,
+      "nestedTernaries": 5,
+      "conditionals": 32
+    },
+    {
+      "path": "electron/vault-service.cjs",
+      "lines": 781,
+      "unbracedBodies": 44,
+      "nestedTernaries": 0,
+      "conditionals": 17
+    },
+    {
+      "path": "features/model-settings/model-settings.tsx",
+      "lines": 724,
+      "unbracedBodies": 6,
+      "nestedTernaries": 10,
+      "conditionals": 39
+    },
+    {
+      "path": "electron/ai/llm-front-office/service.cjs",
+      "lines": 706,
+      "unbracedBodies": 13,
+      "nestedTernaries": 0,
+      "conditionals": 21
+    },
+    {
+      "path": "electron/ai/providers/ollama-provider.cjs",
+      "lines": 636,
+      "unbracedBodies": 23,
+      "nestedTernaries": 0,
+      "conditionals": 28
+    },
+    {
+      "path": "features/context-boxes/context-boxes.tsx",
+      "lines": 610,
+      "unbracedBodies": 18,
+      "nestedTernaries": 0,
+      "conditionals": 9
+    },
+    {
+      "path": "electron/ai/agent-store.cjs",
+      "lines": 602,
+      "unbracedBodies": 25,
+      "nestedTernaries": 0,
+      "conditionals": 14
+    },
+    {
+      "path": "electron/ai/knowledge-store.cjs",
+      "lines": 592,
+      "unbracedBodies": 29,
+      "nestedTernaries": 0,
+      "conditionals": 4
+    },
+    {
+      "path": "electron/ai/dataset-engine.cjs",
+      "lines": 564,
+      "unbracedBodies": 58,
+      "nestedTernaries": 10,
+      "conditionals": 27
+    },
+    {
+      "path": "electron/ai/providers/openai-chat-provider.cjs",
+      "lines": 544,
+      "unbracedBodies": 28,
+      "nestedTernaries": 8,
+      "conditionals": 18
+    },
+    {
+      "path": "features/chat/conversation-history.tsx",
+      "lines": 537,
+      "unbracedBodies": 7,
+      "nestedTernaries": 3,
+      "conditionals": 15
+    },
+    {
+      "path": "electron/ai/engine-chat.cjs",
+      "lines": 501,
+      "unbracedBodies": 20,
+      "nestedTernaries": 0,
+      "conditionals": 8
+    },
+    {
+      "path": "electron/ai/providers/gemini-provider.cjs",
+      "lines": 484,
+      "unbracedBodies": 33,
+      "nestedTernaries": 0,
+      "conditionals": 6
+    },
+    {
+      "path": "electron/ai/conversation-store.cjs",
+      "lines": 432,
+      "unbracedBodies": 24,
+      "nestedTernaries": 3,
+      "conditionals": 16
+    },
+    {
+      "path": "electron/ai/llm-front-office/provider-gateway.cjs",
+      "lines": 432,
+      "unbracedBodies": 22,
+      "nestedTernaries": 1,
+      "conditionals": 15
+    },
+    {
+      "path": "electron/ai/ipc.cjs",
+      "lines": 395,
+      "unbracedBodies": 10,
+      "nestedTernaries": 0,
+      "conditionals": 7
+    },
+    {
+      "path": "electron/ai/engine-registry.cjs",
+      "lines": 392,
+      "unbracedBodies": 16,
+      "nestedTernaries": 3,
+      "conditionals": 8
+    },
+    {
+      "path": "electron/ai/run-store.cjs",
+      "lines": 388,
+      "unbracedBodies": 37,
+      "nestedTernaries": 0,
+      "conditionals": 5
+    },
+    {
+      "path": "electron/ai/chronoz-adapter.cjs",
+      "lines": 386,
+      "unbracedBodies": 35,
+      "nestedTernaries": 1,
+      "conditionals": 4
+    },
+    {
+      "path": "components/document-workspace.tsx",
+      "lines": 382,
+      "unbracedBodies": 8,
+      "nestedTernaries": 6,
+      "conditionals": 21
+    },
+    {
+      "path": "electron/ai/agent-construction.cjs",
+      "lines": 358,
+      "unbracedBodies": 16,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "features/agent/agent-workspace.tsx",
+      "lines": 355,
+      "unbracedBodies": 13,
+      "nestedTernaries": 1,
+      "conditionals": 18
+    },
+    {
+      "path": "electron/main.cjs",
+      "lines": 343,
+      "unbracedBodies": 9,
+      "nestedTernaries": 1,
+      "conditionals": 5
+    },
+    {
+      "path": "electron/ai/llm-front-office/evaluation/harness.cjs",
+      "lines": 333,
+      "unbracedBodies": 7,
+      "nestedTernaries": 1,
+      "conditionals": 18
+    },
+    {
+      "path": "components/knowledge-sidebar.tsx",
+      "lines": 325,
+      "unbracedBodies": 10,
+      "nestedTernaries": 2,
+      "conditionals": 23
+    },
+    {
+      "path": "features/usage-monitor/planet-usage-badge.tsx",
+      "lines": 321,
+      "unbracedBodies": 7,
+      "nestedTernaries": 10,
+      "conditionals": 26
+    },
+    {
+      "path": "electron/ai/request-logger.cjs",
+      "lines": 321,
+      "unbracedBodies": 17,
+      "nestedTernaries": 0,
+      "conditionals": 8
+    },
+    {
+      "path": "electron/ai/llm-front-office/observability.cjs",
+      "lines": 318,
+      "unbracedBodies": 14,
+      "nestedTernaries": 2,
+      "conditionals": 23
+    },
+    {
+      "path": "features/context-boxes/context-box-manager.tsx",
+      "lines": 316,
+      "unbracedBodies": 3,
+      "nestedTernaries": 3,
+      "conditionals": 11
+    },
+    {
+      "path": "electron/ai/statistics.cjs",
+      "lines": 309,
+      "unbracedBodies": 12,
+      "nestedTernaries": 1,
+      "conditionals": 6
+    },
+    {
+      "path": "components/station-panel.tsx",
+      "lines": 291,
+      "unbracedBodies": 7,
+      "nestedTernaries": 2,
+      "conditionals": 19
+    },
+    {
+      "path": "electron/ai/dataset-planner.cjs",
+      "lines": 291,
+      "unbracedBodies": 6,
+      "nestedTernaries": 1,
+      "conditionals": 3
+    },
+    {
+      "path": "features/agent/agent-contacts.tsx",
+      "lines": 284,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 12
+    },
+    {
+      "path": "electron/ai/openrouter-usage.cjs",
+      "lines": 268,
+      "unbracedBodies": 19,
+      "nestedTernaries": 9,
+      "conditionals": 20
+    },
+    {
+      "path": "features/agent/construction-source-picker.tsx",
+      "lines": 260,
+      "unbracedBodies": 2,
+      "nestedTernaries": 1,
+      "conditionals": 16
+    },
+    {
+      "path": "features/agent/engine-inspector.tsx",
+      "lines": 250,
+      "unbracedBodies": 8,
+      "nestedTernaries": 1,
+      "conditionals": 4
+    },
+    {
+      "path": "electron/ai/llm-front-office/experiment-contracts.cjs",
+      "lines": 246,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/llm-front-office/contracts.cjs",
+      "lines": 217,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "features/chat/markdown-format.ts",
+      "lines": 215,
+      "unbracedBodies": 15,
+      "nestedTernaries": 3,
+      "conditionals": 6
+    },
+    {
+      "path": "electron/ai/llm-front-office/model-registry.cjs",
+      "lines": 215,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "electron/ai/prompt-builder.cjs",
+      "lines": 214,
+      "unbracedBodies": 9,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/context-box-store.cjs",
+      "lines": 206,
+      "unbracedBodies": 13,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/construction-context.cjs",
+      "lines": 204,
+      "unbracedBodies": 12,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/model-registry.cjs",
+      "lines": 198,
+      "unbracedBodies": 7,
+      "nestedTernaries": 3,
+      "conditionals": 12
+    },
+    {
+      "path": "components/pdf-viewer.tsx",
+      "lines": 194,
+      "unbracedBodies": 9,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "components/planet-detail-panel.tsx",
+      "lines": 193,
+      "unbracedBodies": 10,
+      "nestedTernaries": 0,
+      "conditionals": 11
+    },
+    {
+      "path": "electron/ai/provider-usage.cjs",
+      "lines": 192,
+      "unbracedBodies": 14,
+      "nestedTernaries": 0,
+      "conditionals": 10
+    },
+    {
+      "path": "electron/ai/runtime-context.cjs",
+      "lines": 190,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/dataset-evidence.cjs",
+      "lines": 184,
+      "unbracedBodies": 8,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/llm-front-office/model-router.cjs",
+      "lines": 172,
+      "unbracedBodies": 12,
+      "nestedTernaries": 2,
+      "conditionals": 7
+    },
+    {
+      "path": "electron/ai/llm-front-office/reliability.cjs",
+      "lines": 169,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 5
+    },
+    {
+      "path": "electron/preload.cjs",
+      "lines": 164,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "components/planet-controls.tsx",
+      "lines": 160,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 4
+    },
+    {
+      "path": "components/planet-node.tsx",
+      "lines": 160,
+      "unbracedBodies": 2,
+      "nestedTernaries": 3,
+      "conditionals": 19
+    },
+    {
+      "path": "electron/ai/model-access.cjs",
+      "lines": 160,
+      "unbracedBodies": 5,
+      "nestedTernaries": 2,
+      "conditionals": 9
+    },
+    {
+      "path": "electron/ai/numeric-equations.cjs",
+      "lines": 154,
+      "unbracedBodies": 12,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "components/planet-details.tsx",
+      "lines": 146,
+      "unbracedBodies": 0,
+      "nestedTernaries": 1,
+      "conditionals": 12
+    },
+    {
+      "path": "electron/ai/llm-front-office/response-processor.cjs",
+      "lines": 145,
+      "unbracedBodies": 17,
+      "nestedTernaries": 1,
+      "conditionals": 7
+    },
+    {
+      "path": "electron/ai/providers/openrouter-provider.cjs",
+      "lines": 143,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 4
+    },
+    {
+      "path": "electron/ai/llm-front-office/conversation-manager.cjs",
+      "lines": 140,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/credential-store.cjs",
+      "lines": 138,
+      "unbracedBodies": 3,
+      "nestedTernaries": 2,
+      "conditionals": 3
+    },
+    {
+      "path": "features/agent/knowledge-proposal.tsx",
+      "lines": 131,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "features/model-settings/provided-models.tsx",
+      "lines": 128,
+      "unbracedBodies": 3,
+      "nestedTernaries": 1,
+      "conditionals": 5
+    },
+    {
+      "path": "features/model-settings/provider-key-form.tsx",
+      "lines": 126,
+      "unbracedBodies": 2,
+      "nestedTernaries": 1,
+      "conditionals": 5
+    },
+    {
+      "path": "electron/ai/llm-front-office/evaluation/fixtures.cjs",
+      "lines": 125,
+      "unbracedBodies": 5,
+      "nestedTernaries": 2,
+      "conditionals": 5
+    },
+    {
+      "path": "electron/ai/schemas.cjs",
+      "lines": 123,
+      "unbracedBodies": 1,
+      "nestedTernaries": 2,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/response-validation.cjs",
+      "lines": 120,
+      "unbracedBodies": 8,
+      "nestedTernaries": 2,
+      "conditionals": 5
+    },
+    {
+      "path": "features/chat/chat-markdown.tsx",
+      "lines": 119,
+      "unbracedBodies": 10,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "lib/planet-vault.ts",
+      "lines": 116,
+      "unbracedBodies": 5,
+      "nestedTernaries": 4,
+      "conditionals": 6
+    },
+    {
+      "path": "components/planet-minimap.tsx",
+      "lines": 107,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 4
+    },
+    {
+      "path": "features/chat/runtime-state.ts",
+      "lines": 104,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/research-knowledge.cjs",
+      "lines": 104,
+      "unbracedBodies": 7,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "lib/planet-labels.ts",
+      "lines": 100,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/model-pull.cjs",
+      "lines": 92,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 5
+    },
+    {
+      "path": "features/dialogs/use-confirmation.tsx",
+      "lines": 91,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/context-identity.cjs",
+      "lines": 90,
+      "unbracedBodies": 3,
+      "nestedTernaries": 1,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/providers/ollama-stream.cjs",
+      "lines": 88,
+      "unbracedBodies": 10,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "features/agent/add-agent-dialog.tsx",
+      "lines": 87,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "components/resizable-chat.tsx",
+      "lines": 84,
+      "unbracedBodies": 5,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "electron/ai/json-store.cjs",
+      "lines": 84,
+      "unbracedBodies": 5,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "lib/planet-hit-testing.ts",
+      "lines": 83,
+      "unbracedBodies": 11,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "lib/planet-motion.ts",
+      "lines": 83,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 4
+    },
+    {
+      "path": "lib/planet-orbits.ts",
+      "lines": 82,
+      "unbracedBodies": 7,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "lib/planet-rendering.ts",
+      "lines": 82,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "features/agent/agent-settings.tsx",
+      "lines": 81,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/dataset-session.cjs",
+      "lines": 78,
+      "unbracedBodies": 7,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/llm-front-office/long-context-reliability.cjs",
+      "lines": 73,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/local-ocr.cjs",
+      "lines": 73,
+      "unbracedBodies": 4,
+      "nestedTernaries": 2,
+      "conditionals": 3
+    },
+    {
+      "path": "features/chat/panel-geometry.ts",
+      "lines": 71,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "components/status-bar.tsx",
+      "lines": 64,
+      "unbracedBodies": 0,
+      "nestedTernaries": 2,
+      "conditionals": 6
+    },
+    {
+      "path": "electron/ai/llm-front-office/token-budget.cjs",
+      "lines": 64,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/model-check.cjs",
+      "lines": 63,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "components/top-bar.tsx",
+      "lines": 62,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 6
+    },
+    {
+      "path": "electron/ai/llm-front-office/request-intake.cjs",
+      "lines": 61,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/model-errors.cjs",
+      "lines": 60,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "features/usage-monitor/usage-view.ts",
+      "lines": 59,
+      "unbracedBodies": 1,
+      "nestedTernaries": 2,
+      "conditionals": 9
+    },
+    {
+      "path": "features/chat/engine-report-attachment.tsx",
+      "lines": 55,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "electron/ai/llm-front-office/catalog-sort.cjs",
+      "lines": 54,
+      "unbracedBodies": 9,
+      "nestedTernaries": 2,
+      "conditionals": 5
+    },
+    {
+      "path": "lib/context-box-stations.ts",
+      "lines": 53,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/history-budget.cjs",
+      "lines": 53,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/llm-front-office/export.cjs",
+      "lines": 53,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "lib/use-planet-animation.ts",
+      "lines": 51,
+      "unbracedBodies": 1,
+      "nestedTernaries": 1,
+      "conditionals": 2
+    },
+    {
+      "path": "components/startup-progress.tsx",
+      "lines": 48,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/llm-front-office/telemetry-store.cjs",
+      "lines": 48,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/llm-front-office/errors.cjs",
+      "lines": 47,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/desktop-security.cjs",
+      "lines": 46,
+      "unbracedBodies": 3,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "features/chat/chat-presentation.ts",
+      "lines": 41,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/ai/dataset-worker.cjs",
+      "lines": 40,
+      "unbracedBodies": 4,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/agent-policy.cjs",
+      "lines": 37,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/vault-settings.cjs",
+      "lines": 37,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "features/agent/agent-avatar.tsx",
+      "lines": 35,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/brain-errors.cjs",
+      "lines": 35,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "electron/user-data-path.cjs",
+      "lines": 32,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "lib/station-projection.ts",
+      "lines": 31,
+      "unbracedBodies": 2,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "app/layout.tsx",
+      "lines": 30,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "lib/planet-navigation.ts",
+      "lines": 30,
+      "unbracedBodies": 5,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "features/agent/agent-layout.ts",
+      "lines": 24,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "features/chat/context-readiness.ts",
+      "lines": 24,
+      "unbracedBodies": 6,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/providers/nvidia-provider.cjs",
+      "lines": 23,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 1
+    },
+    {
+      "path": "features/chat/desktop-client.ts",
+      "lines": 21,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/ai/provider-registry.cjs",
+      "lines": 21,
+      "unbracedBodies": 1,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "electron/launch.cjs",
+      "lines": 21,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "features/chat/source-label.ts",
+      "lines": 19,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 3
+    },
+    {
+      "path": "electron/ai/context-limits.cjs",
+      "lines": 17,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 2
+    },
+    {
+      "path": "electron/ai/skills.cjs",
+      "lines": 15,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "app/page.tsx",
+      "lines": 6,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    },
+    {
+      "path": "components/chat-panel.tsx",
+      "lines": 3,
+      "unbracedBodies": 0,
+      "nestedTernaries": 0,
+      "conditionals": 0
+    }
+  ],
+  "totals": {
+    "files": 136,
+    "lines": 34407,
+    "unbracedBodies": 1414,
+    "nestedTernaries": 168
+  }
+}

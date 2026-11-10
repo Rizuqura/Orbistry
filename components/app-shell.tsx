@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { useChatPopout } from "../features/chat/use-chat-popout";
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
 import { DocumentWorkspace } from "./document-workspace";
 import { ResizableChat } from "./resizable-chat";
@@ -41,7 +43,7 @@ import { useConfirmation } from "../features/dialogs/use-confirmation";
 type View = "workspace" | "planet" | "agent";
 
 function requireVaultBridge() {
-  const vault = window.wonnyyDesktop?.vault;
+  const vault = window.orbistryDesktop?.vault;
   if (
     !vault?.getSnapshot ||
     !vault.rescan ||
@@ -57,7 +59,7 @@ function requireVaultBridge() {
 }
 
 function requireKnowledgeBridge() {
-  const desktop = window.wonnyyDesktop;
+  const desktop = window.orbistryDesktop;
   if (
     !desktop?.stations?.getState ||
     !desktop.context?.buildPackage ||
@@ -580,7 +582,11 @@ export function AppShell() {
       return next.size === current.size ? current : next;
     });
   }, [chat.contextBoxes]);
+  const chatPopout = useChatPopout(
+    `${chat.agent?.displayName ?? "Orbistry Agent"} - ORB Terminal Chat`,
+  );
   const chatProps: Omit<ChatPanelProps, "variant"> = {
+    onPopOutWindow: chatPopout.open,
     onOpenAgentSettings: () => setAgentSettingsOpen(true),
     onOpenAgentWorkspace: () => {
       setSettingsOpen(false);
@@ -864,6 +870,7 @@ export function AppShell() {
                 projectionIds={projection.visible}
                 stationClusters={projection.clusters}
                 chatProps={chatProps}
+                chatDetached={Boolean(chatPopout.container)}
               />
             ) : (
               <section className="planet-view">
@@ -1105,6 +1112,38 @@ export function AppShell() {
             onAttach={() => setView("planet")}
           />
         )}
+        {chatPopout.error && (
+          <div className="chat-popout-error" role="alert">
+            {chatPopout.error}
+          </div>
+        )}
+        {chatPopout.container &&
+          createPortal(
+            <div className="app-shell planet-chat-window">
+              <ChatPanel
+                {...chatProps}
+                variant="window"
+                onAttachWindow={chatPopout.attach}
+                onOpenAgentSettings={() => {
+                  chatPopout.attach();
+                  chatProps.onOpenAgentSettings?.();
+                }}
+                onOpenAgentWorkspace={() => {
+                  chatPopout.attach();
+                  chatProps.onOpenAgentWorkspace?.();
+                }}
+                onExpandContext={() => {
+                  chatPopout.attach();
+                  chatProps.onExpandContext?.();
+                }}
+                onOpenSource={(path) => {
+                  window.focus();
+                  chatProps.onOpenSource(path);
+                }}
+              />
+            </div>,
+            chatPopout.container,
+          )}
         {confirmation}
         {agentSettingsOpen && (
           <AgentSettings

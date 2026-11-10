@@ -1,0 +1,1 @@
+PASS: actual packaged executable; empty state and keys; CSP; native image/scanned-PDF OCR; first custom agent and Context Box.

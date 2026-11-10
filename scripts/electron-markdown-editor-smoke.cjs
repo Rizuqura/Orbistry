@@ -5,7 +5,7 @@ const os = require("node:os");
 const path = require("node:path");
 
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-editor-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-editor-"));
   const vault = path.join(root, "vault");
   let app;
   const errors = [];
@@ -16,8 +16,8 @@ async function main() {
     await fs.writeFile(path.join(vault, "data.csv"), "name,value\na,1\n");
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: vault,
-      WONNYY_SMOKE_DATA: path.join(root, "profile"),
+      ORBISTRY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: path.join(root, "profile"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;

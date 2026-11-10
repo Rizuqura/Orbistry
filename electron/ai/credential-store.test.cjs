@@ -8,7 +8,7 @@ const { parseCredential } = require("./schemas.cjs");
 
 test("optional LiteLLM credential uses OS encryption and remains isolated from provider credentials", async (t) => {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-gateway-key-"),
+    path.join(os.tmpdir(), "orbistry-gateway-key-"),
   );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
@@ -37,7 +37,7 @@ test("optional LiteLLM credential uses OS encryption and remains isolated from p
 
 test("OpenRouter keys use encrypted storage and preserve existing provider keys through restart and removal", async (t) => {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-openrouter-"),
+    path.join(os.tmpdir(), "orbistry-openrouter-"),
   );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
@@ -65,7 +65,7 @@ test("OpenRouter keys use encrypted storage and preserve existing provider keys 
 });
 
 test("NVIDIA credentials preserve legacy Gemini storage and remain isolated on removal", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-nvidia-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-nvidia-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
     isEncryptionAvailable: () => true,
@@ -117,7 +117,7 @@ test("Gemini credential validation accepts authorization and legacy keys without
 });
 
 test("credentials store ciphertext only, survive reload, remove cleanly, and fail closed without encryption", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-credentials-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-credentials-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
     isEncryptionAvailable: () => true,

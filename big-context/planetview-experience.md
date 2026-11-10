@@ -1,11 +1,11 @@
-# Wonnyy Planet View — Experience Goal & Spatial Architecture
+# Orbistry Planet View — Experience Goal & Spatial Architecture
 
 ## Status
 
 Product / UX Context Document
 
 Target:
-Wonnyy Amadeus V0.0.1 and future Planet View development.
+Orbistry Amadeus V0.0.1 and future Planet View development.
 
 This document defines the intended experience, spatial logic, interaction philosophy, and long-term behavior of Planet View.
 
@@ -19,7 +19,7 @@ Implementation details may change as long as the core experience described here 
 
 Planet View is not intended to be a decorative graph visualization.
 
-Planet View is the spatial interface of the Wonnyy knowledge system.
+Planet View is the spatial interface of the Orbistry knowledge system.
 
 Its purpose is to help users:
 
@@ -49,7 +49,7 @@ CONTEXT CONSTRUCTION
     ↓
 AI MODEL
 
-Planet View should therefore remain connected to the actual knowledge architecture of Wonnyy.
+Planet View should therefore remain connected to the actual knowledge architecture of Orbistry.
 
 Visual behavior should communicate meaning.
 
@@ -1103,7 +1103,7 @@ selected directory
 
 Semantic Zoom allows the user to progressively reveal complexity.
 
-This is necessary if Planet View is intended to remain useful as Wonnyy grows.
+This is necessary if Planet View is intended to remain useful as Orbistry grows.
 
 ---
 
@@ -1206,7 +1206,7 @@ However, the user should be able to understand:
 
 > Which parts of my knowledge universe does the model currently know?
 
-This connects Planet View directly with Wonnyy's context-management thesis.
+This connects Planet View directly with Orbistry's context-management thesis.
 
 ---
 
@@ -1524,7 +1524,7 @@ and
 
 AI reasoning.
 
-This is one of its primary strategic roles inside Wonnyy.
+This is one of its primary strategic roles inside Orbistry.
 
 ---
 

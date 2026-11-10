@@ -1,14 +1,14 @@
-# Wonnyy — Online Model Integration Context
+# Orbistry — Online Model Integration Context
 
 **Status:** Planning / Next Integration Track  
 **Date baseline:** 2026-09-08  
-**Project:** Wonnyy — Amadeus
+**Project:** Orbistry — Amadeus
 
 ---
 
 # Purpose
 
-Wonnyy already has a functional local-model path through Ollama.
+Orbistry already has a functional local-model path through Ollama.
 
 The next integration goal is to add a **remote / online model execution path** without changing the knowledge architecture that already exists.
 
@@ -46,13 +46,13 @@ Both modes must use the same:
 
 The model remains replaceable.
 
-Wonnyy remains the owner of knowledge authorization and conversation state.
+Orbistry remains the owner of knowledge authorization and conversation state.
 
 ---
 
 # 1. Main Goal
 
-The first online-model milestone should prove that Wonnyy can switch from a local model to a remote model while keeping the research workflow unchanged.
+The first online-model milestone should prove that Orbistry can switch from a local model to a remote model while keeping the research workflow unchanged.
 
 Target:
 
@@ -85,7 +85,7 @@ The user should experience model switching as changing the **execution engine**,
 Current local integration has already proven:
 
 ```text
-Wonnyy
+Orbistry
   ↓
 Ollama
   ↓
@@ -106,7 +106,7 @@ The remaining problems are primarily conversational:
 
 Local inference latency makes repeated acceptance testing unnecessarily slow.
 
-For model-integration engineering, Wonnyy needs a faster execution path so that:
+For model-integration engineering, Orbistry needs a faster execution path so that:
 
 ```text
 10 turns
@@ -126,7 +126,7 @@ can be repeated many times during development.
 
 # 3. Architectural Principle
 
-Online providers must not bypass Wonnyy's existing security architecture.
+Online providers must not bypass Orbistry's existing security architecture.
 
 Required direction:
 
@@ -348,7 +348,7 @@ Recommended stack:
 | Streaming | Fetch streaming / SSE + IPC events | Progressive answer rendering |
 | Local inference | Ollama | Existing local-model runtime |
 | Remote inference | Provider APIs | Fast online execution |
-| Conversation persistence | Existing Wonnyy history layer | Conversation state |
+| Conversation persistence | Existing Orbistry history layer | Conversation state |
 | Run provenance | Existing run/audit layer | Provider/model/source identity |
 
 Python is not required for online-model integration.
@@ -377,7 +377,7 @@ API response → provider
 provider → ModelResponse
 ```
 
-This is especially important because Wonnyy has already encountered renderer/backend contract mismatches.
+This is especially important because Orbistry has already encountered renderer/backend contract mismatches.
 
 Compile-time TypeScript validation is not sufficient when:
 
@@ -565,7 +565,7 @@ Free tiers may have:
 - model availability changes,
 - provider policy changes.
 
-For Wonnyy, free online models should initially be treated as:
+For Orbistry, free online models should initially be treated as:
 
 > Development-grade execution backends for fast model-integration benchmarking.
 
@@ -579,7 +579,7 @@ This list is a dated development snapshot.
 
 Provider availability and free-tier policies can change.
 
-Wonnyy should therefore implement provider/model discovery and not rely on this list as a permanent hard-coded catalog.
+Orbistry should therefore implement provider/model discovery and not rely on this list as a permanent hard-coded catalog.
 
 ---
 
@@ -603,7 +603,7 @@ multimodal reasoning
 
 Google currently lists Standard Free Tier input and output as free of charge.
 
-Recommended Wonnyy role:
+Recommended Orbistry role:
 
 ```text
 PRIMARY ONLINE DEVELOPMENT MODEL
@@ -678,7 +678,7 @@ FAST / LIGHT ONLINE
 
 # 15. Groq — High-Speed Development Provider
 
-Groq is highly interesting for Wonnyy because its Free Plan currently exposes several strong text models with explicit rate limits.
+Groq is highly interesting for Orbistry because its Free Plan currently exposes several strong text models with explicit rate limits.
 
 Current free-plan documentation lists, among others:
 
@@ -731,7 +731,7 @@ vs
 remote large Qwen
 ```
 
-through the same Wonnyy architecture.
+through the same Orbistry architecture.
 
 ---
 
@@ -753,7 +753,7 @@ Use it to test:
 
 - follow-up quality,
 - document reasoning,
-- whether failures come from model quality or Wonnyy orchestration.
+- whether failures come from model quality or Orbistry orchestration.
 
 ---
 
@@ -849,7 +849,7 @@ It may still be useful for high-speed experimentation later.
 
 ---
 
-# 18. Initial Wonnyy Online Test Matrix
+# 18. Initial Orbistry Online Test Matrix
 
 Do not integrate many providers at once.
 
@@ -1008,7 +1008,7 @@ Therefore:
 
 For development, avoid sending highly sensitive vault content to free remote providers.
 
-Wonnyy should eventually surface provider-specific privacy notes.
+Orbistry should eventually surface provider-specific privacy notes.
 
 ---
 
@@ -1110,11 +1110,11 @@ The conversation remains valid.
 
 ---
 
-# 27. Chat History Policy Remains Wonnyy-Owned
+# 27. Chat History Policy Remains Orbistry-Owned
 
 Online models must not automatically receive unlimited conversation history merely because their context windows are larger.
 
-Conversation policy remains owned by Wonnyy.
+Conversation policy remains owned by Orbistry.
 
 Current product issue:
 
@@ -1126,7 +1126,7 @@ history included in inference
 
 must be solved deliberately.
 
-Provider context capacity can influence budgeting, but it must not replace the Wonnyy history policy.
+Provider context capacity can influence budgeting, but it must not replace the Orbistry history policy.
 
 ---
 
@@ -1287,7 +1287,7 @@ It does not mean:
 
 ---
 
-# 31. Provider Priority for Wonnyy Development
+# 31. Provider Priority for Orbistry Development
 
 Recommended order:
 
@@ -1526,14 +1526,14 @@ large-model / low-latency comparison
 
 > Online models do not gain access to the vault.
 
-They receive only the context package that Wonnyy explicitly constructs.
+They receive only the context package that Orbistry explicitly constructs.
 
 Correct model:
 
 ```text
 Vault
    ↓
-Wonnyy authorization
+Orbistry authorization
    ↓
 approved context
    ↓
@@ -1554,7 +1554,7 @@ vault
 
 # 39. Final Product Direction
 
-Wonnyy should eventually let the user choose:
+Orbistry should eventually let the user choose:
 
 ```text
 LOCAL
@@ -1586,7 +1586,7 @@ chat normally
 
 Knowledge is permanent.
 
-Conversation state belongs to Wonnyy.
+Conversation state belongs to Orbistry.
 
 The execution engine is replaceable.
 
@@ -1594,7 +1594,7 @@ The execution engine is replaceable.
 
 # Dated Free-Model Snapshot
 
-As of **2026-09-08**, the strongest free online candidates identified for Wonnyy's development path are:
+As of **2026-09-08**, the strongest free online candidates identified for Orbistry's development path are:
 
 ```text
 Gemini 3.7 Flash
@@ -1624,11 +1624,11 @@ Provider/model discovery and dated documentation are required.
 
 **Status:** Required Online Provider Expansion  
 **Provider:** NVIDIA NIM Hosted API  
-**Purpose:** Add hosted Nemotron and DeepSeek-class models to Wonnyy without changing the existing context, conversation, or provenance architecture.
+**Purpose:** Add hosted Nemotron and DeepSeek-class models to Orbistry without changing the existing context, conversation, or provenance architecture.
 
 ## Goal
 
-Wonnyy should support NVIDIA's hosted NIM API as an additional remote model provider. The primary reason is to make models that cannot run on the current local hardware available through the same Wonnyy workflow.
+Orbistry should support NVIDIA's hosted NIM API as an additional remote model provider. The primary reason is to make models that cannot run on the current local hardware available through the same Orbistry workflow.
 
 ```text
 Nemotron 3.5 Lightning 30B
@@ -1677,7 +1677,7 @@ Authorization: Bearer <NVIDIA_API_KEY>
 Conceptual flow:
 
 ```text
-Wonnyy ModelRequest
+Orbistry ModelRequest
         ↓
 NvidiaProvider
         ↓
@@ -1785,7 +1785,7 @@ Primary model ID:
 nvidia/nemotron-3.5-lightning-30b-a3b
 ```
 
-Suggested Wonnyy label:
+Suggested Orbistry label:
 
 ```text
 Nemotron 3.5 Lightning 30B
@@ -1889,7 +1889,7 @@ Verified 2026-09-08
 
 ## Request mapping
 
-Wonnyy's internal request remains provider-neutral:
+Orbistry's internal request remains provider-neutral:
 
 ```text
 ModelRequest
@@ -1923,7 +1923,7 @@ reasoning
 reasoning_content
 ```
 
-Wonnyy must keep these separate from the visible final answer.
+Orbistry must keep these separate from the visible final answer.
 
 Normalized delta:
 
@@ -2007,7 +2007,7 @@ Cancellation must not corrupt conversation history, Active Context, source ident
 
 ## Error normalization
 
-Map provider errors to Wonnyy's generic error contract:
+Map provider errors to Orbistry's generic error contract:
 
 ```text
 401 / 403
@@ -2081,7 +2081,7 @@ Approved context and included conversation history
 are sent to NVIDIA for model inference.
 ```
 
-Do not imply NVIDIA can browse the vault. Wonnyy controls the transmitted context.
+Do not imply NVIDIA can browse the vault. Orbistry controls the transmitted context.
 
 ## Run provenance
 
@@ -2193,7 +2193,7 @@ Nemotron 3.5 Lightning 30B
 → runs successfully
 ```
 
-This proves model family and execution location are independent concepts in Wonnyy.
+This proves model family and execution location are independent concepts in Orbistry.
 
 ## Completion Criteria
 
@@ -2237,7 +2237,7 @@ NVIDIA integration is complete when:
 ## Architecture Summary
 
 ```text
-                    WONNYY
+                    ORBISTRY
                        │
                        ▼
                 Active Context
@@ -2266,4 +2266,4 @@ NVIDIA integration is complete when:
 
 > NVIDIA is an execution backend, not a new knowledge authority.
 
-Wonnyy still owns vault access, Active Context, Brain Scope, conversation state, history budgeting, source provenance, run identity, and model switching. NVIDIA receives only the context package Wonnyy explicitly sends.
+Orbistry still owns vault access, Active Context, Brain Scope, conversation state, history budgeting, source provenance, run identity, and model switching. NVIDIA receives only the context package Orbistry explicitly sends.

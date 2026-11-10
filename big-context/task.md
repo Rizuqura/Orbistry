@@ -1,5 +1,5 @@
 
-# Wonnyy implementation tasks
+# Orbistry implementation tasks
 
 ## Current execution order
 
@@ -59,7 +59,7 @@ Provider expansion is not the next primary milestone. Keep the existing Ollama/G
 
 ## Purpose
 
-This document contains the minimum engineering tasks required to build Wonnyy V0.0.1-Amadeus.
+This document contains the minimum engineering tasks required to build Orbistry V0.0.1-Amadeus.
 
 The goal is not to complete every possible feature.
 

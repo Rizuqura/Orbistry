@@ -6,7 +6,7 @@ const assert = require("node:assert/strict");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-front-office-ui-"),
+    path.join(os.tmpdir(), "orbistry-front-office-ui-"),
   );
   const artifacts = path.resolve("test-results/front-office");
   await fs.mkdir(artifacts, { recursive: true });
@@ -15,8 +15,8 @@ async function main() {
   try {
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -36,7 +36,7 @@ async function main() {
     await page.getByRole("button", { name: "SETTINGS", exact: true }).click();
     await page.getByText("LLM Backend / Front Office", { exact: true }).click();
     await page.evaluate(async () => {
-      await window.wonnyyDesktop.ai.saveCredential({
+      await window.orbistryDesktop.ai.saveCredential({
         providerId: "openrouter",
         apiKey: "synthetic-front-office-key",
       });
@@ -69,7 +69,7 @@ async function main() {
     const send = async (text) => {
       const before = await page.evaluate(
         async () =>
-          (await window.wonnyyDesktop.ai.frontOfficeList())[0]?.attempts
+          (await window.orbistryDesktop.ai.frontOfficeList())[0]?.attempts
             .length ?? 0,
       );
       await page.getByLabel("Experiment question", { exact: true }).fill(text);
@@ -77,7 +77,7 @@ async function main() {
         .getByRole("button", { name: "Send experiment", exact: true })
         .click();
       await page.waitForFunction(async (count) => {
-        const list = await window.wonnyyDesktop.ai.frontOfficeList();
+        const list = await window.orbistryDesktop.ai.frontOfficeList();
         return (
           list[0]?.attempts.length === count + 1 &&
           list[0]?.attempts.at(-1)?.status === "succeeded"
@@ -165,7 +165,7 @@ async function main() {
       .getByRole("button", { name: "Retry failed turn", exact: true })
       .click();
     await page.waitForFunction(async () => {
-      const c = (await window.wonnyyDesktop.ai.frontOfficeList())[0];
+      const c = (await window.orbistryDesktop.ai.frontOfficeList())[0];
       return c.attempts.at(-1).status === "succeeded";
     });
     assert.equal(
@@ -173,7 +173,7 @@ async function main() {
       failedCount + 1,
     );
     const conversation = await page.evaluate(
-      async () => (await window.wonnyyDesktop.ai.frontOfficeList())[0],
+      async () => (await window.orbistryDesktop.ai.frontOfficeList())[0],
     );
     assert.equal(
       conversation.messages.filter((m) => m.role === "user").length,
@@ -188,7 +188,7 @@ async function main() {
     // Exercise the authenticated loopback adapter with a mocked gateway, explicitly
     // not claiming this fixture server is a real LiteLLM performance result.
     await page.evaluate(async () => {
-      const ai = window.wonnyyDesktop.ai;
+      const ai = window.orbistryDesktop.ai;
       await ai.saveCredential({
         providerId: "litellm",
         apiKey: "synthetic-local-gateway-key",
@@ -210,7 +210,7 @@ async function main() {
     assert.equal(captured.at(-1).transport, "litellm-fixture");
     assert.equal(captured.at(-1).body.model, "openrouter/vendor/alpha");
     const exported = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.frontOfficeExport("json"),
+      window.orbistryDesktop.ai.frontOfficeExport("json"),
     );
     assert.doesNotMatch(
       exported,
@@ -239,7 +239,7 @@ async function main() {
     // Deterministic admission regression: an actual manual model check owns the
     // normal ChatService lock while the experiment UI starts a new conversation.
     await page.evaluate(async () => {
-      await window.wonnyyDesktop.ai.saveCredential({
+      await window.orbistryDesktop.ai.saveCredential({
         providerId: "nvidia",
         apiKey: "nvapi-synthetic-smoke-key",
       });
@@ -298,7 +298,7 @@ async function main() {
     });
     const applyConfig = async (edit) => {
       const c = await page.evaluate(
-        async () => (await window.wonnyyDesktop.ai.frontOfficeState()).config,
+        async () => (await window.orbistryDesktop.ai.frontOfficeState()).config,
       );
       edit(c);
       await page
@@ -334,7 +334,7 @@ async function main() {
         globalThis.fixtureTerminal = null;
         globalThis.fixtureUnsubscribe?.();
         globalThis.fixtureUnsubscribe =
-          window.wonnyyDesktop.ai.onFrontOfficeEvent((e) => {
+          window.orbistryDesktop.ai.onFrontOfficeEvent((e) => {
             if (["finish", "error", "cancelled"].includes(e.type))
               globalThis.fixtureTerminal = e;
           });

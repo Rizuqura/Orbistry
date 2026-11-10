@@ -12,7 +12,7 @@ import { EngineInspector } from "./engine-inspector";
 import { AgentAvatar } from "./agent-avatar";
 import "./agent-construction.css";
 import "./agent-workbench.css";
-import { wallpaperStyle } from "../chat/chat-presentation";
+import { chatReadingSize, wallpaperStyle } from "../chat/chat-presentation";
 const kinds: AgentNodeKind[] = [
   "Context",
   "Personality",
@@ -320,7 +320,7 @@ export function AgentConstruction({
     <section className="agent-studio" aria-label="Agent Construction Studio">
       <header className="studio-heading">
         <div>
-          <small>QTERMINAL / AGENT STUDIO</small>
+          <small>ORBISTRY / AGENT STUDIO</small>
           <h2>Agent Construction</h2>
         </div>
         <span className="studio-badge">RETRO MODE</span>
@@ -480,7 +480,7 @@ export function AgentConstruction({
               >
                 {[14, 15, 16, 18].map((size) => (
                   <option key={size} value={size}>
-                    {size} px
+                    {chatReadingSize(size)} px
                   </option>
                 ))}
               </select>
@@ -539,7 +539,7 @@ export function AgentConstruction({
                 }
                 onDragStart={(e) =>
                   e.dataTransfer.setData(
-                    "application/qterminal-agent-node",
+                    "application/orbistry-agent-node",
                     kind,
                   )
                 }
@@ -594,7 +594,7 @@ export function AgentConstruction({
                   onDrop={(e) => {
                     e.preventDefault();
                     const kind = e.dataTransfer.getData(
-                      "application/qterminal-agent-node",
+                      "application/orbistry-agent-node",
                     ) as AgentNodeKind;
                     if (kinds.includes(kind))
                       add(

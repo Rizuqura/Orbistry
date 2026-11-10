@@ -1,0 +1,12 @@
+/* Mountain palette: ink, slate, mist, and frost. Orange remains a signal. */
+:root {
+  --orb-ink: #15232e;
+  --orb-panel: #1b2d3a;
+  --orb-raised: #243948;
+  --orb-hover: #304858;
+  --orb-slate: #46535f;
+  --orb-blue: #70879f;
+  --orb-muted: #a6b7c5;
+  --orb-mist: #cbd7d9;
+  --orb-frost: #f4fcfc;
+}

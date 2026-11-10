@@ -26,7 +26,7 @@ export function EngineInspector({
   useEffect(() => {
     let alive = true;
     const sequence = ++epoch.current;
-    const api = window.wonnyyDesktop?.ai;
+    const api = window.orbistryDesktop?.ai;
     if (!api?.engineState) {
       setError("Restart the desktop app to load Engine support.");
       setLoading(false);
@@ -69,7 +69,7 @@ export function EngineInspector({
   const retrieve = (selectedMonth?: string) =>
     perform(async () => {
       setResult(null);
-      const api = window.wonnyyDesktop?.ai;
+      const api = window.orbistryDesktop?.ai;
       if (!api?.executeEngine)
         throw new Error("Engine backend unavailable. Restart Orbistry.");
       setResult(
@@ -115,7 +115,7 @@ export function EngineInspector({
         disabled={unavailable}
         onClick={() =>
           void perform(async () => {
-            const value = await window.wonnyyDesktop?.ai.chooseEngineFolder?.();
+            const value = await window.orbistryDesktop?.ai.chooseEngineFolder?.();
             if (value) setState(value);
           })
         }
@@ -126,7 +126,7 @@ export function EngineInspector({
         disabled={unavailable || !state?.bundlePath}
         onClick={() =>
           void perform(async () => {
-            const value = await window.wonnyyDesktop?.ai.probeEngine?.();
+            const value = await window.orbistryDesktop?.ai.probeEngine?.();
             if (value) setState(value);
           })
         }
@@ -189,7 +189,7 @@ export function EngineInspector({
         Get October 2026 report
       </button>
       {running && (
-        <button onClick={() => void window.wonnyyDesktop?.ai.cancelEngine?.()}>
+        <button onClick={() => void window.orbistryDesktop?.ai.cancelEngine?.()}>
           Cancel engine request
         </button>
       )}
@@ -204,7 +204,7 @@ export function EngineInspector({
                 disabled={running}
                 onClick={() =>
                   void perform(async () => {
-                    await window.wonnyyDesktop?.ai.openEngineReport?.({
+                    await window.orbistryDesktop?.ai.openEngineReport?.({
                       agentId,
                       instanceId,
                       runId: result.attachment!.runId,

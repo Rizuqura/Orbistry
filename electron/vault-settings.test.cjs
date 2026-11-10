@@ -14,7 +14,7 @@ test("Orbistry preserves the existing default QTerminal vault", async (t) => {
 });
 test("fresh vault is empty and user-owned; explicit folder selection persists without importing developer data", async (t) => {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-vault-settings-"),
+    path.join(os.tmpdir(), "orbistry-vault-settings-"),
   );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const profile = path.join(root, "profile"),

@@ -207,7 +207,7 @@ class AgentStore {
       ...row,
       policyVersion: POLICY_VERSION,
       protectedInstructions: SYSTEM_PROMPT.replaceAll(
-        "Wonnyy Agent",
+        "Orbistry Agent",
         row.displayName,
       ),
       skills: compiled?.skills ?? require("./skills.cjs").skillsFor(id),

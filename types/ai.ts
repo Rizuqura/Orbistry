@@ -139,7 +139,7 @@ export type ModelRunRecord = {
 };
 export type ModelConnectivityTest = ModelResponse & {
   passed: boolean;
-  expected: "WONNYY ONLINE";
+  expected: "ORBISTRY ONLINE";
 };
 export interface ModelProvider {
   complete(request: ModelRequest): Promise<ModelResponse>;
@@ -476,7 +476,7 @@ export type ChatEvent = {
   error?: ModelRuntimeErrorValue;
   diagnostics?: Record<string, unknown> & { frontOffice?: BaselineTrace };
 };
-export interface OpenRouterUsageSnapshot {
+export interface ProviderUsageSnapshot {
   status:
     | "unconfigured"
     | "loading"
@@ -487,7 +487,7 @@ export interface OpenRouterUsageSnapshot {
     | "rate_limited"
     | "unsupported"
     | "error";
-  provider: "openrouter";
+  provider: ModelSettings["providerId"];
   safeKeyAlias: string | null;
   limitUsd: number | null;
   remainingUsd: number | null;
@@ -502,6 +502,10 @@ export interface OpenRouterUsageSnapshot {
   fetchedAt: string | null;
   errorMessage?: string;
 }
+export type OpenRouterUsageSnapshot = ProviderUsageSnapshot & {
+  provider: "openrouter";
+};
+
 export interface AiBridge {
   connectCredential(input: { apiKey: string }): Promise<ProviderConnection>;
   providedModels(): Promise<ProvidedModelPreview[]>;
@@ -577,6 +581,10 @@ export interface AiBridge {
     conversationId: string;
     query: { entity: string; topic: string; period: string; maxTokens: number };
   }): Promise<unknown>;
+  providerUsage(input?: {
+    refresh?: boolean;
+    agentId?: string;
+  }): Promise<ProviderUsageSnapshot>;
   openRouterUsage(input?: {
     refresh?: boolean;
   }): Promise<OpenRouterUsageSnapshot>;

@@ -3,11 +3,11 @@
 :root {
   color-scheme: dark;
   --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --ui-bg: #0d1117;
-  --ui-panel: #10161f;
-  --ui-line: #26313d;
-  --ui-text: #dbe3ed;
-  --ui-muted: #94a3b5;
+  --ui-bg: var(--orb-ink);
+  --ui-panel: var(--orb-panel);
+  --ui-line: var(--orb-hover);
+  --ui-text: var(--orb-frost);
+  --ui-muted: var(--orb-muted);
 }
 .document-pane-image {
   grid-template-rows: 42px auto minmax(0, 1fr);
@@ -18,7 +18,7 @@
 }
 .image-ocr-text {
   margin-top: 16px;
-  color: #adbdce;
+  color: var(--orb-mist);
   font: 12px/1.6 var(--font-terminal);
 }
 .image-ocr-text summary {
@@ -26,7 +26,7 @@
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3b4b59 #0e151e;
+  scrollbar-color: var(--orb-slate) var(--orb-panel);
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -34,15 +34,15 @@
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background: #0e151e;
+  background: var(--orb-panel);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3b4b59;
-  border: 2px solid #0e151e;
+  background: var(--orb-slate);
+  border: 2px solid var(--orb-panel);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #586d7f;
+  background: var(--orb-blue);
 }
 ::-webkit-scrollbar-button {
   display: none;
@@ -56,27 +56,27 @@ body {
 .app-shell {
   min-height: 0;
   height: 100dvh;
-  grid-template-rows: 25px minmax(0, 1fr) 26px;
+  grid-template-rows: 48px minmax(0, 1fr) 26px;
   background: var(--ui-bg);
   font-size: 13px;
 }
 /* Keep the original compact terminal navbar from globals.css. */
 .workspace-edition {
-  color: #65706e;
+  color: var(--orb-muted);
   font:
     8px ui-monospace,
     monospace;
 }
 .app-shell .status-bar {
-  background: #0d1117;
-  color: #8798a7;
+  background: var(--orb-ink);
+  color: var(--orb-muted);
   border-color: var(--ui-line);
   font-size: 9px;
   gap: 12px;
   overflow: hidden;
 }
 .app-shell .vault-runtime-notices {
-  top: 27px;
+  top: 50px;
   background: var(--ui-panel);
   border-radius: 6px;
 }
@@ -84,7 +84,7 @@ body {
 .app-shell input:focus-visible,
 .app-shell select:focus-visible,
 .app-shell textarea:focus-visible {
-  outline: 2px solid #86bcb7;
+  outline: 2px solid var(--orb-mist);
   outline-offset: -2px;
 }
 
@@ -99,14 +99,14 @@ body {
   min-height: 48px;
   font: 600 13px var(--ui-font);
   letter-spacing: 0;
-  color: #c5cdd6;
+  color: var(--orb-mist);
 }
 .app-shell .vault-window-toggle {
   top: 10px;
   right: 10px;
   border-radius: 4px;
-  background: #151e29;
-  color: #a6b6c6;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
 }
 .app-shell .knowledge-sidebar > :not(.tree) {
   flex-shrink: 0;
@@ -121,23 +121,23 @@ body {
   border-radius: 4px;
 }
 .app-shell .knowledge-sidebar .refresh-button:hover {
-  background: #1c2935;
+  background: var(--orb-raised);
 }
 .app-shell .sidebar-minimized .vault-window-toggle {
   right: 6px;
 }
 .app-shell .knowledge-sidebar .search-box {
-  border: 1px solid #2c3846;
-  background: #0d131c;
+  border: 1px solid var(--orb-hover);
+  background: var(--orb-panel);
   padding: 6px 9px;
   margin: 0 12px 12px;
   min-height: 34px;
   margin-bottom: 18px;
   border-radius: 6px;
-  color: #85919f;
+  color: var(--orb-muted);
 }
 .app-shell .knowledge-sidebar .search-box input {
-  color: #dce4ee;
+  color: var(--orb-frost);
   font: 12px var(--ui-font);
 }
 .app-shell .knowledge-sidebar .vault-title {
@@ -147,53 +147,53 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #b6c0cb;
+  color: var(--orb-mist);
   font: 500 12px/1.5 var(--ui-font);
 }
 .app-shell .vault-change {
   margin: 4px 12px 12px;
-  border: 1px solid #2c3846;
+  border: 1px solid var(--orb-hover);
   border-radius: 5px;
   padding: 6px 9px;
   background: transparent;
-  color: #a7b9c9;
+  color: var(--orb-mist);
   font: 11px var(--ui-font);
 }
 .app-shell .file-row,
 .app-shell .tree-folder {
   min-height: 31px;
   font: 12px var(--ui-font);
-  color: #a8b8c8;
+  color: var(--orb-mist);
 }
 .app-shell .file-row:hover,
 .app-shell .tree-folder:hover {
-  background: #17212d;
+  background: var(--orb-raised);
 }
 .app-shell .file-row.active {
-  background: #1b2d35;
-  border-left-color: #85bdb5;
-  color: #dfedea;
+  background: var(--orb-raised);
+  border-left-color: var(--orb-mist);
+  color: var(--orb-frost);
 }
 .app-shell .sidebar-footer {
   padding: 8px 12px;
-  color: #7b8e9e;
+  color: var(--orb-muted);
 }
 
 /* Quiet vault navigation, scoped to the left sidebar. */
 .app-shell .knowledge-sidebar .search-box input::placeholder {
-  color: #85919f;
+  color: var(--orb-muted);
 }
 .app-shell .knowledge-sidebar .vault-change {
   align-self: flex-start;
   margin: 0 12px 14px;
   padding: 4px 0;
   min-height: 28px;
-  color: #8c99a8;
+  color: var(--orb-muted);
   letter-spacing: 0;
   background: transparent;
 }
 .app-shell .knowledge-sidebar .vault-change:hover {
-  color: #d3dce5;
+  color: var(--orb-mist);
 }
 .app-shell .knowledge-sidebar .tree {
   padding: 0 6px 12px;
@@ -202,18 +202,18 @@ body {
   min-height: 34px;
   align-items: center;
   border-radius: 5px;
-  color: #aab5c2;
+  color: var(--orb-mist);
   gap: 7px;
 }
 .app-shell .knowledge-sidebar :is(.file-row, .tree-folder):hover {
-  background: #19222d;
+  background: var(--orb-raised);
 }
 .app-shell .knowledge-sidebar :is(.file-row, .tree-folder).active {
-  background: #24313d;
-  color: #e1e7ed;
+  background: var(--orb-hover);
+  color: var(--orb-frost);
 }
 .app-shell .knowledge-sidebar :is(.folder, .file-icon, .tree-twist) {
-  color: #8492a1;
+  color: var(--orb-muted);
   flex-shrink: 0;
 }
 .app-shell .knowledge-sidebar .tree-folder-name {
@@ -226,17 +226,17 @@ body {
   flex: 1;
 }
 .app-shell .knowledge-sidebar .ticker {
-  color: #8c99a8;
+  color: var(--orb-muted);
   font: 9px var(--ui-font);
   letter-spacing: 0.02em;
 }
 .app-shell .knowledge-sidebar .sidebar-footer {
   padding: 12px;
-  color: #8c99a8;
+  color: var(--orb-muted);
   font: 10px var(--ui-font);
 }
 .app-shell .knowledge-sidebar .sidebar-footer span {
-  color: #8c99a8;
+  color: var(--orb-muted);
 }
 .app-shell .knowledge-sidebar button:hover:not(:disabled) {
   box-shadow: none !important;
@@ -252,56 +252,56 @@ body {
 }
 .app-shell .tab-strip {
   border-color: var(--ui-line);
-  background: #10161e;
+  background: var(--orb-panel);
 }
 .app-shell .tab-strip button {
   padding: 0 18px;
-  color: #a8b9cb;
+  color: var(--orb-mist);
   font: 12px var(--ui-font);
   border-color: var(--ui-line);
 }
 .app-shell .tab-strip .active-tab {
-  background: #151e28;
+  background: var(--orb-panel);
   border-top: 0;
-  border-bottom: 2px solid #80b5ae;
-  color: #e0e8f2;
+  border-bottom: 2px solid var(--orb-muted);
+  color: var(--orb-frost);
 }
 .app-shell .tab-strip .tab-close {
   margin-left: auto;
   font-size: 18px;
-  color: #8a9dab;
+  color: var(--orb-muted);
 }
 .app-shell .document-inner {
   width: min(780px, calc(100% - 64px));
   padding: 28px 0 70px;
 }
 .app-shell .breadcrumb {
-  color: #889aad;
+  color: var(--orb-muted);
   font: 11px var(--ui-font);
 }
 .app-shell .document-header {
   padding: 26px 0 20px;
 }
 .app-shell .document-header h1 {
-  color: #e3eaf2;
+  color: var(--orb-frost);
   font: 600 25px/1.35 var(--ui-font);
   overflow-wrap: anywhere;
 }
 .app-shell .document-header h1 span {
-  color: #8b9dae;
+  color: var(--orb-muted);
   font-size: 14px;
   font-weight: 400;
 }
 .app-shell .document-header p {
   margin-top: 10px;
-  color: #899aab;
+  color: var(--orb-muted);
   font: 11px/1.6 var(--ui-font);
   overflow-wrap: anywhere;
 }
 .app-shell .markdown-raw {
   border: 0;
   background: transparent;
-  color: #c0ccda;
+  color: var(--orb-mist);
   padding: 0;
   font: 14px/1.85 var(--ui-font);
 }
@@ -309,7 +309,7 @@ body {
   margin-top: 12px;
 }
 .app-shell .metrics {
-  color: #bcc8d6;
+  color: var(--orb-mist);
   font: 12px/1.6 var(--ui-font);
 }
 .app-shell .metrics th,
@@ -318,8 +318,8 @@ body {
   border-color: var(--ui-line);
 }
 .app-shell .metrics thead {
-  background: #151e29;
-  color: #a7bac9;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
   font-size: 11px;
 }
 .document-context-toolbar {
@@ -329,8 +329,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 18px;
-  border-bottom: 1px solid #293238;
-  color: #9fa89d;
+  border-bottom: 1px solid var(--orb-hover);
+  color: var(--orb-muted);
   background: #111713;
   font: 11px/1.5 var(--font-terminal);
 }
@@ -355,7 +355,7 @@ body {
 .markdown-editor-label {
   display: block;
   margin-bottom: 8px;
-  color: #b9bdb4;
+  color: var(--orb-mist);
   font: 11px var(--font-terminal);
 }
 .markdown-editor {
@@ -367,8 +367,8 @@ body {
   padding: 16px;
   border: 1px solid #635334;
   border-radius: 4px;
-  background: #0d1112;
-  color: #d3d6cf;
+  background: var(--orb-ink);
+  color: var(--orb-mist);
   font: 13px/1.65 var(--font-terminal);
   tab-size: 2;
 }
@@ -385,7 +385,7 @@ body {
   padding: 10px 14px;
   gap: 10px;
   font: 12px var(--ui-font);
-  background: #10161f;
+  background: var(--orb-panel);
 }
 .app-shell .pdf-toolbar button {
   min-width: 30px;
@@ -395,15 +395,15 @@ body {
 
 /* Shared chat: the same comfortable surface docked, floating or in Agent. */
 .app-shell .chat-panel {
-  background: #0d1117;
+  background: var(--orb-ink);
   border-color: var(--ui-line);
   color: var(--ui-text);
   font: 13px/1.5 var(--ui-font);
 }
 .app-shell .chat-panel-floating {
   z-index: 25;
-  background: #0d1117;
-  border: 1px solid #344251;
+  background: var(--orb-ink);
+  border: 1px solid var(--orb-hover);
   border-radius: 10px;
   box-shadow: none;
 }
@@ -446,20 +446,20 @@ body {
   padding: 12px 14px;
   min-height: 60px;
   border-color: var(--ui-line);
-  color: #92a6b8;
+  color: var(--orb-muted);
   font: 11px/1.5 var(--ui-font);
 }
 .app-shell .chat-header .agent-avatar {
   border-radius: 50%;
 }
 .app-shell .agent-drag-title {
-  color: #e1e9f3;
+  color: var(--orb-frost);
   font: 600 14px/1.4 var(--ui-font);
   min-width: 90px;
   flex: 1;
 }
 .app-shell .agent-chat-subtitle {
-  color: #8b9fae;
+  color: var(--orb-muted);
   font: 10px/1.6 var(--ui-font);
   max-width: 100%;
   overflow: hidden;
@@ -470,9 +470,9 @@ body {
 .app-shell .agent-session-controls button,
 .app-shell .chat-context button,
 .app-shell .agent-welcome button {
-  border: 1px solid #2d3c49;
-  background: #141e29;
-  color: #b9cbdc;
+  border: 1px solid var(--orb-hover);
+  background: var(--orb-panel);
+  color: var(--orb-mist);
   border-radius: 6px;
   padding: 6px 9px;
   font: 11px/1.4 var(--ui-font);
@@ -480,35 +480,35 @@ body {
 }
 .app-shell .chat-header button:hover,
 .app-shell .agent-session-controls button:hover {
-  background: #1d2b38;
-  color: #e5edf5;
+  background: var(--orb-raised);
+  color: var(--orb-frost);
 }
 .app-shell .chat-header button {
   border-color: transparent;
   box-shadow: none;
 }
 .app-shell .chat-header button:hover:not(:disabled) {
-  background: #1a2530;
+  background: var(--orb-raised);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 .app-shell .chat-runtime-status {
-  color: #94b5af;
+  color: var(--orb-muted);
   font: 10px var(--ui-font);
 }
 .app-shell .chat-context {
   padding: 8px 14px;
-  color: #8da5b8;
+  color: var(--orb-muted);
   font: 11px/1.6 var(--ui-font);
   border-color: var(--ui-line);
 }
 .app-shell .chat-context p {
-  color: #a6b5c4;
+  color: var(--orb-mist);
 }
 .app-shell .agent-provider-indicator {
   padding: 6px 14px;
   border-color: var(--ui-line);
-  color: #8099a8;
-  background: #10161f;
+  color: var(--orb-muted);
+  background: var(--orb-panel);
   font: 10px/1.5 var(--ui-font);
 }
 .app-shell .agent-session-controls {
@@ -522,7 +522,7 @@ body {
   margin-bottom: 8px;
 }
 .app-shell .agent-session-heading strong {
-  color: #cbd9e8;
+  color: var(--orb-mist);
   font-size: 13px;
 }
 .chat-primary-actions {
@@ -532,13 +532,13 @@ body {
   margin: 8px 0;
 }
 .app-shell .chat-primary-actions > button:first-child {
-  background: #243f40;
-  border-color: #3c5d5b;
-  color: #d5ede7;
+  background: var(--orb-hover);
+  border-color: var(--orb-slate);
+  color: var(--orb-frost);
 }
 .app-shell .chat-context-tools {
   margin-top: 9px;
-  color: #8ba3b2;
+  color: var(--orb-muted);
   font: 11px/1.6 var(--ui-font);
 }
 .chat-context-tools summary {
@@ -548,7 +548,7 @@ body {
   margin-bottom: 10px;
 }
 .app-shell .chat-context-tools .agent-context-label {
-  color: #8ba3b2;
+  color: var(--orb-muted);
   font-size: 11px;
 }
 .app-shell .agent-box-selector {
@@ -558,10 +558,10 @@ body {
   width: 100%;
   min-height: 34px;
   margin-top: 4px;
-  background: #111b26;
-  border-color: #344455;
+  background: var(--orb-panel);
+  border-color: var(--orb-slate);
   font: 12px var(--ui-font);
-  color: #c9d8e6;
+  color: var(--orb-mist);
 }
 .app-shell .agent-history-drawer {
   padding: 10px 0 0;
@@ -569,14 +569,14 @@ body {
 }
 .app-shell .agent-history-row {
   padding: 7px 0;
-  border-bottom: 1px solid #202d38;
+  border-bottom: 1px solid var(--orb-hover);
 }
 .app-shell .agent-welcome {
   min-height: 0;
   overflow-y: auto;
   padding: 24px 20px;
   margin: auto 0;
-  color: #a1b3c4;
+  color: var(--orb-mist);
   font: 13px/1.6 var(--ui-font);
 }
 .app-shell .chat-panel:has(.agent-welcome) .chat-thread {
@@ -588,7 +588,7 @@ body {
 .app-shell .agent-welcome strong {
   display: block;
   margin-bottom: 8px;
-  color: #e1e9f2;
+  color: var(--orb-frost);
   font-size: 19px;
   font-weight: 600;
 }
@@ -599,23 +599,23 @@ body {
 .app-shell .chat-thread {
   padding: 20px 18px;
   gap: 20px;
-  scrollbar-color: #344454 transparent;
+  scrollbar-color: var(--orb-slate) transparent;
 }
 .app-shell .chat-message {
   padding: 0;
   background: transparent;
   border: 0;
   font: 14px/1.75 var(--ui-font);
-  color: #d2ddea;
+  color: var(--orb-mist);
 }
 .app-shell .chat-message-user {
   width: fit-content;
   max-width: 88%;
   padding: 10px 14px;
-  background: #1a2934;
-  border: 1px solid #2a3c49;
+  background: var(--orb-raised);
+  border: 1px solid var(--orb-hover);
   border-radius: 9px;
-  color: #e1eaf3;
+  color: var(--orb-frost);
 }
 .app-shell .chat-message-assistant {
   width: 100%;
@@ -628,14 +628,14 @@ body {
   margin-bottom: 7px;
 }
 .app-shell .chat-message-role {
-  color: #91a6b8;
+  color: var(--orb-muted);
   font: 10px/1.5 var(--ui-font);
   letter-spacing: 0;
 }
 .app-shell .chat-message time {
   float: none;
   margin: 0;
-  color: #72899c;
+  color: var(--orb-muted);
   font: 10px var(--ui-font);
 }
 .app-shell .chat-message-role .agent-avatar {
@@ -646,53 +646,53 @@ body {
 .app-shell .chat-sources {
   padding-top: 10px;
   margin-top: 12px;
-  border-color: #23323f;
+  border-color: var(--orb-hover);
 }
 .app-shell .chat-sources > span,
 .app-shell .chat-run-id,
 .app-shell .chat-context-provenance {
-  color: #8299aa;
+  color: var(--orb-muted);
   font: 10px/1.6 var(--ui-font);
 }
 .app-shell .chat-sources button {
   padding: 4px 8px;
   border-radius: 5px;
-  background: #152830;
-  color: #acd2ce;
-  border-color: #2c4751;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
+  border-color: var(--orb-slate);
   font: 11px var(--ui-font);
 }
 .app-shell .chat-composer {
   flex: 0 0 auto;
   padding: 14px;
   gap: 8px;
-  background: #0d1117;
-  border-color: #253342;
+  background: var(--orb-ink);
+  border-color: var(--orb-hover);
 }
 .app-shell .chat-composer textarea {
   min-height: 76px;
   max-height: 160px;
-  border: 1px solid #344756;
+  border: 1px solid var(--orb-slate);
   border-radius: 9px;
-  background: #111b26;
+  background: var(--orb-panel);
   padding: 12px;
   font: 13px/1.6 var(--ui-font);
-  color: #dbe6f1;
+  color: var(--orb-frost);
   box-shadow: none;
 }
 .app-shell .chat-composer textarea::placeholder {
-  color: #8298aa;
+  color: var(--orb-muted);
 }
 .app-shell .chat-composer button {
   width: 36px;
   border-radius: 8px;
-  border-color: #416562;
-  background: #365955;
-  color: #e0f2ed;
+  border-color: var(--orb-blue);
+  background: var(--orb-slate);
+  color: var(--orb-frost);
 }
 .app-shell .chat-composer button:hover:not(:disabled) {
-  background: #48716a;
-  color: #effaf7;
+  background: var(--orb-slate);
+  color: var(--orb-frost);
 }
 .app-shell .chat-composer .chat-stop {
   background: #482d32;
@@ -718,8 +718,8 @@ body {
 .app-shell .context-box-dialog {
   border: 0;
   border-radius: 12px;
-  background: #14191f;
-  color: #c5cdd6;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
   font: 13px/1.6 var(--ui-font);
   overflow-wrap: anywhere;
   width: min(680px, calc(100vw - 42px));
@@ -727,7 +727,7 @@ body {
 }
 .app-shell .context-box-dialog h2 {
   margin: 0 0 6px;
-  color: #e1e7ed;
+  color: var(--orb-frost);
   font: 600 18px/1.4 var(--ui-font);
 }
 .app-shell .context-box-dialog p {
@@ -735,14 +735,14 @@ body {
 }
 .app-shell .context-box-dialog .context-box-meta {
   margin-top: 0;
-  color: #96a1ae;
+  color: var(--orb-muted);
   font-size: 12px;
 }
 .app-shell .context-box-dialog .context-token-estimate {
   padding: 10px 12px;
   border-radius: 6px;
-  background: #1d252d;
-  color: #b8c8cf;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
   font: 12px/1.5 var(--ui-font);
 }
 .app-shell .context-box-dialog button {
@@ -750,13 +750,13 @@ body {
   padding: 7px 11px;
   border: 0;
   border-radius: 6px;
-  background: #232b34;
-  color: #c5cdd6;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
   font: 12px/1.5 var(--ui-font);
   cursor: pointer;
 }
 .app-shell .context-box-dialog button:hover:not(:disabled) {
-  background: #303b46;
+  background: var(--orb-hover);
   box-shadow: none !important;
 }
 .app-shell .context-box-dialog button:disabled {
@@ -775,7 +775,7 @@ body {
 .app-shell .context-box-dialog .context-box-agent-picker {
   flex: 1 0 100%;
   margin: 8px 0 0;
-  color: #96a1ae;
+  color: var(--orb-muted);
   font-size: 12px;
 }
 .app-shell .context-box-dialog .context-box-agent-picker select {
@@ -784,7 +784,7 @@ body {
   padding: 7px 10px;
   border: 0;
   border-radius: 6px;
-  color: #d4dde5;
+  color: var(--orb-mist);
   font: 13px var(--ui-font);
 }
 .app-shell .context-box-dialog .context-box-attach {
@@ -797,13 +797,13 @@ body {
 }
 .app-shell .context-box-dialog .box-source-list {
   max-height: 32dvh;
-  scrollbar-color: #46515d transparent;
+  scrollbar-color: var(--orb-slate) transparent;
   margin: var(--context-space-md) 0;
 }
 .app-shell .context-box-dialog .box-source-list > li {
   border: 0;
   border-radius: 8px;
-  background: #1a2129;
+  background: var(--orb-raised);
   padding: var(--context-space-sm);
   margin-bottom: var(--context-space-xs);
 }
@@ -814,15 +814,15 @@ body {
   background: transparent;
   text-align: left;
   overflow-wrap: anywhere;
-  color: #d4dde5;
+  color: var(--orb-mist);
 }
 .app-shell .context-box-dialog .box-source-list small {
   margin: 6px 0 12px;
-  color: #96a1ae;
+  color: var(--orb-muted);
   font: 11px/1.5 var(--ui-font);
 }
 .app-shell .context-box-dialog .context-box-note {
-  color: #96a1ae;
+  color: var(--orb-muted);
   font-size: 12px;
 }
 .app-shell .context-box-dialog .context-box-footer {
@@ -847,10 +847,10 @@ body {
 .app-shell .context-library-dialog > button {
   margin-top: 12px;
   padding: 7px 10px;
-  border: 1px solid #344756;
+  border: 1px solid var(--orb-slate);
   border-radius: 5px;
-  background: #17232e;
-  color: #b9d3d9;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
   cursor: pointer;
 }
 .app-shell .agent-create-dialog {
@@ -860,9 +860,9 @@ body {
   max-height: min(720px, calc(100dvh - 48px));
 }
 .app-shell .agent-create-dialog:not(.context-box-dialog) {
-  background: #101923;
-  border-color: #344657;
-  color: #d4e0ed;
+  background: var(--orb-panel);
+  border-color: var(--orb-slate);
+  color: var(--orb-frost);
   font: 13px/1.6 var(--ui-font);
 }
 .app-shell .agent-create-dialog input[type="radio"],
@@ -871,12 +871,12 @@ body {
   height: 16px;
   padding: 0;
   flex: 0 0 16px;
-  accent-color: #80b9af;
+  accent-color: var(--orb-muted);
 }
 .app-shell .agent-create-dialog .agent-box-list label {
   gap: 12px;
   padding: 12px 4px;
-  border-bottom: 1px solid #273643;
+  border-bottom: 1px solid var(--orb-hover);
 }
 .app-shell .agent-create-dialog .agent-box-list label span {
   min-width: 0;
@@ -890,19 +890,19 @@ body {
 }
 .app-shell .context-boxes {
   padding: 12px;
-  background: #0e1415;
+  background: var(--orb-panel);
 }
 .app-shell .context-boxes .pane-heading {
-  color: #96b7b3;
+  color: var(--orb-mist);
   font-size: 11px;
   letter-spacing: 0.04em;
 }
 .app-shell .context-boxes button {
   margin-bottom: 5px;
   border-radius: 2px;
-  background: #111b1d;
-  border-color: #33494b;
-  color: #b7d0cd;
+  background: var(--orb-panel);
+  border-color: var(--orb-slate);
+  color: var(--orb-mist);
   font: 11px/1.5 var(--font-terminal);
 }
 .app-shell .context-box-sidebar-list button {
@@ -917,7 +917,7 @@ body {
   font-size: 10px;
 }
 .app-shell .planet-detail-panel {
-  background: #0e1418;
+  background: var(--orb-panel);
 }
 .app-shell .planet-detail-scroll {
   padding: 14px;
@@ -943,9 +943,9 @@ body {
 }
 .app-shell .planet-view-header {
   min-height: 44px;
-  color: #8298ac;
-  background: #10161f;
-  border-color: #26313d;
+  color: var(--orb-muted);
+  background: var(--orb-panel);
+  border-color: var(--orb-hover);
   font: 11px var(--ui-font);
   letter-spacing: 0;
 }
@@ -955,10 +955,10 @@ body {
   font: 11px var(--ui-font);
 }
 .app-shell .pctrl {
-  color: #9cadba;
+  color: var(--orb-muted);
 }
 .app-shell .pctrl .controls-help {
-  background: #10161f;
+  background: var(--orb-panel);
 }
 .app-shell .pworld.smooth,
 .app-shell .pnode,
@@ -998,7 +998,7 @@ body {
   .app-shell .planet-detail-panel {
     grid-column: 1 / -1;
     max-height: 220px;
-    border-top: 1px solid #26313d;
+    border-top: 1px solid var(--orb-hover);
   }
   .app-shell .planet-grid {
     grid-template-rows: minmax(330px, 1fr) minmax(160px, 220px);
@@ -1012,11 +1012,12 @@ body {
 /* Preserve the supplied emblem without the previous letter badge fill. */
 .top-bar .brand-mark,
 .top-bar:hover .brand-mark {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
+  width: 96px;
+  height: 32px;
+  flex: 0 0 96px;
   background: transparent;
   object-fit: contain;
+  filter: brightness(0) invert(1) !important;
 }
 /* Context windows use a rounded golden-ratio scale: 8, 13, 21, 34, 55. */
 .app-shell :is(.context-library-dialog, .context-box-dialog) {
@@ -1032,8 +1033,8 @@ body {
   padding: var(--context-space-lg);
   border: 0;
   border-radius: 13px;
-  background: #14191f;
-  color: #c5cdd6;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
   font: 13px/1.618 var(--ui-font);
 }
 .app-shell .context-library-dialog .context-boxes {
@@ -1048,7 +1049,7 @@ body {
   gap: var(--context-space-md);
   padding: 0;
   margin-bottom: var(--context-space-md);
-  color: #e1e7ed;
+  color: var(--orb-frost);
   font: 600 21px/1.4 var(--ui-font);
   letter-spacing: 0;
 }
@@ -1058,12 +1059,12 @@ body {
   padding: var(--context-space-xs) var(--context-space-sm);
   border: 0;
   border-radius: 8px;
-  background: #232b34;
-  color: #c5cdd6;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
   font: 13px/1.618 var(--ui-font);
 }
 .app-shell .context-library-dialog button:hover:not(:disabled) {
-  background: #303b46;
+  background: var(--orb-hover);
   box-shadow: none !important;
 }
 .app-shell .context-library-dialog .pane-heading button {
@@ -1080,7 +1081,7 @@ body {
 }
 .app-shell .context-library-dialog .box-selection-actions small {
   grid-column: 1 / -1;
-  color: #96a1ae;
+  color: var(--orb-muted);
   font: 12px/1.618 var(--ui-font);
 }
 .app-shell .context-library-dialog input:not([type="checkbox"]) {
@@ -1088,11 +1089,11 @@ body {
   padding: var(--context-space-sm);
   border: 0;
   border-radius: 8px;
-  color: #d4dde5;
+  color: var(--orb-mist);
   font: 13px/1.618 var(--ui-font);
 }
 .app-shell .context-library-dialog input::placeholder {
-  color: #96a1ae;
+  color: var(--orb-muted);
 }
 .app-shell .context-library-dialog .context-box-sidebar-list {
   gap: var(--context-space-sm);
@@ -1104,17 +1105,17 @@ body {
   min-height: var(--context-space-xl);
   padding: var(--context-space-sm) var(--context-space-md);
   align-items: center;
-  background: #1d252d;
+  background: var(--orb-raised);
   gap: var(--context-space-md);
 }
 .app-shell .context-library-dialog .context-box-sidebar-list button:hover {
-  background: #303b46;
+  background: var(--orb-hover);
 }
 .app-shell .context-library-dialog .context-box-sidebar-list strong {
   font-weight: 500;
 }
 .app-shell .context-library-dialog .context-box-sidebar-list small {
-  color: #96a1ae;
+  color: var(--orb-muted);
   font-size: 12px;
 }
 .app-shell .context-library-dialog > button {
@@ -1134,3 +1135,181 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Clear editable controls, read-only review information, and the save action. */
+.app-shell .context-box-dialog .context-box-add-form {
+  display: grid;
+  gap: 20px;
+}
+.app-shell .context-box-dialog .box-form-section {
+  min-width: 0;
+  margin: 0;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 10px;
+}
+.app-shell .context-box-dialog .box-form-section legend {
+  padding: 0 8px;
+  color: var(--orb-frost);
+  font-size: 14px;
+  font-weight: 650;
+}
+.app-shell .context-box-dialog .box-form-hint {
+  margin: 0 0 16px;
+  color: var(--orb-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.app-shell .context-box-dialog .box-form-section > label {
+  display: block;
+  margin: 14px 0 0;
+  color: var(--orb-frost);
+  font-size: 12px;
+  font-weight: 600;
+}
+.app-shell .context-box-dialog .box-field-optional {
+  margin-left: 6px;
+  color: var(--orb-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+.app-shell
+  .context-box-dialog
+  .box-form-section
+  :is(input:not([type="checkbox"]), select) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 7px;
+  padding: 10px 12px;
+  border: 1px solid var(--orb-blue);
+  border-radius: 7px;
+  background: var(--orb-ink);
+  color: var(--orb-frost);
+  font: 400 13px/1.5 var(--ui-font);
+}
+.app-shell .context-box-dialog .box-form-section input::placeholder {
+  color: var(--orb-muted);
+  opacity: 1;
+}
+.app-shell .context-box-dialog .box-form-section select {
+  cursor: pointer;
+}
+.app-shell
+  .context-box-dialog
+  .box-form-section
+  :is(input, select):hover:not(:disabled) {
+  border-color: var(--orb-mist);
+}
+.app-shell
+  .context-box-dialog
+  .context-box-add-form
+  :is(input, select, button, summary):focus-visible {
+  outline: 2px solid #ffad00;
+  outline-offset: 3px;
+}
+.app-shell .context-box-dialog .box-review-summary {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 8px;
+}
+.app-shell .context-box-dialog .box-review-summary strong {
+  color: var(--orb-frost);
+  font-size: 13px;
+}
+.app-shell .context-box-dialog .box-review-summary span {
+  color: var(--orb-muted);
+  font-size: 11px;
+}
+.app-shell .context-box-dialog .box-empty-state {
+  padding: 14px 16px;
+  border-radius: 7px;
+  background: var(--orb-ink);
+}
+.app-shell .context-box-dialog .box-empty-state strong {
+  color: var(--orb-mist);
+  font-size: 13px;
+}
+.app-shell .context-box-dialog .box-empty-state p {
+  margin: 6px 0 0;
+  color: var(--orb-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.app-shell .context-box-dialog .box-form-section .box-source-list > label {
+  align-items: center;
+  margin: 6px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 7px;
+  background: var(--orb-ink);
+  cursor: pointer;
+}
+.app-shell .context-box-dialog .box-source-list > label:hover {
+  background: var(--orb-hover);
+}
+.app-shell .context-box-dialog .box-source-list input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #ffad00;
+  cursor: pointer;
+}
+.app-shell .context-box-dialog .box-form-section summary {
+  padding: 8px 0;
+  color: var(--orb-frost);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.app-shell .context-box-dialog .box-save-note {
+  margin: 0;
+  color: var(--orb-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.app-shell .context-box-dialog .box-form-actions {
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--orb-slate);
+}
+.app-shell .context-box-dialog .box-form-actions button {
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid var(--orb-blue);
+  cursor: pointer;
+}
+.app-shell .context-box-dialog .box-form-actions .box-primary-action {
+  border-color: #ffad00;
+  background: #ffad00;
+  color: #19150d;
+  font-weight: 650;
+}
+.app-shell
+  .context-box-dialog
+  .box-form-actions
+  .box-primary-action:hover:not(:disabled) {
+  border-color: #ffc34d;
+  background: #ffc34d;
+  color: #19150d;
+}
+.app-shell .context-box-dialog .context-box-add-form :disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+@media (max-width: 540px) {
+  .app-shell .context-box-dialog .box-form-section {
+    padding: 12px;
+  }
+  .app-shell .context-box-dialog .box-form-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* Keep eight pixels of breathing room around the 32px wordmark. */
+.app-shell .top-bar { padding-block: 8px; box-sizing: border-box; }

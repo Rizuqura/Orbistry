@@ -1,10 +1,10 @@
-# Wonnyy — Human-Controlled Context Management & Knowledge Station
+# Orbistry — Human-Controlled Context Management & Knowledge Station
 
 ## Objective
 
-Build a **human-controlled context management system** for Wonnyy where users explicitly organize knowledge using manual labels called **Stations**.
+Build a **human-controlled context management system** for Orbistry where users explicitly organize knowledge using manual labels called **Stations**.
 
-The system should connect three existing parts of Wonnyy:
+The system should connect three existing parts of Orbistry:
 
 ```text
 Vault / Knowledge Bank
@@ -290,7 +290,7 @@ Only its current visual/knowledge projection has changed.
 
 # 6. Filesystem Distance vs Knowledge Distance
 
-Wonnyy should conceptually distinguish two types of spatial relationships.
+Orbistry should conceptually distinguish two types of spatial relationships.
 
 ## Filesystem Distance
 
@@ -764,7 +764,7 @@ The underlying state architecture should therefore avoid treating them as one bo
 
 # 15. Source Trace
 
-After an AI response, Wonnyy should retain enough context information to show which knowledge objects were provided for that interaction.
+After an AI response, Orbistry should retain enough context information to show which knowledge objects were provided for that interaction.
 
 Minimum requirement:
 
@@ -906,7 +906,7 @@ Knowledge Station should not attempt to decide what knowledge means on behalf of
 
 The user defines semantic organization.
 
-Wonnyy provides the infrastructure to:
+Orbistry provides the infrastructure to:
 
 1. label knowledge,
 2. retrieve knowledge through those labels,

@@ -17,7 +17,7 @@ configured remote model provider. Fetching a PDF does not add its contents to AI
    `package_manifest.json`, `chronoz-tool.json` and `outputs`. Do not select the ZIP,
    its parent folder, a Python executable or the source checkout.
 5. Keep the whole folder together. Do not edit its runtime/source files or run
-   another Python installation against the bundle. QTerminal rejects changed or
+   another Python installation against the bundle. Orbistry rejects changed or
    added runtime files. Use a trusted original bundle: its manifest provides
    integrity checks, not a publisher signature or an OS sandbox for Python.
 
@@ -34,14 +34,14 @@ PDF into an ordinary research folder when you want to review it as context.
 
 ## 2. Configure and apply it to your chosen agent
 
-1. Start the updated QTerminal desktop application. For a source checkout, run
-   `npm.cmd run build`, then `npm.cmd start` from the QTerminal folder. Close an
+1. Start the updated Orbistry desktop application. For a source checkout, run
+   `npm.cmd run build`, then `npm.cmd start` from the Orbistry folder. Close an
    older running copy first so it loads the new preload/backend.
 2. Open **AGENT**. Create an agent if needed, then open its **⋯** settings menu.
 3. In Agent Construction, choose **Add Engine**, or drag Engine from the palette
    onto the canvas. Select the Engine node to see its settings.
 4. Choose **Choose CHronoZ folder** and select the extracted folder from step 1.
-   This explicitly approves that local package for execution. QTerminal checks
+   This explicitly approves that local package for execution. Orbistry checks
    the files and performs a bounded local status probe. Integrity checking can
    take several seconds. A path alone never produces a Ready status.
 5. Read the status and diagnostic. **Partial** is expected for the supplied
@@ -87,9 +87,9 @@ bundle's `outputs\YYYY-MM\` directory. A mismatched hash, linked path or escaped
 directory produces an error without an attachment. PARTIAL plus a valid PDF is
 usable; it describes research limitations, not a broken installation.
 
-![Verified October PARTIAL report card in QTerminal](backend/evidence/engine-chronoz/report.png)
+![Verified October PARTIAL report card in Orbistry](backend/evidence/engine-chronoz/report.png)
 
-Report bytes are copied to QTerminal's profile `engine-reports` directory, not
+Report bytes are copied to Orbistry's profile `engine-reports` directory, not
 silently imported into your vault. To discuss a report with an agent, explicitly
 copy/import the PDF into your vault and review/bind it through the normal file or
 Context Box flow. Retrieval does not automatically read, summarize or send its
@@ -114,7 +114,7 @@ remain on disk; automatic retention/cleanup is not part of v0.1.
 6. Choose **Open CHronoZ 2026-10 PDF (PARTIAL)** directly in the conversation.
    The backend verifies the managed copy again before opening your PDF reader.
    The attachment and its provenance survive closing/reopening the chat and
-   restarting QTerminal.
+   restarting Orbistry.
 
 ![Source-free Engine chat delivering the verified research PDF](backend/evidence/engine-chronoz/chat.png)
 
@@ -154,7 +154,7 @@ discuss report contents; an Engine chat cannot be converted into a research chat
 
 Network acquisition, freeze, publish, reconstruction, monthly runs, key changes
 and scheduler registration are not exposed by this feature. Configure CHronoZ's
-independent scheduling outside QTerminal if you need new monthly issues.
+independent scheduling outside Orbistry if you need new monthly issues.
 
 ## Troubleshooting
 
@@ -166,13 +166,13 @@ independent scheduling outside QTerminal if you need new monthly issues.
 | Detected / SCHEDULED / FROZEN | The interpreter works, but the requested issue is not published. Try October 2026 or an already published month. Retrieval never runs publication or acquisition. |
 | Partial / PARTIAL | Open the validated report and read its disclosed research limitations. No reinstall is required. |
 | Blocked / BLOCKED | CHronoZ cannot return the requested issue, for example because its snapshot is unavailable or an integrity check failed. Try a known included month or restore the original package. |
-| Failed / FAILED | Check the bundle's issue diagnostics locally; try a fresh extraction. QTerminal does not expose raw stderr, credentials or arbitrary engine error text. |
+| Failed / FAILED | Check the bundle's issue diagnostics locally; try a fresh extraction. Orbistry does not expose raw stderr, credentials or arbitrary engine error text. |
 | Applied graph permission error | Connect Engine → LLM and Save & apply for this exact agent. A saved draft or another agent's graph grants no access. |
 | Checksum/path/PDF error | Restore the original monthly issue. Do not bypass the verifier or open the rejected path as an attachment. |
 | Timeout | The child process has a 60-second request limit (30 seconds for probing). Check disk access/antivirus and retry when the bundle is idle. |
 | Busy | Wait for or cancel the current operation. Requests are not silently queued. |
 | Cannot open PDF | Choose/install a Windows PDF reader. The backend verifies the managed copy again before calling the native opener. |
-| Restart backend notice | Close all old QTerminal windows and start the newly built application. |
+| Restart backend notice | Close all old Orbistry windows and start the newly built application. |
 | Model rejected native tools | Choose a tool-capable model or use the Construction report buttons. Do not assume every model offered by a provider supports functions. |
 | No tool requested | Specify CHronoZ and the report month/year or latest. Model prose is never treated as an executable request. |
 
@@ -234,7 +234,7 @@ Feature files:
   opt-in real local model acceptance and native tool transport fixtures.
 - `README.md` and this guide: usage and scope.
 
-Run checks from the QTerminal source directory:
+Run checks from the Orbistry source directory:
 
 ```powershell
 npm.cmd run typecheck

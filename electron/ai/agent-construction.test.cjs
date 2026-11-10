@@ -104,7 +104,7 @@ test("appearance rejects remote URLs, unsupported files and invalid wallpaper se
   );
 });
 async function fixture(t) {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-studio-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-studio-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   return { root, store: new AgentStore(root) };
 }
@@ -161,7 +161,7 @@ test("saved draft survives restart and cannot change live identity, preferences 
   assert.match(applied.runtimeInstructions, /Be concise/);
   assert.equal(applied.runtimeModel.modelId, "qwen3:1.7b");
   assert.equal(applied.construction.activeRevision, 2);
-  assert.equal((await store.get("wonnyy-agent")).displayName, "Wonnyy Agent");
+  assert.equal((await store.get("wonnyy-agent")).displayName, "Orbistry Agent");
   assert.equal(
     (await new AgentStore(root).get("chronoz")).construction.activeRevision,
     2,
@@ -288,7 +288,7 @@ test("PFP draft stores a safe managed reference and only apply changes the share
   };
   const store = new AgentStore(root, () => image),
     config = (await store.get()).construction.draft;
-  config.displayName = "Wonnyy Research";
+  config.displayName = "Orbistry Research";
   const draft = await store.saveConstruction({
     id: "wonnyy-agent",
     action: "draft",
@@ -306,7 +306,7 @@ test("PFP draft stores a safe managed reference and only apply changes the share
     expectedRevision: 1,
     config: reread.construction.draft,
   });
-  assert.equal(applied.displayName, "Wonnyy Research");
+  assert.equal(applied.displayName, "Orbistry Research");
   assert.ok(applied.avatarUrl);
   assert.ok(!(await fs.readFile(store.file, "utf8")).includes("data:image"));
 });

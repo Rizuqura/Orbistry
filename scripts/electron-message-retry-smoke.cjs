@@ -5,7 +5,7 @@ const path = require("node:path");
 const os = require("node:os");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-message-retry-"),
+    path.join(os.tmpdir(), "orbistry-message-retry-"),
   );
   let app, page;
   const errors = [];
@@ -13,8 +13,8 @@ async function main() {
     await fs.writeFile(path.join(root, "a.md"), "ALPHA allocation is 25%.");
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -31,7 +31,7 @@ async function main() {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     await page.evaluate(async () => {
-      const bridge = window.wonnyyDesktop;
+      const bridge = window.orbistryDesktop;
       await bridge.ai.saveCredential({
         providerId: "openrouter",
         apiKey: "sk-or-v1-synthetic-smoke-key",
@@ -56,7 +56,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: /Retry research/ }).check();
     await picker
       .getByRole("button", { name: "Start Chat", exact: true })
@@ -67,7 +67,7 @@ async function main() {
     const waitAttempt = async (count, status) => {
       await page.waitForFunction(
         async ({ count, status }) => {
-          const chat = (await window.wonnyyDesktop.ai.listConversations())[0];
+          const chat = (await window.orbistryDesktop.ai.listConversations())[0];
           return (
             chat?.attempts.length === count &&
             chat.attempts.at(-1).status === status
@@ -169,7 +169,7 @@ async function main() {
       .click();
     await counts(0, 0);
     const saved = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     assert.equal(saved.length, 1);
     assert.deepEqual(saved[0].attempts, []);

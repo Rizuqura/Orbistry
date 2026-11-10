@@ -3,7 +3,7 @@ import type { AiBridge } from "../../types/ai";
 export const AI_API_VERSION = 18;
 
 export async function connectAi(): Promise<AiBridge> {
-  const desktop = window.wonnyyDesktop;
+  const desktop = window.orbistryDesktop;
   if (desktop?.apiVersion !== AI_API_VERSION || !desktop.ai?.handshake) {
     throw Object.assign(
       new Error("Restart Orbistry to load the updated desktop backend."),

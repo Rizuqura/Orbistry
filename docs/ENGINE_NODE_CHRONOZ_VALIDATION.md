@@ -93,7 +93,7 @@ The real Engine UI test ran after a successful production build, against the
 extracted portable package located beside this checkout. It uses a temporary
 agent profile and vault; it does not configure the owner's live app profile.
 The engine's own Python/reporting implementation and official report were not
-modified or copied into QTerminal's distribution.
+modified or copied into Orbistry's distribution.
 
 ## Real-bundle evidence
 

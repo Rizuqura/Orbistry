@@ -31,7 +31,7 @@
       "outputLimit": 256,
       "httpStatus": 200,
       "status": "PASS",
-      "visibleText": "QTERMINAL_OK",
+      "visibleText": "ORBISTRY_OK",
       "contentCharacters": 12,
       "reasoningPresent": false,
       "finishReason": "stop",

@@ -1,0 +1,9 @@
+{
+  "method": "Compare porcelain status entries before/after with leading display whitespace normalized. Does not substitute for per-file pre-run content hashes.",
+  "added": [
+    "?? report/audit-2026-11-10/"
+  ],
+  "removed": [],
+  "reportRelativeLinksValid": true,
+  "structuredJsonFilesParsed": 12
+}

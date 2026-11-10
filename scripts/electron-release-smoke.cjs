@@ -5,7 +5,7 @@ const fs = require("node:fs/promises"),
 const assert = require("node:assert/strict");
 async function main() {
   const phase = process.argv[2] ?? "after";
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-release-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-release-"));
   const data = path.join(root, "profile"),
     documents = path.join(root, "documents");
   let app;
@@ -15,15 +15,15 @@ async function main() {
     await fs.mkdir(documents);
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_RELEASE_DOCUMENTS: documents,
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_RELEASE_DOCUMENTS: documents,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
-    delete env.WONNYY_VAULT_PATH;
+    delete env.ORBISTRY_VAULT_PATH;
     if (phase === "before") {
-      env.WONNYY_VAULT_PATH = path.join(root, "vault");
-      await fs.mkdir(env.WONNYY_VAULT_PATH);
+      env.ORBISTRY_VAULT_PATH = path.join(root, "vault");
+      await fs.mkdir(env.ORBISTRY_VAULT_PATH);
       await fs.writeFile(
         path.join(data, "agents.json"),
         '{"schemaVersion":1,"includeDefaultAgents":false,"agents":{}}',
@@ -42,7 +42,7 @@ async function main() {
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     const workspaceMs = performance.now() - start;
     const state = await page.evaluate(async () => {
-      const { ai, vault } = window.wonnyyDesktop;
+      const { ai, vault } = window.orbistryDesktop;
       return {
         agents: await ai.listAgents(),
         boxes: await ai.listContextBoxes(),
@@ -63,7 +63,7 @@ async function main() {
       assert.equal(state.snapshot.rootPath, path.join(documents, "Universe"));
       assert.equal(
         await page.locator(".version").textContent(),
-        `v${require("../package.json").version} Victoria Beta`,
+        `v${require("../package.json").version} Victoria (Beta)`,
       );
     }
     await page.getByRole("button", { name: "AGENT", exact: true }).click();

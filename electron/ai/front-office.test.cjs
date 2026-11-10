@@ -74,7 +74,7 @@ test("request stages correlate by ID, strip sensitive metadata and preserve the 
 
 test("metrics CLI extracts only a run's metrics and refuses to overwrite exports", async (t) => {
   const directory = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-metrics-"),
+    path.join(os.tmpdir(), "orbistry-metrics-"),
   );
   t.after(() => fs.rm(directory, { recursive: true, force: true }));
   const input = path.join(directory, "run.json");

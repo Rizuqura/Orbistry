@@ -5,7 +5,7 @@ const fs = require("node:fs/promises"),
   os = require("node:os");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-nvidia-thinking-"),
+    path.join(os.tmpdir(), "orbistry-nvidia-thinking-"),
   );
   let app;
   try {

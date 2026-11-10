@@ -5,6 +5,7 @@ import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
 import type { ChatController } from "./use-chat-runtime";
 import {
   clampGeometry,
+  defaultPlanetChatGeometry,
   resizeGeometry,
   type ResizeDirection,
   type PanelGeometry,
@@ -18,11 +19,13 @@ import { EngineReportAttachment } from "./engine-report-attachment";
 
 export type { ChatMessage } from "../../types/ai";
 export type ChatPanelProps = {
-  variant?: "panel" | "floating" | "workspace";
+  variant?: "panel" | "floating" | "workspace" | "window";
   controller: ChatController;
   onOpenSource: (path: string) => void;
   onExpandContext?: () => void;
   onUndock?: () => void;
+  onPopOutWindow?: () => void;
+  onAttachWindow?: () => void;
   onOpenAgentSettings?: () => void;
   onOpenAgentWorkspace?: () => void;
   onToggleDetails?: () => void;
@@ -36,6 +39,8 @@ export function ChatPanel({
   onOpenSource,
   onExpandContext,
   onUndock,
+  onPopOutWindow,
+  onAttachWindow,
   onOpenAgentSettings,
   onOpenAgentWorkspace,
   onToggleDetails,
@@ -43,7 +48,7 @@ export function ChatPanel({
   minimizeForCanvas,
 }: Readonly<ChatPanelProps>) {
   const isFloating = variant === "floating";
-  const agentName = chat.agent?.displayName ?? "Wonnyy Agent";
+  const agentName = chat.agent?.displayName ?? "Orbistry Agent";
   const [closed, setClosed] = useState(false);
   const [knowledgeRunId, setKnowledgeRunId] = useState<string | null>(null);
   useEffect(() => setKnowledgeRunId(null), [chat.conversation?.id]);
@@ -261,8 +266,7 @@ export function ChatPanel({
   const resetGeometry = () => {
     const parent = panelRef.current?.offsetParent as HTMLElement | null;
     if (!parent) return;
-    const g = clampGeometry(
-      { x: parent.clientWidth - 460, y: 24, width: 440, height: 560 },
+    const g = defaultPlanetChatGeometry(
       parent.clientWidth,
       parent.clientHeight,
     );
@@ -276,7 +280,7 @@ export function ChatPanel({
     let saved;
     try {
       saved = JSON.parse(
-        localStorage.getItem("qterminal-agent-geometry") ?? "null",
+        localStorage.getItem("orbistry-agent-geometry-v2") ?? "null",
       );
     } catch {}
     const valid =
@@ -285,7 +289,7 @@ export function ChatPanel({
     const g = clampGeometry(
       valid
         ? saved
-        : { x: parent.clientWidth - 460, y: 24, width: 440, height: 560 },
+        : defaultPlanetChatGeometry(parent.clientWidth, parent.clientHeight),
       parent.clientWidth,
       parent.clientHeight,
     );
@@ -312,12 +316,12 @@ export function ChatPanel({
     });
     observer.observe(parent);
     return () => observer.disconnect();
-  }, [isFloating, closed]);
+  }, [isFloating, closed, chat.agent?.id]);
   useEffect(() => {
     if (!isFloating || !position || !size || isMinimized) return;
     try {
       localStorage.setItem(
-        "qterminal-agent-geometry",
+        "orbistry-agent-geometry-v2",
         JSON.stringify({ x: position.left, y: position.top, ...size }),
       );
     } catch {}
@@ -328,7 +332,12 @@ export function ChatPanel({
   const floatingStyle = isFloating
     ? ({
         ...(position
-          ? { left: position.left, right: "auto", top: position.top }
+          ? {
+              left: position.left,
+              right: "auto",
+              top: position.top,
+              bottom: "auto",
+            }
           : {}),
         ...(size
           ? { width: size.width, height: isMinimized ? undefined : size.height }
@@ -356,7 +365,7 @@ export function ChatPanel({
     <aside
       ref={panelRef}
       style={floatingStyle}
-      className={`chat-panel${isFloating ? " chat-panel-floating" : ""}${isFloating && isMinimized ? " chat-panel-minimized" : ""}`}
+      className={`chat-panel${variant === "window" ? " chat-panel-window" : ""}${isFloating ? " chat-panel-floating" : ""}${isFloating && isMinimized ? " chat-panel-minimized" : ""}`}
       aria-label={agentName}
       onPointerDown={(event) => event.stopPropagation()}
       onPointerMove={(event) => event.stopPropagation()}
@@ -368,30 +377,13 @@ export function ChatPanel({
     >
       <div
         className="chat-header"
-        style={bannerStyle(chat.agent?.appearance?.bannerUrl)}
         onPointerDown={startDrag}
         onPointerMove={drag}
         onPointerUp={stopDrag}
         onPointerCancel={stopDrag}
       >
-        <AgentAvatar agent={chat.agent} />
-        <span className="agent-drag-title">
+        <span className="agent-drag-title" title={agentName}>
           {agentName}
-          <span className="agent-chat-subtitle">
-            {chat.conversation?.engineOnly
-              ? "Engine report retrieval"
-              : chat.agent?.description || "Strict Context Analysis"}{" "}
-            ·{" "}
-            {chat.runtime.state === "CONTEXT_TOO_LARGE"
-              ? "Over Budget"
-              : chat.unavailableReason
-                ? "Missing Sources"
-                : (chat.conversation?.contextFile?.relativePath ??
-                  chat.contextBoxes.find(
-                    (box) => box.id === chat.conversation?.contextBoxId,
-                  )?.name ??
-                  "No Context")}
-          </span>
         </span>
         <span className="chat-runtime-status" role="status">
           {statusLabel}
@@ -428,12 +420,44 @@ export function ChatPanel({
         {variant !== "workspace" && onOpenAgentWorkspace && (
           <button onClick={onOpenAgentWorkspace}>Open in Agent</button>
         )}
+        {isFloating && onPopOutWindow && (
+          <button
+            type="button"
+            className="chat-window-control"
+            onClick={onPopOutWindow}
+            aria-label="Pop out chat"
+            title="Open chat in a new window"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-hidden="true"
+            >
+              <path d="M9 2h5v5M14 2 7 9M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9" />
+            </svg>
+          </button>
+        )}
+        {variant === "window" && onAttachWindow && (
+          <button type="button" onClick={onAttachWindow}>
+            Attach to Planet View
+          </button>
+        )}
         {variant !== "workspace" && (
           <button
             title={`Close ${agentName}`}
             className="chat-close-control"
             aria-label={`Close ${agentName}`}
-            onClick={() => setClosed(true)}
+            onClick={() => {
+              if (onAttachWindow) {
+                onAttachWindow();
+                return;
+              }
+              setClosed(true);
+            }}
           >
             ×
           </button>
@@ -483,80 +507,113 @@ export function ChatPanel({
           </button>
         )}
       </div>
-      <details className="chat-context">
-        <summary>Model and attached source details</summary>
-        <span>
-          {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
-            ? `ONLINE · ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA NIM" : "Gemini"}`
-            : "LOCAL · Ollama"}{" "}
-          · {chat.effectiveSettings?.modelId ?? "Choose a model in Settings"}
-        </span>
-        <p className="chat-privacy">
-          {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
-            ? `Approved sources, configured agent references, your question, and included conversation history are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
-            : "Inference runs on this device."}
-        </p>
-        <p className="chat-memory">
-          Model memory: up to 12 recent exchanges, fewer when the context limit
-          is reached. Only exchanges using the current source versions are
-          included. Saved history remains available.
-          {typeof chat.runtime.diagnostics?.droppedExchanges === "number" &&
-          chat.runtime.diagnostics.droppedExchanges > 0
-            ? ` Last answer omitted ${chat.runtime.diagnostics.droppedExchanges} earlier exchanges.`
-            : ""}
-        </p>
-        <strong>
-          Attached sources:{" "}
-          {chat.context?.sources
-            .map((source) => source.relativePath)
-            .join(", ") ?? "None ready"}
-        </strong>
-        {!chat.attached && chat.conversation && (
-          <div className="chat-detached">
-            Viewing:{" "}
-            {chat.conversation.contextIdentity.sources
+      <div className="chat-top-menus">
+        <details className="chat-context">
+          <summary>Model and attached source details</summary>
+          <span>
+            {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
+              ? `ONLINE · ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA NIM" : "Gemini"}`
+              : "LOCAL · Ollama"}{" "}
+            · {chat.effectiveSettings?.modelId ?? "Choose a model in Settings"}
+          </span>
+          <p className="chat-privacy">
+            {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
+              ? `Approved sources, configured agent references, your question, and included conversation history are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
+              : "Inference runs on this device."}
+          </p>
+          <p className="chat-memory">
+            Model memory: up to 12 recent exchanges, fewer when the context
+            limit is reached. Only exchanges using the current source versions
+            are included. Saved history remains available.
+            {typeof chat.runtime.diagnostics?.droppedExchanges === "number" &&
+            chat.runtime.diagnostics.droppedExchanges > 0
+              ? ` Last answer omitted ${chat.runtime.diagnostics.droppedExchanges} earlier exchanges.`
+              : ""}
+          </p>
+          <strong>
+            Attached sources:{" "}
+            {chat.context?.sources
               .map((source) => source.relativePath)
-              .join(", ")}
-            <button
-              disabled={chat.busy}
-              onClick={() => {
-                if (
-                  chat.conversation?.contextBoxId ||
-                  chat.conversation?.contextFile
-                )
-                  chat.resume();
-                else chat.newChat();
-                focusComposer();
-              }}
-            >
-              {chat.conversation.contextBoxId || chat.conversation.contextFile
-                ? "Recheck attached sources"
-                : "Create bound chat"}
-            </button>
-          </div>
-        )}
-        {chat.unavailableReason && <p>{chat.unavailableReason}</p>}
-      </details>
-      <div className="agent-provider-indicator">
-        {chat.effectiveSettings?.providerId === "ollama"
-          ? "LOCAL / Ollama"
-          : chat.registry
-            ? "ONLINE / " +
-              (chat.effectiveSettings!.providerId === "openrouter"
-                ? "OpenRouter"
-                : chat.effectiveSettings!.providerId === "nvidia"
-                  ? "NVIDIA"
-                  : "Gemini")
-            : "Checking provider"}{" "}
-        / {chat.context?.sources.length ?? 0} attached{" "}
-        {chat.context?.sources.length === 1 ? "file" : "files"}
+              .join(", ") ?? "None ready"}
+          </strong>
+          {!chat.attached && chat.conversation && (
+            <div className="chat-detached">
+              Viewing:{" "}
+              {chat.conversation.contextIdentity.sources
+                .map((source) => source.relativePath)
+                .join(", ")}
+              <button
+                disabled={chat.busy}
+                onClick={() => {
+                  if (
+                    chat.conversation?.contextBoxId ||
+                    chat.conversation?.contextFile
+                  )
+                    chat.resume();
+                  else chat.newChat();
+                  focusComposer();
+                }}
+              >
+                {chat.conversation.contextBoxId || chat.conversation.contextFile
+                  ? "Recheck attached sources"
+                  : "Create bound chat"}
+              </button>
+            </div>
+          )}
+          {chat.unavailableReason && <p>{chat.unavailableReason}</p>}
+        </details>
+        <div className="agent-provider-indicator">
+          {chat.effectiveSettings?.providerId === "ollama"
+            ? "LOCAL / Ollama"
+            : chat.registry
+              ? "ONLINE / " +
+                (chat.effectiveSettings!.providerId === "openrouter"
+                  ? "OpenRouter"
+                  : chat.effectiveSettings!.providerId === "nvidia"
+                    ? "NVIDIA"
+                    : "Gemini")
+              : "Checking provider"}{" "}
+          / {chat.context?.sources.length ?? 0} attached{" "}
+          {chat.context?.sources.length === 1 ? "file" : "files"}
+        </div>
+        <ConversationHistory
+          chat={chat}
+          onCompose={focusComposer}
+          workspace={variant === "workspace"}
+          onManageContext={onExpandContext}
+        />
       </div>
-      <ConversationHistory
-        chat={chat}
-        onCompose={focusComposer}
-        workspace={variant === "workspace"}
-        onManageContext={onExpandContext}
-      />
+      <section className="chat-profile" aria-label="Agent profile">
+        <div
+          className={
+            "chat-profile-banner" +
+            (chat.agent.appearance?.bannerUrl ? " agent-banner" : "")
+          }
+          style={bannerStyle(chat.agent.appearance?.bannerUrl)}
+        />
+        <div className="chat-profile-identity">
+          <AgentAvatar agent={chat.agent} />
+          <div className="chat-profile-copy">
+            <h2>{agentName}</h2>
+            <p className="chat-profile-description">
+              {chat.agent.description || "Strict Context Analysis"}
+            </p>
+            <p className="chat-profile-context">
+              {chat.conversation?.engineOnly
+                ? "Engine report retrieval"
+                : chat.runtime.state === "CONTEXT_TOO_LARGE"
+                  ? "Over Budget"
+                  : chat.unavailableReason
+                    ? "Missing Sources"
+                    : (chat.conversation?.contextFile?.relativePath ??
+                      chat.contextBoxes.find(
+                        (box) => box.id === chat.conversation?.contextBoxId,
+                      )?.name ??
+                      "No Context")}
+            </p>
+          </div>
+        </div>
+      </section>
       {chat.unavailableReason && (
         <div className="chat-notice" role="status">
           {chat.unavailableReason}

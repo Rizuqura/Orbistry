@@ -285,7 +285,7 @@ class KnowledgeStore {
       run.diagnostics?.agent?.id !== "wonnyy-agent"
     )
       invalid(
-        "Use a completed Wonnyy Agent run with recorded agent provenance.",
+        "Use a completed Orbistry Agent run with recorded agent provenance.",
       );
     return this.locked(async () => {
       const prior = await this.proposals();

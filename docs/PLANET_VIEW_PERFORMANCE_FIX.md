@@ -102,7 +102,7 @@ as well. Neither folder is deleted or moved.
 
 To add research, drag/copy files from your device into an ordinary folder such
 as `C:\bank\Research` using Windows File Explorer, then **Rescan vault** in
-QTerminal. Those files appear as planets. Files kept inside `.engine` or
+Orbistry. Those files appear as planets. Files kept inside `.engine` or
 `agentContext.memory` do not appear on the map.
 
 Restart the updated desktop build and choose **Rescan vault**. Leave **FLAT VIEW

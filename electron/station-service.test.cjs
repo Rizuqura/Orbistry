@@ -8,7 +8,7 @@ const stations = require("./station-service.cjs");
 
 async function withVault(run) {
   const vaultPath = await fs.mkdtemp(
-    path.join(os.tmpdir(), "wonnyy-stations-"),
+    path.join(os.tmpdir(), "orbistry-stations-"),
   );
   try {
     await run(vaultPath);
@@ -79,7 +79,7 @@ test("Directory context requires expansion and the package retains provenance", 
     );
     await fs.writeFile(
       path.join(vaultPath, "research", "b.csv"),
-      "name\nWonnyy",
+      "name\nOrbistry",
     );
     await fs.writeFile(path.join(vaultPath, "research", "skip.bmp"), "binary");
     let state = await stations.createStation(vaultPath, "Research");

@@ -3,10 +3,26 @@ const assert = require("node:assert/strict"),
   fs = require("node:fs/promises"),
   os = require("node:os"),
   path = require("node:path");
+async function assertBannerEdge(locator) {
+  assert.ok(
+    await locator.evaluate((el) => el.classList.contains("agent-banner")),
+  );
+  const { createCanvas, loadImage } = require("@napi-rs/canvas");
+  const image = await loadImage(await locator.screenshot());
+  const canvas = createCanvas(image.width, image.height);
+  const context = canvas.getContext("2d");
+  context.drawImage(image, 0, 0);
+  // A solid-white fixture exposes uncovered bottom pixels at any header size.
+  const start = Math.floor(image.width / 4);
+  const pixels = context.getImageData(start, image.height - 2, start, 2).data;
+  for (let i = 0; i < pixels.length; i += 4)
+    assert.ok(
+      Math.max(pixels[i], pixels[i + 1], pixels[i + 2]) < 100,
+      "Banner overlay must dim the complete bottom edge",
+    );
+}
 async function main() {
-  const root = await fs.mkdtemp(
-      path.join(os.tmpdir(), "qterminal-appearance-"),
-    ),
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-appearance-")),
     vault = path.join(root, "vault"),
     data = path.join(root, "app-data");
   let app, page;
@@ -15,8 +31,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: vault,
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -37,10 +53,10 @@ async function main() {
   };
   const open = async () => {
     await page
-      .getByRole("button", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("button", { name: "Orbistry Agent settings", exact: true })
       .click();
     await page
-      .getByRole("dialog", { name: "Wonnyy Agent settings", exact: true })
+      .getByRole("dialog", { name: "Orbistry Agent settings", exact: true })
       .waitFor();
   };
   const close = async () => {
@@ -51,7 +67,7 @@ async function main() {
       .locator(".agent-construction-dialog")
       .waitFor({ state: "hidden" });
   };
-  const get = () => page.evaluate(() => window.wonnyyDesktop.ai.getAgent());
+  const get = () => page.evaluate(() => window.orbistryDesktop.ai.getAgent());
   try {
     await fs.mkdir(vault);
     await fs.mkdir(data);
@@ -82,7 +98,11 @@ async function main() {
           pixels[n + 3] = 255;
         }
       const image = nativeImage.createFromBitmap(pixels, { width, height });
-      await fs.writeFile(banner, image.toPNG());
+      const white = nativeImage.createFromBitmap(
+        Buffer.alloc(width * height * 4, 255),
+        { width, height },
+      );
+      await fs.writeFile(banner, white.toPNG());
       await fs.writeFile(wallpaper, image.toPNG());
       dialog.showOpenDialog = async (options) => ({
         canceled: false,
@@ -138,7 +158,7 @@ async function main() {
     assert.ok(profile.appearance.bannerUrl);
     assert.ok(profile.appearance.wallpaperUrl);
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent("chronoz")))
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent("chronoz")))
         .appearance.wallpaperUrl,
       null,
     );
@@ -148,27 +168,30 @@ async function main() {
       ),
     );
     await close();
+    await assertBannerEdge(
+      page.locator('.agent-bot-row[data-agent-id="wonnyy-agent"]'),
+    );
     assert.ok(
       await page
         .locator('.agent-bot-row[data-agent-id="wonnyy-agent"]')
         .evaluate((el) => el.style.backgroundImage.includes("data:image/png")),
     );
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Appearance source",
         paths: ["a.md"],
       }),
     );
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Agent",
+      name: "Orbistry Agent",
       exact: true,
     });
     await panel
       .getByRole("button", { name: "+ New Chat", exact: true })
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Agent chat",
+      name: "New Orbistry Agent chat",
       exact: true,
     });
     await picker.getByRole("radio", { name: /Appearance source/ }).check();
@@ -203,11 +226,11 @@ async function main() {
     assert.equal(await page.evaluate(() => globalThis.badMarkdown), undefined);
     assert.equal(
       await message.evaluate((el) => getComputedStyle(el).fontSize),
-      "16px",
+      "14px",
     );
     assert.match(
       await message.evaluate((el) => getComputedStyle(el).fontFamily),
-      /Segoe UI/,
+      /Urbanist/,
     );
     const modelRequest = await app.evaluate(() =>
       globalThis.onlineSmoke.localRequests.findLast(
@@ -222,11 +245,38 @@ async function main() {
     );
     assert.ok(
       await panel
-        .locator(".chat-header")
+        .locator(".chat-profile-banner")
         .evaluate((el) => el.style.backgroundImage.includes("data:image/png")),
     );
+    const profileGeometry = await panel.evaluate((el) => {
+      const banner = el
+        .querySelector(".chat-profile-banner")
+        .getBoundingClientRect();
+      const avatar = el
+        .querySelector(".chat-profile .agent-avatar")
+        .getBoundingClientRect();
+      const menus = el.querySelector(".chat-top-menus").getBoundingClientRect();
+      const toolbar = el.querySelector(".chat-header").getBoundingClientRect();
+      return {
+        avatarSize: avatar.width,
+        overlapCenter: avatar.top + avatar.height / 2,
+        bannerBottom: banner.bottom,
+        menusBottom: menus.bottom,
+        toolbarBottom: toolbar.bottom,
+        bannerTop: banner.top,
+      };
+    });
+    assert.equal(profileGeometry.avatarSize, 88);
+    assert.ok(
+      Math.abs(profileGeometry.overlapCenter - profileGeometry.bannerBottom) <
+        1,
+    );
+    assert.ok(
+      profileGeometry.toolbarBottom <= profileGeometry.bannerTop &&
+        profileGeometry.menusBottom <= profileGeometry.bannerTop,
+    );
     const conversation = (
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations())
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
     )[0];
     assert.equal(conversation.messages.at(-1).content, answer);
     assert.equal(conversation.messages.at(-1).sources[0].relativePath, "a.md");
@@ -238,6 +288,27 @@ async function main() {
     assert.equal(Math.round(composer.y), Math.round(after.y));
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/chat-appearance.png" });
+    await assertBannerEdge(panel.locator(".chat-profile-banner"));
+    await page
+      .getByRole("button", { name: "PLANET VIEW", exact: true })
+      .click();
+    const floatingHeader = page.locator(
+      ".chat-panel-floating .chat-profile-banner",
+    );
+    await floatingHeader.waitFor();
+    await assertBannerEdge(floatingHeader);
+    await page.screenshot({ path: "test-results/chat-profile-floating.png" });
+    await page
+      .getByRole("button", { name: "Minimize chat window", exact: true })
+      .click();
+    await page
+      .locator(".chat-panel-floating .chat-profile")
+      .waitFor({ state: "hidden" });
+    await page
+      .getByRole("button", { name: "Restore chat window", exact: true })
+      .click();
+    await page.locator(".chat-panel-floating .chat-profile").waitFor();
+    await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await app.close();
     app = null;
     await launch();

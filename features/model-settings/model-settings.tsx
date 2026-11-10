@@ -42,7 +42,7 @@ export function ModelSettings({
   const [favoriteError, setFavoriteError] = useState("");
   useEffect(() => {
     let disposed = false;
-    const ai = window.wonnyyDesktop?.ai;
+    const ai = window.orbistryDesktop?.ai;
     if (ai?.modelFavorites)
       void ai
         .modelFavorites()
@@ -60,7 +60,7 @@ export function ModelSettings({
     };
   }, [catalogTab]);
   const toggleFavorite = async (model: ModelDescriptor) => {
-    const ai = window.wonnyyDesktop?.ai;
+    const ai = window.orbistryDesktop?.ai;
     if (
       !ai ||
       !favorites ||

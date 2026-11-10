@@ -13,7 +13,7 @@ export function ProvidedModels() {
     let disposed = false;
     setLoading(true);
     setError("");
-    const ai = window.wonnyyDesktop?.ai;
+    const ai = window.orbistryDesktop?.ai;
     if (!ai?.providedModels) {
       setError("Open or restart the desktop app to load saved favorites.");
       setLoading(false);

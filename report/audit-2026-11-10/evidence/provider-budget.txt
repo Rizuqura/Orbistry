@@ -1,0 +1,1 @@
+{"providers":[{"provider":"nvidia","input":66,"output":7},{"provider":"gemini","input":30,"output":8},{"provider":"openrouter","input":99,"output":12}],"keyReplacementClearsUsage":true,"rendererErrors":[]}

@@ -1,7 +1,7 @@
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const AGENT_ID = "wonnyy-agent";
 const AGENT_DEFINITIONS = Object.freeze({
-  [AGENT_ID]: { displayName: "Wonnyy Agent", letter: "W" },
+  [AGENT_ID]: { displayName: "Orbistry Agent", letter: "O" },
   chronoz: { displayName: "CHronoZ", letter: "C" },
 });
 const POLICY_VERSION = require("./runtime-context.cjs").KERNEL_VERSION;
@@ -17,7 +17,7 @@ function validateCustomInstructions(value) {
       "Custom instructions must be text of at most 8000 characters.",
     );
   if (
-    /(?:ignore|override|disable|bypass)\s+(?:(?:all|the|your|protected|system|context|qterminal|wonnyy|chronoz|previous|safety)\s+){0,4}(?:rules|policy|instructions|boundaries|restrictions)|(?:browse|search)\s+(?:the\s+)?(?:web|internet|unbound\s+vault)/i.test(
+    /(?:ignore|override|disable|bypass)\s+(?:(?:all|the|your|protected|system|context|orbistry|qterminal|wonnyy|chronoz|previous|safety)\s+){0,4}(?:rules|policy|instructions|boundaries|restrictions)|(?:browse|search)\s+(?:the\s+)?(?:web|internet|unbound\s+vault)/i.test(
       value,
     )
   )

@@ -9,7 +9,7 @@ const { KnowledgeStore, hash } = require("./knowledge-store.cjs");
 const { readResearchSource } = require("./research-knowledge.cjs");
 const { skillsFor } = require("./skills.cjs");
 async function fixture(t) {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-knowledge-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-knowledge-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const vault = path.join(root, "BankVault"),
     appData = path.join(root, "app-data");
@@ -204,14 +204,14 @@ test("missing attribution stays candidate; out-of-manifest provenance and automa
       { ...f.run, status: "failed" },
       { objective: "x", observations: [f.observation] },
     ),
-    /completed Wonnyy/,
+    /completed Orbistry/,
   );
   await assert.rejects(
     f.store.propose(
       { ...f.run, diagnostics: { agent: { id: "chronoz" } } },
       { objective: "x", observations: [f.observation] },
     ),
-    /completed Wonnyy/,
+    /completed Orbistry/,
   );
 });
 test("approval checks exact source version and quote without semantic correctness claims", async (t) => {
@@ -377,7 +377,7 @@ test("missing vault rejects capture/retrieval without creating a replacement vau
   );
   await assert.rejects(fs.stat(missing), { code: "ENOENT" });
 });
-test("skill registry is Wonnyy-only and does not claim an installed loop", () => {
+test("skill registry is Orbistry-only and does not claim an installed loop", () => {
   assert.deepEqual(skillsFor("wonnyy-agent"), ["knowledge-consolidation"]);
   assert.deepEqual(skillsFor("chronoz"), []);
   assert.equal(

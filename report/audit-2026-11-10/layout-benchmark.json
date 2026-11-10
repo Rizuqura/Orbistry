@@ -1,0 +1,194 @@
+{
+  "method": "Node 24, TypeScript transpileModule to CommonJS; orbital filesystem layout; three synchronous calls/case in one process; excludes React/DOM/IPC; no graphics FPS or heap claims",
+  "results": [
+    {
+      "shape": "balanced",
+      "nodes": 211,
+      "samples": [
+        {
+          "ms": 9.16579999999999,
+          "positionCount": 211,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3573.5051865799264
+        },
+        {
+          "ms": 6.156600000000026,
+          "positionCount": 211,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3573.5051865799264
+        },
+        {
+          "ms": 4.475300000000004,
+          "positionCount": 211,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3573.5051865799264
+        }
+      ]
+    },
+    {
+      "shape": "balanced",
+      "nodes": 2101,
+      "samples": [
+        {
+          "ms": 59.34300000000002,
+          "positionCount": 2101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 7994.299728134883
+        },
+        {
+          "ms": 38.06750000000005,
+          "positionCount": 2101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 7994.299728134883
+        },
+        {
+          "ms": 22.02890000000002,
+          "positionCount": 2101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 7994.299728134883
+        }
+      ]
+    },
+    {
+      "shape": "balanced",
+      "nodes": 10501,
+      "samples": [
+        {
+          "ms": 131.01850000000002,
+          "positionCount": 10501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 19368.765647380227
+        },
+        {
+          "ms": 106.154,
+          "positionCount": 10501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 19368.765647380227
+        },
+        {
+          "ms": 132.0399,
+          "positionCount": 10501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 19368.765647380227
+        }
+      ]
+    },
+    {
+      "shape": "wide",
+      "nodes": 1001,
+      "samples": [
+        {
+          "ms": 2.4379000000000133,
+          "positionCount": 1001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 4102.317864892426
+        },
+        {
+          "ms": 2.5812000000000808,
+          "positionCount": 1001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 4102.317864892426
+        },
+        {
+          "ms": 2.312000000000012,
+          "positionCount": 1001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 4102.317864892426
+        }
+      ]
+    },
+    {
+      "shape": "wide",
+      "nodes": 10001,
+      "samples": [
+        {
+          "ms": 102.02880000000005,
+          "positionCount": 10001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 32869.46289776258
+        },
+        {
+          "ms": 94.99029999999993,
+          "positionCount": 10001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 32869.46289776258
+        },
+        {
+          "ms": 88.65480000000002,
+          "positionCount": 10001,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 32869.46289776258
+        }
+      ]
+    },
+    {
+      "shape": "deep",
+      "nodes": 101,
+      "samples": [
+        {
+          "ms": 10.732899999999972,
+          "positionCount": 101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3.40744481341348e+32
+        },
+        {
+          "ms": 8.25909999999999,
+          "positionCount": 101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3.40744481341348e+32
+        },
+        {
+          "ms": 6.069400000000087,
+          "positionCount": 101,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 3.40744481341348e+32
+        }
+      ]
+    },
+    {
+      "shape": "deep",
+      "nodes": 501,
+      "samples": [
+        {
+          "ms": 42.51440000000002,
+          "positionCount": 501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 8.79887395402483e+152
+        },
+        {
+          "ms": 10.713899999999967,
+          "positionCount": 501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 8.79887395402483e+152
+        },
+        {
+          "ms": 5.960399999999936,
+          "positionCount": 501,
+          "allFinite": true,
+          "finiteWorld": true,
+          "width": 8.79887395402483e+152
+        }
+      ]
+    }
+  ]
+}

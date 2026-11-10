@@ -11,7 +11,7 @@ const { ProviderRegistry } = require("./provider-registry.cjs");
 const { GeminiProvider } = require("./providers/gemini-provider.cjs");
 
 test("local to Gemini and back preserves authorization, bounded history, provenance, retries and restart", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-online-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-online-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const sent = [];
   let status = 200;

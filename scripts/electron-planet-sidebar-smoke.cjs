@@ -5,7 +5,7 @@ const path = require("node:path");
 const os = require("node:os");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-planet-sidebar-"),
+    path.join(os.tmpdir(), "orbistry-planet-sidebar-"),
   );
   let app, page;
   const errors = [];
@@ -21,8 +21,8 @@ async function main() {
       );
     const env = {
       ...process.env,
-      WONNYY_VAULT_PATH: root,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -39,7 +39,7 @@ async function main() {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     await page.evaluate(async () => {
-      const bridge = window.wonnyyDesktop;
+      const bridge = window.orbistryDesktop;
       await bridge.context.add([
         "research.md",
         "macro-series-with-a-long-source-name.md",
@@ -49,7 +49,7 @@ async function main() {
         "Algo Journal",
         "Self Research",
         "PriceData",
-        "Wonnyy Agent Context",
+        "Orbistry Agent Context",
         "ChronoZ Macro Encoder Knowledge",
       ])
         await bridge.ai.saveContextBox({ name });
@@ -63,7 +63,7 @@ async function main() {
       name: "Planet details and context",
     });
     const closeChat = page.getByRole("button", {
-      name: "Close Wonnyy Agent",
+      name: "Close Orbistry Agent",
       exact: true,
     });
     if (await closeChat.isVisible()) await closeChat.click();
@@ -134,7 +134,7 @@ async function main() {
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
     assert.equal(Number(await divider.getAttribute("aria-valuenow")), resized);
     const restoredChat = page.getByRole("button", {
-      name: "Close Wonnyy Agent",
+      name: "Close Orbistry Agent",
       exact: true,
     });
     if (await restoredChat.isVisible()) await restoredChat.click();
@@ -241,7 +241,7 @@ async function main() {
     await sidebar.getByText("New reviewed box", { exact: true }).waitFor();
     assert.equal(
       await page.evaluate(
-        async () => (await window.wonnyyDesktop.ai.listConversations()).length,
+        async () => (await window.orbistryDesktop.ai.listConversations()).length,
       ),
       0,
     );

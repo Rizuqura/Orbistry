@@ -2,7 +2,7 @@
 
 **Single-file follow-up:** [Single-file agent sources](single-file-agent-handoff.md) now lets every non-LLM node use a directly reviewed vault file instead of a box. Combined guidance now supports up to 80,000 characters, subject to the model budget; the earlier 16k cap below is superseded.
 
-Implemented 2026-10-27. This extends the floating Agent Construction editor opened from **Agent → an agent's three-dot menu**. It uses existing vault-owned boxes and the same shared template for Wonnyy, CHronoZ and future registered default agents. Global Settings remains unchanged in purpose.
+Implemented 2026-10-27. This extends the floating Agent Construction editor opened from **Agent → an agent's three-dot menu**. It uses existing vault-owned boxes and the same shared template for Orbistry, CHronoZ and future registered default agents. Global Settings remains unchanged in purpose.
 
 ## Operator flow
 

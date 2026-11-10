@@ -18,9 +18,9 @@ async function main() {
       "Pass a real extracted CHronoZ bundle. This opt-in test requires a running Ollama with a tool-capable model.",
     );
   const bundle = await fs.realpath(path.resolve(supplied));
-  const model = process.env.QTERMINAL_ENGINE_MODEL || "qwen3:4b";
+  const model = process.env.ORBISTRY_ENGINE_MODEL || "qwen3:4b";
   const root = await fs.realpath(
-    await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-engine-chat-live-")),
+    await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-engine-chat-live-")),
   );
   let service, engines;
   try {

@@ -330,7 +330,7 @@ function createLLMClient({ model, transport, config, registry, credentials }) {
                 ? {
                     type: "json_schema",
                     json_schema: {
-                      name: "qterminal_output",
+                      name: "orbistry_output",
                       strict: true,
                       schema: g.jsonSchema,
                     },

@@ -1,11 +1,11 @@
-# Wonnyy M9 — Context Windows & Human-Controlled Context Engineering
+# Orbistry M9 — Context Windows & Human-Controlled Context Engineering
 
 ## Status
 
 Implementation / Execution Specification
 
 Product:
-Wonnyy Terminal — Amadeus
+Orbistry — Amadeus
 
 Milestone:
 
@@ -23,7 +23,7 @@ M11 — Tool-Using Agent
 
 # 1. Objective
 
-Build the first complete human-controlled context engineering experience for Wonnyy.
+Build the first complete human-controlled context engineering experience for Orbistry.
 
 The user must be able to visually construct, inspect, modify, and reuse AI context through Planet View and Knowledge Stations.
 
@@ -68,13 +68,13 @@ It is NOT yet a semantic retrieval milestone.
 
 The user should remain in control of what the model is allowed to know.
 
-Wonnyy may help organize, retrieve, rank, and package information.
+Orbistry may help organize, retrieve, rank, and package information.
 
 However, the knowledge boundary should remain inspectable and understandable.
 
 Core rule:
 
-> User controls the knowledge boundary. Wonnyy controls the packaging.
+> User controls the knowledge boundary. Orbistry controls the packaging.
 
 Another important distinction:
 

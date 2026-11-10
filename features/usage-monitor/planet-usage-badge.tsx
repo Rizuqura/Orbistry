@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { OpenRouterUsageSnapshot } from "../../types/ai";
+import type { ProviderUsageSnapshot } from "../../types/ai";
 import { connectAi } from "../chat/desktop-client";
 import { resetView, usageView } from "./usage-view";
 import "./usage-monitor.css";
@@ -14,7 +14,7 @@ const money = (n: number | null) =>
         minimumFractionDigits: 2,
         maximumFractionDigits: 4,
       }).format(n);
-const labels: Record<OpenRouterUsageSnapshot["status"], string> = {
+const labels: Record<ProviderUsageSnapshot["status"], string> = {
   unconfigured: "Setup required",
   loading: "Checking",
   ready: "Ready",
@@ -27,12 +27,14 @@ const labels: Record<OpenRouterUsageSnapshot["status"], string> = {
 };
 export function PlanetUsageBadge({
   onOpenSettings,
+  agentId,
+  activeProvider,
 }: {
   onOpenSettings: () => void;
+  agentId?: string;
+  activeProvider?: ProviderUsageSnapshot["provider"];
 }) {
-  const [snapshot, setSnapshot] = useState<OpenRouterUsageSnapshot | null>(
-    null,
-  );
+  const [snapshot, setSnapshot] = useState<ProviderUsageSnapshot | null>(null);
   const [expanded, setExpanded] = useState(false),
     [busy, setBusy] = useState(true),
     [error, setError] = useState("");
@@ -70,6 +72,8 @@ export function PlanetUsageBadge({
         localStorage.getItem("qterminal-usage-expanded-v1") === "true",
       );
     } catch {}
+    setSnapshot(null);
+    setBusy(true);
     let alive = true,
       running = false,
       generation = 0,
@@ -83,9 +87,9 @@ export function PlanetUsageBadge({
       setBusy(true);
       try {
         const client = await connectAi();
-        if (!client.openRouterUsage)
+        if (!client.providerUsage)
           throw new Error("Restart Orbistry to enable usage monitoring.");
-        const result = await client.openRouterUsage({ refresh: manual });
+        const result = await client.providerUsage({ refresh: manual, agentId });
         if (alive && current === generation) {
           setSnapshot(result);
           setError("");
@@ -141,7 +145,19 @@ export function PlanetUsageBadge({
       window.removeEventListener("focus", wake);
       document.removeEventListener("visibilitychange", wake);
     };
-  }, []);
+  }, [agentId, activeProvider]);
+  const provider = snapshot?.provider ?? activeProvider ?? "ollama";
+  const providerName = {
+    ollama: "Ollama",
+    gemini: "Gemini",
+    nvidia: "NVIDIA",
+    openrouter: "OpenRouter",
+  }[provider];
+  const isOpenRouter = provider === "openrouter";
+  const totalTokens =
+    snapshot?.inputTokens != null && snapshot?.outputTokens != null
+      ? snapshot.inputTokens + snapshot.outputTokens
+      : null;
   const { staleByTime, ready, ratio, tone } = usageView(snapshot, now);
   const status = staleByTime
     ? "Stale"
@@ -153,7 +169,7 @@ export function PlanetUsageBadge({
   return (
     <aside
       className={`planet-usage ${tone}`}
-      aria-label="OpenRouter usage monitor"
+      aria-label={`${providerName} usage monitor`}
       onPointerDown={(e) => e.stopPropagation()}
       onWheel={(e) => e.stopPropagation()}
       onDoubleClick={(e) => e.stopPropagation()}
@@ -161,7 +177,7 @@ export function PlanetUsageBadge({
       <button
         className="usage-toggle"
         aria-expanded={expanded}
-        aria-controls="openrouter-usage-detail"
+        aria-controls="provider-usage-detail"
         onClick={() =>
           setExpanded((value) => {
             const next = !value;
@@ -173,7 +189,7 @@ export function PlanetUsageBadge({
         }
       >
         <span className="usage-dot" aria-hidden="true" />
-        <span>AI BUDGET · OPENROUTER</span>
+        <span>AI BUDGET / {providerName.toUpperCase()}</span>
         <span aria-hidden="true">{expanded ? "−" : "+"}</span>
       </button>
       <div className="usage-summary" role="status">
@@ -181,7 +197,15 @@ export function PlanetUsageBadge({
           {snapshot?.remainingUsd !== null &&
           snapshot?.remainingUsd !== undefined
             ? `${money(snapshot.remainingUsd)} left`
-            : "Unavailable"}
+            : totalTokens !== null
+              ? `${totalTokens.toLocaleString()} tokens used`
+              : snapshot?.inputTokens != null || snapshot?.outputTokens != null
+                ? "Partial token measurements"
+                : snapshot?.status === "unconfigured"
+                  ? "Key not connected"
+                  : isOpenRouter
+                    ? "Unavailable"
+                    : "No measured requests"}
         </span>
         <small>
           {busy
@@ -215,32 +239,45 @@ export function PlanetUsageBadge({
             : "The provider has not supplied a scheduled key allowance reset."
         }
       >
-        {reset.label}
+        {isOpenRouter
+          ? reset.label
+          : provider === "ollama"
+            ? "Local runtime / no API key"
+            : "Token usage / current key"}
         {staleByTime || snapshot?.status === "stale" ? " · last known" : ""}
       </div>
       {expanded && (
-        <div id="openrouter-usage-detail" className="usage-detail">
-          <p>{snapshot?.safeKeyAlias ?? "Connected key unavailable"}</p>
+        <div id="provider-usage-detail" className="usage-detail">
+          <p>
+            {snapshot?.safeKeyAlias ??
+              (provider === "ollama"
+                ? "Local runtime"
+                : "Connected key unavailable")}
+          </p>
           {ratio !== null && (
             <p>
               {(ratio * 100).toFixed(2)}% used{ready ? "" : " · stale"}
             </p>
           )}
           <dl>
-            <dt>Key cap (USD)</dt>
-            <dd>{money(snapshot?.limitUsd ?? null)}</dd>
-            <dt>Spent this period</dt>
-            <dd>{money(snapshot?.usedUsdThisPeriod ?? null)}</dd>
-            <dt>Remaining (USD)</dt>
-            <dd>{money(snapshot?.remainingUsd ?? null)}</dd>
-            <dt>Reset</dt>
-            <dd>
-              {snapshot?.resetCadence === "none"
-                ? "No reset"
-                : (snapshot?.resetCadence ?? "unknown")}
-            </dd>
-            <dt>Account credits</dt>
-            <dd>Unavailable</dd>
+            {isOpenRouter && (
+              <>
+                <dt>Key cap (USD)</dt>
+                <dd>{money(snapshot?.limitUsd ?? null)}</dd>
+                <dt>Spent this period</dt>
+                <dd>{money(snapshot?.usedUsdThisPeriod ?? null)}</dd>
+                <dt>Remaining (USD)</dt>
+                <dd>{money(snapshot?.remainingUsd ?? null)}</dd>
+                <dt>Reset</dt>
+                <dd>
+                  {snapshot?.resetCadence === "none"
+                    ? "No reset"
+                    : (snapshot?.resetCadence ?? "unknown")}
+                </dd>
+                <dt>Account credits</dt>
+                <dd>{money(snapshot?.accountCreditsRemainingUsd ?? null)}</dd>
+              </>
+            )}
             <dt>Input tokens</dt>
             <dd>{snapshot?.inputTokens?.toLocaleString() ?? "Unavailable"}</dd>
             <dt>Output tokens</dt>
@@ -249,13 +286,21 @@ export function PlanetUsageBadge({
           {snapshot?.tokenMeasurementScope && (
             <p>{snapshot.tokenMeasurementScope}</p>
           )}
-          <p>
-            {snapshot?.resetCadence === "weekly"
-              ? "Weekly key limit is not account balance. Monday–Sunday UTC."
-              : snapshot?.resetCadence && snapshot.resetCadence !== "unknown"
-                ? "Weekly limit not configured. Key allowance is not account balance."
-                : "Weekly limit unverified. Key allowance is not account balance."}
-          </p>
+          {isOpenRouter ? (
+            <p>
+              {snapshot?.resetCadence === "weekly"
+                ? "Weekly key limit is not account balance. Monday–Sunday UTC."
+                : snapshot?.resetCadence && snapshot.resetCadence !== "unknown"
+                  ? "Weekly limit not configured. Key allowance is not account balance."
+                  : "Weekly limit unverified. Key allowance is not account balance."}
+            </p>
+          ) : (
+            <p>
+              Credit balance and reset schedule are not reported here. Token
+              counts reflect completed requests using this{" "}
+              {provider === "ollama" ? "local runtime" : "key"}.
+            </p>
+          )}
           <p>Last sync: {snapshot?.fetchedAt ?? "Never"}</p>
           {(snapshot?.errorMessage || error) && (
             <p>{snapshot?.errorMessage || error}</p>
@@ -265,8 +310,8 @@ export function PlanetUsageBadge({
           </button>
           <button onClick={onOpenSettings}>Provider settings</button>
           <p>
-            Configure providers in Settings. Wallet credits require optional
-            management access; no management key is connected.
+            This panel follows the active agent provider and key. Token usage is
+            measured locally; it is not an account-wide allowance.
           </p>
         </div>
       )}

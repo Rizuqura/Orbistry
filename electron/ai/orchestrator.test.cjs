@@ -255,7 +255,7 @@ test("orchestrator forwards validated conversation history to the prompt", async
 });
 
 test("orchestrator integrates with Brain Scope and sends only the approved Markdown source", async () => {
-  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-m72-"));
+  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-m72-"));
   try {
     await fs.writeFile(
       path.join(vaultPath, "allocation.md"),

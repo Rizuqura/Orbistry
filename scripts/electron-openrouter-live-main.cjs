@@ -6,7 +6,7 @@ app.setPath(
   "userData",
   selectUserDataPath(
     app.getPath("appData"),
-    path.join(app.getPath("appData"), "qterminal"),
+    path.join(app.getPath("appData"), "orbistry"),
   ),
 );
 const originalFetch = globalThis.fetch;

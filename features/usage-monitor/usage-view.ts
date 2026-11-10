@@ -1,9 +1,6 @@
-import type { OpenRouterUsageSnapshot } from "../../types/ai";
+import type { ProviderUsageSnapshot } from "../../types/ai";
 
-export function resetView(
-  snapshot: OpenRouterUsageSnapshot | null,
-  now: number,
-) {
+export function resetView(snapshot: ProviderUsageSnapshot | null, now: number) {
   const deadline = snapshot?.resetAt ? Date.parse(snapshot.resetAt) : NaN;
   if (!Number.isFinite(deadline))
     return {
@@ -31,10 +28,7 @@ export function resetView(
   };
 }
 
-export function usageView(
-  snapshot: OpenRouterUsageSnapshot | null,
-  now: number,
-) {
+export function usageView(snapshot: ProviderUsageSnapshot | null, now: number) {
   const staleByTime = snapshot?.fetchedAt
     ? now - Date.parse(snapshot.fetchedAt) > 90000
     : false;

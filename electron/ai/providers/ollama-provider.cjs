@@ -119,7 +119,9 @@ function normalizeModel(value) {
 class OllamaProvider {
   constructor(options = {}) {
     this.baseUrl = validateBaseUrl(
-      options.baseUrl || process.env.WONNYY_OLLAMA_URL || DEFAULT_BASE_URL,
+      options.baseUrl ||
+        (process.env.ORBISTRY_OLLAMA_URL ?? process.env.WONNYY_OLLAMA_URL) ||
+        DEFAULT_BASE_URL,
     );
     this.fetch = options.fetchImpl || globalThis.fetch;
     this.statusTimeoutMs = options.statusTimeoutMs || 3_000;
@@ -594,7 +596,7 @@ class OllamaProvider {
     if (!models.some((item) => item.name === model || item.model === model)) {
       throw new ModelRuntimeError(
         MODEL_ERROR_CODES.NOT_FOUND,
-        `Ollama model "${model}" is not installed. Pull it before running the Wonnyy test.`,
+        `Ollama model "${model}" is not installed. Pull it before running the Orbistry test.`,
         { model },
       );
     }
@@ -606,7 +608,7 @@ class OllamaProvider {
       ],
       format: {
         type: "object",
-        properties: { status: { type: "string", const: "WONNYY ONLINE" } },
+        properties: { status: { type: "string", const: "ORBISTRY ONLINE" } },
         required: ["status"],
         additionalProperties: false,
       },
@@ -624,8 +626,8 @@ class OllamaProvider {
     return {
       ...response,
       content: status ?? response.content,
-      passed: status === "WONNYY ONLINE",
-      expected: "WONNYY ONLINE",
+      passed: status === "ORBISTRY ONLINE",
+      expected: "ORBISTRY ONLINE",
     };
   }
 }

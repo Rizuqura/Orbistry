@@ -19,7 +19,7 @@ export function ConversationHistory({
   workspace?: boolean;
   onManageContext?: () => void;
 }) {
-  const agentName = chat.agent?.displayName ?? "Wonnyy Agent";
+  const agentName = chat.agent?.displayName ?? "Orbistry Agent";
   const ownedConversations = chat.conversations.filter(
     (c) => (c.agentId ?? "wonnyy-agent") === chat.activeAgentId,
   );

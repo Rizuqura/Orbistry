@@ -18,12 +18,12 @@ const source = (id, content, type = "md") => ({
 async function report() {
   const legacy = (
     await fs.readFile(
-      path.join(__dirname, "../electron/ai/policies/wonnyy-host-policy-v19.md"),
+      path.join(__dirname, "../electron/ai/policies/orbistry-host-policy-v19.md"),
       "utf8",
     )
   ).trimEnd();
   const policy = source(
-    "Wonnyy_Strict_Context_Bound_Research_Agent.md",
+    "Orbistry_Strict_Context_Bound_Research_Agent.md",
     canonical,
   );
   const evidence = source("research.md", "ALPHA allocation is 25%.");

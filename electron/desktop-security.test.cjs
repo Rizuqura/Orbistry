@@ -6,7 +6,7 @@ const {
   sameDocument,
 } = require("./desktop-security.cjs");
 test("desktop IPC rejects other windows, subframes and navigated documents", () => {
-  const url = "file:///C:/QTerminal/out/index.html",
+  const url = "file:///C:/Orbistry/out/index.html",
     frame = { url },
     contents = { mainFrame: frame };
   let handler;

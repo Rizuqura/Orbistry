@@ -1,6 +1,6 @@
 # OpenRouter usage monitor — Milestone A
 
-Implements `QTerminal_Milestone_A_OpenRouter_Usage_Monitor.md`. Milestone B remains deferred. No graph layout, Station, Context Box, Agent or provider-settings redesign is included.
+Implements `Orbistry_Milestone_A_OpenRouter_Usage_Monitor.md`. Milestone B remains deferred. No graph layout, Station, Context Box, Agent or provider-settings redesign is included.
 
 ## Audit and implementation boundaries
 

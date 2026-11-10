@@ -8,6 +8,7 @@ const {
   nativeImage,
 } = require("electron");
 const path = require("path");
+const { installChatWindowHandler } = require("./chat-window.cjs");
 const { pathToFileURL } = require("node:url");
 const { initializeVault, saveVault } = require("./vault-settings.cjs");
 const {
@@ -93,6 +94,14 @@ async function brainOperation(operation) {
 }
 
 function createWindow() {
+  const windowIcon = nativeImage.createFromPath(
+    path.join(
+      __dirname,
+      "..",
+      "build",
+      process.platform === "win32" ? "orbistry-window-icon.png" : "icon.png",
+    ),
+  );
   const window = new BrowserWindow({
     show: !app.commandLine.hasSwitch("hidden"),
     width: 1440,
@@ -100,8 +109,8 @@ function createWindow() {
     minWidth: 1100,
     minHeight: 700,
     backgroundColor: "#0a0d0e",
-    title: "Orbistry",
-    icon: path.join(__dirname, "..", "build", "icon.png"),
+    title: "ORB Terminal",
+    icon: windowIcon,
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),
@@ -110,6 +119,9 @@ function createWindow() {
       sandbox: true,
     },
   });
+  // Explicitly update both native title-bar and taskbar icons on Windows.
+  if (process.platform === "win32" && !windowIcon.isEmpty())
+    window.setIcon(windowIcon);
   mainWindow = window;
   window.webContents.on("will-prevent-unload", (event) => {
     const response = dialog.showMessageBoxSync(window, {
@@ -139,12 +151,9 @@ function createWindow() {
     void chatService?.cancelAll();
   });
 
-  window.webContents.setWindowOpenHandler(({ url }) => {
-    if (url.startsWith("https://")) {
-      shell.openExternal(url);
-    }
-
-    return { action: "deny" };
+  installChatWindowHandler(window, {
+    icon: windowIcon,
+    openExternal: (url) => shell.openExternal(url),
   });
 
   if (isDevelopment) {
@@ -164,15 +173,15 @@ app.setPath(
     app.commandLine.hasSwitch("user-data-dir"),
   ),
 );
-app.setName("Orbistry");
+app.setName("ORB Terminal");
 
 app.whenReady().then(async () => {
   activeVaultPath = await initializeVault(
     app.getPath("userData"),
     app.getPath("documents"),
-    process.env.WONNYY_VAULT_PATH,
+    process.env.ORBISTRY_VAULT_PATH ?? process.env.WONNYY_VAULT_PATH,
   );
-  app.setAppUserModelId("com.wonnyy.amadeus");
+  app.setAppUserModelId("com.orbistry.desktop");
   trustedIpc.handle("vault:getSnapshot", getVaultSnapshot);
   trustedIpc.handle("vault:rescan", () => changeVaultKnowledge(scanVault));
   trustedIpc.handle("vault:selectFolder", selectVaultFolder);

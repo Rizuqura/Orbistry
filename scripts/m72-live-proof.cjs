@@ -8,7 +8,7 @@ const { OllamaProvider } = require("../electron/ai/providers/ollama-provider.cjs
 const { createModelRun, listModelRuns } = require("../electron/ai/run-store.cjs");
 
 async function main() {
-  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-m72-live-"));
+  const vaultPath = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-m72-live-"));
   try {
     await fs.writeFile(path.join(vaultPath, "allocation.md"), "Target allocation is 25%.");
     await fs.writeFile(path.join(vaultPath, "unrelated.md"), "Target allocation is 90%.");

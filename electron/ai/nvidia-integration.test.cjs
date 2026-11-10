@@ -13,7 +13,7 @@ const {
   createOnlineSmokeFetch,
 } = require("../../scripts/fixtures/online-smoke-fetch.cjs");
 test("NVIDIA preserves source isolation, bounded history, identity, retry and restart across model switches", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-nvidia-chat-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-nvidia-chat-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const { state, fetchImpl } = createOnlineSmokeFetch();
   const provider = new NvidiaProvider({

@@ -438,7 +438,7 @@
         "bytes": 234599989
       },
       {
-        "path": "dist/win-unpacked/Wonnyy.exe",
+        "path": "dist/win-unpacked/Orbistry.exe",
         "bytes": 204563456
       },
       {
@@ -446,7 +446,7 @@
         "bytes": 204521984
       },
       {
-        "path": "dist/Wonnyy Setup 0.1.0.exe",
+        "path": "dist/Orbistry Setup 0.1.0.exe",
         "bytes": 153823810
       },
       {
@@ -908,13 +908,13 @@
         "bytes": 27655
       },
       {
-        "path": "big-context/feature/QTerminal_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md",
+        "path": "big-context/feature/Orbistry_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md",
         "bytes": 26822
       }
     ],
     "topFiles": [
       {
-        "path": "dist/win-unpacked/QTerminal.exe",
+        "path": "dist/win-unpacked/Orbistry.exe",
         "bytes": 249861120
       },
       {
@@ -922,7 +922,7 @@
         "bytes": 249798656
       },
       {
-        "path": "dist/QTerminal-1.0.0-Victoria-Beta-win-x64.exe",
+        "path": "dist/Orbistry-1.0.0-Victoria-Beta-win-x64.exe",
         "bytes": 138073467
       },
       {
@@ -1010,11 +1010,11 @@
     "forbiddenEntries": [],
     "files": [
       {
-        "name": "QTerminal-1.0.0-Victoria-Beta-win-x64.exe",
+        "name": "Orbistry-1.0.0-Victoria-Beta-win-x64.exe",
         "bytes": 138073467
       },
       {
-        "name": "QTerminal-1.0.0-Victoria-Beta-win-x64.exe.blockmap",
+        "name": "Orbistry-1.0.0-Victoria-Beta-win-x64.exe.blockmap",
         "bytes": 146301
       }
     ]
@@ -1302,7 +1302,7 @@
   ],
   "packagedAcceptance": {
     "passed": true,
-    "executable": "Windows x64 QTerminal.exe",
+    "executable": "Windows x64 Orbistry.exe",
     "emptyState": true,
     "csp": true,
     "nativeImageOcr": true,

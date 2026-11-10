@@ -4,17 +4,17 @@ Implemented 2026-10-26, following repository inspection. This is a proposal/revi
 
 ## Architecture assessment
 
-The inspected repository has no `/loop` parser/executor, extraction-result schema, iteration notes or executable skill registration mechanism. `AgentStore.get()` previously returned an empty `skills` list. Wonnyy and CHronoZ use the existing ChatService/orchestrator, immutable model-run JSON, Context Box manifests and source capabilities. Context Boxes are vault-owned `.wonnyy/context-boxes.json` metadata; conversations and run records are also under `.wonnyy/`. Source readers enforce paths and hashes. Sources enter a box only through explicit selection/review; Stations never expand a saved box automatically. Vault scanning supports Markdown/CSV/text-PDF, with `.wonnyy` excluded from the graph. The repository does not supply an investment Bank Vault or real GOTO research documents.
+The inspected repository has no `/loop` parser/executor, extraction-result schema, iteration notes or executable skill registration mechanism. `AgentStore.get()` previously returned an empty `skills` list. Orbistry and CHronoZ use the existing ChatService/orchestrator, immutable model-run JSON, Context Box manifests and source capabilities. Context Boxes are vault-owned `.wonnyy/context-boxes.json` metadata; conversations and run records are also under `.wonnyy/`. Source readers enforce paths and hashes. Sources enter a box only through explicit selection/review; Stations never expand a saved box automatically. Vault scanning supports Markdown/CSV/text-PDF, with `.wonnyy` excluded from the graph. The repository does not supply an investment Bank Vault or real GOTO research documents.
 
 Existing source read capabilities and metadata writers are not a general authorization to write research notes. Therefore this feature chooses an **app-owned outbox outside the primary vault**, with a separate operator tool for committing reviewed knowledge there. It never creates `skill/` in the Bank Vault or edits source files. Existing `.wonnyy` writers for normal chat remain unchanged.
 
 ## Implemented components and invocation
 
-- `electron/ai/skills.cjs`: explicit app-owned `knowledge-consolidation` registration for Wonnyy only. `loopIntegration` is `unavailable`; no tools are loaded from research text.
+- `electron/ai/skills.cjs`: explicit app-owned `knowledge-consolidation` registration for Orbistry only. `loopIntegration` is `unavailable`; no tools are loaded from research text.
 - `knowledge-store.cjs`: validated structured observations; immutable Markdown proposals; exact metadata duplicate/metric-conflict/period detection; independent operator approval; versioned knowledge; supersession; bounded source-bound retrieval.
-- `research-knowledge.cjs`: read-only validation of completed Wonnyy run records and current source readers; connects retrieval to ChatService's existing bound-scope capability.
+- `research-knowledge.cjs`: read-only validation of completed Orbistry run records and current source readers; connects retrieval to ChatService's existing bound-scope capability.
 - Existing guarded IPC/preload: additive optional `proposeKnowledge` and `retrieveKnowledge` methods. No approval method is exposed. Bridge 18 and existing message/storage schemas remain unchanged; stale clients get a restart message when invoking the new optional capability.
-- `features/agent/knowledge-proposal.tsx`: **Create knowledge proposal** on completed Wonnyy answers. Enter reviewed structured extraction JSON; Save stages pending candidates. Double submissions are guarded while saving. Preview approved knowledge uses the first observation's entity/topic/period and a 1,500-token estimate budget. The native modal supports Escape before saving, error display and retry. CHronoZ remains unconfigured.
+- `features/agent/knowledge-proposal.tsx`: **Create knowledge proposal** on completed Orbistry answers. Enter reviewed structured extraction JSON; Save stages pending candidates. Double submissions are guarded while saving. Preview approved knowledge uses the first observation's entity/topic/period and a 1,500-token estimate budget. The native modal supports Escape before saving, error display and retry. CHronoZ remains unconfigured.
 - `scripts/knowledge-review.cjs`: explicit external operator list/approve/retrieve interface. Approval is not available to model execution or the renderer.
 
 The UI expects structured observations entered by the reviewer; this release does not turn arbitrary natural-language answers into automatically trusted atomic facts.
@@ -52,7 +52,7 @@ Discover the exact application userData path using Electron's `app.getPath("user
 node scripts/knowledge-review.cjs --app-data "<userData>" --vault "<BankVault>" --action list
 node scripts/knowledge-review.cjs --app-data "<userData>" --vault "<BankVault>" --action approve --iteration 0 --record "<64-hex-record-id>" --reviewer "<operator>" --rationale "<independent verification rationale>"
 # Add --supersedes <old-record-id> only after reviewing the conflicting replacement.
-node scripts/knowledge-review.cjs --app-data "<userData>" --vault "<BankVault>" --action retrieve --run "<completed-Wonnyy-run-id>" --entity "<entity>" --topic "<topic>" --period "<period>" --max-tokens 1500
+node scripts/knowledge-review.cjs --app-data "<userData>" --vault "<BankVault>" --action retrieve --run "<completed-Orbistry-run-id>" --entity "<entity>" --topic "<topic>" --period "<period>" --max-tokens 1500
 ```
 
 Both lexical and canonical path checks reject an outbox in the Bank Vault. Parent symlinks/junctions are rejected for outbox reads and writes. Runs are read without creating source-side directories. The source reader rejects traversal and unsupported paths. If a test/deployment deliberately places userData inside its vault, knowledge capture is unavailable until userData is placed outside; the feature does not relocate existing credentials automatically.

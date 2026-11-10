@@ -1038,7 +1038,7 @@ export function useChatRuntime({
       }, false),
     researchDefaults: (() => {
       const sameVault = (path: string) =>
-        window.wonnyyDesktop?.platform === "win32"
+        window.orbistryDesktop?.platform === "win32"
           ? path.toLowerCase() === canonicalVault?.toLowerCase()
           : path === canonicalVault;
       const nodes = agent?.construction?.active?.nodes ?? [];
@@ -1157,7 +1157,7 @@ export function useChatRuntime({
     }) => {
       if (!bridge.current?.retrieveKnowledge || !selected.current)
         throw new Error(
-          "Select a bound Wonnyy chat and restart Orbistry if it was updated.",
+          "Select a bound Orbistry chat and restart Orbistry if it was updated.",
         );
       return bridge.current.retrieveKnowledge({
         conversationId: selected.current.id,

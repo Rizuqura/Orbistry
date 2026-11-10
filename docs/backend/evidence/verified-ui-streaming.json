@@ -4,7 +4,7 @@
   "provider": "openrouter",
   "model": "openai/gpt-4.1-nano",
   "status": "PASS",
-  "visibleText": "QTERMINAL_OK",
+  "visibleText": "ORBISTRY_OK",
   "events": [
     {
       "requestId": "18f0dc7e-a182-48d1-929f-2729e0f7a204",

@@ -7,15 +7,15 @@ const os = require("node:os");
 
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-model-settings-"),
+    path.join(os.tmpdir(), "orbistry-model-settings-"),
   );
   let app;
   const errors = [];
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -98,7 +98,7 @@ async function main() {
       .click();
     await page.waitForFunction(
       async () =>
-        (await window.wonnyyDesktop.ai.models()).settings.providerId ===
+        (await window.orbistryDesktop.ai.models()).settings.providerId ===
         "nvidia",
     );
     await cards
@@ -107,7 +107,7 @@ async function main() {
       .click();
     await page.waitForFunction(
       async () =>
-        (await window.wonnyyDesktop.ai.models()).settings.providerId ===
+        (await window.orbistryDesktop.ai.models()).settings.providerId ===
         "ollama",
     );
     assert.equal(
@@ -115,7 +115,7 @@ async function main() {
       0,
       "Connecting must not generate paid inference",
     );
-    const before = await page.evaluate(() => window.wonnyyDesktop.ai.models());
+    const before = await page.evaluate(() => window.orbistryDesktop.ai.models());
     assert.equal(before.settings.providerId, "ollama");
     await fs.mkdir("test-results", { recursive: true });
     await page
@@ -187,18 +187,18 @@ async function main() {
       globalThis.onlineSmoke.nvidiaModelStatuses["nvidia/nemotron-smoke"] = 404;
     });
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.checkRemoteModel({
+      window.orbistryDesktop.ai.checkRemoteModel({
         providerId: "nvidia",
         model: "nvidia/nemotron-smoke",
       }),
     );
     const visible = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.providedModels({ devView: true }),
+      window.orbistryDesktop.ai.providedModels({ devView: true }),
     );
     assert.equal(visible.length, 1);
     assert.equal(visible[0].modelId, "deepseek-ai/deepseek-smoke");
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.modelFavorites()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.modelFavorites()))
         .length,
       2,
     );

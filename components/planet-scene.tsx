@@ -18,10 +18,7 @@ import {
 import { PlanetNode } from "./planet-node";
 import { PlanetMinimap } from "./planet-minimap";
 import { PlanetControls } from "./planet-controls";
-import {
-  interpolatePlanetCamera,
-  type PlanetCamera,
-} from "../lib/planet-navigation";
+import type { PlanetCamera } from "../lib/planet-navigation";
 import { ChatPanel, type ChatPanelProps } from "./chat-panel";
 import { PlanetUsageBadge } from "../features/usage-monitor/planet-usage-badge";
 import { withPlanetOrbits, orbitInPlanetViewport } from "../lib/planet-orbits";
@@ -54,6 +51,7 @@ export interface PlanetSceneProps {
   projectionIds?: ReadonlySet<string> | null;
   stationClusters?: readonly StationCluster[];
   chatProps: Omit<ChatPanelProps, "variant">;
+  chatDetached?: boolean;
   onOpenSettings: () => void;
   canvasFocus: boolean;
   onToggleCanvasFocus: () => void;
@@ -90,6 +88,7 @@ export function PlanetScene({
   projectionIds = null,
   stationClusters = EMPTY_CLUSTERS,
   chatProps,
+  chatDetached = false,
   onOpenSettings,
   canvasFocus,
   onToggleCanvasFocus,
@@ -108,30 +107,6 @@ export function PlanetScene({
     },
     [],
   );
-  const animationRef = useRef<number | null>(null);
-  const cancelFlight = useCallback(() => {
-    if (animationRef.current !== null)
-      cancelAnimationFrame(animationRef.current);
-    animationRef.current = null;
-  }, []);
-  useEffect(() => cancelFlight, [cancelFlight]);
-  const [flatMode, setFlatMode] = useState(true);
-  useEffect(() => {
-    try {
-      setFlatMode(localStorage.getItem("planetview-flat-mode") !== "false");
-    } catch {
-      /* Storage may be unavailable. */
-    }
-  }, []);
-  const toggleFlatMode = () => {
-    const next = !flatMode;
-    setFlatMode(next);
-    try {
-      localStorage.setItem("planetview-flat-mode", String(next));
-    } catch {
-      /* Keep the session preference. */
-    }
-  };
   const [asteroidsVisible, setAsteroidsVisible] = useState(true);
   const [selectionBox, setSelectionBox] = useState<{
     x: number;
@@ -320,12 +295,11 @@ export function PlanetScene({
   );
 
   const fitView = useCallback(() => {
-    cancelFlight();
     if (canvas.w === 0 || canvas.h === 0) return;
     setTransform(
       fitPlanetCamera(canvas.w, canvas.h, baseLayout.width, baseLayout.height),
     );
-  }, [canvas, baseLayout, cancelFlight, setTransform]);
+  }, [canvas, baseLayout, setTransform]);
 
   // Fit on first measurement and whenever the layout changes (mode switch).
   useEffect(() => {
@@ -336,7 +310,6 @@ export function PlanetScene({
     (id: string) => {
       const pos = layoutRef.current.positions.get(id);
       if (!pos || canvas.w === 0) return;
-      cancelFlight();
       const from = transformRef.current;
       const k = clamp(Math.max(from.k, 1.6), 0.2, 4);
       const to = {
@@ -344,25 +317,9 @@ export function PlanetScene({
         y: canvas.h / 2 - pos.y * k,
         k,
       };
-      if (
-        flatMode ||
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        setTransform(to);
-        return;
-      }
-      const started = performance.now();
-      const step = (now: number) => {
-        const progress = Math.min(1, (now - started) / 1100);
-        setTransform(
-          interpolatePlanetCamera(from, to, canvas.w, canvas.h, progress),
-        );
-        animationRef.current =
-          progress < 1 ? requestAnimationFrame(step) : null;
-      };
-      animationRef.current = requestAnimationFrame(step);
+      setTransform(to);
     },
-    [baseLayout, canvas, cancelFlight, setTransform, flatMode],
+    [baseLayout, canvas, setTransform],
   );
 
   const lastNavigation = useRef<typeof navigationTarget>(null);
@@ -406,7 +363,6 @@ export function PlanetScene({
 
   const zoomBy = useCallback(
     (factor: number) => {
-      cancelFlight();
       setTransform((t) => {
         const k = clamp(t.k * factor, minimumZoom, 4);
         const cx = canvas.w / 2;
@@ -418,7 +374,7 @@ export function PlanetScene({
         };
       });
     },
-    [canvas, cancelFlight, setTransform, minimumZoom],
+    [canvas, setTransform, minimumZoom],
   );
 
   // Native non-passive wheel listener so we can preventDefault.
@@ -429,7 +385,6 @@ export function PlanetScene({
       if (isSceneOverlay(event.target)) return;
       event.preventDefault();
       if (dragStart.current) return;
-      cancelFlight();
       const rect = el.getBoundingClientRect();
       const mx = event.clientX - rect.left;
       const my = event.clientY - rect.top;
@@ -445,7 +400,7 @@ export function PlanetScene({
     };
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
-  }, [cancelFlight, setTransform, minimumZoom]);
+  }, [setTransform, minimumZoom]);
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (
@@ -456,7 +411,6 @@ export function PlanetScene({
       return;
     event.preventDefault();
     event.currentTarget.focus();
-    cancelFlight();
     setInteracting(true);
     dragStart.current = {
       px: event.clientX,
@@ -649,19 +603,18 @@ export function PlanetScene({
 
   const jump = useCallback(
     (worldX: number, worldY: number) => {
-      cancelFlight();
       setTransform((t) => ({
         ...t,
         x: canvas.w / 2 - worldX * t.k,
         y: canvas.h / 2 - worldY * t.k,
       }));
     },
-    [canvas, cancelFlight, setTransform],
+    [canvas, setTransform],
   );
 
   return (
     <section
-      className={`planet-view planet-neutral${flatMode ? " planet-flat" : ""}`}
+      className="planet-view planet-neutral"
       data-animation-state={
         motion.enabled ? (motion.running ? "running" : "paused") : "off"
       }
@@ -720,7 +673,6 @@ export function PlanetScene({
         onKeyDown={(event) => {
           if (event.key === "Escape" && !isSceneOverlay(event.target)) {
             cancelDrag();
-            cancelFlight();
           }
         }}
         onPointerCancel={cancelDrag}
@@ -733,7 +685,11 @@ export function PlanetScene({
         }}
         onDoubleClick={onDoubleClick}
       >
-        <PlanetUsageBadge onOpenSettings={onOpenSettings} />
+        <PlanetUsageBadge
+          onOpenSettings={onOpenSettings}
+          agentId={chatProps.controller.agent?.id}
+          activeProvider={chatProps.controller.effectiveSettings?.providerId}
+        />
         <svg
           className={`pedges semantic-${semanticBand}${stationMatchIds.size ? " has-station-matches" : ""}`}
           width={canvas.w}
@@ -755,7 +711,7 @@ export function PlanetScene({
                 return null;
               return (
                 <circle
-                  key={orbit.parentId}
+                  key={`${orbit.parentId}:${orbit.radius}`}
                   className={`planet-orbit${orbit.parentId === (focusId ?? graph.rootId) ? " planet-orbit-anchor" : ""}`}
                   cx={orbit.x}
                   cy={orbit.y}
@@ -808,6 +764,14 @@ export function PlanetScene({
             const sNode = graph.byId.get(edge.source);
             const tNode = graph.byId.get(edge.target);
             if (!sNode || !tNode) return null;
+            if (
+              graph.projection !== "station" &&
+              (edge.source === graph.rootId ||
+                edge.target === graph.rootId ||
+                sNode.type !== "directory" ||
+                tNode.type !== "file")
+            )
+              return null;
             if (!isVisible(sNode) || !isVisible(tNode)) return null;
             const dim =
               related &&
@@ -926,41 +890,48 @@ export function PlanetScene({
             }}
           />
         ) : null}
-        <PlanetMinimap
-          graph={graph}
-          layout={baseLayout}
-          viewport={viewport}
-          focusId={focusId}
-          asteroidsVisible={asteroidsVisible}
-          onJump={jump}
-        />
-        <ChatPanel
-          variant="floating"
-          {...chatProps}
-          minimizeForCanvas={canvasFocus}
-        />
-        <PlanetControls
-          onZoomIn={() => zoomBy(1.01)}
-          onZoomOut={() => zoomBy(1 / 1.01)}
-          zoomPercent={Math.round(transform.k * 100)}
-          onFocus={() => selectedId && focusOnNode(selectedId)}
-          onReset={resetView}
-          asteroidsVisible={asteroidsVisible}
-          flatMode={flatMode}
-          onToggleFlatMode={toggleFlatMode}
-          animationEnabled={motion.enabled}
-          animationRunning={motion.running}
-          onToggleAnimation={motion.toggle}
-          onToggleAsteroids={() => {
-            if (
-              asteroidsVisible &&
-              selectedId &&
-              graph.byId.get(selectedId)?.fileType === "other"
-            )
-              onSelect(null);
-            setAsteroidsVisible((visible) => !visible);
-          }}
-        />
+        {chatDetached ? (
+          <button className="agent-reopen" onClick={chatProps.onPopOutWindow}>
+            Show chat window
+          </button>
+        ) : (
+          <ChatPanel
+            variant="floating"
+            {...chatProps}
+            minimizeForCanvas={canvasFocus}
+          />
+        )}
+        <div className="planet-tools">
+          <PlanetMinimap
+            graph={graph}
+            layout={baseLayout}
+            viewport={viewport}
+            focusId={focusId}
+            asteroidsVisible={asteroidsVisible}
+            onJump={jump}
+          />
+
+          <PlanetControls
+            onZoomIn={() => zoomBy(1.01)}
+            onZoomOut={() => zoomBy(1 / 1.01)}
+            zoomPercent={Math.round(transform.k * 100)}
+            onFocus={() => selectedId && focusOnNode(selectedId)}
+            onReset={resetView}
+            asteroidsVisible={asteroidsVisible}
+            animationEnabled={motion.enabled}
+            animationRunning={motion.running}
+            onToggleAnimation={motion.toggle}
+            onToggleAsteroids={() => {
+              if (
+                asteroidsVisible &&
+                selectedId &&
+                graph.byId.get(selectedId)?.fileType === "other"
+              )
+                onSelect(null);
+              setAsteroidsVisible((visible) => !visible);
+            }}
+          />
+        </div>
       </div>
     </section>
   );

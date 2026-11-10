@@ -1,7 +1,7 @@
 /** Purpose: reproducible public synthetic tasks; no proprietary data.
  * Inputs: none; outputs: 40 task cases including 25-turn replay and positioned needles.
  * Dependencies: none. Failure: none. Knobs: fixture version, controlled context lengths. Owner: evaluation. */
-const VERSION = "qterminal-synthetic-v1";
+const VERSION = "orbistry-synthetic-v1";
 
 /** Ground truth and human rubrics are kept outside provider messages. */
 function fixtures() {
@@ -12,8 +12,8 @@ function fixtures() {
       task: "format",
       turns: [
         {
-          prompt: `Reply with exactly QTERMINAL_${i} and no other characters.`,
-          expected: `QTERMINAL_${i}`,
+          prompt: `Reply with exactly ORBISTRY_${i} and no other characters.`,
+          expected: `ORBISTRY_${i}`,
         },
       ],
       rubric: "Exact string equality, whitespace trimmed.",

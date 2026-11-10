@@ -1,6 +1,6 @@
-# Wonnyy — Amadeus V0.0.1
+# Orbistry — Amadeus V0.0.1
 
-Wonnyy is a local-first desktop research workspace for navigating a user-owned knowledge vault. The current prototype scans local Markdown, CSV, and PDF files, then exposes the same vault through a file Explorer, a spatial Planet View, and a document reader.
+Orbistry is a local-first desktop research workspace for navigating a user-owned knowledge vault. The current prototype scans local Markdown, CSV, and PDF files, then exposes the same vault through a file Explorer, a spatial Planet View, and a document reader.
 
 The product principle is simple:
 
@@ -35,7 +35,7 @@ Both navigation modes operate on the same snapshot and selection state. Selectin
 
 ## User workflow
 
-1. Start Wonnyy. The session opens `C:\bank` by default, or the path supplied through `WONNYY_VAULT_PATH`.
+1. Start Orbistry. The session opens `C:\bank` by default, or the path supplied through `ORBISTRY_VAULT_PATH`.
 2. Select **Change Vault** to choose another local folder for the current session.
 3. Electron scans the folder recursively and returns a vault snapshot containing its hierarchy, file metadata, totals, warnings, and scan time.
 4. Browse the snapshot in either view:
@@ -84,7 +84,7 @@ Supported extensions are `.md`, `.markdown`, `.csv`, and `.pdf`. PDF text is cac
 
 The renderer has no direct Node.js or filesystem access. Electron runs with context isolation enabled, Node integration disabled, and Chromium sandboxing enabled.
 
-The preload script exposes only these operations through `window.wonnyyDesktop.vault`:
+The preload script exposes only these operations through `window.orbistryDesktop.vault`:
 
 | Operation | Purpose |
 | --- | --- |
@@ -168,7 +168,7 @@ public/       Static assets copied into the Next.js export
 big-context/  Product goals, engineering context, and milestone documents
 ```
 
-`big-context/` documents the product; it is not a user vault and is not automatically scanned by Wonnyy.
+`big-context/` documents the product; it is not a user vault and is not automatically scanned by Orbistry.
 
 ## Development workflow
 
@@ -248,7 +248,7 @@ User request
   -> Context Manager reads only approved vault content
   -> context is assembled with provenance and limits
   -> replaceable model provider receives that context
-  -> response returns to Wonnyy
+  -> response returns to Orbistry
   -> user reviews insight before any knowledge is saved or acted on
 ```
 

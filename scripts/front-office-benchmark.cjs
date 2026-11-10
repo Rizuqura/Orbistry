@@ -142,7 +142,7 @@ async function main() {
           : new NvidiaProvider({ credentials });
       const registry = { providerFor: () => adapter };
       temporary = await fs.mkdtemp(
-        path.join(os.tmpdir(), "qterminal-evaluation-"),
+        path.join(os.tmpdir(), "orbistry-evaluation-"),
       );
       const catalog = new CapabilityRegistry(temporary, registry, credentials);
       await catalog.refresh(provider);

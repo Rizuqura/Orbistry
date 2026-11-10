@@ -16,12 +16,11 @@ export function StartupProgress({
       <div className="startup-card">
         <img
           className="startup-brand"
-          src="./qterminal-logo.png"
-          alt=""
-          width={128}
-          height={128}
+          src="./orbistry-logo.png"
+          alt="Orbistry"
+          width={360}
+          height={120}
         />
-        <h1>Orbistry</h1>
         <p className="startup-version">v1.0.1 Victoria Beta</p>
         <p className="startup-stage" role="status" aria-live="polite">
           {label}

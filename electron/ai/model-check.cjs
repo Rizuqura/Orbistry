@@ -11,7 +11,7 @@ async function checkRemoteModel(provider, providerId, model, signal) {
       userMessage:
         "What percentage is allocated to bonds? Reply exactly with the percentage, such as 10%.",
       source: {
-        sourceId: "wonnyy-model-check",
+        sourceId: "orbistry-model-check",
         relativePath: "synthetic-check.md",
         type: "md",
         contentHash: "a".repeat(64),

@@ -602,7 +602,7 @@ class ChatService {
     if (/^\/loop(?:\s|$)/i.test(question))
       throw new ModelRuntimeError(
         "MODEL_INVALID_REQUEST",
-        "This repository has no /loop extraction workflow. Use a normal research question, then Create knowledge proposal on a completed Wonnyy answer. No loop was executed.",
+        "This repository has no /loop extraction workflow. Use a normal research question, then Create knowledge proposal on a completed Orbistry answer. No loop was executed.",
       );
     this.assertIdle();
     requestLogger?.step("ADMISSION_ACCEPTED");

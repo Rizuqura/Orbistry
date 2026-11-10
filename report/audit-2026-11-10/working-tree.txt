@@ -1,0 +1,252 @@
+M README.md
+ M RELEASE_NOTES.md
+ M app/globals.css
+ M app/icon.png
+ M app/layout.tsx
+ M app/planet-neutral.css
+ M app/planet-sidebar.css
+ M app/soft-surfaces.css
+ M app/startup.css
+ M app/victoria.css
+ M big-context/architecture.md
+ M big-context/archive/readme-v0.0.1.md
+ D big-context/backend-feature/QTerminal_Backend_Implementation_Status.md
+ D big-context/backend-feature/QTerminal_PreLLM_Backend_Codex_Implementation_Brief.md
+ M big-context/context-engineering-experience.md
+ M big-context/engineering.md
+ D big-context/feature/QTerminal_Agent_Window_UIUX_Vibecoding_Spec.md
+ D big-context/feature/QTerminal_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md
+ D big-context/feature/QTerminal_Engine_Node_Codex_Milestone.md
+ D big-context/feature/QTerminal_Milestone_A_OpenRouter_Usage_Monitor.md
+ D big-context/feature/QTerminal_Model_Provider_Settings_Codex_Spec.md
+ D big-context/feature/QTerminal_Wonnyy_Agent_Chatbox_Refactor_Prompt.md
+ D big-context/feature/Wonnyy_Agent_Construction_Settings_Retro_UI.md
+ M big-context/feature/add-agent-handoff.md
+ M big-context/feature/agent-appearance-handoff.md
+ M big-context/feature/agent-construction-handoff.md
+ M big-context/feature/agent-workspace-handoff.md
+ M big-context/feature/chronoz-planet-handoff.md
+ M big-context/feature/context-built-agents-handoff.md
+ M big-context/feature/knowledge-consolidation-handoff.md
+ M big-context/feature/numeric-evidence-handoff.md
+ M big-context/feature/openrouter-usage-handoff.md
+ M big-context/feature/pdf-image-reading-handoff.md
+ M big-context/feature/runtime-context-handoff.md
+ M big-context/feature/startup-progress-handoff.md
+ M big-context/feature/ui-polish-handoff.md
+ M big-context/feature/victoria-workspace-handoff.md
+ D big-context/feature/wonnyy-agent-handoff.md
+ M big-context/goal.md
+ M big-context/model-integration-handoff.md
+ M "big-context/model-integration-online-NVIDIA Provider.md"
+ M big-context/model-integration-online.md
+ M big-context/nvidia-provider-handoff.md
+ M big-context/online-integration-handoff.md
+ M big-context/openrouter-handoff.md
+ M big-context/planetview-experience.md
+ M big-context/planetview-physics.md
+ M big-context/product.md
+ M big-context/project-audit-2026-09-08.md
+ M big-context/project-audit-2026-09-10.md
+ M big-context/release-0.0.5.md
+ M big-context/release-1.0.0.md
+ M big-context/release-1.0.1.md
+ M big-context/state.md
+ M big-context/task-1.md
+ M big-context/task-model-integration-architecture.md
+ M big-context/task-model-integration.md
+ M big-context/task.md
+ M big-context/tech-stack.md
+ M build/icon.ico
+ M build/icon.png
+ M components/app-shell.tsx
+ M components/planet-controls.tsx
+ M components/planet-details.tsx
+ M components/planet-scene.tsx
+ M components/startup-progress.tsx
+ M components/station-panel.tsx
+ M components/status-bar.tsx
+ M components/top-bar.tsx
+ M docs/ENGINE_NODE_CHRONOZ_SETUP.md
+ M docs/ENGINE_NODE_CHRONOZ_VALIDATION.md
+ M docs/PLANET_VIEW_PERFORMANCE_FIX.md
+ M docs/architecture/pre-llm/00-existing-architecture-audit.md
+ M docs/architecture/pre-llm/03-provider-setup-openrouter-nvidia.md
+ M docs/architecture/pre-llm/09-security-and-rollback.md
+ M docs/architecture/pre-llm/10-benchmark-report.md
+ M docs/backend/PROVIDER_BASELINE.md
+ M docs/backend/PROVIDER_DIAGNOSTICS.md
+ M docs/backend/PROVIDER_RCA.md
+ M docs/backend/PROVIDER_REQUEST_FLOW.md
+ M docs/backend/evidence/baseline-live.json
+ M docs/backend/evidence/verified-ui-nonstreaming.json
+ M docs/backend/evidence/verified-ui-streaming.json
+ M docs/release-audit.md
+ M docs/release-measurements.json
+ M electron/ai/agent-construction.test.cjs
+ M electron/ai/agent-policy.cjs
+ M electron/ai/agent-store.cjs
+ M electron/ai/agent-store.test.cjs
+ M electron/ai/chat-service.cjs
+ M electron/ai/chat-service.test.cjs
+ M electron/ai/context-box-store.test.cjs
+ M electron/ai/credential-store.test.cjs
+ M electron/ai/engine-chat.test.cjs
+ M electron/ai/engine-registry.test.cjs
+ M electron/ai/front-office-engine.test.cjs
+ M electron/ai/front-office-evaluation.test.cjs
+ M electron/ai/front-office.test.cjs
+ M electron/ai/ipc.cjs
+ M electron/ai/knowledge-store.cjs
+ M electron/ai/knowledge-store.test.cjs
+ M electron/ai/llm-front-office/evaluation/fixtures.cjs
+ M electron/ai/llm-front-office/provider-gateway.cjs
+ M electron/ai/model-access.test.cjs
+ M electron/ai/model-check.cjs
+ M electron/ai/model-check.test.cjs
+ M electron/ai/nvidia-integration.test.cjs
+ M electron/ai/online-integration.test.cjs
+ M electron/ai/orchestrator.cjs
+ M electron/ai/orchestrator.test.cjs
+ D electron/ai/policies/Wonnyy_Strict_Context_Bound_Research_Agent_v1.1.md
+ D electron/ai/policies/wonnyy-host-policy-v19.md
+ M electron/ai/prompt-builder.cjs
+ M electron/ai/providers/nvidia-provider.test.cjs
+ M electron/ai/providers/ollama-provider.cjs
+ M electron/ai/providers/ollama-provider.test.cjs
+ M electron/ai/providers/openai-chat-provider.cjs
+ M electron/ai/request-logger.cjs
+ M electron/ai/research-knowledge.cjs
+ M electron/ai/run-store.test.cjs
+ M electron/ai/runtime-context.cjs
+ M electron/ai/runtime-context.test.cjs
+ M electron/desktop-security.test.cjs
+ M electron/document-ocr.test.cjs
+ M electron/launch.cjs
+ M electron/main.cjs
+ M electron/preload.cjs
+ M electron/station-service.cjs
+ M electron/station-service.test.cjs
+ M electron/vault-service.cjs
+ M electron/vault-service.test.cjs
+ M electron/vault-settings.test.cjs
+ M features/agent/agent-avatar.tsx
+ M features/agent/agent-construction.css
+ M features/agent/agent-construction.tsx
+ M features/agent/agent-contacts.tsx
+ M features/agent/engine-inspector.tsx
+ M features/chat/chat-panel.tsx
+ M features/chat/chat-presentation.css
+ M features/chat/chat-presentation.ts
+ M features/chat/chat.css
+ M features/chat/conversation-history.tsx
+ M features/chat/desktop-client.ts
+ M features/chat/engine-report-attachment.tsx
+ M features/chat/panel-geometry.test.cjs
+ M features/chat/panel-geometry.ts
+ M features/chat/use-chat-runtime.ts
+ M features/context-boxes/context-boxes.tsx
+ M features/dialogs/confirmation.css
+ M features/model-settings/front-office-settings.tsx
+ M features/model-settings/model-settings.css
+ M features/model-settings/model-settings.tsx
+ M features/model-settings/provided-models.tsx
+ M features/usage-monitor/planet-usage-badge.tsx
+ M features/usage-monitor/usage-view.ts
+ M lib/planet-layout.test.cjs
+ M lib/planet-layout.ts
+ M lib/planet-orbits.ts
+ M lib/planet-vault.ts
+ M package.json
+ D public/qterminal-logo.png
+ D report/QTerminal_NVIDIA_Omni_Fix_QT-RCA-003.md
+ D report/QTerminal_NVIDIA_Thinking_Fix_QT-RCA-002.md
+ D report/QTerminal_Provider_RCA_QT-RCA-001.md
+ D report/QTerminal_Token_Credit_Comparison_Status.md
+ D report/QTerminal_v1.0.1_Validation.md
+ M scripts/agent-electron-acceptance.cjs
+ M scripts/audit-package.cjs
+ M scripts/chat-live-acceptance.cjs
+ M scripts/dataset-electron-acceptance.cjs
+ M scripts/dataset-live-acceptance.cjs
+ M scripts/electron-add-agent-smoke.cjs
+ M scripts/electron-agent-workspace-smoke.cjs
+ M scripts/electron-appearance-smoke.cjs
+ M scripts/electron-box-agents-smoke.cjs
+ M scripts/electron-chat-smoke.cjs
+ M scripts/electron-chronoz-smoke.cjs
+ M scripts/electron-construction-smoke.cjs
+ M scripts/electron-empty-agents-smoke.cjs
+ M scripts/electron-engine-smoke.cjs
+ M scripts/electron-front-office-smoke-main.cjs
+ M scripts/electron-front-office-smoke.cjs
+ M scripts/electron-knowledge-smoke.cjs
+ M scripts/electron-markdown-editor-smoke.cjs
+ M scripts/electron-message-retry-smoke.cjs
+ M scripts/electron-model-settings-smoke.cjs
+ M scripts/electron-online-chat-smoke.cjs
+ M scripts/electron-online-smoke-main.cjs
+ M scripts/electron-openrouter-live-catalog.cjs
+ M scripts/electron-openrouter-live-main.cjs
+ M scripts/electron-openrouter-smoke.cjs
+ M scripts/electron-packaged-smoke.cjs
+ M scripts/electron-pdf-image-smoke.cjs
+ M scripts/electron-planet-neutral-smoke.cjs
+ M scripts/electron-planet-performance-smoke.cjs
+ M scripts/electron-planet-sidebar-smoke.cjs
+ M scripts/electron-release-smoke-main.cjs
+ M scripts/electron-release-smoke.cjs
+ M scripts/electron-runtime-kernel-smoke.cjs
+ M scripts/electron-single-file-smoke.cjs
+ M scripts/electron-smoke-main.cjs
+ M scripts/electron-soft-surfaces-smoke.cjs
+ M scripts/electron-startup-smoke.cjs
+ M scripts/electron-ui-polish-smoke.cjs
+ M scripts/electron-usage-monitor-smoke.cjs
+ M scripts/electron-victoria-smoke.cjs
+ M scripts/engine-chat-live.cjs
+ M scripts/fixtures/online-smoke-fetch.cjs
+ M scripts/front-office-benchmark.cjs
+ M scripts/m72-live-proof.cjs
+ M scripts/nvidia-agent-live.cjs
+ M scripts/nvidia-thinking-probe-main.cjs
+ M scripts/nvidia-thinking-probe.cjs
+ M scripts/provider-rca-main.cjs
+ M scripts/provider-rca.cjs
+ M scripts/runtime-kernel-report.cjs
+ M scripts/statistics-live-acceptance.cjs
+ M types/ai.ts
+ M types/electron.d.ts
+ M types/graph.ts
+?? app/palette.css
+?? app/typography.css
+?? big-context/backend-feature/Orbistry_Backend_Implementation_Status.md
+?? big-context/backend-feature/Orbistry_PreLLM_Backend_Codex_Implementation_Brief.md
+?? big-context/feature/Orbistry_Agent_Chatbox_Refactor_Prompt.md
+?? big-context/feature/Orbistry_Agent_Construction_Settings_Retro_UI.md
+?? big-context/feature/Orbistry_Agent_Window_UIUX_Vibecoding_Spec.md
+?? big-context/feature/Orbistry_Context_Box_Knowledge_Chunk_Vibecoding_Prompt.md
+?? big-context/feature/Orbistry_Engine_Node_Codex_Milestone.md
+?? big-context/feature/Orbistry_Milestone_A_OpenRouter_Usage_Monitor.md
+?? big-context/feature/Orbistry_Model_Provider_Settings_Codex_Spec.md
+?? big-context/feature/orbistry-agent-handoff.md
+?? docs/PLANET_VIEW_GRAVITY_LAYOUT.md
+?? docs/PROVIDER_BUDGET_MONITOR.md
+?? electron/ai/policies/Orbistry_Strict_Context_Bound_Research_Agent_v1.1.md
+?? electron/ai/policies/orbistry-host-policy-v19.md
+?? electron/ai/provider-usage.cjs
+?? electron/ai/provider-usage.test.cjs
+?? public/fonts/
+?? public/icon.png
+?? public/orbistry-icon
+?? public/orbistry-logo.png
+?? report/Orbistry_NVIDIA_Omni_Fix_QT-RCA-003.md
+?? report/Orbistry_NVIDIA_Thinking_Fix_QT-RCA-002.md
+?? report/Orbistry_Provider_RCA_QT-RCA-001.md
+?? report/Orbistry_Token_Credit_Comparison_Status.md
+?? report/Orbistry_v1.0.1_Validation.md
+?? scripts/electron-planet-chrome-smoke.cjs
+?? scripts/electron-planet-gravity-smoke.cjs
+?? scripts/electron-provider-budget-smoke.cjs
+?? scripts/electron-typography-smoke.cjs
+?? scripts/prepare-icons.cjs

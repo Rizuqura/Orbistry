@@ -281,7 +281,7 @@ test("created agents use the shared bound-chat engine with independent histories
   const f = await studioFixture(t);
   await f.service.agents.save({
     id: "wonnyy-agent",
-    customInstructions: "WONNYY_PRIVATE: Use numbered findings.",
+    customInstructions: "ORBISTRY_PRIVATE: Use numbered findings.",
   });
   const count = (await f.service.list(f.root)).length;
   const agent = await f.service.agents.create({
@@ -300,7 +300,7 @@ test("created agents use the shared bound-chat engine with independent histories
     f.calls.at(-1).messages[0].content,
     /You are Research assistant/,
   );
-  assert.doesNotMatch(f.calls.at(-1).messages[0].content, /WONNYY_PRIVATE/);
+  assert.doesNotMatch(f.calls.at(-1).messages[0].content, /ORBISTRY_PRIVATE/);
   assert.equal(result.run.diagnostics.agent.id, agent.id);
   assert.equal(
     (await f.service.list(f.root)).find((item) => item.id === f.conversation.id)
@@ -789,7 +789,7 @@ test("agent-bound creation and inference isolate CHronoZ identity, settings, his
   f.service.agents = new AgentStore(path.join(f.root, "profiles"));
   await f.service.agents.save({
     id: "wonnyy-agent",
-    customInstructions: "WONNYY_ONLY_PREF: Use numbered findings.",
+    customInstructions: "ORBISTRY_ONLY_PREF: Use numbered findings.",
   });
   const creationId = randomUUID();
   const chrono = await f.service.create(f.root, {
@@ -827,14 +827,14 @@ test("agent-bound creation and inference isolate CHronoZ identity, settings, his
   const run = await f.service.run(f.root, 1, f.input(chrono));
   assert.equal(run.run.diagnostics.agent.id, "chronoz");
   assert.match(f.calls.at(-1).messages[0].content, /You are CHronoZ/);
-  assert.doesNotMatch(f.calls.at(-1).messages[0].content, /WONNYY_ONLY_PREF/);
+  assert.doesNotMatch(f.calls.at(-1).messages[0].content, /ORBISTRY_ONLY_PREF/);
   assert.equal(
     (await f.service.list(f.root)).find((c) => c.id === f.conversation.id)
       .messages.length,
     0,
   );
   await f.service.run(f.root, 1, f.input());
-  assert.match(f.calls.at(-1).messages[0].content, /WONNYY_ONLY_PREF/);
+  assert.match(f.calls.at(-1).messages[0].content, /ORBISTRY_ONLY_PREF/);
   assert.equal(
     (await f.service.list(f.root)).find((c) => c.id === chrono.id).messages
       .length,
@@ -1215,7 +1215,7 @@ test("Stop and the original absolute deadline prevent further timeout recovery",
   }
 });
 async function fixture(t) {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "wonnyy-chat-test-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-chat-test-"));
   t.after(async () => {
     assert.ok(
       path.resolve(root).startsWith(path.resolve(os.tmpdir()) + path.sep),

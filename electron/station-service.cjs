@@ -47,7 +47,7 @@ function resolveKnowledgeObject(rootPath, relativePath) {
   if (within.startsWith("..") || path.isAbsolute(within))
     throw new Error("Knowledge object is outside the active vault.");
   if (within.split(path.sep)[0] === ".wonnyy")
-    throw new Error("Wonnyy metadata cannot be labeled as knowledge.");
+    throw new Error("Orbistry metadata cannot be labeled as knowledge.");
   return absolute;
 }
 

@@ -20,6 +20,7 @@ export interface KnowledgeNode {
   tags?: string[];
   modified?: string;
   size?: string;
+  sizeBytes?: number;
 }
 
 export type EdgeKind = "hierarchy" | "secondary";

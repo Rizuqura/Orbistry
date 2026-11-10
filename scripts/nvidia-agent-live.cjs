@@ -8,7 +8,7 @@ const assert = require("node:assert/strict");
 async function main() {
   const tenPoints = process.argv.includes("--ten-points");
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-nvidia-agent-"),
+    path.join(os.tmpdir(), "orbistry-nvidia-agent-"),
   );
   const artifacts = path.resolve("test-results/nvidia-thinking");
   await fs.mkdir(artifacts, { recursive: true });
@@ -24,11 +24,11 @@ async function main() {
         process.env.QT_NVIDIA_TEST_MODEL,
       QT_NVIDIA_TEN_POINTS: tenPoints ? "1" : "0",
       QT_NVIDIA_PROBE_PROFILE: path.join(root, "profile"),
-      WONNYY_VAULT_PATH: path.join(root, "vault"),
+      ORBISTRY_VAULT_PATH: path.join(root, "vault"),
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
-    await fs.mkdir(env.WONNYY_VAULT_PATH, { recursive: true });
+    await fs.mkdir(env.ORBISTRY_VAULT_PATH, { recursive: true });
     app = await electron.launch({
       args: [
         path.resolve("scripts/nvidia-thinking-probe-main.cjs"),
@@ -76,10 +76,10 @@ async function main() {
     checkpoint("CANCEL_BACKGROUND_CHECKS");
     await stopChecks();
     const source = await app.evaluate(() => globalThis.nvidiaProbe.sourceText);
-    await fs.writeFile(path.join(env.WONNYY_VAULT_PATH, "archive.md"), source);
-    await page.evaluate(() => window.wonnyyDesktop.vault.rescan());
+    await fs.writeFile(path.join(env.ORBISTRY_VAULT_PATH, "archive.md"), source);
+    await page.evaluate(() => window.orbistryDesktop.vault.rescan());
     await page.evaluate(async () => {
-      await window.wonnyyDesktop.ai.editContextBox({
+      await window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Public NVIDIA archive",
         paths: ["archive.md"],
@@ -94,7 +94,7 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Wonnyy Agent chat" });
+    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
     await picker.getByRole("radio", { name: /Public NVIDIA archive/ }).check();
     await picker
       .getByRole("button", { name: "Start Chat", exact: true })
@@ -116,14 +116,14 @@ async function main() {
       ? page.locator(".chat-message-assistant[data-message-id]").last()
       : page
           .locator(".chat-message-assistant[data-message-id]")
-          .filter({ hasText: "QTERMINAL_OK" });
+          .filter({ hasText: "ORBISTRY_OK" });
     await bubble.waitFor({ state: "visible", timeout: 120000 });
     const conversation = await page.evaluate(
-      async () => (await window.wonnyyDesktop.ai.listConversations())[0],
+      async () => (await window.orbistryDesktop.ai.listConversations())[0],
     );
     const attempt = conversation.attempts.at(-1);
     const run = await require("../electron/ai/run-store.cjs").readModelRun(
-      env.WONNYY_VAULT_PATH,
+      env.ORBISTRY_VAULT_PATH,
       attempt.runId,
     );
     const visible = await bubble.isVisible().catch(() => false);

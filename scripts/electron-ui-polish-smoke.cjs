@@ -4,7 +4,7 @@ const fs = require("node:fs/promises"),
   path = require("node:path"),
   os = require("node:os");
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "qterminal-polish-"));
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-polish-"));
   let app, page;
   const errors = [];
   try {
@@ -13,8 +13,8 @@ async function main() {
       await fs.writeFile(path.join(root, `note-${i}.md`), "Research notes.");
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
-      WONNYY_VAULT_PATH: root,
+      ORBISTRY_SMOKE_DATA: path.join(root, ".wonnyy", "app-data"),
+      ORBISTRY_VAULT_PATH: root,
     };
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
@@ -29,8 +29,8 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (e) => errors.push(e.message));
-    await page.waitForFunction(() => window.wonnyyDesktop?.apiVersion === 18);
-    await page.evaluate(() => window.wonnyyDesktop.ai.handshake(18));
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
+    await page.evaluate(() => window.orbistryDesktop.ai.handshake(18));
     await page.locator('.file-row[title="a.md"]').waitFor();
     assert.equal(
       await page.locator(".knowledge-sidebar .context-boxes").count(),
@@ -149,7 +149,7 @@ async function main() {
         Math.abs(restored.height - original.height) < 2,
     );
     const before = await page.evaluate(() =>
-      window.wonnyyDesktop.ai.listConversations(),
+      window.orbistryDesktop.ai.listConversations(),
     );
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page.getByText("2 contacts", { exact: true }).waitFor();
@@ -163,11 +163,11 @@ async function main() {
       .getByRole("complementary", { name: "CHronoZ", exact: true })
       .waitFor();
     assert.deepEqual(
-      await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()),
+      await page.evaluate(() => window.orbistryDesktop.ai.listConversations()),
       before,
     );
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.getAgent())).id,
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent())).id,
       "wonnyy-agent",
     );
     await page.screenshot({ path: "test-results/polish-agents.png" });

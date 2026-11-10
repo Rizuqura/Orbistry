@@ -61,6 +61,7 @@ export function buildGraphFromVault(
         path: entry.relativePath,
         fileType,
         extension: entry.extension,
+        sizeBytes: entry.sizeBytes,
         children: [],
         connections: [],
         level,
@@ -74,6 +75,32 @@ export function buildGraphFromVault(
   };
 
   walk(snapshot.entries, rootId, 1);
+
+  // Aggregate only the visible vault tree; no document reads are needed.
+  for (let index = nodes.length - 1; index >= 0; index--) {
+    const node = nodes[index];
+    if (node.type === "directory")
+      node.sizeBytes = node.children.reduce(
+        (sum, id) => sum + (byId.get(id)?.sizeBytes ?? 0),
+        0,
+      );
+  }
+
+  for (const node of nodes) {
+    if (node.sizeBytes === undefined) continue;
+    const bytes = node.sizeBytes;
+    const units = ["B", "KiB", "MiB", "GiB", "TiB"];
+    const unit = Math.min(
+      units.length - 1,
+      Math.floor(Math.log(Math.max(1, bytes)) / Math.log(1024)),
+    );
+    node.size =
+      (bytes / 1024 ** unit).toLocaleString(undefined, {
+        maximumFractionDigits: 1,
+      }) +
+      " " +
+      units[unit];
+  }
 
   const directories = nodes.filter((node) => node.type === "directory").length;
   const files = nodes.length - directories;

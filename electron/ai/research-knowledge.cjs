@@ -26,7 +26,7 @@ async function readCompletedRun(vault, id) {
   )
     throw new ModelRuntimeError(
       "MODEL_INVALID_REQUEST",
-      "Select a completed Wonnyy Agent run with recorded provenance.",
+      "Select a completed Orbistry Agent run with recorded provenance.",
     );
   return run;
 }
@@ -71,7 +71,7 @@ class ResearchKnowledge {
     if (conversation.agentId !== "wonnyy-agent")
       throw new ModelRuntimeError(
         "MODEL_INVALID_REQUEST",
-        "Knowledge consolidation is registered only for Wonnyy Agent.",
+        "Knowledge consolidation is registered only for Orbistry Agent.",
       );
     const scope = await service.boundScope(root, conversation, {
       ownerId: "knowledge:" + randomUUID(),

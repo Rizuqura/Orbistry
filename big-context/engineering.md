@@ -1,10 +1,10 @@
 > Current model integration design: [task-model-integration-architecture.md](./task-model-integration-architecture.md). Implementation and ownership: [model-integration-handoff.md](./model-integration-handoff.md). The earlier milestone narrative below is preserved as historical context; its next-step suggestions and implementation status may be superseded.
 
-# Engineering Context — Wonnyy V0.0.1-Amadeus
+# Engineering Context — Orbistry V0.0.1-Amadeus
 
 ## 1. Engineering Objective
 
-Wonnyy V0.0.1-Amadeus is an internal AI-native knowledge and data workspace.
+Orbistry V0.0.1-Amadeus is an internal AI-native knowledge and data workspace.
 
 The engineering objective is not to build a large-scale production system immediately.
 
@@ -84,7 +84,7 @@ The model interface should remain replaceable.
 
 Conceptually:
 
-Wonnyy
+Orbistry
 ↓
 Model Interface
 ↓

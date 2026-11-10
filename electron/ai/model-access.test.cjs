@@ -157,7 +157,7 @@ test("public preview uses the canonical favorite IDs, filters errors and exposes
 
 test("favorites survive catalog refresh and restart without migration or new defaults", async () => {
   const directory = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-favorites-"),
+    path.join(os.tmpdir(), "orbistry-favorites-"),
   );
   try {
     const registry = {

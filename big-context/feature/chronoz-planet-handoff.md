@@ -1,6 +1,6 @@
 # CHronoZ chat and Planet selection space
 
-Requested 2026-10-26. Product remains QTerminal 1.0.0 Victoria. Desktop bridge is now **18**; restart Electron to load the new preload/backend contract. Earlier placeholder-only CHronoZ descriptions are superseded by this release.
+Requested 2026-10-26. Product remains Orbistry 1.0.0 Victoria. Desktop bridge is now **18**; restart Electron to load the new preload/backend contract. Earlier placeholder-only CHronoZ descriptions are superseded by this release.
 
 ## Planet View
 
@@ -10,11 +10,11 @@ Requested 2026-10-26. Product remains QTerminal 1.0.0 Victoria. Desktop bridge i
 
 ## Real agents
 
-Wonnyy Agent (`wonnyy-agent`) and CHronoZ (`chronoz`) use the same provider/runtime/context/citation pipeline. Each has its own selected conversation, searchable history, in-memory draft and profile preferences. Selecting an agent does not create a chat. Explicit chat creation binds both a Context Box and agent ID. Duplicate creation IDs cannot be reused with a different agent. UI Clear history removes only the selected agent's conversations.
+Orbistry Agent (`wonnyy-agent`) and CHronoZ (`chronoz`) use the same provider/runtime/context/citation pipeline. Each has its own selected conversation, searchable history, in-memory draft and profile preferences. Selecting an agent does not create a chat. Explicit chat creation binds both a Context Box and agent ID. Duplicate creation IDs cannot be reused with a different agent. UI Clear history removes only the selected agent's conversations.
 
-CHronoZ starts with empty **custom** instructions, no custom skills and no uploaded profile picture (C initials fallback). Shared protected QTerminal grounding rules still apply, with CHronoZ's actual identity in preflight, execution and correction prompts. There is no inherited Wonnyy persona, avatar or custom preference. The same profile editor can configure CHronoZ later. No skill execution or marketplace subsystem is added; the exposed custom-skills list is empty.
+CHronoZ starts with empty **custom** instructions, no custom skills and no uploaded profile picture (C initials fallback). Shared protected Orbistry grounding rules still apply, with CHronoZ's actual identity in preflight, execution and correction prompts. There is no inherited Orbistry persona, avatar or custom preference. The same profile editor can configure CHronoZ later. No skill execution or marketplace subsystem is added; the exposed custom-skills list is empty.
 
-Agent settings remain schema 1 in the existing app-owned `agents.json`; CHronoZ defaults are supplied lazily without a read-time rewrite. Explicit profile saves preserve other agents and managed assets. Existing Wonnyy profile/avatar and legacy conversations remain unchanged. Existing conversation schemas and filenames are retained; legacy absent-agent rows still normalize to Wonnyy in memory. Per-run agent ID/policy/custom-instruction hashes remain immutable. New per-vault/per-agent selection keys extend the existing `qterminal-active-chat:` localStorage convention without removing the old global selected-chat key.
+Agent settings remain schema 1 in the existing app-owned `agents.json`; CHronoZ defaults are supplied lazily without a read-time rewrite. Explicit profile saves preserve other agents and managed assets. Existing Orbistry profile/avatar and legacy conversations remain unchanged. Existing conversation schemas and filenames are retained; legacy absent-agent rows still normalize to Orbistry in memory. Per-run agent ID/policy/custom-instruction hashes remain immutable. New per-vault/per-agent selection keys extend the existing `qterminal-active-chat:` localStorage convention without removing the old global selected-chat key.
 
 Agent selection is blocked while another agent is generating or during connection/metadata loading. Backend execution obtains the agent from the persisted conversation, not a renderer-supplied send-time identity. Settings/credentials/models remain shared app settings; source capability and history stay conversation-bound. No profile reset, credential migration or full-document snapshot is introduced.
 
@@ -22,7 +22,7 @@ Agent selection is blocked while another agent is generating or during connectio
 
 - **215 deterministic tests pass**, including new CHronoZ default/no-write/profile isolation, identity/custom-preference separation during actual orchestration, duplicate-ID agent validation and forgiving screen-space picking. Legacy source/history/provider/layout tests remain in the suite.
 - TypeScript including `--noUnusedLocals --noUnusedParameters`, formatting and production build pass.
-- `npm run test:chronoz:electron`: real UI/IPC/filesystem, synthetic Ollama transport. Covers Focus canvas width/minimization, blank CHronoZ profile/settings, two independent bound conversations, correct request identity without Wonnyy preferences or prior messages, draft/history isolation, restart restoration and per-agent Clear history. Evidence: ignored `test-results/chronoz.json`, `chronoz-agent.png`, `planet-focus.png`.
-- Existing Agent workspace Electron regression passes: Wonnyy profile/avatar editing, protected-policy conflicts, context-bound prompts, cancelled setup, history restoration, pane controls and empty-source blocking. Both Electron checks use isolated profiles and synthetic transport. Prompt provenance now records `wonnyy-conversation-v14-multi-agent`.
+- `npm run test:chronoz:electron`: real UI/IPC/filesystem, synthetic Ollama transport. Covers Focus canvas width/minimization, blank CHronoZ profile/settings, two independent bound conversations, correct request identity without Orbistry preferences or prior messages, draft/history isolation, restart restoration and per-agent Clear history. Evidence: ignored `test-results/chronoz.json`, `chronoz-agent.png`, `planet-focus.png`.
+- Existing Agent workspace Electron regression passes: Orbistry profile/avatar editing, protected-policy conflicts, context-bound prompts, cancelled setup, history restoration, pane controls and empty-source blocking. Both Electron checks use isolated profiles and synthetic transport. Prompt provenance now records `orbistry-conversation-v14-multi-agent`.
 
 Live-model grounding is not exercised or claimed by these synthetic transport checks. Source/citation validation remains distinct from factual correctness.

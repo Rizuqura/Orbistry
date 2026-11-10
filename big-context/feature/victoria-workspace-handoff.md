@@ -1,6 +1,6 @@
-# QTerminal 1.0.0 Victoria — workspace ergonomics
+# Orbistry 1.0.0 Victoria — workspace ergonomics
 
-The user requested a comfortable Workspace and Planet View, minimalist main UI/chat, retro context-building tools, and the release name **QTerminal 1.0.0 Victoria**. This authorizes the presentation work deferred by the earlier usage-monitor milestone. Existing providers, approvals, source binding, model execution, Stations and history remain on their shared services.
+The user requested a comfortable Workspace and Planet View, minimalist main UI/chat, retro context-building tools, and the release name **Orbistry 1.0.0 Victoria**. This authorizes the presentation work deferred by the earlier usage-monitor milestone. Existing providers, approvals, source binding, model execution, Stations and history remain on their shared services.
 
 ## Presentation and workflow
 
@@ -16,9 +16,9 @@ Markdown and CSV readers now expose **Add file to context**, using the existing 
 
 ## Identity and persistence
 
-- Package and root lockfile versions: **1.0.0**. Packager product name, Electron app/window name and page title: **QTerminal 1.0.0 Victoria**. Navigation displays QTerminal with `1.0.0 Victoria`.
-- `electron/user-data-path.cjs` recognizes the Victoria display-name directory and reuses populated QTerminal or legacy storage without moving files. Agent-only stored configuration also counts as populated. Explicit/isolated userData paths and populated current directories retain precedence. Deterministic tests cover these paths.
-- Stable app ID `com.wonnyy.amadeus`, credential encryption, model settings, managed agent assets, browser preferences and vault-owned conversations/context storage retain their identities. No schema or bridge change; bridge remains **17**.
+- Package and root lockfile versions: **1.0.0**. Packager product name, Electron app/window name and page title: **Orbistry 1.0.0 Victoria**. Navigation displays Orbistry with `1.0.0 Victoria`.
+- `electron/user-data-path.cjs` recognizes the Victoria display-name directory and reuses populated Orbistry or legacy storage without moving files. Agent-only stored configuration also counts as populated. Explicit/isolated userData paths and populated current directories retain precedence. Deterministic tests cover these paths.
+- Stable app ID `com.orbistry.desktop`, credential encryption, model settings, managed agent assets, browser preferences and vault-owned conversations/context storage retain their identities. No schema or bridge change; bridge remains **17**.
 
 ## Verification
 

@@ -10,6 +10,7 @@ function createOnlineSmokeFetch() {
     openrouterCatalogStatus: 200,
     usageStatus: 200,
     usageRequests: 0,
+    reportTokenUsage: false,
     engineToolMode: "mock",
     usageData: {
       limit: 100,
@@ -113,7 +114,7 @@ function createOnlineSmokeFetch() {
       const source = JSON.parse(body.messages[1].content);
       const answer = datasetPlan(body)
         ? JSON.stringify(datasetPlan(body))
-        : source.sourceId === "wonnyy-model-check"
+        : source.sourceId === "orbistry-model-check"
           ? "40%"
           : "ALPHA allocation is 25%.";
       const encoder = new TextEncoder();
@@ -160,7 +161,7 @@ function createOnlineSmokeFetch() {
                 controller.enqueue(encoder.encode("data: [DONE]\n\n"));
                 controller.close();
               },
-              source.sourceId === "wonnyy-model-check"
+              source.sourceId === "orbistry-model-check"
                 ? 50
                 : state.checkDelayMs || 250,
             );
@@ -201,7 +202,7 @@ function createOnlineSmokeFetch() {
         return new Response("Provider error", { status: state.status });
       const probe = body.messages[0].content.includes("NVIDIA ONLINE");
       const source = probe ? null : JSON.parse(body.messages[1].content);
-      if (source?.sourceId === "wonnyy-model-check" && state.checkDelayMs) {
+      if (source?.sourceId === "orbistry-model-check" && state.checkDelayMs) {
         await new Promise((resolve, reject) => {
           const abort = () => {
             clearTimeout(timer);
@@ -216,7 +217,7 @@ function createOnlineSmokeFetch() {
       }
       const answer = probe
         ? "NVIDIA ONLINE"
-        : source.sourceId === "wonnyy-model-check"
+        : source.sourceId === "orbistry-model-check"
           ? "40%"
           : source.content.includes("ALPHA")
             ? "ALPHA allocation is 25%."
@@ -231,6 +232,9 @@ function createOnlineSmokeFetch() {
           ],
         },
         {
+          ...(state.reportTokenUsage
+            ? { usage: { prompt_tokens: 66, completion_tokens: 7 } }
+            : {}),
           model: body.model,
           choices: [
             {
@@ -275,7 +279,7 @@ function createOnlineSmokeFetch() {
         });
       const source = JSON.parse(body.contents[0].parts[0].text);
       const answer =
-        source.sourceId === "wonnyy-model-check"
+        source.sourceId === "orbistry-model-check"
           ? "40%"
           : source.content.includes("ALPHA")
             ? "ALPHA allocation is 25%."
@@ -287,7 +291,7 @@ function createOnlineSmokeFetch() {
           start(controller) {
             const event = (text, finishReason) =>
               encoder.encode(
-                `data: ${JSON.stringify({ candidates: [{ content: { parts: [{ text }] }, ...(finishReason ? { finishReason } : {}) }], modelVersion: "gemini-smoke-001" })}\n\n`,
+                `data: ${JSON.stringify({ candidates: [{ content: { parts: [{ text }] }, ...(finishReason ? { finishReason } : {}) }], ...(state.reportTokenUsage && finishReason ? { usageMetadata: { promptTokenCount: 30, candidatesTokenCount: 8 } } : {}), modelVersion: "gemini-smoke-001" })}\n\n`,
               );
             controller.enqueue(event(encoded.slice(0, -2)));
             const timer = setTimeout(() => {

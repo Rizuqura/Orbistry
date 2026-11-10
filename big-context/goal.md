@@ -2,11 +2,11 @@
 
 Updated 2026-09-10 from [Context Windows & Human-Controlled Context Engineering](./context-engineering-experience.md).
 
-**Wonnyy should make building, inspecting, refining and reusing AI context comfortable and easy inside the user's knowledge workspace.** Planet View and Knowledge Stations help the user discover and group knowledge; a persistent Context Window defines the working knowledge boundary for a conversation or research task. Replaceable models reason over the context Wonnyy packages within that boundary.
+**Orbistry should make building, inspecting, refining and reusing AI context comfortable and easy inside the user's knowledge workspace.** Planet View and Knowledge Stations help the user discover and group knowledge; a persistent Context Window defines the working knowledge boundary for a conversation or research task. Replaceable models reason over the context Orbistry packages within that boundary.
 
 The target loop is: discover knowledge → select objects → group into a Context Window → authorize knowledge → pin important sources → control the token budget → ask a model → inspect what was used → refine context → continue the conversation.
 
-**User controls the knowledge boundary. Wonnyy controls the packaging.** Selected, Authorized, Pinned and Used are distinct states. A Context Window is its own persistent, named, versioned object; it is not UI selection, a Station filter, chat history or a selected-files array. Its knowledge budget must be distinguished from the model's total token capacity and output allowance.
+**User controls the knowledge boundary. Orbistry controls the packaging.** Selected, Authorized, Pinned and Used are distinct states. A Context Window is its own persistent, named, versioned object; it is not UI selection, a Station filter, chat history or a selected-files array. Its knowledge budget must be distinguished from the model's total token capacity and output allowance.
 
 Immediate scope update: **M9-A delivers comfortable context controls before model consumption.** Users must be able to create, inspect, authorize, pin, budget and reuse windows without a configured model. M8 acceptance stays open but does not block this independent phase. **M9-B** later connects windows to chat and actual Used provenance. The full model-connected success criteria below apply to M9 as a whole, not to the first controls release.
 
@@ -24,7 +24,7 @@ Current implementation remains 0.0.4 with one approved Markdown source per chat.
 
 ---
 
-Wonnyy V0.0.1 — Amadeus
+Orbistry V0.0.1 — Amadeus
 
 MVP Goal State & Git Progress Target
 
@@ -34,7 +34,7 @@ Product principle: AI models should be replaceable. Knowledge should be permanen
 
 1. MVP Objective
 
-Wonnyy V0.0.1 — Amadeus should establish one coherent internal workflow:
+Orbistry V0.0.1 — Amadeus should establish one coherent internal workflow:
 
 Local Knowledge
       ↓
@@ -64,7 +64,7 @@ Discover and navigate its files.
 
 View the same knowledge structure hierarchically and spatially.
 
-Read supported files inside Wonnyy.
+Read supported files inside Orbistry.
 
 Search the vault.
 
@@ -114,7 +114,7 @@ Minimum Acceptance Criteria
 
 User can select a folder.
 
-Wonnyy can recursively discover folders and supported files.
+Orbistry can recursively discover folders and supported files.
 
 Vault state persists during the current application session.
 
@@ -173,7 +173,7 @@ Breadcrumbs accurately represent the file path.
 
 Goal
 
-Provide the spatial navigation layer of Wonnyy.
+Provide the spatial navigation layer of Orbistry.
 
 Planet View visualizes the same vault represented by Explorer.
 
@@ -436,7 +436,7 @@ Goal
 
 Make AI context explicit, inspectable, and user-controlled.
 
-This is one of the most important differentiating interactions in Wonnyy.
+This is one of the most important differentiating interactions in Orbistry.
 
 Core Principle
 
@@ -477,7 +477,7 @@ AI CONTEXT
 MODEL
 DeepSeek V3
 
-[ ASK WONNYY ]
+[ ASK ORBISTRY ]
 
 Entry Points
 
@@ -662,7 +662,7 @@ Every surface should operate over the same underlying file and directory state.
 
 The final MVP should support this entire loop without friction:
 
-1. Open Wonnyy
+1. Open Orbistry
 2. Select local vault
 3. Vault is scanned
 4. Explorer and Planet View appear
@@ -672,7 +672,7 @@ The final MVP should support this entire loop without friction:
 8. User selects relevant files/folders
 9. User adds them to Context Manager
 10. User selects an AI model
-11. User asks Wonnyy
+11. User asks Orbistry
 12. AI reasons over the selected information
 13. User receives understanding / research insight
 
@@ -758,7 +758,7 @@ Do not pretend the system understands semantic relationships before the underlyi
 
 12. MVP Success Criteria
 
-Wonnyy V0.0.1 can be considered usable when all of the following are true:
+Orbistry V0.0.1 can be considered usable when all of the following are true:
 
 A local vault can be selected.
 
@@ -814,7 +814,7 @@ These should only be included in V0.0.1 if they materially improve real internal
 
 13. Definition of Done for V0.0.1-Amadeus
 
-V0.0.1 is not done when every long-term Wonnyy idea exists.
+V0.0.1 is not done when every long-term Orbistry idea exists.
 
 V0.0.1 is done when this statement is true:
 
@@ -826,7 +826,7 @@ That is the Amadeus MVP.
 
 After the core MVP is operational:
 
-Use Wonnyy internally for real research.
+Use Orbistry internally for real research.
 
 Do not immediately add large new features.
 

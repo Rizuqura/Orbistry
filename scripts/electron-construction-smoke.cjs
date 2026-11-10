@@ -5,7 +5,7 @@ const fs = require("node:fs/promises"),
   os = require("node:os");
 async function main() {
   const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "qterminal-construction-"),
+    path.join(os.tmpdir(), "orbistry-construction-"),
   );
   const vault = path.join(root, "vault"),
     data = path.join(root, "app-data");
@@ -14,8 +14,8 @@ async function main() {
   const launch = async () => {
     const env = {
       ...process.env,
-      WONNYY_SMOKE_DATA: data,
-      WONNYY_VAULT_PATH: vault,
+      ORBISTRY_SMOKE_DATA: data,
+      ORBISTRY_VAULT_PATH: vault,
     };
     delete env.ELECTRON_START_URL;
     delete env.ELECTRON_RUN_AS_NODE;
@@ -60,7 +60,7 @@ async function main() {
     );
   };
   const get = (id = "wonnyy-agent") =>
-    page.evaluate((id) => window.wonnyyDesktop.ai.getAgent(id), id);
+    page.evaluate((id) => window.orbistryDesktop.ai.getAgent(id), id);
   try {
     await fs.mkdir(vault);
     await fs.mkdir(data);
@@ -129,12 +129,12 @@ async function main() {
       await page.evaluate(() =>
         document.activeElement?.getAttribute("aria-label"),
       ),
-      "Wonnyy Agent settings",
+      "Orbistry Agent settings",
     );
     await open();
     await studio
       .getByRole("textbox", { name: "Agent name", exact: true })
-      .fill("Wonnyy Research");
+      .fill("Orbistry Research");
     await studio
       .getByRole("textbox", { name: "Agent description", exact: true })
       .fill("Context · research · evidence");
@@ -254,7 +254,7 @@ async function main() {
       .getByText("Draft saved. The live agent is unchanged.", { exact: true })
       .waitFor();
     let profile = await get();
-    assert.equal(profile.displayName, "Wonnyy Agent");
+    assert.equal(profile.displayName, "Orbistry Agent");
     assert.equal(profile.avatarUrl, null);
     assert.equal(profile.construction.activeRevision, 0);
     assert.ok(profile.construction.draftAvatarUrl);
@@ -263,7 +263,7 @@ async function main() {
     assert.ok(!persisted.includes("data:image"));
     await close();
     assert.equal(
-      (await page.evaluate(() => window.wonnyyDesktop.ai.listConversations()))
+      (await page.evaluate(() => window.orbistryDesktop.ai.listConversations()))
         .length,
       0,
     );
@@ -271,13 +271,13 @@ async function main() {
     await page.waitForFunction(
       () =>
         document.querySelector('input[aria-label="Agent name"]')?.value ===
-        "Wonnyy Research",
+        "Orbistry Research",
     );
     assert.equal(
       await studio
         .getByRole("textbox", { name: "Agent name", exact: true })
         .inputValue(),
-      "Wonnyy Research",
+      "Orbistry Research",
     );
     await studio
       .getByRole("button", { name: "Save & apply", exact: true })
@@ -289,7 +289,7 @@ async function main() {
       )
       .waitFor();
     profile = await get();
-    assert.equal(profile.displayName, "Wonnyy Research");
+    assert.equal(profile.displayName, "Orbistry Research");
     assert.match(profile.runtimeInstructions, /STUDIO_NODE_PREF/);
     assert.ok(profile.avatarUrl);
     const savedPosition = profile.construction.active.nodes.find(
@@ -297,21 +297,21 @@ async function main() {
     ).x;
     await close();
     await page.evaluate(() =>
-      window.wonnyyDesktop.ai.editContextBox({
+      window.orbistryDesktop.ai.editContextBox({
         action: "create",
         name: "Studio source",
         paths: ["a.md"],
       }),
     );
     const panel = page.getByRole("complementary", {
-      name: "Wonnyy Research",
+      name: "Orbistry Research",
       exact: true,
     });
     await panel
       .getByRole("button", { name: "+ New Chat", exact: true })
       .click();
     const picker = page.getByRole("dialog", {
-      name: "New Wonnyy Research chat",
+      name: "New Orbistry Research chat",
       exact: true,
     });
     await picker.getByRole("radio", { name: /Studio source/ }).check();
@@ -334,7 +334,7 @@ async function main() {
       ),
     );
     assert.ok(request);
-    assert.match(request.messages[0].content, /You are Wonnyy Research/);
+    assert.match(request.messages[0].content, /You are Orbistry Research/);
     assert.match(request.messages[0].content, /STUDIO_NODE_PREF/);
     assert.equal(request.model, "qwen3:4b");
     await open();
@@ -364,7 +364,7 @@ async function main() {
         { exact: true },
       )
       .waitFor();
-    assert.equal((await get()).displayName, "Wonnyy Research");
+    assert.equal((await get()).displayName, "Orbistry Research");
     assert.deepEqual((await get("chronoz")).skills, []);
     assert.equal((await get("chronoz")).avatarUrl, null);
     await close();
@@ -372,7 +372,7 @@ async function main() {
     await page.waitForFunction(
       () =>
         document.querySelector('input[aria-label="Agent name"]')?.value ===
-        "Wonnyy Research",
+        "Orbistry Research",
     );
     await studio
       .getByRole("group", { name: "Personality node", exact: true })

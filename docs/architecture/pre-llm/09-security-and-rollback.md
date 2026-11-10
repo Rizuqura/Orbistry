@@ -12,7 +12,7 @@ Content-free experimental metrics have a separate activity-pruned retention stor
 
 Configuration and catalog metadata live in existing app-data. Experiment conversations/runs live in the existing vault stores with explicit new schemas. Normal entry points exclude/reject experiments, and experiment entry points reject ordinary agent chats. Recovery validates mode/request/conversation relationships and publishes completed answers once. Tests cover owner cancellation, 25-turn history, cross-mode rejection, failed partial streams and post-publication recovery.
 
-To disable experiment execution, set enabled=false in Basic/advanced backend Settings. Existing records remain readable. To disable normal-agent baseline instrumentation, launch with QTERMINAL_FRONT_OFFICE_METRICS=0. The experiment remains separately opt-in and records its necessary local trace for transparent evaluation.
+To disable experiment execution, set enabled=false in Basic/advanced backend Settings. Existing records remain readable. To disable normal-agent baseline instrumentation, launch with ORBISTRY_FRONT_OFFICE_METRICS=0. The experiment remains separately opt-in and records its necessary local trace for transparent evaluation.
 
 For code rollback, disable experiments and stop active work first. Preserve/export any schema-5 conversation and schema-3 run files before restoring an older build that cannot read those schemas; do not silently delete user history. Restore the previous application code/settings version as a unit, retaining encrypted native credentials and unrelated working-tree changes. Additive IPC methods require no version migration; older renderers do not call them. The optional external proxy can be stopped independently by its operator.
 
