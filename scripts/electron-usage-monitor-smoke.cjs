@@ -32,9 +32,7 @@ async function main() {
     });
     await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
     await page.evaluate(() => window.orbistryDesktop.ai.handshake(18));
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
   };
   const monitor = () =>
     page.getByRole("complementary", {
@@ -180,9 +178,7 @@ async function main() {
     await page
       .getByRole("heading", { name: "Settings", exact: true })
       .waitFor();
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await monitor().getByText("Auth required", { exact: true }).waitFor();
     await page.evaluate(() =>
       window.orbistryDesktop.ai.settings({

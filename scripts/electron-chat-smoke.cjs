@@ -148,7 +148,9 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
+    const picker = page.getByRole("dialog", {
+      name: "New Orbistry Agent chat",
+    });
     await picker.getByRole("radio", { name: new RegExp(name) }).check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -317,9 +319,7 @@ async function main() {
         ?.textContent.includes("Choose a Context Box"),
     );
     await page.getByRole("button", { name: "Back to workspace" }).click();
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page.getByRole("textbox", { name: "Chat question" }).fill("Hello");
     assert.equal(
       await page
@@ -389,7 +389,7 @@ async function main() {
         .dispatchEvent(new WheelEvent("wheel", { deltaY: 100, bubbles: true }));
     });
     assert.equal(await page.evaluate(() => window.smokeWheelEscaped), false);
-    checks.push("Chat wheel events do not reach Planet View");
+    checks.push("Chat wheel events do not reach WorldView");
     await page.getByRole("button", { name: "SETTINGS", exact: true }).click();
     await page.waitForFunction(() =>
       document
@@ -413,7 +413,8 @@ async function main() {
       .click();
     await page.waitForFunction(
       async () =>
-        (await window.orbistryDesktop.ai.models()).settings.outputLimit === 1024,
+        (await window.orbistryDesktop.ai.models()).settings.outputLimit ===
+        1024,
     );
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/ai-terminal.png" });
@@ -427,9 +428,7 @@ async function main() {
     assert.equal(await page.locator(".chat-panel-floating").count(), 0);
     await send("One more question");
     checks.push("Model switching and shared Workspace conversation");
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await approve("b.md");
     checks.push(
       "Real context approval supports Cancel, Escape, confirm, and click-then-keyboard typing across source switches without native browser dialogs",
@@ -456,9 +455,7 @@ async function main() {
     checks.push(
       "Keyboard focus survives explicit creation and history selection on both surfaces",
     );
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page
       .getByRole("textbox", { name: "Chat question" })
       .fill("long response");

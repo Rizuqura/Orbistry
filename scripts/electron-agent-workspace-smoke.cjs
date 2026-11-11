@@ -273,7 +273,8 @@ async function main() {
       .filter({ hasText: /valid PNG, JPG or WebP/ })
       .waitFor();
     assert.equal(
-      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent())).avatarUrl,
+      (await page.evaluate(() => window.orbistryDesktop.ai.getAgent()))
+        .avatarUrl,
       profile.avatarUrl,
     );
     await dialog
@@ -466,9 +467,7 @@ async function main() {
         }),
       box.id,
     );
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
       .getByRole("button", { name: "Orbistry Agent chats", exact: true })

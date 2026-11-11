@@ -25,7 +25,7 @@
     "audit:size": "node scripts/release-size-audit.cjs",
     "test:m72:live": "node scripts/m72-live-proof.cjs",
     "test:m74:live": "node scripts/m72-live-proof.cjs",
-    "test": "node --experimental-strip-types --test electron/*.test.cjs electron/ai/*.test.cjs electron/ai/providers/*.test.cjs lib/*.test.cjs features/chat/*.test.cjs",
+    "test": "node --experimental-strip-types --test electron/*.test.cjs electron/ai/*.test.cjs electron/ai/providers/*.test.cjs features/chat/*.test.cjs",
     "typecheck": "tsc --noEmit",
     "test:chat:live": "node scripts/chat-live-acceptance.cjs",
     "test:dataset:live": "node scripts/dataset-live-acceptance.cjs",
@@ -48,7 +48,6 @@
     "test:construction:electron": "npm run build && node scripts/electron-construction-smoke.cjs",
     "test:engine:electron": "npm run build && node scripts/electron-engine-smoke.cjs",
     "test:engine:chat:live": "node scripts/engine-chat-live.cjs",
-    "test:planet:electron": "npm run build && node scripts/electron-planet-performance-smoke.cjs && node scripts/electron-planet-neutral-smoke.cjs",
     "test:appearance:electron": "npm run build && node scripts/electron-appearance-smoke.cjs",
     "test:box-agents:electron": "npm run build && node scripts/electron-box-agents-smoke.cjs",
     "test:add-agent:electron": "npm run build && node scripts/electron-add-agent-smoke.cjs",
@@ -61,7 +60,8 @@
     "test:front-office": "node --test electron/ai/front-office*.test.cjs",
     "test:front-office:electron": "npm run build && node scripts/electron-front-office-smoke.cjs",
     "benchmark:front-office": "node scripts/front-office-benchmark.cjs --mock",
-    "benchmark:front-office:live": "node scripts/front-office-benchmark.cjs --live"
+    "benchmark:front-office:live": "node scripts/front-office-benchmark.cjs --live",
+    "test:worldview:electron": "npm run build && node scripts/electron-worldview-smoke.cjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.13",

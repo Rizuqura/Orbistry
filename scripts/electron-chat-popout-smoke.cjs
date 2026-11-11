@@ -35,9 +35,7 @@ async function main() {
     page.setDefaultTimeout(15000);
     page.on("pageerror", (error) => errors.push(error.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page.evaluate(async () => {
       await window.orbistryDesktop.ai.settings({
         providerId: "ollama",
@@ -131,11 +129,9 @@ async function main() {
       false,
       "the pop-out survives changing the workspace view",
     );
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await popup
-      .getByRole("button", { name: "Attach to Planet View", exact: true })
+      .getByRole("button", { name: "Attach to WorldView", exact: true })
       .click();
     await page.locator(".chat-panel-floating").waitFor();
     assert.equal(

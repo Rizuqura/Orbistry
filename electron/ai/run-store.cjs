@@ -123,7 +123,31 @@ function validateRunRecord(value) {
             "Engine reports are attachments, not reviewed evidence.",
           );
       }
-      if (value.diagnostics?.engineOnly === true)
+      if (value.diagnostics?.standalone === true) {
+        if (
+          value.sourcesAvailable?.length ||
+          value.sourcesActuallyRead?.length ||
+          value.diagnostics.engineToolTurn
+        )
+          throw new Error("Standalone runs cannot contain evidence or tools.");
+        if (value.contextIdentity?.sources?.length)
+          validateContextIdentity(value.contextIdentity);
+        else if (
+          value.contextIdentity?.id ===
+          require("./context-identity.cjs").engineIdentity(
+            value.diagnostics.agentId,
+          ).id
+        )
+          require("./context-identity.cjs").validateEngineIdentity(
+            value.contextIdentity,
+            value.diagnostics.agentId,
+          );
+        else
+          require("./context-identity.cjs").validateStandaloneIdentity(
+            value.contextIdentity,
+            value.diagnostics.agentId,
+          );
+      } else if (value.diagnostics?.engineOnly === true)
         require("./context-identity.cjs").validateEngineIdentity(
           value.contextIdentity,
           value.diagnostics.agentId,

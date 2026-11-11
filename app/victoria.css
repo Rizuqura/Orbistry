@@ -883,8 +883,7 @@ body {
   flex: 1 1 0;
 }
 .app-shell .context-boxes,
-.app-shell .context-box-manager,
-.app-shell .station-panel {
+.app-shell .context-box-manager {
   font-family: var(--font-terminal);
   font-size: 11px;
 }
@@ -911,67 +910,10 @@ body {
 .app-shell .context-summary {
   line-height: 1.65;
 }
-.app-shell .station-panel .pd-action,
-.app-shell .context-box-manager .pd-action {
-  min-height: 33px;
-  font-size: 10px;
-}
-.app-shell .planet-detail-panel {
-  background: var(--orb-panel);
-}
-.app-shell .planet-detail-scroll {
-  padding: 14px;
-}
-.app-shell .planet-header {
-  padding: 12px 14px;
-  font-size: 10px;
-}
-.app-shell .planet-detail-panel .pd-section-title {
-  margin-top: 14px;
-  font-size: 10px;
-}
-.app-shell .planet-grid {
-  grid-template-columns: var(--sidebar-width, 240px) minmax(360px, 1fr) 280px;
-}
-.app-shell .planet-grid.canvas-focus {
-  grid-template-columns: minmax(0, 1fr) !important;
-  grid-template-rows: minmax(0, 1fr) !important;
-}
-.app-shell .planet-grid.canvas-focus > .sidebar-slot,
-.app-shell .planet-grid.canvas-focus > .planet-detail-panel {
-  display: none;
-}
-.app-shell .planet-view-header {
-  min-height: 44px;
-  color: var(--orb-muted);
-  background: var(--orb-panel);
-  border-color: var(--orb-hover);
-  font: 11px var(--ui-font);
-  letter-spacing: 0;
-}
-.app-shell .planet-view-header button {
-  padding: 5px 9px;
-  border-radius: 5px;
-  font: 11px var(--ui-font);
-}
-.app-shell .pctrl {
-  color: var(--orb-muted);
-}
-.app-shell .pctrl .controls-help {
-  background: var(--orb-panel);
-}
-.app-shell .pworld.smooth,
-.app-shell .pnode,
-.app-shell .porb {
-  transition: none;
-}
 
 @media (max-width: 1180px) {
   .workspace-edition {
     display: none;
-  }
-  .app-shell .planet-grid {
-    grid-template-columns: var(--sidebar-width, 240px) minmax(300px, 1fr) 250px;
   }
 }
 @media (max-width: 900px) {
@@ -991,17 +933,6 @@ body {
   }
   .app-shell .workspace-main .sidebar-slot {
     grid-row: 1 / -1;
-  }
-  .app-shell .planet-grid {
-    grid-template-columns: 180px minmax(0, 1fr);
-  }
-  .app-shell .planet-detail-panel {
-    grid-column: 1 / -1;
-    max-height: 220px;
-    border-top: 1px solid var(--orb-hover);
-  }
-  .app-shell .planet-grid {
-    grid-template-rows: minmax(330px, 1fr) minmax(160px, 220px);
   }
   .app-shell .document-inner {
     width: calc(100% - 32px);
@@ -1319,4 +1250,7 @@ body {
 }
 
 /* Keep eight pixels of breathing room around the 32px wordmark. */
-.app-shell .top-bar { padding-block: 8px; box-sizing: border-box; }
+.app-shell .top-bar {
+  padding-block: 8px;
+  box-sizing: border-box;
+}

@@ -767,7 +767,7 @@ async function prepareBrainScope(
 
   if (activeContext.length > 0) {
     mode = "active-context";
-    reason = "Active Context overrides the current Planet view.";
+    reason = "Active Context overrides the current WorldView.";
     activeContext.forEach((item) => selectedPaths.add(item.relativePath));
   } else if (activeStationIds.length > 0) {
     mode = "station";

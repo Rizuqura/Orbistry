@@ -8,8 +8,7 @@ import "./victoria.css";
 import "./soft-surfaces.css";
 import "./startup.css";
 import "../features/chat/chat-presentation.css";
-import "./planet-sidebar.css";
-import "./planet-neutral.css";
+import "./worldview.css";
 import "./typography.css";
 
 export const metadata: Metadata = {

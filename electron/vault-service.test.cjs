@@ -22,7 +22,7 @@ async function withVault(run) {
     await fs.rm(vaultPath, { recursive: true, force: true });
   }
 }
-test("engine storage and relocated portable bundles never become research planets or indexed PDF text", async () => {
+test("engine storage and relocated portable bundles never become research graph nodes or indexed PDF text", async () => {
   await withVault(async (vault) => {
     await fs.mkdir(path.join(vault, ".engine", "runtime"), { recursive: true });
     await fs.writeFile(

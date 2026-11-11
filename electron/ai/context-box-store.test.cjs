@@ -28,7 +28,7 @@ test("context selection and box save never create a conversation; creation is ex
   const duplicate = await service.create(root, input);
   assert.equal(chat.id, duplicate.id);
   assert.equal(chat.title, "Untitled chat");
-  assert.equal(chat.schemaVersion, 3);
+  assert.equal(chat.schemaVersion, 7);
   await assert.rejects(
     service.create(root, { activeStationIds: [], matchMode: "any" }),
     { code: "MODEL_INVALID_REQUEST" },
@@ -68,7 +68,7 @@ test("box rename persists identity; global changes and restart do not rebind a s
     ["b.md"],
   );
   await fs.writeFile(path.join(root, "a.md"), "CHANGED");
-  assert.notEqual(
+  assert.equal(
     (await restart.checkConversation(root, chat.id)).id,
     chat.contextIdentity.id,
   );
@@ -84,9 +84,7 @@ test("legacy histories stay readable and unbound; vaults and corrupt box metadat
     matchMode: "any",
   });
   const legacy = await (await service.store(root)).store.create(identity);
-  await assert.rejects(service.checkConversation(root, legacy.id), {
-    code: "MODEL_CONTEXT_INVALID",
-  });
+  assert.deepEqual(await service.checkConversation(root, legacy.id), identity);
   const legacyPath = path.join(
     root,
     ".wonnyy",
@@ -152,29 +150,14 @@ test("listing history is serialized with deletion and never reads a removed file
   assert.deepEqual(results[1], []);
 });
 
-test("a deleted attached file fails as invalid context even before the cached vault snapshot is rescanned", async (t) => {
+test("source-free chats remain ready when a former source is deleted", async (t) => {
   const { root, service } = await fixture(t);
-  const box = await service.saveBox(root, { name: "Deleted source" });
-  const chat = await service.create(root, {
-    contextBoxId: box.id,
-    creationId: randomUUID(),
-  });
+  const chat = await service.create(root, { creationId: randomUUID() });
   await fs.unlink(path.join(root, "a.md"));
-  await assert.rejects(service.checkConversation(root, chat.id), {
-    code: "BRAIN_SOURCE_CHANGED",
-  });
-  await assert.rejects(
-    service.run(root, 1, {
-      conversationId: chat.id,
-      requestId: randomUUID(),
-      userMessage: "Read the source.",
-      expectedContextId: chat.contextIdentity.id,
-      activeStationIds: [],
-      matchMode: "any",
-    }),
-    { code: "MODEL_CONTEXT_INVALID" },
+  assert.deepEqual(
+    await service.checkConversation(root, chat.id),
+    chat.contextIdentity,
   );
-  assert.equal((await service.list(root))[0].messages.length, 0);
 });
 
 test("reviewed selections deduplicate folder contents, disclose skips, persist membership and never create chats", async (t) => {
@@ -256,17 +239,13 @@ test("reviewed selections deduplicate folder contents, disclose skips, persist m
   );
 });
 
-test("empty boxes persist, block chats, and deletion preserves bound history and original files", async (t) => {
+test("empty boxes persist independently and deletion preserves chat history and original files", async (t) => {
   const { root, service } = await fixture(t);
   const box = await service.editBox(root, {
     action: "create",
     name: "Empty",
     paths: [],
   });
-  await assert.rejects(
-    service.create(root, { contextBoxId: box.id, creationId: randomUUID() }),
-    { code: "BRAIN_SOURCE_CHANGED" },
-  );
   assert.equal((await service.list(root)).length, 0);
   await service.editBox(root, { action: "add", id: box.id, paths: ["a.md"] });
   const chat = await service.create(root, {
@@ -275,9 +254,10 @@ test("empty boxes persist, block chats, and deletion preserves bound history and
   });
   await service.editBox(root, { action: "delete", id: box.id });
   assert.equal((await service.list(root))[0].id, chat.id);
-  await assert.rejects(service.checkConversation(root, chat.id), {
-    code: "MODEL_CONTEXT_INVALID",
-  });
+  assert.deepEqual(
+    await service.checkConversation(root, chat.id),
+    chat.contextIdentity,
+  );
   assert.equal(
     await fs.readFile(path.join(root, "a.md"), "utf8"),
     "ALPHA evidence",

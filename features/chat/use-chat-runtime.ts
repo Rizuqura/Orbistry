@@ -7,6 +7,7 @@ import type {
   AgentConfig,
   AgentConstructionConfig,
   ConstructionFileBinding,
+  ConstructionSourceBinding,
   AgentAppearanceOptions,
   ModelRuntimeErrorValue,
   ContextBox,
@@ -319,35 +320,10 @@ export function useChatRuntime({
       }
     } catch {}
     if (!conversation) return;
-    if (
-      !conversation.engineOnly &&
-      !conversation.contextBoxId &&
-      !conversation.contextFile
-    ) {
-      setContextError(
-        "Legacy chat is read-only. Create a bound chat with a Context Box.",
-      );
-      return;
-    }
     void bridge.current
       .checkConversation(conversation.id)
-      .then(async (identity) => {
-        const box = conversation.contextBoxId
-          ? await bridge.current!.inspectContextBox(conversation.contextBoxId)
-          : null;
+      .then((identity) => {
         if (!stale) {
-          if (
-            box?.items.length &&
-            box.items.every(
-              (item) => item.status === "ready" && item.estimatedTokens === 0,
-            )
-          ) {
-            setContext(null);
-            setContextError(
-              "Insufficient evidence in the active Context Box. Its sources contain no readable text.",
-            );
-            return;
-          }
           setContext(identity);
           setContextError(null);
         }
@@ -420,12 +396,7 @@ export function useChatRuntime({
       eventError.current?.requestId === id ? eventError.current.error : null,
     [],
   );
-  const attached = Boolean(
-    context &&
-    (conversation?.engineOnly ||
-      conversation?.contextBoxId ||
-      conversation?.contextFile),
-  );
+  const attached = Boolean(context && conversation);
   const run = useCallback(
     async (text: string, retryOf?: string) => {
       await interruptChecks();
@@ -566,13 +537,6 @@ export function useChatRuntime({
   };
   const newChat = () => {
     setCreatingChat(true);
-    void operate(async (client, current) => {
-      const boxes = await client.listContextBoxes();
-      const reviewed = await Promise.all(
-        boxes.map((box) => client.inspectContextBox(box.id).catch(() => box)),
-      );
-      if (current()) setContextBoxes(reviewed);
-    });
   };
   const createChat = (
     contextBoxId: string,
@@ -1036,29 +1000,11 @@ export function useChatRuntime({
         setDraft("");
         dispatch({ type: "reset", state: "READY" });
       }, false),
-    researchDefaults: (() => {
-      const sameVault = (path: string) =>
-        window.orbistryDesktop?.platform === "win32"
-          ? path.toLowerCase() === canonicalVault?.toLowerCase()
-          : path === canonicalVault;
-      const nodes = agent?.construction?.active?.nodes ?? [];
-      const contextNode = nodes.find((node) => node.kind === "Context");
-      const context = contextNode?.config.contextBox;
-      const contextFile = contextNode?.config.contextFile;
-      const knowledgeNode = nodes.find((node) => node.kind === "Knowledge");
-      const knowledge =
-        knowledgeNode?.config.contextFile ?? knowledgeNode?.config.contextBox;
-      return {
-        contextBoxId:
-          context && sameVault(context.vaultPath) ? context.boxId : undefined,
-        contextFile:
-          contextFile && sameVault(contextFile.vaultPath)
-            ? contextFile
-            : undefined,
-        knowledge:
-          knowledge && sameVault(knowledge.vaultPath) ? knowledge : undefined,
-      };
-    })(),
+    researchDefaults: {
+      contextBoxId: undefined,
+      contextFile: undefined,
+      knowledge: undefined as ConstructionSourceBinding | undefined,
+    },
     previewConstructionBox: async (boxId: string) => {
       if (!bridge.current?.previewConstructionBox)
         throw new Error(
@@ -1143,6 +1089,12 @@ export function useChatRuntime({
       }
       return value;
     },
+    reportInactiveIntegration: () =>
+      fail(
+        new Error(
+          "Agent file, knowledge and tool integrations are temporarily inactive.",
+        ),
+      ),
     startup,
     proposeKnowledge: async (runId: string, extraction: unknown) => {
       if (!bridge.current?.proposeKnowledge)

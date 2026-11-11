@@ -225,18 +225,17 @@ function registerAiIpc({
   );
   handle("models", () => registry.state());
   handle("getAgent", (_, id) => agents.get(id));
+  const inactive = () => require("./standalone-chat.cjs").inactiveIntegration();
   if (engines) {
     handle("engineState", () => engines.state());
-    handle("chooseEngineFolder", (event) => engines.configure(event.sender.id));
-    handle("probeEngine", (event) => engines.probe(event.sender.id));
-    handle("executeEngine", (event, input) =>
-      engines.execute(event.sender.id, input),
-    );
+    handle("chooseEngineFolder", inactive);
+    handle("probeEngine", inactive);
+    handle("executeEngine", inactive);
     handle("cancelEngine", (event) => {
       engines.cancel(event.sender.id);
       return true;
     });
-    handle("openEngineReport", (_, input) => engines.open(input));
+    handle("openEngineReport", inactive);
   }
   handle("listAgents", () => agents.list());
   handle("createAgent", (_, input) =>
@@ -258,14 +257,8 @@ function registerAiIpc({
     service.exclusive(() => service.previewConstructionFile(getVault(), input)),
   );
   if (researchKnowledge) {
-    handle("proposeKnowledge", (_, input) =>
-      service.exclusive(() => researchKnowledge.propose(getVault(), input)),
-    );
-    handle("retrieveKnowledge", (_, input) =>
-      service.exclusive(() =>
-        researchKnowledge.retrieve(getVault(), input, service),
-      ),
-    );
+    handle("proposeKnowledge", inactive);
+    handle("retrieveKnowledge", inactive);
   }
   handle("saveAgent", (_, input) => agents.save(input));
   handle("chooseAgentAvatar", () => chooseAvatar());

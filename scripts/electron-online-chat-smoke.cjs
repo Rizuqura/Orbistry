@@ -41,9 +41,7 @@ async function main() {
     page.getByRole("button", { name: "SETTINGS", exact: true }).click();
   const chat = async () => {
     await page.getByRole("button", { name: "Back to workspace" }).click();
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
   };
   const send = async (question) => {
     const before = await page.locator(".chat-message-assistant").count();
@@ -112,7 +110,9 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
+    const picker = page.getByRole("dialog", {
+      name: "New Orbistry Agent chat",
+    });
     await picker.getByRole("radio").check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })

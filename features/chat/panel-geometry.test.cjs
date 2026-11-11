@@ -36,15 +36,15 @@ test("small viewports and restored offscreen geometry stay accessible", () => {
   );
 });
 
-const { defaultPlanetChatGeometry } = require("./panel-geometry.ts");
-test("Planet chat defaults to bottom-left and stays inside small viewports", () => {
+const { defaultFloatingChatGeometry } = require("./panel-geometry.ts");
+test("Floating chat defaults to bottom-left and stays inside small viewports", () => {
   for (const [width, height] of [
     [1000, 900],
     [700, 650],
     [420, 400],
     [300, 240],
   ]) {
-    const g = defaultPlanetChatGeometry(width, height);
+    const g = defaultFloatingChatGeometry(width, height);
     assert.ok(
       g.x >= 0 &&
         g.y >= 0 &&
@@ -54,7 +54,7 @@ test("Planet chat defaults to bottom-left and stays inside small viewports", () 
     assert.equal(g.x, Math.min(12, width - g.width));
     assert.equal(g.y, Math.max(0, height - g.height - 12));
   }
-  assert.deepEqual(defaultPlanetChatGeometry(1000, 900), {
+  assert.deepEqual(defaultFloatingChatGeometry(1000, 900), {
     x: 12,
     y: 328,
     width: 440,

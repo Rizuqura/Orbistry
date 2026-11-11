@@ -173,7 +173,9 @@ async function main() {
       .getByRole("button", { name: "+ New Chat", exact: true })
       .first()
       .click();
-    const picker = page.getByRole("dialog", { name: "New Orbistry Agent chat" });
+    const picker = page.getByRole("dialog", {
+      name: "New Orbistry Agent chat",
+    });
     await picker.getByRole("radio", { name: new RegExp(name) }).check();
     await picker
       .getByRole("button", { name: "Create Chat", exact: true })
@@ -380,7 +382,7 @@ async function main() {
         ),
       );
       checks.push(
-        "Context Boxes and legacy Stations share ANY/ALL filters; toggling off restores Planet View, creates no chats or duplicate collections, and never rebinds an existing chat",
+        "Context Boxes and legacy Stations share ANY/ALL filters; toggling off restores WorldView, creates no chats or duplicate collections, and never rebinds an existing chat",
       );
       return;
     }
@@ -412,8 +414,11 @@ async function main() {
         .fill("Cancelled box");
       await page.keyboard.press("Escape");
       assert.equal(
-        (await page.evaluate(() => window.orbistryDesktop.ai.listContextBoxes()))
-          .length,
+        (
+          await page.evaluate(() =>
+            window.orbistryDesktop.ai.listContextBoxes(),
+          )
+        ).length,
         0,
       );
       await manager
@@ -492,7 +497,7 @@ async function main() {
           .click({ modifiers: index ? ["Control"] : [] });
       await openLibrary();
       await sidebar
-        .getByText("5 selected in Explorer / Planet View", { exact: true })
+        .getByText("5 selected in Explorer / WorldView", { exact: true })
         .waitFor();
       await sidebar
         .getByRole("button", {
@@ -699,7 +704,9 @@ async function main() {
         .click();
       assert.equal(
         (
-          await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
+          await page.evaluate(() =>
+            window.orbistryDesktop.ai.listConversations(),
+          )
         )[0].contextBoxId,
         first.contextBoxId,
       );
@@ -823,7 +830,9 @@ async function main() {
       assert.equal((await boxes())[0].items.length, 4);
       assert.equal(
         (
-          await page.evaluate(() => window.orbistryDesktop.ai.listConversations())
+          await page.evaluate(() =>
+            window.orbistryDesktop.ai.listConversations(),
+          )
         )[0].messages.length,
         8,
       );

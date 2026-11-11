@@ -250,8 +250,8 @@ export function ConstructionSourcePicker({
       )}
       {mode === "box" && !chat.contextBoxes.length && (
         <p>
-          Create a named Context Box in Planet View, or choose Single file
-          above. Reviewing sources never creates a chat.
+          Create a named Context Box in WorldView, or choose Single file above.
+          Reviewing sources never creates a chat.
         </p>
       )}
     </section>

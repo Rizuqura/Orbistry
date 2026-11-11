@@ -5,7 +5,7 @@ import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
 import type { ChatController } from "./use-chat-runtime";
 import {
   clampGeometry,
-  defaultPlanetChatGeometry,
+  defaultFloatingChatGeometry,
   resizeGeometry,
   type ResizeDirection,
   type PanelGeometry,
@@ -82,7 +82,7 @@ export function ChatPanel({
   const followTail = useRef(true);
   useEffect(() => {
     const panel = panelRef.current;
-    // Planet View uses a native wheel listener. Stop it at the chat surface
+    // WorldView uses a native wheel listener. Stop it at the chat surface
     // before React's delegated event handler would run; preserve native scrolling.
     const containWheel = (event: WheelEvent) => event.stopPropagation();
     panel?.addEventListener("wheel", containWheel, { passive: true });
@@ -266,7 +266,7 @@ export function ChatPanel({
   const resetGeometry = () => {
     const parent = panelRef.current?.offsetParent as HTMLElement | null;
     if (!parent) return;
-    const g = defaultPlanetChatGeometry(
+    const g = defaultFloatingChatGeometry(
       parent.clientWidth,
       parent.clientHeight,
     );
@@ -289,7 +289,7 @@ export function ChatPanel({
     const g = clampGeometry(
       valid
         ? saved
-        : defaultPlanetChatGeometry(parent.clientWidth, parent.clientHeight),
+        : defaultFloatingChatGeometry(parent.clientWidth, parent.clientHeight),
       parent.clientWidth,
       parent.clientHeight,
     );
@@ -443,7 +443,7 @@ export function ChatPanel({
         )}
         {variant === "window" && onAttachWindow && (
           <button type="button" onClick={onAttachWindow}>
-            Attach to Planet View
+            Attach to WorldView
           </button>
         )}
         {variant !== "workspace" && (
@@ -518,24 +518,19 @@ export function ChatPanel({
           </span>
           <p className="chat-privacy">
             {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
-              ? `Approved sources, configured agent references, your question, and included conversation history are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
+              ? `Your instructions, personality preferences, question, and included conversation history are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
               : "Inference runs on this device."}
           </p>
           <p className="chat-memory">
             Model memory: up to 12 recent exchanges, fewer when the context
-            limit is reached. Only exchanges using the current source versions
-            are included. Saved history remains available.
+            limit is reached. Saved history remains available. File and
+            knowledge integrations are temporarily inactive.
             {typeof chat.runtime.diagnostics?.droppedExchanges === "number" &&
             chat.runtime.diagnostics.droppedExchanges > 0
               ? ` Last answer omitted ${chat.runtime.diagnostics.droppedExchanges} earlier exchanges.`
               : ""}
           </p>
-          <strong>
-            Attached sources:{" "}
-            {chat.context?.sources
-              .map((source) => source.relativePath)
-              .join(", ") ?? "None ready"}
-          </strong>
+          <strong>Attached sources: None (integrations inactive)</strong>
           {!chat.attached && chat.conversation && (
             <div className="chat-detached">
               Viewing:{" "}
@@ -596,7 +591,7 @@ export function ChatPanel({
           <div className="chat-profile-copy">
             <h2>{agentName}</h2>
             <p className="chat-profile-description">
-              {chat.agent.description || "Strict Context Analysis"}
+              {chat.agent.description || "Standalone chat"}
             </p>
             <p className="chat-profile-context">
               {chat.conversation?.engineOnly
@@ -625,9 +620,9 @@ export function ChatPanel({
       {!chat.conversation && (
         <div className="agent-welcome">
           <strong>{agentName}</strong>
-          <p>Analyze only the knowledge you explicitly attach.</p>
+          <p>Chat with your configured model.</p>
           <p>
-            Create a box in Planet View’s context manager, or choose an existing
+            Create a box in WorldView’s context manager, or choose an existing
             box to begin.
           </p>
         </div>
@@ -648,8 +643,8 @@ export function ChatPanel({
         {!!chat.conversation && !messages.length && (
           <p className="chat-message-system">
             {chat.conversation?.engineOnly
-              ? "Ask for a research PDF from the agent?s engine. No research context is required."
-              : "Ask a question about the approved sources."}
+              ? "Tool integration is temporarily inactive. Ask a question to begin."
+              : "Ask a question to begin the conversation."}
           </p>
         )}
         {transcript.map(({ message, modelChanged, attempt }) => (

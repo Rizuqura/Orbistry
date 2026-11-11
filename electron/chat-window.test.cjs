@@ -18,7 +18,7 @@ test("chat pop-out allows only its named blank target and confines the child", (
     icon: "icon",
     openExternal: (url) => external.push(url),
   });
-  const open = (url, frameName = "orbistry-planet-chat") =>
+  const open = (url, frameName = "orbistry-chat-window") =>
     owner.webContents.open({ url, frameName });
   assert.equal(open("about:blank", "other-window").action, "deny");
   assert.equal(open("file:///private.txt").action, "deny");
@@ -49,7 +49,7 @@ test("chat pop-out allows only its named blank target and confines the child", (
     setIcon() {},
   });
   owner.webContents.emit("did-create-window", child, {
-    frameName: "orbistry-planet-chat",
+    frameName: "orbistry-chat-window",
   });
   assert.equal(open("about:blank").action, "deny");
   assert.equal(focused, 1);

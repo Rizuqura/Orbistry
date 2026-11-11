@@ -64,7 +64,7 @@ async function main() {
       text: el.textContent,
     }));
     assert.equal(active.height, 25);
-    assert.equal(active.text, "PLANET VIEW");
+    assert.equal(active.text, "WorldView");
     assert.equal(transparent(active.color), false);
     await borderless(page.locator(".chat-panel-floating"));
     await page

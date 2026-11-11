@@ -346,7 +346,7 @@ async function scanDirectory(
         issues.push(
           issue(
             childRelativePath,
-            "External engine storage excluded from research indexing and Planet View. Register the bundle in Agent settings; copy a report PDF into a research folder to review it.",
+            "External engine storage excluded from research indexing and WorldView. Register the bundle in Agent settings; copy a report PDF into a research folder to review it.",
           ),
         );
         continue;

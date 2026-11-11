@@ -36,26 +36,33 @@ function validateConversation(value) {
   }
   if (
     !value ||
-    ![1, 2, 3, 4, 6].includes(value.schemaVersion) ||
+    ![1, 2, 3, 4, 6, 7].includes(value.schemaVersion) ||
     !ID.test(value.id) ||
     typeof value.title !== "string" ||
     !Number.isFinite(Date.parse(value.createdAt)) ||
     !Number.isFinite(Date.parse(value.updatedAt)) ||
     !/^[a-f0-9]{64}$/.test(value.contextIdentity?.id ?? "") ||
     value.contextIdentity.mode !== "active-context" ||
-    (!value.contextIdentity.sources?.length && value.schemaVersion !== 6) ||
+    (!value.contextIdentity.sources?.length &&
+      ![6, 7].includes(value.schemaVersion)) ||
     !Array.isArray(value.messages) ||
     !Array.isArray(value.attempts)
   )
     throw new Error("Invalid conversation schema.");
   const checkIdentity =
-    value.schemaVersion === 6
+    value.schemaVersion === 7
       ? (identity) =>
-          require("./context-identity.cjs").validateEngineIdentity(
+          require("./context-identity.cjs").validateStandaloneIdentity(
             identity,
             value.agentId,
           )
-      : validateContextIdentity;
+      : value.schemaVersion === 6
+        ? (identity) =>
+            require("./context-identity.cjs").validateEngineIdentity(
+              identity,
+              value.agentId,
+            )
+        : validateContextIdentity;
   if (
     value.schemaVersion === 6 &&
     (value.engineOnly !== true ||
@@ -97,16 +104,32 @@ function validateConversation(value) {
       throw new Error("Invalid direct-file chat binding.");
   } else if (value.contextFile !== undefined)
     throw new Error("Direct file chats require schema 4.");
+  if (
+    value.schemaVersion === 7 &&
+    (value.standalone !== true ||
+      !ID.test(value.creationId) ||
+      value.contextBoxId !== undefined ||
+      value.contextFile !== undefined ||
+      value.agentKnowledge !== undefined)
+  )
+    throw new Error("Invalid standalone conversation.");
   const source = value.contextIdentity.sources[0];
   checkIdentity(value.contextIdentity);
   if (
-    value.schemaVersion !== 6 &&
+    ![6, 7].includes(value.schemaVersion) &&
     (typeof source.sourceId !== "string" ||
       typeof source.relativePath !== "string" ||
       !/^[a-f0-9]{64}$/.test(source.contentHash))
   )
     throw new Error("Invalid conversation source.");
   for (const message of value.messages) {
+    if (
+      message.standalone !== undefined &&
+      (message.standalone !== true ||
+        message.role !== "assistant" ||
+        message.engineToolTurn === true)
+    )
+      throw new Error("Invalid standalone message marker.");
     if (
       message.engineToolTurn !== undefined &&
       typeof message.engineToolTurn !== "boolean"
@@ -177,7 +200,7 @@ function validateConversation(value) {
       ) ||
       JSON.stringify(message.sources) !==
         JSON.stringify(
-          message.engineToolTurn
+          message.engineToolTurn || message.standalone === true
             ? []
             : (message.contextIdentity ?? value.contextIdentity).sources,
         )
@@ -240,6 +263,7 @@ function applyRun(conversation, attempt, record) {
       runId: record.runId,
       userMessageId: attempt.userMessageId,
       sources: record.sourcesActuallyRead,
+      ...(record.diagnostics?.standalone === true ? { standalone: true } : {}),
       model: record.model,
       provider: record.provider,
       ...(record.diagnostics?.engineToolTurn
@@ -321,11 +345,21 @@ class ConversationStore {
     agentKnowledge = null,
     contextFile = null,
     engineOnly = false,
+    standalone = false,
   ) {
     return this.queue(async () => {
       const timestamp = new Date().toISOString();
       const value = {
-        schemaVersion: engineOnly ? 6 : contextFile ? 4 : box ? 3 : 1,
+        schemaVersion: standalone
+          ? 7
+          : engineOnly
+            ? 6
+            : contextFile
+              ? 4
+              : box
+                ? 3
+                : 1,
+        ...(standalone ? { standalone: true, creationId } : {}),
         ...(engineOnly ? { engineOnly: true, creationId } : {}),
         agentId: validId(agentId),
         ...(agentKnowledge ? { agentKnowledge } : {}),
@@ -338,11 +372,13 @@ class ConversationStore {
             }
           : {}),
         id: randomUUID(),
-        title: engineOnly
-          ? "Engine chat"
-          : box || contextFile
-            ? "Untitled chat"
-            : path.basename(contextIdentity.sources[0].relativePath),
+        title: standalone
+          ? "Untitled chat"
+          : engineOnly
+            ? "Engine chat"
+            : box || contextFile
+              ? "Untitled chat"
+              : path.basename(contextIdentity.sources[0].relativePath),
         createdAt: timestamp,
         updatedAt: timestamp,
         contextIdentity,

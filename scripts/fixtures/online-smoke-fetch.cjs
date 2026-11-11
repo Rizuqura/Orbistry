@@ -1,6 +1,13 @@
 // Synthetic transports for the dedicated hidden Electron test entry only.
 function createOnlineSmokeFetch() {
   const nativeFetch = globalThis.fetch;
+  const sourceEnvelope = (text) => {
+    try {
+      return JSON.parse(text);
+    } catch {
+      return { sourceId: null, content: "" };
+    }
+  };
   const state = {
     requests: [],
     localRequests: [],
@@ -111,12 +118,14 @@ function createOnlineSmokeFetch() {
         return new Response("Synthetic provider failure", {
           status: state.status,
         });
-      const source = JSON.parse(body.messages[1].content);
+      const source = sourceEnvelope(body.messages[1].content);
       const answer = datasetPlan(body)
         ? JSON.stringify(datasetPlan(body))
-        : source.sourceId === "orbistry-model-check"
-          ? "40%"
-          : "ALPHA allocation is 25%.";
+        : !source.sourceId
+          ? "General chat response."
+          : source.sourceId === "orbistry-model-check"
+            ? "40%"
+            : "ALPHA allocation is 25%.";
       const encoder = new TextEncoder();
       let timer;
       return new Response(
@@ -201,7 +210,7 @@ function createOnlineSmokeFetch() {
       if (state.status !== 200)
         return new Response("Provider error", { status: state.status });
       const probe = body.messages[0].content.includes("NVIDIA ONLINE");
-      const source = probe ? null : JSON.parse(body.messages[1].content);
+      const source = probe ? null : sourceEnvelope(body.messages[1].content);
       if (source?.sourceId === "orbistry-model-check" && state.checkDelayMs) {
         await new Promise((resolve, reject) => {
           const abort = () => {
@@ -217,11 +226,13 @@ function createOnlineSmokeFetch() {
       }
       const answer = probe
         ? "NVIDIA ONLINE"
-        : source.sourceId === "orbistry-model-check"
-          ? "40%"
-          : source.content.includes("ALPHA")
-            ? "ALPHA allocation is 25%."
-            : "BETA allocation is 40%.";
+        : !source.sourceId
+          ? "General chat response."
+          : source.sourceId === "orbistry-model-check"
+            ? "40%"
+            : source.content.includes("ALPHA")
+              ? "ALPHA allocation is 25%."
+              : "BETA allocation is 40%.";
       const events = [
         {
           choices: [
@@ -277,9 +288,10 @@ function createOnlineSmokeFetch() {
           status: state.status,
           headers: { "retry-after": "1" },
         });
-      const source = JSON.parse(body.contents[0].parts[0].text);
-      const answer =
-        source.sourceId === "orbistry-model-check"
+      const source = sourceEnvelope(body.contents[0].parts[0].text);
+      const answer = !source.sourceId
+        ? "General chat response."
+        : source.sourceId === "orbistry-model-check"
           ? "40%"
           : source.content.includes("ALPHA")
             ? "ALPHA allocation is 25%."

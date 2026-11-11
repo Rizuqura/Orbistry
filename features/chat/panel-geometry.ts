@@ -19,7 +19,7 @@ export function clampGeometry(
     height: h,
   };
 }
-export function defaultPlanetChatGeometry(
+export function defaultFloatingChatGeometry(
   width: number,
   height: number,
 ): PanelGeometry {

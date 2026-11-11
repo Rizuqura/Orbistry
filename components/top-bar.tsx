@@ -6,8 +6,8 @@ export function TopBar({
   settingsOpen,
   onOpenSettings,
 }: Readonly<{
-  view: "workspace" | "planet" | "agent";
-  onChangeView: (view: "workspace" | "planet" | "agent") => void;
+  view: "workspace" | "worldview" | "agent";
+  onChangeView: (view: "workspace" | "worldview" | "agent") => void;
   settingsOpen: boolean;
   onOpenSettings: () => void;
 }>) {
@@ -32,11 +32,11 @@ export function TopBar({
           WORKSPACE
         </button>
         <button
-          className={`nav-item${!settingsOpen && view === "planet" ? " active" : ""}`}
-          aria-label="PLANET VIEW"
-          onClick={() => onChangeView("planet")}
+          className={`nav-item${!settingsOpen && view === "worldview" ? " active" : ""}`}
+          aria-label="WorldView"
+          onClick={() => onChangeView("worldview")}
         >
-          PLANET VIEW
+          WorldView
         </button>
         <button
           className={`nav-item${!settingsOpen && view === "agent" ? " active" : ""}`}

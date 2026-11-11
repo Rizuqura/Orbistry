@@ -26,12 +26,12 @@ export function useChatPopout(title: string) {
     try {
       popup = window.open(
         "about:blank",
-        "orbistry-planet-chat",
+        "orbistry-chat-window",
         "popup,width=560,height=820",
       );
       if (!popup) {
         throw new Error(
-          "The chat window could not be opened. Try again from Planet View.",
+          "The chat window could not be opened. Try again from WorldView.",
         );
       }
       const target = popup.document;

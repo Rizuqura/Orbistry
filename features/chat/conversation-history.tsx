@@ -347,8 +347,8 @@ export function ConversationHistory({
       >
         <h2 id="agent-create-title">New {agentName} chat</h2>
         <p>
-          Choose research sources, or start an Engine chat without research
-          context.
+          Chat uses instructions and conversation history. File, knowledge and
+          tool integrations are temporarily inactive.
         </p>
         {chat.hasEngine && (
           <label>
@@ -436,7 +436,7 @@ export function ConversationHistory({
           {!chat.contextBoxes.length && !availableFile && (
             <p>
               Create a Context Box first. Cancel to create one from selected
-              files in Planet View’s context manager, or save reviewed Active
+              files in WorldView’s context manager, or save reviewed Active
               Context below.
             </p>
           )}
@@ -473,17 +473,7 @@ export function ConversationHistory({
         </div>
         <div className="agent-actions">
           <button
-            disabled={
-              chat.busy ||
-              (!engineOnly &&
-                !selectedFile &&
-                (!boxId ||
-                  !chat.contextBoxes.find((b) => b.id === boxId)?.items
-                    .length)) ||
-              (!engineOnly &&
-                (chat.contextBoxes.find((b) => b.id === boxId)?.items.length ??
-                  0) > 32)
-            }
+            disabled={chat.busy}
             onClick={() => {
               void chat
                 .createChat(

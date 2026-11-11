@@ -372,7 +372,7 @@
 }
 
 /* The native pop-out uses the same chat surface without canvas geometry. */
-.planet-chat-window.app-shell {
+.worldview-chat-window.app-shell {
   display: flex;
   width: 100vw;
   height: 100dvh;
@@ -380,7 +380,7 @@
   min-height: 0;
   overflow: hidden;
 }
-.planet-chat-window.app-shell .chat-panel-window {
+.worldview-chat-window.app-shell .chat-panel-window {
   flex: 1;
   width: 100%;
   height: 100%;

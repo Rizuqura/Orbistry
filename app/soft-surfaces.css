@@ -11,18 +11,10 @@
   --p-border: transparent;
 }
 
-/* Retain native checked indicators and the Planet world's evidence/selection
-   markings. Transparent borders preserve existing hit areas and resize math. */
 .app-shell,
 .app-shell
   :where(*):not(
-    :where(
-      .pworld,
-      .pworld *,
-      input[type="checkbox"],
-      input[type="radio"],
-      input[type="range"]
-    )
+    :where(input[type="checkbox"], input[type="radio"], input[type="range"])
   ) {
   border-color: transparent !important;
 }
@@ -63,11 +55,7 @@
     .ai-current,
     .model-list article,
     .agent-bot-row,
-    .agent-conversation-list article,
-    .context-manager-box-row,
-    .brain-scope,
-    .planet-usage,
-    .pmini
+    .agent-conversation-list article
   ):hover {
   box-shadow: var(--hover-shadow) !important;
 }
@@ -81,7 +69,7 @@
 }
 
 /* A soft, visible keyboard cue replaces the previous sharp focus rectangles. */
-.app-shell :focus-visible:not(.pnode) {
+.app-shell :focus-visible {
   outline: none !important;
   box-shadow: var(--focus-shadow) !important;
 }
@@ -123,7 +111,7 @@
   .app-shell :where(button, input, textarea, select, dialog) {
     border-color: ButtonText !important;
   }
-  .app-shell :focus-visible:not(.pnode) {
+  .app-shell :focus-visible {
     outline: 2px solid Highlight !important;
     outline-offset: 2px;
     box-shadow: none !important;
@@ -131,10 +119,34 @@
 }
 
 /* Form affordances stay visible inside the Context Box editor. */
-.app-shell .context-box-add-form .box-form-section { border-color: var(--orb-slate) !important; }
-.app-shell .context-box-add-form .box-form-section :is(input:not([type="checkbox"]), select) { border-color: var(--orb-blue) !important; background-color: var(--orb-ink) !important; }
-.app-shell .context-box-add-form .box-form-section :is(input:not([type="checkbox"]), select):hover:not(:disabled) { border-color: var(--orb-mist) !important; }
-.app-shell .context-box-add-form :is(input, select, button, summary):focus-visible { outline: 2px solid #ffad00 !important; outline-offset: 3px; }
-.app-shell .context-box-add-form .box-form-actions { border-top-color: var(--orb-slate) !important; }
-.app-shell .context-box-add-form .box-form-actions button { border-color: var(--orb-blue) !important; }
-.app-shell .context-box-add-form .box-form-actions .box-primary-action { border-color: #ffad00 !important; }
+.app-shell .context-box-add-form .box-form-section {
+  border-color: var(--orb-slate) !important;
+}
+.app-shell
+  .context-box-add-form
+  .box-form-section
+  :is(input:not([type="checkbox"]), select) {
+  border-color: var(--orb-blue) !important;
+  background-color: var(--orb-ink) !important;
+}
+.app-shell
+  .context-box-add-form
+  .box-form-section
+  :is(input:not([type="checkbox"]), select):hover:not(:disabled) {
+  border-color: var(--orb-mist) !important;
+}
+.app-shell
+  .context-box-add-form
+  :is(input, select, button, summary):focus-visible {
+  outline: 2px solid #ffad00 !important;
+  outline-offset: 3px;
+}
+.app-shell .context-box-add-form .box-form-actions {
+  border-top-color: var(--orb-slate) !important;
+}
+.app-shell .context-box-add-form .box-form-actions button {
+  border-color: var(--orb-blue) !important;
+}
+.app-shell .context-box-add-form .box-form-actions .box-primary-action {
+  border-color: #ffad00 !important;
+}

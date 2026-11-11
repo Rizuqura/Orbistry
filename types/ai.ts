@@ -151,6 +151,7 @@ export type ContextIdentity = {
   sources: ModelSourceReference[];
 };
 export type ChatMessage = {
+  standalone?: boolean;
   engineToolTurn?: boolean;
   engineReports?: ChatEngineReport[];
   contextFile?: { relativePath: string };
@@ -207,7 +208,8 @@ export type Conversation = {
   agentKnowledge?: ConstructionSourceBinding;
   contextFile?: ConstructionFileBinding;
   agentId?: string;
-  schemaVersion: 1 | 2 | 3 | 4 | 6;
+  schemaVersion: 1 | 2 | 3 | 4 | 6 | 7;
+  standalone?: boolean;
   contextBoxId?: string;
   contextBoxRevision?: number;
   id: string;

@@ -68,9 +68,7 @@ async function main() {
     );
     assert.match(closePrompt, /without saving Markdown/);
     assert.equal(await editor.inputValue(), "# Saved\n\nEdited in Orbistry.\n");
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page.getByRole("button", { name: "WORKSPACE", exact: true }).click();
     assert.equal(await editor.inputValue(), "# Saved\n\nEdited in Orbistry.\n");
     await close();

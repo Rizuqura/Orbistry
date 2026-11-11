@@ -9,7 +9,7 @@ export function StatusBar({
   agentModel,
   agentName,
 }: Readonly<{
-  view: "workspace" | "planet" | "agent";
+  view: "workspace" | "worldview" | "agent";
   snapshot: VaultSnapshot | null;
   isScanning: boolean;
   error?: string | null;
@@ -39,7 +39,8 @@ export function StatusBar({
       {view === "agent" ? (
         <>
           <span>
-            AGENT: {(agentName ?? "Orbistry").replace(" Agent", "").toUpperCase()}
+            AGENT:{" "}
+            {(agentName ?? "Orbistry").replace(" Agent", "").toUpperCase()}
           </span>
           <span className="agent-footer-context" title={agentContext}>
             CONTEXT: {agentContext ?? "No Context"}

@@ -12,7 +12,7 @@ function installChatWindowHandler(owner, { icon, openExternal }) {
   owner.webContents.setWindowOpenHandler((details) => {
     if (
       details.url !== "about:blank" ||
-      details.frameName !== "orbistry-planet-chat"
+      details.frameName !== "orbistry-chat-window"
     ) {
       return externalOnly(details);
     }
@@ -45,7 +45,7 @@ function installChatWindowHandler(owner, { icon, openExternal }) {
   });
 
   owner.webContents.on("did-create-window", (child, details) => {
-    if (details.frameName !== "orbistry-planet-chat") {
+    if (details.frameName !== "orbistry-chat-window") {
       return;
     }
     chatWindow = child;

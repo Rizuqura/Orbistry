@@ -93,9 +93,7 @@ async function main() {
       .getByRole("button", { name: "In active context", exact: true })
       .waitFor();
     assert.equal(await countChats(), 0);
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     await page
       .getByRole("button", { name: "Open Context Box library", exact: true })
       .click();

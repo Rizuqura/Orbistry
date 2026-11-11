@@ -311,7 +311,6 @@ app.whenReady().then(async () => {
     },
   );
   app.once("before-quit", () => engines.shutdown());
-  chatService.engines = engines;
   registerAiIpc({
     engines,
     researchKnowledge:

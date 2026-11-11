@@ -13,7 +13,9 @@ const {
   createOnlineSmokeFetch,
 } = require("../../scripts/fixtures/online-smoke-fetch.cjs");
 test("NVIDIA preserves source isolation, bounded history, identity, retry and restart across model switches", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-nvidia-chat-"));
+  const root = await fs.mkdtemp(
+    path.join(os.tmpdir(), "orbistry-nvidia-chat-"),
+  );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const { state, fetchImpl } = createOnlineSmokeFetch();
   const provider = new NvidiaProvider({
@@ -81,7 +83,8 @@ test("NVIDIA preserves source isolation, bounded history, identity, retry and re
   service = new ChatService({ registry, provider });
   await service.resume(root, alpha.id);
   result = await service.run(root, 1, input(alpha));
-  assert.match(result.conversation.messages.at(-1).content, /ALPHA/);
+  assert.equal(result.run.diagnostics.standalone, true);
+  assert.deepEqual(result.run.sourcesActuallyRead, []);
   assert.equal(result.conversation.id, alpha.id);
   const records = await fs.readdir(path.join(root, ".wonnyy", "model-runs"));
   for (const file of records)

@@ -163,7 +163,7 @@ export function ContextBoxes({
               Create Context Box from Selection…
             </button>
             <small>
-              {selectedPaths.length} selected in Explorer / Planet View
+              {selectedPaths.length} selected in Explorer / WorldView
             </small>
           </div>
           <input
@@ -473,7 +473,7 @@ export function ContextBoxes({
             )}
             {!box.items.length && (
               <p>
-                This box is empty. Select files in Explorer or Planet View, then
+                This box is empty. Select files in Explorer or WorldView, then
                 choose Add selection.
               </p>
             )}

@@ -41,13 +41,12 @@ test("settings can review hidden memory and list it without indexing it", async 
   assert.equal(result.binding.contextIdentity.sources.length, 1);
   await readBinding(service, root, result.binding);
 });
-test("Context single-file picker includes explicit memory files", async (t) => {
+test("Agent construction cannot list any Vault or hidden memory files", async (t) => {
   const { root } = await fixture(t);
   const service = new ChatService({ agents: {} });
   service.store = async () => ({ root });
   const files = await service.listConstructionFiles(root);
-  assert(files.includes(memory));
-  assert(files.includes("research.md"));
+  assert.deepEqual(files, []);
 });
 test("universe scope cannot acquire hidden memory implicitly", async (t) => {
   const { root } = await fixture(t);

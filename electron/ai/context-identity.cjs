@@ -81,7 +81,26 @@ function validateEngineIdentity(value, agentId) {
     );
   return value;
 }
+function standaloneIdentity(agentId) {
+  return {
+    id: createHash("sha256")
+      .update(JSON.stringify({ mode: "standalone-chat", agentId }))
+      .digest("hex"),
+    mode: "active-context",
+    sources: [],
+  };
+}
+function validateStandaloneIdentity(value, agentId) {
+  if (JSON.stringify(value) !== JSON.stringify(standaloneIdentity(agentId)))
+    throw new ModelRuntimeError(
+      "MODEL_STORAGE_INVALID",
+      "Invalid standalone chat identity.",
+    );
+  return value;
+}
 module.exports = {
+  standaloneIdentity,
+  validateStandaloneIdentity,
   contextIdentity,
   validateContextIdentity,
   engineIdentity,

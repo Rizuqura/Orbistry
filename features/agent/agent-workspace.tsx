@@ -108,20 +108,9 @@ export function AgentWorkspace({
     let stale = false;
     setBox(null);
     setBoxError("");
+    // Legacy bindings remain metadata; opening agent details never reads sources.
     if (showDetails && boxId)
-      void chat
-        .inspectContextBox(boxId)
-        .then((value) => {
-          if (!stale) setBox(value);
-        })
-        .catch((error) => {
-          if (!stale)
-            setBoxError(
-              error instanceof Error
-                ? error.message
-                : "Context Box unavailable.",
-            );
-        });
+      setBoxError("Knowledge integration is temporarily inactive.");
     return () => {
       stale = true;
     };

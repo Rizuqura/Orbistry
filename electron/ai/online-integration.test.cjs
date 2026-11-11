@@ -56,10 +56,7 @@ test("local to Gemini and back preserves authorization, bounded history, provena
           status,
           headers: { "retry-after": "1" },
         });
-      const source = JSON.parse(body.contents[0].parts[0].text);
-      const answer = source.content.includes("ALPHA")
-        ? "ALPHA 25%"
-        : "BETA 40%";
+      const answer = "General chat response.";
       return new Response(
         `data: ${JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ answer }) }] }, finishReason: "STOP" }], modelVersion: "gemini-test-001" })}\n\n`,
         { headers: { "content-type": "text/event-stream" } },

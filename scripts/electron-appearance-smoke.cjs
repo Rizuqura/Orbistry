@@ -289,9 +289,7 @@ async function main() {
     await fs.mkdir("test-results", { recursive: true });
     await page.screenshot({ path: "test-results/chat-appearance.png" });
     await assertBannerEdge(panel.locator(".chat-profile-banner"));
-    await page
-      .getByRole("button", { name: "PLANET VIEW", exact: true })
-      .click();
+    await page.getByRole("button", { name: "WorldView", exact: true }).click();
     const floatingHeader = page.locator(
       ".chat-panel-floating .chat-profile-banner",
     );
