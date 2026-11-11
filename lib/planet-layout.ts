@@ -335,9 +335,9 @@ function computeGravityLayout(graph: PlanetGraph): LayoutResult {
     node.id === graph.rootId
       ? 480
       : node.type === "directory"
-        ? 14 + (22 * Math.log1p(masses.get(node.id) ?? 0)) / Math.log1p(maxMass)
-        : (node.fileType === "other" ? 4.2 : 6) +
-          (8 * Math.log1p(masses.get(node.id) ?? 0)) / Math.log1p(maxMass);
+        ? 30 + (38 * Math.log1p(masses.get(node.id) ?? 0)) / Math.log1p(maxMass)
+        : (node.fileType === "other" ? 9 : 14) +
+          (14 * Math.log1p(masses.get(node.id) ?? 0)) / Math.log1p(maxMass);
   const sorted = (ids: string[]) =>
     [...ids].sort(
       (a, b) =>
@@ -547,16 +547,15 @@ function computeGravityLayout(graph: PlanetGraph): LayoutResult {
 
 export function sizeOf(node: KnowledgeNode, childCount: number): number {
   if (node.type === "directory") {
-    if (node.level === 0) return 26;
-    const base =
-      9 + Math.min(childCount, 10) * 1.5 + (node.level === 1 ? 3 : 0);
-    return clamp(base, 9, 19);
+    if (node.level === 0) return 56;
+    const base = 22 + Math.min(childCount, 10) * 2 + (node.level === 1 ? 6 : 0);
+    return clamp(base, 22, 42);
   }
-  if (node.fileType === "other") return 4.2;
-  let size = 5.5;
+  if (node.fileType === "other") return 9;
+  let size = 14;
   if (node.fileType === "csv") size += 0.6;
   size += Math.min(node.connections.length, 4) * 0.4;
-  return clamp(size, 5, 8.5);
+  return clamp(size, 14, 20);
 }
 
 export function computeStationLayout(

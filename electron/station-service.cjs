@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const { isMemoryPath, memoryEntry } = require("./agent-memory-source.cjs");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const {
@@ -336,8 +337,19 @@ function collectFiles(entry, output = []) {
 async function previewBoxSelection(rootPath, relativePaths) {
   if (!Array.isArray(relativePaths) || relativePaths.length > 1000)
     throw new Error("Choose up to 1000 vault objects.");
-  const known = flatten((await scanVault(rootPath)).entries),
-    selected = new Set(),
+  const memoryOnly =
+    relativePaths.length > 0 && relativePaths.every(isMemoryPath);
+  const known = memoryOnly
+    ? new Map()
+    : flatten((await scanVault(rootPath)).entries);
+  for (const relativePath of relativePaths.filter(isMemoryPath)) {
+    try {
+      known.set(relativePath, await memoryEntry(rootPath, relativePath));
+    } catch {
+      /* Missing/private linked files remain unselectable. */
+    }
+  }
+  const selected = new Set(),
     skipped = new Set();
   function visit(entry) {
     if (entry.kind === "folder") {
@@ -690,7 +702,11 @@ async function prepareBrainScope(
       BRAIN_ERROR_CODES.SOURCE_CHANGED,
       "This Context Box is empty. Add supported files before starting a chat.",
     );
-  if (latest) await scanVault(rootPath);
+  const memoryOnly =
+    Array.isArray(approvedManifest) &&
+    approvedManifest.length > 0 &&
+    approvedManifest.every((item) => isMemoryPath(item.relativePath));
+  if (latest && !memoryOnly) await scanVault(rootPath);
   const input = validateScopeRequest(rawInput);
   const { ownerId, matchMode } = input;
   const loaded = await load(rootPath);
@@ -699,13 +715,26 @@ async function prepareBrainScope(
       BRAIN_ERROR_CODES.VAULT_UNAVAILABLE,
       loaded.error,
     );
-  const snapshot = await getVaultSnapshot(rootPath);
+  const snapshot = memoryOnly
+    ? { status: "ready", entries: [] }
+    : await getVaultSnapshot(rootPath);
   if (snapshot.status !== "ready")
     throw new BrainScopeError(
       BRAIN_ERROR_CODES.VAULT_UNAVAILABLE,
       snapshot.message || "Vault is unavailable.",
     );
   const known = flatten(snapshot.entries);
+  for (const item of approvedManifest ?? []) {
+    if (!isMemoryPath(item.relativePath)) continue;
+    try {
+      known.set(
+        item.relativePath,
+        await memoryEntry(rootPath, item.relativePath),
+      );
+    } catch {
+      /* Existing approved-manifest checks reject unavailable sources. */
+    }
+  }
   const stationMap = new Map(
     loaded.document.stations.map((station) => [station.id, station.name]),
   );
@@ -902,8 +931,17 @@ async function readBrainSource(rootPath, rawInput) {
       { scopeId, sourceId },
     );
   }
-  const snapshot = await getVaultSnapshot(rootPath);
-  const entry = flatten(snapshot.entries).get(sourceId);
+  const snapshot = isMemoryPath(sourceId)
+    ? { status: "ready", entries: [] }
+    : await getVaultSnapshot(rootPath);
+  let entry;
+  try {
+    entry = isMemoryPath(sourceId)
+      ? await memoryEntry(rootPath, sourceId)
+      : flatten(snapshot.entries).get(sourceId);
+  } catch {
+    entry = null;
+  }
   if (
     snapshot.status !== "ready" ||
     !entry ||

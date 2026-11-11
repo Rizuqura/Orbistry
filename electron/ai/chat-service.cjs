@@ -146,7 +146,10 @@ class ChatService {
       }
     };
     visit(snapshot.entries);
-    return files.sort();
+    const memory = await require("../agent-memory-source.cjs").listMemoryFiles(
+      (await this.store(vault)).root,
+    );
+    return [...new Set([...files, ...memory])].sort();
   }
   async previewConstructionFile(vault, input) {
     assertFields(input, ["relativePath"]);

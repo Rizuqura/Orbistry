@@ -8,6 +8,8 @@ import type {
 import {
   boxSelectPlanetNodes,
   pickPlanetNode,
+  planetVisualDiameter,
+  planetSizeOpacity,
 } from "../lib/planet-hit-testing";
 import {
   ancestorPath,
@@ -185,6 +187,16 @@ export function PlanetScene({
         : withPlanetOrbits(graph, computeLayout(graph, "orbital")),
     [graph, stationClusters, stationMatchIds],
   );
+  const opacityRange = useMemo(() => {
+    let minimum = Infinity;
+    let maximum = 0;
+    for (const [id, position] of baseLayout.positions) {
+      if (graph.byId.get(id)?.type !== "directory") continue;
+      minimum = Math.min(minimum, position.size);
+      maximum = Math.max(maximum, position.size);
+    }
+    return { minimum, maximum };
+  }, [baseLayout, graph.byId]);
   const motionPlan = useMemo(
     () => preparePlanetMotion(graph, baseLayout),
     [graph, baseLayout],
@@ -557,7 +569,12 @@ export function PlanetScene({
       candidates.push({
         id: node.id,
         name: node.name,
-        position,
+        position: {
+          ...position,
+          size:
+            planetVisualDiameter(node, position.size, transform.k) /
+            transform.k,
+        },
         priority: hovered
           ? 5
           : anchor
@@ -823,6 +840,12 @@ export function PlanetScene({
                 key={node.id}
                 node={node}
                 layout={pos}
+                zoom={transform.k}
+                opacity={planetSizeOpacity(
+                  pos.size,
+                  opacityRange.minimum,
+                  opacityRange.maximum,
+                )}
                 selected={selectedIds.has(node.id)}
                 hovered={hoveredId === node.id}
                 dimmed={dimmed}

@@ -1,10 +1,13 @@
 import { memo, type CSSProperties, type KeyboardEvent } from "react";
 import type { KnowledgeNode, NodeLayout } from "../types/graph";
+import { planetVisualDiameter } from "../lib/planet-hit-testing";
 
 export interface PlanetNodeProps {
   anchor: boolean;
   node: KnowledgeNode;
   layout: NodeLayout;
+  zoom: number;
+  opacity: number;
   selected: boolean;
   hovered: boolean;
   dimmed: boolean;
@@ -24,6 +27,8 @@ export const PlanetNode = memo(function PlanetNode({
   anchor,
   node,
   layout,
+  zoom,
+  opacity,
   selected,
   hovered,
   dimmed,
@@ -38,6 +43,7 @@ export const PlanetNode = memo(function PlanetNode({
   onSelect,
   onOpen,
 }: Readonly<PlanetNodeProps>) {
+  const diameter = planetVisualDiameter(node, layout.size, zoom) / zoom;
   const isDir = node.type === "directory";
   const isAsteroid = node.fileType === "other";
   const className = [
@@ -61,12 +67,14 @@ export const PlanetNode = memo(function PlanetNode({
   const style: CSSProperties = {
     left: `${layout.x}px`,
     top: `${layout.y}px`,
+    opacity: 1, // Only the body fades; tooltips retain readable contrast.
   };
 
   return (
     <div
       className={className}
       style={style}
+      data-planet-size={layout.size}
       role="button"
       tabIndex={0}
       aria-label={`${isDir ? "Directory" : "File"}: ${node.name}`}
@@ -82,20 +90,24 @@ export const PlanetNode = memo(function PlanetNode({
     >
       <span
         className="porb"
-        style={{ width: `${layout.size}px`, height: `${layout.size}px` }}
+        style={{
+          width: `${diameter}px`,
+          height: `${diameter}px`,
+          opacity: isDir ? opacity : 1,
+        }}
       >
         <svg
-          width={layout.size}
-          height={layout.size}
-          viewBox={`0 0 ${layout.size} ${layout.size}`}
+          width={diameter}
+          height={diameter}
+          viewBox={`0 0 ${diameter} ${diameter}`}
           aria-hidden="true"
           className="planet-orb-svg"
         >
           <circle
             className="planet-orb-shape"
-            cx={layout.size / 2}
-            cy={layout.size / 2}
-            r={Math.max(0.5, layout.size / 2 - 0.6)}
+            cx={diameter / 2}
+            cy={diameter / 2}
+            r={Math.max(0.5, diameter / 2 - 0.6)}
           />
         </svg>
       </span>

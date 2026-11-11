@@ -1009,6 +1009,13 @@ body {
   }
 }
 
+.top-bar .brand {
+  align-items: center;
+}
+.top-bar .brand .version {
+  line-height: 1;
+}
+
 /* Preserve the supplied emblem without the previous letter badge fill. */
 .top-bar .brand-mark,
 .top-bar:hover .brand-mark {

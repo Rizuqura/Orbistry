@@ -59,6 +59,8 @@ async function main() {
           style = getComputedStyle(node);
         return {
           fill: style.fill,
+          fillOpacity: style.fillOpacity,
+          strokeOpacity: style.strokeOpacity,
           stroke: style.stroke,
           strokeWidth: style.strokeWidth,
           vectorEffect: style.vectorEffect,
@@ -78,15 +80,42 @@ async function main() {
         shadow: getComputedStyle(el.querySelector(".panchor .porb")).boxShadow,
         edgesWidth: Number(el.querySelector(".pedges").getAttribute("width")),
         canvasWidth: el.querySelector(".pv-canvas").clientWidth,
+        bodyWidths: [
+          ".panchor",
+          ".pdir:not(.panchor)",
+          ".pfile-csv",
+          ".pfile-pdf",
+          ".pfile-md",
+        ].map(
+          (selector) =>
+            el.querySelector(selector + " .porb").getBoundingClientRect().width,
+        ),
         anchorWidth: el.querySelector(".panchor .porb").getBoundingClientRect()
           .width,
+        markerOpacity: [...el.querySelectorAll(".pnode")].map((node) => ({
+          id: node.getAttribute("aria-label"),
+          size: Number(node.dataset.planetSize),
+          alpha: Number(getComputedStyle(node.querySelector(".porb")).opacity),
+          wrapper: Number(getComputedStyle(node).opacity),
+        })),
         guideOpen: el.querySelector(".pctrl-guide").open,
       };
     });
+    console.log("Planet body diameters:", JSON.stringify(visual.bodyWidths));
+    await fs.mkdir("test-results", { recursive: true });
+    await page.screenshot({
+      path: "test-results/planet-visibility-initial.png",
+    });
     assert.equal(visual.background, "rgb(27, 45, 58)");
     assert.equal(visual.root.fill, "rgb(255, 255, 255)");
-    for (const kind of ["folder", "csv", "pdf", "md"])
-      assert.equal(visual[kind].fill, "none");
+    assert.equal(visual.folder.fill, "rgb(237, 240, 242)");
+    for (const kind of ["csv", "pdf", "md"]) {
+      assert.equal(visual[kind].fill, visual[kind].stroke);
+      assert.equal(Number(visual[kind].fillOpacity), 0.25);
+      assert.equal(Number(visual[kind].strokeOpacity), 1);
+      assert.equal(parseFloat(visual[kind].strokeWidth), 2.4);
+      assert.equal(visual[kind].vectorEffect, "non-scaling-stroke");
+    }
     assert.equal(visual.folder.stroke, "rgb(237, 240, 242)");
     assert.equal(visual.csv.stroke, "rgb(143, 210, 225)");
     assert.equal(visual.pdf.stroke, "rgb(230, 155, 152)");
@@ -99,8 +128,44 @@ async function main() {
     assert.ok(visual.orbits >= 3);
     assert.equal(visual.shadow, "none");
     assert.equal(visual.edgesWidth, visual.canvasWidth);
-    assert.ok(visual.anchorWidth > 0);
+    assert.ok(visual.anchorWidth >= 63.9);
+    assert.ok(visual.bodyWidths[1] >= 19.9);
+    assert.ok(visual.bodyWidths.slice(2).every((width) => width >= 13.9));
+    assert.ok(visual.anchorWidth > 2 * Math.max(...visual.bodyWidths.slice(1)));
     assert.equal(visual.guideOpen, false);
+    const bySize = visual.markerOpacity
+      .filter((marker) => marker.id.startsWith("Directory:"))
+      .sort((a, b) => a.size - b.size);
+    for (const marker of visual.markerOpacity.filter((item) =>
+      item.id.startsWith("File:"),
+    )) {
+      assert.equal(marker.alpha, 1, "File circles must stay fully opaque");
+      assert.equal(marker.wrapper, 1);
+    }
+    assert.equal(bySize[0].alpha, 0.45);
+    assert.equal(bySize.at(-1).alpha, 1);
+    for (let i = 0; i < bySize.length; i++) {
+      assert.ok(bySize[i].alpha >= 0.45 && bySize[i].alpha <= 1);
+      assert.equal(bySize[i].wrapper, 1);
+      if (i && bySize[i].size > bySize[i - 1].size)
+        assert.ok(bySize[i].alpha > bySize[i - 1].alpha);
+    }
+    const dimProbe = await page.locator(".pfile-csv").evaluate((node) => {
+      const previous = node.className;
+      node.classList.add("dim", "station-structural", "semantic-far");
+      const result = {
+        wrapper: Number(getComputedStyle(node).opacity),
+        body: Number(getComputedStyle(node.querySelector(".porb")).opacity),
+      };
+      node.className = previous;
+      return result;
+    });
+    assert.equal(dimProbe.wrapper, 1);
+    assert.equal(
+      dimProbe.body,
+      1,
+      "File circles remain opaque even when dimmed",
+    );
     await page.locator(".pctrl-guide summary").click();
     assert.equal(
       await page.locator(".pctrl-guide").evaluate((el) => el.open),
@@ -155,6 +220,15 @@ async function main() {
               overlaps++;
           }
         return {
+          markerOpacity: [...document.querySelectorAll(".pnode")].map(
+            (node) => ({
+              id: node.getAttribute("aria-label"),
+              alpha: Number(
+                getComputedStyle(node.querySelector(".porb")).opacity,
+              ),
+              wrapper: Number(getComputedStyle(node).opacity),
+            }),
+          ),
           lineOpacity: parseFloat(
             getComputedStyle(document.querySelector(".pedges")).opacity,
           ),
@@ -167,10 +241,24 @@ async function main() {
         };
       });
       assert.ok(check.count > 0);
+      for (const marker of check.markerOpacity) {
+        assert.ok(marker.alpha >= 0.45 && marker.alpha <= 1);
+        assert.equal(marker.wrapper, 1);
+        if (marker.id.startsWith("File:")) assert.equal(marker.alpha, 1);
+        const original = visual.markerOpacity.find(
+          (item) => item.id === marker.id,
+        );
+        if (original)
+          assert.equal(
+            marker.alpha,
+            original.alpha,
+            "Zoom must not change size-derived opacity",
+          );
+      }
       assert.ok(check.lineOpacity >= 0.5 && check.lineOpacity <= 0.75);
       assert.equal(check.overlaps, 0);
-      assert.ok(check.fontSizes.every((size) => size === 10 || size === 11));
-      assert.ok(check.heights.every((height) => height === 16));
+      assert.ok(check.fontSizes.every((size) => size === 13 || size === 14));
+      assert.ok(check.heights.every((height) => height === 20));
       labelChecks.push(check);
     }
     assert.ok(
@@ -200,7 +288,7 @@ async function main() {
       await page
         .locator(".pfile-pdf .planet-orb-shape")
         .evaluate((el) => getComputedStyle(el).fill),
-      "none",
+      "rgb(230, 155, 152)",
     );
     assert.deepEqual(errors, []);
     // Animation remains opt-in, and stopping freezes the current layout.
@@ -291,7 +379,8 @@ async function main() {
           labelChecks,
           checks: [
             "solid white active parent",
-            "hollow child folders and files",
+            "solid child folders and 25 percent color-matched file fills with opaque bold borders",
+            "folder opacity is monotonic and zoom-stable from 45 to 100 percent; files remain fully opaque",
             "CSV/PDF/Markdown colors preserved",
             "complete circular orbit guides",
             "thin constant-screen-width connections",
@@ -309,7 +398,7 @@ async function main() {
       ),
     );
     console.log(
-      "PASS: neutral Planet View, parent focus, outline file colors, circular guides, thin connections and low-GPU bounds",
+      "PASS: neutral Planet View, parent focus, translucent file colors, circular guides, thin connections and low-GPU bounds",
     );
   } catch (error) {
     await fs.mkdir("test-results", { recursive: true });

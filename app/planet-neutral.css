@@ -1,4 +1,4 @@
-/* Neutral orbital map: static vector outlines, no glow or shaded spheres. */
+/* Neutral orbital map: solid folders, translucent files with bold borders; no glow or shading. */
 .planet-neutral .pv-canvas {
   background-color: var(--orb-panel);
   background-image: radial-gradient(
@@ -42,7 +42,16 @@
   stroke-width: 1.2;
   vector-effect: non-scaling-stroke;
 }
-.planet-neutral .panchor .planet-orb-shape {
+.planet-neutral .pdir .planet-orb-shape {
+  fill: var(--planet-color);
+}
+.planet-neutral .pfile .planet-orb-shape {
+  fill: var(--planet-color);
+  fill-opacity: 0.25;
+  stroke-opacity: 1;
+  stroke-width: 2.4;
+}
+.planet-neutral .panchor.pdir .planet-orb-shape {
   fill: #fff;
   stroke: #fff;
 }
@@ -60,11 +69,8 @@
   color: var(--orb-frost);
   opacity: 1;
 }
-.planet-neutral .pnode.semantic-far.pfile:not(.selected) {
-  opacity: 0.65;
-}
-.planet-neutral .pnode.dim.semantic-far.pfile:not(.selected) {
-  opacity: 0.15;
+.planet-neutral .pnode.semantic-far.pfile:not(.selected) .porb {
+  scale: 1;
 }
 .planet-neutral .pnode.station-match .porb {
   outline: 1px solid #70d6c4;
@@ -160,7 +166,7 @@
   pointer-events: none;
   font-family: ui-monospace, monospace;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 20px;
 }
 .planet-screen-label {
   position: absolute;
@@ -169,13 +175,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: center;
-  color: var(--orb-muted);
+  color: var(--orb-mist);
 }
 .planet-screen-label.is-active {
+  font-weight: 600;
   color: var(--orb-frost);
 }
 .planet-screen-label.is-dim {
-  opacity: 0.25;
+  opacity: 0.45;
 }
 .planet-neutral .pctrl-animation {
   align-self: flex-end;

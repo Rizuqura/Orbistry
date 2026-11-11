@@ -17,7 +17,7 @@ export interface PlanetLabel {
 }
 
 export function planetLabelFontSize(zoom: number): number {
-  return zoom < 0.55 ? 10 : 11;
+  return zoom < 0.55 ? 13 : 14;
 }
 
 // Work in screen pixels: zooming moves labels but never enlarges their text.
@@ -52,7 +52,7 @@ export function layoutPlanetLabels(
   for (const candidate of sorted) {
     // Explicit width plus ellipsis bounds long names and wide Unicode glyphs.
     const labelWidth = Math.min(
-      160,
+      200,
       Math.max(24, [...candidate.name].length * fontSize * 0.7 + 4),
     );
     const box: PlanetLabel = {
@@ -64,7 +64,7 @@ export function layoutPlanetLabels(
         camera.y +
         6,
       width: labelWidth,
-      height: 16,
+      height: 20,
     };
     if (
       box.x < 4 ||

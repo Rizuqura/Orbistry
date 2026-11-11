@@ -1,3 +1,5 @@
+import { version } from "../package.json";
+
 type StartupProgressProps = {
   progress: number;
   label: string;
@@ -21,7 +23,7 @@ export function StartupProgress({
           width={360}
           height={120}
         />
-        <p className="startup-version">v1.0.1 Victoria Beta</p>
+        <p className="startup-version">{`v${version} Victoria (Beta)`}</p>
         <p className="startup-stage" role="status" aria-live="polite">
           {label}
         </p>
