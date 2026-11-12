@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import type {
   VaultEntry,
   VaultSearchResult,
@@ -271,15 +271,24 @@ function VaultTree({
               </button>
             </div>
             {!collapsed.has(entry.relativePath) ? (
-              <VaultTree
-                entries={entry.children ?? []}
-                depth={depth + 1}
-                selectedIds={selectedIds}
-                collapsed={collapsed}
-                onToggle={onToggle}
-                onSelect={onSelect}
-                onOpen={onOpen}
-              />
+              <div
+                className="tree-children"
+                style={
+                  {
+                    "--tree-guide-offset": `${19 + depth * 13}px`,
+                  } as CSSProperties
+                }
+              >
+                <VaultTree
+                  entries={entry.children ?? []}
+                  depth={depth + 1}
+                  selectedIds={selectedIds}
+                  collapsed={collapsed}
+                  onToggle={onToggle}
+                  onSelect={onSelect}
+                  onOpen={onOpen}
+                />
+              </div>
             ) : null}
           </section>
         ) : (

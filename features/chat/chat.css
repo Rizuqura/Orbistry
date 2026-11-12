@@ -356,47 +356,8 @@
   width: 16px;
   height: 16px;
 }
-.workspace-grid.workspace-main:not(.workspace-grid-pdf) {
-  grid-template-columns: var(--sidebar-width, 193px) minmax(320px, 1fr) minmax(
-      260px,
-      min(
-        var(--chat-width, 320px),
-        calc(100% - var(--sidebar-width, 193px) - 320px)
-      )
-    );
-}
-.workspace-chat {
-  position: relative;
-  display: flex;
-  min-width: 0;
-  min-height: 0;
-}
-.workspace-chat > .chat-panel {
-  flex: 1;
-}
-.workspace-chat-divider {
-  position: absolute;
-  z-index: 8;
-  inset: 0 auto 0 -4px;
-  width: 9px;
-  cursor: col-resize;
-  touch-action: none;
-  user-select: none;
-}
-.workspace-chat-divider::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 4px;
-  width: 2px;
-  background: var(--line);
-}
-.workspace-chat-divider:hover::after,
-.workspace-chat-divider:focus-visible::after,
-.workspace-chat-divider:active::after {
-  background: var(--amber);
-}
-.workspace-chat-divider:focus-visible {
-  outline: 1px solid var(--amber);
+.workspace-grid.workspace-main {
+  grid-template-columns: var(--sidebar-width, 193px) minmax(0, 1fr);
 }
 /* Orbistry Agent: compact controls with bounded independent scroll regions. */
 .chat-panel {

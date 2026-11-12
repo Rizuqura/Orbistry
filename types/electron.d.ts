@@ -1,4 +1,5 @@
 import type { AiBridge } from "./ai";
+import type { WorldViewBridge } from "./worldview";
 export type * from "./ai";
 
 export type VaultEntry = {
@@ -179,6 +180,7 @@ declare global {
     orbistryDesktop?: {
       apiVersion: number;
       platform: string;
+      worldview: WorldViewBridge;
       vault: {
         getSnapshot: () => Promise<VaultSnapshot>;
         rescan: () => Promise<VaultSnapshot>;
@@ -205,17 +207,6 @@ declare global {
         ) => Promise<StationState>;
         suggestions: () => Promise<ReattachmentSuggestion[]>;
         reattach: (fromPath: string, toPath: string) => Promise<StationState>;
-      };
-      context: {
-        preview: (paths: string[]) => Promise<ContextPreview>;
-        add: (paths: string[]) => Promise<StationState>;
-        remove: (paths: string[]) => Promise<StationState>;
-        clear: () => Promise<StationState>;
-        buildPackage: () => Promise<ContextPackage>;
-        prepareBrainScope: (input: BrainScopeInput) => Promise<BrainScope>;
-        readBrainSource: (
-          input: BrainSourceReadInput,
-        ) => Promise<BrainSourceContent>;
       };
       ai: AiBridge;
     };

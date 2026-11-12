@@ -29,7 +29,6 @@ type Options = {
   vaultPath: string | null;
   contextKey: string;
   scope: ScopeSelection;
-  onKnowledgeChange: () => Promise<void>;
 };
 const errorState = (error: unknown): ChatState => {
   const code = (error as { code?: string })?.code;
@@ -44,12 +43,7 @@ const errorState = (error: unknown): ChatState => {
   return "ERROR";
 };
 
-export function useChatRuntime({
-  vaultPath,
-  contextKey,
-  scope,
-  onKnowledgeChange,
-}: Options) {
+export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
   const [runtime, dispatch] = useReducer(runtimeReducer, initialRuntime);
   const [contextBoxes, setContextBoxes] = useState<ContextBox[]>([]);
   const [preselectedBoxId, setPreselectedBoxId] = useState("");
@@ -221,12 +215,7 @@ export function useChatRuntime({
             : vaultPath;
         if (session.current !== version) return;
         setCanonicalVault(resolvedVault);
-        const profiles = client.listAgents
-          ? await client.listAgents()
-          : await Promise.all([
-              client.getAgent("wonnyy-agent"),
-              client.getAgent("chronoz"),
-            ]);
+        const profiles = client.listAgents ? await client.listAgents() : [];
         if (session.current !== version) return;
         setStartup({
           vaultPath,
@@ -669,13 +658,11 @@ export function useChatRuntime({
       if (!current()) return;
       accept(value);
       setContext(identity);
-      await onKnowledgeChange();
     });
   const refreshSource = () =>
     void operate(async (client, current) => {
       await client.refreshSource();
       if (!current()) return;
-      await onKnowledgeChange();
     });
   const rename = (title: string, id = conversation?.id) =>
     operate(async (client, current) => {

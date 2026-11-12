@@ -1,15 +1,5 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-async function invokeBrain(channel, input) {
-  const result = await ipcRenderer.invoke(channel, input);
-  if (result?.ok) return result.value;
-  const error = new Error(result?.error?.message || "Brain operation failed.");
-  error.name = "BrainScopeError";
-  error.code = result?.error?.code || "BRAIN_INTERNAL_ERROR";
-  error.details = result?.error?.details || {};
-  throw error;
-}
-
 async function invokeModel(channel, input) {
   const result = await ipcRenderer.invoke(channel, input);
   if (result?.ok) return result.value;
@@ -40,6 +30,27 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
       ipcRenderer.invoke("vault:readPdf", relativePath),
     search: (query) => ipcRenderer.invoke("vault:search", query),
   },
+  worldview: {
+    /** Invokes a narrow metadata operation and surfaces storage/validation failures to the user. */
+    request: async (operation, input) => {
+      if (
+        ![
+          "load",
+          "save",
+          "delete",
+          "list",
+          "assign",
+          "unassign",
+          "reveal",
+        ].includes(operation)
+      )
+        throw new Error("Unsupported WorldView operation.");
+      const result = await ipcRenderer.invoke(`worldview:${operation}`, input);
+      if (!result?.ok)
+        throw new Error(result?.error || "WorldView operation failed.");
+      return result.value;
+    },
+  },
   stations: {
     getState: () => ipcRenderer.invoke("stations:getState"),
     create: (name) => ipcRenderer.invoke("stations:create", name),
@@ -50,15 +61,6 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
     suggestions: () => ipcRenderer.invoke("stations:suggestions"),
     reattach: (fromPath, toPath) =>
       ipcRenderer.invoke("stations:reattach", fromPath, toPath),
-  },
-  context: {
-    preview: (paths) => ipcRenderer.invoke("context:preview", paths),
-    add: (paths) => ipcRenderer.invoke("context:add", paths),
-    remove: (paths) => ipcRenderer.invoke("context:remove", paths),
-    clear: () => ipcRenderer.invoke("context:clear"),
-    buildPackage: () => ipcRenderer.invoke("context:buildPackage"),
-    prepareBrainScope: (input) => invokeBrain("brain:prepareScope", input),
-    readBrainSource: (input) => invokeBrain("brain:readSource", input),
   },
   ai: {
     engineState: () => invokeModel("ai:engineState"),

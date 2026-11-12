@@ -74,7 +74,45 @@ async function writeJson(target, value) {
   }
 }
 
+/**
+ * Saves caller-validated text to an internal metadata path using a synced temporary file and atomic rename.
+ * original is the expected previous text, null for a new document, or undefined to skip the conflict check.
+ * Throws on linked paths, filesystem errors, or external edits; source files are not involved.
+ */
+async function writeTextAtomic(target, text, original) {
+  await safeDirectory(path.dirname(target));
+  await rejectSymlink(target);
+  const temporary = `${target}.${randomUUID()}.tmp`;
+  try {
+    const file = await fs.open(temporary, "wx");
+    try {
+      await file.writeFile(text, "utf8");
+      await file.sync();
+    } finally {
+      await file.close();
+    }
+    // Detect external edits instead of overwriting a document read earlier.
+    let current = null;
+    try {
+      current = await fs.readFile(target, "utf8");
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+    if (original !== undefined && current !== original)
+      throw new Error("Metadata changed on disk. Reload before saving again.");
+    await rejectSymlink(target);
+    await fs.rename(temporary, target);
+  } finally {
+    try {
+      await fs.unlink(temporary);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+  }
+}
+
 module.exports = {
+  writeTextAtomic,
   readJson,
   writeJson,
   serialQueue,

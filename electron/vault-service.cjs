@@ -766,7 +766,138 @@ function getIndexedPdfText(rootPath, relativePath) {
   );
 }
 
+/** Validates an existing portable Vault reference without reading source contents or following links. */
+async function statVaultSource(rootPath, relativePath = "") {
+  if (
+    typeof relativePath !== "string" ||
+    relativePath.length > 32768 ||
+    /[\\:\0]/.test(relativePath) ||
+    path.isAbsolute(relativePath)
+  )
+    throw new Error("Invalid Universe reference.");
+  const parts = relativePath ? relativePath.split("/") : [];
+  const reserved = new Set([...IGNORED_DIRECTORIES, "agentcontext.memory"]);
+  if (
+    parts.some(
+      /** Rejects traversal and application-owned metadata from source selection. */ function invalidPart(
+        part,
+      ) {
+        return (
+          !part ||
+          part === "." ||
+          part === ".." ||
+          reserved.has(part.toLowerCase())
+        );
+      },
+    )
+  )
+    throw new Error(
+      "Choose a file or folder inside Universe, outside application metadata.",
+    );
+  const root = await fs.realpath(rootPath);
+  let current = root;
+  for (const part of parts) {
+    current = path.join(current, part);
+    const stats = await fs.lstat(current);
+    if (stats.isSymbolicLink())
+      throw new Error("Linked Universe sources are not supported.");
+    if (stats.isDirectory() && (await isEngineBundle(current)))
+      throw new Error("Engine bundles cannot be assigned as Universe sources.");
+  }
+  const actual = await fs.realpath(current);
+  const within = path.relative(root, actual);
+  if (within.startsWith("..") || path.isAbsolute(within))
+    throw new Error("Source is outside Universe.");
+  const stats = await fs.stat(actual);
+  return {
+    absolutePath: actual,
+    stats,
+    entry: {
+      kind: stats.isDirectory() ? "folder" : "file",
+      name: path.basename(actual),
+      relativePath,
+      extension: stats.isFile()
+        ? path.extname(actual).toLowerCase()
+        : undefined,
+      sizeBytes:
+        stats.isFile() && Number.isSafeInteger(stats.size) ? stats.size : null,
+    },
+  };
+}
+
+/** Lists/browses Universe or searches filenames recursively using stat metadata only; never calls a parser. */
+async function listVaultMetadata(rootPath, input = {}) {
+  const directory = input.directory ?? "";
+  const query =
+    typeof input.query === "string"
+      ? input.query.trim().toLowerCase().slice(0, 200)
+      : "";
+  const start = await statVaultSource(rootPath, query ? "" : directory);
+  if (!start.stats.isDirectory()) throw new Error("Choose a Universe folder.");
+  const entries = [];
+  const issues = [];
+  let visited = 0;
+  /** Visits real directory entries; search traverses folders but publishes only matching files. */
+  async function visit(relative) {
+    const { absolutePath } = await statVaultSource(rootPath, relative);
+    for (const item of await fs.readdir(absolutePath, {
+      withFileTypes: true,
+    })) {
+      if (++visited > 50000)
+        throw new Error(
+          "Universe search is too large. Browse a folder or narrow the source folder.",
+        );
+      if (
+        item.isSymbolicLink() ||
+        IGNORED_DIRECTORIES.has(item.name.toLowerCase()) ||
+        item.name.toLowerCase() === "agentcontext.memory"
+      )
+        continue;
+      const sourceRef = path.posix.join(relative, item.name);
+      try {
+        if (
+          item.isDirectory() &&
+          (await isEngineBundle(path.join(absolutePath, item.name)))
+        )
+          continue;
+        const source = await statVaultSource(rootPath, sourceRef);
+        if (source.stats.isDirectory()) {
+          if (query) await visit(sourceRef);
+          else entries.push(source.entry);
+        } else if (
+          source.stats.isFile() &&
+          (!query || source.entry.name.toLowerCase().includes(query))
+        )
+          entries.push(source.entry);
+      } catch (error) {
+        issues.push({ relativePath: sourceRef, message: error.message });
+      }
+    }
+  }
+  await visit(query ? "" : directory);
+  entries.sort(
+    /** Lists navigation containers first with deterministic filename ordering. */ function compareEntries(
+      a,
+      b,
+    ) {
+      return (
+        (a.kind === b.kind ? 0 : a.kind === "folder" ? -1 : 1) ||
+        a.relativePath.localeCompare(b.relativePath)
+      );
+    },
+  );
+  return {
+    rootPath,
+    directory: query ? "" : directory,
+    query,
+    entries,
+    issues,
+  };
+}
+
 module.exports = {
+  statVaultSource,
+  listVaultMetadata,
   getVaultSnapshot,
   readIndexedPdfText,
   MAX_PDF_BYTES,

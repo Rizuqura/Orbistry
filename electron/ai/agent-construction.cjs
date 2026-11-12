@@ -164,7 +164,7 @@ const stateSchema = z
       .max(20),
   })
   .strict();
-function defaults(row) {
+function defaults(row, generic = false) {
   return {
     displayName: row.displayName,
     description: row.description ?? "",
@@ -191,9 +191,10 @@ function defaults(row) {
         kind: "Skill",
         x: 352,
         y: 368,
-        config: skillsFor(row.id).length
-          ? { skillId: skillsFor(row.id)[0] }
-          : {},
+        config:
+          !generic && skillsFor(row.id).length
+            ? { skillId: skillsFor(row.id)[0] }
+            : {},
       },
     ],
     edges: [

@@ -33,10 +33,10 @@ export function TopBar({
         </button>
         <button
           className={`nav-item${!settingsOpen && view === "worldview" ? " active" : ""}`}
-          aria-label="WorldView"
+          aria-label="WORLDVIEW"
           onClick={() => onChangeView("worldview")}
         >
-          WorldView
+          WORLDVIEW
         </button>
         <button
           className={`nav-item${!settingsOpen && view === "agent" ? " active" : ""}`}

@@ -85,10 +85,13 @@ const fallbackAvatar = (row) => ({
     row.displayName.toUpperCase().match(/[A-Z0-9]/)?.[0] ??
     "A",
 });
-const defaultIds = (state) =>
-  state.includeDefaultAgents === false ? [] : Object.keys(AGENT_DEFINITIONS);
-const storedOrDefault = (state, id) =>
-  state.agents[id] ?? (state.includeDefaultAgents === false ? null : seed(id));
+const defaultIds = (state, allowDefaults) =>
+  !allowDefaults || state.includeDefaultAgents === false
+    ? []
+    : Object.keys(AGENT_DEFINITIONS);
+const storedOrDefault = (state, id, allowDefaults) =>
+  state.agents[id] ??
+  (!allowDefaults || state.includeDefaultAgents === false ? null : seed(id));
 // Discard only the retired prototype reference in memory. Reads never rewrite
 // existing profiles; all other fields still pass the strict storage schema.
 function withoutRetiredReferences(value) {
@@ -118,13 +121,36 @@ class AgentStore {
     this.includeDefaultAgents = options.includeDefaultAgents === true;
     this.queue = serialQueue();
   }
+  normalizeProfiles(state) {
+    if (this.includeDefaultAgents) return state; // Explicit historical test fixtures only.
+    const legacy = state?.agents?.chronoz;
+    if (legacy?.displayName === "CHronoZ") {
+      const names = new Set(
+        Object.values(state.agents)
+          .filter((row) => row !== legacy)
+          .map((row) => row.displayName.toLowerCase()),
+      );
+      let name = "Agent",
+        index = 2;
+      while (names.has(name.toLowerCase())) name = "Agent " + index++;
+      legacy.displayName = name;
+      if (legacy.avatar?.type === "letter" && legacy.avatar.letter === "C")
+        legacy.avatar.letter = "A";
+      for (const config of [
+        legacy.construction?.draft,
+        legacy.construction?.active,
+      ])
+        if (config?.displayName === "CHronoZ") config.displayName = name;
+    }
+    return state;
+  }
   read() {
     return readJson(
       this.file,
       (value) =>
         parse(
           schema,
-          withoutRetiredReferences(value),
+          this.normalizeProfiles(withoutRetiredReferences(value)),
           "MODEL_STORAGE_INVALID",
           "Agent settings are invalid; they have not been overwritten.",
         ),
@@ -138,9 +164,12 @@ class AgentStore {
   async list() {
     const state = await this.read();
     return Promise.all(
-      [...new Set([...defaultIds(state), ...Object.keys(state.agents)])].map(
-        (id) => this.get(id),
-      ),
+      [
+        ...new Set([
+          ...defaultIds(state, this.includeDefaultAgents),
+          ...Object.keys(state.agents),
+        ]),
+      ].map((id) => this.get(id)),
     );
   }
   create(input) {
@@ -166,7 +195,7 @@ class AgentStore {
       }
       const existing = [
         ...Object.values(state.agents),
-        ...defaultIds(state)
+        ...defaultIds(state, this.includeDefaultAgents)
           .filter((key) => !state.agents[key])
           .map((key) => seed(key)),
       ];
@@ -197,7 +226,7 @@ class AgentStore {
   async get(id = AGENT_ID) {
     parse(idSchema, id);
     const state = await this.read();
-    const row = storedOrDefault(state, id);
+    const row = storedOrDefault(state, id, this.includeDefaultAgents);
     if (!row || row.id !== id)
       throw new ModelRuntimeError("MODEL_INVALID_REQUEST", "Unknown agent.");
     const compiled = row.construction?.active
@@ -210,8 +239,12 @@ class AgentStore {
         "Orbistry Agent",
         row.displayName,
       ),
-      skills: compiled?.skills ?? require("./skills.cjs").skillsFor(id),
-      availableSkills: require("./skills.cjs").skillsFor(id),
+      skills: this.includeDefaultAgents
+        ? (compiled?.skills ?? require("./skills.cjs").skillsFor(id))
+        : [],
+      availableSkills: this.includeDefaultAgents
+        ? require("./skills.cjs").skillsFor(id)
+        : [],
       description: row.description ?? "",
       personality: row.personality ?? "",
       runtimeInstructions: compiled?.preferences ?? row.customInstructions,
@@ -233,7 +266,7 @@ class AgentStore {
             revision: 0,
             draftRevision: 0,
             activeRevision: 0,
-            draft: defaults(row),
+            draft: defaults(row, !this.includeDefaultAgents),
             active: null,
             draftAvatar: row.avatar,
             draftAvatarUrl: await this.avatarUrl(row.avatar),
@@ -348,7 +381,7 @@ class AgentStore {
         input,
       );
       const state = await this.read();
-      const row = storedOrDefault(state, patch.id);
+      const row = storedOrDefault(state, patch.id, this.includeDefaultAgents);
       if (!row)
         throw new ModelRuntimeError("MODEL_INVALID_REQUEST", "Unknown agent.");
       if ((row.construction?.revision ?? 0) !== patch.expectedRevision)
@@ -537,7 +570,7 @@ class AgentStore {
         patch.customInstructions,
       );
       const state = await this.read();
-      const row = storedOrDefault(state, patch.id);
+      const row = storedOrDefault(state, patch.id, this.includeDefaultAgents);
       if (!row || row.id !== patch.id)
         throw new ModelRuntimeError("MODEL_INVALID_REQUEST", "Unknown agent.");
       let avatar = row.avatar;

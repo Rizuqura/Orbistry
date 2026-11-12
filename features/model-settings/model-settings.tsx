@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { ProviderKeyForm } from "./provider-key-form";
 import { ProvidedModels } from "./provided-models";
-import { FrontOfficeSettings } from "./front-office-settings";
 import { contextLimit } from "../../electron/ai/context-limits.cjs";
 import type { ChatController } from "../chat/use-chat-runtime";
 import type {
@@ -688,13 +687,6 @@ export function ModelSettings({
             {chat.runtime.error}
           </p>
         )}
-        <details className="ai-advanced">
-          <summary>Advanced provider catalog and experiments</summary>
-          <FrontOfficeSettings
-            hasVault={Boolean(vaultPath)}
-            beforeOperation={chat.prepareBasicChat}
-          />
-        </details>
         <footer className="ai-footer">
           <p className="ai-privacy">
             {active?.providerId === "ollama" ? "LOCAL: " : "ONLINE: "}

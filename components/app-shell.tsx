@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import { useChatPopout } from "../features/chat/use-chat-popout";
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
 import { DocumentWorkspace } from "./document-workspace";
-import { ResizableChat } from "./resizable-chat";
 import { ChatPanel, type ChatPanelProps } from "./chat-panel";
 import { WorldView } from "./worldview";
 import { KnowledgeSidebar } from "./knowledge-sidebar";
@@ -13,7 +12,6 @@ import { StatusBar } from "./status-bar";
 import { TopBar } from "./top-bar";
 import { StartupProgress } from "./startup-progress";
 import type {
-  StationState,
   VaultEntry,
   VaultFile,
   VaultPdfFile,
@@ -21,7 +19,6 @@ import type {
   VaultSearchResult,
 } from "../types/electron";
 
-import { ContextBoxes } from "../features/context-boxes/context-boxes";
 import { useChatRuntime } from "../features/chat/use-chat-runtime";
 import { ModelSettings } from "../features/model-settings/model-settings";
 import { AgentWorkspace } from "../features/agent/agent-workspace";
@@ -46,19 +43,7 @@ function requireVaultBridge() {
   return vault;
 }
 
-function requireKnowledgeBridge() {
-  const desktop = window.orbistryDesktop;
-  if (
-    !desktop?.stations?.getState ||
-    !desktop.context?.buildPackage ||
-    !desktop.ai?.chat
-  )
-    throw new Error(
-      "The Orbistry desktop bridge is outdated. Stop the app and restart npm run dev.",
-    );
-  return desktop;
-}
-
+/** Renders application navigation and active views, coordinating Vault and model lifecycles through existing hooks. */
 export function AppShell() {
   const [startupDismissed, setStartupDismissed] = useState(false);
   const { confirm, confirmation } = useConfirmation();
@@ -102,51 +87,18 @@ export function AppShell() {
   }, []);
   const [view, setView] = useState<View>("worldview");
   const [agentSettingsOpen, setAgentSettingsOpen] = useState(false);
-  const [contextLibraryRequest, setContextLibraryRequest] = useState<{
-    vaultPath: string;
-    nonce: number;
-  } | null>(null);
   const [vaultQuery, setVaultQuery] = useState("");
-  const [boxDetailsRequest, setBoxDetailsRequest] = useState<{
-    id: string;
-    nonce: number;
-    vaultPath: string;
-  } | null>(null);
   const [sidebarWidth, setSidebarWidth] = useState(240);
   const [vaultMinimized, setVaultMinimized] = useState(false);
-  const [chatWidth, setChatWidth] = useState(400);
   const [pdfSearchResults, setPdfSearchResults] = useState<VaultSearchResult[]>(
     [],
   );
   const [isSearchingPdf, setIsSearchingPdf] = useState(false);
-  const [stationState, setStationState] = useState<StationState | null>(null);
-  const [stationBusy, setStationBusy] = useState(false);
-  const [stationError, setStationError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const sidebarResizeStart = useRef<{ x: number; width: number } | null>(null);
   const vaultLoadVersion = useRef(0);
 
   const selectedSet = useMemo(() => new Set(selectedIds), [selectedIds]);
-  const selectedKnowledgePaths = selectedIds;
-  const loadStationState = useCallback(
-    async (version = vaultLoadVersion.current) => {
-      try {
-        const state = await requireKnowledgeBridge().stations.getState();
-        if (version !== vaultLoadVersion.current) return;
-        setStationState(state);
-        setStationError(null);
-      } catch (error) {
-        if (version !== vaultLoadVersion.current) return;
-        setStationError(
-          error instanceof Error
-            ? error.message
-            : "Knowledge Stations could not be loaded.",
-        );
-      }
-    },
-    [],
-  );
-
   const applySnapshot = useCallback((next: VaultSnapshot) => {
     setSnapshot(next);
     setSelectedIds([]);
@@ -167,7 +119,6 @@ export function AppShell() {
       const next = await requireVaultBridge().rescan();
       if (version !== vaultLoadVersion.current) return;
       applySnapshot(next);
-      await loadStationState(version);
     } catch (error) {
       if (version !== vaultLoadVersion.current) return;
       setVaultError(
@@ -178,7 +129,7 @@ export function AppShell() {
     } finally {
       if (version === vaultLoadVersion.current) setIsScanning(false);
     }
-  }, [applySnapshot, loadStationState, canLeaveDocument]);
+  }, [applySnapshot, canLeaveDocument]);
 
   useEffect(() => {
     void rescanVault();
@@ -196,7 +147,6 @@ export function AppShell() {
       const next = selected ?? (await bridge.getSnapshot());
       if (version !== vaultLoadVersion.current) return;
       applySnapshot(next);
-      await loadStationState(version);
     } catch (error) {
       if (version !== vaultLoadVersion.current) return;
       setVaultError(
@@ -207,38 +157,7 @@ export function AppShell() {
     } finally {
       if (version === vaultLoadVersion.current) setIsScanning(false);
     }
-  }, [applySnapshot, loadStationState, canLeaveDocument]);
-
-  const addSelectedToContext = useCallback(
-    async (paths = selectedKnowledgePaths) => {
-      if (!paths.length) return;
-      const version = vaultLoadVersion.current;
-      setStationBusy(true);
-      setStationError(null);
-      try {
-        const bridge = requireKnowledgeBridge();
-        const preview = await bridge.context.preview(paths);
-        if (version !== vaultLoadVersion.current) return;
-        const sample = preview.files.join("\n");
-        const remainder = "";
-        if (
-          (await confirm(
-            `Add ${preview.files.length} file(s) to Active Context?\nEstimated ~${preview.estimatedTokens.toLocaleString()} tokens\n\n${sample}${remainder}`,
-            "Add to Active Context",
-          )) &&
-          version === vaultLoadVersion.current
-        )
-          setStationState(await bridge.context.add(preview.files));
-      } catch (error) {
-        setStationError(
-          error instanceof Error ? error.message : "Context preview failed.",
-        );
-      } finally {
-        setStationBusy(false);
-      }
-    },
-    [selectedKnowledgePaths, confirm],
-  );
+  }, [applySnapshot, canLeaveDocument]);
 
   const selectEntry = useCallback((id: string | null, additive = false) => {
     if (!id) {
@@ -316,10 +235,9 @@ export function AppShell() {
       });
       setOpenedFile(saved);
       setMarkdownDraft(null);
-      // Refresh source fingerprints and context readiness without closing the document.
+      // Refresh the file listing without closing the document.
       try {
         setSnapshot(await bridge.rescan());
-        await loadStationState(vaultLoadVersion.current);
       } catch {
         setVaultError(
           "Markdown saved. Rescan the vault to refresh source status.",
@@ -354,7 +272,6 @@ export function AppShell() {
     vaultPath: snapshot?.status === "ready" ? snapshot.rootPath : null,
     contextKey: "standalone-chat",
     scope: { activeStationIds: [], matchMode: "any" },
-    onKnowledgeChange: loadStationState,
   });
   const startupVaultPath =
     snapshot?.status === "ready" ? snapshot.rootPath : null;
@@ -362,16 +279,13 @@ export function AppShell() {
   const startupReady =
     !isScanning &&
     !vaultError &&
-    !stationError &&
     startupMatchesVault &&
     chat.startup.progress === 100;
   useEffect(() => {
     if (startupReady) setStartupDismissed(true);
   }, [startupReady]);
   const startupError =
-    vaultError ??
-    stationError ??
-    (startupMatchesVault ? chat.startup.error : null);
+    vaultError ?? (startupMatchesVault ? chat.startup.error : null);
   const startupProgress = isScanning
     ? snapshot
       ? 25
@@ -554,7 +468,7 @@ export function AppShell() {
               ? "Startup needs attention"
               : isScanning
                 ? snapshot
-                  ? "Loading Stations and approved context"
+                  ? "Loading workspace"
                   : "Scanning Universe"
                 : startupMatchesVault
                   ? chat.startup.label
@@ -570,7 +484,6 @@ export function AppShell() {
         style={
           {
             "--sidebar-width": `${vaultMinimized ? 36 : sidebarWidth}px`,
-            "--chat-width": `${chatWidth}px`,
           } as CSSProperties
         }
       >
@@ -619,18 +532,6 @@ export function AppShell() {
               VAULT SCAN FAILED · {vaultError}
             </div>
           )}
-          {!!snapshot?.issues.length && !isScanning && (
-            <details className="chat-notice">
-              <summary>
-                VAULT · {snapshot.issues.length} WARNINGS · VIEW WARNINGS
-              </summary>
-              {snapshot.issues.map((issue, index) => (
-                <p key={index}>
-                  {issue.relativePath}: {issue.message}
-                </p>
-              ))}
-            </details>
-          )}
         </div>
         {settingsOpen ? (
           <ModelSettings
@@ -651,7 +552,10 @@ export function AppShell() {
             onOpenSource={chatProps.onOpenSource}
           />
         ) : view === "worldview" ? (
-          <WorldView />
+          <WorldView
+            key={snapshot?.rootPath ?? "loading"}
+            vaultPath={snapshot?.status === "ready" ? snapshot.rootPath : null}
+          />
         ) : (
           <div className="workspace-grid workspace-main">
             {vaultSidebar}
@@ -675,22 +579,6 @@ export function AppShell() {
                 }
               }}
               error={workspaceError}
-              onAddToContext={() =>
-                openedFile &&
-                void addSelectedToContext([openedFile.relativePath])
-              }
-              contextBusy={
-                stationBusy || chat.busy || isScanning || markdownDraft !== null
-              }
-              contextApproved={Boolean(
-                openedFile &&
-                stationState?.activeContext.some(
-                  (source) =>
-                    source.relativePath === openedFile.relativePath &&
-                    !source.missing,
-                ),
-              )}
-              contextError={stationError}
               onClose={async () => {
                 if (!(await canLeaveDocument())) return;
                 setOpenedFile(null);
@@ -699,9 +587,6 @@ export function AppShell() {
                 setWorkspaceError(null);
               }}
             />
-            <ResizableChat width={chatWidth} onResize={setChatWidth}>
-              <ChatPanel {...chatProps} onUndock={() => setView("worldview")} />
-            </ResizableChat>
           </div>
         )}
         <StatusBar
@@ -721,25 +606,6 @@ export function AppShell() {
           isScanning={isScanning}
           error={vaultError}
         />
-        {snapshot?.status === "ready" && (
-          <ContextBoxes
-            key={snapshot.rootPath}
-            chat={chat}
-            libraryRequest={
-              contextLibraryRequest?.vaultPath === snapshot.rootPath
-                ? contextLibraryRequest.nonce
-                : 0
-            }
-            openBoxRequest={
-              boxDetailsRequest?.vaultPath === snapshot.rootPath
-                ? boxDetailsRequest
-                : null
-            }
-            selectedPaths={selectedKnowledgePaths}
-            onOpenSource={(path) => void openVaultFile(path)}
-            onAttach={() => setView("worldview")}
-          />
-        )}
         {chatPopout.error && (
           <div className="chat-popout-error" role="alert">
             {chatPopout.error}

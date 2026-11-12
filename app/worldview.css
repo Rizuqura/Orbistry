@@ -1,22 +1,620 @@
 .worldview {
-  flex: 1;
+  --worldview-grid: #ffffff;
+  position: relative;
+  min-width: 0;
   min-height: 0;
-  display: grid;
-  place-items: center;
-  background: var(--orb-panel);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--orb-ink) 45%, #101214);
+  color: var(--orb-muted);
+}
+
+.worldview-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.worldview-canvas.is-panning {
+  cursor: grabbing;
+}
+.worldview-canvas:focus-visible {
+  outline: 1px solid var(--orb-slate);
+  outline-offset: -1px;
+}
+
+.worldview-label {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.worldview-controls {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--orb-raised);
+  border-radius: 6px;
+  background: var(--orb-ink);
+  user-select: none;
+}
+
+.worldview-controls button {
+  min-width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.worldview-controls button:hover:not(:disabled) {
+  background: var(--orb-raised);
   color: var(--orb-frost);
 }
-.worldview-empty {
-  padding: 32px;
+.worldview-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.worldview-controls output {
+  min-width: 48px;
+  text-align: center;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.worldview-controls .worldview-reset {
+  margin-left: 4px;
+  padding: 0 10px;
+  border-left: 1px solid var(--orb-raised);
+  border-radius: 0;
+  font-size: 11px;
+}
+.worldview-error {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 20px;
   text-align: center;
 }
-.worldview-empty h1 {
-  margin: 0 0 12px;
-  font-size: 22px;
+
+.worldview-chip-actions {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.worldview-add-chip,
+.worldview-edit-chip,
+.worldview-delete-chip {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 5px;
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.worldview-add-chip:hover:not(:disabled),
+.worldview-edit-chip:hover:not(:disabled),
+.worldview-delete-chip:hover:not(:disabled) {
+  background: var(--orb-raised);
+}
+
+.worldview-delete-chip {
+  color: #efa990;
+}
+
+.worldview .confirmation-dialog {
+  margin: auto;
+  border-radius: 8px;
+}
+
+.worldview-chip-dialog {
+  width: min(420px, calc(100vw - 40px));
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  margin: auto;
+  padding: 24px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 8px;
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  font: 13px/1.5 var(--ui-font);
+}
+
+.worldview-chip-dialog::backdrop {
+  background: #0009;
+}
+
+.worldview-chip-dialog h2 {
+  margin: 0 0 8px;
+  color: var(--orb-frost);
+  font-size: 17px;
   font-weight: 500;
 }
-.worldview-empty p {
-  margin: 0;
+
+.worldview-chip-dialog p {
+  margin: 0 0 20px;
   color: var(--orb-muted);
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.worldview-chip-dialog form > label {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.worldview-chip-dialog
+  input:not([type="radio"]):not([type="range"]):not([type="file"]) {
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  background: var(--orb-panel);
+  color: var(--orb-frost);
+  font: inherit;
+}
+
+.worldview-chip-dialog fieldset {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.worldview-chip-dialog legend {
+  margin-bottom: 6px;
+}
+
+.worldview-chip-metadata {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.worldview-icon-upload label,
+.worldview-chip-metadata label,
+.worldview-color-values label {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+  font-size: 12px;
+}
+
+.worldview-icon-upload input[type="file"] {
+  width: 100%;
+  min-height: 40px;
+  padding: 0;
+  border-radius: 4px;
+  color: var(--orb-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.worldview-icon-upload input[type="file"]::file-selector-button {
+  min-height: 40px;
+  margin-right: 12px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--p-orange);
+  color: var(--orb-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.worldview-icon-upload
+  input[type="file"]:hover:not(:disabled)::file-selector-button {
+  background: color-mix(in srgb, var(--p-orange) 85%, white);
+}
+
+.worldview-icon-upload input[type="file"]:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.worldview-icon-upload small {
+  color: var(--orb-muted);
+  font-size: 10px;
+}
+
+.worldview-upload-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.worldview-upload-preview img {
+  object-fit: contain;
+  background: var(--orb-panel);
+  border-radius: 4px;
+}
+
+.worldview-upload-preview button {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--orb-panel);
+  color: var(--orb-muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.worldview-color-layout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 4px 6px;
+}
+
+.worldview-color-wheel {
+  position: relative;
+  flex: 0 0 112px;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  cursor: crosshair;
+  touch-action: none;
+  user-select: none;
+}
+
+.worldview-color-disc {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle closest-side, #fff, transparent),
+    conic-gradient(from 90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+  pointer-events: none;
+}
+
+.worldview-color-marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff !important;
+  outline: 1px solid #111;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.worldview-color-values {
+  display: grid;
+  flex: 1;
+  gap: 10px;
+  min-width: 0;
+}
+
+.worldview-color-values input[type="range"] {
+  width: 100%;
+  accent-color: var(--orb-mist);
+}
+
+.worldview-icon-error {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  max-width: 50%;
+  color: #efa990;
+  font-size: 12px;
+}
+
+.worldview-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.worldview-dialog-actions button {
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  background: var(--orb-panel);
+  color: var(--orb-mist);
+  font: inherit;
+  cursor: pointer;
+}
+
+.worldview-dialog-actions button:hover {
+  background: var(--orb-raised);
+}
+
+.worldview-dialog-actions button[type="submit"] {
+  border-color: #b37843;
+}
+
+.worldview-chip-dialog .worldview-form-error {
+  color: #efa990;
+}
+
+.worldview-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.worldview-files-dialog {
+  width: min(760px, calc(100vw - 40px));
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 8px;
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  font-size: 13px;
+}
+.worldview-files-dialog::backdrop {
+  background: #0009;
+}
+.worldview-files-dialog h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--orb-frost);
+}
+.worldview-files-dialog p {
+  color: var(--orb-muted);
+  font-size: 12px;
+}
+.worldview-folder-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 6px;
+  flex-wrap: wrap;
+}
+.worldview-folder-nav span {
+  overflow-wrap: anywhere;
+}
+.worldview-universe-root {
+  display: block;
+  color: var(--orb-muted);
+  overflow-wrap: anywhere;
+  font-size: 10px;
+}
+.worldview-files-dialog button,
+.worldview-file-inspector button,
+.worldview-save-status button {
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--orb-raised);
+  color: var(--orb-mist);
+  cursor: pointer;
+  font: inherit;
+}
+.worldview-files-dialog button:disabled,
+.worldview-file-inspector button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.worldview-files-dialog .worldview-dialog-actions > button:last-child {
+  background: var(--p-orange);
+  color: var(--orb-ink);
+}
+.worldview-file-search {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0;
+}
+.worldview-file-search input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  color: var(--orb-frost);
+  font: inherit;
+}
+.worldview-file-list {
+  height: min(320px, 42vh);
+  overflow: auto;
+}
+.worldview-file-row {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 110px 85px;
+  gap: 10px;
+  align-items: center;
+  min-height: 54px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.worldview-file-row:nth-child(even),
+.worldview-folder-row:nth-child(even) {
+  background: var(--orb-panel);
+}
+.worldview-file-row:hover {
+  background: var(--orb-raised);
+}
+.worldview-file-row input {
+  accent-color: var(--p-orange);
+}
+.worldview-file-row strong {
+  display: block;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.worldview-file-row small {
+  display: block;
+  color: var(--orb-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.worldview-files-dialog .worldview-folder-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  text-align: left;
+  background: transparent;
+}
+.worldview-folder-row small {
+  margin-left: auto;
+  color: var(--orb-muted);
+}
+.worldview-files-dialog .worldview-dialog-actions {
+  align-items: center;
+}
+.worldview-dialog-actions > span {
+  margin-right: auto;
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.worldview-file-inspector {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  width: min(310px, calc(100% - 40px));
+  max-height: calc(100% - 170px);
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--orb-slate);
+  border-radius: 6px;
+  background: var(--orb-ink);
+  font-size: 12px;
+}
+.worldview-file-inspector header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.worldview-file-inspector h2 {
+  flex: 1;
+  margin: 0;
+  color: var(--orb-frost);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.worldview-file-inspector p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--orb-muted);
+}
+.worldview-file-inspector ul {
+  max-height: 180px;
+  overflow: auto;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.worldview-file-inspector li button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  margin-bottom: 4px;
+  background: var(--orb-panel);
+  overflow-wrap: anywhere;
+}
+.worldview-file-inspector li button[aria-pressed="true"] {
+  background: var(--orb-raised);
+  box-shadow: inset 2px 0 var(--p-orange);
+}
+.worldview-file-inspector small {
+  color: var(--orb-muted);
+}
+.worldview-source-details strong {
+  color: var(--orb-frost);
+  overflow-wrap: anywhere;
+}
+.worldview-source-details dl {
+  display: grid;
+  gap: 4px;
+}
+.worldview-source-details dt {
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--orb-muted);
+}
+.worldview-source-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.worldview-source-details > button {
+  margin: 8px 8px 0 0;
+  font-size: 11px;
+}
+.worldview-building-tooltip {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  width: 240px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: var(--orb-panel);
+  box-shadow: 0 3px 12px #0005;
+  font-size: 11px;
+}
+.worldview-building-tooltip strong,
+.worldview-building-tooltip span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.worldview-building-tooltip strong {
+  margin-bottom: 4px;
+  color: var(--orb-frost);
+}
+.worldview-building-tooltip span {
+  color: var(--orb-muted);
+}
+.worldview-save-status {
+  position: absolute;
+  left: 24px;
+  top: 48px;
+  max-width: min(420px, 50%);
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.worldview-save-status [role="alert"],
+.worldview-files-dialog [role="alert"],
+.worldview-file-inspector [role="alert"] {
+  color: #efa990;
+}
+.worldview-save-status summary {
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .worldview-file-row {
+    grid-template-columns: 20px minmax(0, 1fr) 90px;
+  }
+  .worldview-file-row > small {
+    grid-column: 2 / -1;
+  }
+  .worldview-chip-actions {
+    max-width: calc(100% - 120px);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
 }

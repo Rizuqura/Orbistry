@@ -5,10 +5,6 @@ export function DocumentWorkspace({
   file,
   error,
   onClose,
-  onAddToContext,
-  contextBusy,
-  contextApproved,
-  contextError,
   markdownDraft = null,
   markdownSaving,
   markdownError,
@@ -20,10 +16,6 @@ export function DocumentWorkspace({
   file: VaultFile | VaultPdfFile | null;
   error?: string | null;
   onClose?: () => void;
-  onAddToContext?: () => void;
-  contextBusy?: boolean;
-  contextApproved?: boolean;
-  contextError?: string | null;
   markdownDraft?: string | null;
   markdownSaving?: boolean;
   markdownError?: string | null;
@@ -86,26 +78,6 @@ export function DocumentWorkspace({
             ×
           </button>
         </div>
-        <div className="pdf-ai-context">
-          <button
-            onClick={onAddToContext}
-            disabled={
-              contextBusy ||
-              contextApproved ||
-              file.image.textStatus !== "ready"
-            }
-          >
-            {contextApproved
-              ? "IMAGE IN ACTIVE CONTEXT"
-              : "ADD IMAGE TEXT TO AI CONTEXT"}
-          </button>
-          <p>
-            {file.image.textStatus === "ready"
-              ? "Local OCR text is available for review and token estimation. Verify it against the image; charts and photos are not visually interpreted."
-              : "No readable text was detected. This image cannot provide textual evidence."}
-          </p>
-          {contextError && <p role="alert">{contextError}</p>}
-        </div>
         <article className="document-scroll">
           <div className="document-inner">
             <img
@@ -147,32 +119,6 @@ export function DocumentWorkspace({
             ×
           </button>
         </div>
-        <div className="pdf-ai-context">
-          <button
-            onClick={onAddToContext}
-            disabled={
-              contextBusy ||
-              contextApproved ||
-              file.textStatus === "empty" ||
-              file.textStatus === "error"
-            }
-          >
-            {contextApproved
-              ? "PDF IN ACTIVE CONTEXT"
-              : contextBusy
-                ? "PREPARING CONTEXT"
-                : "ADD PDF TO AI CONTEXT"}
-          </button>
-          <p>
-            {file.textStatus === "empty"
-              ? "No text was detected, including local OCR of scanned pages. This PDF cannot provide textual evidence."
-              : file.textStatus === "error"
-                ? (file.textError ??
-                  "PDF text extraction failed. The preview alone does not make its contents available to the model.")
-                : "Approve this PDF to ask questions in chat. The model reads extracted text with page references; page images and charts are not sent."}
-          </p>
-          {contextError && <p role="alert">{contextError}</p>}
-        </div>
         <PdfViewer file={file} />
       </section>
     );
@@ -196,49 +142,37 @@ export function DocumentWorkspace({
           ×
         </button>
       </div>
-      <div className="document-context-toolbar">
-        {isMarkdown && (
-          <div className="markdown-editor-actions">
-            {editing ? (
-              <>
-                <button
-                  onClick={onSaveMarkdown}
-                  disabled={markdownSaving || !dirty}
-                >
-                  {markdownSaving ? "Saving..." : "Save"}
-                </button>
-                <button onClick={onCancelMarkdown} disabled={markdownSaving}>
-                  Cancel
-                </button>
-                <span role="status">
-                  {markdownSaving
-                    ? "Saving to vault"
-                    : dirty
-                      ? "Unsaved changes"
-                      : "No changes"}
-                </span>
-              </>
-            ) : (
-              <button onClick={onEditMarkdown}>Edit Markdown</button>
-            )}
-          </div>
-        )}
-        <span>Read · Select · Build context</span>
-        <button
-          onClick={onAddToContext}
-          disabled={!onAddToContext || contextBusy || contextApproved}
-        >
-          {contextApproved
-            ? "In active context"
-            : editing
-              ? "Save before adding to context"
-              : contextBusy
-                ? "Preparing context…"
-                : "Add file to context"}
-        </button>
-        {contextError && <p role="alert">{contextError}</p>}
-        {markdownError && <p role="alert">{markdownError}</p>}
-      </div>
+      {isMarkdown && (
+        <div className="document-context-toolbar">
+          {isMarkdown && (
+            <div className="markdown-editor-actions">
+              {editing ? (
+                <>
+                  <button
+                    onClick={onSaveMarkdown}
+                    disabled={markdownSaving || !dirty}
+                  >
+                    {markdownSaving ? "Saving..." : "Save"}
+                  </button>
+                  <button onClick={onCancelMarkdown} disabled={markdownSaving}>
+                    Cancel
+                  </button>
+                  <span role="status">
+                    {markdownSaving
+                      ? "Saving to vault"
+                      : dirty
+                        ? "Unsaved changes"
+                        : "No changes"}
+                  </span>
+                </>
+              ) : (
+                <button onClick={onEditMarkdown}>Edit Markdown</button>
+              )}
+            </div>
+          )}
+          {markdownError && <p role="alert">{markdownError}</p>}
+        </div>
+      )}
       <article className="document-scroll">
         <div className="document-inner">
           <div className="breadcrumb">

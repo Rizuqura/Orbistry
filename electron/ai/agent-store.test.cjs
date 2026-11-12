@@ -140,7 +140,10 @@ test("agent creation is idempotent and name validation cannot mutate existing pr
   for (const patch of [
     { ...request, name: "Different" },
     { name: "analyst", creationId: require("node:crypto").randomUUID() },
-    { name: " Orbistry Agent ", creationId: require("node:crypto").randomUUID() },
+    {
+      name: " Orbistry Agent ",
+      creationId: require("node:crypto").randomUUID(),
+    },
     { name: "", creationId: require("node:crypto").randomUUID() },
     { name: " ", creationId: require("node:crypto").randomUUID() },
     { name: "x".repeat(121), creationId: require("node:crypto").randomUUID() },
@@ -381,4 +384,38 @@ test("custom preferences remain below protected policy and documents remain untr
       }),
     { code: "MODEL_INVALID_REQUEST" },
   );
+});
+
+test("production never resurrects implicit legacy agents from an old profile file", async (t) => {
+  const { root } = await fixture(t);
+  const { AgentStore: ProductionStore } = require("./agent-store.cjs");
+  const store = new ProductionStore(root);
+  const original = JSON.stringify({ schemaVersion: 1, agents: {} });
+  await fs.writeFile(store.file, original);
+  assert.deepEqual(await store.list(), []);
+  await assert.rejects(store.get("chronoz"), { code: "MODEL_INVALID_REQUEST" });
+  assert.equal(await fs.readFile(store.file, "utf8"), original);
+});
+
+test("saved default CHronoZ becomes a generic contact without losing configuration or rewriting storage", async (t) => {
+  const { root, store: legacy } = await fixture(t);
+  await legacy.save({
+    id: "chronoz",
+    customInstructions: "Use concise answers.",
+  });
+  const original = await fs.readFile(legacy.file, "utf8");
+  const { AgentStore: ProductionStore } = require("./agent-store.cjs");
+  const store = new ProductionStore(root);
+  const profiles = await store.list();
+  const agent = profiles.find((profile) => profile.id === "chronoz");
+  assert.ok(agent);
+  assert.equal(agent.displayName, "Agent");
+  assert.equal(agent.customInstructions, "Use concise answers.");
+  assert.deepEqual(agent.skills, []);
+  assert.deepEqual(agent.availableSkills, []);
+  assert.ok(
+    agent.construction.draft.nodes.every((node) => !node.config.skillId),
+  );
+  assert.ok(profiles.every((profile) => profile.displayName !== "CHronoZ"));
+  assert.equal(await fs.readFile(store.file, "utf8"), original);
 });

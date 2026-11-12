@@ -24,7 +24,7 @@ const {
   searchPdfText,
 } = require("./vault-service.cjs");
 const stations = require("./station-service.cjs");
-const { serializeBrainError } = require("./brain-errors.cjs");
+const { registerWorldViewIpc } = require("./worldview-ipc.cjs");
 const { OllamaProvider } = require("./ai/providers/ollama-provider.cjs");
 const { ChatService } = require("./ai/chat-service.cjs");
 const { ModelRegistry } = require("./ai/model-registry.cjs");
@@ -83,14 +83,6 @@ async function selectVaultFolder() {
       getVaultSnapshot,
     );
   });
-}
-
-async function brainOperation(operation) {
-  try {
-    return { ok: true, value: await operation() };
-  } catch (error) {
-    return { ok: false, error: serializeBrainError(error) };
-  }
 }
 
 function createWindow() {
@@ -182,6 +174,13 @@ app.whenReady().then(async () => {
     process.env.ORBISTRY_VAULT_PATH ?? process.env.WONNYY_VAULT_PATH,
   );
   app.setAppUserModelId("com.orbistry.desktop");
+  registerWorldViewIpc(
+    trustedIpc,
+    /** Resolves the current Universe root for guarded WorldView operations. */ function currentWorldRoot() {
+      return activeVaultPath;
+    },
+    shell,
+  );
   trustedIpc.handle("vault:getSnapshot", getVaultSnapshot);
   trustedIpc.handle("vault:rescan", () => changeVaultKnowledge(scanVault));
   trustedIpc.handle("vault:selectFolder", selectVaultFolder);
@@ -228,29 +227,6 @@ app.whenReady().then(async () => {
   );
   trustedIpc.handle("stations:reattach", (_, fromPath, toPath) =>
     stations.reattach(activeVaultPath, fromPath, toPath),
-  );
-  trustedIpc.handle("context:preview", (_, paths) =>
-    stations.previewContext(activeVaultPath, paths),
-  );
-  trustedIpc.handle("context:add", (_, paths) =>
-    changeVaultKnowledge((vaultPath) => stations.addContext(vaultPath, paths)),
-  );
-  trustedIpc.handle("context:remove", (_, paths) =>
-    changeVaultKnowledge((vaultPath) =>
-      stations.removeContext(vaultPath, paths),
-    ),
-  );
-  trustedIpc.handle("context:clear", () =>
-    changeVaultKnowledge((vaultPath) => stations.clearContext(vaultPath)),
-  );
-  trustedIpc.handle("context:buildPackage", () =>
-    stations.buildContextPackage(activeVaultPath),
-  );
-  trustedIpc.handle("brain:prepareScope", (_, input) =>
-    brainOperation(() => stations.prepareBrainScope(activeVaultPath, input)),
-  );
-  trustedIpc.handle("brain:readSource", (_, input) =>
-    brainOperation(() => stations.readBrainSource(activeVaultPath, input)),
   );
   const provider = getOllamaProvider();
   const credentials = new CredentialStore(app.getPath("userData"), safeStorage);

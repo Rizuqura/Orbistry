@@ -923,14 +923,6 @@ body {
   .app-shell .workspace-main {
     grid-template-columns: minmax(150px, 190px) minmax(260px, 1fr) !important;
   }
-  .app-shell .workspace-main .workspace-chat {
-    grid-column: 2;
-    grid-row: 2;
-    min-height: 360px;
-  }
-  .app-shell .workspace-main {
-    grid-template-rows: minmax(170px, 0.8fr) minmax(360px, 1fr);
-  }
   .app-shell .workspace-main .sidebar-slot {
     grid-row: 1 / -1;
   }
@@ -1253,4 +1245,52 @@ body {
 .app-shell .top-bar {
   padding-block: 8px;
   box-sizing: border-box;
+}
+
+/* Parent/child guide lines for the Universe explorer. Background strokes stay
+   visible with the shared borderless surface treatment. */
+.app-shell .knowledge-sidebar .tree-children > .tree-section,
+.app-shell .knowledge-sidebar .tree-children > .file-row,
+.app-shell .knowledge-sidebar .tree-children > .tree-section > .tree-folder {
+  position: relative;
+}
+.app-shell .knowledge-sidebar .tree-children > .tree-section {
+  margin-bottom: 0;
+}
+.app-shell .knowledge-sidebar .tree-children > .tree-section::before,
+.app-shell .knowledge-sidebar .tree-children > .file-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--tree-guide-offset);
+  width: 1px;
+  background: var(--orb-muted);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+.app-shell .knowledge-sidebar .tree-children > .file-row::before {
+  left: calc(var(--tree-guide-offset) - 2px);
+}
+.app-shell .knowledge-sidebar .tree-children > .tree-section:last-child::before,
+.app-shell .knowledge-sidebar .tree-children > .file-row:last-child::before {
+  bottom: auto;
+  height: 17px;
+}
+.app-shell
+  .knowledge-sidebar
+  .tree-children
+  > .tree-section
+  > .tree-folder::after,
+.app-shell .knowledge-sidebar .tree-children > .file-row::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: calc(var(--tree-guide-offset) - 2px);
+  width: 9px;
+  height: 1px;
+  background: var(--orb-muted);
+  opacity: 0.45;
+  pointer-events: none;
 }

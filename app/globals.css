@@ -1293,27 +1293,3 @@ button {
 .vault-runtime-notices summary {
   cursor: pointer;
 }
-
-.pdf-ai-context {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--line);
-  font:
-    10px/1.5 ui-monospace,
-    monospace;
-  color: var(--muted);
-}
-.pdf-ai-context button {
-  border: 1px solid var(--line);
-  background: var(--orb-panel);
-  color: var(--amber);
-  padding: 5px 8px;
-  font: inherit;
-  cursor: pointer;
-}
-.pdf-ai-context button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-.pdf-ai-context p {
-  margin: 5px 0 0;
-}
