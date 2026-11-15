@@ -2,7 +2,7 @@
 
 A local-first workspace with configurable AI agents, interactive WorldView and floating Knowledge Cards.
 
-**Victoria 1.0.4 (Beta)** ? WorldView, Knowledge Cards, and Wonton engine update.
+**Victoria 1.0.4 (Beta)** — WorldView, Knowledge Cards, and Wonton engine update.
 
 The reset is documented in [WorldView reset report](docs/architecture/WORLDVIEW_RESET.md). The [pre-reset guide](docs/archive/README-before-worldview-reset.md), release notes, prior architecture documents and audit evidence describe historical behavior.
 
