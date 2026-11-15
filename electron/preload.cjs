@@ -31,17 +31,41 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
     search: (query) => ipcRenderer.invoke("vault:search", query),
   },
   worldview: {
-    /** Invokes a narrow metadata operation and surfaces storage/validation failures to the user. */
+    /** Invokes guarded WorldView metadata or read-only preview operations and surfaces storage/validation failures. */
     request: async (operation, input) => {
       if (
         ![
           "load",
+          "knowledge-note",
+          "image-preview",
+          "image-knowledge",
+          "image-parse",
+          "image-status",
+          "image-cancel",
+          "tag-search",
+          "tag-index",
+          "tag-associations",
+          "tag-rebuild",
+          "connector-create",
+          "connector-update",
+          "connector-delete",
           "save",
           "delete",
           "list",
           "assign",
           "unassign",
           "reveal",
+          "knowledge-load",
+          "knowledge-draft",
+          "knowledge-validate",
+          "knowledge-apply",
+          "knowledge-preview",
+          "price-symbol",
+          "price-get",
+          "price-index",
+          "knowledge-excel",
+          "knowledge-excel-copy",
+          "knowledge-reveal",
         ].includes(operation)
       )
         throw new Error("Unsupported WorldView operation.");

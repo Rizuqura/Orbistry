@@ -7,10 +7,12 @@ import {
   type ChangeEvent,
   type FormEvent,
   type SyntheticEvent,
+  type MouseEvent,
 } from "react";
 import {
   DEFAULT_CHIP_COLOR,
   parseChipTags,
+  suggestChipTags,
   type ChipDraft,
   type WorldViewChip,
 } from "./chips";
@@ -18,7 +20,7 @@ import { normalizeChipColor } from "./chip-colors";
 import { readChipIcon } from "./chip-icon";
 import { ColorWheel } from "./color-wheel";
 
-/** Collects metadata, an optional uploaded icon, and block color; changes apply only on Create/Save. */
+/** Stages a stable entity key, editable local tag suggestions, icon and color before confirmed creation/editing. */
 export function ChipDialog({
   chip,
   onSave,
@@ -36,11 +38,15 @@ export function ChipDialog({
   const [iconImage, setIconImage] = useState(chip?.iconImage);
   const [color, setColor] = useState(chip?.color ?? DEFAULT_CHIP_COLOR);
   const [readingImage, setReadingImage] = useState(false);
+  const [entityKey, setEntityKey] = useState(chip?.id ?? "");
+  const [tags, setTags] = useState(chip?.tags.join(", ") ?? "");
+  const [generationStatus, setGenerationStatus] = useState("");
 
   /** Opens with focus containment; cleanup invalidates pending image reads and restores prior focus. */
   useEffect(function openDialog() {
     const dialog = dialogRef.current!;
     const previous = document.activeElement;
+    if (!chip) setEntityKey(crypto.randomUUID());
     dialog.showModal();
     /** Discards late icon reads and restores focus when creation/editing ends. */
     return function closeDialog() {
@@ -51,10 +57,10 @@ export function ChipDialog({
     };
   }, []);
 
-  /** Validates a staged draft and submits exactly once; errors preserve the user's current inputs. */
+  /** Validates the staged key and metadata, then submits once; errors preserve the current draft and suggestions. */
   function saveChip(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    if (submitted.current || readingImage) return;
+    if (submitted.current || readingImage || !entityKey) return;
     const data = new FormData(event.currentTarget);
     const name = String(data.get("name") ?? "").trim();
     if (!name) {
@@ -65,12 +71,13 @@ export function ChipDialog({
       const validColor = normalizeChipColor(String(data.get("color") ?? ""));
       submitted.current = true;
       onSave({
+        id: entityKey,
         name,
         icon: "",
         iconImage,
         color: validColor,
         category: String(data.get("category") ?? "").trim() || undefined,
-        tags: parseChipTags(String(data.get("tags") ?? "")),
+        tags: parseChipTags(tags),
       });
       onClose();
     } catch (cause) {
@@ -89,6 +96,35 @@ export function ChipDialog({
   /** Clears stale validation feedback while the user edits the form. */
   function clearError(): void {
     if (error) setError("");
+  }
+
+  /** Adds local suggestions from the current form and assigned filename metadata; writes stay staged until Save/Create. */
+  function generateTags(event: MouseEvent<HTMLButtonElement>): void {
+    const data = new FormData(event.currentTarget.form!);
+    const current = parseChipTags(tags);
+    const next = suggestChipTags(
+      String(data.get("name") ?? ""),
+      String(data.get("category") ?? ""),
+      chip?.sources?.map(
+        /** Uses assigned filename metadata without loading source contents. */ (
+          source,
+        ) => source.filename,
+      ) ?? [],
+      current,
+    );
+    setTags(next.join(", "));
+    const added = next.length - current.length;
+    setGenerationStatus(
+      added
+        ? `Added ${added} suggested tag${added === 1 ? "" : "s"}. Review and edit before saving.`
+        : "No new suggestions. Add a name, category or assigned files, or edit tags directly.",
+    );
+  }
+
+  /** Keeps generated/manual tags editable and clears stale generation feedback. */
+  function editTags(event: ChangeEvent<HTMLInputElement>): void {
+    setTags(event.target.value);
+    setGenerationStatus("");
   }
 
   /** Decodes the latest chosen image locally; older reads and reads after closing are ignored. */
@@ -145,6 +181,15 @@ export function ChipDialog({
             placeholder="Name your chip"
           />
         </label>
+        <label>
+          Entity key
+          <input
+            name="entityKey"
+            value={entityKey}
+            readOnly
+            spellCheck={false}
+          />
+        </label>
         <fieldset>
           <div className="worldview-icon-upload">
             <label>
@@ -191,11 +236,19 @@ export function ChipDialog({
             <input
               name="tags"
               maxLength={500}
-              defaultValue={chip?.tags.join(", ") ?? ""}
+              value={tags}
+              onChange={editTags}
               placeholder="Separate tags with commas"
             />
           </label>
         </div>
+        <div className="worldview-tag-generation">
+          <button type="button" onClick={generateTags}>
+            Generate tags
+          </button>
+          <small>Uses the name, category and assigned filenames.</small>
+        </div>
+        {generationStatus && <p role="status">{generationStatus}</p>}
         {error && (
           <p className="worldview-form-error" role="alert">
             {error}
@@ -205,7 +258,7 @@ export function ChipDialog({
           <button type="button" onClick={onClose}>
             Cancel
           </button>
-          <button type="submit" disabled={readingImage}>
+          <button type="submit" disabled={readingImage || !entityKey}>
             {chip ? "Save Changes" : "Create Chip"}
           </button>
         </div>

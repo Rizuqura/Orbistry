@@ -17,6 +17,497 @@
   user-select: none;
 }
 
+.worldview-scene {
+  position: absolute;
+  inset: 0;
+}
+.worldview-entity-context {
+  position: absolute;
+  top: 62px;
+  right: 20px;
+  z-index: 5;
+  width: min(380px, calc(100% - 40px));
+  max-height: calc(100% - 142px);
+  overflow: auto;
+}
+.worldview-entity-context:empty {
+  display: none;
+}
+.worldview-entity-toolbar {
+  padding: 12px;
+  background: var(--orb-ink);
+  border: 1px solid var(--orb-slate);
+  border-radius: 3px;
+  color: var(--orb-mist);
+}
+.worldview-entity-identity,
+.worldview-entity-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.worldview-entity-identity {
+  margin-bottom: 10px;
+}
+.worldview-entity-identity > div {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.worldview-entity-identity strong,
+.worldview-entity-identity span {
+  display: block;
+}
+.worldview-entity-identity strong {
+  font-size: 13px;
+}
+.worldview-entity-identity span {
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.entity-monogram {
+  display: inline-grid !important;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--orb-slate);
+}
+.worldview-entity-toolbar button,
+.knowledge-card button {
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 2px;
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.worldview-entity-toolbar button:hover,
+.knowledge-card button:hover {
+  background: var(--orb-raised);
+}
+.worldview-entity-toolbar button:focus-visible,
+.knowledge-card button:focus-visible,
+.knowledge-card input:focus-visible {
+  outline: 1px solid #ff9800;
+  outline-offset: 2px;
+}
+.worldview-entity-toolbar .entity-primary {
+  border-color: #b5773c;
+  color: #f2b472;
+}
+.worldview-entity-toolbar button:disabled,
+.knowledge-card button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.worldview-entity-more {
+  display: grid;
+  gap: 4px;
+  padding-top: 8px;
+}
+.worldview-entity-more button {
+  text-align: left;
+}
+.knowledge-card {
+  position: absolute;
+  z-index: 10;
+  width: min(1040px, calc(100% - 48px));
+  height: min(680px, calc(100% - 64px));
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  border: 1px solid var(--orb-slate);
+  border-radius: 3px;
+  box-shadow: 0 12px 36px #0006;
+  overflow: hidden;
+}
+.knowledge-card-titlebar {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--orb-slate);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  font-size: 12px;
+}
+.knowledge-card-titlebar:active {
+  cursor: grabbing;
+}
+.knowledge-card-titlebar:focus-visible {
+  outline: 1px solid #ff9800;
+  outline-offset: -2px;
+}
+.knowledge-card-titlebar span {
+  overflow-wrap: anywhere;
+}
+.knowledge-card-titlebar button {
+  flex-shrink: 0;
+}
+.knowledge-card-sidebar,
+.knowledge-card-main {
+  min-height: 0;
+  min-width: 0;
+}
+.knowledge-card-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 14px 16px;
+  background: #10181e;
+  border-right: 1px solid var(--orb-slate);
+  overflow: auto;
+}
+.knowledge-card-sidebar > strong {
+  display: block;
+  margin: 26px 0 18px;
+  overflow-wrap: anywhere;
+}
+.knowledge-card-sidebar ol {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.knowledge-card-sidebar li {
+  margin-bottom: 10px;
+}
+.knowledge-card-sidebar .knowledge-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.knowledge-menu-title[aria-current="page"] {
+  color: #f2b472;
+  border-color: #b5773c;
+}
+.knowledge-menu-controls {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+.knowledge-menu-controls button {
+  font-size: 10px;
+  min-height: 24px;
+  padding: 2px 6px;
+}
+.knowledge-menu-form {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+}
+.knowledge-menu-form input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  background: var(--orb-raised);
+  color: var(--orb-frost);
+  border: 1px solid var(--orb-slate);
+  padding: 8px;
+}
+.knowledge-card-main {
+  overflow: auto;
+  padding: 36px;
+}
+.knowledge-card-main > .knowledge-entity-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--orb-slate);
+}
+.knowledge-card-main h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.knowledge-card-main header p {
+  margin: 6px 0 0;
+  color: var(--orb-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.knowledge-card-main h2 {
+  font-size: 18px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.knowledge-card-empty {
+  margin-top: 30px;
+  color: var(--orb-muted);
+  font-size: 13px;
+}
+
+.knowledge-section-label {
+  margin: 18px 0 8px;
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.knowledge-card-sidebar > button {
+  margin-bottom: 16px;
+}
+.knowledge-index-editor {
+  font-size: 12px;
+}
+.knowledge-index-editor > p {
+  color: var(--orb-muted);
+  line-height: 1.6;
+}
+.knowledge-index-editor textarea {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  margin-top: 8px;
+  padding: 12px;
+  resize: vertical;
+  background: var(--orb-raised);
+  color: var(--orb-frost);
+  border: 1px solid var(--orb-slate);
+  font:
+    12px/1.65 ui-monospace,
+    Consolas,
+    monospace;
+  tab-size: 2;
+}
+.knowledge-index-actions,
+.knowledge-source-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.knowledge-index-actions button:nth-child(3) {
+  color: #f2b472;
+}
+.knowledge-index-editor details {
+  margin-top: 18px;
+}
+.knowledge-index-editor summary {
+  cursor: pointer;
+}
+.knowledge-source-ids {
+  padding-left: 18px;
+}
+.knowledge-source-ids li {
+  margin: 10px 0;
+}
+.knowledge-source-ids code {
+  display: block;
+  user-select: text;
+  overflow-wrap: anywhere;
+}
+.knowledge-source-ids small {
+  color: var(--orb-muted);
+}
+.knowledge-index-errors,
+.knowledge-card-main [role="alert"] {
+  color: #efa990;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.knowledge-source-selector button {
+  overflow-wrap: anywhere;
+}
+.knowledge-source-selector button[aria-pressed="true"] {
+  color: #f2b472;
+  border-color: #b5773c;
+}
+.knowledge-source-preview {
+  margin-top: 18px;
+  min-width: 0;
+  font-size: 12px;
+}
+.knowledge-source-preview > header {
+  margin-bottom: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.knowledge-source-preview > header strong {
+  overflow-wrap: anywhere;
+}
+.knowledge-source-preview small {
+  display: block;
+  margin-top: 4px;
+  color: var(--orb-muted);
+}
+.knowledge-source-preview .document-section {
+  overflow: auto;
+}
+.knowledge-markdown {
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.knowledge-markdown p {
+  margin: 0.8em 0;
+}
+.knowledge-markdown .chat-rich-text :is(th, td) {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--orb-slate);
+}
+.knowledge-markdown .chat-rich-text :is(th, tbody tr:nth-child(even)) {
+  background: transparent;
+}
+.knowledge-markdown .chat-rich-text blockquote {
+  border-left: 2px solid var(--orb-slate);
+  border-radius: 0;
+}
+.knowledge-source-preview .markdown-raw {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.knowledge-source-preview .metrics td {
+  white-space: pre-wrap;
+}
+.knowledge-source-preview .pdf-page-scroll {
+  max-height: 440px;
+}
+.knowledge-source-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.excel-tabs,
+.excel-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.excel-tabs button[aria-selected="true"] {
+  color: #e9974c;
+  border-color: currentColor;
+}
+.excel-tabs button {
+  overflow-wrap: anywhere;
+}
+.excel-table-scroll {
+  overflow: auto;
+  max-height: 400px;
+  border: 1px solid var(--orb-hover);
+}
+.excel-preview table {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+.excel-preview th,
+.excel-preview td {
+  border: 1px solid var(--orb-hover);
+  padding: 6px 8px;
+  min-width: 80px;
+  max-width: 360px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-align: left;
+  vertical-align: top;
+}
+.excel-preview thead {
+  position: sticky;
+  top: 0;
+  background: var(--orb-panel);
+}
+.excel-preview td.excel-number {
+  white-space: pre;
+  font-variant-numeric: tabular-nums;
+}
+.excel-preview pre {
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.excel-preview details {
+  margin-top: 12px;
+}
+.excel-truncated {
+  color: #e9974c;
+}
+.daily-price form,
+.daily-price-quote,
+.daily-price-ranges {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.daily-price form label {
+  display: grid;
+  gap: 6px;
+}
+.daily-price input {
+  width: 220px;
+  max-width: 100%;
+  padding: 8px;
+  color: var(--orb-frost);
+  background: var(--orb-panel);
+  border: 1px solid var(--orb-hover);
+}
+.daily-price-quote {
+  justify-content: space-between;
+  align-items: start;
+}
+.knowledge-card-main .daily-price-value {
+  font-size: 28px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0;
+  color: var(--orb-frost);
+}
+.daily-price small {
+  display: block;
+  margin: 5px 0;
+  color: var(--orb-muted);
+}
+.daily-price-ranges button[aria-pressed="true"] {
+  color: #ff9800;
+  border-color: currentColor;
+}
+.app-shell .daily-price-chart canvas {
+  display: block;
+  width: 100%;
+  height: 240px;
+  background: var(--orb-ink);
+  box-shadow: none !important;
+}
+.app-shell .daily-price-chart canvas:focus-visible {
+  outline: 1px solid #ff9800 !important;
+}
+.daily-price-chart p {
+  min-height: 20px;
+  color: var(--orb-muted);
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .knowledge-card {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+  .knowledge-card-main {
+    padding: 20px 16px;
+  }
+  .worldview-entity-buttons {
+    flex-wrap: wrap;
+  }
+}
+
 .worldview-canvas.is-panning {
   cursor: grabbing;
 }
@@ -492,11 +983,9 @@
   color: var(--orb-muted);
 }
 .worldview-file-inspector {
-  position: absolute;
-  top: 90px;
-  right: 20px;
-  width: min(310px, calc(100% - 40px));
-  max-height: calc(100% - 170px);
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
   padding: 16px;
   overflow: auto;
   border: 1px solid var(--orb-slate);
@@ -590,12 +1079,21 @@
   color: var(--orb-muted);
 }
 .worldview-save-status {
+  z-index: 8;
   position: absolute;
   left: 24px;
   top: 48px;
   max-width: min(420px, 50%);
   font-size: 11px;
   color: var(--orb-muted);
+}
+.knowledge-card-save-status {
+  top: auto;
+  bottom: 12px;
+  z-index: 12;
+  left: 24px;
+  background: var(--orb-ink);
+  max-width: calc(100% - 48px);
 }
 .worldview-save-status [role="alert"],
 .worldview-files-dialog [role="alert"],
@@ -617,4 +1115,655 @@
     flex-wrap: wrap;
     justify-content: flex-end;
   }
+}
+.worldview-connector-dialog textarea,
+.worldview-connector-dialog select {
+  width: 100%;
+  padding: 9px;
+  color: var(--orb-frost);
+  background: var(--orb-panel);
+  border: 1px solid var(--orb-slate);
+  border-radius: 5px;
+  font: inherit;
+}
+
+.worldview-connector-info {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: var(--orb-ink);
+  border: 1px solid var(--orb-slate);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.worldview-connector-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.worldview-entity-names {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  pointer-events: none;
+}
+.app-shell .worldview-entity-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+  width: max-content;
+  max-width: min(220px, calc(100% - 16px));
+  padding: 5px 9px;
+  border: 0;
+  outline: none;
+  box-shadow: none !important;
+  border-radius: 0;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.app-shell .worldview-entity-name[aria-pressed="true"] {
+  z-index: 1;
+}
+.app-shell .worldview-entity-name:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.app-shell .worldview-connector-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  visibility: hidden;
+  pointer-events: auto;
+  width: 190px;
+  max-width: calc(100% - 16px);
+  max-height: 144px;
+  overflow: auto;
+  display: grid;
+  gap: 5px;
+  padding: 8px 10px;
+  border: 1px solid var(--orb-slate);
+  border-color: var(--orb-slate) !important;
+  border-radius: 3px;
+  color: var(--orb-mist);
+  background: var(--orb-ink);
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.worldview-connector-label strong {
+  color: var(--orb-frost);
+  font-size: 12px;
+}
+.worldview-connector-label span {
+  color: var(--orb-muted);
+}
+.app-shell .worldview-connector-label[aria-pressed="true"],
+.app-shell .worldview-connector-label:focus-visible {
+  border-color: var(--p-orange) !important;
+  z-index: 1;
+  outline: none;
+}
+
+.worldview-connector-info p {
+  margin: 0;
+}
+.worldview-connector-info button {
+  color: var(--p-orange);
+  background: var(--orb-panel);
+  border: 1px solid var(--orb-slate);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+.worldview-entity-key {
+  overflow-wrap: anywhere;
+  user-select: text;
+  font-size: 10px;
+}
+
+.worldview-tag-generation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.worldview-tag-generation button {
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  padding: 7px 10px;
+  background: var(--orb-panel);
+  color: var(--p-orange);
+  cursor: pointer;
+}
+.worldview-search {
+  position: absolute;
+  top: 56px;
+  left: 24px;
+  z-index: 6;
+  width: min(320px, calc(100% - 48px));
+  font-size: 12px;
+}
+
+.worldview-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  background: var(--orb-ink);
+  border-color: var(--orb-slate) !important;
+}
+
+.worldview-search-bar:focus-within {
+  border-color: var(--p-orange) !important;
+}
+
+.worldview-search-icon {
+  position: relative;
+  flex: 0 0 11px;
+  height: 11px;
+  margin-right: 3px;
+  border: 1px solid var(--orb-muted);
+  border-radius: 50%;
+  border-color: var(--orb-muted) !important;
+}
+
+.worldview-search-icon::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  right: -4px;
+  bottom: -2px;
+  transform: rotate(45deg);
+  background: var(--orb-muted);
+}
+
+.worldview-search input {
+  min-width: 0;
+  flex: 1;
+  width: 100%;
+  padding: 9px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--orb-frost);
+  font: inherit;
+}
+
+.worldview-search button {
+  color: var(--orb-mist);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.worldview-search button:focus-visible {
+  outline: 1px solid var(--p-orange);
+  outline-offset: -2px;
+}
+
+.worldview-search-dropdown {
+  margin-top: 6px;
+  max-height: min(380px, calc(100dvh - 240px));
+  overflow: auto;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  background: var(--orb-ink);
+  box-shadow: 0 3px 8px #0003;
+  overflow-wrap: anywhere;
+  border-color: var(--orb-slate) !important;
+}
+
+/* Shared soft surfaces hide borders and add input glow. Keep this compact search's requested icon and restrained focus treatment visible. */
+.app-shell .worldview-search input,
+.app-shell .worldview-search input:hover,
+.app-shell .worldview-search input:focus-visible {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.app-shell .worldview-search button:hover,
+.app-shell .worldview-search button:focus-visible {
+  box-shadow: none !important;
+}
+.app-shell .worldview-search button:focus-visible {
+  outline: 1px solid var(--p-orange) !important;
+}
+
+.worldview-search-dropdown p {
+  margin: 10px;
+}
+.worldview-search-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.worldview-search-dropdown [role="option"] {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--orb-slate);
+}
+
+.worldview-search-dropdown [role="option"]:hover,
+.worldview-search-dropdown [aria-selected="true"] {
+  background: var(--orb-panel);
+}
+.worldview-search-dropdown [role="option"] strong {
+  color: var(--orb-frost);
+  font-weight: 500;
+}
+.worldview-search-dropdown [role="option"] span,
+.worldview-search-dropdown small {
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.worldview-search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+}
+.worldview-search-suggestions button {
+  color: var(--p-orange);
+  padding: 4px;
+}
+.worldview-search-warning {
+  padding: 6px;
+  font-size: 11px;
+}
+.worldview-search-warning button,
+.worldview-search-dropdown [role="alert"] button {
+  color: var(--p-orange);
+  padding: 5px;
+}
+.knowledge-image-carousel {
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 4px;
+  background: var(--orb-ink);
+}
+.knowledge-image-carousel > header,
+.carousel-slide-header,
+.carousel-navigation,
+.carousel-processing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.carousel-slide-header strong {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.knowledge-image-carousel button {
+  padding: 6px 8px;
+  border: 1px solid var(--orb-slate);
+  border-radius: 3px;
+  background: var(--orb-panel);
+  color: var(--p-orange);
+  font: inherit;
+  cursor: pointer;
+}
+.knowledge-image-carousel button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+.carousel-image {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  margin: 10px 0;
+}
+.carousel-knowledge pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+}
+.carousel-knowledge small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.carousel-knowledge ul {
+  padding-left: 18px;
+}
+.carousel-knowledge p,
+.carousel-unparsed {
+  line-height: 1.5;
+}
+.knowledge-card {
+  border-radius: 14px;
+}
+.knowledge-menu-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+.knowledge-menu-icon::before {
+  content: "▤";
+}
+.knowledge-card-sidebar .knowledge-write-index {
+  order: 10;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: 12px;
+  text-align: left;
+  color: var(--p-orange);
+}
+.app-shell .knowledge-card .knowledge-menu-title[aria-current="page"] {
+  background: color-mix(in srgb, var(--p-orange) 14%, transparent);
+  color: var(--p-orange);
+  border-left: 3px solid var(--p-orange);
+  border-left-color: var(--p-orange) !important;
+}
+.app-shell .knowledge-card button:hover,
+.app-shell .knowledge-card button:focus-visible {
+  box-shadow: none !important;
+}
+.app-shell .knowledge-card button:focus-visible {
+  outline: 1px solid var(--p-orange) !important;
+}
+.knowledge-card .knowledge-card-main {
+  padding: 28px 32px;
+}
+.knowledge-entity-header > img,
+.knowledge-entity-header > .entity-monogram {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+  font-size: 28px;
+}
+.knowledge-entity-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.knowledge-entity-tags > span {
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  background: var(--orb-panel);
+  color: var(--orb-muted);
+  overflow-wrap: anywhere;
+}
+.knowledge-entity-tags .knowledge-entity-category {
+  color: var(--p-orange);
+}
+.knowledge-card-main .knowledge-entity-header h1 {
+  font-size: 28px;
+}
+.knowledge-image-carousel > header {
+  margin-bottom: 12px;
+}
+.knowledge-image-carousel > header > [role="status"] {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.knowledge-image-carousel .carousel-navigation {
+  justify-content: center;
+  gap: 16px;
+  margin: 14px 0 4px;
+}
+.knowledge-image-carousel .carousel-navigation > button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 32px;
+  padding: 0;
+  background: #000;
+  border: 2px solid;
+  border-color: #616b72 #242a2e #242a2e #616b72 !important;
+  border-radius: 0;
+  font-family: var(--ui-font);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+.knowledge-image-carousel .carousel-navigation > button:hover:not(:disabled) {
+  background: #111;
+}
+.knowledge-image-carousel .carousel-navigation > button:active:not(:disabled) {
+  border-color: #242a2e #616b72 #616b72 #242a2e !important;
+}
+.carousel-position {
+  color: var(--orb-muted);
+  font-size: 11px;
+  min-width: 44px;
+  text-align: center;
+}
+.carousel-more-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.carousel-parse-inspector {
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--orb-panel);
+  border-radius: 8px;
+}
+.carousel-image {
+  border-radius: 8px;
+}
+.carousel-stage {
+  height: clamp(200px, 32vh, 340px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #10181e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.carousel-stage .carousel-image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+.carousel-thumbnails {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0 14px;
+}
+.carousel-thumbnails > button {
+  flex: 0 0 auto;
+  display: grid;
+  gap: 5px;
+  max-width: 150px;
+  padding: 6px;
+  text-align: left;
+}
+.carousel-thumbnails small,
+.carousel-time-markers small {
+  overflow-wrap: anywhere;
+  white-space: normal;
+  font-size: 10px;
+}
+.carousel-thumbnail {
+  width: 80px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.carousel-thumbnail .carousel-image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+.app-shell .carousel-thumbnails [aria-pressed="true"] {
+  border-color: var(--p-orange) !important;
+}
+.carousel-time-status {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 6px;
+  font-size: 11px;
+  color: var(--orb-muted);
+}
+.carousel-time-status output {
+  color: var(--orb-mist);
+}
+.carousel-timeline {
+  overflow-x: auto;
+}
+.carousel-time-track {
+  padding: 8px 56px 14px;
+}
+.carousel-time-slider {
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  accent-color: var(--p-orange);
+}
+.carousel-time-slider::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--orb-slate);
+}
+.carousel-time-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: var(--p-orange);
+}
+.carousel-time-slider::-moz-range-track {
+  height: 2px;
+  background: var(--orb-slate);
+}
+.carousel-time-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--p-orange);
+}
+.carousel-time-slider:focus-visible {
+  outline: 1px solid var(--p-orange);
+  outline-offset: 3px;
+}
+.carousel-time-slider:disabled {
+  cursor: default;
+}
+.carousel-time-track.is-single .carousel-time-slider {
+  width: 14px;
+  margin-inline: auto;
+}
+.carousel-time-markers {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 0 7px;
+}
+.knowledge-image-carousel .carousel-time-markers > button {
+  position: relative;
+  display: grid;
+  flex: 0 0 106px;
+  justify-items: center;
+  gap: 5px;
+  width: 106px;
+  margin: 0 -53px;
+  padding: 4px;
+  background: transparent;
+  color: var(--orb-muted);
+  text-align: center;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.knowledge-image-carousel .carousel-time-markers [aria-current="step"] {
+  color: var(--p-orange);
+}
+.carousel-time-dot {
+  position: absolute;
+  top: -14px;
+  left: calc(50% - 3px);
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.carousel-context > section {
+  padding: 14px 0;
+  border-top: 1px solid var(--orb-slate);
+}
+.carousel-context h3 {
+  font-size: 13px;
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+.carousel-context dl {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 7px;
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+.carousel-context dt {
+  color: var(--orb-muted);
+}
+.carousel-context dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.carousel-context label {
+  font-size: 12px;
+  display: grid;
+  gap: 8px;
+}
+.carousel-context textarea {
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  font: inherit;
+  color: var(--orb-frost);
+  padding: 10px;
+  margin-bottom: 8px;
+}
+.carousel-context small {
+  margin-left: 8px;
 }

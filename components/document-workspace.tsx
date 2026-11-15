@@ -1,4 +1,5 @@
 import { PdfViewer } from "./pdf-viewer";
+import { decodeCsvPreview } from "../features/worldview/csv-preview";
 import type { VaultFile, VaultPdfFile } from "../types/electron";
 
 export function DocumentWorkspace({
@@ -242,7 +243,8 @@ function stripExtension(name: string): string {
   return name.replace(/\.(md|markdown|csv|pdf)$/i, "");
 }
 
-function MarkdownContent({ content }: Readonly<{ content: string }>) {
+/** Displays original Markdown as escaped, read-only source text. */
+export function MarkdownContent({ content }: Readonly<{ content: string }>) {
   return (
     <div className="document-section">
       <pre className="markdown-raw">{content}</pre>
@@ -250,38 +252,28 @@ function MarkdownContent({ content }: Readonly<{ content: string }>) {
   );
 }
 
-function CsvTable({ content }: Readonly<{ content: string }>) {
-  const lines = content
-    .trim()
-    .split(/\r?\n/)
-    .filter((line) => line.length > 0);
-  if (lines.length === 0)
+/** Displays original CSV cells with optional preview row/column limits and explicit malformed-input feedback. */
+export function CsvTable({
+  content,
+  maxRows,
+  maxColumns,
+}: Readonly<{ content: string; maxRows?: number; maxColumns?: number }>) {
+  let records: string[][];
+  try {
+    records = decodeCsvPreview(content);
+  } catch (error) {
     return (
-      <div className="document-section">
-        <p>This CSV file is empty.</p>
-      </div>
+      <p role="alert">
+        {error instanceof Error
+          ? error.message
+          : "CSV preview could not be decoded."}
+      </p>
     );
-  const parseLine = (line: string): string[] => {
-    const cells: string[] = [];
-    let current = "";
-    let quoted = false;
-    for (let index = 0; index < line.length; index += 1) {
-      const character = line[index];
-      if (character === '"') {
-        if (quoted && line[index + 1] === '"') {
-          current += '"';
-          index += 1;
-        } else quoted = !quoted;
-      } else if (character === "," && !quoted) {
-        cells.push(current);
-        current = "";
-      } else current += character;
-    }
-    cells.push(current);
-    return cells.map((cell) => cell.trim());
-  };
-  const headers = parseLine(lines[0]);
-  const rows = lines.slice(1).map(parseLine);
+  }
+  if (!records.length) return <p>This CSV file is empty.</p>;
+  const headers = records[0].slice(0, maxColumns);
+  const rows = records.slice(1);
+  const visibleRows = rows.slice(0, maxRows);
   return (
     <div className="document-section">
       <table className="metrics">
@@ -293,7 +285,7 @@ function CsvTable({ content }: Readonly<{ content: string }>) {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, rowIndex) => (
+          {visibleRows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {headers.map((_, cellIndex) => (
                 <td
@@ -308,7 +300,13 @@ function CsvTable({ content }: Readonly<{ content: string }>) {
         </tbody>
       </table>
       <p style={{ marginTop: 10 }}>
-        {rows.length} rows · {headers.length} columns
+        {visibleRows.length < rows.length
+          ? `Showing ${visibleRows.length} of ${rows.length}`
+          : rows.length}{" "}
+        rows · {headers.length} columns
+        {headers.length < records[0].length
+          ? ` shown of ${records[0].length}`
+          : ""}
       </p>
     </div>
   );

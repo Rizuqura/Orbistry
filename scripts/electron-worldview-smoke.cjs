@@ -5,6 +5,13 @@ const os = require("node:os");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
 const { verifyUniverseAssignments } = require("./worldview-phase03-check.cjs");
+const { verifyKnowledgeCards } = require("./worldview-phase04-check.cjs");
+const { verifyManualIndex } = require("./worldview-phase05-check.cjs");
+const { verifyUniversalConnectors } = require("./worldview-phase06-check.cjs");
+const { verifyWorldTagSearch } = require("./worldview-phase07-check.cjs");
+const { verifyImageCarousels } = require("./worldview-phase08-check.cjs");
+const { verifyExcelPreview } = require("./worldview-excel-check.cjs");
+const { verifyDailyPrices } = require("./worldview-price-check.cjs");
 const digest = (value) => createHash("sha256").update(value).digest("hex");
 
 /** Waits for camera events to paint and returns canvas pixels for geometry comparisons. */
@@ -298,6 +305,31 @@ async function verifyChips(page) {
   await dialog
     .getByRole("textbox", { name: "Chip name", exact: true })
     .fill("Research Hub");
+  const generatedKey = await dialog
+    .getByRole("textbox", { name: "Entity key", exact: true })
+    .inputValue();
+  assert.match(generatedKey, /^[a-f0-9-]{36}$/);
+  assert.equal(
+    await dialog
+      .getByRole("textbox", { name: "Entity key", exact: true })
+      .getAttribute("readonly"),
+    "",
+  );
+  await dialog
+    .getByRole("button", { name: "Generate tags", exact: true })
+    .click();
+  assert.equal(
+    await dialog
+      .getByRole("textbox", { name: "Tags (optional)", exact: true })
+      .inputValue(),
+    "research, hub",
+  );
+  assert.equal(
+    await dialog
+      .getByRole("textbox", { name: "Entity key", exact: true })
+      .inputValue(),
+    generatedKey,
+  );
   assert.equal(
     await dialog.getByRole("alert").count(),
     0,
@@ -357,6 +389,11 @@ async function verifyChips(page) {
     .click();
   await dialog.waitFor({ state: "hidden" });
   const first = (await readChips(page))[0];
+  assert.equal(
+    first.id,
+    generatedKey,
+    "the previewed key is the saved identity",
+  );
   assert.equal(
     (await readChips(page)).length,
     1,
@@ -429,10 +466,22 @@ async function verifyChips(page) {
     "Escape discards an active drag preview",
   );
 
-  // A port selects its own platform and cannot create a relationship.
+  // Releasing a port without reaching another entity discards the temporary connection.
   await page.mouse.click(center.x + 144 + 48, center.y + 72 - 24);
   assert.equal((await readChips(page)).length, 2);
-  assert.equal((await readChips(page))[0].selected, true);
+  assert.equal(
+    await page
+      .getByRole("dialog", { name: "Define Relationship", exact: true })
+      .count(),
+    0,
+  );
+  assert.equal(
+    await page
+      .getByRole("list", { name: "WorldView relationships", exact: true })
+      .getByRole("button")
+      .count(),
+    0,
+  );
   const positionsBeforePan = (await readChips(page)).map((chip) => [
     chip.x,
     chip.y,
@@ -513,7 +562,58 @@ async function verifyChipCustomization(page) {
   };
   await page.mouse.click(location.x, location.y);
   const selected = await readChips(page);
-  const edit = page.getByRole("button", { name: "Edit Chip", exact: true });
+  const entityTitle = page.locator(
+    `.worldview-entity-name[data-chip-id="${target.id}"]`,
+  );
+  const darkTitleColors = await entityTitle.evaluate((element) => ({
+    text: getComputedStyle(element).color,
+    background: getComputedStyle(element).backgroundColor,
+  }));
+  assert.ok(
+    (
+      await entityTitle.evaluate(
+        (element) => getComputedStyle(element).fontFamily,
+      )
+    ).includes("IBM Plex Sans"),
+  );
+  assert.deepEqual(darkTitleColors, {
+    text: "rgb(255, 255, 255)",
+    background: "rgb(0, 0, 0)",
+  });
+  const titleBounds = await entityTitle.boundingBox();
+  assert.ok(
+    titleBounds.y >= location.y + 48 + 8 + 9,
+    "entity name floats beneath the platform's full thickness",
+  );
+  assert.equal(
+    await entityTitle.evaluate(
+      (element) => getComputedStyle(element).borderTopWidth,
+    ),
+    "0px",
+  );
+  await page.mouse.click(
+    titleBounds.x + titleBounds.width / 2,
+    titleBounds.y + titleBounds.height / 2,
+  );
+  assert.deepEqual(
+    await readChips(page),
+    selected,
+    "floating title selects its own entity",
+  );
+  /** Opens the contextual disclosure before reusing the entity editor. */
+  const edit = {
+    async click() {
+      const more = page.getByRole("button", {
+        name: "More entity options",
+        exact: true,
+      });
+      if ((await more.getAttribute("aria-expanded")) !== "true")
+        await more.click();
+      await page
+        .getByRole("button", { name: "Edit Entity", exact: true })
+        .click();
+    },
+  };
   const dialog = page.getByRole("dialog", { name: "Edit Chip", exact: true });
   await edit.click();
   assert.equal(await dialog.getByRole("radio").count(), 0);
@@ -672,6 +772,14 @@ async function verifyChipCustomization(page) {
   await dialog.waitFor({ state: "hidden" });
   assert.equal((await readChips(page))[0].iconImage, true);
   assert.equal((await readChips(page))[0].color, "#67bb9f");
+  const lightTitleColors = await entityTitle.evaluate((element) => ({
+    text: getComputedStyle(element).color,
+    background: getComputedStyle(element).backgroundColor,
+  }));
+  assert.deepEqual(lightTitleColors, {
+    text: "rgb(0, 0, 0)",
+    background: "rgb(255, 255, 255)",
+  });
   await page.waitForFunction((point) => {
     const node = document.querySelector(".worldview-canvas");
     const bounds = node.getBoundingClientRect();
@@ -724,7 +832,100 @@ async function verifyChipCustomization(page) {
     chooser:
       "app orange, full-width native control, same-file re-selection verified",
     color: "hue/saturation wheel, brightness and hex",
+    floatingTitles:
+      "borderless below platforms; chip luminance selects white on black or black on white; title clicks select the entity",
     edits: "Save applies; Cancel discards",
+  };
+}
+
+/** Verifies generated tags include assigned filename metadata, remain editable/staged, and persist under the same stable key. */
+async function verifyGeneratedEntityMetadata(page, vault) {
+  console.log("Checking generated entity keys and editable local tags...");
+  /** Reads the actual metadata snapshot through the guarded desktop API. */
+  async function readEntity() {
+    return page.evaluate(
+      async (vaultPath) =>
+        (await window.orbistryDesktop.worldview.request("load", { vaultPath }))
+          .chips[0],
+      vault,
+    );
+  }
+  const before = await readEntity();
+  /** Opens the selected entity's existing staged metadata editor. */
+  async function edit() {
+    await page
+      .locator(`[aria-label="WorldView chips"] [data-chip-id="${before.id}"]`)
+      .evaluate((button) => button.click());
+    const more = page.getByRole("button", {
+      name: "More entity options",
+      exact: true,
+    });
+    if ((await more.getAttribute("aria-expanded")) !== "true")
+      await more.click();
+    await page
+      .getByRole("button", { name: "Edit Entity", exact: true })
+      .click();
+    return page.getByRole("dialog", { name: "Edit Chip", exact: true });
+  }
+  let dialog = await edit();
+  assert.equal(
+    await dialog
+      .getByRole("textbox", { name: "Entity key", exact: true })
+      .inputValue(),
+    before.id,
+  );
+  await dialog
+    .getByRole("button", { name: "Generate tags", exact: true })
+    .click();
+  const suggestions = await dialog
+    .getByRole("textbox", { name: "Tags (optional)", exact: true })
+    .inputValue();
+  const values = suggestions.split(", ");
+  for (const tag of before.tags) assert.ok(values.includes(tag));
+  assert.ok(
+    values.includes("equal"),
+    "assigned equal-a.bin/equal-b.bin filenames contribute metadata tags",
+  );
+  assert.deepEqual(
+    (await readEntity()).tags,
+    before.tags,
+    "generation stays staged",
+  );
+  await dialog.getByRole("button", { name: "Cancel", exact: true }).click();
+  assert.deepEqual((await readEntity()).tags, before.tags);
+  dialog = await edit();
+  await dialog
+    .getByRole("button", { name: "Generate tags", exact: true })
+    .click();
+  await dialog
+    .getByRole("textbox", { name: "Tags (optional)", exact: true })
+    .fill(`${suggestions}, reviewed`);
+  await page.screenshot({
+    path: "test-results/worldview-generated-entity-metadata.png",
+  });
+  await dialog
+    .getByRole("button", { name: "Save Changes", exact: true })
+    .click();
+  await dialog.waitFor({ state: "hidden" });
+  await page.waitForFunction(
+    () =>
+      !/Saving|Loading/.test(
+        document.querySelector(".worldview-save-status").textContent,
+      ),
+  );
+  await page.reload();
+  await page.locator(".startup-screen").waitFor({ state: "hidden" });
+  await page.waitForFunction(() =>
+    document.querySelector('[aria-label="WorldView chips"] button'),
+  );
+  const restored = await readEntity();
+  assert.equal(restored.id, before.id);
+  assert.deepEqual(restored.tags, [...values, "reviewed"]);
+  assert.deepEqual(restored.sources, before.sources);
+  return {
+    status: "passed",
+    key: "previewed before creation; stable across edit and reload",
+    tags: "metadata suggestions; editable; Cancel discards; Save persists",
   };
 }
 
@@ -737,7 +938,26 @@ async function verifyChipDeletion(page, emptyGrid) {
     x: bounds.x + bounds.width / 2,
     y: bounds.y + bounds.height / 2,
   };
-  const remove = page.getByRole("button", { name: "Delete Chip", exact: true });
+  /** Opens the contextual disclosure before the existing confirmed deletion flow. */
+  const remove = {
+    count: () =>
+      page.getByRole("button", { name: "Delete Chip", exact: true }).count(),
+    evaluate: (callback) =>
+      page
+        .getByRole("button", { name: "Delete Chip", exact: true })
+        .evaluate(callback),
+    async click() {
+      const more = page.getByRole("button", {
+        name: "More entity options",
+        exact: true,
+      });
+      if ((await more.getAttribute("aria-expanded")) !== "true")
+        await more.click();
+      await page
+        .getByRole("button", { name: "Delete Chip", exact: true })
+        .click();
+    },
+  };
   const confirmation = page.getByRole("dialog", {
     name: "Delete Chip",
     exact: true,
@@ -854,10 +1074,19 @@ async function verifyChipDeletion(page, emptyGrid) {
   );
 
   let deleted = 2;
-  for (const chip of await readChips(page)) {
+  // Delete frontmost platforms first so their expanded buildings cannot cover later targets.
+  const remaining = (await readChips(page)).sort(
+    (a, b) => b.x + b.y - a.x - a.y,
+  );
+  for (const chip of remaining) {
     await page.mouse.click(
-      center.x + (chip.x - chip.y) * 48,
+      center.x + (chip.x - chip.y) * 48 - 89,
       center.y + (chip.x + chip.y) * 24,
+    );
+    assert.equal(
+      (await readChips(page)).find((item) => item.selected)?.id,
+      chip.id,
+      `visible platform selection targets ${chip.name} at ${chip.x},${chip.y}`,
     );
     await remove.click();
     await confirmation
@@ -935,8 +1164,41 @@ async function main() {
     await page
       .getByRole("heading", { name: "WorldView", exact: true })
       .waitFor();
+    await page.evaluate(async () => {
+      const faces = await document.fonts.load('12px "IBM Plex Sans"');
+      if (!faces.length || faces.some((face) => face.status !== "loaded"))
+        throw new Error("Bundled IBM Plex Sans did not load.");
+      await document.fonts.ready;
+    });
+    assert.ok(
+      (
+        await page
+          .locator(".worldview")
+          .evaluate((element) => getComputedStyle(element).fontFamily)
+      ).includes("IBM Plex Sans"),
+    );
+    assert.ok(
+      (
+        await page
+          .locator(".worldview-add-chip")
+          .evaluate((element) => getComputedStyle(element).fontFamily)
+      ).includes("IBM Plex Sans"),
+    );
     await verifyGrid(page, app);
     const emptyGrid = await gridImage(page);
+    const relationships = await verifyUniversalConnectors({
+      page,
+      vault,
+      createChip,
+      readChips,
+      gridImage,
+    });
+    const tagSearch = await verifyWorldTagSearch({
+      page,
+      vault,
+      readChips,
+      gridImage,
+    });
     const chips = await verifyChips(page);
     const customization = await verifyChipCustomization(page);
     const assignments = await verifyUniverseAssignments({
@@ -945,6 +1207,40 @@ async function main() {
       vault,
       readChips,
       gridImage,
+    });
+    const generatedMetadata = await verifyGeneratedEntityMetadata(page, vault);
+    const knowledgeCards = await verifyKnowledgeCards({
+      page,
+      createChip,
+      readChips,
+      gridImage,
+    });
+    const manualIndex = await verifyManualIndex({
+      page,
+      app,
+      vault,
+      createChip,
+      readChips,
+    });
+    const imageCarousels = await verifyImageCarousels({
+      app,
+      page,
+      vault,
+      createChip,
+      readChips,
+    });
+    const excel = await verifyExcelPreview({
+      app,
+      page,
+      vault,
+      createChip,
+      readChips,
+    });
+    const dailyPrices = await verifyDailyPrices({
+      app,
+      page,
+      vault,
+      createChip,
     });
     const deletion = await verifyChipDeletion(page, emptyGrid);
     assert.equal(
@@ -1061,6 +1357,14 @@ async function main() {
           chips,
           customization,
           assignments,
+          knowledgeCards,
+          manualIndex,
+          relationships,
+          generatedMetadata,
+          tagSearch,
+          imageCarousels,
+          excel,
+          dailyPrices,
           deletion,
           worldview:
             "isometric grid; four-direction pan without drift; cursor zoom; limits; reset; resize; legacy-state isolation",
@@ -1102,7 +1406,10 @@ async function main() {
     await fs.rm(root, { recursive: true, force: true });
   }
 }
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+module.exports = { createChip, readChips };
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

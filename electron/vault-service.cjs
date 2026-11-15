@@ -308,6 +308,7 @@ async function indexPdf(rootPath, absolutePath, relativePath, stats, issues) {
   }
 }
 
+/** Scans eligible Vault folders, collecting read/indexing issues and PDF paths. Native engine storage stays outside user content; source indexing retains existing behavior. */
 async function scanDirectory(
   rootPath,
   directoryPath,
@@ -343,6 +344,28 @@ async function scanDirectory(
         entry.name.toLowerCase() === ".engine" ||
         (await isEngineBundle(absolutePath))
       ) {
+        if (entry.name.toLowerCase() === ".engine") {
+          try {
+            const packages = await fs.readdir(absolutePath, {
+              withFileTypes: true,
+            });
+            // Classifies only a reserved folder. Its contents are never imported or indexed.
+            if (
+              packages.length > 0 &&
+              packages.every(
+                /** Recognizes only bundled native packages while all engine storage stays excluded. */ (
+                  entry,
+                ) =>
+                  ["tag-association", "image-parser"].includes(entry.name) &&
+                  entry.isDirectory() &&
+                  !entry.isSymbolicLink(),
+              )
+            )
+              continue;
+          } catch (error) {
+            issues.push(issue(childRelativePath, readableError(error)));
+          }
+        }
         issues.push(
           issue(
             childRelativePath,
@@ -896,6 +919,7 @@ async function listVaultMetadata(rootPath, input = {}) {
 }
 
 module.exports = {
+  readVaultPreview,
   statVaultSource,
   listVaultMetadata,
   getVaultSnapshot,
@@ -909,3 +933,44 @@ module.exports = {
   scanVault,
   searchPdfText,
 };
+
+/** Reads original bytes only for presentation after existing Vault containment checks; never runs extraction or OCR. */
+async function readVaultPreview(rootPath, sourceRef) {
+  const source = await statVaultSource(rootPath, sourceRef);
+  if (!source.stats.isFile())
+    throw new Error("The source is no longer a file.");
+  const extension = source.entry.extension.toLowerCase();
+  const metadata = {
+    name: source.entry.name,
+    relativePath: sourceRef,
+    extension,
+    size: source.stats.size,
+  };
+  const text = [".md", ".markdown", ".csv"].includes(extension);
+  const image = [".png", ".jpg", ".jpeg"].includes(extension);
+  if (!text && !image && extension !== ".pdf")
+    return { ...metadata, kind: "unsupported" };
+  const limit = text
+    ? 5 * 1024 * 1024
+    : image
+      ? MAX_IMAGE_BYTES
+      : MAX_PDF_BYTES;
+  if (source.stats.size > limit)
+    throw new Error(
+      `Source exceeds the ${limit / 1024 / 1024} MB preview limit. Use Locate Original.`,
+    );
+  const bytes = await fs.readFile(source.absolutePath);
+  if (bytes.length > limit)
+    throw new Error(
+      "Source grew beyond the preview limit. Reopen the original file.",
+    );
+  if (text)
+    return { ...metadata, kind: "text", content: bytes.toString("utf8") };
+  if (image)
+    return {
+      ...metadata,
+      kind: "image",
+      dataUrl: `data:image/${extension === ".png" ? "png" : "jpeg"};base64,${bytes.toString("base64")}`,
+    };
+  return { ...metadata, kind: "pdf", data: new Uint8Array(bytes) };
+}

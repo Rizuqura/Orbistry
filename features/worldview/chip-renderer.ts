@@ -4,7 +4,7 @@ import {
   DEFAULT_CHIP_COLOR,
   type WorldViewChip,
 } from "./chips";
-import { shadeChipColor, chipTextColor } from "./chip-colors";
+import { shadeChipColor } from "./chip-colors";
 import {
   drawFileBuildings,
   hitTestFileBuilding,
@@ -13,6 +13,7 @@ import {
 import { MAX_BUILDING_HEIGHT, type WorldBuilding } from "./buildings";
 import {
   screenToWorld,
+  projectWorld,
   worldToScreen,
   TILE_WIDTH,
   TILE_HEIGHT,
@@ -20,6 +21,7 @@ import {
   type Viewport,
   type WorldCamera,
 } from "./coordinates";
+import { PORT_OFFSETS } from "./connectors";
 
 export type ChipPreview = Readonly<{ id: string; position: Point }>;
 
@@ -46,7 +48,7 @@ export function orderChips(
 
 /**
  * Returns the frontmost chip under viewport-local CSS pixels, including its thin side faces.
- * Ports are part of the platform hit area and have no separate relationship behavior.
+ * Callers resolve geometric connection ports separately before testing platform selection.
  */
 export function hitTestChip(
   point: Point,
@@ -115,8 +117,7 @@ function drawPolygon(
 /**
  * Paints equal-sized custom-colored chips after the grid, culling offscreen platforms.
  * Uploaded icons remain centered as foreground badges even with file buildings;
- * the canvas owner supplies images, and complete names fit the label width in
- * contrast-aware ink.
+ * the canvas owner supplies images and positions floating DOM titles separately.
  * Uses the same camera and CSS-pixel projection; only Canvas 2D drawing state is changed.
  */
 export function drawWorldChips(
@@ -173,26 +174,12 @@ export function drawWorldChips(
     );
     context.strokeStyle = selectedId === chip.id ? "#dc8d46" : "#687078";
     drawPolygon(context, [top, right, bottom, left], color);
-    context.fillStyle = chipTextColor(color);
-    context.textAlign = "center";
     context.textBaseline = "middle";
     const image = chip.iconImage ? icons?.get(chip.iconImage) : undefined;
-    const hasBuildings = Boolean(chip.sources?.length);
     drawFileBuildings(context, chip, selectedBuilding, hoveredBuilding);
     if (image) context.drawImage(image, -14, -26, 28, 28);
-    context.font = "11px 'Segoe UI', sans-serif";
-    context.fillText(
-      chip.name,
-      0,
-      hasBuildings ? 26 : 14,
-      hasBuildings ? 90 : 112,
-    );
-    for (const point of [
-      { x: -48, y: -24 },
-      { x: 48, y: -24 },
-      { x: -48, y: 24 },
-      { x: 48, y: 24 },
-    ]) {
+    for (const offset of Object.values(PORT_OFFSETS)) {
+      const point = projectWorld(offset);
       context.beginPath();
       context.arc(point.x, point.y, 3.5, 0, Math.PI * 2);
       context.fillStyle = "#171b1f";

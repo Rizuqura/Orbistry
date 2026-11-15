@@ -2,6 +2,7 @@
 
 import {
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   useSyncExternalStore,
@@ -20,14 +21,34 @@ import {
   type WorldCamera,
 } from "../features/worldview/coordinates";
 import { drawWorldGrid } from "../features/worldview/grid";
+import { updateConnectorLabels } from "../features/worldview/connector-labels";
+import { updateChipLabels } from "../features/worldview/chip-labels";
+import { chipTextColor } from "../features/worldview/chip-colors";
 import { ChipDialog } from "../features/worldview/chip-dialog";
 import { createChipImageCache } from "../features/worldview/chip-images";
 import { AssignFilesDialog } from "../features/worldview/assign-files-dialog";
 import { FileInspector } from "../features/worldview/file-inspector";
-import { layoutFileBuildings } from "../features/worldview/buildings";
+import { EntityActions } from "../features/worldview/entity-actions";
+import { KnowledgeCard } from "../features/worldview/knowledge-card";
+import { ConnectorDialog } from "../features/worldview/connector-dialog";
+import { WorldSearch } from "../features/worldview/world-search";
+import {
+  connectorRoutes,
+  drawConnectors,
+  hitTestConnectors,
+  hitTestPort,
+  portPoint,
+  type PortEndpoint,
+  type WorldConnector,
+} from "../features/worldview/connectors";
+import {
+  layoutFileBuildings,
+  sourceSizeLabel,
+} from "../features/worldview/buildings";
 import type { BuildingTarget } from "../features/worldview/building-renderer";
 import { useConfirmation } from "../features/dialogs/use-confirmation";
 import {
+  DEFAULT_CHIP_COLOR,
   findAvailableChipPosition,
   type ChipDraft,
   type WorldViewChip,
@@ -44,6 +65,11 @@ import {
   getServerPersistence,
   loadWorldViewSession,
   retryWorldViewWrites,
+  getSessionConnectors,
+  getServerConnectors,
+  addSessionConnector,
+  updateSessionConnector,
+  removeSessionConnector,
 } from "../features/worldview/chip-session";
 import {
   draggedChipPosition,
@@ -52,14 +78,17 @@ import {
 } from "../features/worldview/chip-renderer";
 
 type CameraControls = {
+  repaint: () => void;
   zoom: (factor: number) => void;
   reset: () => void;
   create: (draft: ChipDraft) => void;
-  select: (id: string) => void;
+  select: (id: string | null) => void;
   nudge: (id: string, key: string) => void;
   remove: (id: string) => void;
   update: (id: string, draft: ChipDraft) => void;
   inspect: (id: string, sourceId: string | null) => void;
+  selectConnector: (id: string | null) => void;
+  locate: (id: string) => void;
 };
 type Drag = { pointerId: number; start: Point; camera: WorldCamera } & (
   | { kind: "camera" }
@@ -85,11 +114,13 @@ type HoverInfo = Readonly<{
   detail: string;
 }>;
 
-/** Renders saved entity/source metadata and a shared isometric camera; never requests source contents. */
+/** Renders saved entities, independent port relationships and floating Knowledge Cards over the shared interactive world camera. */
 export function WorldView({
   vaultPath,
 }: Readonly<{ vaultPath: string | null }>) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const connectorLabelsRef = useRef<HTMLDivElement>(null);
+  const chipLabelsRef = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<CameraControls | null>(null);
   const [zoom, setZoom] = useState(1);
   const [canvasError, setCanvasError] = useState(false);
@@ -97,6 +128,7 @@ export function WorldView({
   const [editingChip, setEditingChip] = useState<WorldViewChip | null>(null);
   const [iconError, setIconError] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [cardId, setCardId] = useState<string | null>(null);
   const [assigningChip, setAssigningChip] = useState<WorldViewChip | null>(
     null,
   );
@@ -104,12 +136,39 @@ export function WorldView({
   const [selectedFile, setSelectedFile] = useState<BuildingTarget | null>(null);
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
   const [operationError, setOperationError] = useState("");
+  const [connectorId, setConnectorId] = useState<string | null>(null);
+  const [editingConnector, setEditingConnector] =
+    useState<WorldConnector | null>(null);
+  const [connectorEndpoints, setConnectorEndpoints] = useState<Pick<
+    WorldConnector,
+    "sourceEntityId" | "sourcePortId" | "targetEntityId" | "targetPortId"
+  > | null>(null);
+  const connectors = useSyncExternalStore(
+    subscribeChips,
+    getSessionConnectors,
+    getServerConnectors,
+  );
+  const selectedConnector = connectors.find((item) => item.id === connectorId);
+  /** Positions newly committed relationship labels using the current canvas camera. */
+  useLayoutEffect(
+    function refreshConnectionLabels() {
+      controlsRef.current?.repaint();
+    },
+    [connectors, connectorId, selectedId, inspectorOpen],
+  );
   const deletionPending = useRef(false);
   const { confirm, confirmation } = useConfirmation();
   const chips = useSyncExternalStore(
     subscribeChips,
     getSessionChips,
     getServerChips,
+  );
+  /** Repositions titles after entity names, colors, source buildings or newly rendered badges change. */
+  useLayoutEffect(
+    function refreshEntityTitles() {
+      controlsRef.current?.repaint();
+    },
+    [chips],
   );
   const persistence = useSyncExternalStore(
     subscribeChips,
@@ -118,6 +177,7 @@ export function WorldView({
   );
   const controlsDisabled =
     canvasError || !vaultPath || !persistence.ready || persistence.loading;
+  const cardChip = chips.find((chip) => chip.id === cardId);
 
   /** Loads/restores this existing Universe's indexes whenever WorldView is opened. */
   useEffect(
@@ -133,7 +193,7 @@ export function WorldView({
     },
   );
 
-  /** Owns painting and chip/camera controls; cleanup releases observers, capture, and animation work. */
+  /** Owns world painting, floating relationship labels and camera controls; cleanup releases observers, capture and animation work. */
   useEffect(function connectWorldCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -145,6 +205,18 @@ export function WorldView({
     let camera = DEFAULT_CAMERA;
     let viewport: Viewport = { width: 0, height: 0 };
     let drag: Drag | null = null;
+    let connectionDrag: {
+      pointerId: number;
+      origin: PortEndpoint;
+      point: Point;
+      target: PortEndpoint | null;
+    } | null = null;
+    let selectedConnectorId: string | null = null;
+    let lastConnectorHit: {
+      point: Point;
+      ids: string[];
+      index: number;
+    } | null = null;
     let selectedChipId: string | null = null;
     let selectedBuilding: BuildingTarget | null = null;
     let hoveredBuilding: BuildingTarget | null = null;
@@ -173,6 +245,34 @@ export function WorldView({
         window.devicePixelRatio || 1,
         stroke,
       );
+      const preview =
+        drag?.kind === "chip"
+          ? { id: drag.chip.id, position: drag.preview }
+          : null;
+      updateChipLabels(
+        chipLabelsRef.current,
+        getSessionChips(),
+        camera,
+        viewport,
+        preview,
+      );
+      const routes = connectorRoutes(
+        getSessionConnectors(),
+        getSessionChips(),
+        camera,
+        viewport,
+        preview,
+      );
+      drawConnectors(context!, routes, selectedConnectorId);
+      updateConnectorLabels({
+        container: connectorLabelsRef.current,
+        context: context!,
+        routes,
+        chips: getSessionChips(),
+        camera,
+        viewport,
+        preview,
+      });
       drawWorldChips(
         context!,
         getSessionChips(),
@@ -186,6 +286,46 @@ export function WorldView({
         selectedBuilding,
         hoveredBuilding,
       );
+      if (connectionDrag) {
+        const source = getSessionChips().find(
+          (chip) => chip.id === connectionDrag!.origin.entityId,
+        );
+        const target = getSessionChips().find(
+          (chip) => chip.id === connectionDrag!.target?.entityId,
+        );
+        if (source) {
+          const start = portPoint(
+            source,
+            connectionDrag.origin.portId,
+            camera,
+            viewport,
+          );
+          const end =
+            target && connectionDrag.target
+              ? portPoint(
+                  target,
+                  connectionDrag.target.portId,
+                  camera,
+                  viewport,
+                )
+              : connectionDrag.point;
+          context!.save();
+          context!.strokeStyle = "#f2a45e";
+          context!.lineWidth = 2;
+          context!.setLineDash([5, 4]);
+          context!.beginPath();
+          context!.moveTo(start.x, start.y);
+          context!.lineTo(end.x, end.y);
+          context!.stroke();
+          context!.setLineDash([]);
+          for (const point of [start, end]) {
+            context!.beginPath();
+            context!.arc(point.x, point.y, 6, 0, Math.PI * 2);
+            context!.stroke();
+          }
+          context!.restore();
+        }
+      }
     }
 
     /** Coalesces fast input events into one paint per display frame. */
@@ -216,12 +356,38 @@ export function WorldView({
 
     /** Selects a chip for both canvas styling and its accessible button; null clears selection. */
     function selectChip(id: string | null): void {
+      selectedConnectorId = null;
+      setConnectorId(null);
       selectedChipId = id;
       setSelectedId(id);
       selectedBuilding = null;
       setSelectedFile(null);
       setInspectorOpen(false);
       schedulePaint();
+    }
+
+    /** Selects one stable relationship and clears entity-only controls without changing any endpoint association. */
+    function selectConnector(id: string | null): void {
+      selectChip(null);
+      selectedConnectorId = id;
+      setConnectorId(id);
+      schedulePaint();
+    }
+
+    /** Locates an existing stable entity ID, preserving zoom and using the shared selection/highlight mechanism. Missing IDs are reported. */
+    function locateChip(id: string): void {
+      const chip = getSessionChips().find(
+        /** Resolves the result against current render state. */ (item) =>
+          item.id === id,
+      );
+      if (!chip) {
+        setOperationError("This entity is no longer available. Search again.");
+        return;
+      }
+      stopDrag();
+      clearHover();
+      selectChip(id);
+      updateCamera({ ...camera, center: chip.position });
     }
 
     /** Opens full source metadata for a clicked prism or overflow marker without starting a drag. */
@@ -234,15 +400,100 @@ export function WorldView({
       schedulePaint();
     }
 
-    /** Captures the primary pointer for either chip movement or empty-ground camera panning. */
+    /** Resolves anchors only on the frontmost visible platform/building, preventing hidden ports from intercepting foreground chip input. */
+    function visiblePort(
+      point: Point,
+      excludedEntity?: string,
+    ): PortEndpoint | null {
+      const eligible = excludedEntity
+        ? getSessionChips().filter(
+            /** Allows coincident destination anchors on other entities. */ (
+              chip,
+            ) => chip.id !== excludedEntity,
+          )
+        : getSessionChips();
+      const hit = hitTestWorld(point, eligible, camera, viewport);
+      return hitTestPort(
+        point,
+        hit ? [hit.chip] : eligible,
+        camera,
+        viewport,
+        excludedEntity,
+      );
+    }
+
+    /** Gives ports and chip/building geometry priority over floating titles, then selects an exposed title/relationship or starts empty-ground panning. */
     function startDrag(event: PointerEvent): void {
-      if (event.button !== 0 || !event.isPrimary || drag) return;
+      if (event.button !== 0 || !event.isPrimary || drag || connectionDrag)
+        return;
       const status = getWorldViewPersistence();
       if (!status.ready || status.loading) return;
+      clearHover();
       event.preventDefault();
       canvas!.focus({ preventScroll: true });
       const start = localPoint(event);
+      const port = visiblePort(start);
+      if (port) {
+        selectChip(null);
+        connectionDrag = {
+          pointerId: event.pointerId,
+          origin: port,
+          point: start,
+          target: null,
+        };
+        canvas!.setPointerCapture(event.pointerId);
+        schedulePaint();
+        return;
+      }
       const hit = hitTestWorld(start, getSessionChips(), camera, viewport);
+      if (!hit) {
+        const title = Array.from(
+          chipLabelsRef.current?.querySelectorAll<HTMLButtonElement>(
+            "[data-chip-id]",
+          ) ?? [],
+        )
+          .reverse()
+          .find(
+            /** Recognizes a visible floating name only when no physical chip or port occupies the pointer. */
+            (element) => {
+              if (element.style.visibility !== "visible") return false;
+              const bounds = element.getBoundingClientRect();
+              return (
+                event.clientX >= bounds.left &&
+                event.clientX <= bounds.right &&
+                event.clientY >= bounds.top &&
+                event.clientY <= bounds.bottom
+              );
+            },
+          );
+        if (title) {
+          selectChip(title.dataset.chipId ?? null);
+          return;
+        }
+        const hits = hitTestConnectors(
+          start,
+          connectorRoutes(
+            getSessionConnectors(),
+            getSessionChips(),
+            camera,
+            viewport,
+          ),
+        );
+        if (hits.length) {
+          const ids = hits.map((item) => item.id);
+          const same =
+            lastConnectorHit &&
+            Math.hypot(
+              start.x - lastConnectorHit.point.x,
+              start.y - lastConnectorHit.point.y,
+            ) < 5 &&
+            JSON.stringify(ids) === JSON.stringify(lastConnectorHit.ids);
+          const index = same ? (lastConnectorHit!.index + 1) % hits.length : 0;
+          lastConnectorHit = { point: start, ids, index };
+          selectConnector(ids[index]);
+          return;
+        }
+      }
       const chip = hit?.chip;
       if (hit?.building) {
         inspectBuilding(
@@ -273,10 +524,21 @@ export function WorldView({
       canvas!.classList.add("is-panning");
     }
 
-    /** Updates source hover, previews chip movement, or pans the camera using the same world projection. */
+    /** Updates free connection previews or existing chip/camera drags; idle hover reports metadata and port affordances. */
     function moveDrag(event: PointerEvent): void {
       const point = localPoint(event);
+      if (connectionDrag) {
+        if (connectionDrag.pointerId !== event.pointerId) return;
+        connectionDrag.point = point;
+        connectionDrag.target = visiblePort(
+          point,
+          connectionDrag.origin.entityId,
+        );
+        schedulePaint();
+        return;
+      }
       if (!drag) {
+        canvas!.style.cursor = visiblePort(point) ? "crosshair" : "";
         const hit = hitTestWorld(point, getSessionChips(), camera, viewport);
         const building = hit?.building;
         const target =
@@ -297,13 +559,19 @@ export function WorldView({
           setHoverInfo({
             ...point,
             filename: building.source.filename,
-            detail: `${building.source.extension || "No extension"} · ${building.source.sizeBytes === null ? "Byte metadata unavailable" : `${building.source.sizeBytes.toLocaleString()} bytes`} · ${building.source.status}`,
+            detail: `${building.source.extension || "No extension"} · ${sourceSizeLabel([building.source])} · ${building.source.status}`,
           });
         else if (building?.kind === "overflow")
           setHoverInfo({
             ...point,
-            filename: `${building.count} more files`,
-            detail: "Click to inspect the complete assigned file list.",
+            filename: `${building.count} grouped files`,
+            detail: `${sourceSizeLabel(building.sources)} · Click to inspect the assigned file list.`,
+          });
+        else if (hit)
+          setHoverInfo({
+            ...point,
+            filename: hit.chip.name,
+            detail: `${hit.chip.sources?.length ?? 0} assigned files · ${sourceSizeLabel(hit.chip.sources ?? [])}`,
           });
         else setHoverInfo(null);
         return;
@@ -333,8 +601,25 @@ export function WorldView({
       );
     }
 
-    /** Commits a snapped non-overlapping chip position only on release; cancellation discards its preview. */
+    /** Opens a staged definition for any other-entity port on release, or commits a chip drag; cancellation discards previews. */
     function stopDrag(event?: PointerEvent): void {
+      if (connectionDrag) {
+        if (event && event.pointerId !== connectionDrag.pointerId) return;
+        if (event?.type === "pointerup") moveDrag(event);
+        const finished = connectionDrag;
+        connectionDrag = null;
+        if (finished.target && event?.type === "pointerup")
+          setConnectorEndpoints({
+            sourceEntityId: finished.origin.entityId,
+            sourcePortId: finished.origin.portId,
+            targetEntityId: finished.target.entityId,
+            targetPortId: finished.target.portId,
+          });
+        if (canvas!.hasPointerCapture(finished.pointerId))
+          canvas!.releasePointerCapture(finished.pointerId);
+        schedulePaint();
+        return;
+      }
       if (!drag || (event && event.pointerId !== drag.pointerId)) return;
       if (event?.type === "pointerup") moveDrag(event);
       const finished = drag;
@@ -412,7 +697,7 @@ export function WorldView({
       updateCamera(DEFAULT_CAMERA);
     }
 
-    /** Adds one confirmed chip near the current viewport center, snapped around occupied cells. */
+    /** Creates a confirmed chip with its previewed stable key and a free snapped position near the camera center. */
     function createChip(draft: ChipDraft): void {
       stopDrag();
       const target = screenToWorld(
@@ -422,7 +707,7 @@ export function WorldView({
       );
       const chip: WorldViewChip = {
         ...draft,
-        id: crypto.randomUUID(),
+        id: draft.id ?? crypto.randomUUID(),
         position: findAvailableChipPosition(target, getSessionChips()),
       };
       addSessionChip(chip);
@@ -503,6 +788,7 @@ export function WorldView({
     }
 
     controlsRef.current = {
+      repaint: schedulePaint,
       zoom: zoomBy,
       reset: resetCamera,
       create: createChip,
@@ -511,6 +797,8 @@ export function WorldView({
       remove: removeChip,
       update: updateChip,
       inspect: inspectBuilding,
+      selectConnector,
+      locate: locateChip,
     };
     const unsubscribe = subscribeChips(refreshScene);
     const observer = new ResizeObserver(resize);
@@ -525,6 +813,7 @@ export function WorldView({
     canvas.addEventListener("keydown", keyControl);
     window.addEventListener("blur", blurCanvas);
     window.addEventListener("resize", resize);
+    document.fonts.addEventListener("loadingdone", schedulePaint);
     resize();
     refreshScene();
 
@@ -546,9 +835,64 @@ export function WorldView({
       canvas.removeEventListener("keydown", keyControl);
       window.removeEventListener("blur", blurCanvas);
       window.removeEventListener("resize", resize);
+      document.fonts.removeEventListener("loadingdone", schedulePaint);
     };
   }, []);
 
+  /** Centers and selects an existing search result while retaining the current zoom. */
+  function locateSearchResult(id: string): void {
+    controlsRef.current?.locate(id);
+  }
+  /** Discards a staged relationship definition without changing the collection. */
+  function closeConnectorDialog(): void {
+    setConnectorEndpoints(null);
+    setEditingConnector(null);
+  }
+  /** Opens the shared definition dialog with the selected connection's current semantic fields. */
+  function editSelectedConnector(): void {
+    if (!selectedConnector || controlsDisabled) return;
+    setEditingConnector(selectedConnector);
+    setConnectorEndpoints(selectedConnector);
+  }
+  /** Creates a confirmed relationship or awaits an atomic semantic edit before updating its selection. Errors propagate to the dialog. */
+  async function saveConnector(connector: WorldConnector): Promise<void> {
+    if (editingConnector)
+      await updateSessionConnector(editingConnector, connector);
+    else addSessionConnector(connector);
+    controlsRef.current?.selectConnector(connector.id);
+  }
+  /** Exposes the exact canvas relationship identity through the keyboard-accessible collection. */
+  function selectAccessibleConnector(
+    event: ReactMouseEvent<HTMLButtonElement>,
+  ): void {
+    controlsRef.current?.selectConnector(
+      event.currentTarget.dataset.connectorId ?? null,
+    );
+  }
+  /** Confirms removal of a single relationship while preserving all neighboring/shared-port relationships. */
+  async function deleteSelectedConnector(): Promise<void> {
+    if (!selectedConnector || deletionPending.current) return;
+    deletionPending.current = true;
+    try {
+      if (
+        await confirm(
+          `Delete relationship “${selectedConnector.name}”?`,
+          "Delete Relationship",
+        )
+      ) {
+        removeSessionConnector(selectedConnector.id);
+        controlsRef.current?.selectConnector(null);
+      }
+    } catch (error) {
+      setOperationError(
+        error instanceof Error
+          ? error.message
+          : "Could not delete this relationship.",
+      );
+    } finally {
+      deletionPending.current = false;
+    }
+  }
   /** Increases zoom around the viewport center. */
   function zoomIn(): void {
     controlsRef.current?.zoom(1.2);
@@ -590,6 +934,25 @@ export function WorldView({
   /** Opens the full list, including sources represented by an overflow marker. */
   function inspectFiles(): void {
     if (selectedChip) controlsRef.current?.inspect(selectedChip.id, null);
+  }
+  /** Opens only the explicitly selected entity's stable-ID Knowledge Card. */
+  function openKnowledgeCard(): void {
+    if (!selectedChip) return;
+    setInspectorOpen(false);
+    setHoverInfo(null);
+    setCardId(selectedChip.id);
+  }
+  /** Closes the floating card and returns keyboard focus to the world canvas. */
+  function backToWorldView(): void {
+    setCardId(null);
+    requestAnimationFrame(() =>
+      canvasRef.current?.focus({ preventScroll: true }),
+    );
+  }
+  /** Clears both Canvas and React selection, including any source inspector. */
+  function deselectEntity(): void {
+    controlsRef.current?.select(null);
+    canvasRef.current?.focus({ preventScroll: true });
   }
   /** Selects a source from the inspector while preserving the active entity. */
   function inspectSource(id: string): void {
@@ -669,230 +1032,361 @@ export function WorldView({
 
   return (
     <section className="worldview" aria-labelledby="worldview-title">
-      <canvas
-        ref={canvasRef}
-        className="worldview-canvas"
-        tabIndex={0}
-        aria-label="Isometric world grid. Click a chip to select; drag it to move. Drag empty ground to pan; scroll to zoom. Arrow keys move the selected chip or pan; plus and minus zoom; zero resets; Escape deselects."
-      />
-      <h1 id="worldview-title" className="worldview-label">
-        WorldView
-      </h1>
-      <div
-        className="worldview-chip-actions"
-        role="group"
-        aria-label="Chip actions"
-      >
-        {selectedChip && (
-          <>
-            <button
-              type="button"
-              className="worldview-edit-chip"
-              onClick={assignFiles}
-              disabled={controlsDisabled}
-              aria-haspopup="dialog"
-            >
-              Assign Files
-            </button>
-            <button
-              type="button"
-              className="worldview-edit-chip"
-              onClick={inspectFiles}
-              disabled={controlsDisabled}
-            >
-              Files ({selectedChip.sources?.length ?? 0})
-            </button>
-          </>
-        )}
-        {selectedChip && (
-          <button
-            type="button"
-            className="worldview-edit-chip"
-            onClick={editSelectedChip}
-            disabled={controlsDisabled}
-            aria-haspopup="dialog"
-          >
-            Edit Chip
-          </button>
-        )}
-        {selectedChip && (
-          <button
-            type="button"
-            className="worldview-delete-chip"
-            onClick={deleteSelectedChip}
-            disabled={controlsDisabled}
-            aria-haspopup="dialog"
-            title={`Delete ${selectedChip.name}`}
-          >
-            Delete Chip
-          </button>
-        )}
-        <button
-          type="button"
-          className="worldview-add-chip"
-          onClick={openChipDialog}
-          disabled={controlsDisabled}
-          aria-haspopup="dialog"
+      <div className="worldview-scene">
+        <canvas
+          ref={canvasRef}
+          className="worldview-canvas"
+          tabIndex={0}
+          aria-label="Isometric world grid. Drag any chip port to any port on another chip to create a relationship. Click a connector to select, repeat to cycle overlapping connectors. Click a chip to select; drag it to move. Drag empty ground to pan; scroll to zoom. Arrow keys move the selected chip or pan; plus and minus zoom; zero resets; Escape deselects."
+        />
+        <div
+          ref={connectorLabelsRef}
+          className="worldview-connector-labels"
+          role="group"
+          aria-label="Connection labels"
         >
-          + Add Chip
-        </button>
-      </div>
-      <ul className="worldview-sr-only" aria-label="WorldView chips">
-        {chips.map(
-          /** Mirrors canvas entities for keyboard access and full metadata without visual panels. */ function renderChipAccess(
-            chip,
-          ) {
-            return (
-              <li key={chip.id}>
+          {connectors.map(
+            /** Keeps every relationship's full name and description available on its own selectable floating label. */
+            (connector) => (
+              <button
+                key={connector.id}
+                type="button"
+                className="worldview-connector-label"
+                data-connector-id={connector.id}
+                aria-pressed={connectorId === connector.id}
+                onClick={selectAccessibleConnector}
+                disabled={controlsDisabled}
+              >
+                <strong>{connector.name}</strong>
+                <span>
+                  {connector.definition || "No description provided."}
+                </span>
+              </button>
+            ),
+          )}
+        </div>
+        <div
+          ref={chipLabelsRef}
+          className="worldview-entity-names"
+          role="group"
+          aria-label="Entity names"
+        >
+          {chips.map(
+            /** Renders a complete floating title using luminance-selected black/white contrast. */
+            (chip) => {
+              const darkText =
+                chipTextColor(chip.color ?? DEFAULT_CHIP_COLOR) === "#101418";
+              return (
                 <button
+                  key={chip.id}
                   type="button"
+                  className="worldview-entity-name"
                   data-chip-id={chip.id}
-                  data-world-x={chip.position.x}
-                  data-world-y={chip.position.y}
-                  data-icon={chip.icon}
-                  data-icon-image={chip.iconImage ? "true" : "false"}
-                  data-color={chip.color}
-                  data-category={chip.category}
-                  data-tags={JSON.stringify(chip.tags)}
                   aria-pressed={selectedId === chip.id}
                   onClick={selectAccessibleChip}
                   onKeyDown={moveAccessibleChip}
+                  disabled={controlsDisabled}
+                  style={{
+                    color: darkText ? "#000000" : "#ffffff",
+                    backgroundColor: darkText ? "#ffffff" : "#000000",
+                  }}
                 >
                   {chip.name}
-                  {chip.category ? `, ${chip.category}` : ""}
-                  {chip.tags.length ? `, tags: ${chip.tags.join(", ")}` : ""}
                 </button>
-              </li>
-            );
-          },
-        )}
-      </ul>
-      <ul className="worldview-sr-only" aria-label="File buildings">
-        {chips.flatMap(
-          /** Mirrors visible buildings and overflow markers for inspectable geometry and keyboard selection. */ function accessibleBuildings(
-            chip,
-          ) {
-            return layoutFileBuildings(chip.sources ?? []).map(
-              /** Renders the exact same source/height/layout used by Canvas. */ function buildingButton(
-                building,
-              ) {
-                return (
-                  <li
-                    key={`${chip.id}:${building.kind === "file" ? building.source.sourceId : "overflow"}`}
-                  >
-                    <button
-                      type="button"
-                      data-chip-id={chip.id}
-                      data-source-id={
-                        building.kind === "file" ? building.source.sourceId : ""
-                      }
-                      data-building-height={building.height ?? ""}
-                      data-building-x={building.position.x}
-                      data-building-y={building.position.y}
-                      data-building-overflow={
-                        building.kind === "overflow" ? building.count : ""
-                      }
-                      onClick={selectAccessibleBuilding}
-                    >
-                      {building.kind === "file"
-                        ? `${building.source.filename}, ${building.source.sizeBytes === null ? "size unavailable" : `${building.source.sizeBytes} bytes`}`
-                        : `${building.count} more files`}
-                    </button>
-                  </li>
-                );
-              },
-            );
-          },
-        )}
-      </ul>
-      <div
-        className="worldview-controls"
-        role="group"
-        aria-label="WorldView camera"
-      >
-        <button
-          type="button"
-          onClick={zoomOut}
-          disabled={canvasError || zoom <= MIN_ZOOM}
-          aria-label="Zoom out"
-        >
-          −
-        </button>
-        <output aria-label="Zoom percentage">{Math.round(zoom * 100)}%</output>
-        <button
-          type="button"
-          onClick={zoomIn}
-          disabled={canvasError || zoom >= MAX_ZOOM}
-          aria-label="Zoom in"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          onClick={resetView}
-          disabled={canvasError}
-          className="worldview-reset"
-          title="Reset camera to origin at 100%"
-        >
-          Reset view
-        </button>
-      </div>
-      {canvasError && (
-        <p className="worldview-error" role="alert">
-          WorldView requires Canvas 2D support. Restart the app to try again.
-        </p>
-      )}
-      {addingChip && (
-        <ChipDialog
-          key={editingChip?.id ?? "new"}
-          chip={editingChip ?? undefined}
-          onSave={saveChip}
-          onClose={closeChipDialog}
-        />
-      )}
-      {assigningChip && vaultPath && (
-        <AssignFilesDialog
-          chip={assigningChip}
-          vaultPath={vaultPath}
-          onClose={closeAssignment}
-        />
-      )}
-      {inspectorOpen && selectedChip && vaultPath && (
-        <FileInspector
-          key={selectedChip.id}
-          chip={selectedChip}
-          vaultPath={vaultPath}
-          sourceId={selectedFile?.sourceId ?? null}
-          onSelect={inspectSource}
-          onClose={closeInspector}
-        />
-      )}
-      {hoverInfo && (
-        <div
-          className="worldview-building-tooltip"
-          role="tooltip"
-          style={{
-            left: Math.max(
-              8,
-              Math.min(
-                hoverInfo.x + 14,
-                (canvasRef.current?.clientWidth ?? 300) - 250,
-              ),
-            ),
-            top: Math.max(
-              8,
-              Math.min(
-                hoverInfo.y + 12,
-                (canvasRef.current?.clientHeight ?? 200) - 80,
-              ),
-            ),
-          }}
-        >
-          <strong>{hoverInfo.filename}</strong>
-          <span>{hoverInfo.detail}</span>
+              );
+            },
+          )}
         </div>
+        <h1 id="worldview-title" className="worldview-label">
+          WorldView
+        </h1>
+        <WorldSearch
+          vaultPath={vaultPath}
+          disabled={controlsDisabled}
+          onSelect={locateSearchResult}
+        />
+        <div className="worldview-chip-actions">
+          <button
+            type="button"
+            className="worldview-add-chip"
+            onClick={openChipDialog}
+            disabled={controlsDisabled}
+            aria-haspopup="dialog"
+          >
+            + Add Chip
+          </button>
+        </div>
+        <div className="worldview-entity-context">
+          {selectedConnector && (
+            <section
+              className="worldview-connector-info"
+              aria-label="Selected relationship"
+            >
+              <strong>{selectedConnector.name}</strong>
+              <p>
+                {chips.find(
+                  (chip) => chip.id === selectedConnector.sourceEntityId,
+                )?.name ?? "Missing entity"}{" "}
+                · {selectedConnector.sourcePortId}{" "}
+                {selectedConnector.direction === "directed" ? "→" : "↔"}{" "}
+                {chips.find(
+                  (chip) => chip.id === selectedConnector.targetEntityId,
+                )?.name ?? "Missing entity"}{" "}
+                · {selectedConnector.targetPortId}
+              </p>
+              <p>{selectedConnector.definition || "No definition provided."}</p>
+              <span>
+                {selectedConnector.direction === "directed"
+                  ? "Directed"
+                  : "Undirected"}
+              </span>
+              <button
+                type="button"
+                disabled={controlsDisabled}
+                onClick={editSelectedConnector}
+              >
+                Edit Connection
+              </button>
+              <button
+                type="button"
+                disabled={controlsDisabled}
+                onClick={deleteSelectedConnector}
+              >
+                Delete Relationship
+              </button>
+            </section>
+          )}
+          {selectedChip && (
+            <EntityActions
+              key={`actions:${selectedChip.id}`}
+              chip={selectedChip}
+              disabled={controlsDisabled}
+              onOpenCard={openKnowledgeCard}
+              onAssign={assignFiles}
+              onEdit={editSelectedChip}
+              onSources={inspectFiles}
+              onDelete={deleteSelectedChip}
+              onDeselect={deselectEntity}
+            />
+          )}
+          {inspectorOpen && selectedChip && vaultPath && (
+            <FileInspector
+              key={`sources:${selectedChip.id}`}
+              chip={selectedChip}
+              vaultPath={vaultPath}
+              sourceId={selectedFile?.sourceId ?? null}
+              onSelect={inspectSource}
+              onClose={closeInspector}
+            />
+          )}
+        </div>
+        <ul className="worldview-sr-only" aria-label="WorldView relationships">
+          {connectors.map((connector) => (
+            <li key={connector.id}>
+              <button
+                type="button"
+                data-connector-id={connector.id}
+                data-source-entity={connector.sourceEntityId}
+                data-source-port={connector.sourcePortId}
+                data-target-entity={connector.targetEntityId}
+                data-target-port={connector.targetPortId}
+                data-direction={connector.direction}
+                aria-pressed={connectorId === connector.id}
+                onClick={selectAccessibleConnector}
+              >
+                {connector.name}, {connector.definition}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <ul className="worldview-sr-only" aria-label="WorldView chips">
+          {chips.map(
+            /** Mirrors canvas entities for keyboard access and full metadata without visual panels. */ function renderChipAccess(
+              chip,
+            ) {
+              return (
+                <li key={chip.id}>
+                  <button
+                    type="button"
+                    data-chip-id={chip.id}
+                    data-world-x={chip.position.x}
+                    data-world-y={chip.position.y}
+                    data-icon={chip.icon}
+                    data-icon-image={chip.iconImage ? "true" : "false"}
+                    data-color={chip.color}
+                    data-category={chip.category}
+                    data-tags={JSON.stringify(chip.tags)}
+                    aria-pressed={selectedId === chip.id}
+                    onClick={selectAccessibleChip}
+                    onKeyDown={moveAccessibleChip}
+                  >
+                    {chip.name}
+                    {chip.category ? `, ${chip.category}` : ""}
+                    {chip.tags.length ? `, tags: ${chip.tags.join(", ")}` : ""}
+                  </button>
+                </li>
+              );
+            },
+          )}
+        </ul>
+        <ul className="worldview-sr-only" aria-label="File buildings">
+          {chips.flatMap(
+            /** Mirrors visible buildings and overflow markers for inspectable geometry and keyboard selection. */ function accessibleBuildings(
+              chip,
+            ) {
+              return layoutFileBuildings(chip.sources ?? []).map(
+                /** Renders the exact same source/height/layout used by Canvas. */ function buildingButton(
+                  building,
+                ) {
+                  return (
+                    <li
+                      key={`${chip.id}:${building.kind === "file" ? building.source.sourceId : "overflow"}`}
+                    >
+                      <button
+                        type="button"
+                        data-chip-id={chip.id}
+                        data-source-id={
+                          building.kind === "file"
+                            ? building.source.sourceId
+                            : ""
+                        }
+                        data-building-height={building.height ?? ""}
+                        data-building-x={building.position.x}
+                        data-building-y={building.position.y}
+                        data-building-overflow={
+                          building.kind === "overflow" ? building.count : ""
+                        }
+                        onClick={selectAccessibleBuilding}
+                      >
+                        {building.kind === "file"
+                          ? `${building.source.filename}, ${building.source.sizeBytes === null ? "size unavailable" : `${building.source.sizeBytes} bytes`}`
+                          : `${building.count} grouped files, ${sourceSizeLabel(building.sources)}`}
+                      </button>
+                    </li>
+                  );
+                },
+              );
+            },
+          )}
+        </ul>
+        <div
+          className="worldview-controls"
+          role="group"
+          aria-label="WorldView camera"
+        >
+          <button
+            type="button"
+            onClick={zoomOut}
+            disabled={canvasError || zoom <= MIN_ZOOM}
+            aria-label="Zoom out"
+          >
+            −
+          </button>
+          <output aria-label="Zoom percentage">
+            {Math.round(zoom * 100)}%
+          </output>
+          <button
+            type="button"
+            onClick={zoomIn}
+            disabled={canvasError || zoom >= MAX_ZOOM}
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            onClick={resetView}
+            disabled={canvasError}
+            className="worldview-reset"
+            title="Reset camera to origin at 100%"
+          >
+            Reset view
+          </button>
+        </div>
+        {canvasError && (
+          <p className="worldview-error" role="alert">
+            WorldView requires Canvas 2D support. Restart the app to try again.
+          </p>
+        )}
+        {addingChip && (
+          <ChipDialog
+            key={editingChip?.id ?? "new"}
+            chip={editingChip ?? undefined}
+            onSave={saveChip}
+            onClose={closeChipDialog}
+          />
+        )}
+        {connectorEndpoints && (
+          <ConnectorDialog
+            key={editingConnector?.id ?? "new-connection"}
+            endpoints={connectorEndpoints}
+            connector={editingConnector ?? undefined}
+            sourceName={
+              chips.find(
+                (chip) => chip.id === connectorEndpoints.sourceEntityId,
+              )?.name ?? "Missing entity"
+            }
+            targetName={
+              chips.find(
+                (chip) => chip.id === connectorEndpoints.targetEntityId,
+              )?.name ?? "Missing entity"
+            }
+            onSave={saveConnector}
+            onClose={closeConnectorDialog}
+          />
+        )}
+        {assigningChip && vaultPath && (
+          <AssignFilesDialog
+            chip={assigningChip}
+            vaultPath={vaultPath}
+            onClose={closeAssignment}
+          />
+        )}
+        {hoverInfo && (
+          <div
+            className="worldview-building-tooltip"
+            role="tooltip"
+            style={{
+              left: Math.max(
+                8,
+                Math.min(
+                  hoverInfo.x + 14,
+                  (canvasRef.current?.clientWidth ?? 300) - 250,
+                ),
+              ),
+              top: Math.max(
+                8,
+                Math.min(
+                  hoverInfo.y + 12,
+                  (canvasRef.current?.clientHeight ?? 200) - 80,
+                ),
+              ),
+            }}
+          >
+            <strong>{hoverInfo.filename}</strong>
+            <span>{hoverInfo.detail}</span>
+          </div>
+        )}
+        {iconError && (
+          <p className="worldview-icon-error" role="alert">
+            {iconError}
+          </p>
+        )}
+        {confirmation}
+      </div>
+      {cardChip && (
+        <KnowledgeCard
+          key={cardChip.id}
+          chip={cardChip}
+          vaultPath={vaultPath}
+          disabled={controlsDisabled}
+          onBack={backToWorldView}
+        />
       )}
-      <div className="worldview-save-status" aria-live="polite">
+      <div
+        className={`worldview-save-status${cardChip ? " knowledge-card-save-status" : ""}`}
+        aria-live="polite"
+      >
         {persistence.loading
           ? "Loading WorldView…"
           : persistence.pending
@@ -925,12 +1419,6 @@ export function WorldView({
           </details>
         )}
       </div>
-      {iconError && (
-        <p className="worldview-icon-error" role="alert">
-          {iconError}
-        </p>
-      )}
-      {confirmation}
     </section>
   );
 }

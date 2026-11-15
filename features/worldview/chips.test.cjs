@@ -5,7 +5,47 @@ const {
   chipPositionsOverlap,
   snapChipPosition,
   parseChipTags,
+  suggestChipTags,
 } = require("./chips.ts");
+
+/** Covers generated tags without losing manual spelling, multilingual words, field limits or deterministic ordering. */
+test("local entity tag suggestions preserve manual tags and use name/category/filename metadata", () => {
+  assert.deepEqual(
+    suggestChipTags(
+      "TSMC Research",
+      "Semiconductors",
+      ["AnnualReport.pdf", "Annual Forecast.csv"],
+      ["TSMC", "Manual"],
+    ),
+    [
+      "TSMC",
+      "Manual",
+      "research",
+      "semiconductors",
+      "annual",
+      "report",
+      "forecast",
+    ],
+  );
+  assert.deepEqual(suggestChipTags("The 2026", "", [], []), []);
+  assert.deepEqual(suggestChipTags("Énergie 日本語", "", [], []), [
+    "énergie",
+    "日本語",
+  ]);
+  const full = ["x".repeat(499)];
+  assert.deepEqual(suggestChipTags("Research", "", [], full), full);
+  const suggestions = suggestChipTags(
+    "",
+    "",
+    Array.from({ length: 100 }, (_, index) => `topic${index}.pdf`),
+    [],
+  );
+  assert.equal(suggestions.length, 12);
+  assert.ok(suggestions.join(", ").length <= 500);
+  assert.deepEqual(suggestChipTags("Research", "", [], ["Research"]), [
+    "Research",
+  ]);
+});
 const {
   getSessionChips,
   subscribeChips,

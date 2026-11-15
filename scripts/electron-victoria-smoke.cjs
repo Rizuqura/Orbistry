@@ -57,7 +57,7 @@ async function main() {
     );
     assert.equal(
       await page.locator(".version").innerText(),
-      `v${require("../package.json").version} Victoria (Beta)`,
+      `Victoria ${require("../package.json").version} (Beta)`,
     );
     await page
       .getByRole("button", { name: "Minimize Universe", exact: true })

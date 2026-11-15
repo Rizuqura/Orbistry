@@ -10,6 +10,25 @@ const {
 const { statVaultSource } = require("./vault-service.cjs");
 
 const idSchema = z.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
+const knowledgeMenusSchema = z
+  .array(
+    z.object({
+      id: idSchema,
+      title: z.string().trim().min(1).max(80),
+    }),
+  )
+  .min(1)
+  .max(100)
+  .refine(
+    /** Requires one protected Overview and unique menu IDs within each entity. */
+    function validMenus(menus) {
+      return (
+        menus.filter((menu) => menu.id === "overview").length === 1 &&
+        new Set(menus.map((menu) => menu.id)).size === menus.length
+      );
+    },
+    "Knowledge menus require a protected Overview and unique IDs.",
+  );
 const sourceSchema = z
   .object({
     source_id: z.string().min(1).max(32768),
@@ -37,6 +56,7 @@ const chipSchema = z.object({
   color: z.string().regex(/^#[a-f0-9]{6}$/i),
   category: z.string().max(80).optional(),
   tags: z.array(z.string().max(500)).max(100),
+  knowledgeMenus: knowledgeMenusSchema.optional(),
   position: z.object({
     x: z.number().finite().min(-1e9).max(1e9),
     y: z.number().finite().min(-1e9).max(1e9),
@@ -98,6 +118,9 @@ function parseEntityIndex(text, expectedId) {
     category: metadata.category ?? undefined,
     tags: metadata.tags ?? [],
     position: metadata.position,
+    knowledgeMenus: metadata.knowledge_menus ?? [
+      { id: "overview", title: "Overview" },
+    ],
   });
   return {
     metadata,
@@ -186,8 +209,8 @@ async function resolveRecord(rootPath, record) {
   };
 }
 
-/** Loads all entity records independently so one damaged index cannot blank or overwrite the rest of the world. */
-async function loadWorldView(rootPath) {
+/** Loads persisted entity records independently. metadataOnly omits source stat resolution for tag search; no source contents are read. */
+async function loadWorldView(rootPath, { metadataOnly = false } = {}) {
   const directory = await indexDirectory(rootPath);
   let entries;
   try {
@@ -211,11 +234,9 @@ async function loadWorldView(rootPath) {
     try {
       if (!entry.isFile() || entry.isSymbolicLink())
         throw new Error("Linked or non-file entity indexes are not supported.");
+      const record = await readRecord(rootPath, entry.name.slice(0, -3));
       chips.push(
-        await resolveRecord(
-          rootPath,
-          await readRecord(rootPath, entry.name.slice(0, -3)),
-        ),
+        metadataOnly ? record.chip : await resolveRecord(rootPath, record),
       );
     } catch (error) {
       issues.push({ index: entry.name, message: error.message });
@@ -242,7 +263,7 @@ async function mutate(rootPath, operation) {
   return queues.get(root)(operation);
 }
 
-/** Saves one chip while preserving server-owned source associations, unknown YAML, and body text. */
+/** Saves chip appearance and menu configuration while preserving source associations, unknown YAML, and body text. */
 async function saveWorldViewChip(rootPath, input) {
   const chip = validateChip(input);
   return mutate(rootPath, async function saveChipRecord() {
@@ -260,9 +281,17 @@ async function saveWorldViewChip(rootPath, input) {
       color: chip.color,
       category: chip.category ?? null,
       tags: chip.tags,
+      knowledge_menus: chip.knowledgeMenus ??
+        record.metadata.knowledge_menus ?? [
+          { id: "overview", title: "Overview" },
+        ],
       position: { ...record.metadata.position, ...chip.position },
     });
-    record.chip = { ...chip, createdAt: record.metadata.created_at };
+    record.chip = {
+      ...chip,
+      knowledgeMenus: record.metadata.knowledge_menus,
+      createdAt: record.metadata.created_at,
+    };
     await writeTextAtomic(
       path.join(await indexDirectory(rootPath), `${chip.id}.md`),
       serializeEntityIndex(record),
@@ -374,6 +403,8 @@ async function deleteWorldViewChip(rootPath, id) {
 }
 
 module.exports = {
+  withWorldViewMutation: mutate,
+  readWorldViewChip,
   loadWorldView,
   saveWorldViewChip,
   assignWorldViewFiles,
@@ -382,3 +413,8 @@ module.exports = {
   parseEntityIndex,
   serializeEntityIndex,
 };
+
+/** Reads one existing entity and current assignment metadata for guarded Knowledge Card operations. */
+async function readWorldViewChip(rootPath, id) {
+  return resolveRecord(rootPath, await readRecord(rootPath, id));
+}

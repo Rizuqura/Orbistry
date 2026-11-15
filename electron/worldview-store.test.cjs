@@ -47,6 +47,71 @@ function indexPath(root, id) {
   return path.join(root, ".wonnyy", "worldview", "entities", `${id}.md`);
 }
 
+/** Verifies legacy defaults, stable entity-local menus, validation, and preservation through existing saves and assignments. */
+test("Knowledge Card menus persist separately from source associations and Markdown body", async () => {
+  await withUniverse(async (root) => {
+    await fs.writeFile(path.join(root, "report.csv"), "a,b\n1,2\n");
+    const first = await saveWorldViewChip(root, chip("tsmc"));
+    assert.deepEqual(first.knowledgeMenus, [
+      { id: "overview", title: "Overview" },
+    ]);
+    const legacy = (await fs.readFile(indexPath(root, "tsmc"), "utf8")).replace(
+      /knowledge_menus:\n(?:  .*\n)+/,
+      "",
+    );
+    await fs.writeFile(indexPath(root, "tsmc"), legacy);
+    assert.deepEqual(
+      (await loadWorldView(root)).chips[0].knowledgeMenus,
+      first.knowledgeMenus,
+    );
+    const menus = [
+      { id: "research", title: "Research" },
+      { id: "overview", title: "Overview" },
+    ];
+    await saveWorldViewChip(root, { ...first, knowledgeMenus: menus });
+    await saveWorldViewChip(root, chip("nvidia"));
+    await assignWorldViewFiles(root, "tsmc", ["report.csv"]);
+    await saveWorldViewChip(root, {
+      ...chip("tsmc"),
+      position: { x: 3, y: 2 },
+    });
+    const restored = await loadWorldView(root);
+    assert.deepEqual(
+      restored.chips.find((item) => item.id === "tsmc").knowledgeMenus,
+      menus,
+    );
+    assert.deepEqual(
+      restored.chips.find((item) => item.id === "nvidia").knowledgeMenus,
+      first.knowledgeMenus,
+    );
+    await unassignWorldViewFile(root, "tsmc", "report.csv");
+    const after = parseEntityIndex(
+      await fs.readFile(indexPath(root, "tsmc"), "utf8"),
+      "tsmc",
+    );
+    assert.deepEqual(after.chip.knowledgeMenus, menus);
+    assert.equal(after.body, parseEntityIndex(legacy, "tsmc").body);
+    await assert.rejects(
+      saveWorldViewChip(root, { ...first, knowledgeMenus: [] }),
+      /Invalid/,
+    );
+    await assert.rejects(
+      saveWorldViewChip(root, {
+        ...first,
+        knowledgeMenus: [{ id: "x", title: "Only" }],
+      }),
+      /Invalid/,
+    );
+    await assert.rejects(
+      saveWorldViewChip(root, {
+        ...first,
+        knowledgeMenus: [menus[1], menus[1]],
+      }),
+      /Invalid/,
+    );
+  });
+});
+
 /** Checks that a concurrent human edit is retained instead of overwritten and failed writes leave no temp files. */
 test("atomic metadata writes detect external edits without replacing the user's document", async () => {
   await withUniverse(async (root) => {

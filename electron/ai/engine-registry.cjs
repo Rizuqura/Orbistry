@@ -6,6 +6,8 @@ const { readJson, writeJson } = require("./json-store.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const adapter = require("./chronoz-adapter.cjs");
 const ENGINE_DEFINITIONS = Object.freeze({
+  "daily-price": require("../engines/daily-price/index.cjs").definition,
+  "wonton-excel": require("../engines/excel/index.cjs").definition,
   chronoz: {
     id: "chronoz",
     name: "CHronoZ",
@@ -388,4 +390,12 @@ class EngineRegistry {
     return { opened: true };
   }
 }
-module.exports = { EngineRegistry, ENGINE_DEFINITIONS };
+/** Invokes an allowlisted native computation or price-data operation using trusted application modules. */
+async function executeNativeEngine(engineId, operation, input, options) {
+  if (engineId === "daily-price" && operation === "price")
+    return require("../engines/daily-price/index.cjs").price(input, options);
+  if (engineId !== "wonton-excel" || operation !== "excel")
+    throw new Error("Unsupported native Engine operation.");
+  return require("../engines/excel/index.cjs").excel(input, options);
+}
+module.exports = { EngineRegistry, ENGINE_DEFINITIONS, executeNativeEngine };

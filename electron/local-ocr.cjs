@@ -1,7 +1,10 @@
 const { execFile } = require("node:child_process");
 const path = require("node:path");
 const jobs = new Map();
-function recognizeFile(file) {
+/** Runs the existing offline Windows OCR process for a literal image path. Optional abort signal cancels its child process; failures reject with readable diagnostics. */
+function recognizeFile(file, { signal } = {}) {
+  if (signal?.aborted)
+    return Promise.reject(new Error("Local OCR was cancelled."));
   if (process.platform !== "win32")
     return Promise.reject(
       new Error("Local image/scanned PDF text reading requires Windows OCR."),
@@ -36,18 +39,21 @@ function recognizeFile(file) {
         timeout: 120000,
         maxBuffer: 8 * 1024 * 1024,
         encoding: "utf8",
+        signal,
       },
       (error, stdout, stderr) => {
         if (error)
           return reject(
             new Error(
-              error.killed
-                ? "Local OCR timed out. Split the document into smaller files."
-                : /No Windows OCR/.test(stderr)
-                  ? "No Windows OCR language is installed. Install an OCR language in Windows Settings."
-                  : /100 megapixel/.test(stderr)
-                    ? "Image exceeds the 100 megapixel decoding limit. Resize the image and review it again."
-                    : "Local OCR could not read this file. Check that it is valid and that Windows OCR is installed.",
+              error.name === "AbortError"
+                ? "Local OCR was cancelled."
+                : error.killed
+                  ? "Local OCR timed out. Split the document into smaller files."
+                  : /No Windows OCR/.test(stderr)
+                    ? "No Windows OCR language is installed. Install an OCR language in Windows Settings."
+                    : /100 megapixel/.test(stderr)
+                      ? "Image exceeds the 100 megapixel decoding limit. Resize the image and review it again."
+                      : "Local OCR could not read this file. Check that it is valid and that Windows OCR is installed.",
             ),
           );
         try {

@@ -1,5 +1,6 @@
 import { version } from "../package.json";
 
+/** Displays application version, primary navigation and settings controls. */
 export function TopBar({
   view,
   onChangeView,
@@ -21,7 +22,7 @@ export function TopBar({
           width={96}
           height={32}
         />
-        <span className="version">{`v${version} Victoria (Beta)`}</span>
+        <span className="version">{`Victoria ${version} (Beta)`}</span>
       </div>
       <nav className="top-nav" aria-label="Primary">
         <button

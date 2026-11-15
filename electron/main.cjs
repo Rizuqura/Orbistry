@@ -6,6 +6,7 @@ const {
   ipcMain,
   safeStorage,
   nativeImage,
+  clipboard,
 } = require("electron");
 const path = require("path");
 const { installChatWindowHandler } = require("./chat-window.cjs");
@@ -180,6 +181,7 @@ app.whenReady().then(async () => {
       return activeVaultPath;
     },
     shell,
+    clipboard,
   );
   trustedIpc.handle("vault:getSnapshot", getVaultSnapshot);
   trustedIpc.handle("vault:rescan", () => changeVaultKnowledge(scanVault));

@@ -7,6 +7,9 @@ const {
   MAX_BUILDING_HEIGHT,
   MODERATE_BUILDING_HEIGHT,
   MAX_VISIBLE_BUILDINGS,
+  BUILDING_EXTENT,
+  sourceByteSummary,
+  sourceSizeLabel,
 } = require("./buildings.ts");
 
 /** Builds metadata-only fixtures with known bytes and real-reference-shaped IDs. */
@@ -68,7 +71,7 @@ test("file heights use exact per-entity logarithmic byte min–max normalization
 
 /** Verifies fixed footprints, bounded capacity, stable ordering, and access to every overflowed source. */
 test("building arrangement is stable, inside the platform, and never overlaps footprints", () => {
-  for (const count of [0, 1, 2, 4, 5, 8, 9, 10, 50]) {
+  for (const count of [0, 1, 2, 4, 5, 8, 9, 10, 36, 37, 50, 140, 5000]) {
     const sources = Array.from({ length: count }, (_, index) =>
       source(`file-${String(index).padStart(3, "0")}`, index * 100),
     );
@@ -105,8 +108,14 @@ test("square clusters descend in size from the top corner toward the bottom", ()
   );
   const layout = layoutFileBuildings(sources);
   const bySize = [...layout].sort((a, b) => b.height - a.height);
-  assert.deepEqual(bySize[0].position, { x: -0.3, y: -0.3 });
-  assert.deepEqual(bySize.at(-1).position, { x: 0.3, y: 0.3 });
+  assert.deepEqual(bySize[0].position, {
+    x: -BUILDING_EXTENT,
+    y: -BUILDING_EXTENT,
+  });
+  assert.deepEqual(bySize.at(-1).position, {
+    x: BUILDING_EXTENT,
+    y: BUILDING_EXTENT,
+  });
   for (let index = 1; index < bySize.length; index += 1) {
     const previous = bySize[index - 1].position;
     const current = bySize[index].position;
@@ -115,13 +124,11 @@ test("square clusters descend in size from the top corner toward the bottom", ()
       "height decreases along the projected top-to-bottom ground direction",
     );
   }
-  assert.deepEqual(
-    [...new Set(layout.map((building) => building.position.x))].sort(),
-    [-0.3, 0, 0.3],
-  );
-  assert.deepEqual(
-    [...new Set(layout.map((building) => building.position.y))].sort(),
-    [-0.3, 0, 0.3],
+  assert.ok(
+    layout.every(
+      (building) => building.position.x !== 0 || building.position.y !== 0,
+    ),
+    "the exact icon center remains free",
   );
   const tied = layoutFileBuildings([
     source("z", 50),
@@ -135,8 +142,39 @@ test("square clusters descend in size from the top corner toward the bottom", ()
   );
   const overflow = layoutFileBuildings([...sources, source("largest", 1e9)]);
   assert.equal(overflow[0].source.sourceId, "largest");
-  assert.equal(
-    overflow.find((building) => building.kind === "overflow").count,
-    2,
+  assert.equal(overflow.length, 10, "small collections stay independent");
+});
+
+/** Verifies dense collections prioritize the largest quarter, group the remainder once, and retain exact totals. */
+test("large-file quartile remains independent and grouped bytes are exact", () => {
+  const sources = Array.from({ length: 40 }, (_, index) =>
+    source(`source-${index}`, (index + 1) * 100),
   );
+  const layout = layoutFileBuildings(sources);
+  const independent = layout.filter((building) => building.kind === "file");
+  assert.equal(independent.length, 10);
+  assert.deepEqual(
+    independent.map((building) => building.source.sizeBytes),
+    [4000, 3900, 3800, 3700, 3600, 3500, 3400, 3300, 3200, 3100],
+  );
+  const group = layout.find((building) => building.kind === "overflow");
+  assert.equal(group.count, 30);
+  assert.equal(sourceByteSummary(group.sources).bytes, BigInt(46500));
+  assert.equal(sourceByteSummary(sources).bytes, BigInt(82000));
+  assert.ok(
+    sourceSizeLabel(group.sources).includes(
+      `${BigInt(46500).toLocaleString()} bytes`,
+    ),
+  );
+  const huge = [
+    source("a", Number.MAX_SAFE_INTEGER),
+    source("b", Number.MAX_SAFE_INTEGER),
+    source("missing", null, "missing"),
+  ];
+  assert.equal(
+    sourceByteSummary(huge).bytes,
+    BigInt(Number.MAX_SAFE_INTEGER) * BigInt(2),
+  );
+  assert.match(sourceSizeLabel(huge), /1 file size unavailable/);
+  assert.equal(sourceSizeLabel([]), "0 bytes");
 });

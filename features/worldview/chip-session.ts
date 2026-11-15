@@ -1,10 +1,101 @@
 import type { Point } from "./coordinates";
+import type { WorldConnector } from "./connectors";
 import type { ChipDraft, WorldViewChip } from "./chips";
 import type { WorldViewBridge, WorldViewState } from "../../types/worldview";
 
 // Render snapshots stay in memory; configured desktop sessions save each entity to its Markdown index.
 const EMPTY_CHIPS: readonly WorldViewChip[] = [];
 let chips = EMPTY_CHIPS;
+const EMPTY_CONNECTORS: readonly WorldConnector[] = [];
+let connectors = EMPTY_CONNECTORS;
+
+/** Returns stable relationship snapshots for the canvas and React, without port occupancy state. */
+export function getSessionConnectors(): readonly WorldConnector[] {
+  return connectors;
+}
+/** Supplies a stable empty relationship snapshot during server rendering. */
+export function getServerConnectors(): readonly WorldConnector[] {
+  return EMPTY_CONNECTORS;
+}
+
+/** Adds a confirmed relationship and queues a recoverable, identity-specific write after preceding entity writes. */
+export function addSessionConnector(connector: WorldConnector): void {
+  const root = persistence.rootPath;
+  if (!root || !persistence.ready || persistence.loading)
+    throw new Error("WorldView is still loading.");
+  if (
+    connectors.some(
+      /** Detects identity collisions without testing port occupancy. */ (
+        item,
+      ) => item.id === connector.id,
+    )
+  )
+    throw new Error("Relationship identity already exists.");
+  const bridge = requireWorldViewBridge();
+  connectors = [...connectors, connector];
+  publish(chips);
+  /** Persists the immutable relationship after earlier entity writes complete. */
+  queueWrite(
+    root,
+    `connector:${connector.id}`,
+    async function saveRelationship() {
+      await bridge.request("connector-create", { vaultPath: root, connector });
+    },
+  );
+}
+
+/** Saves an edited connection after earlier writes finish, publishing only persisted metadata. Stale/deleted connections and storage failures reject for the editor to display. */
+export async function updateSessionConnector(
+  previous: WorldConnector,
+  connector: WorldConnector,
+): Promise<void> {
+  const root = persistence.rootPath;
+  const version = generation;
+  if (!root || !persistence.ready || persistence.loading)
+    throw new Error("WorldView is still loading.");
+  await flushWorldViewWrites();
+  const current = connectors.find((item) => item.id === previous.id);
+  if (
+    persistence.rootPath !== root ||
+    generation !== version ||
+    JSON.stringify(current) !== JSON.stringify(previous)
+  )
+    throw new Error("Connection changed. Reopen its editor before saving.");
+  const saved = await requireWorldViewBridge().request<WorldConnector>(
+    "connector-update",
+    {
+      vaultPath: root,
+      connector,
+      previousConnector: previous,
+    },
+  );
+  if (persistence.rootPath !== root || generation !== version) return;
+  connectors = connectors.map(
+    /** Replaces exactly the saved connection while retaining every other relationship. */
+    (item) => (item.id === saved.id ? saved : item),
+  );
+  publish(chips);
+}
+
+/** Removes one confirmed relationship and queues its recoverable deletion, retaining all other connections. */
+export function removeSessionConnector(id: string): void {
+  const root = persistence.rootPath;
+  if (!root || !persistence.ready)
+    throw new Error("WorldView is still loading.");
+  const bridge = requireWorldViewBridge();
+  connectors = connectors.filter(
+    /** Retains every relationship except the confirmed identity. */ (item) =>
+      item.id !== id,
+  );
+  publish(chips);
+  queueWrite(
+    root,
+    `connector:${id}`,
+    /** Removes one saved relationship without changing either entity. */ async function deleteRelationship() {
+      await bridge.request("connector-delete", { vaultPath: root, id });
+    },
+  );
+}
 const listeners = new Set<() => void>();
 type PersistenceState = Readonly<{
   rootPath: string | null;
@@ -136,6 +227,7 @@ export async function loadWorldViewSession(root: string): Promise<void> {
   if (persistence.rootPath !== root) {
     generation += 1;
     persistence = { ...SERVER_PERSISTENCE, rootPath: root };
+    connectors = EMPTY_CONNECTORS;
     publish(EMPTY_CHIPS);
   }
   const version = generation;
@@ -149,6 +241,7 @@ export async function loadWorldViewSession(root: string): Promise<void> {
         { vaultPath: root },
       );
       if (version !== generation) return;
+      connectors = value.connectors ?? EMPTY_CONNECTORS;
       publish(value.chips);
       setPersistence({
         ready: true,
@@ -237,6 +330,18 @@ export function moveSessionChip(id: string, position: Point): void {
   if (!found) throw new Error("The chip to move no longer exists.");
   publish(next);
   for (const chip of next) if (chip.id === id) persistChip(chip);
+}
+
+/** Replaces one entity's menu configuration and queues its existing recoverable metadata save. Missing IDs throw. */
+export function updateKnowledgeMenus(
+  id: string,
+  knowledgeMenus: NonNullable<WorldViewChip["knowledgeMenus"]>,
+): void {
+  const chip = chips.find((item) => item.id === id);
+  if (!chip) throw new Error("The entity no longer exists.");
+  const updated = { ...chip, knowledgeMenus };
+  publish(chips.map((item) => (item.id === id ? updated : item)));
+  persistChip(updated);
 }
 
 /** Replaces confirmed metadata/appearance and queues its save while preserving position, sources, and ID. */

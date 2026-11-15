@@ -1,0 +1,15 @@
+{
+  "name": "@orbistry/wonton-excel",
+  "version": "0.1.2",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.cjs",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "dependencies": {
+    "sax": "1.6.1",
+    "ssf": "0.11.2",
+    "unzipper": "0.12.5"
+  }
+}

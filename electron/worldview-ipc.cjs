@@ -1,12 +1,169 @@
 const path = require("node:path");
 const store = require("./worldview-store.cjs");
+const knowledge = require("./knowledge-store.cjs");
+const connectors = require("./connector-store.cjs");
+const tagSearch = require("./tag-association-service.cjs");
+const { imageParserService } = require("./image-parser-service.cjs");
 const { listVaultMetadata, statVaultSource } = require("./vault-service.cjs");
 
-/** Registers narrow main-frame WorldView operations against the existing active Vault; no arbitrary paths are exposed. */
-function registerWorldViewIpc(trustedIpc, getRoot, shell) {
+/** Registers narrow main-frame WorldView operations against the active Vault. Optional clipboard access copies only regenerated authorized Excel previews, never caller-supplied text. */
+function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
   const operations = {
+    /** Retrieves only the Yahoo source identified by an applied entity/menu/declaration triple. */
+    "price-index": (root, input) =>
+      require("./daily-price-service.cjs").getIndexedPrice(
+        root,
+        input.id,
+        input.menuId,
+        input.priceId,
+        input.force ?? false,
+      ),
+    /** Saves a revision-checked Yahoo symbol in this entity's existing Knowledge Card metadata. */
+    "price-symbol": (root, input) =>
+      knowledge.savePriceSymbol(root, input.id, input.symbol, input.revision),
+    /** Reads cached or fresh Yahoo prices for the currently saved entity ticker. */
+    "price-get": (root, input) =>
+      require("./daily-price-service.cjs").getEntityPrice(
+        root,
+        input.id,
+        input.force ?? false,
+      ),
+    /** Copies a freshly authorized bounded worksheet preview through Electron without granting browser clipboard permissions. */
+    "knowledge-excel-copy": async (root, input) => {
+      if (!clipboard) throw new Error("Desktop clipboard is unavailable.");
+      const preview = await require("./excel-service.cjs").excelService.request(
+        root,
+        input.id,
+        input.sourceId,
+        {
+          sheetIndex: input.sheetIndex,
+          rowOffset: input.rowOffset,
+          columnOffset: input.columnOffset,
+          sourceHash: input.sourceHash,
+        },
+      );
+      clipboard.writeText(preview.markdown);
+      return { copied: true };
+    },
+    /** Pages or exports an authorized Excel source through the bounded native Engine. */
+    "knowledge-excel": (root, input) =>
+      require("./excel-service.cjs").excelService.request(
+        root,
+        input.id,
+        input.sourceId,
+        {
+          sheetIndex: input.sheetIndex,
+          rowOffset: input.rowOffset,
+          columnOffset: input.columnOffset,
+          format: input.format,
+          sourceHash: input.sourceHash,
+        },
+      ),
+    /** Saves human-authored source notes within the existing entity-scoped Knowledge Card companion. */
+    "knowledge-note": (root, input) =>
+      knowledge.saveKnowledgeNote(
+        root,
+        input.id,
+        input.sourceId,
+        input.note,
+        input.revision,
+      ),
+    /** Loads an authorized, bounded original slide independently of image parsing. */
+    "image-preview": (root, input) =>
+      imageParserService.preview(
+        root,
+        input.id,
+        input.carouselId,
+        input.sourceId,
+      ),
+    /** Retrieves valid structured cached knowledge without processing or UI dependencies. */
+    "image-knowledge": (root, input) =>
+      imageParserService.getKnowledge(
+        root,
+        input.id,
+        input.carouselId,
+        input.sourceId,
+      ),
+    /** Starts explicitly requested background processing for this applied entity carousel. */
+    "image-parse": (root, input) =>
+      imageParserService.start(root, input.id, input.carouselId, {
+        force: input.force,
+      }),
+    /** Reports the entity group's background processing state. */
+    "image-status": (root, input) =>
+      imageParserService.status(root, input.id, input.carouselId),
+    /** Cancels the authorized group's current local processing job. */
+    "image-cancel": (root, input) =>
+      imageParserService.cancel(root, input.id, input.carouselId),
+    /** Searches assigned persisted tags and direct entity names in this Universe's current World. */
+    "tag-search": (root, input) => tagSearch.searchWorldTags(root, input.query),
+    /** Initializes or updates the derived index without changing user metadata. */
+    "tag-index": (root) => tagSearch.getTagIndex(root),
+    /** Retrieves explainable frequency statistics within the current World. */
+    "tag-associations": (root, input) =>
+      tagSearch.getWorldTagStatistics(root, input.query),
+    /** Rebuilds disposable engine cache data on explicit request. */
+    "tag-rebuild": (root) => tagSearch.rebuildWorldTagCache(root),
+    /** Creates one independent relationship with unrestricted geometric endpoints. */
+    "connector-create": (root, input) =>
+      connectors.createConnector(root, input.connector),
+    /** Updates semantic fields with the editor's expected prior connection snapshot. */
+    "connector-update": (root, input) =>
+      connectors.updateConnector(
+        root,
+        input.connector,
+        input.previousConnector,
+      ),
+    /** Removes a confirmed relationship by its stable identity. */
+    "connector-delete": (root, input) =>
+      connectors.deleteConnector(root, input.id),
+    /** Loads one entity's manual declaration draft and applied menus. */
+    "knowledge-load": (root, input) =>
+      knowledge.readKnowledgeIndex(root, input.id),
+    /** Saves explicit editor text without replacing the applied index. */
+    "knowledge-draft": (root, input) =>
+      knowledge.saveKnowledgeIndex(
+        root,
+        input.id,
+        input.draft,
+        input.revision,
+        false,
+      ),
+    /** Validates syntax and live assignments without reading file contents. */
+    "knowledge-validate": (root, input) =>
+      knowledge.validateKnowledgeIndex(root, input.id, input.draft),
+    /** Atomically applies all declarations only after complete validation. */
+    "knowledge-apply": (root, input) =>
+      knowledge.saveKnowledgeIndex(
+        root,
+        input.id,
+        input.draft,
+        input.revision,
+        true,
+      ),
+    /** Reads an authorized original strictly for presentation. */
+    "knowledge-preview": (root, input) =>
+      knowledge.previewKnowledgeSource(root, input.id, input.sourceId),
+    /** Reveals a currently assigned applied reference through the existing shell. */
+    "knowledge-reveal": async (root, input) => {
+      const source = await knowledge.resolveKnowledgeSource(
+        root,
+        input.id,
+        input.sourceId,
+      );
+      const resolved = await statVaultSource(root, source.sourceRef);
+      shell.showItemInFolder(resolved.absolutePath);
+    },
     /** Loads saved indexes and current stat metadata. */
-    load: async (root) => store.loadWorldView(root),
+    load: async (root) => {
+      const world = await store.loadWorldView(root);
+      const relationships = await connectors.loadConnectors(root);
+      return {
+        ...world,
+        connectors: relationships.connectors,
+        issues: [...world.issues, ...relationships.issues],
+      };
+    },
     /** Saves chip fields while retaining server-owned source associations. */
     save: async (root, input) => store.saveWorldViewChip(root, input.chip),
     /** Deletes only an entity index. */

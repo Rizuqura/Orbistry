@@ -7,6 +7,7 @@ type StartupProgressProps = {
   onContinue: () => void;
 };
 
+/** Displays the current release and startup progress with recovery controls. */
 export function StartupProgress({
   progress,
   label,
@@ -23,7 +24,7 @@ export function StartupProgress({
           width={360}
           height={120}
         />
-        <p className="startup-version">{`v${version} Victoria (Beta)`}</p>
+        <p className="startup-version">{`Victoria ${version} (Beta)`}</p>
         <p className="startup-stage" role="status" aria-live="polite">
           {label}
         </p>

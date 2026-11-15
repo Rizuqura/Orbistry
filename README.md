@@ -1,21 +1,21 @@
 # Orbistry
 
-A local-first workspace with configurable AI agents and a blank WorldView baseline.
+A local-first workspace with configurable AI agents, interactive WorldView and floating Knowledge Cards.
 
-**v1.0.2 Victoria (Beta)** — controlled architectural reset, 2026-11-11.
+**Victoria 1.0.4 (Beta)** ? WorldView, Knowledge Cards, and Wonton engine update.
 
 The reset is documented in [WorldView reset report](docs/architecture/WORLDVIEW_RESET.md). The [pre-reset guide](docs/archive/README-before-worldview-reset.md), release notes, prior architecture documents and audit evidence describe historical behavior.
 
 ## Current behavior
 
-- **WorldView** opens an empty workspace: “Your world begins here.” It has no graph, file mapping, indexing, spatial interactions or restored visualization state.
+- **WorldView** provides an infinite isometric grid, entity chips, source buildings, editable relationships, tags, floating Knowledge Cards, Markdown indexing, image carousels, timelines, Excel previews and daily price charts.
 - **Agent** keeps its existing workspace, construction controls, personality/model settings, appearance, chat history, streaming, cancellation and explicit retry.
 - Agent inference uses system/personality instructions, user messages, included conversation history and provider inference settings. It has no file readers, retrieval callbacks, native tool declarations or local execution bindings.
 - File, Context Box, Knowledge, node-source guidance, skill and Engine integrations in agent controls are temporarily inactive. Stored bindings remain historical metadata; selecting one cannot inject source content. A chat can start with no selected sources.
 - **Workspace** retains the Vault explorer, Markdown editor, CSV/PDF/image readers, Windows OCR and explicit Vault operations. Those operations are independent of agent inference.
 - Ollama, Gemini, NVIDIA NIM, OpenRouter, BYOK, provided-model selection, encrypted credentials and provider usage tracking remain available.
 
-No future entity model, knowledge cards, indexing pipeline, context engineering system or ontology is implemented.
+See [Victoria 1.0.4 release notes](report/release-1.0.4.md) for the current WorldView and Wonton updates.
 
 ## Development
 

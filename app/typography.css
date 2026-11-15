@@ -1,5 +1,40 @@
 /* Fonts hosted locally for offline desktop use. Licenses: public/fonts/*-OFL.txt. */
 @font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../public/fonts/ibm-plex-sans-normal-400.woff2) format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../public/fonts/ibm-plex-sans-normal-500.woff2) format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../public/fonts/ibm-plex-sans-normal-600.woff2) format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../public/fonts/ibm-plex-sans-normal-700.woff2) format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../public/fonts/ibm-plex-sans-italic-400.woff2) format("woff2");
+}
+@font-face {
   font-family: "IBM Plex Mono";
   font-style: italic;
   font-weight: 400;
@@ -91,6 +126,7 @@
   --font-interface: "Urbanist", sans-serif;
   --font-engineering: "IBM Plex Mono", monospace;
   --font-accent: "Space Mono", monospace;
+  --font-worldview: "IBM Plex Sans", sans-serif;
   --ui-font: var(--font-interface);
   --font-terminal: var(--font-engineering);
   --font-mono: var(--font-engineering);
@@ -153,4 +189,10 @@ pre {
 .startup-version {
   font-family: var(--font-accent);
   letter-spacing: 0.08em;
+}
+
+.app-shell .worldview,
+.app-shell .worldview :where(*) {
+  --ui-font: var(--font-worldview);
+  font-family: var(--font-worldview);
 }

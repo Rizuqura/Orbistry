@@ -61,7 +61,7 @@ async function sourceFixtures(vault) {
     ["reports/deep/equal-a.bin", Buffer.alloc(64, 3)],
     ["reports/deep/equal-b.bin", Buffer.alloc(64, 4)],
   ]);
-  for (let index = 0; index < 12; index += 1)
+  for (let index = 0; index < 40; index += 1)
     files.set(
       `reports/overflow-${String(index).padStart(2, "0")}.bin`,
       Buffer.alloc(index + 1, index),
@@ -212,7 +212,7 @@ async function verifyUniverseAssignments({
   assert.equal(buildingData.length, 5);
   assert.deepEqual(
     buildingData.find((item) => item.source === "reports/large.bin"),
-    { source: "reports/large.bin", height: 56, x: -0.3, y: -0.3 },
+    { source: "reports/large.bin", height: 56, x: -0.78, y: -0.78 },
     "the largest file stands at the top corner of the square arrangement",
   );
   assert.equal(
@@ -396,11 +396,18 @@ async function verifyUniverseAssignments({
     .getByRole("button", { name: "Close file inspector", exact: true })
     .click();
 
-  // Move a platform using its clear front surface, then return it to the original anchor.
+  // Move a platform using the clear outer border, then return it to its original anchor.
   const ground = {
-    x: bounds.x + bounds.width / 2 + (research.x - research.y) * 48,
-    y: bounds.y + bounds.height / 2 + (research.x + research.y) * 24 + 35,
+    x: bounds.x + bounds.width / 2 + (research.x - research.y) * 48 - 89,
+    y: bounds.y + bounds.height / 2 + (research.x + research.y) * 24,
   };
+  await page.mouse.move(ground.x, ground.y);
+  await page.getByRole("tooltip").waitFor();
+  assert.match(
+    await page.getByRole("tooltip").innerText(),
+    /4 assigned files.*227 bytes/s,
+  );
+  await page.screenshot({ path: "test-results/worldview-chip-size-hover.png" });
   await page.mouse.move(ground.x, ground.y);
   await page.mouse.down();
   await page.mouse.move(ground.x + 96, ground.y + 48, { steps: 10 });
@@ -481,8 +488,8 @@ async function verifyUniverseAssignments({
       exact: true,
     })
     .waitFor();
-  assert.equal(await choices.count(), 12);
-  for (let index = 0; index < 12; index += 1) await choices.nth(index).check();
+  assert.equal(await choices.count(), 40);
+  for (let index = 0; index < 40; index += 1) await choices.nth(index).check();
   await picker
     .getByRole("button", { name: "Confirm Assignment", exact: true })
     .click();
@@ -490,25 +497,57 @@ async function verifyUniverseAssignments({
   const overflowButtons = page.locator(
     `.worldview-sr-only[aria-label="File buildings"] button[data-chip-id="${overflowChip.id}"]`,
   );
-  assert.equal(await overflowButtons.count(), 9);
+  assert.equal(await overflowButtons.count(), 11);
   assert.equal(
     await page
       .locator(
-        `.worldview-sr-only button[data-chip-id="${overflowChip.id}"][data-building-overflow="4"]`,
+        `.worldview-sr-only button[data-chip-id="${overflowChip.id}"][data-building-overflow="30"]`,
       )
       .count(),
     1,
   );
-  await page.getByRole("button", { name: "Files (12)", exact: true }).click();
+  await page
+    .getByRole("button", { name: "More entity options", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "View Sources (40)", exact: true })
+    .click();
   assert.equal(
     await inspector.locator("li").count(),
-    12,
+    40,
     "overflow retains access to the complete source list",
   );
   await inspector
     .getByRole("button", { name: "Close file inspector", exact: true })
     .click();
   await gridImage(page);
+  const aggregate = await overflowButtons.evaluateAll((buttons) => {
+    const button = buttons.find(
+      (item) => item.dataset.buildingOverflow === "30",
+    );
+    return {
+      x: Number(button.dataset.buildingX),
+      y: Number(button.dataset.buildingY),
+      height: Number(button.dataset.buildingHeight),
+    };
+  });
+  await page.mouse.move(
+    bounds.x +
+      bounds.width / 2 +
+      (overflowChip.x - overflowChip.y + aggregate.x - aggregate.y) * 48,
+    bounds.y +
+      bounds.height / 2 +
+      (overflowChip.x + overflowChip.y + aggregate.x + aggregate.y) * 24 -
+      aggregate.height,
+  );
+  await page.getByRole("tooltip").waitFor();
+  assert.match(
+    await page.getByRole("tooltip").innerText(),
+    /30 grouped files.*465 bytes/s,
+  );
+  await page.screenshot({
+    path: "test-results/worldview-group-size-hover.png",
+  });
   await page.screenshot({ path: "test-results/worldview-file-buildings.png" });
 
   await fs.unlink(path.join(vault, "reports", "deep", "equal-a.bin"));
@@ -552,7 +591,7 @@ async function verifyUniverseAssignments({
     storage: ".wonnyy/worldview/entities/<entity-id>.md",
     sourceReference: "existing Vault forward-slash relativePath",
     originals: `${hashes.size} files verified unchanged`,
-    maximumVisible: 9,
+    maximumVisible: 36,
     sourcesAfterRefresh: (await savedState(page, vault)).chips.map(
       (chip) => chip.sources.length,
     ),

@@ -99,7 +99,7 @@ function paintFace(
   context.stroke();
 }
 
-/** Draws file-type colored prisms with shaded sides and orange active outlines, preserving caller transforms and explicit status markers. */
+/** Draws file-type prisms with shaded sides, active outlines and IBM Plex Sans status markers while preserving caller transforms. */
 export function drawFileBuildings(
   context: CanvasRenderingContext2D,
   chip: WorldViewChip,
@@ -113,10 +113,20 @@ export function drawFileBuildings(
       (selected?.chipId === chip.id && selected.sourceId === sourceId) ||
       (hovered?.chipId === chip.id && hovered.sourceId === sourceId);
     context.strokeStyle = active ? "#ff9800" : "#7b8a95";
+    const colors =
+      building.kind === "overflow"
+        ? new Set(
+            building.sources.map((source) =>
+              fileBuildingColor(source.extension),
+            ),
+          )
+        : null;
     const color =
       building.kind === "file"
         ? fileBuildingColor(building.source.extension)
-        : "#6e8392";
+        : colors!.size === 1
+          ? [...colors!][0]
+          : "#6e8392";
     const faces = buildingFaces(building);
     if (building.height !== null) {
       paintFace(context, faces.left, shadeChipColor(color, 0.55));
@@ -127,7 +137,7 @@ export function drawFileBuildings(
       const center = projectWorld(building.position);
       context.fillStyle = chipTextColor(color);
       context.textAlign = "center";
-      context.font = "9px 'Segoe UI', sans-serif";
+      context.font = "9px 'IBM Plex Sans', sans-serif";
       context.fillText(
         building.kind === "overflow" ? `+${building.count}` : "?",
         center.x,
