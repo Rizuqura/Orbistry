@@ -191,8 +191,12 @@ async function verifyManualIndex({ page, app, vault, createChip, readChips }) {
     .waitFor();
   assert.equal(await card.locator("script").count(), 0);
   const markdown = card.locator(".knowledge-markdown");
-  await markdown
+  await card
+    .locator(".knowledge-document-grid")
     .getByRole("heading", { name: "Original source", exact: true })
+    .waitFor();
+  await card
+    .getByText("Source excerpts · unverified", { exact: true })
     .waitFor();
   assert.equal(await markdown.locator("strong").innerText(), "Company profile");
   assert.equal(
@@ -207,6 +211,27 @@ async function verifyManualIndex({ page, app, vault, createChip, readChips }) {
     1,
   );
   assert.equal(await markdown.locator(".markdown-raw").count(), 0);
+  const sourceLayout = await card
+    .locator(".knowledge-source-preview")
+    .evaluate((node) => {
+      const content = node.closest(".knowledge-content");
+      const utility = node.querySelector('[aria-label="Source utilities"]');
+      const document = node.querySelector(".knowledge-document");
+      return {
+        background: getComputedStyle(content).backgroundColor,
+        font: getComputedStyle(content).fontFamily,
+        bottom: Boolean(
+          document.compareDocumentPosition(utility) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+        ),
+      };
+    });
+  assert.equal(sourceLayout.background, "rgb(5, 9, 13)");
+  assert.match(sourceLayout.font, /IBM Plex Mono/);
+  assert.equal(sourceLayout.bottom, true);
+  await page.screenshot({
+    path: "test-results/knowledge-terminal-document.png",
+  });
   const multiple = `# Profile\nsource: ${ref("notes.md")}\n\n# Data\nsource: ${ref("data.csv")}\nsource: ${ref("notes.md")}\n\n# Document\nsource: ${ref("document.pdf")}\n\n# Picture\nsource: ${ref("picture.png")}\n\n# Other\nsource: ${ref("other.bin")}\n\n# Empty`;
   await apply(multiple);
   await card.getByRole("button", { name: "Data", exact: true }).click();

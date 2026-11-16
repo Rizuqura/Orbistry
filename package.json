@@ -61,7 +61,8 @@
     "test:front-office:electron": "npm run build && node scripts/electron-front-office-smoke.cjs",
     "benchmark:front-office": "node scripts/front-office-benchmark.cjs --mock",
     "benchmark:front-office:live": "node scripts/front-office-benchmark.cjs --live",
-    "test:worldview:electron": "npm run build && node scripts/electron-worldview-smoke.cjs"
+    "test:worldview:electron": "npm run build && node scripts/electron-worldview-smoke.cjs",
+    "test:identity:electron": "npm run build && node scripts/electron-backend-identity-smoke.cjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.13",

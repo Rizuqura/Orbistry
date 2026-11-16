@@ -144,4 +144,5 @@ module.exports = {
   dailyPriceService,
   getEntityPrice,
   getIndexedPrice,
+  resolveIndexedPrice,
 };

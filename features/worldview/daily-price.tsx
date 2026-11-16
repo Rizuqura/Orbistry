@@ -5,6 +5,7 @@ import type {
   DailyPriceResponse,
   KnowledgeIndexState,
   IndexedPriceSource,
+  MarketHistoryResponse,
 } from "../../types/worldview";
 import { requireWorldViewBridge } from "./chip-session";
 
@@ -64,15 +65,15 @@ function DailyPriceChart({
         function y(value: number) {
           return bottom - ((value - low) / (high - low)) * (bottom - top);
         }
-        context.font = "10px 'IBM Plex Sans', sans-serif";
+        context.font = "10px 'IBM Plex Mono', monospace";
         for (let tick = 0; tick <= 4; tick++) {
           const value = low + ((high - low) * tick) / 4;
-          context.strokeStyle = "#304858";
+          context.strokeStyle = "#292a25";
           context.beginPath();
           context.moveTo(left, y(value));
           context.lineTo(right, y(value));
           context.stroke();
-          context.fillStyle = "#a6b7c5";
+          context.fillStyle = "#b2b0a6";
           context.textAlign = "right";
           context.fillText(
             new Intl.NumberFormat(undefined, {
@@ -83,7 +84,7 @@ function DailyPriceChart({
             y(value) + 3,
           );
         }
-        context.strokeStyle = "#ff9800";
+        context.strokeStyle = "#ffb000";
         context.lineWidth = 1.5;
         context.beginPath();
         points.forEach(function segment(point, index) {
@@ -94,23 +95,23 @@ function DailyPriceChart({
         if (points.length === 1) {
           context.beginPath();
           context.arc(x(points[0].date), y(points[0].close), 3, 0, Math.PI * 2);
-          context.fillStyle = "#ff9800";
+          context.fillStyle = "#ffb000";
           context.fill();
         }
-        context.fillStyle = "#a6b7c5";
+        context.fillStyle = "#b2b0a6";
         context.textAlign = "left";
         context.fillText(points[0].date, left, 230);
         context.textAlign = "right";
         context.fillText(points.at(-1)!.date, right, 230);
         if (active) {
-          context.strokeStyle = "#8fa89a";
+          context.strokeStyle = "#e8e5dc";
           context.beginPath();
           context.moveTo(x(active.date), top);
           context.lineTo(x(active.date), bottom);
           context.stroke();
           context.beginPath();
           context.arc(x(active.date), y(active.close), 3, 0, Math.PI * 2);
-          context.fillStyle = "#ff9800";
+          context.fillStyle = "#ffb000";
           context.fill();
         }
       }
@@ -203,9 +204,65 @@ export function DailyPrice({
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [range, setRange] = useState(365);
+  const [range, setRange] = useState<number | "5Y" | "MAX">(365);
+  const [extended, setExtended] = useState<MarketHistoryResponse | null>(null);
+  const [historyError, setHistoryError] = useState("");
+  const [historyLoading, setHistoryLoading] = useState(false);
   const [refresh, setRefresh] = useState(0);
+  const historyRefresh = useRef(refresh);
   const generation = useRef(0);
+  /** Loads longer history only after selection, using the same authorized source and separate range caches; old range responses cannot replace the current chart. */
+  useEffect(
+    function loadExtendedHistory() {
+      let cancelled = false;
+      const force = refresh > historyRefresh.current;
+      historyRefresh.current = refresh;
+      setExtended(null);
+      setHistoryError("");
+      setHistoryLoading(false);
+      if (typeof range === "number" || !activeSymbol) return;
+      setHistoryLoading(true);
+      void requireWorldViewBridge()
+        .request<MarketHistoryResponse>("price-history", {
+          vaultPath,
+          id: entityId,
+          menuId: source?.menuId,
+          priceId: source?.id,
+          range,
+          force,
+        })
+        .then(
+          function loaded(value) {
+            if (!cancelled) {
+              setExtended(value);
+              setHistoryLoading(false);
+            }
+          },
+          function failed(cause: unknown) {
+            if (!cancelled) {
+              setHistoryError(
+                cause instanceof Error
+                  ? cause.message
+                  : "Price history could not be loaded.",
+              );
+              setHistoryLoading(false);
+            }
+          },
+        );
+      return () => {
+        cancelled = true;
+      };
+    },
+    [
+      entityId,
+      vaultPath,
+      activeSymbol,
+      source?.menuId,
+      source?.id,
+      range,
+      refresh,
+    ],
+  );
   /** Restores the input when a ticker association changes after a confirmed metadata save. */
   useEffect(
     function syncSymbol() {
@@ -296,10 +353,23 @@ export function DailyPrice({
   }
   const quote = result?.snapshot;
   const cutoff = quote
-    ? Date.parse(quote.history.at(-1)!.date) - range * 86400000
+    ? Date.parse(quote.history.at(-1)!.date) -
+      (typeof range === "number" ? range : 365) * 86400000
     : 0;
+  const historyMatchesQuote =
+    !extended || !quote || extended.snapshot.currency === quote.currency;
   const points =
-    quote?.history.filter((point) => Date.parse(point.date) >= cutoff) ?? [];
+    typeof range === "number"
+      ? (quote?.history.filter((point) => Date.parse(point.date) >= cutoff) ??
+        [])
+      : historyMatchesQuote
+        ? (extended?.snapshot.observations
+            .filter((point) => point.close !== null)
+            .map((point) => ({
+              date: point.date.slice(0, 10),
+              close: point.close!,
+            })) ?? [])
+        : [];
   const change =
     quote?.previousClose !== null && quote?.previousClose !== undefined
       ? quote.price - quote.previousClose
@@ -313,56 +383,7 @@ export function DailyPrice({
           : "Daily prices"
       }
     >
-      {configurable && (
-        <>
-          {!source && <h2>Prices</h2>}
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              void saveTicker();
-            }}
-          >
-            <label>
-              Yahoo Finance ticker
-              <input
-                value={symbol}
-                maxLength={32}
-                placeholder="AAPL or BBCA.JK"
-                disabled={saving}
-                onChange={(event) => setSymbol(event.target.value)}
-              />
-            </label>
-            <button
-              type="submit"
-              disabled={saving || (!symbol.trim() && !index.priceSymbol)}
-            >
-              {saving
-                ? "Saving…"
-                : !symbol.trim() && index.priceSymbol
-                  ? "Remove ticker"
-                  : "Save ticker"}
-            </button>
-            {index.priceSymbol && (
-              <button
-                type="button"
-                disabled={loading || saving}
-                onClick={() => setRefresh(refresh + 1)}
-              >
-                Refresh prices
-              </button>
-            )}
-          </form>
-        </>
-      )}
-      {source && !configurable && activeSymbol && (
-        <button
-          type="button"
-          disabled={loading}
-          onClick={() => setRefresh(refresh + 1)}
-        >
-          Refresh prices
-        </button>
-      )}
+      {!source && <h2>Prices</h2>}
       {error && <p role="alert">{error}</p>}
       {loading && <p role="status">Loading Yahoo Finance prices…</p>}
       {result?.warning && <p role="status">{result.warning}</p>}
@@ -375,7 +396,11 @@ export function DailyPrice({
                 {priceText(quote.price, quote.currency)}
               </p>
               {change !== null && (
-                <p>
+                <p
+                  className={
+                    change >= 0 ? "financial-positive" : "financial-negative"
+                  }
+                >
                   {change >= 0 ? "+" : ""}
                   {priceText(change, quote.currency)}
                   {quote.previousClose
@@ -402,6 +427,43 @@ export function DailyPrice({
               </small>
             </div>
           </header>
+          <dl className="knowledge-metric-grid">
+            {Object.entries({
+              marketCap: "Market cap",
+              trailingPE: "P/E · TTM",
+              eps: "EPS · TTM",
+              week52Low: "52-week low",
+              week52High: "52-week high",
+              volume: "Volume",
+            }).map(([key, label]) => {
+              const value =
+                quote.metrics?.[key as keyof NonNullable<typeof quote.metrics>];
+              const unit = [
+                "marketCap",
+                "eps",
+                "week52Low",
+                "week52High",
+              ].includes(key)
+                ? quote.currency
+                : key === "volume"
+                  ? "shares / units"
+                  : "ratio";
+              return (
+                <div key={key}>
+                  <dt>{label}</dt>
+                  <dd>
+                    {typeof value === "number"
+                      ? new Intl.NumberFormat("en-US", {
+                          maximumFractionDigits: 2,
+                          notation: "compact",
+                        }).format(value)
+                      : "Unavailable"}
+                  </dd>
+                  <small>{unit}</small>
+                </div>
+              );
+            })}
+          </dl>
           <div
             className="daily-price-ranges"
             role="group"
@@ -412,22 +474,78 @@ export function DailyPrice({
               [90, "3M"],
               [180, "6M"],
               [365, "1Y"],
+              ["5Y", "5Y"],
+              ["MAX", "MAX"],
             ].map(([days, label]) => (
               <button
                 key={days}
                 type="button"
                 aria-pressed={range === days}
-                onClick={() => setRange(Number(days))}
+                onClick={() =>
+                  setRange(
+                    typeof days === "number" ? days : (days as "5Y" | "MAX"),
+                  )
+                }
               >
                 {label}
               </button>
             ))}
           </div>
-          <DailyPriceChart
-            key={`${quote.symbol}:${range}`}
-            points={points}
-            currency={quote.currency}
-          />
+          {historyLoading && <p role="status">Loading price history…</p>}
+          {historyError && <p role="alert">{historyError}</p>}
+          {!historyMatchesQuote && (
+            <p role="alert">
+              History currency differs from the quote. This series cannot be
+              compared.
+            </p>
+          )}
+          {extended?.warning && <p role="status">{extended.warning}</p>}
+          {points.length > 0 ? (
+            <DailyPriceChart
+              key={`${quote.symbol}:${range}`}
+              points={points}
+              currency={quote.currency}
+            />
+          ) : (
+            !historyLoading && (
+              <p>No price observations available for this range.</p>
+            )
+          )}
+          {extended && (
+            <small>
+              {extended.snapshot.interval === "1mo" ? "Monthly" : "Weekly"}{" "}
+              observations ·{" "}
+              {extended.stale
+                ? "Stale saved history"
+                : extended.cached
+                  ? "Cached history"
+                  : "Retrieved history"}{" "}
+              · {extended.snapshot.fetchedAt}
+            </small>
+          )}
+          {extended &&
+            (extended.snapshot.dividends.length > 0 ||
+              extended.snapshot.splits.length > 0) && (
+              <details className="knowledge-original-document">
+                <summary>Dividends and stock splits</summary>
+                <ul>
+                  {extended.snapshot.dividends.map((item, index) => (
+                    <li key={`div:${index}`}>
+                      {item.date.slice(0, 10)} · Dividend{" "}
+                      {item.amount ?? "Unavailable"}{" "}
+                      {extended.snapshot.currency ?? "Currency unavailable"}
+                    </li>
+                  ))}
+                  {extended.snapshot.splits.map((item, index) => (
+                    <li key={`split:${index}`}>
+                      {item.date.slice(0, 10)} · Split{" "}
+                      {item.numerator ?? "Unavailable"}:
+                      {item.denominator ?? "Unavailable"}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           <small>
             Yahoo Finance · quote retrieved{" "}
             {new Date(quote.fetchedAt).toLocaleString()} · daily history updated{" "}
@@ -435,6 +553,46 @@ export function DailyPrice({
           </small>
         </>
       )}
+      <footer className="knowledge-utilities" aria-label="Price utilities">
+        {configurable && (
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              void saveTicker();
+            }}
+          >
+            <label>
+              Yahoo Finance ticker
+              <input
+                value={symbol}
+                maxLength={32}
+                placeholder="AAPL or BBCA.JK"
+                disabled={saving}
+                onChange={(event) => setSymbol(event.target.value)}
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={saving || (!symbol.trim() && !index.priceSymbol)}
+            >
+              {saving
+                ? "Saving?"
+                : !symbol.trim() && index.priceSymbol
+                  ? "Remove ticker"
+                  : "Save ticker"}
+            </button>
+          </form>
+        )}
+        {activeSymbol && (
+          <button
+            type="button"
+            disabled={loading || saving}
+            onClick={() => setRefresh(refresh + 1)}
+          >
+            Refresh prices
+          </button>
+        )}
+      </footer>
     </section>
   );
 }

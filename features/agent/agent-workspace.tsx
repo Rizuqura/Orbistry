@@ -104,16 +104,13 @@ export function AgentWorkspace({
       } catch {}
   }, [widths, restored]);
   const boxId = chat.conversation?.contextBoxId;
+  /** Clears legacy source details and explains inactive knowledge integration without starting an asynchronous reader. */
   useEffect(() => {
-    let stale = false;
     setBox(null);
     setBoxError("");
     // Legacy bindings remain metadata; opening agent details never reads sources.
     if (showDetails && boxId)
       setBoxError("Knowledge integration is temporarily inactive.");
-    return () => {
-      stale = true;
-    };
   }, [boxId, chat.contextBoxes, chat.context, showDetails]);
   const effective = clampAgentWidths(widths, available);
   const move = (event: ReactPointerEvent<HTMLDivElement>) => {

@@ -25,6 +25,17 @@ const snapshotSchema = z
     delayMinutes: z.number().finite().nonnegative().nullable(),
     fetchedAt: z.string().datetime(),
     historyFetchedAt: z.string().datetime(),
+    metrics: z
+      .object({
+        marketCap: z.number().finite().nullable(),
+        trailingPE: z.number().finite().nullable(),
+        eps: z.number().finite().nullable(),
+        week52Low: z.number().finite().nullable(),
+        week52High: z.number().finite().nullable(),
+        volume: z.number().finite().nullable(),
+      })
+      .strict()
+      .optional(),
     history: z
       .array(
         z
@@ -186,6 +197,21 @@ function createDailyPriceEngine({ client, clock = Date.now } = {}) {
       history: reusable
         ? previous.history
         : dailyCloses(chart?.quotes, exchangeTimezone),
+      metrics: Object.fromEntries(
+        Object.entries({
+          marketCap: "marketCap",
+          trailingPE: "trailingPE",
+          eps: "epsTrailingTwelveMonths",
+          week52Low: "fiftyTwoWeekLow",
+          week52High: "fiftyTwoWeekHigh",
+          volume: "regularMarketVolume",
+        }).map(([name, key]) => [
+          name,
+          typeof quote[key] === "number" && Number.isFinite(quote[key])
+            ? quote[key]
+            : null,
+        ]),
+      ),
     };
     return snapshotSchema.parse(snapshot);
   }

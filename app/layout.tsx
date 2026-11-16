@@ -10,6 +10,8 @@ import "./startup.css";
 import "../features/chat/chat-presentation.css";
 import "./worldview.css";
 import "./typography.css";
+import "./knowledge-content.css";
+import "./backend-identity.css";
 
 export const metadata: Metadata = {
   title: "ORB Terminal",

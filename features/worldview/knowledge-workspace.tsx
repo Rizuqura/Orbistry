@@ -319,202 +319,206 @@ export function KnowledgeWorkspace({
           </p>
         )}
         {message && <p role="status">{message}</p>}
-        {editing ? (
-          <section
-            className="knowledge-index-editor"
-            aria-label="Manual index editor"
-          >
-            <h2>Write Index</h2>
-            <p>
-              Use # Menu title and source: followed by an assigned source ID.
-              Use source: yahooPrice(&quot;BBCA.JK&quot;) for a price chart in
-              any section. Use source: yahooFinancials(&quot;TSM&quot;) for
-              statements or source: yahooEarnings(&quot;TSM&quot;) for earnings.
-              Group images with Carousel = [ source lines ] followed by
-              .view(carousel) or .view(timeline), using a separate line for each
-              source.
-            </p>
-            <label>
-              Index declarations
-              <textarea
-                spellCheck={false}
-                value={draft}
-                disabled={unavailable}
-                onChange={(event) => {
-                  setDraft(event.target.value);
-                  setValidation(null);
-                  setMessage("");
-                }}
-              />
-            </label>
-            <p className="knowledge-draft-status">
-              {dirty ? "Unsaved draft" : "Draft saved"}
-              {index?.applied !== null && draft !== index?.applied
-                ? " · Applied index differs from this draft"
-                : ""}
-            </p>
-            <div className="knowledge-index-actions">
-              <button
-                type="button"
-                onClick={() => void runIndexAction("knowledge-draft")}
-                disabled={unavailable}
-              >
-                Save Draft
-              </button>
-              <button
-                type="button"
-                onClick={() => void runIndexAction("knowledge-validate")}
-                disabled={unavailable}
-              >
-                Validate Index
-              </button>
-              <button
-                type="button"
-                onClick={() => void runIndexAction("knowledge-apply")}
-                disabled={unavailable}
-              >
-                Apply Index
-              </button>
-              <button
-                type="button"
-                onClick={() => void clearDraft()}
-                disabled={unavailable}
-              >
-                Clear Draft
-              </button>
-              <button
-                type="button"
-                onClick={() => setEditing(false)}
-                disabled={busy}
-              >
-                Close Editor
-              </button>
-            </div>
-            {validation && validation.errors.length > 0 && (
-              <ul className="knowledge-index-errors" role="alert">
-                {validation.errors.map((issue, index) => (
-                  <li key={`${issue.line}:${index}`}>
-                    Line {issue.line}: {issue.message}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <details>
-              <summary>Assigned source IDs</summary>
-              {chip.sources?.length ? (
-                <ul className="knowledge-source-ids">
-                  {chip.sources.map((source) => (
-                    <li key={source.sourceId}>
-                      <code>{source.sourceId}</code>
-                      <small>
-                        {source.filename} · {source.status}
-                      </small>
+        <div className={editing ? undefined : "knowledge-content"}>
+          {editing ? (
+            <section
+              className="knowledge-index-editor"
+              aria-label="Manual index editor"
+            >
+              <h2>Write Index</h2>
+              <p>
+                Use # Menu title and source: followed by an assigned source ID.
+                Use source: yahooPrice(&quot;BBCA.JK&quot;) for a price chart in
+                any section. Use source: yahooFinancials(&quot;TSM&quot;) for
+                statements or source: yahooEarnings(&quot;TSM&quot;) for
+                earnings. Group images with Carousel = [ source lines ] followed
+                by .view(carousel) or .view(timeline), using a separate line for
+                each source.
+              </p>
+              <label>
+                Index declarations
+                <textarea
+                  spellCheck={false}
+                  value={draft}
+                  disabled={unavailable}
+                  onChange={(event) => {
+                    setDraft(event.target.value);
+                    setValidation(null);
+                    setMessage("");
+                  }}
+                />
+              </label>
+              <p className="knowledge-draft-status">
+                {dirty ? "Unsaved draft" : "Draft saved"}
+                {index?.applied !== null && draft !== index?.applied
+                  ? " · Applied index differs from this draft"
+                  : ""}
+              </p>
+              <div className="knowledge-index-actions">
+                <button
+                  type="button"
+                  onClick={() => void runIndexAction("knowledge-draft")}
+                  disabled={unavailable}
+                >
+                  Save Draft
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void runIndexAction("knowledge-validate")}
+                  disabled={unavailable}
+                >
+                  Validate Index
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void runIndexAction("knowledge-apply")}
+                  disabled={unavailable}
+                >
+                  Apply Index
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void clearDraft()}
+                  disabled={unavailable}
+                >
+                  Clear Draft
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setEditing(false)}
+                  disabled={busy}
+                >
+                  Close Editor
+                </button>
+              </div>
+              {validation && validation.errors.length > 0 && (
+                <ul className="knowledge-index-errors" role="alert">
+                  {validation.errors.map((issue, index) => (
+                    <li key={`${issue.line}:${index}`}>
+                      Line {issue.line}: {issue.message}
                     </li>
                   ))}
                 </ul>
-              ) : (
-                <p>
-                  Assign Universe files to this entity before referencing
-                  sources.
-                </p>
               )}
-            </details>
-          </section>
-        ) : showPrices && vaultPath && index ? (
-          <DailyPrice
-            key={`${chip.id}:${vaultPath}`}
-            entityId={chip.id}
-            vaultPath={vaultPath}
-            index={index}
-            onIndexChange={setIndex}
-          />
-        ) : (
-          <>
-            {active && <h2>{active.title}</h2>}
-            {!activeGenerated && (
-              <p className="knowledge-card-empty">No knowledge indexed yet.</p>
-            )}
-            {activeGenerated &&
-              activeGenerated.sourceIds.length === 0 &&
-              !activeGenerated.prices?.length &&
-              !activeGenerated.finance?.length &&
-              !activeGenerated.carousels?.length && (
-                <p className="knowledge-card-empty">
-                  No sources declared for this menu.
-                </p>
-              )}
-            {vaultPath &&
-              index &&
-              activeGenerated?.prices?.map((source) => (
-                <DailyPrice
-                  key={`${activeGenerated.id}:${source.id}`}
-                  entityId={chip.id}
-                  vaultPath={vaultPath}
-                  index={index}
-                  onIndexChange={setIndex}
-                  source={{ ...source, menuId: activeGenerated.id }}
-                />
-              ))}
-            {vaultPath &&
-              activeGenerated?.finance?.map((source) => (
-                <FinancialViewer
-                  key={activeGenerated.id + ":" + source.id}
-                  entityId={chip.id}
-                  vaultPath={vaultPath}
-                  menuId={activeGenerated.id}
-                  source={source}
-                />
-              ))}
-            {vaultPath &&
-              activeGenerated?.carousels?.map(
-                /** Renders only explicitly grouped images, independently of legacy source tabs. */ (
-                  group,
-                ) => (
-                  <ImageCarousel
-                    key={`${activeGenerated.id}:${group.id}`}
-                    entityId={chip.id}
-                    vaultPath={vaultPath}
-                    group={group}
-                    sources={chip.sources ?? []}
-                    index={index!}
-                    onIndexChange={setIndex}
-                  />
-                ),
-              )}
-            {activeGenerated && activeGenerated.sourceIds.length > 0 && (
-              <>
-                <div
-                  className="knowledge-source-selector"
-                  role="group"
-                  aria-label="Referenced sources"
-                >
-                  {activeGenerated.sourceIds.map((id) => (
-                    <button
-                      type="button"
-                      key={id}
-                      aria-pressed={currentSource === id}
-                      onClick={() => setSourceId(id)}
-                    >
-                      {chip.sources?.find((source) => source.sourceId === id)
-                        ?.filename ?? id}
-                    </button>
-                  ))}
-                </div>
-                {currentSource && vaultPath && (
-                  <SourcePreview
-                    key={`${activeGenerated.id}:${currentSource}`}
-                    entityId={chip.id}
-                    vaultPath={vaultPath}
-                    sourceId={currentSource}
-                    assigned={chip.sources?.find(
-                      (source) => source.sourceId === currentSource,
-                    )}
-                  />
+              <details>
+                <summary>Assigned source IDs</summary>
+                {chip.sources?.length ? (
+                  <ul className="knowledge-source-ids">
+                    {chip.sources.map((source) => (
+                      <li key={source.sourceId}>
+                        <code>{source.sourceId}</code>
+                        <small>
+                          {source.filename} · {source.status}
+                        </small>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>
+                    Assign Universe files to this entity before referencing
+                    sources.
+                  </p>
                 )}
-              </>
-            )}
-          </>
-        )}
+              </details>
+            </section>
+          ) : showPrices && vaultPath && index ? (
+            <DailyPrice
+              key={`${chip.id}:${vaultPath}`}
+              entityId={chip.id}
+              vaultPath={vaultPath}
+              index={index}
+              onIndexChange={setIndex}
+            />
+          ) : (
+            <>
+              {active && <h2>{active.title}</h2>}
+              {!activeGenerated && (
+                <p className="knowledge-card-empty">
+                  No knowledge indexed yet.
+                </p>
+              )}
+              {activeGenerated &&
+                activeGenerated.sourceIds.length === 0 &&
+                !activeGenerated.prices?.length &&
+                !activeGenerated.finance?.length &&
+                !activeGenerated.carousels?.length && (
+                  <p className="knowledge-card-empty">
+                    No sources declared for this menu.
+                  </p>
+                )}
+              {vaultPath &&
+                index &&
+                activeGenerated?.prices?.map((source) => (
+                  <DailyPrice
+                    key={`${activeGenerated.id}:${source.id}`}
+                    entityId={chip.id}
+                    vaultPath={vaultPath}
+                    index={index}
+                    onIndexChange={setIndex}
+                    source={{ ...source, menuId: activeGenerated.id }}
+                  />
+                ))}
+              {vaultPath &&
+                activeGenerated?.finance?.map((source) => (
+                  <FinancialViewer
+                    key={activeGenerated.id + ":" + source.id}
+                    entityId={chip.id}
+                    vaultPath={vaultPath}
+                    menuId={activeGenerated.id}
+                    source={source}
+                  />
+                ))}
+              {vaultPath &&
+                activeGenerated?.carousels?.map(
+                  /** Renders only explicitly grouped images, independently of legacy source tabs. */ (
+                    group,
+                  ) => (
+                    <ImageCarousel
+                      key={`${activeGenerated.id}:${group.id}`}
+                      entityId={chip.id}
+                      vaultPath={vaultPath}
+                      group={group}
+                      sources={chip.sources ?? []}
+                      index={index!}
+                      onIndexChange={setIndex}
+                    />
+                  ),
+                )}
+              {activeGenerated && activeGenerated.sourceIds.length > 0 && (
+                <>
+                  <div
+                    className="knowledge-source-selector"
+                    role="group"
+                    aria-label="Referenced sources"
+                  >
+                    {activeGenerated.sourceIds.map((id) => (
+                      <button
+                        type="button"
+                        key={id}
+                        aria-pressed={currentSource === id}
+                        onClick={() => setSourceId(id)}
+                      >
+                        {chip.sources?.find((source) => source.sourceId === id)
+                          ?.filename ?? id}
+                      </button>
+                    ))}
+                  </div>
+                  {currentSource && vaultPath && (
+                    <SourcePreview
+                      key={`${activeGenerated.id}:${currentSource}`}
+                      entityId={chip.id}
+                      vaultPath={vaultPath}
+                      sourceId={currentSource}
+                      assigned={chip.sources?.find(
+                        (source) => source.sourceId === currentSource,
+                      )}
+                    />
+                  )}
+                </>
+              )}
+            </>
+          )}
+        </div>
       </article>
       {confirmation}
     </>

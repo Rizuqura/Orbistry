@@ -279,7 +279,10 @@ export function ExcelPreview({
             stored source cells.
           </p>
         )}
-        <div className="excel-controls">
+        <footer
+          className="excel-controls knowledge-utilities"
+          aria-label="Workbook utilities"
+        >
           <button
             type="button"
             disabled={loading || exporting}
@@ -301,7 +304,7 @@ export function ExcelPreview({
           >
             Export results JSON
           </button>
-        </div>
+        </footer>
         <details>
           <summary>See worksheet Markdown</summary>
           <pre>{preview.markdown}</pre>

@@ -50,4 +50,4 @@ Draft first public beta: a local-first AI research workspace with optional BYOK 
 
 Beta limitations: model responses can be wrong; citation checks do not establish factual correctness. Context windows and provider quotas still apply. OCR is Windows-only and may misread content. CSV calculations are bounded, not arbitrary Python/code execution. No bundled models, accounts, hosted credits, cloud sync or advanced memory backend. Windows x64 is the validated packaging target; other platforms need independent testing. Installer signing and project-source licensing must be addressed before claiming a signed open-source release.
 
-See [the measured release audit](docs/release-audit.md) for readiness, security findings, test evidence and remaining gaps. This draft does not publish a GitHub release.
+Historical release audit details remain in Git history. See the [current documentation](docs/README.md) for maintained architecture, package and verification guidance.

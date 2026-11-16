@@ -11,6 +11,7 @@ export function EntityActions({
   onOpenCard,
   onAssign,
   onEdit,
+  onBackendIdentity,
   onSources,
   onDelete,
   onDeselect,
@@ -20,6 +21,7 @@ export function EntityActions({
   onOpenCard: () => void;
   onAssign: () => void;
   onEdit: () => void;
+  onBackendIdentity: () => void;
   onSources: () => void;
   onDelete: () => void;
   onDeselect: () => void;
@@ -89,6 +91,13 @@ export function EntityActions({
         >
           <button type="button" onClick={onEdit} disabled={disabled}>
             Edit Entity
+          </button>
+          <button
+            type="button"
+            onClick={() => act(onBackendIdentity)}
+            disabled={disabled}
+          >
+            See Backend Identity
           </button>
           <button
             type="button"

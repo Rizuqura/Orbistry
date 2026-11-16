@@ -9,6 +9,63 @@ const { listVaultMetadata, statVaultSource } = require("./vault-service.cjs");
 /** Registers narrow main-frame WorldView operations against the active Vault. Optional clipboard access copies only regenerated authorized Excel previews, never caller-supplied text. */
 function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
   const operations = {
+    /** Copies only freshly authorized inspector data; arbitrary caller-provided clipboard text is not accepted. */
+    "identity-copy": async (root, input) => {
+      if (!clipboard?.writeText)
+        throw new Error("Desktop clipboard is unavailable.");
+      const { section, ...request } = input;
+      const operation = Object.hasOwn(
+        { identity: 1, knowledge: 1, capabilities: 1, log: 1 },
+        section,
+      )
+        ? {
+            identity: "status",
+            knowledge: "chunks",
+            capabilities: "capabilities",
+            log: "status",
+          }[section]
+        : null;
+      if (!operation) throw new Error("Choose an identity inspector section.");
+      const result = await require("./backend-identity-service.cjs").inspect(
+        root,
+        operation,
+        request,
+      );
+      const value =
+        section === "log"
+          ? {
+              status: result.status,
+              compiledAt: result.manifest?.compiledAt ?? null,
+              lastAttempt: result.lastAttempt,
+              entries: result.manifest?.log ?? [],
+            }
+          : result;
+      clipboard.writeText(JSON.stringify(value, null, 2));
+      return { copied: true };
+    },
+    /** Reads a compact compiled identity and current source freshness for an existing entity. */
+    "identity-status": (root, input) =>
+      require("./backend-identity-service.cjs").inspect(root, "status", input),
+    /** Manually compiles the applied entity index without executing declared tools. */
+    "identity-generate": (root, input) =>
+      require("./backend-identity-service.cjs").inspect(
+        root,
+        "generate",
+        input,
+      ),
+    /** Retrieves one bounded, authorized knowledge page for the read-only inspector. */
+    "identity-chunks": (root, input) =>
+      require("./backend-identity-service.cjs").inspect(root, "chunks", input),
+    /** Discovers contracts without making provider calls or executing them. */
+    "identity-capabilities": (root, input) =>
+      require("./backend-identity-service.cjs").inspect(
+        root,
+        "capabilities",
+        input,
+      ),
+    /** Retrieves range-specific history only for an authorized applied price source or saved entity ticker. */
+    "price-history": (root, input) =>
+      require("./financial-service.cjs").getAuthorizedHistory(root, input),
     /** Retrieves an authorized financial dataset from the applied Knowledge Card index. */
     "finance-index": (root, input) =>
       require("./financial-service.cjs").getIndexedFinance(

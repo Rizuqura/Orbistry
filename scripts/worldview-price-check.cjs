@@ -12,7 +12,41 @@ async function verifyDailyPrices({ app, page, vault, createChip }) {
       require("node:path").join(repository, "electron/daily-price-service.cjs"),
     );
     const now = Date.now();
-    globalThis.dailyPriceSmoke = { requests: 0, offline: false };
+    globalThis.dailyPriceSmoke = {
+      requests: 0,
+      historyRequests: 0,
+      offline: false,
+    };
+    const financial = require(repository + "/electron/financial-service.cjs");
+    const historyFixture = financial.createFinancialService({
+      /** Supplies deterministic long-range OHLCV and actions through the real history cache. */
+      async fetch(symbol, kind, range) {
+        globalThis.dailyPriceSmoke.historyRequests++;
+        if (globalThis.dailyPriceSmoke.offline)
+          throw Error("synthetic history outage");
+        return {
+          provider: "Yahoo Finance",
+          symbol,
+          fetchedAt: new Date(now).toISOString(),
+          currency: "IDR",
+          range,
+          interval: range === "MAX" ? "1mo" : "1wk",
+          observations: Array.from({ length: 60 }, (_, index) => ({
+            date: new Date(now - (60 - index) * 30 * 86400000).toISOString(),
+            open: 10000,
+            high: 13000,
+            low: 9000,
+            close: 10000 + index * 30,
+            volume: 1000,
+          })),
+          dividends: [{ date: new Date(now).toISOString(), amount: 15 }],
+          splits: [
+            { date: new Date(now).toISOString(), numerator: 2, denominator: 1 },
+          ],
+        };
+      },
+    });
+    financial.financialService.get = historyFixture.get;
     const fixture = service.createDailyPriceService({
       /** Supplies test-only observations through the production cache implementation. */
       async price(symbol) {
@@ -33,6 +67,14 @@ async function verifyDailyPrices({ app, page, vault, createChip }) {
           delayMinutes: 15,
           fetchedAt: new Date(now).toISOString(),
           historyFetchedAt: new Date(now).toISOString(),
+          metrics: {
+            marketCap: 12345000000,
+            trailingPE: 22.4,
+            eps: null,
+            week52Low: 10000,
+            week52High: 15000,
+            volume: 1000000,
+          },
           history: Array.from({ length: 90 }, (_, index) => ({
             date: new Date(now - (90 - index) * 86400000)
               .toISOString()
@@ -162,6 +204,20 @@ async function verifyDailyPrices({ app, page, vault, createChip }) {
     /\d{4}-\d{2}-\d{2}.*IDR/,
   );
   await page.screenshot({ path: "test-results/worldview-daily-price.png" });
+  await panel.getByRole("button", { name: "5Y", exact: true }).click();
+  await panel.getByText(/Weekly observations/).waitFor();
+  assert.match(await chart.getAttribute("aria-label"), /60 observations/);
+  await panel.getByRole("button", { name: "MAX", exact: true }).click();
+  await panel.getByText(/Monthly observations/).waitFor();
+  await panel.getByText("Dividends and stock splits", { exact: true }).click();
+  await panel.getByText(/Dividend 15 IDR/).waitFor();
+  await panel.getByRole("button", { name: "5Y", exact: true }).click();
+  await panel.getByText(/Cached history/).waitFor();
+  assert.equal(
+    await app.evaluate(() => globalThis.dailyPriceSmoke.historyRequests),
+    2,
+  );
+  await panel.getByRole("button", { name: "1Y", exact: true }).click();
   await app.evaluate(() => {
     globalThis.dailyPriceSmoke.offline = true;
   });

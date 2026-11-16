@@ -370,9 +370,6 @@ export function ImageCarousel({
               </>
             )}
           </dl>
-          <button type="button" onClick={locate}>
-            Locate Original
-          </button>
         </section>
         <section aria-label="Notes">
           <h3>Notes</h3>
@@ -387,13 +384,6 @@ export function ImageCarousel({
               }
             />
           </label>
-          <button
-            type="button"
-            onClick={saveNotes}
-            disabled={saving || draft === savedNote}
-          >
-            {saving ? "Saving…" : "Save Notes"}
-          </button>
           {draft !== savedNote && <small>Unsaved notes</small>}
         </section>
         <section aria-label="Analysis">
@@ -402,6 +392,18 @@ export function ImageCarousel({
         </section>
       </div>
       {error && <p role="alert">{error}</p>}
+      <footer className="knowledge-utilities" aria-label="Image utilities">
+        <button type="button" onClick={locate}>
+          Locate Original
+        </button>
+        <button
+          type="button"
+          onClick={saveNotes}
+          disabled={saving || draft === savedNote}
+        >
+          {saving ? "Saving…" : "Save Notes"}
+        </button>
+      </footer>
     </section>
   );
 }

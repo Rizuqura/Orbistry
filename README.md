@@ -6,11 +6,12 @@ A local-first workspace with configurable AI agents, interactive WorldView and f
 
 See the [Knowledge Card indexing and package guide](docs/worldview/INDEXING.md) for controls, source syntax and finance features. The [documentation index](docs/README.md) lists package references, architecture and reports.
 
-The reset is documented in [WorldView reset report](docs/architecture/WORLDVIEW_RESET.md). The [pre-reset guide](docs/archive/README-before-worldview-reset.md), release notes, prior architecture documents and audit evidence describe historical behavior.
+See the [current architecture](docs/architecture/README.md) for runtime boundaries and the [documentation index](docs/README.md) for maintained guides.
 
 ## Current behavior
 
-- **WorldView** provides an infinite isometric grid, entity chips, source buildings, editable relationships, tags, floating Knowledge Cards, Markdown indexing, image carousels, timelines, Excel previews and daily price charts.
+- **WorldView** provides an infinite isometric grid, entity chips, source buildings, editable relationships, tags and floating Knowledge Cards. Indexed content includes attributed document panels, image carousels, timelines, Excel previews, market charts, financial statements and earnings.
+- **Backend Identity** manually compiles an entity's applied index into a compact manifest and retrievable, attributed chunks. Open **See Backend Identity** below **Edit Entity** in the entity's three-dot menu. Compilation is offline and does not execute tools. See the [engine and runtime guide](docs/worldview/packages/backend-identity-v1.md).
 - **Agent** keeps its existing workspace, construction controls, personality/model settings, appearance, chat history, streaming, cancellation and explicit retry.
 - Agent inference uses system/personality instructions, user messages, included conversation history and provider inference settings. It has no file readers, retrieval callbacks, native tool declarations or local execution bindings.
 - File, Context Box, Knowledge, node-source guidance, skill and Engine integrations in agent controls are temporarily inactive. Stored bindings remain historical metadata; selecting one cannot inject source content. A chat can start with no selected sources.
@@ -34,7 +35,7 @@ npm run test:worldview:electron
 
 `npm run build` creates a static export with local PDF resources and a production content security policy. `npm start` opens the Electron app. `npm run package` and `npm run release` build Windows distributions.
 
-There is no configured lint command. `npm run format:check` runs the repository's existing Prettier check. Older acceptance scripts that depend on source-bound chats or the removed map need migration; use the reset test above for the current baseline.
+There is no configured lint command. `npm run format:check` runs the repository's existing Prettier check. Use the WorldView acceptance test above for the current workspace and the focused financial/price scripts for finance content. Historical acceptance scripts may depend on temporarily inactive source-bound agent features.
 
 ## Start a chat
 
@@ -58,7 +59,10 @@ Remote requests send instructions/personality, the current message and included 
 
 | Path | Responsibility |
 | --- | --- |
-| `components/worldview.tsx`, `app/worldview.css` | Stateless, source-free empty workspace |
+| `components/worldview.tsx`, `features/worldview/`, `app/worldview.css` | Entity workspace, Knowledge Cards, local previews and financial views |
+| `app/knowledge-content.css` | Scoped black/amber monospace content theme and bottom utilities |
+| `electron/worldview-ipc.cjs`, `knowledge-store.cjs` | Authorized WorldView operations and applied index persistence |
+| `electron/engines/`, `financial-service.cjs` | Trusted engine implementations, provider adapters and derived caches |
 | `components/app-shell.tsx` | Navigation, independent Vault workspace and agent controls |
 | `features/agent/`, `features/chat/` | Existing agent UI, configuration, history and chat presentation |
 | `electron/ai/chat-service.cjs` | Conversation lifecycle, admission, cancellation and durable runs |
@@ -67,4 +71,4 @@ Remote requests send instructions/personality, the current message and included 
 | `electron/vault-service.cjs`, `station-service.cjs` | Shared Vault/source infrastructure, retained independently |
 | `electron/ai/context-box-store.cjs`, `knowledge-store.cjs` | Preserved persistent data infrastructure |
 
-The older source-bound orchestrator, source validators and report adapters retain shared infrastructure and historical record consumers. They are not called by normal agent chat. See the reset report before reconnecting any of them.
+The source-bound orchestrator, source validators and report adapters retain shared infrastructure, regression coverage and historical record consumers. Normal agent chat uses the standalone path. Future model integrations can use the [Yahoo engine execution contract](docs/worldview/packages/yahoo-financials-v0.2.md) through an explicitly authorized adapter.

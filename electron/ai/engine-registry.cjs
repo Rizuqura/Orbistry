@@ -6,6 +6,7 @@ const { readJson, writeJson } = require("./json-store.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const adapter = require("./chronoz-adapter.cjs");
 const ENGINE_DEFINITIONS = Object.freeze({
+  "backend-identity": require("../engines/backend-identity/schema.cjs").definition,
   "yahoo-financials": require("../engines/yahoo-financials/index.cjs")
     .definition,
   "daily-price": require("../engines/daily-price/index.cjs").definition,
@@ -392,8 +393,22 @@ class EngineRegistry {
     return { opened: true };
   }
 }
-/** Invokes an allowlisted native computation or price-data operation using trusted application modules. */
+/** Invokes an allowlisted native data operation through trusted modules. Future model adapters must authorize network access before calling; ordinary source-free chat is not connected here. */
 async function executeNativeEngine(engineId, operation, input, options) {
+  if (engineId === "yahoo-financials") {
+    if (
+      input === null ||
+      typeof input !== "object" ||
+      Array.isArray(input) ||
+      Object.hasOwn(input, "operation")
+    )
+      throw new Error(
+        "Use an operation and a separate Yahoo arguments object.",
+      );
+    return require("../engines/yahoo-financials/index.cjs")
+      .createFinancialEngine(options)
+      .execute({ ...input, operation });
+  }
   if (engineId === "daily-price" && operation === "price")
     return require("../engines/daily-price/index.cjs").price(input, options);
   if (engineId !== "wonton-excel" || operation !== "excel")

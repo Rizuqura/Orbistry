@@ -6,6 +6,7 @@ import type {
   IndexedFinanceSource,
 } from "../../types/worldview";
 import { requireWorldViewBridge } from "./chip-session";
+import { FinancialSummary } from "./financial-summary";
 
 /** Formats finite financial results without scaling or replacing missing values with zero. */
 function value(number: number | null | undefined): string {
@@ -73,11 +74,12 @@ export function FinancialViewer({
     [entityId, vaultPath, menuId, source.id, refresh],
   );
   const data = result?.snapshot;
-  const rows = data?.statements[statement]?.[period] ?? [];
+  const rows = [...(data?.statements[statement]?.[period] ?? [])].reverse();
   const metrics = [...new Set(rows.flatMap((row) => Object.keys(row.values)))];
   return (
     <section
-      className="excel-preview financial-viewer"
+      className="excel-preview financial-viewer knowledge-widget"
+      aria-busy={loading}
       aria-label={
         source.kind === "financials" ? "Financial Statements" : "Earnings"
       }
@@ -86,14 +88,9 @@ export function FinancialViewer({
         <h3>
           {source.kind === "financials" ? "Financial Statements" : "Earnings"}
         </h3>
-        <p>Yahoo Finance · {source.symbol}</p>
-        <button
-          type="button"
-          disabled={loading}
-          onClick={() => setRefresh(refresh + 1)}
-        >
-          Refresh
-        </button>
+        <p>
+          Yahoo Finance · <strong>{source.symbol}</strong>
+        </p>
       </header>
       {loading && <p role="status">Loading Yahoo Finance data…</p>}
       {error && (
@@ -148,6 +145,7 @@ export function FinancialViewer({
                   </button>
                 ))}
               </div>
+              <FinancialSummary data={data} period={period} />
               <p>
                 Reporting currency · {data.currency ?? "Unavailable"}. Original
                 unscaled values. EPS metrics use currency per share, share
@@ -176,7 +174,13 @@ export function FinancialViewer({
                     <tbody>
                       {metrics.map((metric) => (
                         <tr key={metric}>
-                          <th scope="row">{metric}</th>
+                          <th scope="row" title={metric}>
+                            {metric
+                              .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+                              .replace(/^./, (character) =>
+                                character.toUpperCase(),
+                              )}
+                          </th>
                           {rows.map((row, index) => (
                             <td className="excel-number" key={index}>
                               {value(row.values[metric])}
@@ -230,7 +234,17 @@ export function FinancialViewer({
                           <td>{row.currency ?? "Unavailable"}</td>
                           <td>{value(row.estimate)}</td>
                           <td>{value(row.actual)}</td>
-                          <td>{value(row.surprise)}</td>
+                          <td
+                            className={
+                              row.surprise === null
+                                ? undefined
+                                : row.surprise >= 0
+                                  ? "financial-positive"
+                                  : "financial-negative"
+                            }
+                          >
+                            {value(row.surprise)}
+                          </td>
                           <td>{row.surpriseBasis ?? "Unavailable"}</td>
                         </tr>
                       ))}
@@ -265,6 +279,15 @@ export function FinancialViewer({
           )}
         </>
       )}
+      <footer className="knowledge-utilities" aria-label="Finance utilities">
+        <button
+          type="button"
+          disabled={loading}
+          onClick={() => setRefresh(refresh + 1)}
+        >
+          Refresh
+        </button>
+      </footer>
     </section>
   );
 }

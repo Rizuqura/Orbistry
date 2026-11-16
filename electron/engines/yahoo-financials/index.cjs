@@ -1,4 +1,17 @@
 const { z } = require("zod");
+const { createMarketProvider } = require("./market.cjs");
+const toolContract = require("./tools.json");
+const argumentsSchema = z
+  .object({
+    operation: z.enum(["quote", "history", "financials", "earnings"]),
+    symbol: z.string().min(1).max(32),
+    range: z.enum(["1M", "3M", "6M", "1Y", "5Y", "MAX"]).optional(),
+  })
+  .strict()
+  .refine(
+    (input) => input.range === undefined || input.operation === "history",
+    "Range is only supported for history.",
+  );
 /** Validates bounded Yahoo tickers before provider access. */
 function normalizeSymbol(value) {
   if (
@@ -11,8 +24,8 @@ function normalizeSymbol(value) {
 const definition = Object.freeze({
   id: "yahoo-financials",
   name: "Yahoo Financials & Earnings",
-  version: "0.1.0",
-  operations: ["financials", "earnings"],
+  version: "0.2.0",
+  operations: ["quote", "history", "financials", "earnings"],
   nativeToolCalling: false,
   readOnly: true,
 });
@@ -119,8 +132,9 @@ function normalizeRecords(rows, currency, period) {
     .sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
 }
 /** Creates a lazy keyless Yahoo client. Fetching uses a 25-second deadline and returns validated structured snapshots. */
-function createFinancialEngine({ client, clock = Date.now } = {}) {
+function createFinancialEngine({ client, clock = Date.now, signal } = {}) {
   let yahoo = client;
+  const market = createMarketProvider({ client, clock, signal });
   /** Retrieves financial statements or earnings for a validated ticker. Partial statement failures are reported per dataset. */
   async function fetch(input, kind) {
     const symbol = normalizeSymbol(input);
@@ -130,7 +144,12 @@ function createFinancialEngine({ client, clock = Date.now } = {}) {
       const YahooFinance = require("yahoo-finance2").default;
       yahoo = new YahooFinance({ suppressNotices: ["yahooSurvey"] });
     }
-    const options = { fetchOptions: { signal: AbortSignal.timeout(25000) } };
+    const timeout = AbortSignal.timeout(25000);
+    const options = {
+      fetchOptions: {
+        signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
+      },
+    };
     const summary = await yahoo.quoteSummary(
       symbol,
       {
@@ -229,14 +248,44 @@ function createFinancialEngine({ client, clock = Date.now } = {}) {
     }
     return snapshotSchema.parse(snapshot);
   }
-  return { fetch };
+  /** Executes only schema-validated read operations; no model text is evaluated and no arbitrary module path is accepted. */
+  async function execute(raw) {
+    const request = argumentsSchema.parse(raw);
+    const symbol = normalizeSymbol(request.symbol);
+    if (request.operation === "quote") return market.getQuote(symbol);
+    if (request.operation === "history")
+      return market.getPriceHistory(symbol, request.range);
+    return fetch(symbol, request.operation);
+  }
+  return {
+    fetch,
+    execute,
+    getQuote: (symbol) => execute({ operation: "quote", symbol }),
+    getPriceHistory: (symbol, range) =>
+      execute({ operation: "history", symbol, range }),
+    getFinancialStatements: (symbol) => fetch(symbol, "financials"),
+    getEarnings: (symbol) => fetch(symbol, "earnings"),
+  };
 }
 const financialEngine = createFinancialEngine();
+/** Executes a request with the shared lazy client, or a caller-scoped client/deadline for future authorized adapters. */
+async function execute(request, options) {
+  return (options ? createFinancialEngine(options) : financialEngine).execute(
+    request,
+  );
+}
 module.exports = {
   definition,
   normalizeSymbol,
   snapshotSchema,
   normalizeRecords,
   createFinancialEngine,
+  argumentsSchema,
+  toolContract,
+  execute,
+  getQuote: financialEngine.getQuote,
+  getPriceHistory: financialEngine.getPriceHistory,
+  getFinancialStatements: financialEngine.getFinancialStatements,
+  getEarnings: financialEngine.getEarnings,
   fetch: financialEngine.fetch,
 };

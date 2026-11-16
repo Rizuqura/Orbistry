@@ -30,6 +30,7 @@ import { AssignFilesDialog } from "../features/worldview/assign-files-dialog";
 import { FileInspector } from "../features/worldview/file-inspector";
 import { EntityActions } from "../features/worldview/entity-actions";
 import { KnowledgeCard } from "../features/worldview/knowledge-card";
+import { BackendIdentityWindow } from "../features/worldview/backend-identity-window";
 import { ConnectorDialog } from "../features/worldview/connector-dialog";
 import { WorldSearch } from "../features/worldview/world-search";
 import {
@@ -129,6 +130,7 @@ export function WorldView({
   const [iconError, setIconError] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [cardId, setCardId] = useState<string | null>(null);
+  const [identityId, setIdentityId] = useState<string | null>(null);
   const [assigningChip, setAssigningChip] = useState<WorldViewChip | null>(
     null,
   );
@@ -178,6 +180,7 @@ export function WorldView({
   const controlsDisabled =
     canvasError || !vaultPath || !persistence.ready || persistence.loading;
   const cardChip = chips.find((chip) => chip.id === cardId);
+  const identityChip = chips.find((chip) => chip.id === identityId);
 
   /** Loads/restores this existing Universe's indexes whenever WorldView is opened. */
   useEffect(
@@ -949,6 +952,13 @@ export function WorldView({
       canvasRef.current?.focus({ preventScroll: true }),
     );
   }
+  /** Closes only the independent backend inspector and returns keyboard focus to WorldView. */
+  function closeBackendIdentity(): void {
+    setIdentityId(null);
+    requestAnimationFrame(() =>
+      canvasRef.current?.focus({ preventScroll: true }),
+    );
+  }
   /** Clears both Canvas and React selection, including any source inspector. */
   function deselectEntity(): void {
     controlsRef.current?.select(null);
@@ -1164,6 +1174,7 @@ export function WorldView({
               onOpenCard={openKnowledgeCard}
               onAssign={assignFiles}
               onEdit={editSelectedChip}
+              onBackendIdentity={() => setIdentityId(selectedChip.id)}
               onSources={inspectFiles}
               onDelete={deleteSelectedChip}
               onDeselect={deselectEntity}
@@ -1381,6 +1392,14 @@ export function WorldView({
           vaultPath={vaultPath}
           disabled={controlsDisabled}
           onBack={backToWorldView}
+        />
+      )}
+      {identityChip && vaultPath && (
+        <BackendIdentityWindow
+          key={`${vaultPath}:${identityChip.id}`}
+          chip={identityChip}
+          vaultPath={vaultPath}
+          onClose={closeBackendIdentity}
         />
       )}
       <div

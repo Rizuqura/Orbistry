@@ -41,6 +41,18 @@ async function verifyFinancials({ app, page, createChip }) {
         async fundamentalsTimeSeries(symbol, options) {
           return [
             {
+              date: new Date("2023-06-28"),
+              periodType: options.type === "annual" ? "12M" : "3M",
+              totalRevenue: options.type === "annual" ? 70 : 17,
+              netIncome: 8,
+            },
+            {
+              date: new Date("2024-06-28"),
+              periodType: options.type === "annual" ? "12M" : "3M",
+              totalRevenue: options.type === "annual" ? 85 : 21,
+              netIncome: 11,
+            },
+            {
               date: new Date("2025-06-28"),
               periodType: options.type === "annual" ? "12M" : "3M",
               totalRevenue: options.type === "annual" ? 100 : 25,
@@ -85,6 +97,23 @@ async function verifyFinancials({ app, page, createChip }) {
   });
   await financial.getByRole("cell", { name: "100", exact: true }).waitFor();
   assert.match(await financial.innerText(), /TWD/);
+  assert.equal(await financial.locator("header button").count(), 0);
+  assert.equal(
+    await financial
+      .locator('footer[aria-label="Finance utilities"]')
+      .getByRole("button", { name: "Refresh", exact: true })
+      .count(),
+    1,
+  );
+  await financial
+    .getByRole("img", { name: /Revenue and net income trend/ })
+    .waitFor();
+  assert.equal(
+    await card
+      .locator(".knowledge-entity-header")
+      .evaluate((node) => node.closest(".knowledge-content")),
+    null,
+  );
   await financial
     .getByRole("button", { name: "Quarterly", exact: true })
     .click();
@@ -120,6 +149,11 @@ async function verifyFinancials({ app, page, createChip }) {
   await financial.getByRole("cell", { name: "100", exact: true }).waitFor();
   assert.equal(await app.evaluate(() => globalThis.financeSmoke.calls), 3);
   await page.screenshot({ path: "test-results/yahoo-financials-native.png" });
+  const main = card.locator(".knowledge-card-main");
+  await main.evaluate((node) => {
+    node.scrollTop = node.scrollHeight;
+  });
+  await page.screenshot({ path: "test-results/yahoo-financials-content.png" });
   return { financials: true, earnings: true, localTabs: true, offline: true };
 }
 module.exports = { verifyFinancials };

@@ -638,29 +638,6 @@
 .chat-composer textarea {
   font-size: 12px;
 }
-.context-boxes {
-  border-top: 1px solid var(--border, var(--orb-hover));
-  padding: 8px;
-  flex: 0 1 auto;
-  min-height: 120px;
-  overflow: auto;
-  max-height: 45%;
-  font-size: 12px;
-}
-.context-boxes .pane-heading {
-  padding: 0 0 8px;
-}
-.context-boxes input:not([type="checkbox"]),
-.context-boxes select {
-  width: 100%;
-  min-width: 0;
-  padding: 7px;
-  background: var(--orb-panel);
-  color: var(--orb-frost);
-  border: 1px solid var(--orb-slate);
-  border-radius: 4px;
-}
-.context-boxes button,
 .agent-box-selector select {
   background: var(--orb-raised);
   color: var(--orb-frost);
@@ -670,72 +647,6 @@
   cursor: pointer;
   text-align: left;
 }
-.context-boxes button:disabled {
-  opacity: 0.45;
-  cursor: default;
-}
-.box-selection-actions {
-  display: grid;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-.context-box-sidebar-list {
-  display: grid;
-  gap: 5px;
-  padding-top: 8px;
-}
-.context-box-sidebar-list button {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-}
-.context-box-sidebar-list strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.context-box-sidebar-list small {
-  flex-shrink: 0;
-}
-.context-boxes .context-box-dialog {
-  width: min(620px, calc(100vw - 32px));
-  margin: auto;
-  overflow-wrap: anywhere;
-}
-.context-box-dialog label {
-  display: grid;
-  gap: 5px;
-  margin: 10px 0;
-}
-.box-source-list {
-  list-style: none;
-  padding: 0;
-  max-height: 32vh;
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--orb-slate) var(--orb-panel);
-  margin: 12px 0;
-}
-.box-source-list > li {
-  border-bottom: 1px solid var(--orb-slate);
-  padding: 10px 0;
-}
-.box-source-list > label {
-  display: flex;
-  align-items: start;
-  gap: 10px;
-}
-.context-boxes .box-source-list input[type="checkbox"] {
-  width: 16px;
-  flex: 0 0 16px;
-  padding: 0;
-  margin-top: 3px;
-}
-.box-source-list small {
-  display: block;
-  margin: 7px 0;
-  color: var(--orb-mist);
-}
 .agent-box-selector {
   display: grid;
   width: 100%;
@@ -744,23 +655,6 @@
 .agent-box-selector select {
   width: 100%;
   min-width: 0;
-}
-.context-token-estimate {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid var(--orb-slate);
-  background: var(--orb-panel);
-  color: #a8dce8;
-  font:
-    11px/1.5 ui-monospace,
-    monospace;
-}
-.context-token-estimate strong {
-  font-size: 20px;
 }
 .context-box-manager-form input {
   display: block;

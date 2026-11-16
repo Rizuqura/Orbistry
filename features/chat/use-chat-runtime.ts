@@ -65,7 +65,6 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
   const agentRef = useRef("wonnyy-agent");
   const agentDrafts = useRef(new Map<string, string>());
   const [connected, setConnected] = useState(false);
-  const [canonicalVault, setCanonicalVault] = useState<string | null>(null);
   const [startup, setStartup] = useState({
     vaultPath,
     progress: 0,
@@ -118,7 +117,6 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
       error: null,
     });
     setConnected(false);
-    setCanonicalVault(null);
     setConversation(null);
     setContextBoxes([]);
     setPreselectedBoxId("");
@@ -209,12 +207,9 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
         try {
           savedId = localStorage.getItem("qterminal-active-chat:" + vaultPath);
         } catch {}
-        const resolvedVault =
-          vaultPath && client.getVaultIdentity
-            ? (await client.getVaultIdentity()).vaultPath
-            : vaultPath;
+        // Validate the active Vault before restoring profiles; no duplicate path state is needed.
+        if (vaultPath && client.getVaultIdentity) await client.getVaultIdentity();
         if (session.current !== version) return;
-        setCanonicalVault(resolvedVault);
         const profiles = client.listAgents ? await client.listAgents() : [];
         if (session.current !== version) return;
         setStartup({

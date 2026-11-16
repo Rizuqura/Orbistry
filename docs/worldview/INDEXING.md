@@ -2,6 +2,10 @@
 
 This guide covers the current WorldView indexing controls, source syntax, viewers and finance packages in 1.0.5 Victoria (Beta).
 
+Indexed content uses black terminal panels, amber headings and IBM Plex Mono. Source actions such as **Locate Original**, refresh controls, workbook exports and image-note saving are grouped below their content. Section, worksheet, period and chart-range controls remain alongside the views they select.
+
+For a provider-independent, compiled view of an entity's applied index, use **… → See Backend Identity** below **Edit Entity**, then **Generate Backend Identity**. Compilation is manual and does not execute declared tools. See the [Backend Identity guide](packages/backend-identity-v1.md) for schemas, chunk retrieval, freshness and backend permissions.
+
 ## Start here
 
 1. Select an entity chip in WorldView and open **View Knowledge Card**.
@@ -121,7 +125,7 @@ Examples of ticker forms include `AAPL`, `TSM`, `BBCA.JK`, `^JKSE`, `BTC-USD` an
 
 ### Price controls
 
-Choose **1M**, **3M**, **6M** or **1Y** for the chart range. Hover the chart or use its arrow-key navigation to inspect daily observations. The panel shows currency, market state, market timestamp and delay when available.
+Choose **1M**, **3M**, **6M**, **1Y**, **5Y** or **MAX** for the chart range. Hover the chart or use its arrow-key navigation to inspect observations. Short ranges use daily observations, **5Y** uses weekly observations and **MAX** uses monthly observations. Longer histories load only when selected and have a six-hour cache. Corporate actions supplied by the provider appear under **Dividends and stock splits** for longer ranges. The panel shows currency, market state, market timestamp, reported delay, market cap, P/E, EPS, 52-week range and volume when available. Each listing retains its original currency; `TSM` and `2330.TW` are distinct listings.
 
 For `yahooPrice()`, enter a ticker and choose **Save ticker**. Empty calls share the entity's saved default ticker. Explicit ticker arguments select their own symbol. Saving a blank ticker field removes the default association.
 
@@ -169,7 +173,7 @@ node scripts/build-yahoo-financials-engine.cjs --universe C:/Universe
 node scripts/build-excel-engine.cjs --universe C:/Universe
 ```
 
-For an existing installation, append `--upgrade`. The builders verify installed files and retain backups. Run a builder without arguments to stage a standalone package under `.cache/engine-packages`.
+For an existing installation, append `--upgrade`. The builders verify installed files and retain backups. Run a builder without arguments to stage a standalone package under `.cache/engine-packages`. `node scripts/clean-engine-backups.cjs --universe C:/Universe` previews verified obsolete installer backups; append `--apply` to remove only those backups. Active engines and all caches remain in place.
 
 ## Troubleshooting
 
@@ -187,8 +191,7 @@ For an existing installation, append `--upgrade`. The builders verify installed 
 
 ## Documentation map
 
-- Package API and maintenance details are in [Daily Price](packages/daily-price-v0.1.md), [Financials & Earnings](packages/yahoo-financials-v0.1.md) and [Excel](packages/excel-v0.1.md).
+- Package API and maintenance details are in [Daily Price](packages/daily-price-v0.1.md), [Yahoo Finance and future LLM access](packages/yahoo-financials-v0.2.md) and [Excel](packages/excel-v0.1.md).
 - Viewer details are in [Carousel and Timeline behavior](reference/carousel-viewer/UI_BEHAVIOR.md).
 - Implementation and verification notes are grouped in [reports](reports/).
-- Earlier image parsing designs are retained in [historical notes](archive/image-parse-carousel/README.md).
 - Broader project documentation is listed in the [documentation index](../README.md).

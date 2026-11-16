@@ -3,30 +3,60 @@ const path = require("node:path");
 const { createHash } = require("node:crypto");
 const { rejectSymlink, writeJson } = require("./ai/json-store.cjs");
 const engine = require("./engines/yahoo-financials/index.cjs");
+const market = require("./engines/yahoo-financials/market.cjs");
 
 /** Creates a bounded, coalesced Universe cache using the existing atomic JSON storage conventions. TTL defaults to 24 hours. */
 function createFinancialService({
-  fetch = engine.fetch,
+  fetch = (symbol, operation, range) =>
+    engine.execute({ symbol, operation, ...(range ? { range } : {}) }),
   clock = Date.now,
   ttlMs = 86400000,
+  ttlByKind = {},
 } = {}) {
   const pending = new Map();
   if (!Number.isFinite(ttlMs) || ttlMs < 0)
     throw new Error("Invalid financial cache TTL.");
+  const lifetimes = {
+    quote: 300000,
+    history: 21600000,
+    financials: ttlMs,
+    earnings: ttlMs,
+    ...ttlByKind,
+  };
+  if (
+    Object.values(lifetimes).some(
+      (value) => !Number.isFinite(value) || value < 0,
+    )
+  )
+    throw new Error("Invalid market cache TTL.");
   /** Reads a validated snapshot or refreshes it, preserving successful data on provider failure and reporting corrupt caches. */
-  async function get(root, input, kind, force = false) {
+  async function get(root, input, kind, force = false, range) {
     const symbol = engine.normalizeSymbol(input);
     if (
-      !["financials", "earnings"].includes(kind) ||
+      !["financials", "earnings", "quote", "history"].includes(kind) ||
       typeof force !== "boolean"
     )
       throw new Error("Invalid finance request.");
+    if (kind === "history") range = range ?? "1Y";
+    if (
+      (kind === "history" && !market.RANGES.includes(range)) ||
+      (kind !== "history" && range !== undefined)
+    )
+      throw new Error("Invalid market history range.");
+    const schema =
+      kind === "quote"
+        ? market.quoteSchema
+        : kind === "history"
+          ? market.historySchema
+          : engine.snapshotSchema;
     let target = await fs.realpath(root);
     for (const part of [
       ".engine",
       "yahoo-financials",
       "cache",
-      createHash("sha256").update(`${symbol}:${kind}`).digest("hex") + ".json",
+      createHash("sha256")
+        .update(`${symbol}:${kind}${range ? ":" + range : ""}`)
+        .digest("hex") + ".json",
     ]) {
       target = path.join(target, part);
       await rejectSymlink(target);
@@ -40,10 +70,12 @@ function createFinancialService({
         const stat = await fs.stat(target);
         if (!stat.isFile() || stat.size > 8 * 1024 * 1024)
           throw new Error("Financial cache exceeds its size limit.");
-        saved = engine.snapshotSchema.parse(
-          JSON.parse(await fs.readFile(target, "utf8")),
-        );
-        if (saved.symbol !== symbol || saved.kind !== kind)
+        saved = schema.parse(JSON.parse(await fs.readFile(target, "utf8")));
+        if (
+          saved.symbol !== symbol ||
+          (saved.kind && saved.kind !== kind) ||
+          (range && saved.range !== range)
+        )
           throw new Error("Financial cache identity mismatch.");
       } catch (error) {
         saved = null;
@@ -51,14 +83,18 @@ function createFinancialService({
           warning = `Saved cache could not be read. ${error.message}`;
       }
       const age = saved ? clock() - Date.parse(saved.fetchedAt) : Infinity;
-      if (!force && saved && age >= 0 && age < ttlMs)
+      if (!force && saved && age >= 0 && age < lifetimes[kind])
         return { snapshot: saved, cached: true, stale: false, warning };
       let snapshot;
       try {
-        snapshot = engine.snapshotSchema.parse(await fetch(symbol, kind));
-        if (snapshot.symbol !== symbol || snapshot.kind !== kind)
+        snapshot = schema.parse(await fetch(symbol, kind, range));
+        if (
+          snapshot.symbol !== symbol ||
+          (snapshot.kind && snapshot.kind !== kind) ||
+          (range && snapshot.range !== range)
+        )
           throw new Error("Provider dataset identity mismatch.");
-        if (saved && snapshot.warnings.length)
+        if (saved && snapshot.warnings?.length)
           throw new Error(snapshot.warnings.join(" "));
       } catch (error) {
         if (saved)
@@ -114,8 +150,43 @@ async function getIndexedFinance(root, id, menuId, financeId, force = false) {
     throw new Error("Financial source changed. Reopen this section.");
   return result;
 }
+/** Resolves an applied price declaration or saved entity ticker before and after fetching history. Callers cannot supply a different symbol. */
+async function getAuthorizedHistory(root, input) {
+  const prices = require("./daily-price-service.cjs");
+  /** Rechecks the original entity declaration on every access, including after provider work. */
+  async function symbol() {
+    if (input.priceId)
+      return prices.resolveIndexedPrice(
+        root,
+        input.id,
+        input.menuId,
+        input.priceId,
+      );
+    const state = await require("./knowledge-store.cjs").readKnowledgeIndex(
+      root,
+      input.id,
+    );
+    if (!state.priceSymbol)
+      throw new Error(
+        "Save a ticker or choose an applied Yahoo price source first.",
+      );
+    return engine.normalizeSymbol(state.priceSymbol);
+  }
+  const ticker = await symbol();
+  const result = await financialService.get(
+    root,
+    ticker,
+    "history",
+    input.force ?? false,
+    input.range,
+  );
+  if ((await symbol()) !== ticker)
+    throw new Error("Price source changed. Reopen this section.");
+  return result;
+}
 module.exports = {
   createFinancialService,
   financialService,
   getIndexedFinance,
+  getAuthorizedHistory,
 };

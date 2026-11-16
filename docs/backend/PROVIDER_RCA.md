@@ -1,8 +1,8 @@
 # QT-RCA-001 — Provider and inference pipeline audit
 
-Latest follow-up: [QT-RCA-003](../../report/Orbistry_NVIDIA_Omni_Fix_QT-RCA-003.md) adds verified instruct-mode support for the reported Nano Omni model, with a real 10-point financial test answer in normal Agent Chat and application to the active checkout.
+Historical follow-up QT-RCA-003 added verified instruct-mode support for the reported Nano Omni model. Its original report remains in Git history; current verification commands are in [provider diagnostics](PROVIDER_DIAGNOSTICS.md).
 
-Follow-up: [QT-RCA-002](../../report/Orbistry_NVIDIA_Thinking_Fix_QT-RCA-002.md) verifies the user's subsequently selected NVIDIA Lightning deployment after an explicit thinking-mode repair, including normal Agent Chat and application to the active checkout. The original DeepSeek failure below remains a separate historical capture.
+Historical follow-up QT-RCA-002 verified an NVIDIA Lightning deployment after an explicit thinking-mode repair. Its original report remains in Git history. The original DeepSeek failure below remains a separate historical capture.
 
 Date: 2026-10-30, Asia/Jakarta. Verdict: **PARTIALLY OPERATIONAL**.
 

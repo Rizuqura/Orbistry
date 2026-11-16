@@ -1,0 +1,323 @@
+/* Terminal palette and typography are confined to Knowledge Card content. */
+.knowledge-content {
+  --font-worldview: "IBM Plex Mono", Consolas, monospace;
+  --orb-ink: #05090d;
+  --orb-panel: #0a1015;
+  --orb-raised: #181b1c;
+  --orb-hover: #292a25;
+  --orb-slate: #665a3e;
+  --orb-muted: #b2b0a6;
+  --orb-mist: #e8e5dc;
+  --orb-frost: #f5f1e4;
+  --knowledge-accent: #ffb000;
+  --knowledge-positive: #00e64d;
+  --knowledge-negative: #ff4747;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--orb-slate);
+  background: var(--orb-ink);
+  color: var(--orb-mist);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.knowledge-content
+  :is(
+    button,
+    input,
+    select,
+    textarea,
+    .chat-rich-text,
+    .chat-rich-text p,
+    .chat-rich-text li,
+    .chat-rich-text blockquote,
+    .knowledge-markdown,
+    .metrics
+  ) {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+}
+.knowledge-content :is(button, input, textarea, select) {
+  color: var(--orb-mist);
+  background: var(--orb-panel);
+  border-color: var(--orb-slate);
+}
+.knowledge-content button:hover:not(:disabled) {
+  color: var(--knowledge-accent);
+  background: #211b0d;
+}
+.knowledge-content :is(h2, h3, h4) {
+  font-family: inherit;
+}
+.knowledge-content > h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--orb-slate);
+  color: var(--knowledge-accent);
+}
+.knowledge-content-caption,
+.knowledge-widget > header,
+.financial-trend > footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+.knowledge-content-caption {
+  margin: 12px 0;
+  color: var(--orb-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.knowledge-document-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 14px;
+}
+.knowledge-content .knowledge-widget {
+  min-width: 0;
+  border: 1px solid var(--orb-slate);
+  background: var(--orb-panel);
+  padding: 12px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.knowledge-widget > header {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--orb-slate);
+}
+.knowledge-widget > header :is(h3, h4, p) {
+  margin: 0;
+}
+.knowledge-widget > header :is(h3, h4) {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--knowledge-accent);
+}
+.knowledge-widget > header > span,
+.knowledge-widget > footer,
+.knowledge-provenance {
+  color: var(--orb-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.knowledge-widget > footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--orb-slate);
+}
+.knowledge-facts {
+  margin: 0;
+}
+.knowledge-facts > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 30%) minmax(0, 1fr);
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--orb-hover);
+}
+.knowledge-facts dt {
+  color: var(--orb-muted);
+}
+.knowledge-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.knowledge-facts .chat-rich-text p {
+  margin: 0;
+}
+.knowledge-content .knowledge-markdown {
+  font-size: 12px;
+  line-height: 1.75;
+}
+.knowledge-content .knowledge-markdown .chat-rich-text blockquote {
+  background: transparent;
+  border-left-color: var(--knowledge-accent);
+  padding: 4px 12px;
+  color: var(--orb-muted);
+}
+.knowledge-original-document {
+  margin-top: 18px;
+  border-top: 1px solid var(--orb-slate);
+  padding-top: 12px;
+}
+.knowledge-original-document summary {
+  cursor: pointer;
+  color: var(--knowledge-accent);
+}
+.knowledge-content .knowledge-source-preview > header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--orb-slate);
+  padding-bottom: 12px;
+}
+.knowledge-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 1px;
+  background: var(--orb-slate);
+  border: 1px solid var(--orb-slate);
+  margin: 16px 0;
+}
+.knowledge-metric-grid > div {
+  background: var(--orb-ink);
+  padding: 12px 14px;
+  min-width: 0;
+}
+.knowledge-metric-grid dt {
+  color: var(--orb-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.knowledge-metric-grid dd {
+  margin: 6px 0 3px;
+  font:
+    500 19px "IBM Plex Mono",
+    monospace;
+  color: var(--orb-frost);
+}
+.knowledge-metric-grid small {
+  font-size: 10px;
+  color: var(--orb-muted);
+}
+.knowledge-content :is(table, .daily-price-value) {
+  font-family: "IBM Plex Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+.knowledge-content table {
+  font-size: 12px;
+}
+.knowledge-content .excel-table-scroll {
+  border-color: var(--orb-slate);
+  max-height: 480px;
+  scrollbar-color: var(--orb-slate) var(--orb-ink);
+}
+.knowledge-content .excel-preview :is(th, td) {
+  padding: 9px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--orb-hover);
+  line-height: 1.6;
+}
+.knowledge-content .excel-preview thead th {
+  background: var(--orb-panel);
+  color: var(--knowledge-accent);
+  white-space: nowrap;
+}
+.knowledge-content .excel-preview tbody tr:hover {
+  background: var(--orb-panel);
+}
+.knowledge-content .excel-preview .excel-number {
+  text-align: right;
+}
+.knowledge-content .excel-preview tbody th {
+  position: sticky;
+  left: 0;
+  background: var(--orb-ink);
+  font-weight: 400;
+  min-width: 150px;
+  max-width: 270px;
+}
+.knowledge-content .excel-tabs {
+  gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--orb-slate);
+}
+.knowledge-content .excel-tabs button {
+  padding: 7px 10px;
+  font-size: 11px;
+}
+.knowledge-content
+  .excel-tabs
+  :is([aria-selected="true"], [aria-pressed="true"]) {
+  background: var(--orb-hover);
+  color: var(--knowledge-accent);
+}
+.knowledge-content .financial-trend {
+  margin: 14px 0;
+  padding: 12px;
+}
+.financial-trend svg {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  overflow: visible;
+}
+.financial-trend svg path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.financial-trend-grid {
+  stroke: var(--orb-hover);
+  stroke-width: 1;
+}
+.financial-trend-revenue {
+  stroke: var(--knowledge-accent);
+}
+.financial-trend-income {
+  stroke: #aab2b6;
+}
+.financial-trend text {
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+  fill: var(--orb-muted);
+}
+.financial-revenue-key {
+  color: var(--knowledge-accent);
+}
+.financial-income-key {
+  color: #aab2b6;
+}
+.financial-positive {
+  color: var(--knowledge-positive);
+}
+.financial-negative {
+  color: var(--knowledge-negative);
+}
+.knowledge-content :is(button, summary, [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--knowledge-accent);
+  outline-offset: 2px;
+}
+.knowledge-utilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--orb-slate);
+}
+.knowledge-content .knowledge-utilities > form {
+  margin: 0;
+}
+.knowledge-content .knowledge-utilities button {
+  color: var(--knowledge-accent);
+}
+.knowledge-content .pdf-reader {
+  display: flex;
+  flex-direction: column;
+}
+.knowledge-content .pdf-toolbar {
+  order: 2;
+  margin-top: 14px;
+}
+.knowledge-content .pdf-status {
+  order: 3;
+}
+@media (max-width: 700px) {
+  .knowledge-document-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .knowledge-content .knowledge-widget {
+    padding: 12px;
+  }
+  .knowledge-facts > div {
+    grid-template-columns: minmax(80px, 35%) minmax(0, 1fr);
+  }
+}

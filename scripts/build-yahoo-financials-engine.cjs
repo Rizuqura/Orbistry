@@ -1,6 +1,7 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { randomUUID } = require("node:crypto");
+const { execFileSync } = require("node:child_process");
 const {
   safeDirectory,
   rejectSymlink,
@@ -26,10 +27,12 @@ async function main() {
     "engines",
     "yahoo-financials",
   );
+  const { version } = require(path.join(source, "package.json"));
+  const { definition } = require(path.join(source, "index.cjs"));
   const stageRoot = path.join(repository, ".cache", "engine-packages");
   await safeDirectory(stageRoot);
   const stage = await fs.mkdtemp(
-    path.join(stageRoot, "yahoo-financials-0.1.0-"),
+    path.join(stageRoot, `yahoo-financials-${version}-`),
   );
   await fs.cp(source, stage, { recursive: true });
   const dependencies = await copyDependencies(
@@ -42,7 +45,7 @@ async function main() {
       "docs",
       "worldview",
       "packages",
-      "yahoo-financials-v0.1.md",
+      "yahoo-financials-v0.2.md",
     ),
     path.join(stage, "README.md"),
   );
@@ -52,7 +55,7 @@ async function main() {
       "docs",
       "worldview",
       "reports",
-      "yahoo-financials-v0.1.md",
+      "yahoo-financials-v0.2.md",
     ),
     path.join(stage, "IMPLEMENTATION_REPORT.md"),
   );
@@ -63,9 +66,12 @@ async function main() {
       {
         schema_version: 1,
         engine_id: "yahoo-financials",
-        engine_version: "0.1.0",
+        engine_version: version,
         entry: "index.cjs",
-        operations: ["financials", "earnings"],
+        operations: definition.operations,
+        read_only: true,
+        tool_contract: "tools.json",
+        cli: "cli.cjs",
         dependencies,
         sha256,
       },
@@ -76,6 +82,38 @@ async function main() {
   const bundled = require(path.join(stage, "index.cjs"));
   if (bundled.normalizeSymbol(" bbca.jk ") !== "BBCA.JK")
     throw new Error("Financial package smoke failed.");
+  const discovery = JSON.parse(
+    execFileSync(
+      process.execPath,
+      [path.join(stage, "cli.cjs"), "--describe"],
+      { encoding: "utf8", timeout: 10000 },
+    ),
+  );
+  if (
+    JSON.stringify(discovery.inputSchema.properties.operation.enum) !==
+    JSON.stringify(definition.operations)
+  )
+    throw new Error(
+      "Standalone tool discovery does not match the Engine operations.",
+    );
+  const fixture = bundled.createFinancialEngine({
+    client: {
+      /** Verifies packaged execution without placing network calls during a build. */
+      async quote(symbol) {
+        return {
+          symbol,
+          currency: "TWD",
+          regularMarketPrice: 100,
+          regularMarketTime: new Date("2026-11-16"),
+        };
+      },
+    },
+  });
+  if (
+    (await fixture.execute({ operation: "quote", symbol: "2330.TW" }))
+      .currency !== "TWD"
+  )
+    throw new Error("Standalone Yahoo execution failed.");
   let installed = null;
   let backup = null;
   if (args.length) {

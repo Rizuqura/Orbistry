@@ -48,6 +48,11 @@ export type WorldViewOperation =
   | "connector-update"
   | "connector-delete"
   | "knowledge-load"
+  | "identity-status"
+  | "identity-generate"
+  | "identity-chunks"
+  | "identity-capabilities"
+  | "identity-copy"
   | "knowledge-draft"
   | "knowledge-validate"
   | "knowledge-apply"
@@ -55,6 +60,7 @@ export type WorldViewOperation =
   | "price-symbol"
   | "price-get"
   | "price-index"
+  | "price-history"
   | "finance-index"
   | "knowledge-excel"
   | "knowledge-excel-copy"
@@ -74,6 +80,10 @@ export type WorldViewRequest = {
   id?: string;
   directory?: string;
   query?: string;
+  version?: string;
+  offset?: number;
+  limit?: number;
+  section?: "identity" | "knowledge" | "capabilities" | "log";
   sourceRefs?: string[];
   sourceId?: string;
   sourceRef?: string;
@@ -85,6 +95,7 @@ export type WorldViewRequest = {
   symbol?: string;
   menuId?: string;
   priceId?: string;
+  range?: "1M" | "3M" | "6M" | "1Y" | "5Y" | "MAX";
   financeId?: string;
   sheetIndex?: number;
   rowOffset?: number;
@@ -265,6 +276,41 @@ export type DailyPriceResponse = Readonly<{
     fetchedAt: string;
     historyFetchedAt: string;
     history: readonly Readonly<{ date: string; close: number }>[];
+    metrics?: Readonly<{
+      marketCap: number | null;
+      trailingPE: number | null;
+      eps: number | null;
+      week52Low: number | null;
+      week52High: number | null;
+      volume: number | null;
+    }>;
+  }>;
+}>;
+export type MarketHistoryResponse = Readonly<{
+  cached: boolean;
+  stale: boolean;
+  warning: string | null;
+  snapshot: Readonly<{
+    provider: "Yahoo Finance";
+    symbol: string;
+    currency: string | null;
+    fetchedAt: string;
+    range: "1M" | "3M" | "6M" | "1Y" | "5Y" | "MAX";
+    interval: "1d" | "1wk" | "1mo";
+    observations: readonly Readonly<{
+      date: string;
+      open: number | null;
+      high: number | null;
+      low: number | null;
+      close: number | null;
+      volume: number | null;
+    }>[];
+    dividends: readonly Readonly<{ date: string; amount: number | null }>[];
+    splits: readonly Readonly<{
+      date: string;
+      numerator: number | null;
+      denominator: number | null;
+    }>[];
   }>;
 }>;
 export type KnowledgeIndexSave = KnowledgeIndexState &

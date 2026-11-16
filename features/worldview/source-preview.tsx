@@ -9,9 +9,9 @@ import type {
 } from "../../types/worldview";
 import { requireWorldViewBridge } from "./chip-session";
 import { ExcelPreview } from "./excel-preview";
-import { ChatMarkdown } from "../chat/chat-markdown";
+import { IndexedDocument } from "./indexed-document-view";
 
-/** Resolves an applied source through the guarded preview API, rendering Markdown formatting and other original content with read-only viewers. */
+/** Resolves an applied source through the guarded preview API, rendering attributed document widgets and read-only original viewers. */
 export function SourcePreview({
   entityId,
   vaultPath,
@@ -116,30 +116,18 @@ export function SourcePreview({
             {file?.size ?? assigned.sizeBytes} bytes
           </small>
         </div>
-        <button
-          type="button"
-          onClick={() => void locateOriginal()}
-          disabled={locating}
-        >
-          Locate Original
-        </button>
       </header>
-      {error && (
-        <p role="alert">
-          {error}{" "}
-          <button type="button" onClick={() => setRetry(retry + 1)}>
-            Retry Preview
-          </button>
-        </p>
-      )}
+      {error && <p role="alert">{error} </p>}
       {!file && !error && <p role="status">Loading source preview…</p>}
       {file?.kind === "text" &&
         (file.extension === ".csv" ? (
           <CsvTable content={file.content} maxRows={2000} maxColumns={200} />
         ) : [".md", ".markdown"].includes(file.extension.toLowerCase()) ? (
-          <div className="knowledge-markdown">
-            <ChatMarkdown content={file.content} />
-          </div>
+          <IndexedDocument
+            content={file.content}
+            filename={assigned.filename}
+            sourceRef={assigned.sourceRef}
+          />
         ) : (
           <MarkdownContent content={file.content} />
         ))}
@@ -169,6 +157,20 @@ export function SourcePreview({
           access the source.
         </p>
       )}
+      <footer className="knowledge-utilities" aria-label="Source utilities">
+        <button
+          type="button"
+          onClick={() => void locateOriginal()}
+          disabled={locating}
+        >
+          Locate Original
+        </button>
+        {error && (
+          <button type="button" onClick={() => setRetry(retry + 1)}>
+            Retry Preview
+          </button>
+        )}
+      </footer>
     </section>
   );
 }
