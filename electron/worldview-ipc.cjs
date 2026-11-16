@@ -9,6 +9,15 @@ const { listVaultMetadata, statVaultSource } = require("./vault-service.cjs");
 /** Registers narrow main-frame WorldView operations against the active Vault. Optional clipboard access copies only regenerated authorized Excel previews, never caller-supplied text. */
 function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
   const operations = {
+    /** Retrieves an authorized financial dataset from the applied Knowledge Card index. */
+    "finance-index": (root, input) =>
+      require("./financial-service.cjs").getIndexedFinance(
+        root,
+        input.id,
+        input.menuId,
+        input.financeId,
+        input.force ?? false,
+      ),
     /** Retrieves only the Yahoo source identified by an applied entity/menu/declaration triple. */
     "price-index": (root, input) =>
       require("./daily-price-service.cjs").getIndexedPrice(

@@ -1,0 +1,10 @@
+{
+  "name": "@orbistry/yahoo-financials",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.cjs",
+  "dependencies": {
+    "yahoo-finance2": "4.0.6",
+    "zod": "^4.6.7"
+  }
+}

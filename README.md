@@ -2,7 +2,9 @@
 
 A local-first workspace with configurable AI agents, interactive WorldView and floating Knowledge Cards.
 
-**Victoria 1.0.4 (Beta)** — WorldView, Knowledge Cards, and Wonton engine update.
+**1.0.5 Victoria (Beta)** — WorldView, Knowledge Cards, and Yahoo financial statements and earnings.
+
+See the [Knowledge Card indexing and package guide](docs/worldview/INDEXING.md) for controls, source syntax and finance features. The [documentation index](docs/README.md) lists package references, architecture and reports.
 
 The reset is documented in [WorldView reset report](docs/architecture/WORLDVIEW_RESET.md). The [pre-reset guide](docs/archive/README-before-worldview-reset.md), release notes, prior architecture documents and audit evidence describe historical behavior.
 
@@ -15,7 +17,7 @@ The reset is documented in [WorldView reset report](docs/architecture/WORLDVIEW_
 - **Workspace** retains the Vault explorer, Markdown editor, CSV/PDF/image readers, Windows OCR and explicit Vault operations. Those operations are independent of agent inference.
 - Ollama, Gemini, NVIDIA NIM, OpenRouter, BYOK, provided-model selection, encrypted credentials and provider usage tracking remain available.
 
-See [Victoria 1.0.4 release notes](report/release-1.0.4.md) for the current WorldView and Wonton updates.
+See [1.0.5 Victoria (Beta) release notes](docs/worldview/reports/release-1.0.5.md) for the current WorldView and Wonton updates.
 
 ## Development
 

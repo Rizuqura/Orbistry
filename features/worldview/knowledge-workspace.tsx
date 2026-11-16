@@ -12,6 +12,7 @@ import { chipTextColor } from "./chip-colors";
 import { flushWorldViewWrites, requireWorldViewBridge } from "./chip-session";
 import { SourcePreview } from "./source-preview";
 import { ImageCarousel } from "./image-carousel";
+import { FinancialViewer } from "./financial-viewer";
 import { DailyPrice } from "./daily-price";
 import { useConfirmation } from "../dialogs/use-confirmation";
 
@@ -327,9 +328,11 @@ export function KnowledgeWorkspace({
             <p>
               Use # Menu title and source: followed by an assigned source ID.
               Use source: yahooPrice(&quot;BBCA.JK&quot;) for a price chart in
-              any section. Group images with Carousel = [ source lines ]
-              followed by .view(carousel) or .view(timeline), using a separate
-              line for each source.
+              any section. Use source: yahooFinancials(&quot;TSM&quot;) for
+              statements or source: yahooEarnings(&quot;TSM&quot;) for earnings.
+              Group images with Carousel = [ source lines ] followed by
+              .view(carousel) or .view(timeline), using a separate line for each
+              source.
             </p>
             <label>
               Index declarations
@@ -434,6 +437,7 @@ export function KnowledgeWorkspace({
             {activeGenerated &&
               activeGenerated.sourceIds.length === 0 &&
               !activeGenerated.prices?.length &&
+              !activeGenerated.finance?.length &&
               !activeGenerated.carousels?.length && (
                 <p className="knowledge-card-empty">
                   No sources declared for this menu.
@@ -449,6 +453,16 @@ export function KnowledgeWorkspace({
                   index={index}
                   onIndexChange={setIndex}
                   source={{ ...source, menuId: activeGenerated.id }}
+                />
+              ))}
+            {vaultPath &&
+              activeGenerated?.finance?.map((source) => (
+                <FinancialViewer
+                  key={activeGenerated.id + ":" + source.id}
+                  entityId={chip.id}
+                  vaultPath={vaultPath}
+                  menuId={activeGenerated.id}
+                  source={source}
                 />
               ))}
             {vaultPath &&

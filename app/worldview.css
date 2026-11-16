@@ -115,7 +115,8 @@
 .knowledge-card {
   position: absolute;
   z-index: 10;
-  width: min(1040px, calc(100% - 48px));
+  width: 80vw;
+  max-width: calc(100% - 24px);
   height: min(680px, calc(100% - 64px));
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
@@ -227,7 +228,8 @@
   align-items: center;
   gap: 14px;
   margin-bottom: 24px;
-  padding-bottom: 24px;
+  padding: 20px;
+  background: #10181e;
   border-bottom: 1px solid var(--orb-slate);
 }
 .knowledge-card-main h1 {
@@ -392,7 +394,8 @@
   gap: 6px;
   margin: 12px 0;
 }
-.excel-tabs button[aria-selected="true"] {
+.excel-tabs button[aria-selected="true"],
+.financial-viewer .excel-tabs button[aria-pressed="true"] {
   color: #e9974c;
   border-color: currentColor;
 }

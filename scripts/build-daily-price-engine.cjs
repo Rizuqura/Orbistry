@@ -30,11 +30,23 @@ async function main() {
     stage,
   );
   await fs.copyFile(
-    path.join(repository, "docs", "wonton-engine", "daily-price-v0.1.md"),
+    path.join(
+      repository,
+      "docs",
+      "worldview",
+      "packages",
+      "daily-price-v0.1.md",
+    ),
     path.join(stage, "README.md"),
   );
   await fs.copyFile(
-    path.join(repository, "report", "daily-price-v0.1.md"),
+    path.join(
+      repository,
+      "docs",
+      "worldview",
+      "reports",
+      "daily-price-v0.1.md",
+    ),
     path.join(stage, "IMPLEMENTATION_REPORT.md"),
   );
   const sha256 = await checksums(stage);

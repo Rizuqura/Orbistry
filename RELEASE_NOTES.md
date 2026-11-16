@@ -1,3 +1,17 @@
+# Orbistry v1.0.5 Victoria (Beta)
+
+This release adds Yahoo financial statements and earnings to WorldView Knowledge Cards and reorganizes the WorldView documentation.
+
+- Declare `source: yahooFinancials("TSM")` or `source: yahooEarnings("TSM")` in a Knowledge Card index.
+- Browse annual and quarterly income statements, balance sheets and cash flows, plus EPS history and scheduled earnings dates.
+- Cache successful financial snapshots for 24 hours, refresh explicitly and retain usable data with a stale warning when refresh fails.
+- Include the standalone Yahoo Financials engine package and update engine builders to use the reorganized documentation.
+- Update application and installer metadata to 1.0.5; the top bar and startup screen use the shared package version.
+
+See the [1.0.5 release report](docs/worldview/reports/release-1.0.5.md) and [current indexing guide](docs/worldview/INDEXING.md).
+
+---
+
 # Orbistry v1.0.2 Victoria (Beta)
 
 This release brings the Orbistry rebranding, UI revamp, native agent chat window, and revised Planet View gravity layout. The Windows app and shortcut are named **ORB Terminal**, using the latest Orbistry icon.

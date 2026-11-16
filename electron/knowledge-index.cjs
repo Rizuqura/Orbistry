@@ -1,7 +1,7 @@
 const { createHash } = require("node:crypto");
 const { normalizeSymbol } = require("./engines/daily-price/index.cjs");
 
-/** Parses headings, file references, literal yahooPrice calls and image views with line errors. Parsing produces data and performs no network or code execution. */
+/** Parses headings, file references, registered literal Yahoo calls and image views with line errors. Parsing produces data and performs no network or code execution. */
 function parseKnowledgeIndex(text, { allowLegacyParsing = false } = {}) {
   const menus = [];
   const errors = [];
@@ -67,10 +67,13 @@ function parseKnowledgeIndex(text, { allowLegacyParsing = false } = {}) {
             message: "A carousel supports up to 50 images.",
           });
         group = null;
-      } else if (source && /^yahooPrice\s*\(/i.test(source[1]))
+      } else if (
+        source &&
+        /^yahoo(?:Price|Financials|Earnings)\s*\(/i.test(source[1])
+      )
         errors.push({
           line: index + 1,
-          message: "Place yahooPrice sources directly under a menu heading.",
+          message: "Place Yahoo sources directly under a menu heading.",
         });
       else if (source) addSource(group, source[1].trim(), index + 1);
       else
@@ -145,7 +148,31 @@ function parseKnowledgeIndex(text, { allowLegacyParsing = false } = {}) {
         });
         continue;
       }
-      if (/^yahooPrice\s*\(/i.test(sourceId)) {
+      if (/^yahoo(?:Financials|Earnings)\s*\(/i.test(sourceId)) {
+        const call =
+          /^yahoo(Financials|Earnings)\s*\(\s*(?:"([^"]+)"|'([^']+)')\s*\)$/.exec(
+            sourceId,
+          );
+        try {
+          if (!call)
+            throw new Error(
+              'Use yahooFinancials("TICKER") or yahooEarnings("TICKER").',
+            );
+          const symbol = normalizeSymbol(call[2] ?? call[3]);
+          const kind = call[1] === "Financials" ? "financials" : "earnings";
+          const id =
+            "finance-" +
+            createHash("sha256")
+              .update(current.id + ":" + kind + ":" + symbol)
+              .digest("hex")
+              .slice(0, 24);
+          if (current.finance?.some((item) => item.id === id))
+            throw new Error("Duplicate Yahoo dataset in this menu.");
+          (current.finance ??= []).push({ id, symbol, kind, line: index + 1 });
+        } catch (error) {
+          errors.push({ line: index + 1, message: error.message });
+        }
+      } else if (/^yahooPrice\s*\(/i.test(sourceId)) {
         const call = /^yahooPrice\s*\(\s*(?:"([^"]+)"|'([^']+)')?\s*\)$/.exec(
           sourceId,
         );

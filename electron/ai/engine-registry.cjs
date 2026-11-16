@@ -6,6 +6,8 @@ const { readJson, writeJson } = require("./json-store.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const adapter = require("./chronoz-adapter.cjs");
 const ENGINE_DEFINITIONS = Object.freeze({
+  "yahoo-financials": require("../engines/yahoo-financials/index.cjs")
+    .definition,
   "daily-price": require("../engines/daily-price/index.cjs").definition,
   "wonton-excel": require("../engines/excel/index.cjs").definition,
   chronoz: {

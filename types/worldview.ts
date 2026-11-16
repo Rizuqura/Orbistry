@@ -55,6 +55,7 @@ export type WorldViewOperation =
   | "price-symbol"
   | "price-get"
   | "price-index"
+  | "finance-index"
   | "knowledge-excel"
   | "knowledge-excel-copy"
   | "knowledge-reveal"
@@ -84,6 +85,7 @@ export type WorldViewRequest = {
   symbol?: string;
   menuId?: string;
   priceId?: string;
+  financeId?: string;
   sheetIndex?: number;
   rowOffset?: number;
   columnOffset?: number;
@@ -126,12 +128,56 @@ export type IndexedKnowledgeMenu = Readonly<{
   line: number;
   carousels?: readonly KnowledgeCarousel[];
   prices?: readonly IndexedPriceSource[];
+  finance?: readonly IndexedFinanceSource[];
 }>;
 export type IndexedPriceSource = Readonly<{
   id: string;
   symbol: string | null;
   line: number;
 }>;
+export type IndexedFinanceSource = Readonly<{
+  id: string;
+  symbol: string;
+  kind: "financials" | "earnings";
+  line: number;
+}>;
+export type FinancialSnapshot = {
+  schemaVersion: 1;
+  provider: "Yahoo Finance";
+  symbol: string;
+  kind: "financials" | "earnings";
+  currency: string | null;
+  fetchedAt: string;
+  warnings: string[];
+  statements: Record<
+    string,
+    Record<
+      "annual" | "quarterly",
+      {
+        periodEnd: string;
+        periodType: "3M" | "12M";
+        currency: string | null;
+        values: Record<string, number | null>;
+      }[]
+    >
+  >;
+  history: {
+    periodEnd: string | null;
+    announcementDate: string | null;
+    currency: string | null;
+    actual: number | null;
+    estimate: number | null;
+    surprise: number | null;
+    surpriseBasis: "provider" | "computed" | null;
+  }[];
+  scheduled: { date: string; estimated: boolean | null }[];
+};
+export type FinancialResponse = {
+  snapshot: FinancialSnapshot;
+  stale: boolean;
+  cached: boolean;
+  warning: string | null;
+};
 export type KnowledgeCarousel = Readonly<{
   id: string;
   name: string;

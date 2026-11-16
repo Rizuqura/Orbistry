@@ -40,7 +40,7 @@ Fresh installations start with **no agents, chats, Context Boxes, API keys or re
 - Markdown, CSV and PDF text reading; PNG/JPG/JPEG and scanned-PDF OCR on Windows with an installed OCR language.
 - Bounded local CSV inspection, filtering, grouping, aggregation, date trends and basic statistics. No arbitrary Python or user-code execution.
 - Ollama, Gemini, NVIDIA NIM and OpenRouter; manual context/output budgets and provider usage information where available.
-- [CHronoZ Engine node](docs/ENGINE_NODE_CHRONOZ_SETUP.md): bind a verified local portable bundle to an applied agent, then ask a tool-capable LLM for existing monthly PDFs in chat. Source-free Engine chats return verified PDF attachments; Construction also provides direct report controls.
+- CHronoZ Engine node: bind a verified local portable bundle to an applied agent, then ask a tool-capable LLM for existing monthly PDFs in chat. Source-free Engine chats return verified PDF attachments; Construction also provides direct report controls.
 
 ## Installation
 
@@ -413,4 +413,4 @@ Existing `.wonnyy/` vault metadata, stored agent IDs, provenance envelope types 
 
 ### Active-provider token budgeting
 
-Planet View's AI BUDGET panel follows the active agent's provider and current key for Ollama, Gemini, NVIDIA and OpenRouter. Completed-request token measurements stay separate for each provider/key. OpenRouter also shows its reported key allowance; other providers' unintegrated balances and reset schedules remain unavailable. See [provider budget monitoring](docs/PROVIDER_BUDGET_MONITOR.md) for measurement scope and verification.
+Planet View's AI BUDGET panel follows the active agent's provider and current key for Ollama, Gemini, NVIDIA and OpenRouter. Completed-request token measurements stay separate for each provider/key. OpenRouter also shows its reported key allowance; other providers' unintegrated balances and reset schedules remain unavailable.

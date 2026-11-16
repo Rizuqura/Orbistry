@@ -100,16 +100,22 @@ async function main() {
     stage,
   );
   await fs.copyFile(
-    path.join(repository, "docs", "wonton-engine", "excel-v0.1.md"),
+    path.join(repository, "docs", "worldview", "packages", "excel-v0.1.md"),
     path.join(stage, "README.md"),
   );
   const report = await fs.readFile(
-    path.join(repository, "report", "wonton-excel-v0.1.md"),
+    path.join(
+      repository,
+      "docs",
+      "worldview",
+      "reports",
+      "wonton-excel-v0.1.md",
+    ),
     "utf8",
   );
   await fs.writeFile(
     path.join(stage, "IMPLEMENTATION_REPORT.md"),
-    report.replace("(../docs/wonton-engine/excel-v0.1.md)", "(README.md)"),
+    report.replace("(../packages/excel-v0.1.md)", "(README.md)"),
   );
   const files = await checksums(stage);
   await fs.writeFile(
