@@ -2,7 +2,7 @@
 
 A local-first workspace with configurable AI agents, interactive WorldView and floating Knowledge Cards.
 
-**1.0.5 Victoria (Beta)** — WorldView, Knowledge Cards, and Yahoo financial statements and earnings.
+**1.0.6 Victoria (Beta)** — Entity agent assignment prototype, automatic read-only engine access, and Backend Identity refresh.
 
 See the [Knowledge Card indexing and package guide](docs/worldview/INDEXING.md) for controls, source syntax and finance features. The [documentation index](docs/README.md) lists package references, architecture and reports.
 
@@ -18,7 +18,7 @@ See the [current architecture](docs/architecture/README.md) for runtime boundari
 - **Workspace** retains the Vault explorer, Markdown editor, CSV/PDF/image readers, Windows OCR and explicit Vault operations. Those operations are independent of agent inference.
 - Ollama, Gemini, NVIDIA NIM, OpenRouter, BYOK, provided-model selection, encrypted credentials and provider usage tracking remain available.
 
-See [1.0.5 Victoria (Beta) release notes](docs/worldview/reports/release-1.0.5.md) for the current WorldView and Wonton updates.
+See [1.0.6 Victoria (Beta) release notes](docs/worldview/reports/release-1.0.6.md) for the current WorldView and Wonton updates.
 
 ## Development
 
@@ -57,18 +57,18 @@ Remote requests send instructions/personality, the current message and included 
 
 ## Implementation map
 
-| Path | Responsibility |
-| --- | --- |
+| Path                                                                   | Responsibility                                                        |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `components/worldview.tsx`, `features/worldview/`, `app/worldview.css` | Entity workspace, Knowledge Cards, local previews and financial views |
-| `app/knowledge-content.css` | Scoped black/amber monospace content theme and bottom utilities |
-| `electron/worldview-ipc.cjs`, `knowledge-store.cjs` | Authorized WorldView operations and applied index persistence |
-| `electron/engines/`, `financial-service.cjs` | Trusted engine implementations, provider adapters and derived caches |
-| `components/app-shell.tsx` | Navigation, independent Vault workspace and agent controls |
-| `features/agent/`, `features/chat/` | Existing agent UI, configuration, history and chat presentation |
-| `electron/ai/chat-service.cjs` | Conversation lifecycle, admission, cancellation and durable runs |
-| `electron/ai/standalone-chat.cjs` | Source-free model request and response pipeline |
-| `electron/ai/providers/`, `llm-front-office/` | Provider adapters, model gateway, provided models and observability |
-| `electron/vault-service.cjs`, `station-service.cjs` | Shared Vault/source infrastructure, retained independently |
-| `electron/ai/context-box-store.cjs`, `knowledge-store.cjs` | Preserved persistent data infrastructure |
+| `app/knowledge-content.css`                                            | Scoped black/amber monospace content theme and bottom utilities       |
+| `electron/worldview-ipc.cjs`, `knowledge-store.cjs`                    | Authorized WorldView operations and applied index persistence         |
+| `electron/engines/`, `financial-service.cjs`                           | Trusted engine implementations, provider adapters and derived caches  |
+| `components/app-shell.tsx`                                             | Navigation, independent Vault workspace and agent controls            |
+| `features/agent/`, `features/chat/`                                    | Existing agent UI, configuration, history and chat presentation       |
+| `electron/ai/chat-service.cjs`                                         | Conversation lifecycle, admission, cancellation and durable runs      |
+| `electron/ai/standalone-chat.cjs`                                      | Source-free model request and response pipeline                       |
+| `electron/ai/providers/`, `llm-front-office/`                          | Provider adapters, model gateway, provided models and observability   |
+| `electron/vault-service.cjs`, `station-service.cjs`                    | Shared Vault/source infrastructure, retained independently            |
+| `electron/ai/context-box-store.cjs`, `knowledge-store.cjs`             | Preserved persistent data infrastructure                              |
 
 The source-bound orchestrator, source validators and report adapters retain shared infrastructure, regression coverage and historical record consumers. Normal agent chat uses the standalone path. Future model integrations can use the [Yahoo engine execution contract](docs/worldview/packages/yahoo-financials-v0.2.md) through an explicitly authorized adapter.

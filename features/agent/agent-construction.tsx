@@ -9,6 +9,11 @@ import type {
 import type { ChatController } from "../chat/use-chat-runtime";
 import { ConstructionSourcePicker } from "./construction-source-picker";
 import { EngineInspector } from "./engine-inspector";
+import { EngineNodeSettings } from "./engine-node-settings";
+import type {
+  AssignmentContext,
+  EngineDefinition,
+} from "../../types/entity-agents";
 import { AgentAvatar } from "./agent-avatar";
 import "./agent-construction.css";
 import "./agent-workbench.css";
@@ -48,16 +53,19 @@ const explanations: Record<AgentNodeKind, string> = {
   Output:
     "Attach a full template file or Context Box of output examples. Format preferences cannot override evidence or citation requirements.",
   Engine:
-    "Bind the registered report engine to this agent. A connection represents an available tool, not sequential execution.",
+    "Choose a registered engine and operation for this node. A connection makes the tool available for an explicit request.",
 };
+/** Edits the existing revisioned construction canvas. Assignment context is presentation-only so a reusable definition never captures entity knowledge. */
 export function AgentConstruction({
   chat,
   onDirtyChange,
   onBusyChange,
+  assignmentContext,
 }: {
   chat: ChatController;
   onDirtyChange: (dirty: boolean) => void;
   onBusyChange: (busy: boolean) => void;
+  assignmentContext?: AssignmentContext;
 }) {
   const profile = chat.agent;
   const [config, setConfig] = useState<AgentConstructionConfig | null>(
@@ -81,6 +89,25 @@ export function AgentConstruction({
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
+  const [engineDefinitions, setEngineDefinitions] = useState<
+    EngineDefinition[]
+  >([]);
+  useEffect(() => {
+    let alive = true;
+    const api = window.orbistryDesktop?.ai;
+    if (api?.engineDefinitions)
+      void api
+        .engineDefinitions()
+        .then((definitions) => {
+          if (alive) setEngineDefinitions(definitions);
+        })
+        .catch((error: Error) => {
+          if (alive) setError(error.message);
+        });
+    return () => {
+      alive = false;
+    };
+  }, []);
   const [dragging, setDragging] = useState<string | null>(null);
   const canvas = useRef<HTMLDivElement>(null);
   const canvasViewport = useRef<HTMLDivElement>(null);
@@ -130,6 +157,9 @@ export function AgentConstruction({
     return <p role="status">Loading agent construction...</p>;
   const construction = profile.construction;
   const node = config.nodes.find((item) => item.id === selected);
+  const engineCount = config.nodes.filter(
+    (item) => item.kind === "Engine",
+  ).length;
   const blocked = busy || chat.busy;
   const update = (patch: Partial<AgentConstructionConfig>) =>
     setConfig((current) => (current ? { ...current, ...patch } : current));
@@ -186,12 +216,20 @@ export function AgentConstruction({
     setError("");
     setNotice("Connection added to the draft.");
   };
+  /** Adds a stable node at a free position, allowing repeated Engine nodes while retaining every other category's singleton constraint. */
   const add = (kind: AgentNodeKind, point?: { x: number; y: number }) => {
     if (blocked) return;
-    if (config.nodes.some((n) => n.kind === kind)) {
+    if (kind !== "Engine" && config.nodes.some((n) => n.kind === kind)) {
       setError(`The graph already has a ${kind} node.`);
       return;
     }
+    if (config.nodes.length >= 23 || (kind === "Engine" && engineCount >= 16)) {
+      setError("The graph supports up to sixteen Engine nodes.");
+      return;
+    }
+    const defaultEngine = engineDefinitions.find(
+      (engine) => engine.id === "chronoz",
+    );
     const initial =
       kind === "Context"
         ? { mode: "bound-only" as const }
@@ -205,6 +243,11 @@ export function AgentConstruction({
                 ? {
                     engineId: "chronoz" as const,
                     instanceId: crypto.randomUUID(),
+                    operation: "get_report",
+                    ...(defaultEngine
+                      ? { engineVersion: defaultEngine.version }
+                      : {}),
+                    permissionPolicy: "read-only-auto" as const,
                   }
                 : {};
     const id =
@@ -535,7 +578,9 @@ export function AgentConstruction({
               <button
                 key={kind}
                 draggable={
-                  !blocked && !config.nodes.some((n) => n.kind === kind)
+                  !blocked &&
+                  (kind === "Engine" ||
+                    !config.nodes.some((n) => n.kind === kind))
                 }
                 onDragStart={(e) =>
                   e.dataTransfer.setData(
@@ -543,18 +588,26 @@ export function AgentConstruction({
                     kind,
                   )
                 }
-                disabled={blocked || config.nodes.some((n) => n.kind === kind)}
+                disabled={
+                  blocked ||
+                  (kind !== "Engine" &&
+                    config.nodes.some((n) => n.kind === kind))
+                }
                 onClick={() => add(kind)}
               >
                 <span aria-hidden="true">{marks[kind]}</span> Add {kind}
                 <span className="library-node-status" aria-hidden="true">
-                  {config.nodes.some((n) => n.kind === kind) ? "✓" : "+"}
+                  {kind === "Engine"
+                    ? engineCount || "+"
+                    : config.nodes.some((n) => n.kind === kind)
+                      ? "✓"
+                      : "+"}
                 </span>
               </button>
             ))}
             <small>
-              One node per category. Arrows move selected nodes; Delete removes
-              them. Use output/input handles to connect.
+              Up to 16 Engine nodes. Arrows move nodes. Delete removes them.
+              Connect using handles.
             </small>
           </aside>
           <section className="studio-sheet" aria-label="Construction sheet">
@@ -729,7 +782,7 @@ export function AgentConstruction({
                                     ? "Configured"
                                     : "Not configured"
                                   : item.kind === "Engine"
-                                    ? "CHronoZ · get_report"
+                                    ? `${item.config.engineId ?? "Choose engine"} · ${item.config.operation ?? (item.config.engineId === "chronoz" ? "get_report" : "Choose operation")}`
                                     : (item.config.mode ?? "Preferences")}
                         </small>
                         <span className="studio-node-caption">
@@ -831,30 +884,73 @@ export function AgentConstruction({
             {node ? (
               <>
                 <p>{explanations[node.kind]}</p>
-                {node.kind === "Engine" && node.config.instanceId && (
-                  <EngineInspector
-                    key={profile.id + node.config.instanceId}
-                    agentId={profile.id}
-                    instanceId={node.config.instanceId}
-                    applied={
-                      !!construction.active?.nodes.some(
-                        (n) =>
-                          n.kind === "Engine" &&
-                          n.config.instanceId === node.config.instanceId &&
-                          construction.active?.edges.some(
-                            (e) =>
-                              e.from === n.id &&
-                              construction.active?.nodes.some(
-                                (target) =>
-                                  target.id === e.to && target.kind === "LLM",
-                              ),
-                          ),
-                      )
-                    }
+                {node.kind === "Context" && assignmentContext && (
+                  <p data-assigned-entity={assignmentContext.id}>
+                    Assigned entity {assignmentContext.name} ·{" "}
+                    {assignmentContext.id}
+                  </p>
+                )}
+                {node.kind === "Knowledge" && assignmentContext && (
+                  <>
+                    <p>
+                      Retrieves entity-scoped chunks using the existing lexical
+                      search when this node is connected and applied.
+                    </p>
+                    <label>
+                      Retrieval token budget
+                      <input
+                        aria-label="Entity knowledge token budget"
+                        type="number"
+                        min={64}
+                        max={8000}
+                        value={node.config.maxTokens ?? 2000}
+                        disabled={blocked}
+                        onChange={(event) =>
+                          updateNode(node.id, {
+                            config: {
+                              ...node.config,
+                              maxTokens: Number(event.target.value),
+                            },
+                          })
+                        }
+                      />
+                    </label>
+                  </>
+                )}
+                {node.kind === "Engine" && (
+                  <EngineNodeSettings
+                    config={node.config}
+                    definitions={engineDefinitions}
                     blocked={blocked}
-                    onBusy={setBusy}
+                    onChange={(config) => updateNode(node.id, { config })}
                   />
                 )}
+                {node.kind === "Engine" &&
+                  node.config.engineId === "chronoz" &&
+                  node.config.instanceId && (
+                    <EngineInspector
+                      key={profile.id + node.config.instanceId}
+                      agentId={profile.id}
+                      instanceId={node.config.instanceId}
+                      applied={
+                        !!construction.active?.nodes.some(
+                          (n) =>
+                            n.kind === "Engine" &&
+                            n.config.instanceId === node.config.instanceId &&
+                            construction.active?.edges.some(
+                              (e) =>
+                                e.from === n.id &&
+                                construction.active?.nodes.some(
+                                  (target) =>
+                                    target.id === e.to && target.kind === "LLM",
+                                ),
+                            ),
+                        )
+                      }
+                      blocked={blocked}
+                      onBusy={setBusy}
+                    />
+                  )}
                 {!["LLM", "Engine"].includes(node.kind) && (
                   <ConstructionSourcePicker
                     key={node.id}

@@ -313,6 +313,7 @@ class OpenAIChatProvider {
       };
     }
   }
+  /** Completes chat or a host-owned structured request, retaining existing streaming, timeout and response normalization behavior. */
   async complete(request) {
     const model = parse(this.modelSchema, request.model);
     const settings = parse(settingsSchema, request.settings);
@@ -342,6 +343,10 @@ class OpenAIChatProvider {
     // Hosted chat models need not generate Orbistry's internal transport envelope.
     // Normalize their final content here; keep the shared answer validator intact.
     const datasetPlan = Boolean(
+      (request.structuredOutput &&
+        require("../entity-agent-protocol.cjs").isEntityProtocolFormat(
+          request.format,
+        )) ||
       request.format?.properties?.queries ||
       request.format?.properties?.calculations,
     );

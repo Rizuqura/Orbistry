@@ -37,8 +37,19 @@ async function gridImage(page) {
   });
 }
 
-/** Compares image digests without printing large image payloads if an assertion fails. */
+/** Compares image digests without logging payloads; retains isolated canvas pixels on failure so raster changes can be distinguished from geometry drift. */
 async function assertGridMatches(actual, expected, message) {
+  if (digest(actual) !== digest(expected)) {
+    await fs.mkdir("test-results", { recursive: true });
+    for (const [label, pixels] of [
+      ["expected", expected],
+      ["actual", actual],
+    ])
+      await fs.writeFile(
+        `test-results/worldview-grid-${label}.png`,
+        Buffer.from(pixels.split(",")[1], "base64"),
+      );
+  }
   assert.equal(digest(actual), digest(expected), message);
 }
 

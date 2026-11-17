@@ -1,6 +1,6 @@
 {
   "name": "orbistry",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Local-first AI-native knowledge and research workspace",
   "private": true,
   "license": "UNLICENSED",
@@ -62,7 +62,9 @@
     "benchmark:front-office": "node scripts/front-office-benchmark.cjs --mock",
     "benchmark:front-office:live": "node scripts/front-office-benchmark.cjs --live",
     "test:worldview:electron": "npm run build && node scripts/electron-worldview-smoke.cjs",
-    "test:identity:electron": "npm run build && node scripts/electron-backend-identity-smoke.cjs"
+    "test:identity:electron": "npm run build && node scripts/electron-backend-identity-smoke.cjs",
+    "test:entity-agents:electron": "npm run build && node scripts/electron-entity-agents-smoke.cjs",
+    "test:entity-runtime:live": "npm run build && node scripts/electron-entity-runtime-live.cjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.13",

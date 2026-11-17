@@ -102,7 +102,16 @@ const nodeSchema = z
           .optional(),
         modelId: z.string().trim().max(240).optional(),
         skillId: z.enum(["knowledge-consolidation"]).optional(),
-        engineId: z.literal("chronoz").optional(),
+        engineId: identifier.optional(),
+        operation: identifier.optional(),
+        engineVersion: z.string().max(64).optional(),
+        parameters: z
+          .object({ force: z.boolean().optional() })
+          .strict()
+          .optional(),
+        permissionPolicy: z
+          .enum(["disabled", "read-only-approval", "read-only-auto"])
+          .optional(),
         instanceId: z.string().uuid().optional(),
         mode: z
           .enum(["bound-only", "single-pass", "preview-only", "text"])
@@ -122,10 +131,10 @@ const configSchema = z
     description: z.string().trim().max(240),
     personality: z.string().max(2000),
     instructions: z.string().max(8000),
-    nodes: z.array(nodeSchema).max(8),
+    nodes: z.array(nodeSchema).max(23),
     edges: z
       .array(z.object({ from: identifier, to: identifier }).strict())
-      .max(12),
+      .max(32),
   })
   .strict();
 const avatarSchema = z.union([
@@ -207,6 +216,7 @@ function defaults(row, generic = false) {
 function invalid(message) {
   throw new ModelRuntimeError("MODEL_INVALID_REQUEST", message);
 }
+/** Validates saved or applied graphs, preserving singleton inputs and legacy CHronoZ bindings. Throws before persistence on invalid node contracts. */
 function validateConstruction(value, agentId, apply = false) {
   const config = parse(configSchema, value);
   const nodes = new Map(config.nodes.map((node) => [node.id, node]));
@@ -220,8 +230,12 @@ function validateConstruction(value, agentId, apply = false) {
   )
     invalid("Use unique node IDs and at most one node of each category.");
   const engines = config.nodes.filter((node) => node.kind === "Engine");
-  if (engines.length > 1)
-    invalid("Only one CHronoZ instance is supported in v0.1.");
+  if (engines.length > 16) invalid("Use at most sixteen Engine nodes.");
+  if (
+    new Set(engines.map((node) => node.config.instanceId)).size !==
+    engines.length
+  )
+    invalid("Each Engine node needs a unique instance ID.");
   const fields = {
     Context: ["mode", "contextBox", "contextFile"],
     Personality: ["instructions", "contextBox", "contextFile"],
@@ -230,7 +244,14 @@ function validateConstruction(value, agentId, apply = false) {
     Workflow: ["mode", "instructions", "contextBox", "contextFile"],
     Knowledge: ["mode", "maxTokens", "contextBox", "contextFile"],
     Output: ["mode", "instructions", "contextBox", "contextFile"],
-    Engine: ["engineId", "instanceId"],
+    Engine: [
+      "engineId",
+      "instanceId",
+      "operation",
+      "engineVersion",
+      "parameters",
+      "permissionPolicy",
+    ],
   };
   const modes = {
     Context: "bound-only",
@@ -239,17 +260,31 @@ function validateConstruction(value, agentId, apply = false) {
     Output: "text",
   };
   for (const node of config.nodes) {
-    if (
-      node.kind === "Engine" &&
-      (!node.config.instanceId || (apply && node.config.engineId !== "chronoz"))
-    )
-      invalid(
-        "Choose the registered CHronoZ engine before applying; each engine needs an instance ID.",
-      );
+    if (node.kind === "Engine" && !node.config.instanceId)
+      invalid(`Engine ${node.id} needs a stable instance ID.`);
+    if (node.kind === "Engine") {
+      const definitions = require("./engine-registry.cjs").ENGINE_DEFINITIONS;
+      const definition = Object.hasOwn(definitions, node.config.engineId)
+        ? definitions[node.config.engineId]
+        : null;
+      // Old CHronoZ graphs omitted operation/version/policy. Their existing execution path remains valid.
+      const operation =
+        node.config.operation ??
+        (node.config.engineId === "chronoz" ? "get_report" : undefined);
+      if (apply && (!definition || !definition.operations.includes(operation)))
+        invalid(`Engine ${node.id} needs a registered engine and operation.`);
+      if (
+        node.config.engineVersion &&
+        definition?.version !== node.config.engineVersion
+      )
+        invalid(
+          `Engine ${node.id} registered version changed. Reconfigure this node.`,
+        );
+    }
     if (
       Object.keys(node.config).some((key) => !fields[node.kind].includes(key))
     )
-      invalid(`Unsupported ${node.kind} configuration.`);
+      invalid(`Unsupported ${node.kind} ${node.id} configuration.`);
     if (modes[node.kind] && node.config.mode !== modes[node.kind])
       invalid(`${node.kind} must use ${modes[node.kind]} mode.`);
     if (node.config.instructions)
@@ -305,7 +340,7 @@ function validateConstruction(value, agentId, apply = false) {
         node.kind !== "Output" &&
         !config.edges.some((edge) => edge.from === node.id)
       )
-        invalid(`Connect ${node.kind} before applying.`);
+        invalid(`Connect ${node.kind} ${node.id} before applying.`);
   }
   validateCustomInstructions(config.instructions);
   validateCustomInstructions(config.personality);

@@ -45,7 +45,7 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (error) => errors.push(error.message));
-    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 20);
     await page.getByRole("button", { name: "WORKSPACE", exact: true }).click();
     assert.equal(await page.title(), "Orbistry");
     assert.deepEqual(

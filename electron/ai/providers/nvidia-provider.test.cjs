@@ -6,6 +6,27 @@ const { ModelRuntimeError } = require("../model-errors.cjs");
 const { validateAnswer, answerPrefix } = require("../response-validation.cjs");
 const { PLAN_FORMAT } = require("../dataset-planner.cjs");
 
+test("NVIDIA preserves the allowlisted assignment action schema for backend validation", async () => {
+  const { responseFormat } = require("../entity-agent-protocol.cjs");
+  const action = { action: "knowledge.listTopics", offset: 0, limit: 100 };
+  const provider = new NvidiaProvider({
+    credentials,
+    fetchImpl: async (_url, init) => {
+      assert.match(
+        JSON.parse(init.body).messages[0].content,
+        /JSON object matching this schema/,
+      );
+      return stream([part(JSON.stringify(action), "stop")]);
+    },
+  });
+  const result = await provider.complete({
+    ...request(),
+    format: responseFormat,
+    structuredOutput: true,
+  });
+  assert.deepEqual(JSON.parse(result.content), action);
+});
+
 test("NVIDIA preserves structured dataset requests without answer wrapping", async () => {
   const plan = { queries: [{ sourceId: "sales.csv", operation: "profile" }] };
   const provider = new NvidiaProvider({

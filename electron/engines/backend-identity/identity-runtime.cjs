@@ -59,7 +59,7 @@ function createIdentityRuntime({ authorize } = {}) {
     await permit(scope, []);
     return result;
   }
-  /** Performs explicitly authorized manual compilation with the existing compiler, independent of any LLM connection. */
+  /** Performs host-authorized compilation with the existing compiler, including assignment refresh. Writes derived snapshots only and checks the same entity permissions before and after compilation. */
   async function generate(scope) {
     await permit(scope, ["identity:compile", "knowledge:read"]);
     const result = await compiler.generate(scope.root, scope.entityId);
@@ -141,6 +141,47 @@ function createIdentityRuntime({ authorize } = {}) {
       version: manifest.identityVersion,
     };
   }
+  /** Enumerates a deterministic page of indexed heading references without reading chunk bodies. Keeps source versions and line/chunk provenance and rechecks scope/freshness before returning. */
+  async function listTopics(scope) {
+    const { offset = 0, limit = 100 } = z
+      .object({
+        offset: z.number().int().min(0).max(2048).optional(),
+        limit: z.number().int().min(1).max(200).optional(),
+      })
+      .parse(scope);
+    await permit(scope, ["knowledge:read"]);
+    const manifest = await fresh(scope);
+    const references = await store.index(scope.root, manifest, "chunks");
+    const topics = new Map();
+    for (const reference of references) {
+      const key = JSON.stringify([reference.sourceId, reference.headingPath]);
+      const topic = topics.get(key) ?? {
+        sourceId: reference.sourceId,
+        sourceVersion: reference.sourceVersion,
+        headingPath: reference.headingPath,
+        trust: "untrusted-source",
+        chunks: [],
+      };
+      topic.chunks.push({
+        chunkId: reference.chunkId,
+        contentHash: reference.contentHash,
+        startLine: reference.startLine,
+        endLine: reference.endLine,
+      });
+      topics.set(key, topic);
+    }
+    const all = [...topics.values()];
+    const items = all.slice(offset, offset + limit);
+    await finish(scope, ["knowledge:read"], manifest);
+    return {
+      items,
+      total: all.length,
+      offset,
+      nextOffset:
+        offset + items.length < all.length ? offset + items.length : null,
+      version: manifest.identityVersion,
+    };
+  }
   /** Discovers compiled capability contracts only; availability means configured, not a successful network probe. */
   async function listCapabilities(scope) {
     await permit(scope, []);
@@ -191,6 +232,7 @@ function createIdentityRuntime({ authorize } = {}) {
     generate,
     getChunk,
     searchChunks,
+    listTopics,
     listCapabilities,
     executeCapability,
   });

@@ -12,10 +12,51 @@ const hooks = registerHooks({
     );
   },
 });
-const { chipLabelAnchor } = require("./chip-labels.ts");
+const {
+  chipLabelAnchor,
+  chipAgentAnchor,
+  chipAgentControlClear,
+} = require("./chip-labels.ts");
 const { CHIP_THICKNESS } = require("./chips.ts");
 const { worldToScreen, TILE_HEIGHT } = require("./coordinates.ts");
 hooks.deregister();
+
+/** Prevents DOM controls from masking source buildings or chip interactions in a neighboring foreground entity. */
+test("assignment controls yield to overlapping canvas entities and buildings", () => {
+  const viewport = { width: 1200, height: 800 };
+  const camera = { center: { x: 0, y: 0 }, zoom: 1 };
+  const chip = { id: "back", position: { x: -2, y: 0 }, sources: [] };
+  const front = { id: "front", position: { x: 0, y: 0 }, sources: [] };
+  const anchor = chipAgentAnchor(chip, camera, viewport);
+  assert.equal(chipAgentControlClear(anchor, [chip], camera, viewport), true);
+  assert.equal(
+    chipAgentControlClear(anchor, [chip, front], camera, viewport),
+    false,
+  );
+});
+
+/** Protects native connector dragging from DOM assignment controls, including minimum zoom and live entity dragging. */
+test("agent assignment controls reserve the south connector handle across camera transforms", () => {
+  const chip = { id: "entity", position: { x: -3, y: 2 } };
+  const viewport = { width: 1200, height: 800 };
+  for (const zoom of [0.25, 0.5, 1, 2, 3]) {
+    const camera = { center: { x: 4, y: -2 }, zoom };
+    for (const preview of [null, { id: chip.id, position: { x: 8, y: 5 } }]) {
+      const position = preview?.position ?? chip.position;
+      const southPort = worldToScreen(
+        { x: position.x + 1, y: position.y },
+        camera,
+        viewport,
+      );
+      const button = chipAgentAnchor(chip, camera, viewport, preview);
+      assert.equal(button.x + 11, southPort.x);
+      assert.ok(
+        button.y - southPort.y >= 12,
+        "button stays outside the connector hit area",
+      );
+    }
+  }
+});
 
 /** Guards title placement beneath the chip's full thickness through camera transforms, resize, file assignments and live dragging. */
 test("entity titles stay beneath chips through camera movement", () => {

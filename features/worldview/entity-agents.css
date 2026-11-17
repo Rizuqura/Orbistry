@@ -1,0 +1,121 @@
+.entity-agents-dialog {
+  width: min(700px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--orb-slate, #566373);
+  border-radius: 0;
+  background: var(--orb-background, #111820);
+  color: var(--orb-text, #d8e1eb);
+  font-family: var(--font-mono, monospace);
+}
+.entity-agents-dialog::backdrop {
+  background: #0009;
+}
+.app-shell .worldview .entity-agents-dialog,
+.app-shell .worldview .entity-agents-dialog :where(*) {
+  font-family: var(--font-engineering, monospace);
+}
+.app-shell .entity-agents-dialog,
+.app-shell
+  .entity-agents-dialog
+  :is(
+    button,
+    input,
+    textarea,
+    select,
+    .entity-agent-message,
+    .entity-agent-request,
+    .entity-agent-engine,
+    .entity-agent-assignment
+  ) {
+  border-color: #566373 !important;
+}
+.entity-agents-dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.entity-agents-dialog section {
+  margin-top: 16px;
+}
+.entity-agents-dialog h2,
+.entity-agents-dialog h3 {
+  margin: 8px 0;
+}
+.entity-agents-dialog label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+.entity-agents-dialog input,
+.entity-agents-dialog select,
+.entity-agents-dialog textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #566373;
+  border-radius: 0;
+  background: #0c1219;
+  color: inherit;
+}
+.entity-agents-dialog textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.entity-agents-dialog button {
+  padding: 6px 10px;
+  margin: 3px;
+  border-radius: 0;
+  border: 1px solid #566373;
+}
+.entity-agents-dialog [role="alert"] {
+  color: #ffb4a9;
+}
+.entity-agent-assignment,
+.entity-agent-engine {
+  padding: 12px 0;
+  border-bottom: 1px solid #566373;
+}
+.entity-agent-engine small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.entity-agent-messages {
+  max-height: 340px;
+  overflow: auto;
+  margin: 12px 0;
+}
+.entity-agent-message {
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #566373;
+}
+.entity-agent-message.user {
+  margin-left: 20px;
+}
+.entity-agent-message p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.entity-agent-result {
+  max-height: 240px;
+  overflow: auto;
+  font-size: 12px;
+}
+.entity-agent-request {
+  margin-block: 12px;
+  padding: 12px;
+  border: 1px solid #566373;
+}
+.entity-agent-price {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) 2fr;
+  gap: 6px 12px;
+  padding: 12px 0;
+}
+.entity-agent-price dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}

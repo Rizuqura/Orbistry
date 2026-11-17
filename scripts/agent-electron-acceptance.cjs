@@ -150,7 +150,7 @@ async function main() {
       void dialog.dismiss();
     });
     await page.getByRole("textbox", { name: "Chat question" }).waitFor();
-    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 20);
   }
   const panel = () =>
     page.getByRole("complementary", { name: "Orbistry Agent", exact: true });

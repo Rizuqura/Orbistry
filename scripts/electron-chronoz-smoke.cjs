@@ -28,8 +28,8 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (e) => errors.push(e.message));
-    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
-    await page.evaluate(() => window.orbistryDesktop.ai.handshake(18));
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 20);
+    await page.evaluate(() => window.orbistryDesktop.ai.handshake(19));
     await page
       .getByRole("button", { name: "Open in Agent", exact: true })
       .waitFor();

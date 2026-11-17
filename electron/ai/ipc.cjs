@@ -15,9 +15,10 @@ const {
   observeProviderUsage,
 } = require("./provider-usage.cjs");
 const { ModelAccess, providedPreview } = require("./model-access.cjs");
-const API_VERSION = 18;
+const API_VERSION = 20;
 const { createRequestLogger } = require("./request-logger.cjs");
 
+/** Registers version-gated provider, construction and assignment operations through the trusted main-frame bridge. Mutations retain ChatService admission control. */
 function registerAiIpc({
   ipcMain,
   getVault,
@@ -33,6 +34,11 @@ function registerAiIpc({
   requestLoggerFactory = createRequestLogger,
 }) {
   const compatible = new Set();
+  const entityAgents = new (require("./entity-agents.cjs").EntityAgentService)({
+    agents,
+    registry,
+    getVault,
+  });
   const frontOffice =
     registry?.file && credentials
       ? new (require("./llm-front-office/service.cjs").FrontOfficeService)({
@@ -225,6 +231,32 @@ function registerAiIpc({
   );
   handle("models", () => registry.state());
   handle("getAgent", (_, id) => agents.get(id));
+  handle("engineDefinitions", () =>
+    require("./entity-agents.cjs").engineDefinitions(),
+  );
+  handle("listEntityAgents", (_, input) => entityAgents.list(input));
+  handle("assignEntityAgent", (_, input) =>
+    service.exclusive(() => entityAgents.assign(input)),
+  );
+  handle("removeEntityAgent", (_, input) =>
+    service.exclusive(() => entityAgents.remove(input)),
+  );
+  handle("openEntityAgent", (_, input) => entityAgents.open(input));
+  handle("retrieveEntityAgentKnowledge", (_, input) =>
+    entityAgents.retrieve(input),
+  );
+  handle("sendEntityAgent", (_, input) =>
+    service.exclusive(() => entityAgents.send(input)),
+  );
+  handle("executeEntityAgent", (_, input) =>
+    service.exclusive(() => entityAgents.execute(input)),
+  );
+  handle("proposeEntityAgent", (_, input) =>
+    service.exclusive(() => entityAgents.propose(input)),
+  );
+  handle("decideEntityAgentRequest", (_, input) =>
+    service.exclusive(() => entityAgents.decide(input)),
+  );
   const inactive = () => require("./standalone-chat.cjs").inactiveIntegration();
   if (engines) {
     handle("engineState", () => engines.state());

@@ -1,5 +1,6 @@
 import type { BrainScope, BrainScopeMode, BrainErrorCode } from "./electron";
 import type { BaselineTrace } from "./front-office";
+import type { EntityAgentBridge } from "./entity-agents";
 import type {
   ExperimentConfig,
   ExperimentConversation,
@@ -301,7 +302,11 @@ export type AgentConstructionConfig = {
       providerId?: ModelSettings["providerId"];
       modelId?: string;
       skillId?: "knowledge-consolidation";
-      engineId?: "chronoz";
+      engineId?: string;
+      operation?: string;
+      engineVersion?: string;
+      parameters?: { force?: boolean };
+      permissionPolicy?: "disabled" | "read-only-approval" | "read-only-auto";
       instanceId?: string;
       mode?: "bound-only" | "single-pass" | "preview-only" | "text";
     };
@@ -508,7 +513,7 @@ export type OpenRouterUsageSnapshot = ProviderUsageSnapshot & {
   provider: "openrouter";
 };
 
-export interface AiBridge {
+export interface AiBridge extends EntityAgentBridge {
   connectCredential(input: { apiKey: string }): Promise<ProviderConnection>;
   providedModels(): Promise<ProvidedModelPreview[]>;
   modelFavorites(): Promise<string[]>;

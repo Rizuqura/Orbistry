@@ -9,6 +9,27 @@ const credentials = {
   get: async () => "test-secret-key",
   status: async () => ({ configured: true, secureStorageAvailable: true }),
 };
+
+test("Gemini forwards only the host-owned assignment protocol schema when structured output is requested", async () => {
+  const { responseFormat } = require("../entity-agent-protocol.cjs");
+  const action = { action: "knowledge.listTopics", offset: 0, limit: 100 };
+  const provider = new GeminiProvider({
+    credentials,
+    fetchImpl: async (_url, init) => {
+      assert.deepEqual(
+        JSON.parse(init.body).generationConfig.responseJsonSchema,
+        responseFormat,
+      );
+      return stream([chunk(JSON.stringify(action), "STOP")]);
+    },
+  });
+  const result = await provider.complete({
+    ...request(),
+    format: responseFormat,
+    structuredOutput: true,
+  });
+  assert.deepEqual(JSON.parse(result.content), action);
+});
 const request = () => ({
   model: "gemini-test",
   settings: { ...DEFAULTS, providerId: "gemini", modelId: "gemini-test" },

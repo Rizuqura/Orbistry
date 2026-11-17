@@ -2,6 +2,15 @@ const { z } = require("zod");
 const { digest, capabilitySchema } = require("./schema.cjs");
 const argumentsSchema = z.object({ force: z.boolean().optional() }).strict();
 
+/** Identifies only implemented read-only adapters. Standing permission never extends to arbitrary registered code or write operations. */
+function isReadOnlyOperation(engineId, operation) {
+  return (
+    (engineId === "daily-price" && operation === "price") ||
+    (engineId === "yahoo-financials" &&
+      ["financials", "earnings"].includes(operation))
+  );
+}
+
 /** Registers only literal Yahoo operations already validated by the applied Knowledge Card parser. This function never probes a provider or loads code from indexed text. */
 function discoverCapabilities(entityId, index) {
   const definitions =
@@ -90,4 +99,8 @@ async function executeCapability(root, entityId, capability, raw) {
     );
   throw new Error("Unsupported entity capability.");
 }
-module.exports = { discoverCapabilities, executeCapability };
+module.exports = {
+  discoverCapabilities,
+  executeCapability,
+  isReadOnlyOperation,
+};

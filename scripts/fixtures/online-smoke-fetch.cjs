@@ -19,6 +19,7 @@ function createOnlineSmokeFetch() {
     usageRequests: 0,
     reportTokenUsage: false,
     engineToolMode: "mock",
+    entityProtocolReply: null,
     usageData: {
       limit: 100,
       limit_remaining: 74.5,
@@ -41,6 +42,27 @@ function createOnlineSmokeFetch() {
   const fetchImpl = async (url, init = {}) => {
     const endpoint = new URL(url);
     const body = init.body ? JSON.parse(init.body) : null;
+    // Dedicated offline UI tests can supply structured model actions. Production never imports this synthetic transport.
+    if (
+      endpoint.hostname === "127.0.0.1" &&
+      endpoint.pathname === "/api/chat" &&
+      body?.format?.properties?.action &&
+      typeof state.entityProtocolReply === "function"
+    ) {
+      state.localRequests.push(body);
+      const action = await state.entityProtocolReply(body);
+      return new Response(
+        JSON.stringify({
+          model: body.model,
+          message: { role: "assistant", content: JSON.stringify(action) },
+          done: true,
+          done_reason: "stop",
+          prompt_eval_count: 100,
+          eval_count: 30,
+        }) + "\n",
+        { headers: { "content-type": "application/x-ndjson" } },
+      );
+    }
     if (
       body?.tools &&
       endpoint.hostname === "127.0.0.1" &&

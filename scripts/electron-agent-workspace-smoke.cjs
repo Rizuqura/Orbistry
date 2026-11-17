@@ -31,7 +31,7 @@ async function main() {
     page = await app.firstWindow();
     page.setDefaultTimeout(20000);
     page.on("pageerror", (error) => errors.push(error.message));
-    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 20);
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
       .getByRole("region", { name: "Agent workspace", exact: true })

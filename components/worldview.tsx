@@ -3,6 +3,7 @@
 import {
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   useSyncExternalStore,
@@ -31,6 +32,11 @@ import { FileInspector } from "../features/worldview/file-inspector";
 import { EntityActions } from "../features/worldview/entity-actions";
 import { KnowledgeCard } from "../features/worldview/knowledge-card";
 import { BackendIdentityWindow } from "../features/worldview/backend-identity-window";
+import { EntityAgentsDialog } from "../features/worldview/entity-agents-dialog";
+import type {
+  AgentAssignment,
+  AssignmentContext,
+} from "../types/entity-agents";
 import { ConnectorDialog } from "../features/worldview/connector-dialog";
 import { WorldSearch } from "../features/worldview/world-search";
 import {
@@ -115,10 +121,19 @@ type HoverInfo = Readonly<{
   detail: string;
 }>;
 
-/** Renders saved entities, independent port relationships and floating Knowledge Cards over the shared interactive world camera. */
+/** Renders saved entities, relationships, Knowledge Cards and assignment controls over the shared interactive world camera. */
 export function WorldView({
   vaultPath,
-}: Readonly<{ vaultPath: string | null }>) {
+  onAgentWorkbench,
+  onCreateAgent,
+}: Readonly<{
+  vaultPath: string | null;
+  onAgentWorkbench: (
+    agentId: string,
+    context: AssignmentContext,
+  ) => Promise<void>;
+  onCreateAgent: (name: string, creationId: string) => Promise<boolean>;
+}>) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const connectorLabelsRef = useRef<HTMLDivElement>(null);
   const chipLabelsRef = useRef<HTMLDivElement>(null);
@@ -131,6 +146,35 @@ export function WorldView({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [cardId, setCardId] = useState<string | null>(null);
   const [identityId, setIdentityId] = useState<string | null>(null);
+  const [agentChip, setAgentChip] = useState<WorldViewChip | null>(null);
+  const [agentAssignments, setAgentAssignments] = useState<AgentAssignment[]>(
+    [],
+  );
+  const agentCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const assignment of agentAssignments)
+      counts.set(
+        assignment.entityId,
+        (counts.get(assignment.entityId) ?? 0) + 1,
+      );
+    return counts;
+  }, [agentAssignments]);
+  useEffect(() => {
+    let alive = true;
+    const api = window.orbistryDesktop?.ai;
+    if (vaultPath && api?.listEntityAgents)
+      void api
+        .listEntityAgents({ vaultPath })
+        .then((records) => {
+          if (alive) setAgentAssignments(records);
+        })
+        .catch((error: Error) => {
+          if (alive) setOperationError(error.message);
+        });
+    return () => {
+      alive = false;
+    };
+  }, [vaultPath]);
   const [assigningChip, setAssigningChip] = useState<WorldViewChip | null>(
     null,
   );
@@ -1040,8 +1084,28 @@ export function WorldView({
     }
   }
 
+  /** Opens assignment UI only when the current desktop bridge supports it, surfacing a clear restart message after hot updates. */
+  function openEntityAgents(chip: WorldViewChip): void {
+    if (!window.orbistryDesktop?.ai?.listEntityAgents) {
+      setOperationError("Restart Orbistry to load entity agent assignments.");
+      return;
+    }
+    setAgentChip(chip);
+  }
+
   return (
     <section className="worldview" aria-labelledby="worldview-title">
+      {agentChip && vaultPath && (
+        <EntityAgentsDialog
+          key={agentChip.id}
+          chip={agentChip}
+          vaultPath={vaultPath}
+          onClose={() => setAgentChip(null)}
+          onChanged={setAgentAssignments}
+          onWorkbench={onAgentWorkbench}
+          onCreateAgent={onCreateAgent}
+        />
+      )}
       <div className="worldview-scene">
         <canvas
           ref={canvasRef}
@@ -1106,6 +1170,37 @@ export function WorldView({
               );
             },
           )}
+          {chips.map((chip) => {
+            const count = agentCounts.get(chip.id) ?? 0;
+            return (
+              <button
+                key={`agent-${chip.id}`}
+                type="button"
+                className="worldview-entity-agent-add"
+                data-agent-chip-id={chip.id}
+                aria-label={`Assign agents to ${chip.name}`}
+                aria-haspopup="dialog"
+                disabled={controlsDisabled}
+                onPointerDown={(event) => event.stopPropagation()}
+                onDoubleClick={(event) => event.stopPropagation()}
+                onWheel={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  openEntityAgents(chip);
+                }}
+              >
+                +
+                {count > 0 && (
+                  <span
+                    className="worldview-assigned-agent-count"
+                    aria-label={`${count} assigned agents`}
+                  >
+                    {count}
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
         <h1 id="worldview-title" className="worldview-label">
           WorldView
@@ -1175,6 +1270,7 @@ export function WorldView({
               onAssign={assignFiles}
               onEdit={editSelectedChip}
               onBackendIdentity={() => setIdentityId(selectedChip.id)}
+              onAgents={() => openEntityAgents(selectedChip)}
               onSources={inspectFiles}
               onDelete={deleteSelectedChip}
               onDeselect={deselectEntity}

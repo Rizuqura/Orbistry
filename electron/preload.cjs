@@ -13,7 +13,7 @@ async function invokeModel(channel, input) {
 // Future desktop capabilities must be exposed here deliberately, not by giving
 // renderer components unrestricted Node.js or filesystem access.
 contextBridge.exposeInMainWorld("orbistryDesktop", {
-  apiVersion: 18,
+  apiVersion: 20,
   platform: process.platform,
   vault: {
     getSnapshot: () => ipcRenderer.invoke("vault:getSnapshot"),
@@ -94,6 +94,18 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
       ipcRenderer.invoke("stations:reattach", fromPath, toPath),
   },
   ai: {
+    engineDefinitions: () => invokeModel("ai:engineDefinitions"),
+    listEntityAgents: (input) => invokeModel("ai:listEntityAgents", input),
+    assignEntityAgent: (input) => invokeModel("ai:assignEntityAgent", input),
+    removeEntityAgent: (input) => invokeModel("ai:removeEntityAgent", input),
+    openEntityAgent: (input) => invokeModel("ai:openEntityAgent", input),
+    retrieveEntityAgentKnowledge: (input) =>
+      invokeModel("ai:retrieveEntityAgentKnowledge", input),
+    sendEntityAgent: (input) => invokeModel("ai:sendEntityAgent", input),
+    executeEntityAgent: (input) => invokeModel("ai:executeEntityAgent", input),
+    proposeEntityAgent: (input) => invokeModel("ai:proposeEntityAgent", input),
+    decideEntityAgentRequest: (input) =>
+      invokeModel("ai:decideEntityAgentRequest", input),
     engineState: () => invokeModel("ai:engineState"),
     chooseEngineFolder: () => invokeModel("ai:chooseEngineFolder"),
     probeEngine: () => invokeModel("ai:probeEngine"),

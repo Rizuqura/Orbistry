@@ -76,6 +76,11 @@
   max-height: 700px;
   min-height: 0;
 }
+/* The Engine library remains usable within the fixed-height sheet at smaller desktop viewports. */
+.studio-workbench .studio-library {
+  min-height: 0;
+  overflow-y: auto;
+}
 .studio-workbench h3 {
   color: #dde5ee;
   font-size: 14px;

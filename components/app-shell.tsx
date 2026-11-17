@@ -23,6 +23,7 @@ import { useChatRuntime } from "../features/chat/use-chat-runtime";
 import { ModelSettings } from "../features/model-settings/model-settings";
 import { AgentWorkspace } from "../features/agent/agent-workspace";
 import { AgentSettings } from "../features/agent/agent-settings";
+import type { AssignmentContext } from "../types/entity-agents";
 import { useConfirmation } from "../features/dialogs/use-confirmation";
 
 type View = "workspace" | "worldview" | "agent";
@@ -87,6 +88,8 @@ export function AppShell() {
   }, []);
   const [view, setView] = useState<View>("worldview");
   const [agentSettingsOpen, setAgentSettingsOpen] = useState(false);
+  const [assignmentContext, setAssignmentContext] =
+    useState<AssignmentContext>();
   const [vaultQuery, setVaultQuery] = useState("");
   const [sidebarWidth, setSidebarWidth] = useState(240);
   const [vaultMinimized, setVaultMinimized] = useState(false);
@@ -273,6 +276,24 @@ export function AppShell() {
     contextKey: "standalone-chat",
     scope: { activeStationIds: [], matchMode: "any" },
   });
+  const agentActions = useRef(chat);
+  agentActions.current = chat;
+  /** Opens the original Workbench with UI-only entity context after selecting the reusable definition. Throws when another runtime operation blocks selection. */
+  const openEntityWorkbench = async (
+    agentId: string,
+    context: AssignmentContext,
+  ) => {
+    const current = agentActions.current;
+    if (
+      current.activeAgentId !== agentId &&
+      !(await current.selectAgent(agentId))
+    )
+      throw new Error(
+        "Wait for the active agent operation before opening this Workbench.",
+      );
+    setAssignmentContext(context);
+    setAgentSettingsOpen(true);
+  };
   const startupVaultPath =
     snapshot?.status === "ready" ? snapshot.rootPath : null;
   const startupMatchesVault = chat.startup.vaultPath === startupVaultPath;
@@ -555,6 +576,10 @@ export function AppShell() {
           <WorldView
             key={snapshot?.rootPath ?? "loading"}
             vaultPath={snapshot?.status === "ready" ? snapshot.rootPath : null}
+            onAgentWorkbench={openEntityWorkbench}
+            onCreateAgent={async (name, creationId) =>
+              Boolean(await agentActions.current.createAgent(name, creationId))
+            }
           />
         ) : (
           <div className="workspace-grid workspace-main">
@@ -643,7 +668,17 @@ export function AppShell() {
           <AgentSettings
             key={chat.activeAgentId}
             chat={agentChat}
-            onClose={() => setAgentSettingsOpen(false)}
+            assignmentContext={
+              assignmentContext?.vaultPath === snapshot?.rootPath &&
+              assignmentContext &&
+              agentSettingsOpen
+                ? assignmentContext
+                : undefined
+            }
+            onClose={() => {
+              setAgentSettingsOpen(false);
+              setAssignmentContext(undefined);
+            }}
           />
         )}
       </main>

@@ -1176,6 +1176,44 @@
   overflow-wrap: anywhere;
   cursor: pointer;
 }
+.app-shell .worldview-entity-agent-add {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #9ca9b8;
+  border-radius: 0;
+  background: #111820;
+  color: #e8f0fa;
+  line-height: 20px;
+  font: 16px monospace;
+  cursor: pointer;
+}
+.worldview-assigned-agent-count {
+  pointer-events: none;
+  position: absolute;
+  right: -7px;
+  top: -8px;
+  min-width: 12px;
+  padding: 1px 3px;
+  background: #a5c5d0;
+  color: #111820;
+  font: 10px monospace;
+}
+.worldview-entity-agent-add::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  width: 1px;
+  height: 8px;
+  background: #9ca9b8;
+  pointer-events: none;
+}
 .app-shell .worldview-entity-name[aria-pressed="true"] {
   z-index: 1;
 }

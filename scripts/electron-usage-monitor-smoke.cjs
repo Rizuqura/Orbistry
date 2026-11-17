@@ -30,8 +30,8 @@ async function main() {
     await page.evaluate(() => {
       document.hasFocus = () => true;
     });
-    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 18);
-    await page.evaluate(() => window.orbistryDesktop.ai.handshake(18));
+    await page.waitForFunction(() => window.orbistryDesktop?.apiVersion === 20);
+    await page.evaluate(() => window.orbistryDesktop.ai.handshake(19));
     await page.getByRole("button", { name: "WorldView", exact: true }).click();
   };
   const monitor = () =>

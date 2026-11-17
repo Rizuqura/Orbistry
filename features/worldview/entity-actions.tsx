@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { WorldViewChip } from "./chips";
 import { chipTextColor } from "./chip-colors";
 
-/** Displays selected entity identity/key and actions through the existing edit/source/delete flows. */
+/** Displays selected entity actions, including assignment access when its canvas control is occluded by another entity. */
 export function EntityActions({
   chip,
   disabled,
@@ -12,6 +12,7 @@ export function EntityActions({
   onAssign,
   onEdit,
   onBackendIdentity,
+  onAgents,
   onSources,
   onDelete,
   onDeselect,
@@ -22,6 +23,7 @@ export function EntityActions({
   onAssign: () => void;
   onEdit: () => void;
   onBackendIdentity: () => void;
+  onAgents: () => void;
   onSources: () => void;
   onDelete: () => void;
   onDeselect: () => void;
@@ -105,6 +107,13 @@ export function EntityActions({
             disabled={disabled}
           >
             View Sources ({chip.sources?.length ?? 0})
+          </button>
+          <button
+            type="button"
+            onClick={() => act(onAgents)}
+            disabled={disabled}
+          >
+            Assign / Manage Agents
           </button>
           <button
             type="button"

@@ -3,12 +3,16 @@ import { useEffect, useRef, useState } from "react";
 import type { ChatController } from "../chat/use-chat-runtime";
 import { useConfirmation } from "../dialogs/use-confirmation";
 import { AgentConstruction } from "./agent-construction";
+import type { AssignmentContext } from "../../types/entity-agents";
+/** Hosts the existing Workbench modal and its unsaved-change guard, optionally displaying the originating entity assignment. */
 export function AgentSettings({
   chat,
   onClose,
+  assignmentContext,
 }: {
   chat: ChatController;
   onClose: () => void;
+  assignmentContext?: AssignmentContext;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const closing = useRef(false);
@@ -70,6 +74,7 @@ export function AgentSettings({
         <AgentConstruction
           key={chat.agent?.id ?? "loading"}
           chat={chat}
+          assignmentContext={assignmentContext}
           onDirtyChange={setDirty}
           onBusyChange={setBusy}
         />

@@ -263,6 +263,7 @@ class GeminiProvider {
     signal?.throwIfAborted();
     await this.credentials.get();
   }
+  /** Completes the existing answer/analysis formats or the allowlisted assignment protocol through Gemini's JSON schema interface. */
   async complete(request) {
     const model = parse(modelName, request.model);
     const messages = parse(messagesSchema, request.messages);
@@ -278,7 +279,12 @@ class GeminiProvider {
     const { isPlanFormat } = require("../dataset-planner.cjs");
     const { isStatisticsFormat } = require("../statistics.cjs");
     const format =
-      isPlanFormat(request.format) || isStatisticsFormat(request.format)
+      isPlanFormat(request.format) ||
+      isStatisticsFormat(request.format) ||
+      (request.structuredOutput &&
+        require("../entity-agent-protocol.cjs").isEntityProtocolFormat(
+          request.format,
+        ))
         ? request.format
         : parse(
             z
