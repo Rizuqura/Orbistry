@@ -1,4 +1,4 @@
-const { estimateTokens } = require("../../ai/history-budget.cjs");
+const { estimateTokens } = require("../../shared/token-budget.cjs");
 const { LIMITS, digest, chunkSchema } = require("./schema.cjs");
 
 /** Streams deterministic, non-overlapping source slices by ATX heading and paragraph; fenced headings stay literal data. Offsets are original UTF-16 offsets and line numbers are one-based. */

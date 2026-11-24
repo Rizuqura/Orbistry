@@ -10,7 +10,7 @@ export const conversationSourceLabel = (
   boxes: ContextBox[],
 ) =>
   conversation.standalone
-    ? "Standalone chat"
+    ? "Universe chat"
     : conversation.engineOnly
       ? "Engine chat · no research context"
       : (conversation.contextFile?.relativePath ??

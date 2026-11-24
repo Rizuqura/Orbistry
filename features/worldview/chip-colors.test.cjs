@@ -7,7 +7,7 @@ const {
   shadeChipColor,
   chipTextColor,
 } = require("./chip-colors.ts");
-const { readChipIcon } = require("./chip-icon.ts");
+const { readChipIcon } = require("../entities/chip-icon.ts");
 
 /** Checks color math against primary colors, grays, and arbitrary hex round trips. */
 test("chip colors round-trip through HSV and wheel endpoints remain consistent", () => {

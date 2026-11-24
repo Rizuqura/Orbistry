@@ -10,12 +10,15 @@ const { normalizeTag } = require("./engines/tag-association/normalizer.cjs");
 const {
   getAssociationStatistics,
 } = require("./engines/tag-association/association.cjs");
-const service = require("./tag-association-service.cjs");
+const service = require("./domains/indexing/tag-association-service.cjs");
 const {
   saveWorldViewChip,
   deleteWorldViewChip,
-} = require("./worldview-store.cjs");
-const { listVaultMetadata, scanVault } = require("./vault-service.cjs");
+} = require("./domains/entity/worldview-store.cjs");
+const {
+  listVaultMetadata,
+  scanVault,
+} = require("./domains/universe/vault-service.cjs");
 
 /** Supplies persisted-field-only fixtures with exact, associated, multiword and duplicate-normalized tags. */
 function fixtures() {
@@ -171,7 +174,7 @@ function searchAfterRestart(root, query) {
     [
       "-e",
       script,
-      require.resolve("./tag-association-service.cjs"),
+      require.resolve("./domains/indexing/tag-association-service.cjs"),
       root,
       query,
     ],

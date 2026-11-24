@@ -169,8 +169,8 @@ From the repository root, these commands build and install packages into an exis
 
 ```powershell
 node scripts/build-daily-price-engine.cjs --universe C:/Universe
-node scripts/build-yahoo-financials-engine.cjs --universe C:/Universe
-node scripts/build-excel-engine.cjs --universe C:/Universe
+node scripts/build/build-yahoo-financials-engine.cjs --universe C:/Universe
+node scripts/build/build-excel-engine.cjs --universe C:/Universe
 ```
 
 For an existing installation, append `--upgrade`. The builders verify installed files and retain backups. Run a builder without arguments to stage a standalone package under `.cache/engine-packages`. `node scripts/clean-engine-backups.cjs --universe C:/Universe` previews verified obsolete installer backups; append `--apply` to remove only those backups. Active engines and all caches remain in place.
@@ -193,5 +193,5 @@ For an existing installation, append `--upgrade`. The builders verify installed 
 
 - Package API and maintenance details are in [Daily Price](packages/daily-price-v0.1.md), [Yahoo Finance and future LLM access](packages/yahoo-financials-v0.2.md) and [Excel](packages/excel-v0.1.md).
 - Viewer details are in [Carousel and Timeline behavior](reference/carousel-viewer/UI_BEHAVIOR.md).
-- Implementation and verification notes are grouped in [reports](reports/).
+- Implementation and verification notes are grouped in [reports](../REPORTS.md#report-index).
 - Broader project documentation is listed in the [documentation index](../README.md).

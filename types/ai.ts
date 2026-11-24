@@ -406,7 +406,7 @@ export type ChatState =
   | "RESTART_REQUIRED";
 export type ModelSettings = {
   schemaVersion: 1;
-  providerId: "ollama" | "gemini" | "nvidia" | "openrouter";
+  providerId: "ollama" | "gemini" | "nvidia" | "openrouter" | "huggingface";
   modelId: string | null;
   contextWindow: number;
   outputLimit: number;
@@ -552,6 +552,10 @@ export interface AiBridge extends EntityAgentBridge {
   onFrontOfficeEvent(callback: (event: ExperimentEvent) => void): () => void;
   listConstructionFiles?(): Promise<string[]>;
   engineState?(): Promise<EngineState>;
+  enginePackageCatalog(input?: {
+    entityId?: string;
+    vaultPath?: string;
+  }): Promise<import("./engine-packages").EnginePackageCatalog>;
   chooseEngineFolder?(): Promise<EngineState | null>;
   probeEngine?(): Promise<EngineState>;
   executeEngine?(input: {
@@ -575,6 +579,7 @@ export interface AiBridge extends EntityAgentBridge {
     boxId: string;
   }): Promise<ConstructionBoxPreview>;
   listAgents?(): Promise<AgentConfig[]>;
+  deleteAgent?(input: { id: string }): Promise<boolean>;
   createAgent?(input: {
     name: string;
     creationId: string;
@@ -668,6 +673,7 @@ export interface AiBridge extends EntityAgentBridge {
   }): Promise<Conversation>;
   clearConversations(): Promise<void>;
   resumeConversation(id: string): Promise<Conversation>;
+  gatewayActivity(id: string): Promise<Record<string, unknown>[]>;
   refreshSource(): Promise<unknown>;
   chat(input: ChatRequest): Promise<ChatResult>;
   cancel(requestId?: string): Promise<boolean>;

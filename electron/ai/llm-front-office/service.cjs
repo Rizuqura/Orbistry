@@ -6,7 +6,7 @@ const path = require("node:path");
 const { randomUUID } = require("node:crypto");
 const { readJson, writeJson } = require("../json-store.cjs");
 const { createModelRun, readModelRun } = require("../run-store.cjs");
-const { applyRun, validId } = require("../conversation-store.cjs");
+const { applyRun, validId } = require("../chat/conversation-store.cjs");
 const { ModelRuntimeError } = require("../model-errors.cjs");
 const {
   validateConfig,

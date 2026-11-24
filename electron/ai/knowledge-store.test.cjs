@@ -324,6 +324,38 @@ test("numbering survives concurrent store instances, failure and restart without
   await fs.unlink(path.join(f.store.directory, ".writer.lock"));
   assert.equal((await f.propose()).iteration, 3);
 });
+
+test(
+  "Windows outbox writer retries a transient EPERM but preserves permanent permission failures",
+  { skip: process.platform !== "win32" },
+  async (t) => {
+    const f = await fixture(t),
+      open = fs.open;
+    let transient = true;
+    t.mock.method(fs, "open", async (file, ...args) => {
+      if (String(file).endsWith(".writer.lock") && transient) {
+        transient = false;
+        throw Object.assign(Error("synthetic Windows lock race"), {
+          code: "EPERM",
+        });
+      }
+      return open(file, ...args);
+    });
+    assert.equal((await f.propose()).iteration, 0);
+    t.mock.method(fs, "open", async (file, ...args) => {
+      if (String(file).endsWith(".writer.lock"))
+        throw Object.assign(Error("synthetic permission failure"), {
+          code: "EPERM",
+        });
+      return open(file, ...args);
+    });
+    await assert.rejects(f.propose(), { code: "EPERM" });
+    assert.deepEqual(
+      await fs.readdir(path.join(f.store.directory, "iteration")),
+      ["iteration0000.md"],
+    );
+  },
+);
 test("outbox filesystem failures recover with no published partial iteration or consumed number", async (t) => {
   const f = await fixture(t);
   await f.store.checkBoundary();

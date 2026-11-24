@@ -4,9 +4,9 @@ const fs = require("node:fs/promises"),
   os = require("node:os");
 const assert = require("node:assert/strict");
 const { randomUUID } = require("node:crypto");
-const { AgentStore } = require("../electron/ai/agent-store.cjs");
+const { AgentStore } = require("../electron/ai/agents/agent-store.cjs");
 const { ModelRegistry } = require("../electron/ai/model-registry.cjs");
-const { ChatService } = require("../electron/ai/chat-service.cjs");
+const { ChatService } = require("../electron/ai/chat/chat-service.cjs");
 const { EngineRegistry } = require("../electron/ai/engine-registry.cjs");
 const {
   OllamaProvider,

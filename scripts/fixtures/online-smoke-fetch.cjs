@@ -272,9 +272,16 @@ function createOnlineSmokeFetch() {
           choices: [
             {
               delta: {
-                content: datasetPlan(body)
-                  ? JSON.stringify(datasetPlan(body))
-                  : answer,
+                content:
+                  typeof state.entityProtocolReply === "function" &&
+                  body.messages[0].content.includes(
+                    "JSON object matching this schema",
+                  ) &&
+                  body.messages[1]?.content.startsWith("Host-resolved")
+                    ? JSON.stringify(await state.entityProtocolReply(body))
+                    : datasetPlan(body)
+                      ? JSON.stringify(datasetPlan(body))
+                      : answer,
               },
               finish_reason: "stop",
             },

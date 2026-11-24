@@ -1,11 +1,12 @@
 const { createHash } = require("node:crypto");
 const { OpenRouterUsageService, blank } = require("./openrouter-usage.cjs");
-const PROVIDERS = ["ollama", "gemini", "nvidia", "openrouter"];
+const PROVIDERS = ["ollama", "gemini", "nvidia", "openrouter", "huggingface"];
 const LABELS = {
   ollama: "Ollama",
   gemini: "Gemini",
   nvidia: "NVIDIA",
   openrouter: "OpenRouter",
+  huggingface: "Hugging Face",
 };
 const keyIdentity = (provider, key) =>
   provider +

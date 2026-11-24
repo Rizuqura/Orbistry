@@ -11,32 +11,30 @@ const {
 const path = require("path");
 const { installChatWindowHandler } = require("./chat-window.cjs");
 const { pathToFileURL } = require("node:url");
-const { initializeVault, saveVault } = require("./vault-settings.cjs");
+const {
+  initializeVault,
+  saveVault,
+} = require("./domains/universe/vault-settings.cjs");
 const {
   guardedIpc,
   developmentUrl,
   sameDocument,
-} = require("./desktop-security.cjs");
+} = require("./core/security/desktop-security.cjs");
 const {
   readPdfFile,
   readVaultFile,
   saveMarkdownFile,
   scanVault,
   searchPdfText,
-} = require("./vault-service.cjs");
-const stations = require("./station-service.cjs");
-const { registerWorldViewIpc } = require("./worldview-ipc.cjs");
-const { OllamaProvider } = require("./ai/providers/ollama-provider.cjs");
-const { ChatService } = require("./ai/chat-service.cjs");
+} = require("./domains/universe/vault-service.cjs");
+const stations = require("./domains/universe/station-service.cjs");
+const { registerWorldViewIpc } = require("./core/ipc/worldview-ipc.cjs");
+const { ChatService } = require("./ai/chat/chat-service.cjs");
 const { ModelRegistry } = require("./ai/model-registry.cjs");
 const { ProviderRegistry } = require("./ai/provider-registry.cjs");
 const { CredentialStore } = require("./ai/credential-store.cjs");
-const { AgentStore } = require("./ai/agent-store.cjs");
-const {
-  OpenRouterProvider,
-} = require("./ai/providers/openrouter-provider.cjs");
+const { AgentStore } = require("./ai/agents/agent-store.cjs");
 const { NvidiaProvider } = require("./ai/providers/nvidia-provider.cjs");
-const { GeminiProvider } = require("./ai/providers/gemini-provider.cjs");
 const { registerAiIpc } = require("./ai/ipc.cjs");
 const { ModelRuntimeError } = require("./ai/model-errors.cjs");
 
@@ -47,13 +45,7 @@ const entryUrl =
 let mainWindow;
 const trustedIpc = guardedIpc(ipcMain, () => mainWindow?.webContents, entryUrl);
 let activeVaultPath;
-let ollamaProvider;
 let chatService;
-
-function getOllamaProvider() {
-  ollamaProvider ??= new OllamaProvider();
-  return ollamaProvider;
-}
 
 function getVaultSnapshot() {
   return scanVault(activeVaultPath);
@@ -230,14 +222,9 @@ app.whenReady().then(async () => {
   trustedIpc.handle("stations:reattach", (_, fromPath, toPath) =>
     stations.reattach(activeVaultPath, fromPath, toPath),
   );
-  const provider = getOllamaProvider();
   const credentials = new CredentialStore(app.getPath("userData"), safeStorage);
-  const providers = new ProviderRegistry({
-    ollama: provider,
-    gemini: new GeminiProvider({ credentials }),
-    nvidia: new NvidiaProvider({ credentials }),
-    openrouter: new OpenRouterProvider({ credentials }),
-  });
+  const provider = new NvidiaProvider({ credentials });
+  const providers = new ProviderRegistry({ nvidia: provider });
   const registry = new ModelRegistry(providers, app.getPath("userData"));
   const agents = new AgentStore(app.getPath("userData"), (bytes) =>
     nativeImage.createFromBuffer(bytes),

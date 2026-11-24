@@ -26,8 +26,8 @@ Data is fetched when opening a section. Successful results are cached for 24 hou
 The independent package lives at `<Universe>/.engine/yahoo-financials/package`. Cached snapshots live in its sibling `cache` folder. The existing daily-price package has its own directory.
 
 ```powershell
-node scripts/build-yahoo-financials-engine.cjs
-node scripts/build-yahoo-financials-engine.cjs --universe C:/Universe
+node scripts/build/build-yahoo-financials-engine.cjs
+node scripts/build/build-yahoo-financials-engine.cjs --universe C:/Universe
 ```
 
 The first command stages a self-contained package under `.cache/engine-packages`. The second installs it in the specified existing Universe. For a later update, append `--upgrade`. Updates verify existing hashes and retain a sibling package backup.

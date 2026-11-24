@@ -1,9 +1,9 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
-const { statVaultSource } = require("./vault-service.cjs");
-const { serialQueue } = require("./ai/json-store.cjs");
-const { executeNativeEngine } = require("./ai/engine-registry.cjs");
+const { statVaultSource } = require("./domains/universe/vault-service.cjs");
+const { serialQueue } = require("./core/persistence/json-store.cjs");
+const { executeNativeEngine } = require("./engines/native.cjs");
 const {
   LIMITS,
   VERSION,
@@ -11,6 +11,9 @@ const {
   exportWorkbook,
 } = require("./engines/excel/index.cjs");
 const { resultPage } = require("./engines/excel/results.cjs");
+const {
+  resolveKnowledgeSource,
+} = require("./domains/knowledge/knowledge-source-access.cjs");
 
 /** Reads only a currently authorized Universe source through containment/symlink checks and a read-only bounded handle. Detects source replacement or concurrent edits. */
 async function snapshot(root, sourceRef) {
@@ -71,7 +74,6 @@ function createExcelService({ execute = executeNativeEngine } = {}) {
 
   /** Returns an authorized immutable model, sharing unchanged snapshots across entities and coalescing identical in-flight parsing. */
   async function load(root, id, sourceId, expectedHash) {
-    const { resolveKnowledgeSource } = require("./knowledge-store.cjs");
     const source = await resolveKnowledgeSource(root, id, sourceId);
     const file = await snapshot(root, source.sourceRef);
     const hash = `sha256:${createHash("sha256").update(file.bytes).digest("hex")}`;
@@ -157,11 +159,7 @@ function createExcelService({ execute = executeNativeEngine } = {}) {
       const content = await queue(function exportCached() {
         return exportWorkbook(model, format, { valuesOnly: true });
       });
-      await require("./knowledge-store.cjs").resolveKnowledgeSource(
-        root,
-        id,
-        sourceId,
-      );
+      await resolveKnowledgeSource(root, id, sourceId);
       return {
         content,
         filename: `${path.basename(file.name, path.extname(file.name))}.${format === "markdown" ? "md" : "json"}`,

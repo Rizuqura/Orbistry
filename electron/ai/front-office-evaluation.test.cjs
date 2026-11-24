@@ -256,9 +256,7 @@ for (const provider of ["openrouter", "nvidia"]) {
         config,
         registry: { providerFor: () => adapter },
       }).complete({
-        messages: [
-          { role: "user", content: "Reply exactly ORBISTRY ONLINE." },
-        ],
+        messages: [{ role: "user", content: "Reply exactly ORBISTRY ONLINE." }],
       });
       assert.equal(response.finishReason, "stop");
       assert.equal(response.content.trim(), "ORBISTRY ONLINE.");

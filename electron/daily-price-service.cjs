@@ -1,7 +1,10 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
-const { rejectSymlink, writeJson } = require("./ai/json-store.cjs");
+const {
+  rejectSymlink,
+  writeJson,
+} = require("./core/persistence/json-store.cjs");
 const engine = require("./engines/daily-price/index.cjs");
 
 /** Resolves an Engine-owned cache file under the active Universe, checking each parent for links. */
@@ -100,7 +103,7 @@ const dailyPriceService = createDailyPriceService();
 
 /** Authorizes a saved entity ticker before and after asynchronous network/cache work, rejecting concurrent ticker changes. */
 async function getEntityPrice(root, id, force = false) {
-  const knowledge = require("./knowledge-store.cjs");
+  const knowledge = require("./domains/knowledge/knowledge-store.cjs");
   const state = await knowledge.readKnowledgeIndex(root, id);
   if (!state.priceSymbol)
     throw new Error("Save a ticker for this entity first.");
@@ -112,10 +115,11 @@ async function getEntityPrice(root, id, force = false) {
 }
 /** Resolves one applied Yahoo source to its configured ticker. Unknown, draft-only and removed declarations reject before retrieval. */
 async function resolveIndexedPrice(root, id, menuId, priceId) {
-  const state = await require("./knowledge-store.cjs").readKnowledgeIndex(
-    root,
-    id,
-  );
+  const state =
+    await require("./domains/knowledge/knowledge-store.cjs").readKnowledgeIndex(
+      root,
+      id,
+    );
   const price = state.menus
     .find((menu) => menu.id === menuId)
     ?.prices?.find((item) => item.id === priceId);

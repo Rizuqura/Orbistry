@@ -1,10 +1,12 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
-const { AgentStore } = require("../electron/ai/agent-store.cjs");
-const { EntityAgentService } = require("../electron/ai/entity-agents.cjs");
+const { AgentStore } = require("../electron/ai/agents/agent-store.cjs");
+const {
+  EntityAgentService,
+} = require("../electron/ai/agents/entity-agents.cjs");
 const {
   withReadOnlyAccess,
-} = require("../electron/ai/entity-agent-access.cjs");
+} = require("../electron/ai/agents/entity-agent-access.cjs");
 
 /** Applies the user's standing-read authorization to existing assigned definitions. Backs up definitions beside the original file and preserves unapplied draft changes; does not change source documents, indexes, credentials or unsupported operations. */
 async function main() {

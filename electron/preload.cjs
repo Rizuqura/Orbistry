@@ -13,7 +13,7 @@ async function invokeModel(channel, input) {
 // Future desktop capabilities must be exposed here deliberately, not by giving
 // renderer components unrestricted Node.js or filesystem access.
 contextBridge.exposeInMainWorld("orbistryDesktop", {
-  apiVersion: 20,
+  apiVersion: 23,
   platform: process.platform,
   vault: {
     getSnapshot: () => ipcRenderer.invoke("vault:getSnapshot"),
@@ -94,7 +94,12 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
       ipcRenderer.invoke("stations:reattach", fromPath, toPath),
   },
   ai: {
+    deleteAgent: (input) => invokeModel("ai:deleteAgent", input),
+    clearEntityAgentChat: (input) =>
+      invokeModel("ai:clearEntityAgentChat", input),
     engineDefinitions: () => invokeModel("ai:engineDefinitions"),
+    enginePackageCatalog: (input) =>
+      invokeModel("ai:enginePackageCatalog", input),
     listEntityAgents: (input) => invokeModel("ai:listEntityAgents", input),
     assignEntityAgent: (input) => invokeModel("ai:assignEntityAgent", input),
     removeEntityAgent: (input) => invokeModel("ai:removeEntityAgent", input),
@@ -193,6 +198,7 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
     deleteMessage: (input) => invokeModel("ai:deleteMessage", input),
     clearConversations: () => invokeModel("ai:clearConversations"),
     resumeConversation: (id) => invokeModel("ai:resumeConversation", id),
+    gatewayActivity: (id) => invokeModel("ai:gatewayActivity", id),
     refreshSource: () => invokeModel("ai:refreshSource"),
     onEvent: (callback) => {
       const listener = (_, value) => callback(value);

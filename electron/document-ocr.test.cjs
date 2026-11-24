@@ -3,8 +3,8 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
-const vault = require("./vault-service.cjs");
-const stations = require("./station-service.cjs");
+const vault = require("./domains/universe/vault-service.cjs");
+const stations = require("./domains/universe/station-service.cjs");
 const { imagePdf } = require("../scripts/fixtures/image-pdf.cjs");
 test(
   "native OCR supplies real image/PDF text and Context Box token estimates without sessions",

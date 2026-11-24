@@ -3,11 +3,14 @@ const assert = require("node:assert/strict");
 const { NvidiaProvider } = require("./nvidia-provider.cjs");
 const { DEFAULTS } = require("../model-registry.cjs");
 const { ModelRuntimeError } = require("../model-errors.cjs");
-const { validateAnswer, answerPrefix } = require("../response-validation.cjs");
+const {
+  validateAnswer,
+  answerPrefix,
+} = require("../inference/response-validation.cjs");
 const { PLAN_FORMAT } = require("../dataset-planner.cjs");
 
 test("NVIDIA preserves the allowlisted assignment action schema for backend validation", async () => {
-  const { responseFormat } = require("../entity-agent-protocol.cjs");
+  const { responseFormat } = require("../agents/entity-agent-protocol.cjs");
   const action = { action: "knowledge.listTopics", offset: 0, limit: 100 };
   const provider = new NvidiaProvider({
     credentials,

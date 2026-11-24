@@ -8,11 +8,11 @@ const {
   assignWorldViewFiles,
   unassignWorldViewFile,
   deleteWorldViewChip,
-} = require("./worldview-store.cjs");
+} = require("./domains/entity/worldview-store.cjs");
 const {
   saveKnowledgeIndex,
   readKnowledgeIndex,
-} = require("./knowledge-store.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
 const {
   chunkMarkdown,
 } = require("./engines/backend-identity/markdown-chunker.cjs");
@@ -23,12 +23,12 @@ const { digest, LIMITS } = require("./engines/backend-identity/schema.cjs");
 const compiler = require("./engines/backend-identity/identity-compiler.cjs");
 const storage = require("./engines/backend-identity/snapshot-store.cjs");
 const { financialService } = require("./financial-service.cjs");
-const { inspect } = require("./backend-identity-service.cjs");
+const { inspect } = require("./domains/knowledge/backend-identity-service.cjs");
 const {
   createConnector,
   updateConnector,
   deleteConnector,
-} = require("./connector-store.cjs");
+} = require("./domains/entity/connector-store.cjs");
 const {
   encodeConnections,
 } = require("./engines/backend-identity/connector-encoder.cjs");
@@ -356,7 +356,9 @@ test("linked engine storage is rejected before a snapshot can escape its own nam
 
 test("existing source notes remain attributed, independently versioned untrusted knowledge", () =>
   fixture(async ({ root, runtime, scope }) => {
-    const { saveKnowledgeNote } = require("./knowledge-store.cjs");
+    const {
+      saveKnowledgeNote,
+    } = require("./domains/knowledge/knowledge-store.cjs");
     const index = await readKnowledgeIndex(root, "company");
     const note =
       "Human observation retained with the original source reference.";

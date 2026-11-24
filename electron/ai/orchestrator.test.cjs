@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
-const stations = require("../station-service.cjs");
+const stations = require("../domains/universe/station-service.cjs");
 const { BrainScopeError } = require("../brain-errors.cjs");
 const {
   createContextOrchestrator: createOrchestrator,
@@ -514,7 +514,7 @@ test("orchestrator never returns an answer that could not be recorded", async ()
 });
 
 test("answer correction budgets its complete prompt and drops whole history exchanges", async () => {
-  const { buildContextMessages } = require("./prompt-builder.cjs");
+  const { buildContextMessages } = require("./inference/prompt-builder.cjs");
   const { estimateTokens } = require("./history-budget.cjs");
   const userMessage = "What is the target allocation?";
   const base = buildContextMessages({ userMessage, source: content() });

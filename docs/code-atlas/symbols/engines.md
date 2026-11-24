@@ -1,0 +1,40 @@
+# Built-in Engines and data adapters: symbols
+
+[Atlas](<../README.md>) / [Module overview](<../modules/engines.md>)
+
+Generated from AST declarations. Compiler-inferred contracts are approximate and exclude third-party/global types. Static call edges do not establish runtime execution, permissions or test coverage.
+
+## Source files
+
+- [electron/daily-price-service.cjs](<files/electron/daily-price-service.cjs.md#s-f632aa5796efbce8>) (production; 10 declarations)
+- [electron/daily-price.test.cjs](<files/electron/daily-price.test.cjs.md#s-8e111220cb14cd36>) (test; 26 declarations)
+- [electron/engines/daily-price/index.cjs](<files/electron/engines/daily-price/index.cjs.md#s-c714d727be02b881>) (production; 13 declarations)
+- [electron/engines/definitions.cjs](<files/electron/engines/definitions.cjs.md#s-68219c375106f236>) (production; 1 declarations)
+- [electron/engines/excel/archive.cjs](<files/electron/engines/excel/archive.cjs.md#s-35ce0e2272717f7b>) (production; 9 declarations)
+- [electron/engines/excel/cells.cjs](<files/electron/engines/excel/cells.cjs.md#s-22e3272448e98603>) (production; 10 declarations)
+- [electron/engines/excel/cli.cjs](<files/electron/engines/excel/cli.cjs.md#s-2710164a76622e44>) (production; 2 declarations)
+- [electron/engines/excel/index.cjs](<files/electron/engines/excel/index.cjs.md#s-8caa24a0b5100de7>) (production; 9 declarations)
+- [electron/engines/excel/limits.cjs](<files/electron/engines/excel/limits.cjs.md#s-dbe91336acbae120>) (production; 2 declarations)
+- [electron/engines/excel/markdown.cjs](<files/electron/engines/excel/markdown.cjs.md#s-d7d32ae179b76645>) (production; 13 declarations)
+- [electron/engines/excel/reader.cjs](<files/electron/engines/excel/reader.cjs.md#s-302edf524680e6b8>) (production; 28 declarations)
+- [electron/engines/excel/results.cjs](<files/electron/engines/excel/results.cjs.md#s-f93d4d12ca4ebd31>) (production; 6 declarations)
+- [electron/engines/excel/worker.cjs](<files/electron/engines/excel/worker.cjs.md#s-87a7aeae669b0456>) (production; 3 declarations)
+- [electron/engines/image-parser/parser.cjs](<files/electron/engines/image-parser/parser.cjs.md#s-69a5788d0dbbe468>) (production; 7 declarations)
+- [electron/engines/native.cjs](<files/electron/engines/native.cjs.md#s-5166bbb79d792764>) (production; 1 declarations)
+- [electron/engines/tag-association/association.cjs](<files/electron/engines/tag-association/association.cjs.md#s-4c0b9b8fb1b4e642>) (production; 8 declarations)
+- [electron/engines/tag-association/indexer.cjs](<files/electron/engines/tag-association/indexer.cjs.md#s-8b1dfe75ee98589b>) (production; 5 declarations)
+- [electron/engines/tag-association/normalizer.cjs](<files/electron/engines/tag-association/normalizer.cjs.md#s-60a83ac21cd030a7>) (production; 3 declarations)
+- [electron/engines/tag-association/search.cjs](<files/electron/engines/tag-association/search.cjs.md#s-3a9a55d18d8ba71e>) (production; 11 declarations)
+- [electron/engines/yahoo-financials/cli.cjs](<files/electron/engines/yahoo-financials/cli.cjs.md#s-126f929a8375ba68>) (production; 2 declarations)
+- [electron/engines/yahoo-financials/index.cjs](<files/electron/engines/yahoo-financials/index.cjs.md#s-1c365b387701deeb>) (production; 23 declarations)
+- [electron/engines/yahoo-financials/market.cjs](<files/electron/engines/yahoo-financials/market.cjs.md#s-b724b027df848bcd>) (production; 15 declarations)
+- [electron/excel-engine.test.cjs](<files/electron/excel-engine.test.cjs.md#s-12c9907ccc3cf2eb>) (test; 18 declarations)
+- [electron/excel-package.test.cjs](<files/electron/excel-package.test.cjs.md#s-935894bada454f14>) (test; 1 declarations)
+- [electron/excel-service.cjs](<files/electron/excel-service.cjs.md#s-4fa756cedd0693d5>) (production; 9 declarations)
+- [electron/excel-service.test.cjs](<files/electron/excel-service.test.cjs.md#s-6b17ae6fefcddcce>) (test; 18 declarations)
+- [electron/financial-service.cjs](<files/electron/financial-service.cjs.md#s-082ce4a754b97ec1>) (production; 12 declarations)
+- [electron/financial-service.test.cjs](<files/electron/financial-service.test.cjs.md#s-3fcfe653414d9096>) (test; 26 declarations)
+- [electron/image-parser-service.cjs](<files/electron/image-parser-service.cjs.md#s-588132adce916faa>) (production; 27 declarations)
+- [electron/image-parser.test.cjs](<files/electron/image-parser.test.cjs.md#s-31afdbbaa1c2363a>) (test; 34 declarations)
+- [electron/tag-association.test.cjs](<files/electron/tag-association.test.cjs.md#s-b6f7ad60b7448ff5>) (test; 28 declarations)
+- [electron/yahoo-engine-contract.test.cjs](<files/electron/yahoo-engine-contract.test.cjs.md#s-54befa6d37156722>) (test; 22 declarations)

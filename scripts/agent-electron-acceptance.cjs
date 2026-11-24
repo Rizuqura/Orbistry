@@ -132,7 +132,7 @@ async function main() {
     delete env.ELECTRON_START_URL;
     application = await electron.launch({
       args: [
-        path.resolve("scripts/electron-smoke-main.cjs"),
+        path.resolve("scripts/acceptance/electron-smoke-main.cjs"),
         "--hidden",
         "--disable-gpu",
       ],

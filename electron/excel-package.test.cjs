@@ -12,7 +12,10 @@ test("Excel package upgrades preserve verified backups and reject modified packa
   const root = await fs.mkdtemp(
     path.join(os.tmpdir(), "orbistry-excel-package-"),
   );
-  const script = path.resolve(__dirname, "../scripts/build-excel-engine.cjs");
+  const script = path.resolve(
+    __dirname,
+    "../scripts/build/build-excel-engine.cjs",
+  );
   try {
     const marker = path.join(root, "original-source.txt");
     await fs.writeFile(marker, "source must remain here");

@@ -1,7 +1,10 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { z } = require("zod");
-const { rejectSymlink, writeJson } = require("../../ai/json-store.cjs");
+const {
+  rejectSymlink,
+  writeJson,
+} = require("../../core/persistence/json-store.cjs");
 const {
   idSchema,
   hashSchema,

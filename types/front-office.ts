@@ -6,6 +6,7 @@ export type BaselineCall = {
   estimatedCostUsd?: number | null;
   costSource?: MetadataSource | null;
   index: number;
+  startedAt?: string;
   phase: BaselineCallPhase;
   requestedModelId: string;
   actualModelId: string | null;
@@ -28,6 +29,7 @@ export type BaselineCall = {
 };
 
 export type BaselineTrace = {
+  agentId?: string;
   stages?: RequestStage[];
   failedStage?: RequestStageName;
   schemaVersion: 1;

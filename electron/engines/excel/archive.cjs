@@ -51,7 +51,7 @@ async function openArchive(bytes) {
       !name ||
       name.includes("\\") ||
       name.startsWith("/") ||
-      name.split("/").some((part) => part === ".." || part === ".") ||
+      name.split("/").some((part) => part === ".." || part === "./index") ||
       names.has(name.toLowerCase()) ||
       entry.flags & 1 ||
       ![0, 8].includes(entry.compressionMethod)

@@ -5,7 +5,10 @@ const {
   safeDirectory,
   rejectSymlink,
 } = require("../electron/ai/json-store.cjs");
-const { copyDependencies, checksums } = require("./build-excel-engine.cjs");
+const {
+  copyDependencies,
+  checksums,
+} = require("./build/build-excel-engine.cjs");
 
 /** Builds a self-contained price package. Explicit upgrades verify installed files and retain a sibling package backup, preserving the separate market cache. */
 async function main() {

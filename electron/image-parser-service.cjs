@@ -7,12 +7,12 @@ const {
   writeTextAtomic,
   safeDirectory,
   serialQueue,
-} = require("./ai/json-store.cjs");
-const { statVaultSource } = require("./vault-service.cjs");
+} = require("./core/persistence/json-store.cjs");
+const { statVaultSource } = require("./domains/universe/vault-service.cjs");
 const {
   resolveKnowledgeCarousel,
   resolveKnowledgeSource,
-} = require("./knowledge-store.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
 const { recognizeFile } = require("./local-ocr.cjs");
 const parser = require("./engines/image-parser/parser.cjs");
 const knowledgeSchema = z

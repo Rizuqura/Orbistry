@@ -13,6 +13,7 @@ const providerId = z.enum([
   "gemini",
   "openrouter",
   "nvidia",
+  "huggingface",
   "unknown",
 ]);
 const identity = z
@@ -68,6 +69,7 @@ const finishReason = z.enum([
 // callers cannot smuggle prompts, headers or raw errors through this contract.
 const callSchema = z.object({
   index: count.positive(),
+  startedAt: z.iso.datetime().optional(),
   phase: z.enum([
     "generation",
     "answer-repair",
@@ -124,6 +126,7 @@ const traceSchema = z.object({
     .optional(),
   failedStage: stageName.optional(),
   schemaVersion: z.literal(1),
+  agentId: identity.optional(),
   mode: z.enum(["existing-agent-baseline", "experiment"]),
   requestId: identity,
   runId: identity,
@@ -145,6 +148,7 @@ const traceSchema = z.object({
     "gemini:default",
     "openrouter:default",
     "nvidia:default",
+    "huggingface:default",
     "unknown:default",
   ]),
   selectionReason: z.enum([

@@ -4,7 +4,9 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 const { createCanvas } = require("@napi-rs/canvas");
-const { parseKnowledgeIndex } = require("./knowledge-index.cjs");
+const {
+  parseKnowledgeIndex,
+} = require("./domains/indexing/knowledge-index.cjs");
 const {
   imageMetadata,
   parseImage,
@@ -15,12 +17,12 @@ const {
   saveWorldViewChip,
   assignWorldViewFiles,
   unassignWorldViewFile,
-} = require("./worldview-store.cjs");
+} = require("./domains/entity/worldview-store.cjs");
 const {
   saveKnowledgeIndex,
   saveKnowledgeNote,
   validateKnowledgeIndex,
-} = require("./knowledge-store.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
 
 /** Produces actual bounded image fixtures through the application's existing canvas dependency. */
 function image(color, format = "image/png") {
@@ -448,7 +450,9 @@ test("viewer syntax and notes preserve applied declarations and original files",
     [],
   );
   await fixture(async (root) => {
-    const { readKnowledgeIndex } = require("./knowledge-store.cjs");
+    const {
+      readKnowledgeIndex,
+    } = require("./domains/knowledge/knowledge-store.cjs");
     const before = await readKnowledgeIndex(root, "a");
     const saved = await saveKnowledgeNote(
       root,

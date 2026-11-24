@@ -1,12 +1,7 @@
 const { ModelRuntimeError } = require("./model-errors.cjs");
 
 // Conservative estimate, including message framing. No source is truncated.
-const estimateTokens = (messages) =>
-  messages.reduce(
-    (sum, message) =>
-      sum + Math.ceil(Buffer.byteLength(message.content, "utf8") / 3) + 12,
-    0,
-  );
+const { estimateTokens } = require("../shared/token-budget.cjs");
 
 function budgetHistory(baseMessages, history, settings) {
   const available = settings.contextWindow - settings.outputLimit - 256;

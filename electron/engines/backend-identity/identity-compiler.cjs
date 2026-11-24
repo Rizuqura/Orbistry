@@ -2,11 +2,15 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
 const { TextDecoder } = require("node:util");
-const { serialQueue } = require("../../ai/json-store.cjs");
-const { readWorldViewChip } = require("../../worldview-store.cjs");
-const { readKnowledgeIndex } = require("../../knowledge-store.cjs");
-const { loadConnectors } = require("../../connector-store.cjs");
-const { statVaultSource } = require("../../vault-service.cjs");
+const { serialQueue } = require("../../core/persistence/json-store.cjs");
+const {
+  readWorldViewChip,
+} = require("../../domains/entity/worldview-store.cjs");
+const {
+  readKnowledgeIndex,
+} = require("../../domains/knowledge/knowledge-store.cjs");
+const { loadConnectors } = require("../../domains/entity/connector-store.cjs");
+const { statVaultSource } = require("../../domains/universe/vault-service.cjs");
 const { chunkMarkdown } = require("./markdown-chunker.cjs");
 const { discoverCapabilities } = require("./capability-registry.cjs");
 const { encodeConnections } = require("./connector-encoder.cjs");

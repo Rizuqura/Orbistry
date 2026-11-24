@@ -4,12 +4,12 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const { randomUUID } = require("node:crypto");
 const { textPdf } = require("./fixtures/text-pdf.cjs");
-const stations = require("../electron/station-service.cjs");
+const stations = require("../electron/domains/universe/station-service.cjs");
 const {
   OllamaProvider,
 } = require("../electron/ai/providers/ollama-provider.cjs");
 const { ModelRegistry } = require("../electron/ai/model-registry.cjs");
-const { ChatService } = require("../electron/ai/chat-service.cjs");
+const { ChatService } = require("../electron/ai/chat/chat-service.cjs");
 
 (async () => {
   await fs.mkdir("test-results", { recursive: true });
@@ -149,6 +149,11 @@ const { ChatService } = require("../electron/ai/chat-service.cjs");
 });
 
 async function createBound(service, root, _scope) {
-  const box = await service.saveBox(root, {name: 'Test '+require('node:crypto').randomUUID()});
-  return service.create(root, {contextBoxId: box.id, creationId: require('node:crypto').randomUUID()});
+  const box = await service.saveBox(root, {
+    name: "Test " + require("node:crypto").randomUUID(),
+  });
+  return service.create(root, {
+    contextBoxId: box.id,
+    creationId: require("node:crypto").randomUUID(),
+  });
 }

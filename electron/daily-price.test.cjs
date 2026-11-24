@@ -13,13 +13,15 @@ const {
   readKnowledgeIndex,
   saveKnowledgeIndex,
   savePriceSymbol,
-} = require("./knowledge-store.cjs");
-const { parseKnowledgeIndex } = require("./knowledge-index.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
+const {
+  parseKnowledgeIndex,
+} = require("./domains/indexing/knowledge-index.cjs");
 const {
   dailyPriceService,
   getIndexedPrice,
 } = require("./daily-price-service.cjs");
-const { saveWorldViewChip } = require("./worldview-store.cjs");
+const { saveWorldViewChip } = require("./domains/entity/worldview-store.cjs");
 
 /** Supplies deterministic public-market-shaped provider data with timezone-sensitive dates and a valid zero close. */
 function fakeClient() {

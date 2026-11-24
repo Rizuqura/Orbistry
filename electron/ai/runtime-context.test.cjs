@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
-const { buildContextMessages } = require("./prompt-builder.cjs");
+const { buildContextMessages } = require("./inference/prompt-builder.cjs");
 const { estimateTokens, budgetHistory } = require("./history-budget.cjs");
 const {
   canonical,

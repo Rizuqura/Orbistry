@@ -282,7 +282,7 @@ class GeminiProvider {
       isPlanFormat(request.format) ||
       isStatisticsFormat(request.format) ||
       (request.structuredOutput &&
-        require("../entity-agent-protocol.cjs").isEntityProtocolFormat(
+        require("../agents/entity-agent-protocol.cjs").isEntityProtocolFormat(
           request.format,
         ))
         ? request.format

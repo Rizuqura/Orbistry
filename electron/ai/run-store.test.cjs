@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
-const { scanVault } = require("../vault-service.cjs");
+const { scanVault } = require("../domains/universe/vault-service.cjs");
 const {
   RUN_SCHEMA_VERSION,
   createModelRun,

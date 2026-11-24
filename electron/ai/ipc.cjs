@@ -10,12 +10,13 @@ const {
 } = require("./schemas.cjs");
 const { checkRemoteModel } = require("./model-check.cjs");
 const { ModelPullService } = require("./model-pull.cjs");
+const path = require("node:path");
 const {
   ProviderUsageService,
   observeProviderUsage,
 } = require("./provider-usage.cjs");
-const { ModelAccess, providedPreview } = require("./model-access.cjs");
-const API_VERSION = 20;
+const { ModelAccess } = require("./model-access.cjs");
+const API_VERSION = 23;
 const { createRequestLogger } = require("./request-logger.cjs");
 
 /** Registers version-gated provider, construction and assignment operations through the trusted main-frame bridge. Mutations retain ChatService admission control. */
@@ -34,20 +35,17 @@ function registerAiIpc({
   requestLoggerFactory = createRequestLogger,
 }) {
   const compatible = new Set();
-  const entityAgents = new (require("./entity-agents.cjs").EntityAgentService)({
-    agents,
-    registry,
-    getVault,
-  });
-  const frontOffice =
-    registry?.file && credentials
-      ? new (require("./llm-front-office/service.cjs").FrontOfficeService)({
-          directory: require("node:path").dirname(registry.file),
-          service,
-          registry,
-          credentials,
-        })
-      : null;
+  const entityAgents =
+    new (require("./agents/entity-agents.cjs").EntityAgentService)({
+      agents,
+      registry,
+      getVault,
+    });
+  // Universe/experimental generation has been removed. EntityAgentService owns
+  // direct assigned chat and retains the existing construction/Engine boundaries.
+  const frontOffice = null;
+  const nvidiaOnly =
+    registry?.providers?.entries?.().every(([id]) => id === "nvidia") === true;
   const checks = new Map();
   const clients = new Map();
   const usage = new ProviderUsageService({ credentials, registry, agents });
@@ -109,6 +107,35 @@ function registerAiIpc({
             "MODEL_RESTART_REQUIRED",
             "Restart Orbistry to load the matching desktop backend.",
           );
+        if (
+          nvidiaOnly &&
+          [
+            "saveCredential",
+            "removeCredential",
+            "settings",
+            "checkRemoteModel",
+          ].includes(name) &&
+          input?.providerId !== "nvidia" &&
+          (name !== "settings" || input?.providerId !== undefined)
+        )
+          throw new ModelRuntimeError(
+            "PROVIDER_UNAVAILABLE",
+            "Only NVIDIA is enabled after the provider reset.",
+          );
+        if (
+          nvidiaOnly &&
+          name === "connectCredential" &&
+          !input?.apiKey?.startsWith("nvapi-")
+        )
+          throw new ModelRuntimeError(
+            "PROVIDER_UNAVAILABLE",
+            "Use an NVIDIA API key.",
+          );
+        if (nvidiaOnly && name === "pullModel")
+          throw new ModelRuntimeError(
+            "PROVIDER_UNAVAILABLE",
+            "Local model downloads were removed from the active provider configuration.",
+          );
         const value = await operation(event, input, requestLogger);
         requestLogger?.step("RESULT_RETURNED");
         requestLogger?.finish();
@@ -134,23 +161,14 @@ function registerAiIpc({
   const front = () => {
     if (!frontOffice)
       throw new ModelRuntimeError(
-        "MODEL_RESTART_REQUIRED",
-        "Restart Orbistry to load the experimental backend.",
+        "UNIVERSE_CHAT_RESET",
+        "Universe and experimental chat have been reset. Use an assigned Entity agent.",
       );
     return frontOffice;
   };
   handle("frontOfficeState", (_, task) => front().state(task ?? "general"));
-  handle(
-    "modelFavorites",
-    async () => (await front().catalog.read()).favorites,
-  );
-  handle("providedModels", async () =>
-    providedPreview(await front().catalog.state(), (id) => ({
-      failures:
-        front().reliability.state(id).failures ||
-        Number(modelAccess.failedCheck(id)),
-    })),
-  );
+  handle("modelFavorites", () => []);
+  handle("providedModels", () => []);
   handle("connectCredential", (_, input) =>
     service.exclusive(async () => {
       const result = await modelAccess.connect(input);
@@ -231,9 +249,45 @@ function registerAiIpc({
   );
   handle("models", () => registry.state());
   handle("getAgent", (_, id) => agents.get(id));
-  handle("engineDefinitions", () =>
-    require("./entity-agents.cjs").engineDefinitions(),
+  handle("deleteAgent", (_, input) =>
+    service.exclusive(() => agents.archive(input)),
   );
+  handle("engineDefinitions", () =>
+    require("./agents/entity-agents.cjs").engineDefinitions(),
+  );
+  // Discovery shares the existing version/frame gate; no package mutation or execution is exposed to the renderer.
+  handle("enginePackageCatalog", async (_, input) => {
+    const selection = parse(
+      z
+        .object({
+          entityId: z
+            .string()
+            .regex(/^[a-zA-Z0-9_-]{1,128}$/)
+            .optional(),
+          vaultPath: z.string().min(1).max(32768).optional(),
+        })
+        .strict(),
+      input ?? {},
+    );
+    const root = getVault();
+    if (
+      selection.vaultPath !== undefined &&
+      path.resolve(selection.vaultPath) !== path.resolve(root)
+    )
+      throw new ModelRuntimeError(
+        "MODEL_CONTEXT_INVALID",
+        "Universe changed. Refresh the Engine list.",
+      );
+    try {
+      return await new (require("./engine-registry.cjs").EnginePackageRegistry)(
+        root,
+      ).catalog(selection.entityId ?? null);
+    } catch (error) {
+      if (/^ENGINE_[A-Z_]+$/.test(error.code ?? ""))
+        throw new ModelRuntimeError(error.code, error.message);
+      throw error;
+    }
+  });
   handle("listEntityAgents", (_, input) => entityAgents.list(input));
   handle("assignEntityAgent", (_, input) =>
     service.exclusive(() => entityAgents.assign(input)),
@@ -242,11 +296,16 @@ function registerAiIpc({
     service.exclusive(() => entityAgents.remove(input)),
   );
   handle("openEntityAgent", (_, input) => entityAgents.open(input));
+  handle("clearEntityAgentChat", (_, input) =>
+    service.exclusive(() => entityAgents.clearChat(input)),
+  );
   handle("retrieveEntityAgentKnowledge", (_, input) =>
     entityAgents.retrieve(input),
   );
-  handle("sendEntityAgent", (_, input) =>
-    service.exclusive(() => entityAgents.send(input)),
+  handle("sendEntityAgent", (event, input) =>
+    service.runAssignedRequest(event.sender.id, input?.requestId, (signal) =>
+      entityAgents.send(input, signal),
+    ),
   );
   handle("executeEntityAgent", (_, input) =>
     service.exclusive(() => entityAgents.execute(input)),
@@ -254,10 +313,13 @@ function registerAiIpc({
   handle("proposeEntityAgent", (_, input) =>
     service.exclusive(() => entityAgents.propose(input)),
   );
-  handle("decideEntityAgentRequest", (_, input) =>
-    service.exclusive(() => entityAgents.decide(input)),
+  handle("decideEntityAgentRequest", (event, input) =>
+    service.runAssignedRequest(event.sender.id, input?.requestId, (signal) =>
+      entityAgents.decide(input, signal),
+    ),
   );
-  const inactive = () => require("./standalone-chat.cjs").inactiveIntegration();
+  const inactive = () =>
+    require("./agents/assigned-chat.cjs").inactiveIntegration();
   if (engines) {
     handle("engineState", () => engines.state());
     handle("chooseEngineFolder", inactive);
@@ -342,7 +404,8 @@ function registerAiIpc({
   );
   handle("saveCredential", (_, input) =>
     service.exclusive(async () => {
-      const value = await credentials.save(parseCredential(input));
+      const parsed = parseCredential(input);
+      const value = await credentials.save(parsed);
       modelAccess.clearChecks(input.providerId);
       usage.invalidate(input.providerId);
       usageChanged();
@@ -351,7 +414,8 @@ function registerAiIpc({
   );
   handle("removeCredential", (_, input) =>
     service.exclusive(async () => {
-      const value = await credentials.remove(parse(credentialProvider, input));
+      const parsed = parse(credentialProvider, input);
+      const value = await credentials.remove(parsed);
       modelAccess.clearChecks(input.providerId);
       usage.invalidate(input.providerId);
       usageChanged();
@@ -392,6 +456,7 @@ function registerAiIpc({
   );
   handle("clearConversations", () => service.clear(getVault()));
   handle("resumeConversation", (_, id) => service.resume(getVault(), id));
+  handle("gatewayActivity", (_, id) => service.gatewayActivity(getVault(), id));
   handle("refreshSource", () => service.refreshSource(getVault()));
   handle("cancel", (event, id) => service.cancel(event.sender.id, id));
   handle("chat", (event, input, requestLogger) =>

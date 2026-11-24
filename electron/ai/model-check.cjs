@@ -1,7 +1,7 @@
 const { DEFAULTS } = require("./model-registry.cjs");
 const { ANSWER_FORMAT } = require("./orchestrator.cjs");
-const { buildContextMessages } = require("./prompt-builder.cjs");
-const { validateAnswer } = require("./response-validation.cjs");
+const { buildContextMessages } = require("./inference/prompt-builder.cjs");
+const { validateAnswer } = require("./inference/response-validation.cjs");
 const { serializeModelError } = require("./model-errors.cjs");
 
 async function checkRemoteModel(provider, providerId, model, signal) {

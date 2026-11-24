@@ -7,8 +7,11 @@ const { randomUUID } = require("node:crypto");
 const { spawn } = require("node:child_process");
 const { EngineRegistry } = require("./engine-registry.cjs");
 const adapter = require("./chronoz-adapter.cjs");
-const { AgentStore } = require("./agent-store.cjs");
-const { defaults, validateConstruction } = require("./agent-construction.cjs");
+const { AgentStore } = require("./agents/agent-store.cjs");
+const {
+  defaults,
+  validateConstruction,
+} = require("./agents/agent-construction.cjs");
 async function fixture(t) {
   const root = await fs.realpath(
     await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-engine-")),

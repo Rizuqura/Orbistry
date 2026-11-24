@@ -160,19 +160,26 @@ class KnowledgeStore {
     this.assertOutputOutside();
     await safeDirectory(this.directory);
   }
+  /** Admits one outbox writer with exclusive file creation. Bounded Windows EPERM retries handle observed concurrent acquisition failures; permanent permission errors and stale locks still fail without deleting another writer's lock. */
   async locked(operation) {
     await this.checkBoundary();
     const lock = path.join(this.directory, ".writer.lock");
-    let handle;
+    let handle, lastError;
     for (let attempt = 0; attempt < 50; attempt++) {
       try {
         handle = await fs.open(lock, "wx", 0o600);
         break;
       } catch (error) {
-        if (error.code !== "EEXIST") throw error;
+        if (
+          error.code !== "EEXIST" &&
+          !(process.platform === "win32" && error.code === "EPERM")
+        )
+          throw error;
+        lastError = error;
         await delay(20);
       }
     }
+    if (!handle && lastError?.code === "EPERM") throw lastError;
     if (!handle)
       invalid(
         "Knowledge writer is locked. Retry, or inspect a stale lock after stopping all writers.",

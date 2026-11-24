@@ -1,0 +1,14 @@
+{
+  "mode": "offline-fixture",
+  "status": "succeeded",
+  "executionTrackingPassed": true,
+  "multiOperationPlanPassed": true,
+  "agentQuoteApprovalPassed": true,
+  "traceSurvivedRestart": true,
+  "legacyHistoryPreserved": true,
+  "syntheticQuoteTargets": [
+    "apple",
+    "intel",
+    "tsmc"
+  ]
+}

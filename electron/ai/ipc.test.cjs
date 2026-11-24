@@ -90,6 +90,8 @@ test("preload and renderer agree with main; handshake gates versioned IPC", asyn
     provider: {},
   });
   assert.equal(bridge.apiVersion, API_VERSION);
+  assert.equal("infrastructure" in bridge.ai, false);
+  assert.equal(handlers.has("ai:infrastructure"), false);
   const renderer = fs.readFileSync(
     path.join(__dirname, "../../features/chat/desktop-client.ts"),
     "utf8",

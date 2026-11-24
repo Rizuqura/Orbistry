@@ -1,7 +1,9 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
-const { buildContextMessages } = require("../electron/ai/prompt-builder.cjs");
+const {
+  buildContextMessages,
+} = require("../electron/ai/inference/prompt-builder.cjs");
 const {
   canonical,
   RUNTIME_KERNEL,
@@ -18,7 +20,10 @@ const source = (id, content, type = "md") => ({
 async function report() {
   const legacy = (
     await fs.readFile(
-      path.join(__dirname, "../electron/ai/policies/orbistry-host-policy-v19.md"),
+      path.join(
+        __dirname,
+        "../electron/ai/policies/orbistry-host-policy-v19.md",
+      ),
       "utf8",
     )
   ).trimEnd();

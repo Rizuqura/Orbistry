@@ -4,10 +4,13 @@ const { MODEL_ERROR_CODES, ModelRuntimeError } = require("./model-errors.cjs");
 const {
   buildContextMessages,
   validateUserMessage,
-} = require("./prompt-builder.cjs");
+} = require("./inference/prompt-builder.cjs");
 const { contextIdentity } = require("./context-identity.cjs");
 const { budgetHistory } = require("./history-budget.cjs");
-const { validateAnswer, answerPrefix } = require("./response-validation.cjs");
+const {
+  validateAnswer,
+  answerPrefix,
+} = require("./inference/response-validation.cjs");
 const { DEFAULTS } = require("./model-registry.cjs");
 const { createDatasetSession } = require("./dataset-session.cjs");
 const { planDataset } = require("./dataset-planner.cjs");

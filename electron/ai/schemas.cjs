@@ -1,22 +1,20 @@
 const { z } = require("zod");
-const { ModelRuntimeError } = require("./model-errors.cjs");
 const {
   LOCAL_CONTEXT_LIMIT,
   REMOTE_CONTEXT_LIMIT,
 } = require("./context-limits.cjs");
 
-// Never serialize Zod issues: their inputs may contain credentials.
-function parse(
-  schema,
-  input,
-  code = "MODEL_INVALID_REQUEST",
-  message = "The request or provider response has an invalid format.",
-) {
-  const result = schema.safeParse(input);
-  if (!result.success) throw new ModelRuntimeError(code, message);
-  return result.data;
-}
-const providerId = z.enum(["ollama", "gemini", "nvidia", "openrouter"]);
+const { parse } = require("../shared/validation.cjs");
+
+// Retired provider identifiers remain readable in saved settings/conversations;
+// this schema does not register adapters or expose credential operations.
+const providerId = z.enum([
+  "ollama",
+  "gemini",
+  "nvidia",
+  "openrouter",
+  "huggingface",
+]);
 const credentialInput = z
   .object({
     providerId: z.enum(["gemini", "nvidia", "openrouter", "litellm"]),
@@ -30,8 +28,11 @@ const credentialInput = z
   })
   .strict();
 const credentialProvider = z
-  .object({ providerId: z.enum(["gemini", "nvidia", "openrouter", "litellm"]) })
+  .object({
+    providerId: z.enum(["gemini", "nvidia", "openrouter", "litellm"]),
+  })
   .strict();
+/** Validates supported credential operations with content-free errors; retired infrastructure credentials cannot be configured. */
 function parseCredential(input) {
   return parse(
     credentialInput,

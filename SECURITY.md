@@ -8,6 +8,6 @@ Production loads a static local renderer with context isolation, sandboxing and 
 
 For a suspected vulnerability, use the repository's **Security → Report a vulnerability** private reporting facility if available. If unavailable, open an issue requesting a private contact without exploit details, keys or personal files. Do not disclose sensitive reports publicly while a private channel is being arranged. No response-time SLA is offered for the beta.
 
-`npm audit` and `node scripts/release-secret-audit.cjs` provide reproducible baseline checks. The secret scanner covers known patterns in tracked files and reachable Git blobs; it is not exhaustive. Revoke/rotate a discovered key before considering history cleanup. History rewriting is never automatic.
+`npm audit` and `node scripts/audit/release-secret-audit.cjs` provide reproducible baseline checks. The secret scanner covers known patterns in tracked files and reachable Git blobs; it is not exhaustive. Revoke/rotate a discovered key before considering history cleanup. History rewriting is never automatic.
 
 Selecting a remote provider sends reviewed research/guidance text, CSV profiles/samples/results, questions and included history to that provider. Its billing, retention and policies apply. Local run audits may retain prompts, answers and computed evidence even after a chat is deleted. Back up, protect and explicitly manage your vault and profile.

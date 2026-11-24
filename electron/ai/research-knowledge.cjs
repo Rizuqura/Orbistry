@@ -1,11 +1,14 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { randomUUID } = require("node:crypto");
-const { validId } = require("./conversation-store.cjs");
+const { validId } = require("./chat/conversation-store.cjs");
 const { validateRunRecord } = require("./run-store.cjs");
 const { rejectSymlink } = require("./json-store.cjs");
 const { KnowledgeStore } = require("./knowledge-store.cjs");
-const { readVaultFile, readIndexedPdfText } = require("../vault-service.cjs");
+const {
+  readVaultFile,
+  readIndexedPdfText,
+} = require("../domains/universe/vault-service.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 async function readCompletedRun(vault, id) {
   validId(id);

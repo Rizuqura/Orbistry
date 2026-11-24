@@ -3,8 +3,8 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 const { randomUUID } = require("node:crypto");
-const stations = require("../electron/station-service.cjs");
-const { ChatService } = require("../electron/ai/chat-service.cjs");
+const stations = require("../electron/domains/universe/station-service.cjs");
+const { ChatService } = require("../electron/ai/chat/chat-service.cjs");
 const { ModelRegistry } = require("../electron/ai/model-registry.cjs");
 const {
   OllamaProvider,

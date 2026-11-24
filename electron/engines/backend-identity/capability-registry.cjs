@@ -11,10 +11,9 @@ function isReadOnlyOperation(engineId, operation) {
   );
 }
 
-/** Registers only literal Yahoo operations already validated by the applied Knowledge Card parser. This function never probes a provider or loads code from indexed text. */
+/** Registers validated literal Yahoo declarations through shared Engine definitions, without bootstrapping the AI registry. Returns data-only contracts; never probes a provider or loads indexed code. */
 function discoverCapabilities(entityId, index) {
-  const definitions =
-    require("../../ai/engine-registry.cjs").ENGINE_DEFINITIONS;
+  const definitions = require("../definitions.cjs").ENGINE_DEFINITIONS;
   const capabilities = [];
   for (const menu of index.menus) {
     for (const source of [

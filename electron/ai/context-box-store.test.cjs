@@ -4,10 +4,10 @@ const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
 const { randomUUID } = require("node:crypto");
-const stations = require("../station-service.cjs");
-const { ChatService } = require("./chat-service.cjs");
+const stations = require("../domains/universe/station-service.cjs");
+const { ChatService } = require("./chat/chat-service.cjs");
 const { ContextBoxStore } = require("./context-box-store.cjs");
-const { validateAnswer } = require("./response-validation.cjs");
+const { validateAnswer } = require("./inference/response-validation.cjs");
 async function fixture(t) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-box-test-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));

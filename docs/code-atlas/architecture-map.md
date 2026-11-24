@@ -1,0 +1,50 @@
+# Architecture map and findings
+
+[Atlas](<README.md>) / [Dependency graph](<graphs/module-dependencies.svg>) / [IPC catalog](<contracts/electron-ipc.md>)
+
+The module catalog is an editorial view of existing files. The routes below were reviewed in source and link to their owning implementations; they are not a claim that every hop resolves as a direct call. The JSON indexes distinguish static edges, table/wrapper expansion and unresolved dispatch. Runtime authorization and provider availability require runtime tests.
+
+## Application composition and trusted boundaries
+
+The static React entry [app/page.tsx:1](<../../app/page.tsx#L1>) composes [components/app-shell.tsx:1](<../../components/app-shell.tsx#L1>). Electron's composition root [electron/main.cjs:1](<../../electron/main.cjs#L1>) creates the desktop services and window. The preload [electron/preload.cjs:1](<../../electron/preload.cjs#L1>) exposes named operations rather than unrestricted Node access. [electron/core/security/desktop-security.cjs:13](<../../electron/core/security/desktop-security.cjs#L13>) ([guardedIpc](<symbols/files/electron/core/security/desktop-security.cjs.md#s-e908fc761b568a93>)) wraps main-process IPC; [electron/core/ipc/worldview-ipc.cjs:13](<../../electron/core/ipc/worldview-ipc.cjs#L13>) ([registerWorldViewIpc](<symbols/files/electron/core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>)) and [electron/ai/ipc.cjs:23](<../../electron/ai/ipc.cjs#L23>) ([registerAiIpc](<symbols/files/electron/ai/ipc.cjs.md#s-72b9bbec8be3a0eb>)) add their request-specific checks.
+
+## WorldView, Entity, indexing and Knowledge Cards
+
+WorldView presentation [features/worldview/worldview.tsx:1](<../../features/worldview/worldview.tsx#L1>) and [features/knowledge/knowledge-workspace.tsx:1](<../../features/knowledge/knowledge-workspace.tsx#L1>) use the desktop bridge. The WorldView handler [electron/core/ipc/worldview-ipc.cjs:13](<../../electron/core/ipc/worldview-ipc.cjs#L13>) ([registerWorldViewIpc](<symbols/files/electron/core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>)) dispatches a finite operation table into Entity/source metadata [electron/domains/entity/worldview-store.cjs:1](<../../electron/domains/entity/worldview-store.cjs#L1>), index/editor operations [electron/domains/knowledge/knowledge-store.cjs:1](<../../electron/domains/knowledge/knowledge-store.cjs#L1>), authorized source resolution [electron/domains/knowledge/knowledge-source-access.cjs:82](<../../electron/domains/knowledge/knowledge-source-access.cjs#L82>) ([resolveKnowledgeSource](<symbols/files/electron/domains/knowledge/knowledge-source-access.cjs.md#s-533d0fd9803550f8>)), and Vault checks [electron/domains/universe/vault-service.cjs:793](<../../electron/domains/universe/vault-service.cjs#L793>) ([statVaultSource](<symbols/files/electron/domains/universe/vault-service.cjs.md#s-11f97228db17e5f8>)).
+
+Index declarations are parsed in [electron/domains/indexing/knowledge-index.cjs:1](<../../electron/domains/indexing/knowledge-index.cjs#L1>). Data services and built-in Engines implement previews and provider reads; source associations remain separate from original Vault files. Backend Identity [electron/engines/backend-identity/identity-runtime.cjs:14](<../../electron/engines/backend-identity/identity-runtime.cjs#L14>) ([createIdentityRuntime](<symbols/files/electron/engines/backend-identity/identity-runtime.cjs.md#s-f3672ac091501d51>)) exposes compiled snapshots, scoped retrieval and capability execution. Connector metadata [electron/domains/entity/connector-store.cjs:1](<../../electron/domains/entity/connector-store.cjs#L1>) is a relationship, not an authorization grant.
+
+## Engine Registry integration and execution
+
+There are two existing paths. Built-in definitions [electron/engines/definitions.cjs:1](<../../electron/engines/definitions.cjs#L1>) dispatch through [electron/engines/native.cjs:2](<../../electron/engines/native.cjs#L2>) ([executeNativeEngine](<symbols/files/electron/engines/native.cjs.md#s-acb52912a7e235f5>)) and scoped Identity/assigned-agent services. Separately, [electron/engines/registry/registry.cjs:93](<../../electron/engines/registry/registry.cjs#L93>) ([EnginePackageRegistry](<symbols/files/electron/engines/registry/registry.cjs.md#s-a8b1e8f5dcab3332>)) validates immutable package versions, local trust, Entity links and host admission; its worker runner [electron/engines/runtime/runner.cjs:1](<../../electron/engines/runtime/runner.cjs#L1>) invokes the worker [electron/engines/runtime/worker.cjs:1](<../../electron/engines/runtime/worker.cjs#L1>). Its readResult path reads stored records rather than requesting a new provider execution.
+
+The terminal entry [scripts/orbistry-engine.cjs:1](<../../scripts/orbistry-engine.cjs#L1>) exposes package authoring, registration, linking, execution, signing and history operations. Settings [features/model-settings/engine-settings.tsx:1](<../../features/model-settings/engine-settings.tsx#L1>) uses catalog discovery through the IPC handler, not package installation or execution endpoints. Publisher signature verification [electron/engines/registry/signature.cjs:1](<../../electron/engines/registry/signature.cjs#L1>) is distinct from local trust and host authorization.
+
+Formats and operating instructions remain in [Engine authoring](<../engines/ENGINE_AUTHORING.md>), [Engine signing](<../engines/ENGINE_SIGNING.md>), and [manifest schema](<../engines/engine-manifest.schema.json>).
+
+## Assigned Agents and optional inference
+
+Assignment/construction controls in [features/agents/entity-agents-dialog.tsx:1](<../../features/agents/entity-agents-dialog.tsx#L1>) and [features/agents/agent-construction.tsx:1](<../../features/agents/agent-construction.tsx#L1>) use the versioned bridge. [electron/ai/ipc.cjs:23](<../../electron/ai/ipc.cjs#L23>) ([registerAiIpc](<symbols/files/electron/ai/ipc.cjs.md#s-72b9bbec8be3a0eb>)) creates [electron/ai/agents/entity-agents.cjs:261](<../../electron/ai/agents/entity-agents.cjs#L261>) ([EntityAgentService](<symbols/files/electron/ai/agents/entity-agents.cjs.md#s-299e61410c59d389>)); [electron/ai/agents/entity-jurisdiction.cjs:1](<../../electron/ai/agents/entity-jurisdiction.cjs#L1>) enforces delegated jurisdiction. Assigned chat runs through [electron/ai/agents/assigned-chat.cjs:17](<../../electron/ai/agents/assigned-chat.cjs#L17>) ([runAssignedTurn](<symbols/files/electron/ai/agents/assigned-chat.cjs.md#s-d49a3f162aa849c6>)); authorization and Engine evidence remain backend responsibilities. Construction persists independently of successful inference.
+
+Universe generation currently rejects requests in [electron/ai/chat/chat-service.cjs:1](<../../electron/ai/chat/chat-service.cjs#L1>); retained runtime/provider modules are not evidence that every feature is enabled. The actual provider composition is in [electron/main.cjs:1](<../../electron/main.cjs#L1>). Dynamic injected service/agent/Engine methods commonly remain unresolved in the call graph. Consult the source and regression tests before interpreting an unresolved edge as missing functionality.
+
+## Dashboard and monitoring scope
+
+No dedicated Dashboard implementation was found in the current source review or Dashboard-named production declarations/paths. This does not establish that all operational displays are absent. Existing status and usage displays include [components/status-bar.tsx:1](<../../components/status-bar.tsx#L1>) and [electron/ai/provider-usage.cjs:1](<../../electron/ai/provider-usage.cjs#L1>); the Settings Engine catalog is another operational view.
+
+## Architectural findings
+
+- The deployed application combines a static renderer with an Electron composition root and narrow IPC. File imports alone cannot describe this process boundary.
+- Entity state, original Vault files, applied indexes, compiled Identity snapshots and execution receipts have distinct owning modules. Their contracts should remain distinct in future work.
+- Package Engine execution and built-in/assigned-agent capability execution coexist. Their authorization and receipt paths need independent review; registry presence does not grant execution.
+- A substantial retained AI runtime and acceptance-tooling surface exists. Static presence/export counts do not determine current feature availability or justify deletion.
+- Compiler-resolved calls provide useful navigation, but callbacks, injected interfaces, IPC, worker processes and dynamic capability dispatch leave deliberate gaps. The unresolved-call index makes those gaps inspectable.
+
+## Suggested cleanup priorities (proposals only)
+
+1. Document which retained AI and acceptance modules are active, compatibility-only, experimental or historical, using composition evidence and tests before considering deletion.
+2. Add purpose and boundary comments to undocumented exported functions first; the symbol index records the exact documentation gaps without guessing behavior.
+3. Continue strengthening explicit typed ports for dynamic service/Engine calls when implementation work is separately approved. Do not replace runtime authorization with types.
+4. Review large composition/UI files for future focused extraction only after profiling and regression coverage. This Atlas makes no performance claims and moves no sources.
+5. Keep public Engine schemas, bridge DTOs and their runtime validators synchronized. Use the contract and IPC indexes during interface reviews.
+6. Expand runtime tracing/coverage evidence for unresolved dispatch if operational flow needs stronger proof. Static analysis alone cannot prove execution or test coverage.

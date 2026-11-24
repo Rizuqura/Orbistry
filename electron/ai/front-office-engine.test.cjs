@@ -29,7 +29,7 @@ const {
   processResponse,
 } = require("./llm-front-office/response-processor.cjs");
 const { FrontOfficeService } = require("./llm-front-office/service.cjs");
-const { ChatService } = require("./chat-service.cjs");
+const { ChatService } = require("./chat/chat-service.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const { readModelRun } = require("./run-store.cjs");
 const { publicError } = require("./llm-front-office/errors.cjs");
@@ -804,7 +804,7 @@ test("experimental mode persists in existing stores and never accesses agent/con
       activeStationIds: [],
       matchMode: "any",
     }),
-    { code: "MODEL_INVALID_REQUEST" },
+    { code: "UNIVERSE_CHAT_RESET" },
   );
 });
 

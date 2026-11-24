@@ -89,7 +89,10 @@ async function main() {
     delete env.ELECTRON_RUN_AS_NODE;
     delete env.ELECTRON_START_URL;
     app = await electron.launch({
-      args: [path.resolve("scripts/electron-smoke-main.cjs"), "--hidden"],
+      args: [
+        path.resolve("scripts/acceptance/electron-smoke-main.cjs"),
+        "--hidden",
+      ],
       env,
       timeout: 30000,
     });

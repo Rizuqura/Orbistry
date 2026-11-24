@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "protocol": "orbistry.engine/1",
+  "engine_id": "number-tools",
+  "engine_version": "1.0.0",
+  "name": "number-tools",
+  "description": "Deterministic addition starter engine.",
+  "entry": "index.cjs",
+  "operations": [
+    {
+      "id": "add",
+      "description": "Add two explicit numbers.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "left": {
+            "type": "number"
+          },
+          "right": {
+            "type": "number"
+          }
+        },
+        "required": ["left", "right"],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "sum": {
+            "type": "number"
+          }
+        },
+        "required": ["sum"],
+        "additionalProperties": false
+      },
+      "read_only": true,
+      "network": "none",
+      "timeout_ms": 10000
+    }
+  ],
+  "files": {
+    "README.md": "bb98c06136e00e3a2dd9f0fe4a248d2e544d9686f4afcef05780f9a236f9e43e",
+    "index.cjs": "24767aeffebdad6071ca6ca4ca3558acd69a14b537901c5d390f1bc05dfa5f5d"
+  }
+}

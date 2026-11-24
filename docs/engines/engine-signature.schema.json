@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "signature_version": {
+      "type": "number",
+      "const": 1
+    },
+    "algorithm": {
+      "type": "string",
+      "const": "Ed25519"
+    },
+    "key_id": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "public_key": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "manifest_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "value": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9+/]{86}==$"
+    }
+  },
+  "required": [
+    "signature_version",
+    "algorithm",
+    "key_id",
+    "public_key",
+    "manifest_digest",
+    "value"
+  ],
+  "additionalProperties": false
+}

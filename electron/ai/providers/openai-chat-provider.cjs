@@ -69,25 +69,29 @@ function remoteError(status, retryAfter, label = "NVIDIA") {
   const code =
     status === 402
       ? "PAYMENT_REQUIRED"
-      : status === 401 || status === 403
-        ? "AUTH_INVALID"
-        : status === 429
-          ? "RATE_LIMITED"
-          : status === 404
-            ? "MODEL_UNAVAILABLE"
-            : status >= 500
-              ? "REMOTE_SERVER_ERROR"
-              : "REMOTE_REQUEST_INVALID";
+      : status === 403 && label === "Hugging Face"
+        ? "AUTH_PERMISSION_DENIED"
+        : status === 401 || status === 403
+          ? "AUTH_INVALID"
+          : status === 429
+            ? "RATE_LIMITED"
+            : status === 404
+              ? "MODEL_UNAVAILABLE"
+              : status >= 500
+                ? "REMOTE_SERVER_ERROR"
+                : "REMOTE_REQUEST_INVALID";
   const advice =
-    code === "AUTH_INVALID"
-      ? `Check the ${label} API key and account access.`
-      : code === "RATE_LIMITED"
-        ? `${label} quota or rate limit reached. Wait before retrying.`
-        : code === "MODEL_UNAVAILABLE"
-          ? `This ${label} model is unavailable. Refresh models.`
-          : code === "PAYMENT_REQUIRED"
-            ? `${label} credits are insufficient. Check your balance or key credit limit.`
-            : `${label} could not complete this request. Retry or explicitly choose another model.`;
+    code === "AUTH_PERMISSION_DENIED"
+      ? "Enable Make calls to Inference Providers permission for this Hugging Face token/account."
+      : code === "AUTH_INVALID"
+        ? `Check the ${label} API key and account access.`
+        : code === "RATE_LIMITED"
+          ? `${label} quota or rate limit reached. Wait before retrying.`
+          : code === "MODEL_UNAVAILABLE"
+            ? `This ${label} model is unavailable. Refresh models.`
+            : code === "PAYMENT_REQUIRED"
+              ? `${label} credits are insufficient. Check your balance or key credit limit.`
+              : `${label} could not complete this request. Retry or explicitly choose another model.`;
   const seconds = retryAfter
     ? /^\d+$/.test(retryAfter)
       ? Number(retryAfter)
@@ -106,11 +110,13 @@ class OpenAIChatProvider {
   generationParameters(_model) {
     return {};
   }
+  /** Configures a trusted adapter origin and backend credential source; optional JSON responses do not change legacy streaming defaults. */
   constructor({ credentials, fetchImpl = fetch }, configuration = {}) {
     this.providerId = configuration.providerId ?? "nvidia";
     this.label = configuration.label ?? "NVIDIA";
     this.modelSchema = configuration.modelSchema ?? modelId;
     this.consumeTrailingUsage = configuration.consumeTrailingUsage ?? false;
+    this.allowNonStreaming = configuration.allowNonStreaming ?? false;
     this.maxMessages = configuration.maxMessages ?? 30;
     this.extraHeaders = configuration.headers ?? {};
     this.credentials = credentials;
@@ -289,8 +295,9 @@ class OpenAIChatProvider {
       let passed = false;
       try {
         passed =
-          require("../response-validation.cjs").validateAnswer(response) ===
-          "NVIDIA ONLINE";
+          require("../inference/response-validation.cjs").validateAnswer(
+            response,
+          ) === "NVIDIA ONLINE";
       } catch {}
       return {
         model,
@@ -344,7 +351,7 @@ class OpenAIChatProvider {
     // Normalize their final content here; keep the shared answer validator intact.
     const datasetPlan = Boolean(
       (request.structuredOutput &&
-        require("../entity-agent-protocol.cjs").isEntityProtocolFormat(
+        require("../agents/entity-agent-protocol.cjs").isEntityProtocolFormat(
           request.format,
         )) ||
       request.format?.properties?.queries ||
@@ -373,11 +380,64 @@ class OpenAIChatProvider {
           messages,
           temperature: settings.temperature,
           max_tokens: settings.outputLimit,
-          stream: true,
+          stream: this.allowNonStreaming ? settings.streaming : true,
           ...this.generationParameters(model),
         }),
       },
       async (response, touch) => {
+        if (
+          this.allowNonStreaming &&
+          response.headers.get("content-type")?.includes("application/json")
+        ) {
+          if (settings.streaming)
+            throw new ModelRuntimeError(
+              "MODEL_INVALID_RESPONSE",
+              "The provider did not return streaming output.",
+            );
+          const value =
+            await require("./remote-json.cjs").readRemoteJson(response);
+          const choice = value.choices?.[0],
+            content = choice?.message?.content;
+          if (
+            choice?.finish_reason !== "stop" ||
+            typeof content !== "string" ||
+            !content.trim() ||
+            /<\/?think(?:ing)?>/i.test(content)
+          )
+            throw invalid(this.label);
+          const normalized = datasetPlan
+            ? content.trim()
+            : normalizeAnswer(content, this.label);
+          request.onGenerationStarted?.();
+          if (settings.streaming) request.onContent?.(normalized);
+          return {
+            id: request.id ?? randomUUID(),
+            provider: this.providerId,
+            model: typeof value.model === "string" ? value.model : model,
+            content: normalized,
+            finishReason: "stop",
+            createdAt: new Date().toISOString(),
+            sources: [],
+            usage: {
+              promptTokens:
+                Number.isSafeInteger(value.usage?.prompt_tokens) &&
+                value.usage.prompt_tokens >= 0
+                  ? value.usage.prompt_tokens
+                  : null,
+              completionTokens:
+                Number.isSafeInteger(value.usage?.completion_tokens) &&
+                value.usage.completion_tokens >= 0
+                  ? value.usage.completion_tokens
+                  : null,
+              totalDurationNs: Math.round((performance.now() - started) * 1e6),
+            },
+            diagnostics: {
+              executionLocation: "remote",
+              requestedModel: model,
+              firstTokenMs: null,
+            },
+          };
+        }
         if (
           !response.headers.get("content-type")?.includes("text/event-stream")
         )

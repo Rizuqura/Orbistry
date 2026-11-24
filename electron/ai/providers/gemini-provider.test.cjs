@@ -11,7 +11,7 @@ const credentials = {
 };
 
 test("Gemini forwards only the host-owned assignment protocol schema when structured output is requested", async () => {
-  const { responseFormat } = require("../entity-agent-protocol.cjs");
+  const { responseFormat } = require("../agents/entity-agent-protocol.cjs");
   const action = { action: "knowledge.listTopics", offset: 0, limit: 100 };
   const provider = new GeminiProvider({
     credentials,

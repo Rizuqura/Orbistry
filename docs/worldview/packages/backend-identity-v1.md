@@ -29,7 +29,7 @@ Trusted application modules live in `electron/engines/backend-identity/`:
 | `identity-runtime.cjs` | Enforce backend authorization, freshness and version membership for future agent adapters. |
 | `schema.cjs` | Validate manifests, source descriptors, chunks, capabilities and resource bounds. |
 
-`electron/backend-identity-service.cjs` exposes only inspection, search and manual generation to the trusted WorldView bridge. The existing entity, assignment, menu and manual-index formats remain unchanged. Draft text and source document instructions never register tools. The compiler reuses `readWorldViewChip`, `readKnowledgeIndex`, the applied-index parser, guarded Vault source resolution, atomic JSON storage and the existing conservative token estimator.
+`electron/domains/knowledge/backend-identity-service.cjs` exposes only inspection, search and manual generation to the trusted WorldView bridge. The existing entity, assignment, menu and manual-index formats remain unchanged. Draft text and source document instructions never register tools. The compiler reuses `readWorldViewChip`, `readKnowledgeIndex`, the applied-index parser, guarded Vault source resolution, atomic JSON storage and the existing conservative token estimator.
 
 The application engine registry identifies `backend-identity` version `1.1.0`. On manual generation it writes an application-bundled registration manifest and derived data beneath the selected Universe:
 

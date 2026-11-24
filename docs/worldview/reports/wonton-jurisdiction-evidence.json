@@ -1,0 +1,56 @@
+﻿{
+  "mode": "offline-fixture",
+  "status": "succeeded",
+  "collectiveScopePassed": true,
+  "gatewayApprovalControlsPassed": true,
+  "traceSurvivedRestart": true,
+  "legacyHistoryPreserved": true,
+  "renameSurvivedRestart": true,
+  "deleteSurvivedRestart": true,
+  "tasks": [
+    {
+      "taskId": "52d436a9-9f63-40af-889f-79aba3a3c001",
+      "runId": "70e77be4-ca00-4ff5-9a57-80737d5f99af",
+      "entityId": "tsmc",
+      "agentId": "agent-35908978-0f13-4427-a4ac-f2c77d0a2687",
+      "assignmentId": "5c12eebd-3b56-4564-9fe2-be75a4144854",
+      "operation": "knowledge_refresh",
+      "status": "succeeded",
+      "lifecycle": [
+        "task_received",
+        "scope_validated",
+        "capability_authorized",
+        "executing",
+        "completed"
+      ],
+      "origin": "universe_gateway",
+      "resultHash": "83e919d3dd336926bbcbf91f0b700a7df28d54dbd29982c81872149b83cb1a56"
+    },
+    {
+      "taskId": "f8a4198e-af45-474d-a3c7-c473e9de617f",
+      "runId": "70e77be4-ca00-4ff5-9a57-80737d5f99af",
+      "entityId": "apple",
+      "agentId": "agent-314f6df2-0c7b-4ed6-abed-0453c84a7f64",
+      "assignmentId": "6dd04b04-afe6-40ab-934c-f95fc19a6495",
+      "operation": "knowledge_refresh",
+      "status": "succeeded",
+      "lifecycle": [
+        "task_received",
+        "scope_validated",
+        "capability_authorized",
+        "executing",
+        "completed"
+      ],
+      "origin": "universe_gateway",
+      "resultHash": "851ea33a57dfa27d3d0a2bcfe148f527e1264a11a1dc179282beca36601e47a9"
+    }
+  ],
+  "layout": {
+    "mainScrollX": 0,
+    "mainScrollY": 0,
+    "composerBottom": 873,
+    "titleLeft": 413,
+    "mainLeft": 277,
+    "viewportHeight": 921
+  }
+}

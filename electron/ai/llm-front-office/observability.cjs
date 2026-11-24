@@ -40,6 +40,7 @@ function createBaselineObserver({
   conversationId,
   providerId,
   modelId,
+  agentId,
   requestLogger,
   wallClock = Date.now,
   clock = () => performance.now(),
@@ -49,6 +50,7 @@ function createBaselineObserver({
   /** @type {import('../../../types/front-office').BaselineTrace} */
   const trace = {
     stages: [],
+    ...(agentId ? { agentId: safeIdentity(agentId) } : {}),
     schemaVersion: 1,
     mode,
     requestId: safeIdentity(requestId ?? runId),
@@ -158,6 +160,7 @@ function createBaselineObserver({
       }
       const call = {
         index: trace.calls.length + 1,
+        startedAt: new Date(wallClock()).toISOString(),
         phase,
         requestedModelId: safeIdentity(request.model),
         actualModelId: null,
@@ -249,6 +252,13 @@ function createBaselineObserver({
         call.reportedCompletionTokens = knownCount(
           response?.usage?.completionTokens,
         );
+        if (
+          Number.isFinite(response?.diagnostics?.estimatedCostUsd) &&
+          response.diagnostics.estimatedCostUsd >= 0
+        ) {
+          call.estimatedCostUsd = response.diagnostics.estimatedCostUsd;
+          call.costSource = response.diagnostics.costSource;
+        }
         call.adapterFirstTokenMs = knownDuration(
           response?.diagnostics?.firstTokenMs,
         );

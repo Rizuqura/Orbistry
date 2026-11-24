@@ -1,7 +1,10 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
-const { rejectSymlink, writeJson } = require("./ai/json-store.cjs");
+const {
+  rejectSymlink,
+  writeJson,
+} = require("./core/persistence/json-store.cjs");
 const engine = require("./engines/yahoo-financials/index.cjs");
 const market = require("./engines/yahoo-financials/market.cjs");
 
@@ -126,10 +129,11 @@ function createFinancialService({
 const financialService = createFinancialService();
 /** Resolves an applied entity/menu/source triple. Draft-only, removed and forged declarations reject before provider access. */
 async function resolve(root, id, menuId, financeId) {
-  const state = await require("./knowledge-store.cjs").readKnowledgeIndex(
-    root,
-    id,
-  );
+  const state =
+    await require("./domains/knowledge/knowledge-store.cjs").readKnowledgeIndex(
+      root,
+      id,
+    );
   const source = state.menus
     .find((menu) => menu.id === menuId)
     ?.finance?.find((item) => item.id === financeId);
@@ -162,10 +166,11 @@ async function getAuthorizedHistory(root, input) {
         input.menuId,
         input.priceId,
       );
-    const state = await require("./knowledge-store.cjs").readKnowledgeIndex(
-      root,
-      input.id,
-    );
+    const state =
+      await require("./domains/knowledge/knowledge-store.cjs").readKnowledgeIndex(
+        root,
+        input.id,
+      );
     if (!state.priceSymbol)
       throw new Error(
         "Save a ticker or choose an applied Yahoo price source first.",

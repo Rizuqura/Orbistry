@@ -13,12 +13,14 @@ const {
   financialService,
   getIndexedFinance,
 } = require("./financial-service.cjs");
-const { parseKnowledgeIndex } = require("./knowledge-index.cjs");
-const { saveWorldViewChip } = require("./worldview-store.cjs");
+const {
+  parseKnowledgeIndex,
+} = require("./domains/indexing/knowledge-index.cjs");
+const { saveWorldViewChip } = require("./domains/entity/worldview-store.cjs");
 const {
   saveKnowledgeIndex,
   readKnowledgeIndex,
-} = require("./knowledge-store.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
 
 /** Supplies deterministic statement and earnings responses, including missing values and unusual fiscal dates. */
 function fixtureClient() {

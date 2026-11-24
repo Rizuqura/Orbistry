@@ -1,6 +1,6 @@
 const test = require("node:test"),
   assert = require("node:assert/strict");
-const { clampAgentWidths } = require("../agent/agent-layout.ts");
+const { clampAgentWidths } = require("../agents/agent-layout.ts");
 test("agent split widths recover corrupt values and reserve chat space after viewport changes", () => {
   assert.deepEqual(
     clampAgentWidths({ history: NaN, details: Infinity }, 1440),

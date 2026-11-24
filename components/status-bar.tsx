@@ -43,7 +43,7 @@ export function StatusBar({
             {(agentName ?? "Orbistry").replace(" Agent", "").toUpperCase()}
           </span>
           <span className="agent-footer-context" title={agentContext}>
-            CONTEXT: {agentContext ?? "No Context"}
+            SCOPE: {agentContext ?? "Active Universe"}
           </span>
           <span className="agent-footer-model" title={agentModel}>
             MODEL: {agentModel ?? "Not selected"}

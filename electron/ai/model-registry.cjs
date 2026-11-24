@@ -39,8 +39,16 @@ class ModelRegistry {
     this.queue = serialQueue();
   }
   read() {
-    return readJson(this.file, validateSettings, DEFAULTS);
+    // Production reset registers NVIDIA alone; do not silently select Ollama
+    // when the retained NVIDIA configuration has not yet been created.
+    const entries = this.providers.entries();
+    const defaults =
+      entries.length === 1 && entries[0][0] === "nvidia"
+        ? { ...DEFAULTS, providerId: "nvidia" }
+        : DEFAULTS;
+    return readJson(this.file, validateSettings, defaults);
   }
+  /** Merges each adapter's available models and status without changing explicit per-agent routing. */
   async state() {
     let settings = await this.read();
     const statuses = await Promise.all(
@@ -107,7 +115,9 @@ class ModelRegistry {
                 ? "OpenRouter"
                 : id === "nvidia"
                   ? "NVIDIA NIM"
-                  : "Gemini",
+                  : id === "huggingface"
+                    ? "Hugging Face"
+                    : "Gemini",
           location: id === "ollama" ? "local" : "remote",
           online,
           error: error ?? null,

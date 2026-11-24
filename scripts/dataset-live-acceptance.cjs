@@ -3,15 +3,17 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 const { randomUUID } = require("node:crypto");
-const stations = require("../electron/station-service.cjs");
-const { ChatService } = require("../electron/ai/chat-service.cjs");
+const stations = require("../electron/domains/universe/station-service.cjs");
+const { ChatService } = require("../electron/ai/chat/chat-service.cjs");
 const { ModelRegistry } = require("../electron/ai/model-registry.cjs");
 const {
   OllamaProvider,
 } = require("../electron/ai/providers/ollama-provider.cjs");
 
 async function main() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-dataset-live-"));
+  const root = await fs.mkdtemp(
+    path.join(os.tmpdir(), "orbistry-dataset-live-"),
+  );
   const provider = new OllamaProvider();
   const registry = new ModelRegistry(provider, path.join(root, "settings"));
   const model = process.env.ORBISTRY_DATASET_MODEL || "qwen3:4b";
@@ -136,6 +138,11 @@ main().catch((error) => {
 });
 
 async function createBound(service, root, _scope) {
-  const box = await service.saveBox(root, {name: 'Test '+require('node:crypto').randomUUID()});
-  return service.create(root, {contextBoxId: box.id, creationId: require('node:crypto').randomUUID()});
+  const box = await service.saveBox(root, {
+    name: "Test " + require("node:crypto").randomUUID(),
+  });
+  return service.create(root, {
+    contextBoxId: box.id,
+    creationId: require("node:crypto").randomUUID(),
+  });
 }

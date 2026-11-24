@@ -1,6 +1,6 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
-const { checksums } = require("./build-excel-engine.cjs");
+const { checksums } = require("./build/build-excel-engine.cjs");
 const { rejectSymlink } = require("../electron/ai/json-store.cjs");
 const uuid = "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}";
 

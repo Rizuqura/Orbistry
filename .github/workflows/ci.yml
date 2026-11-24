@@ -19,5 +19,5 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run typecheck
-      - run: node scripts/release-secret-audit.cjs
+      - run: node scripts/audit/release-secret-audit.cjs
       - run: npm audit

@@ -5,20 +5,9 @@ const { z, parse } = require("./schemas.cjs");
 const { readJson, writeJson } = require("./json-store.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
 const adapter = require("./chronoz-adapter.cjs");
-const ENGINE_DEFINITIONS = Object.freeze({
-  "backend-identity": require("../engines/backend-identity/schema.cjs").definition,
-  "yahoo-financials": require("../engines/yahoo-financials/index.cjs")
-    .definition,
-  "daily-price": require("../engines/daily-price/index.cjs").definition,
-  "wonton-excel": require("../engines/excel/index.cjs").definition,
-  chronoz: {
-    id: "chronoz",
-    name: "CHronoZ",
-    version: "1.0.0",
-    operations: ["get_report"],
-    nativeToolCalling: true,
-  },
-});
+const { EnginePackageRegistry } = require("../engines/registry/registry.cjs");
+const { ENGINE_DEFINITIONS } = require("../engines/definitions.cjs");
+const { executeNativeEngine } = require("../engines/native.cjs");
 const registrationSchema = z
   .object({
     schemaVersion: z.literal(1),
@@ -49,6 +38,10 @@ function denied(message) {
   throw new ModelRuntimeError("MODEL_INVALID_REQUEST", message);
 }
 class EngineRegistry {
+  /** Opens the standard per-Universe package portal. Caller-owned authorization is mandatory for execution; existing built-in/CHronoZ paths remain independent. */
+  packages(root, options) {
+    return new EnginePackageRegistry(root, options);
+  }
   constructor(
     directory,
     {
@@ -393,26 +386,9 @@ class EngineRegistry {
     return { opened: true };
   }
 }
-/** Invokes an allowlisted native data operation through trusted modules. Future model adapters must authorize network access before calling; ordinary source-free chat is not connected here. */
-async function executeNativeEngine(engineId, operation, input, options) {
-  if (engineId === "yahoo-financials") {
-    if (
-      input === null ||
-      typeof input !== "object" ||
-      Array.isArray(input) ||
-      Object.hasOwn(input, "operation")
-    )
-      throw new Error(
-        "Use an operation and a separate Yahoo arguments object.",
-      );
-    return require("../engines/yahoo-financials/index.cjs")
-      .createFinancialEngine(options)
-      .execute({ ...input, operation });
-  }
-  if (engineId === "daily-price" && operation === "price")
-    return require("../engines/daily-price/index.cjs").price(input, options);
-  if (engineId !== "wonton-excel" || operation !== "excel")
-    throw new Error("Unsupported native Engine operation.");
-  return require("../engines/excel/index.cjs").excel(input, options);
-}
-module.exports = { EngineRegistry, ENGINE_DEFINITIONS, executeNativeEngine };
+module.exports = {
+  EngineRegistry,
+  ENGINE_DEFINITIONS,
+  executeNativeEngine,
+  EnginePackageRegistry,
+};

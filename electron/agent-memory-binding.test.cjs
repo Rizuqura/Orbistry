@@ -3,11 +3,14 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
-const { readFile, readBinding } = require("./ai/construction-context.cjs");
+const {
+  readFile,
+  readBinding,
+} = require("./ai/agents/construction-context.cjs");
 const { listMemoryFiles, isMemoryPath } = require("./agent-memory-source.cjs");
-const { ChatService } = require("./ai/chat-service.cjs");
-const knowledge = require("./station-service.cjs");
-const { scanVault } = require("./vault-service.cjs");
+const { ChatService } = require("./ai/chat/chat-service.cjs");
+const knowledge = require("./domains/universe/station-service.cjs");
+const { scanVault } = require("./domains/universe/vault-service.cjs");
 const memory = "agentContext.memory/contract.md";
 async function fixture(t) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-memory-"));

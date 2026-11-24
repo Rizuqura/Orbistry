@@ -1,0 +1,1959 @@
+{
+  "scope": "literal-runtime-production-imports",
+  "modules": [
+    {
+      "id": "portal-entities",
+      "name": "Entity UI",
+      "purpose": "Edits Entity metadata, source assignments and navigation.",
+      "owns": "features/entities/"
+    },
+    {
+      "id": "portal-knowledge",
+      "name": "Knowledge Cards and readers",
+      "purpose": "Presents applied indexes, source readers and existing data views.",
+      "owns": "features/knowledge/"
+    },
+    {
+      "id": "portal-shell",
+      "name": "Portal shell",
+      "purpose": "Composes the static React application, navigation, dialogs and workspace surfaces.",
+      "owns": "app/, components/ and features/dialogs/"
+    },
+    {
+      "id": "portal-worldview",
+      "name": "WorldView and Knowledge Cards (Portal)",
+      "purpose": "Presents Entities, relationships, applied indexes, Knowledge Cards and data previews.",
+      "owns": "features/worldview/ and features/worldview/worldview.tsx"
+    },
+    {
+      "id": "portal-agents",
+      "name": "Agent workspace and construction (Portal)",
+      "purpose": "Presents assigned-agent conversations, assignment controls and retained agent construction.",
+      "owns": "features/agents/"
+    },
+    {
+      "id": "portal-chat",
+      "name": "Conversation presentation",
+      "purpose": "Owns conversation rendering, bridge connection, state hooks and history controls.",
+      "owns": "features/chat/ and components/chat-panel.tsx"
+    },
+    {
+      "id": "portal-settings",
+      "name": "Settings and Engine list",
+      "purpose": "Presents provider settings and read-only Engine catalog discovery.",
+      "owns": "features/model-settings/"
+    },
+    {
+      "id": "portal-documents",
+      "name": "Document workspace",
+      "purpose": "Presents Vault documents, PDF navigation and the knowledge sidebar.",
+      "owns": "features/workspace/"
+    },
+    {
+      "id": "desktop",
+      "name": "Electron composition and IPC security",
+      "purpose": "Composes backend services, creates isolated windows and exposes the narrow desktop bridge.",
+      "owns": "Electron entry, preload, security, launch and window modules"
+    },
+    {
+      "id": "worldview",
+      "name": "WorldView persistence and IPC",
+      "purpose": "Owns Entity records, source associations and validated WorldView operations.",
+      "owns": "electron/worldview-*.cjs"
+    },
+    {
+      "id": "vault",
+      "name": "Vault and stations",
+      "purpose": "Owns controlled file access, Vault settings, stations, source bindings and OCR adapters.",
+      "owns": "Vault/station/OCR services under electron/"
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge indexing and source access",
+      "purpose": "Parses applied index declarations and resolves authorized source references and editor state.",
+      "owns": "electron/knowledge-*.cjs"
+    },
+    {
+      "id": "connectors",
+      "name": "Connectors",
+      "purpose": "Persists explicit relationship metadata; relationships do not grant endpoint permissions.",
+      "owns": "electron/domains/entity/connector-store.cjs"
+    },
+    {
+      "id": "engine-registry",
+      "name": "Engine package registry",
+      "purpose": "Validates packages, signatures, local trust and Entity links; dispatches workers and persists receipts.",
+      "owns": "electron/engines/registry/"
+    },
+    {
+      "id": "identity",
+      "name": "Backend Identity Engine",
+      "purpose": "Compiles versioned Entity identity/knowledge snapshots and exposes scoped retrieval/capability contracts.",
+      "owns": "electron/engines/backend-identity/ and backend-identity-service.cjs"
+    },
+    {
+      "id": "engines",
+      "name": "Built-in Engines and data adapters",
+      "purpose": "Owns deterministic native dispatch, parsing, indexing and market-data integration services.",
+      "owns": "Other electron/engines/ and their host services"
+    },
+    {
+      "id": "agents",
+      "name": "Assigned Agents and jurisdiction",
+      "purpose": "Owns Entity assignment, construction, scoped consultation, proposals and authorized execution integration.",
+      "owns": "Assignment/jurisdiction/construction modules under electron/ai/"
+    },
+    {
+      "id": "providers",
+      "name": "Model-provider adapters",
+      "purpose": "Isolates optional inference transports from deterministic application services.",
+      "owns": "electron/ai/providers/"
+    },
+    {
+      "id": "ai-runtime",
+      "name": "Retained AI runtime",
+      "purpose": "Owns optional model configuration, context, conversation stores and legacy/experimental runtime modules. Presence does not imply active composition.",
+      "owns": "Remaining electron/ai/ modules"
+    },
+    {
+      "id": "shared",
+      "name": "Shared deterministic infrastructure",
+      "purpose": "Owns neutral persistence, validation, errors and context arithmetic with compatibility exports retained elsewhere.",
+      "owns": "electron/shared/ and electron/core/persistence/"
+    },
+    {
+      "id": "contracts",
+      "name": "Cross-boundary TypeScript contracts",
+      "purpose": "Declares renderer/backend DTOs and public types; declarations do not implement authorization.",
+      "owns": "types/"
+    },
+    {
+      "id": "tooling",
+      "name": "Development and acceptance tooling",
+      "purpose": "Owns CLI commands, package/build tooling, architecture checks, Atlas generation and acceptance harnesses.",
+      "owns": "scripts/"
+    },
+    {
+      "id": "examples",
+      "name": "Engine authoring examples",
+      "purpose": "Provides a package-format example independent of the application runtime.",
+      "owns": "examples/"
+    },
+    {
+      "id": "configuration",
+      "name": "Repository configuration",
+      "purpose": "Declares application build, styling and compiler integration settings.",
+      "owns": "Root configuration sources"
+    }
+  ],
+  "edges": [
+    {
+      "from": "agents",
+      "to": "ai-runtime",
+      "sites": 34,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 1,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 3,
+          "target": "electron/ai/skills.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 4,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 266,
+          "target": "electron/ai/engine-registry.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 299,
+          "target": "electron/ai/context-identity.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/agent-construction.cjs",
+          "line": 305,
+          "target": "electron/ai/context-identity.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/agent-policy.cjs",
+          "line": 1,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-policy.cjs",
+          "line": 7,
+          "target": "electron/ai/runtime-context.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-policy.cjs",
+          "line": 8,
+          "target": "electron/ai/runtime-context.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 10,
+          "target": "electron/ai/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 11,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 12,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 13,
+          "target": "electron/ai/inference/prompt-builder.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 265,
+          "target": "electron/ai/skills.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/agent-store.cjs",
+          "line": 268,
+          "target": "electron/ai/skills.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 4,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 5,
+          "target": "electron/ai/history-budget.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 6,
+          "target": "electron/ai/inference/response-validation.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 43,
+          "target": "electron/ai/llm-front-office/observability.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 63,
+          "target": "electron/ai/inference/prompt-builder.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/assigned-chat.cjs",
+          "line": 157,
+          "target": "electron/ai/llm-front-office/telemetry-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/construction-context.cjs",
+          "line": 5,
+          "target": "electron/ai/context-identity.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/construction-context.cjs",
+          "line": 6,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/construction-context.cjs",
+          "line": 12,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agent-protocol.cjs",
+          "line": 2,
+          "target": "electron/ai/history-budget.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agent-protocol.cjs",
+          "line": 3,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agent-protocol.cjs",
+          "line": 295,
+          "target": "electron/ai/quote-origin.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 41,
+          "target": "electron/ai/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 48,
+          "target": "electron/ai/engine-registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 50,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 712,
+          "target": "electron/ai/chronoz-adapter.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 744,
+          "target": "electron/ai/chronoz-adapter.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 858,
+          "target": "electron/ai/chronoz-adapter.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/entity-jurisdiction.cjs",
+          "line": 4,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "agents",
+      "to": "connectors",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-jurisdiction.cjs",
+          "line": 3,
+          "target": "electron/domains/entity/connector-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "agents",
+      "to": "engines",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-agent-protocol.cjs",
+          "line": 265,
+          "target": "electron/engines/daily-price/index.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "agents",
+      "to": "identity",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-agent-access.cjs",
+          "line": 4,
+          "target": "electron/engines/backend-identity/capability-registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 47,
+          "target": "electron/engines/backend-identity/identity-runtime.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 62,
+          "target": "electron/engines/backend-identity/capability-registry.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "agents",
+      "to": "worldview",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 44,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "agents",
+      "sites": 9,
+      "evidence": [
+        {
+          "file": "electron/ai/chat/chat-service.cjs",
+          "line": 6,
+          "target": "electron/ai/agents/assigned-chat.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/chat/chat-service.cjs",
+          "line": 244,
+          "target": "electron/ai/agents/construction-context.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/chat/chat-service.cjs",
+          "line": 311,
+          "target": "electron/ai/agents/agent-policy.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/chat/conversation-store.cjs",
+          "line": 32,
+          "target": "electron/ai/agents/agent-construction.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/chat/conversation-store.cjs",
+          "line": 95,
+          "target": "electron/ai/agents/agent-construction.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/inference/prompt-builder.cjs",
+          "line": 5,
+          "target": "electron/ai/agents/agent-policy.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/ipc.cjs",
+          "line": 39,
+          "target": "electron/ai/agents/entity-agents.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/ipc.cjs",
+          "line": 256,
+          "target": "electron/ai/agents/entity-agents.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/ipc.cjs",
+          "line": 322,
+          "target": "electron/ai/agents/assigned-chat.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "engine-registry",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/engine-registry.cjs",
+          "line": 8,
+          "target": "electron/engines/registry/registry.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "engines",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/ai/engine-registry.cjs",
+          "line": 9,
+          "target": "electron/engines/definitions.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/engine-registry.cjs",
+          "line": 10,
+          "target": "electron/engines/native.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "providers",
+      "sites": 4,
+      "evidence": [
+        {
+          "file": "electron/ai/llm-front-office/provider-gateway.cjs",
+          "line": 5,
+          "target": "electron/ai/providers/openai-chat-provider.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/model-access.cjs",
+          "line": 4,
+          "target": "electron/ai/providers/gemini-provider.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/model-access.cjs",
+          "line": 5,
+          "target": "electron/ai/providers/nvidia-provider.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/model-access.cjs",
+          "line": 6,
+          "target": "electron/ai/providers/openrouter-provider.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "shared",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/ai/context-limits.cjs",
+          "line": 2,
+          "target": "electron/shared/context-limits.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/history-budget.cjs",
+          "line": 4,
+          "target": "electron/shared/token-budget.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/json-store.cjs",
+          "line": 2,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/model-errors.cjs",
+          "line": 2,
+          "target": "electron/shared/runtime-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/schemas.cjs",
+          "line": 7,
+          "target": "electron/shared/validation.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "ai-runtime",
+      "to": "vault",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/ai/chat/chat-service.cjs",
+          "line": 4,
+          "target": "electron/domains/universe/station-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/research-knowledge.cjs",
+          "line": 11,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "connectors",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/connector-store.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "connectors",
+      "to": "worldview",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/connector-store.cjs",
+          "line": 11,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "agents",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/main.cjs",
+          "line": 36,
+          "target": "electron/ai/agents/agent-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "ai-runtime",
+      "sites": 8,
+      "evidence": [
+        {
+          "file": "electron/main.cjs",
+          "line": 32,
+          "target": "electron/ai/chat/chat-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 33,
+          "target": "electron/ai/model-registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 34,
+          "target": "electron/ai/provider-registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 35,
+          "target": "electron/ai/credential-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 38,
+          "target": "electron/ai/ipc.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 39,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 264,
+          "target": "electron/ai/engine-registry.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 282,
+          "target": "electron/ai/research-knowledge.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "connectors",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 4,
+          "target": "electron/domains/entity/connector-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "engines",
+      "sites": 7,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 6,
+          "target": "electron/image-parser-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 80,
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 83,
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 92,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 104,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 113,
+          "target": "electron/excel-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 129,
+          "target": "electron/excel-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "identity",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 33,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 52,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 59,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 66,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 73,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "knowledge",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 3,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 5,
+          "target": "electron/domains/indexing/tag-association-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "providers",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/main.cjs",
+          "line": 37,
+          "target": "electron/ai/providers/nvidia-provider.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/security/desktop-security.cjs",
+          "line": 1,
+          "target": "electron/shared/runtime-errors.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "vault",
+      "sites": 4,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 10,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 17,
+          "target": "electron/domains/universe/vault-settings.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 29,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/main.cjs",
+          "line": 30,
+          "target": "electron/domains/universe/station-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "worldview",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 2,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "engine-registry",
+      "to": "engines",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 180,
+          "target": "electron/engines/definitions.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "engine-registry",
+      "to": "shared",
+      "sites": 4,
+      "evidence": [
+        {
+          "file": "electron/engines/registry/authoring.cjs",
+          "line": 6,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/registry/package.cjs",
+          "line": 10,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 11,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/registry/signing.cjs",
+          "line": 14,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "engine-registry",
+      "to": "worldview",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 309,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 499,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 512,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 577,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 642,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "engines",
+      "to": "identity",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/engines/definitions.cjs",
+          "line": 3,
+          "target": "electron/engines/backend-identity/schema.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "engines",
+      "to": "knowledge",
+      "sites": 6,
+      "evidence": [
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 106,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 119,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/excel-service.cjs",
+          "line": 16,
+          "target": "electron/domains/knowledge/knowledge-source-access.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 133,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 170,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/image-parser-service.cjs",
+          "line": 15,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "engines",
+      "to": "shared",
+      "sites": 4,
+      "evidence": [
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/excel-service.cjs",
+          "line": 5,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/image-parser-service.cjs",
+          "line": 10,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "engines",
+      "to": "vault",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/excel-service.cjs",
+          "line": 4,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/image-parser-service.cjs",
+          "line": 11,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/image-parser-service.cjs",
+          "line": 16,
+          "target": "electron/local-ocr.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "connectors",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 12,
+          "target": "electron/domains/entity/connector-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "engines",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 16,
+          "target": "electron/engines/definitions.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 33,
+          "target": "electron/engines/daily-price/index.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 34,
+          "target": "electron/engines/yahoo-financials/index.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 81,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 92,
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "knowledge",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 11,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "shared",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 5,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/backend-identity/markdown-chunker.cjs",
+          "line": 1,
+          "target": "electron/shared/token-budget.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/backend-identity/snapshot-store.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "vault",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 13,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "worldview",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/domains/knowledge/backend-identity-service.cjs",
+          "line": 7,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 8,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
+      "to": "engines",
+      "sites": 7,
+      "evidence": [
+        {
+          "file": "electron/domains/indexing/knowledge-index.cjs",
+          "line": 2,
+          "target": "electron/engines/daily-price/index.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 16,
+          "target": "electron/engines/tag-association/indexer.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 17,
+          "target": "electron/engines/tag-association/normalizer.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 18,
+          "target": "electron/engines/tag-association/search.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 21,
+          "target": "electron/engines/tag-association/association.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 10,
+          "target": "electron/engines/daily-price/index.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 126,
+          "target": "electron/excel-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
+      "to": "shared",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-source-access.cjs",
+          "line": 5,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 3,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
+      "to": "vault",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 8,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
+      "to": "worldview",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 11,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-source-access.cjs",
+          "line": 6,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 7,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-agents",
+      "to": "portal-chat",
+      "sites": 6,
+      "evidence": [
+        {
+          "file": "features/agents/agent-construction.tsx",
+          "line": 20,
+          "target": "features/chat/chat-presentation.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-contacts.tsx",
+          "line": 6,
+          "target": "features/chat/chat-presentation.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-contacts.tsx",
+          "line": 8,
+          "target": "features/chat/source-label.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-workspace.tsx",
+          "line": 14,
+          "target": "features/chat/use-chat-runtime.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-workspace.tsx",
+          "line": 16,
+          "target": "features/chat/chat-markdown.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/legacy-agent-workspace.tsx",
+          "line": 6,
+          "target": "features/chat/chat-panel.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-agents",
+      "to": "portal-shell",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "features/agents/agent-contacts.tsx",
+          "line": 7,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-settings.tsx",
+          "line": 4,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/agents/agent-workspace.tsx",
+          "line": 12,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-agents",
+      "to": "portal-worldview",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/agents/agent-workspace.tsx",
+          "line": 17,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-chat",
+      "to": "portal-agents",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "features/chat/chat-panel.tsx",
+          "line": 14,
+          "target": "features/agents/agent-avatar.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/chat/chat-panel.tsx",
+          "line": 17,
+          "target": "features/agents/knowledge-proposal.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-chat",
+      "to": "portal-shell",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/chat/conversation-history.tsx",
+          "line": 4,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-documents",
+      "to": "portal-knowledge",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/workspace/document-workspace.tsx",
+          "line": 2,
+          "target": "features/knowledge/csv-preview.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-entities",
+      "to": "portal-worldview",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "features/entities/assign-files-dialog.tsx",
+          "line": 11,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/entities/chip-dialog.tsx",
+          "line": 12,
+          "target": "features/worldview/chips.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/entities/chip-dialog.tsx",
+          "line": 19,
+          "target": "features/worldview/chip-colors.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/entities/color-wheel.tsx",
+          "line": 10,
+          "target": "features/worldview/chip-colors.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/entities/entity-actions.tsx",
+          "line": 5,
+          "target": "features/worldview/chip-colors.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-knowledge",
+      "to": "portal-chat",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/knowledge/indexed-document-view.tsx",
+          "line": 4,
+          "target": "features/chat/chat-markdown.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-knowledge",
+      "to": "portal-documents",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "features/knowledge/source-preview.tsx",
+          "line": 4,
+          "target": "features/workspace/document-workspace.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/source-preview.tsx",
+          "line": 5,
+          "target": "features/workspace/pdf-viewer.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-knowledge",
+      "to": "portal-shell",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "features/knowledge/file-inspector.tsx",
+          "line": 9,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/knowledge-card.tsx",
+          "line": 13,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/knowledge-workspace.tsx",
+          "line": 23,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-knowledge",
+      "to": "portal-worldview",
+      "sites": 10,
+      "evidence": [
+        {
+          "file": "features/knowledge/carousel-source.tsx",
+          "line": 4,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/daily-price.tsx",
+          "line": 10,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/excel-preview.tsx",
+          "line": 5,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/file-inspector.tsx",
+          "line": 4,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/financial-viewer.tsx",
+          "line": 8,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/image-carousel.tsx",
+          "line": 16,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/knowledge-workspace.tsx",
+          "line": 10,
+          "target": "features/worldview/chips.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/knowledge-workspace.tsx",
+          "line": 14,
+          "target": "features/worldview/chip-colors.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/knowledge-workspace.tsx",
+          "line": 15,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/source-preview.tsx",
+          "line": 10,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-settings",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/model-settings/model-settings.tsx",
+          "line": 7,
+          "target": "electron/shared/context-limits.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-shell",
+      "to": "portal-agents",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "components/app-shell.tsx",
+          "line": 24,
+          "target": "features/agents/agent-workspace.tsx",
+          "deferred": false
+        },
+        {
+          "file": "components/app-shell.tsx",
+          "line": 25,
+          "target": "features/agents/agent-settings.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-shell",
+      "to": "portal-chat",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "components/app-shell.tsx",
+          "line": 5,
+          "target": "features/chat/use-chat-popout.ts",
+          "deferred": false
+        },
+        {
+          "file": "components/app-shell.tsx",
+          "line": 8,
+          "target": "components/chat-panel.tsx",
+          "deferred": false
+        },
+        {
+          "file": "components/app-shell.tsx",
+          "line": 22,
+          "target": "features/chat/use-chat-runtime.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-shell",
+      "to": "portal-documents",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "components/app-shell.tsx",
+          "line": 7,
+          "target": "features/workspace/document-workspace.tsx",
+          "deferred": false
+        },
+        {
+          "file": "components/app-shell.tsx",
+          "line": 10,
+          "target": "features/workspace/knowledge-sidebar.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-shell",
+      "to": "portal-settings",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "components/app-shell.tsx",
+          "line": 23,
+          "target": "features/model-settings/model-settings.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-shell",
+      "to": "portal-worldview",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "components/app-shell.tsx",
+          "line": 9,
+          "target": "features/worldview/worldview.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-worldview",
+      "to": "portal-agents",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 35,
+          "target": "features/agents/entity-agents-dialog.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-worldview",
+      "to": "portal-chat",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/worldview/backend-identity-window.tsx",
+          "line": 17,
+          "target": "features/chat/panel-geometry.ts",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-worldview",
+      "to": "portal-entities",
+      "sites": 4,
+      "evidence": [
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 28,
+          "target": "features/entities/chip-dialog.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 30,
+          "target": "features/entities/assign-files-dialog.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 32,
+          "target": "features/entities/entity-actions.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 42,
+          "target": "features/entities/entity-sidebar.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-worldview",
+      "to": "portal-knowledge",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 31,
+          "target": "features/knowledge/file-inspector.tsx",
+          "deferred": false
+        },
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 33,
+          "target": "features/knowledge/knowledge-card.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "portal-worldview",
+      "to": "portal-shell",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "features/worldview/worldview.tsx",
+          "line": 54,
+          "target": "features/dialogs/use-confirmation.tsx",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "providers",
+      "to": "agents",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/ai/providers/gemini-provider.cjs",
+          "line": 285,
+          "target": "electron/ai/agents/entity-agent-protocol.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/openai-chat-provider.cjs",
+          "line": 354,
+          "target": "electron/ai/agents/entity-agent-protocol.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "providers",
+      "to": "ai-runtime",
+      "sites": 14,
+      "evidence": [
+        {
+          "file": "electron/ai/providers/gemini-provider.cjs",
+          "line": 5,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/gemini-provider.cjs",
+          "line": 12,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/gemini-provider.cjs",
+          "line": 279,
+          "target": "electron/ai/dataset-planner.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/gemini-provider.cjs",
+          "line": 280,
+          "target": "electron/ai/statistics.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/ollama-provider.cjs",
+          "line": 2,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/ollama-provider.cjs",
+          "line": 186,
+          "target": "electron/ai/engine-chat.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/ollama-stream.cjs",
+          "line": 1,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/openai-chat-provider.cjs",
+          "line": 5,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/openai-chat-provider.cjs",
+          "line": 6,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/openai-chat-provider.cjs",
+          "line": 277,
+          "target": "electron/ai/model-registry.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/openai-chat-provider.cjs",
+          "line": 298,
+          "target": "electron/ai/inference/response-validation.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/providers/openrouter-provider.cjs",
+          "line": 2,
+          "target": "electron/ai/schemas.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/openrouter-provider.cjs",
+          "line": 3,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/ai/providers/remote-json.cjs",
+          "line": 1,
+          "target": "electron/ai/model-errors.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "vault",
+      "to": "desktop",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/universe/station-service.cjs",
+          "line": 14,
+          "target": "electron/brain-errors.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "vault",
+      "to": "shared",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/domains/universe/vault-settings.cjs",
+          "line": 7,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/universe/vault-settings.cjs",
+          "line": 9,
+          "target": "electron/shared/validation.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/worldview-store.cjs",
+          "line": 9,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "vault",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/worldview-store.cjs",
+          "line": 10,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    }
+  ]
+}

@@ -26,6 +26,7 @@ import { initialRuntime, runtimeReducer } from "./runtime-state";
 import { chatErrorMessage } from "./context-readiness";
 
 type Options = {
+  gateway?: boolean;
   vaultPath: string | null;
   contextKey: string;
   scope: ScopeSelection;
@@ -43,7 +44,14 @@ const errorState = (error: unknown): ChatState => {
   return "ERROR";
 };
 
-export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
+/** Owns desktop conversation/model state. Gateway mode pins the coordinator identity and isolates its local selection without migrating older chats. */
+export function useChatRuntime({
+  vaultPath,
+  contextKey,
+  scope,
+  gateway = false,
+}: Options) {
+  const storagePrefix = gateway ? "orbistry-gateway" : "qterminal";
   const [runtime, dispatch] = useReducer(runtimeReducer, initialRuntime);
   const [contextBoxes, setContextBoxes] = useState<ContextBox[]>([]);
   const [preselectedBoxId, setPreselectedBoxId] = useState("");
@@ -201,14 +209,19 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
           label: "Loading Context Boxes",
           error: null,
         });
-        setContextBoxes(vaultPath ? await client.listContextBoxes() : []);
+        setContextBoxes(
+          vaultPath && !gateway ? await client.listContextBoxes() : [],
+        );
         if (session.current !== version) return;
         let savedId: string | null = null;
         try {
-          savedId = localStorage.getItem("qterminal-active-chat:" + vaultPath);
+          savedId = localStorage.getItem(
+            storagePrefix + "-active-chat:" + vaultPath,
+          );
         } catch {}
         // Validate the active Vault before restoring profiles; no duplicate path state is needed.
-        if (vaultPath && client.getVaultIdentity) await client.getVaultIdentity();
+        if (vaultPath && client.getVaultIdentity)
+          await client.getVaultIdentity();
         if (session.current !== version) return;
         const profiles = client.listAgents ? await client.listAgents() : [];
         if (session.current !== version) return;
@@ -221,15 +234,17 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
         let restoredAgent = list.find((c) => c.id === savedId)?.agentId;
         try {
           restoredAgent ??=
-            localStorage.getItem("qterminal-active-agent:" + vaultPath) ??
-            undefined;
+            localStorage.getItem(
+              storagePrefix + "-active-agent:" + vaultPath,
+            ) ?? undefined;
         } catch {}
-        const profile =
-          profiles.find((p) => p.id === restoredAgent) ?? profiles[0];
+        const profile = gateway
+          ? await client.getAgent("orbistry-universe-gateway")
+          : (profiles.find((p) => p.id === restoredAgent) ?? profiles[0]);
         if (!savedId && profile)
           try {
             savedId = localStorage.getItem(
-              `qterminal-active-chat:${vaultPath}:${profile.id}`,
+              `${storagePrefix}-active-chat:${vaultPath}:${profile.id}`,
             );
           } catch {}
         setAgents(profiles);
@@ -239,7 +254,9 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
         setConversation(
           list.find(
             (c) => profile && c.id === savedId && c.agentId === profile.id,
-          ) ?? null,
+          ) ??
+            (gateway ? list.find((c) => c.agentId === profile?.id) : null) ??
+            null,
         );
         chats.current = list;
         setConnected(true);
@@ -284,22 +301,22 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
     setContextError(null);
     try {
       localStorage.setItem(
-        "qterminal-active-agent:" + vaultPath,
+        storagePrefix + "-active-agent:" + vaultPath,
         activeAgentId,
       );
       if (conversation) {
         localStorage.setItem(
-          "qterminal-active-chat:" + vaultPath,
+          storagePrefix + "-active-chat:" + vaultPath,
           conversation.id,
         );
         localStorage.setItem(
-          `qterminal-active-chat:${vaultPath}:${activeAgentId}`,
+          `${storagePrefix}-active-chat:${vaultPath}:${activeAgentId}`,
           conversation.id,
         );
       } else {
-        localStorage.removeItem("qterminal-active-chat:" + vaultPath);
+        localStorage.removeItem(storagePrefix + "-active-chat:" + vaultPath);
         localStorage.removeItem(
-          `qterminal-active-chat:${vaultPath}:${activeAgentId}`,
+          `${storagePrefix}-active-chat:${vaultPath}:${activeAgentId}`,
         );
       }
     } catch {}
@@ -531,7 +548,7 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
   ) =>
     operate(async (client, current) => {
       const value = await client.createConversation({
-        agentId: agentRef.current,
+        agentId: gateway ? "orbistry-universe-gateway" : agentRef.current,
         ...(engineOnly
           ? { engineOnly: true }
           : contextFile
@@ -597,7 +614,9 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
       switchingAgentRef.current ||
       request.current ||
       mutation.current ||
-      !agents.some((profile) => profile.id === id)
+      (gateway
+        ? id !== "orbistry-universe-gateway"
+        : !agents.some((profile) => profile.id === id))
     )
       return Promise.resolve(false);
     switchingAgentRef.current = true;
@@ -611,8 +630,9 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
       if (!savedId)
         try {
           savedId =
-            localStorage.getItem(`qterminal-active-chat:${vaultPath}:${id}`) ??
-            undefined;
+            localStorage.getItem(
+              `${storagePrefix}-active-chat:${vaultPath}:${id}`,
+            ) ?? undefined;
         } catch {}
       const next =
         conversations.find((c) => c.id === savedId && c.agentId === id) ??
@@ -675,7 +695,7 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
       }
     });
   const remove = (all: boolean, id = conversation?.id) =>
-    void operate(async (client, current) => {
+    operate(async (client, current) => {
       if (all) {
         for (const item of conversations.filter(
           (c) => c.agentId === agentRef.current,
@@ -960,6 +980,27 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
         : runtime.state;
 
   return {
+    /** Archives a definition through trusted IPC while retaining its historical files and refreshing visible agent state. */
+    deleteAgent: (id: string) =>
+      operate(async (client, current) => {
+        if (!client.deleteAgent)
+          throw new Error("Restart Orbistry to enable agent deletion.");
+        await client.deleteAgent({ id });
+        if (!current()) return;
+        const profiles = await client.listAgents!();
+        if (!current()) return;
+        setAgents(profiles);
+        if (agentRef.current === id) {
+          setAgent(null);
+          setActiveAgentId("");
+          agentRef.current = "";
+          setConversation(null);
+          setContext(null);
+          setDraft("");
+          setCreatingChat(false);
+          dispatch({ type: "reset", state: "READY" });
+        }
+      }, false),
     createAgent: (name: string, creationId: string) =>
       operate(async (client, current) => {
         if (!client.createAgent)
@@ -1074,7 +1115,7 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
     reportInactiveIntegration: () =>
       fail(
         new Error(
-          "Agent file, knowledge and tool integrations are temporarily inactive.",
+          "Legacy Context Box attachment controls are inactive. Start a Universe chat to observe sources and consult assigned agents.",
         ),
       ),
     startup,
@@ -1125,6 +1166,23 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
         throw new Error("Desktop connection is unavailable.");
       return bridge.current.chooseAgentAvatar();
     },
+    /** Updates the selected reusable profile's icon through the existing image picker and validated avatar store, preserving its latest instructions. */
+    changeAgentAvatar: (id: string) =>
+      operate(async (client, current) => {
+        const image = await client.chooseAgentAvatar();
+        if (!image || !current()) return;
+        const latest = await client.getAgent!(id);
+        const profile = await client.saveAgent({
+          id,
+          customInstructions: latest.customInstructions,
+          avatarDataUrl: image,
+        });
+        if (!current()) return;
+        setAgents((profiles) =>
+          profiles.map((item) => (item.id === id ? profile : item)),
+        );
+        if (agentRef.current === id) setAgent(profile);
+      }, false),
     chooseAgentBackdrop: async (kind: "banner" | "wallpaper") => {
       if (!bridge.current?.chooseAgentBackdrop)
         throw new Error(
@@ -1195,6 +1253,11 @@ export function useChatRuntime({ vaultPath, contextKey, scope }: Options) {
     stop,
     newChat,
     selectChat,
+    refreshConversations: () =>
+      operate(async (client, current) => {
+        const list = await client.listConversations();
+        if (current()) setConversations(list);
+      }),
     resume,
     rename,
     remove,

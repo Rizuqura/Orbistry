@@ -4,10 +4,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useChatPopout } from "../features/chat/use-chat-popout";
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
-import { DocumentWorkspace } from "./document-workspace";
+import { DocumentWorkspace } from "../features/workspace/document-workspace";
 import { ChatPanel, type ChatPanelProps } from "./chat-panel";
-import { WorldView } from "./worldview";
-import { KnowledgeSidebar } from "./knowledge-sidebar";
+import { WorldView } from "../features/worldview/worldview";
+import { KnowledgeSidebar } from "../features/workspace/knowledge-sidebar";
 import { StatusBar } from "./status-bar";
 import { TopBar } from "./top-bar";
 import { StartupProgress } from "./startup-progress";
@@ -21,8 +21,8 @@ import type {
 
 import { useChatRuntime } from "../features/chat/use-chat-runtime";
 import { ModelSettings } from "../features/model-settings/model-settings";
-import { AgentWorkspace } from "../features/agent/agent-workspace";
-import { AgentSettings } from "../features/agent/agent-settings";
+import { AgentWorkspace } from "../features/agents/agent-workspace";
+import { AgentSettings } from "../features/agents/agent-settings";
 import type { AssignmentContext } from "../types/entity-agents";
 import { useConfirmation } from "../features/dialogs/use-confirmation";
 
@@ -45,6 +45,7 @@ function requireVaultBridge() {
 }
 
 /** Renders application navigation and active views, coordinating Vault and model lifecycles through existing hooks. */
+/** Owns application navigation and shared settings, retaining separate Gateway/worker state and truthful coordinator model metadata. */
 export function AppShell() {
   const [startupDismissed, setStartupDismissed] = useState(false);
   const { confirm, confirmation } = useConfirmation();
@@ -319,7 +320,7 @@ export function AppShell() {
   );
   const inactiveAgentIntegration = async (): Promise<never> => {
     throw new Error(
-      "Agent file, knowledge and tool integrations are temporarily inactive.",
+      "Legacy Context Box attachment controls are inactive. Start a Universe chat to observe sources and consult assigned agents.",
     );
   };
   // Manual Vault/library management remains separate from agent-facing controls.
@@ -479,6 +480,10 @@ export function AppShell() {
     </div>
   );
 
+  // The main Agent surface represents the Gateway. A restored worker's model
+  // override must not mislabel the Gateway provider in the shared footer.
+  const footerModel =
+    view === "agent" ? chat.registry?.settings : chat.effectiveSettings;
   return (
     <>
       {!startupDismissed && (
@@ -567,6 +572,8 @@ export function AppShell() {
           />
         ) : view === "agent" ? (
           <AgentWorkspace
+            vaultPath={snapshot?.status === "ready" ? snapshot.rootPath : null}
+            onWorkbench={openEntityWorkbench}
             chat={agentChat}
             onSettings={() => setAgentSettingsOpen(true)}
             onManageContext={chatProps.onExpandContext!}
@@ -615,15 +622,19 @@ export function AppShell() {
           </div>
         )}
         <StatusBar
-          agentName={chat.agent?.displayName}
+          agentName={
+            view === "agent"
+              ? "Orbistry Universe Gateway"
+              : chat.agent?.displayName
+          }
           agentContext={
             chat.contextBoxes.find(
               (box) => box.id === chat.conversation?.contextBoxId,
             )?.name
           }
           agentModel={
-            chat.effectiveSettings?.modelId
-              ? `${chat.effectiveSettings!.providerId} / ${chat.effectiveSettings!.modelId}`
+            footerModel?.modelId
+              ? `${footerModel.providerId} / ${footerModel.modelId}`
               : undefined
           }
           view={view}

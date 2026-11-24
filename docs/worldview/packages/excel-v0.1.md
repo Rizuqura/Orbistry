@@ -119,9 +119,9 @@ The host coalesces identical pending parses and keeps two immutable models in me
 Source: `electron/engines/excel/`. Reproducible package builder:
 
 ```powershell
-node scripts/build-excel-engine.cjs
-node scripts/build-excel-engine.cjs --universe C:/Universe
-node scripts/build-excel-engine.cjs --universe C:/Universe --upgrade
+node scripts/build/build-excel-engine.cjs
+node scripts/build/build-excel-engine.cjs --universe C:/Universe
+node scripts/build/build-excel-engine.cjs --universe C:/Universe --upgrade
 ```
 
 The builder stages a self-contained JS package with pinned dependency versions, their licenses, documentation, report and SHA-256 manifest. Installation creates only `.engine/wonton-excel` inside an **existing** explicitly specified Universe; an ordinary install refuses an existing package. Explicit `--upgrade` checks every existing package file against its manifest, refuses modified/untracked contents, and preserves the previous package in a `.engine/wonton-excel-backup-<id>` sibling before installing the new one. Installation failure restores that backup. Universe's existing scanner ignores `.engine`. Node itself is a runtime prerequisite, not duplicated into the package.

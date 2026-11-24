@@ -10,12 +10,12 @@ const {
   saveWorldViewChip,
   assignWorldViewFiles,
   unassignWorldViewFile,
-} = require("./worldview-store.cjs");
+} = require("./domains/entity/worldview-store.cjs");
 const {
   saveKnowledgeIndex,
   previewKnowledgeSource,
-} = require("./knowledge-store.cjs");
-const { registerWorldViewIpc } = require("./worldview-ipc.cjs");
+} = require("./domains/knowledge/knowledge-store.cjs");
+const { registerWorldViewIpc } = require("./core/ipc/worldview-ipc.cjs");
 
 /** Seeds assigned and applied synthetic workbooks in an isolated Universe, cleaning only the created temporary tree. */
 async function withUniverse(run) {

@@ -36,9 +36,7 @@ test("optional LiteLLM credential uses OS encryption and remains isolated from p
 });
 
 test("OpenRouter keys use encrypted storage and preserve existing provider keys through restart and removal", async (t) => {
-  const root = await fs.mkdtemp(
-    path.join(os.tmpdir(), "orbistry-openrouter-"),
-  );
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-openrouter-"));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
     isEncryptionAvailable: () => true,
@@ -117,7 +115,9 @@ test("Gemini credential validation accepts authorization and legacy keys without
 });
 
 test("credentials store ciphertext only, survive reload, remove cleanly, and fail closed without encryption", async (t) => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "orbistry-credentials-"));
+  const root = await fs.mkdtemp(
+    path.join(os.tmpdir(), "orbistry-credentials-"),
+  );
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const encryption = {
     isEncryptionAvailable: () => true,

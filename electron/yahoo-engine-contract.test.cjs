@@ -204,8 +204,12 @@ test("market cache separates listing/range identity and lifetimes and retains st
 
 test("history IPC rejects forged and concurrently removed applied declarations", () =>
   isolated(async (root) => {
-    const { saveWorldViewChip } = require("./worldview-store.cjs");
-    const { saveKnowledgeIndex } = require("./knowledge-store.cjs");
+    const {
+      saveWorldViewChip,
+    } = require("./domains/entity/worldview-store.cjs");
+    const {
+      saveKnowledgeIndex,
+    } = require("./domains/knowledge/knowledge-store.cjs");
     await saveWorldViewChip(root, {
       id: "company",
       name: "Company",

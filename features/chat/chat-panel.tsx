@@ -11,10 +11,10 @@ import {
   type PanelGeometry,
 } from "./panel-geometry";
 import { ConversationHistory } from "./conversation-history";
-import { AgentAvatar } from "../agent/agent-avatar";
+import { AgentAvatar } from "../agents/agent-avatar";
 import { ChatMarkdown } from "./chat-markdown";
 import { bannerStyle, wallpaperStyle } from "./chat-presentation";
-import { KnowledgeProposal } from "../agent/knowledge-proposal";
+import { KnowledgeProposal } from "../agents/knowledge-proposal";
 import { EngineReportAttachment } from "./engine-report-attachment";
 
 export type { ChatMessage } from "../../types/ai";
@@ -518,13 +518,13 @@ export function ChatPanel({
           </span>
           <p className="chat-privacy">
             {chat.effectiveSettings?.providerId !== "ollama" && !!chat.registry
-              ? `Your instructions, personality preferences, question, and included conversation history are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
+              ? `Your question, instructions, conversation history and requested Universe evidence or assigned-agent answers are sent to ${chat.effectiveSettings?.providerId === "openrouter" ? "OpenRouter and its model providers" : chat.effectiveSettings?.providerId === "nvidia" ? "NVIDIA" : "Google Gemini"}.`
               : "Inference runs on this device."}
           </p>
           <p className="chat-memory">
             Model memory: up to 12 recent exchanges, fewer when the context
-            limit is reached. Saved history remains available. File and
-            knowledge integrations are temporarily inactive.
+            limit is reached. Saved history remains available. Universe
+            observation and specialist consultations use bounded tool results.
             {typeof chat.runtime.diagnostics?.droppedExchanges === "number" &&
             chat.runtime.diagnostics.droppedExchanges > 0
               ? ` Last answer omitted ${chat.runtime.diagnostics.droppedExchanges} earlier exchanges.`
@@ -591,7 +591,7 @@ export function ChatPanel({
           <div className="chat-profile-copy">
             <h2>{agentName}</h2>
             <p className="chat-profile-description">
-              {chat.agent.description || "Standalone chat"}
+              {chat.agent.description || "Universe observer"}
             </p>
             <p className="chat-profile-context">
               {chat.conversation?.engineOnly
@@ -604,7 +604,7 @@ export function ChatPanel({
                       chat.contextBoxes.find(
                         (box) => box.id === chat.conversation?.contextBoxId,
                       )?.name ??
-                      "No Context")}
+                      "Active Universe")}
             </p>
           </div>
         </div>
@@ -613,7 +613,7 @@ export function ChatPanel({
         <div className="chat-notice" role="status">
           {chat.unavailableReason}
           <button disabled={chat.busy} onClick={chat.newChat}>
-            Create bound chat
+            Start Universe chat
           </button>
         </div>
       )}
@@ -622,8 +622,8 @@ export function ChatPanel({
           <strong>{agentName}</strong>
           <p>Chat with your configured model.</p>
           <p>
-            Create a box in WorldView’s context manager, or choose an existing
-            box to begin.
+            Start a chat to observe your Universe and consult assigned agents.
+            No Context Box is required.
           </p>
         </div>
       )}
@@ -643,7 +643,7 @@ export function ChatPanel({
         {!!chat.conversation && !messages.length && (
           <p className="chat-message-system">
             {chat.conversation?.engineOnly
-              ? "Tool integration is temporarily inactive. Ask a question to begin."
+              ? "Ask about your Universe or its assigned agents."
               : "Ask a question to begin the conversation."}
           </p>
         )}

@@ -8,7 +8,7 @@ This release adds Yahoo financial statements and earnings to WorldView Knowledge
 - Include the standalone Yahoo Financials engine package and update engine builders to use the reorganized documentation.
 - Update application and installer metadata to 1.0.5; the top bar and startup screen use the shared package version.
 
-See the [1.0.5 release report](docs/worldview/reports/release-1.0.5.md) and [current indexing guide](docs/worldview/INDEXING.md).
+See the [1.0.5 release report](docs/REPORTS.md#report-release-1.0.5) and [current indexing guide](docs/worldview/INDEXING.md).
 
 ---
 
