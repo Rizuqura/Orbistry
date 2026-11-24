@@ -75,6 +75,7 @@ Unresolved / external call sites: 7.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -119,6 +120,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -170,6 +172,7 @@ Unresolved / external call sites: 9.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -219,6 +222,7 @@ Unresolved / external call sites: 3.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -265,6 +269,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -311,6 +316,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -362,6 +368,7 @@ Unresolved / external call sites: 17.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -413,6 +420,7 @@ Unresolved / external call sites: 31.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -466,6 +474,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -515,6 +524,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -571,6 +581,7 @@ Unresolved / external call sites: 11.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -622,6 +633,7 @@ Unresolved / external call sites: 3.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -683,6 +695,7 @@ Unresolved / external call sites: 6.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -733,6 +746,7 @@ Unresolved / external call sites: 3.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -784,6 +798,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -842,6 +857,7 @@ Unresolved / external call sites: 10.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -890,6 +906,7 @@ Unresolved / external call sites: 1.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -939,6 +956,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -994,6 +1012,7 @@ Unresolved / external call sites: 5.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1042,6 +1061,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1096,6 +1116,7 @@ Unresolved / external call sites: 4.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1148,6 +1169,7 @@ Unresolved / external call sites: 4.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1194,6 +1216,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1254,6 +1277,7 @@ Unresolved / external call sites: 11.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1300,6 +1324,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1347,6 +1372,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1397,6 +1423,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1449,6 +1476,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1495,6 +1523,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1543,6 +1572,7 @@ Unresolved / external call sites: 1.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1593,6 +1623,7 @@ Unresolved / external call sites: 2.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.
@@ -1641,6 +1672,7 @@ Unresolved / external call sites: 0.
 - [electron/domains/entity/connector-store.test.cjs:6](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L6>) — file-import-only; coverage not established.
 - [electron/domains/entity/worldview-store.test.cjs:19](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L19>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:17](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L17>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:12](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L12>) — file-import-only; coverage not established.
 - [electron/engine-packages.test.cjs:18](<../../../../../../../electron/engine-packages.test.cjs#L18>) — file-import-only; coverage not established.
 - [electron/engine-signing.test.cjs:198](<../../../../../../../electron/engine-signing.test.cjs#L198>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:13](<../../../../../../../electron/excel-service.test.cjs#L13>) — file-import-only; coverage not established.

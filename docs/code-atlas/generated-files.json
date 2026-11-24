@@ -36,6 +36,7 @@
     "docs/code-atlas/modules/shared.md",
     "docs/code-atlas/modules/tooling.md",
     "docs/code-atlas/modules/vault.md",
+    "docs/code-atlas/modules/worldview-domain.md",
     "docs/code-atlas/modules/worldview.md",
     "docs/code-atlas/symbols/agents.md",
     "docs/code-atlas/symbols/ai-runtime.md",
@@ -201,6 +202,16 @@
     "docs/code-atlas/symbols/files/electron/domains/universe/vault-service.test.cjs.md",
     "docs/code-atlas/symbols/files/electron/domains/universe/vault-settings.cjs.md",
     "docs/code-atlas/symbols/files/electron/domains/universe/vault-settings.test.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/contracts/worldview-errors.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/contracts/worldview-schema.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/index.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/model/Connection.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/model/WorldView.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/queries/connection-queries.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/repositories/WorldViewRepository.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/repositories/legacy-connection-store.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/services/WorldViewService.cjs.md",
+    "docs/code-atlas/symbols/files/electron/domains/worldview/tests/worldview-domain.test.cjs.md",
     "docs/code-atlas/symbols/files/electron/engine-packages.test.cjs.md",
     "docs/code-atlas/symbols/files/electron/engine-signing.test.cjs.md",
     "docs/code-atlas/symbols/files/electron/engines/backend-identity/capability-registry.cjs.md",
@@ -479,6 +490,7 @@
     "docs/code-atlas/symbols/symbol-index.json",
     "docs/code-atlas/symbols/tooling.md",
     "docs/code-atlas/symbols/vault.md",
+    "docs/code-atlas/symbols/worldview-domain.md",
     "docs/code-atlas/symbols/worldview.md"
   ]
 }

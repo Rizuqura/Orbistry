@@ -150,7 +150,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@357:94&gt;.&lt;anonymous@358:11&gt;](<../../backend-identity.test.cjs.md#s-7efbda7815859ecb>) — [electron/backend-identity.test.cjs:362](<../../../../../../../electron/backend-identity.test.cjs#L362>)
 - [&lt;anonymous@453:103&gt;.&lt;anonymous@454:11&gt;](<../../backend-identity.test.cjs.md#s-90ca171901a43834>) — [electron/backend-identity.test.cjs:456](<../../../../../../../electron/backend-identity.test.cjs#L456>)
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:627](<../../../../../../../electron/backend-identity.test.cjs#L627>)
-- [registerWorldViewIpc."knowledge-load"](<../../core/ipc/worldview-ipc.cjs.md#s-360eb3c34aa95f7f>) — [electron/core/ipc/worldview-ipc.cjs:201](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L201>)
+- [registerWorldViewIpc."knowledge-load"](<../../core/ipc/worldview-ipc.cjs.md#s-82fc932bef0407a2>) — [electron/core/ipc/worldview-ipc.cjs:207](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L207>)
 - [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/daily-price-service.cjs:107](<../../../../../../../electron/daily-price-service.cjs#L107>)
 - [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/daily-price-service.cjs:111](<../../../../../../../electron/daily-price-service.cjs#L111>)
 - [resolveIndexedPrice](<../../daily-price-service.cjs.md#s-ed4eb674fb9b15e6>) — [electron/daily-price-service.cjs:119](<../../../../../../../electron/daily-price-service.cjs#L119>)
@@ -232,7 +232,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-validate"](<../../core/ipc/worldview-ipc.cjs.md#s-9ffa9de9ea70bb0c>) — [electron/core/ipc/worldview-ipc.cjs:213](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L213>)
+- [registerWorldViewIpc."knowledge-validate"](<../../core/ipc/worldview-ipc.cjs.md#s-b3fe92436355b812>) — [electron/core/ipc/worldview-ipc.cjs:219](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L219>)
 - [saveKnowledgeIndex.writeIndex](<knowledge-store.cjs.md#s-b342ffff622fda36>) — [electron/domains/knowledge/knowledge-store.cjs:87](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L87>)
 - [&lt;anonymous@156:76&gt;.&lt;anonymous@157:22&gt;](<knowledge-store.test.cjs.md#s-9421e865c0095163>) — [electron/domains/knowledge/knowledge-store.test.cjs:197](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L197>)
 - [&lt;anonymous@180:84&gt;.&lt;anonymous@181:17&gt;](<../../image-parser.test.cjs.md#s-04ceff0e6632aa1b>) — [electron/image-parser.test.cjs:320](<../../../../../../../electron/image-parser.test.cjs#L320>)
@@ -392,8 +392,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [fixture](<../../backend-identity.test.cjs.md#s-2a2eeb9f70975c0c>) — [electron/backend-identity.test.cjs:243](<../../../../../../../electron/backend-identity.test.cjs#L243>)
 - [&lt;anonymous@453:103&gt;.&lt;anonymous@454:11&gt;](<../../backend-identity.test.cjs.md#s-90ca171901a43834>) — [electron/backend-identity.test.cjs:457](<../../../../../../../electron/backend-identity.test.cjs#L457>)
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:628](<../../../../../../../electron/backend-identity.test.cjs#L628>)
-- [registerWorldViewIpc."knowledge-draft"](<../../core/ipc/worldview-ipc.cjs.md#s-1f620cda4e6ed88b>) — [electron/core/ipc/worldview-ipc.cjs:204](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L204>)
-- [registerWorldViewIpc."knowledge-apply"](<../../core/ipc/worldview-ipc.cjs.md#s-c9b171c923729df3>) — [electron/core/ipc/worldview-ipc.cjs:216](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L216>)
+- [registerWorldViewIpc."knowledge-draft"](<../../core/ipc/worldview-ipc.cjs.md#s-f4b74a06c58e7756>) — [electron/core/ipc/worldview-ipc.cjs:210](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L210>)
+- [registerWorldViewIpc."knowledge-apply"](<../../core/ipc/worldview-ipc.cjs.md#s-ab774a2f381ec339>) — [electron/core/ipc/worldview-ipc.cjs:222](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L222>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:205](<../../../../../../../electron/daily-price.test.cjs#L205>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<../../daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:274](<../../../../../../../electron/daily-price.test.cjs#L274>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<../../daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:321](<../../../../../../../electron/daily-price.test.cjs#L321>)
@@ -688,7 +688,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-preview"](<../../core/ipc/worldview-ipc.cjs.md#s-7c37110c234d10e8>) — [electron/core/ipc/worldview-ipc.cjs:225](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L225>)
+- [registerWorldViewIpc."knowledge-preview"](<../../core/ipc/worldview-ipc.cjs.md#s-878c0738810f6d20>) — [electron/core/ipc/worldview-ipc.cjs:231](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L231>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:225](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L225>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:242](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L242>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:246](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L246>)
@@ -801,7 +801,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [&lt;anonymous@357:94&gt;.&lt;anonymous@358:11&gt;](<../../backend-identity.test.cjs.md#s-7efbda7815859ecb>) — [electron/backend-identity.test.cjs:365](<../../../../../../../electron/backend-identity.test.cjs#L365>)
-- [registerWorldViewIpc."knowledge-note"](<../../core/ipc/worldview-ipc.cjs.md#s-2cf39a31713790e1>) — [electron/core/ipc/worldview-ipc.cjs:143](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L143>)
+- [registerWorldViewIpc."knowledge-note"](<../../core/ipc/worldview-ipc.cjs.md#s-f3b9d3148ea6c85e>) — [electron/core/ipc/worldview-ipc.cjs:149](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L149>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:457](<../../../../../../../electron/image-parser.test.cjs#L457>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:468](<../../../../../../../electron/image-parser.test.cjs#L468>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:478](<../../../../../../../electron/image-parser.test.cjs#L478>)
@@ -957,7 +957,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."price-symbol"](<../../core/ipc/worldview-ipc.cjs.md#s-2194d998b0de67f7>) — [electron/core/ipc/worldview-ipc.cjs:101](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L101>)
+- [registerWorldViewIpc."price-symbol"](<../../core/ipc/worldview-ipc.cjs.md#s-fc049d41d47f8539>) — [electron/core/ipc/worldview-ipc.cjs:107](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L107>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:212](<../../../../../../../electron/daily-price.test.cjs#L212>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:226](<../../../../../../../electron/daily-price.test.cjs#L226>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:229](<../../../../../../../electron/daily-price.test.cjs#L229>)

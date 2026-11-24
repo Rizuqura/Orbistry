@@ -52,7 +52,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Assigned Agents and jurisdiction](<agents.md>): 3 import sites; example [electron/ai/agents/entity-agent-access.cjs:4](<../../../electron/ai/agents/entity-agent-access.cjs#L4>).
-- [Electron composition and IPC security](<desktop.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:33](<../../../electron/core/ipc/worldview-ipc.cjs#L33>).
+- [Electron composition and IPC security](<desktop.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:39](<../../../electron/core/ipc/worldview-ipc.cjs#L39>).
 - [Built-in Engines and data adapters](<engines.md>): 1 import sites; example [electron/engines/definitions.cjs:3](<../../../electron/engines/definitions.cjs#L3>).
 
 ## Contracts

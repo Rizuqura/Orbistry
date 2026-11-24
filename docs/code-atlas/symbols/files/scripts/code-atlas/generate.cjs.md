@@ -211,7 +211,7 @@ Returns: { data: { schemaVersion: number; analyzer: { name: string; typescriptVe
 - [analyze](<analyze.cjs.md#s-50c93f94f5c6bf5b>) — [scripts/code-atlas/generate.cjs:110](<../../../../../../scripts/code-atlas/generate.cjs#L110>)
 - [appendPowerShell](<powershell.cjs.md#s-ebdb565846169f3a>) — [scripts/code-atlas/generate.cjs:111](<../../../../../../scripts/code-atlas/generate.cjs#L111>)
 - [discoverIpc](<ipc.cjs.md#s-c350b63746d45342>) — [scripts/code-atlas/generate.cjs:112](<../../../../../../scripts/code-atlas/generate.cjs#L112>)
-- [render](<render.cjs.md#s-43b33fd13be6d7f9>) — [scripts/code-atlas/generate.cjs:135](<../../../../../../scripts/code-atlas/generate.cjs#L135>)
+- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/generate.cjs:135](<../../../../../../scripts/code-atlas/generate.cjs#L135>)
 
 **Called by (statically resolved):**
 
@@ -376,7 +376,7 @@ Returns: void (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [existingArtifacts.visit](<generate.cjs.md#s-41d7adecf44416f5>) — [scripts/code-atlas/generate.cjs:166](<../../../../../../scripts/code-atlas/generate.cjs#L166>)
-- [portable](<catalog.cjs.md#s-eaf9bd3db901e033>) — [scripts/code-atlas/generate.cjs:168](<../../../../../../scripts/code-atlas/generate.cjs#L168>)
+- [portable](<catalog.cjs.md#s-337545479eca07c0>) — [scripts/code-atlas/generate.cjs:168](<../../../../../../scripts/code-atlas/generate.cjs#L168>)
 
 **Called by (statically resolved):**
 

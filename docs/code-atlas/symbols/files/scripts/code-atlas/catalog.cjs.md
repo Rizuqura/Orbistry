@@ -8,10 +8,10 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 
 - [scripts/code-atlas/catalog.cjs](<catalog.cjs.md#s-22b5449a26473c71>) (Module)
 - [MODULES](<catalog.cjs.md#s-8e32e0098d4ac13f>) (VariableDeclaration)
-- [MODULES.&lt;anonymous@149:7&gt;](<catalog.cjs.md#s-2d2c495c203ad21b>) (ArrowFunction)
-- [moduleFor](<catalog.cjs.md#s-2ebdbca349133d25>) (FunctionDeclaration)
-- [roleFor](<catalog.cjs.md#s-3823f18765a04090>) (FunctionDeclaration)
-- [portable](<catalog.cjs.md#s-eaf9bd3db901e033>) (FunctionDeclaration)
+- [MODULES.&lt;anonymous@155:7&gt;](<catalog.cjs.md#s-c1bc63e68ed91e86>) (ArrowFunction)
+- [moduleFor](<catalog.cjs.md#s-eee321adf7819f17>) (FunctionDeclaration)
+- [roleFor](<catalog.cjs.md#s-5f489f711c67456d>) (FunctionDeclaration)
+- [portable](<catalog.cjs.md#s-337545479eca07c0>) (FunctionDeclaration)
 
 <a id="s-22b5449a26473c71"></a>
 
@@ -63,17 +63,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- &#91; &#91; "portal-entities", "Entity UI", "Edits Entity metadata, source assignments and navigation.", "features/entities/", &#93;, &#91; "portal-knowledge", "Knowledge Cards and readers", "Pres — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:4](<../../../../../../scripts/code-atlas/catalog.cjs#L4>)
+- &#91; &#91; "worldview-domain", "WorldView domain aggregate", "Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inf — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:4](<../../../../../../scripts/code-atlas/catalog.cjs#L4>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2d2c495c203ad21b"></a>
+<a id="s-c1bc63e68ed91e86"></a>
 
-## MODULES.&lt;anonymous@149:7&gt;
+## MODULES.&lt;anonymous@155:7&gt;
 
-[scripts/code-atlas/catalog.cjs:149](<../../../../../../scripts/code-atlas/catalog.cjs#L149>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:155](<../../../../../../scripts/code-atlas/catalog.cjs#L155>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -102,11 +102,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2ebdbca349133d25"></a>
+<a id="s-eee321adf7819f17"></a>
 
 ## moduleFor
 
-[scripts/code-atlas/catalog.cjs:152](<../../../../../../scripts/code-atlas/catalog.cjs#L152>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:158](<../../../../../../scripts/code-atlas/catalog.cjs#L158>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Assigns one editorial owner using existing source paths; no source is moved or evaluated.
 
@@ -120,7 +120,7 @@ Lexical owner: [scripts/code-atlas/catalog.cjs](<catalog.cjs.md#s-22b5449a26473c
 | --- | --- | --- | --- |
 | file | any | compiler-inferred | required |
 
-Returns: "worldview" &#124; "agents" &#124; "knowledge" &#124; "vault" &#124; "engines" &#124; "identity" &#124; "portal-entities" &#124; "portal-knowledge" &#124; "portal-documents" &#124; "shared" &#124; "desktop" &#124; "connectors" &#124; "engine-registry" &#124; "tooling" &#124; "examples" &#124; "contracts" &#124; "portal-worldview" &#124; "portal-agents" &#124; "portal-chat" &#124; "portal-settings" &#124; "portal-shell" &#124; "providers" &#124; "ai-runtime" &#124; "configuration" (compiler-inferred). Implementation present.
+Returns: "worldview" &#124; "agents" &#124; "knowledge" &#124; "vault" &#124; "engines" &#124; "identity" &#124; "worldview-domain" &#124; "portal-entities" &#124; "portal-knowledge" &#124; "portal-documents" &#124; "shared" &#124; "desktop" &#124; "connectors" &#124; "engine-registry" &#124; "tooling" &#124; "examples" &#124; "contracts" &#124; "portal-worldview" &#124; "portal-agents" &#124; "portal-chat" &#124; "portal-settings" &#124; "portal-shell" &#124; "providers" &#124; "ai-runtime" &#124; "configuration" (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
@@ -131,27 +131,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [analyze](<analyze.cjs.md#s-50c93f94f5c6bf5b>) — [scripts/code-atlas/analyze.cjs:277](<../../../../../../scripts/code-atlas/analyze.cjs#L277>)
 - [appendPowerShell](<powershell.cjs.md#s-ebdb565846169f3a>) — [scripts/code-atlas/powershell.cjs:38](<../../../../../../scripts/code-atlas/powershell.cjs#L38>)
 
-Unresolved / external call sites: 38.
+Unresolved / external call sites: 39.
 
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:153](<../../../../../../scripts/code-atlas/catalog.cjs#L153>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:154](<../../../../../../scripts/code-atlas/catalog.cjs#L154>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:155](<../../../../../../scripts/code-atlas/catalog.cjs#L155>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:156](<../../../../../../scripts/code-atlas/catalog.cjs#L156>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:157](<../../../../../../scripts/code-atlas/catalog.cjs#L157>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:158](<../../../../../../scripts/code-atlas/catalog.cjs#L158>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:159](<../../../../../../scripts/code-atlas/catalog.cjs#L159>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:160](<../../../../../../scripts/code-atlas/catalog.cjs#L160>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:161](<../../../../../../scripts/code-atlas/catalog.cjs#L161>)
-- 30 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:162](<../../../../../../scripts/code-atlas/catalog.cjs#L162>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:163](<../../../../../../scripts/code-atlas/catalog.cjs#L163>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:164](<../../../../../../scripts/code-atlas/catalog.cjs#L164>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:165](<../../../../../../scripts/code-atlas/catalog.cjs#L165>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:167](<../../../../../../scripts/code-atlas/catalog.cjs#L167>)
+- 31 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3823f18765a04090"></a>
+<a id="s-5f489f711c67456d"></a>
 
 ## roleFor
 
-[scripts/code-atlas/catalog.cjs:231](<../../../../../../scripts/code-atlas/catalog.cjs#L231>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:238](<../../../../../../scripts/code-atlas/catalog.cjs#L238>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Classifies evidence sources without equating test association with executable coverage.
 
@@ -179,22 +179,22 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 6.
 
-- /\\.test\\.&#91;cm&#93;?&#91;jt&#93;sx?$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:232](<../../../../../../scripts/code-atlas/catalog.cjs#L232>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:233](<../../../../../../scripts/code-atlas/catalog.cjs#L233>)
-- /\\.d\\.&#91;cm&#93;?ts$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:234](<../../../../../../scripts/code-atlas/catalog.cjs#L234>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:234](<../../../../../../scripts/code-atlas/catalog.cjs#L234>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:236](<../../../../../../scripts/code-atlas/catalog.cjs#L236>)
-- /^(app&#124;components&#124;features&#124;electron)\\//.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:237](<../../../../../../scripts/code-atlas/catalog.cjs#L237>)
+- /\\.test\\.&#91;cm&#93;?&#91;jt&#93;sx?$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:239](<../../../../../../scripts/code-atlas/catalog.cjs#L239>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:240](<../../../../../../scripts/code-atlas/catalog.cjs#L240>)
+- /\\.d\\.&#91;cm&#93;?ts$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:241](<../../../../../../scripts/code-atlas/catalog.cjs#L241>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:241](<../../../../../../scripts/code-atlas/catalog.cjs#L241>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:243](<../../../../../../scripts/code-atlas/catalog.cjs#L243>)
+- /^(app&#124;components&#124;features&#124;electron)\\//.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:244](<../../../../../../scripts/code-atlas/catalog.cjs#L244>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-eaf9bd3db901e033"></a>
+<a id="s-337545479eca07c0"></a>
 
 ## portable
 
-[scripts/code-atlas/catalog.cjs:242](<../../../../../../scripts/code-atlas/catalog.cjs#L242>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:249](<../../../../../../scripts/code-atlas/catalog.cjs#L249>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Normalizes generated paths so output is byte-identical across supported operating systems.
 
@@ -222,8 +222,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- file.split(path.sep).join — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:243](<../../../../../../scripts/code-atlas/catalog.cjs#L243>)
-- file.split — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:243](<../../../../../../scripts/code-atlas/catalog.cjs#L243>)
+- file.split(path.sep).join — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:250](<../../../../../../scripts/code-atlas/catalog.cjs#L250>)
+- file.split — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:250](<../../../../../../scripts/code-atlas/catalog.cjs#L250>)
 
 **Related tests / acceptance harnesses:**
 

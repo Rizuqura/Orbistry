@@ -3,6 +3,12 @@ const path = require("node:path");
 // Editorial ownership describes today's implementation; it does not impose a new directory layout.
 const MODULES = [
   [
+    "worldview-domain",
+    "WorldView domain aggregate",
+    "Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference.",
+    "electron/domains/worldview/",
+  ],
+  [
     "portal-entities",
     "Entity UI",
     "Edits Entity metadata, source assignments and navigation.",
@@ -150,6 +156,7 @@ const MODULES = [
 
 /** Assigns one editorial owner using existing source paths; no source is moved or evaluated. */
 function moduleFor(file) {
+  if (file.startsWith("electron/domains/worldview/")) return "worldview-domain";
   if (file.startsWith("features/entities/")) return "portal-entities";
   if (file.startsWith("features/knowledge/")) return "portal-knowledge";
   if (file.startsWith("features/workspace/")) return "portal-documents";

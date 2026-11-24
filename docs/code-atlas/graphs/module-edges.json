@@ -2,6 +2,12 @@
   "scope": "literal-runtime-production-imports",
   "modules": [
     {
+      "id": "worldview-domain",
+      "name": "WorldView domain aggregate",
+      "purpose": "Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference.",
+      "owns": "electron/domains/worldview/"
+    },
+    {
       "id": "portal-entities",
       "name": "Entity UI",
       "purpose": "Edits Entity metadata, source assignments and navigation.",
@@ -604,26 +610,13 @@
     },
     {
       "from": "connectors",
-      "to": "shared",
+      "to": "worldview-domain",
       "sites": 1,
       "evidence": [
         {
           "file": "electron/domains/entity/connector-store.cjs",
-          "line": 7,
-          "target": "electron/core/persistence/json-store.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "connectors",
-      "to": "worldview",
-      "sites": 1,
-      "evidence": [
-        {
-          "file": "electron/domains/entity/connector-store.cjs",
-          "line": 11,
-          "target": "electron/domains/entity/worldview-store.cjs",
+          "line": 2,
+          "target": "electron/domains/worldview/repositories/legacy-connection-store.cjs",
           "deferred": false
         }
       ]
@@ -698,19 +691,6 @@
     },
     {
       "from": "desktop",
-      "to": "connectors",
-      "sites": 1,
-      "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 4,
-          "target": "electron/domains/entity/connector-store.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "desktop",
       "to": "engines",
       "sites": 7,
       "evidence": [
@@ -722,37 +702,37 @@
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 80,
+          "line": 86,
           "target": "electron/financial-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 83,
+          "line": 89,
           "target": "electron/financial-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 92,
+          "line": 98,
           "target": "electron/daily-price-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 104,
+          "line": 110,
           "target": "electron/daily-price-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 113,
+          "line": 119,
           "target": "electron/excel-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 129,
+          "line": 135,
           "target": "electron/excel-service.cjs",
           "deferred": true
         }
@@ -765,31 +745,31 @@
       "evidence": [
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 33,
+          "line": 39,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 52,
+          "line": 58,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 59,
+          "line": 65,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 66,
+          "line": 72,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 73,
+          "line": 79,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         }
@@ -880,6 +860,19 @@
           "file": "electron/core/ipc/worldview-ipc.cjs",
           "line": 2,
           "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "desktop",
+      "to": "worldview-domain",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 4,
+          "target": "electron/domains/worldview/index.cjs",
           "deferred": false
         }
       ]
@@ -1925,6 +1918,38 @@
           "file": "electron/domains/universe/vault-settings.cjs",
           "line": 9,
           "target": "electron/shared/validation.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview-domain",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/worldview/repositories/legacy-connection-store.cjs",
+          "line": 6,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview-domain",
+      "to": "worldview",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/domains/worldview/repositories/WorldViewRepository.cjs",
+          "line": 1,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/worldview/repositories/legacy-connection-store.cjs",
+          "line": 10,
+          "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": false
         }
       ]

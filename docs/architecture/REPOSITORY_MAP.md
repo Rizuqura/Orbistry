@@ -32,7 +32,8 @@ electron/
   core/security/             trusted-window IPC security
   core/persistence/          atomic JSON/text persistence and queues
   core/ipc/                  WorldView IPC registration
-  domains/entity/            Entity records, source associations and connectors
+  domains/entity/            Entity records/source associations; connector compatibility entry
+  domains/worldview/         WorldView/Connection models, service, repository and graph queries
   domains/universe/          Vault/settings/stations
   domains/knowledge/         applied index state, authorized sources, Identity inspector
   domains/indexing/          declaration parser and tag association host service

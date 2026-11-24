@@ -110,6 +110,7 @@ function selectCallEdges(data) {
     }
   }
   const priorities = [
+    "worldview-domain",
     "engine-registry",
     "identity",
     "agents",

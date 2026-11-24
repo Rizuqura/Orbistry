@@ -352,7 +352,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [loadConnectors](<../../domains/entity/connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/ai/agents/entity-jurisdiction.cjs:106](<../../../../../../../electron/ai/agents/entity-jurisdiction.cjs#L106>)
+- [loadConnectors](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/ai/agents/entity-jurisdiction.cjs:106](<../../../../../../../electron/ai/agents/entity-jurisdiction.cjs#L106>)
 - [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/entity-jurisdiction.cjs:108](<../../../../../../../electron/ai/agents/entity-jurisdiction.cjs#L108>)
 
 **Called by (statically resolved):**

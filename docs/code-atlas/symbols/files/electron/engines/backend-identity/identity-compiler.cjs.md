@@ -210,7 +210,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [readKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-c0c55e94f399d0ad>) — [electron/engines/backend-identity/identity-compiler.cjs:153](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L153>)
 - [inspectSource](<identity-compiler.cjs.md#s-93b9911298f38ef7>) — [electron/engines/backend-identity/identity-compiler.cjs:181](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L181>)
 - [discoverCapabilities](<capability-registry.cjs.md#s-98fed9e53769111a>) — [electron/engines/backend-identity/identity-compiler.cjs:219](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L219>)
-- [loadConnectors](<../../domains/entity/connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/engines/backend-identity/identity-compiler.cjs:220](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L220>)
+- [loadConnectors](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/engines/backend-identity/identity-compiler.cjs:220](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L220>)
 - [encodeConnections](<connector-encoder.cjs.md#s-4cb717248b131954>) — [electron/engines/backend-identity/identity-compiler.cjs:221](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L221>)
 
 **Called by (statically resolved):**

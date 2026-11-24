@@ -73,26 +73,26 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [loadConnectors](<connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/domains/entity/connector-store.test.cjs:56](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L56>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:61](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L61>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:63](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L63>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:67](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L67>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:74](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L74>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:82](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L82>)
-- [deleteConnector](<connector-store.cjs.md#s-023228a431672d6c>) — [electron/domains/entity/connector-store.test.cjs:88](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L88>)
-- [loadConnectors](<connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/domains/entity/connector-store.test.cjs:98](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L98>)
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:102](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L102>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:112](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L112>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:113](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L113>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:115](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L115>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:119](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L119>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:130](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L130>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:134](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L134>)
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:142](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L142>)
-- [loadConnectors](<connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/domains/entity/connector-store.test.cjs:162](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L162>)
-- [deleteConnector](<connector-store.cjs.md#s-023228a431672d6c>) — [electron/domains/entity/connector-store.test.cjs:180](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L180>)
-- [deleteConnector](<connector-store.cjs.md#s-023228a431672d6c>) — [electron/domains/entity/connector-store.test.cjs:181](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L181>)
-- [loadConnectors](<connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/domains/entity/connector-store.test.cjs:182](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L182>)
+- [loadConnectors](<../worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/domains/entity/connector-store.test.cjs:56](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L56>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:61](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L61>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:63](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L63>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:67](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L67>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:74](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L74>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:82](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L82>)
+- [deleteConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-2ec984f7c5214ed3>) — [electron/domains/entity/connector-store.test.cjs:88](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L88>)
+- [loadConnectors](<../worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/domains/entity/connector-store.test.cjs:98](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L98>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:102](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L102>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:112](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L112>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:113](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L113>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:115](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L115>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:119](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L119>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:130](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L130>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:134](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L134>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:142](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L142>)
+- [loadConnectors](<../worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/domains/entity/connector-store.test.cjs:162](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L162>)
+- [deleteConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-2ec984f7c5214ed3>) — [electron/domains/entity/connector-store.test.cjs:180](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L180>)
+- [deleteConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-2ec984f7c5214ed3>) — [electron/domains/entity/connector-store.test.cjs:181](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L181>)
+- [loadConnectors](<../worldview/repositories/legacy-connection-store.cjs.md#s-2937b562dd1ce8b4>) — [electron/domains/entity/connector-store.test.cjs:182](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L182>)
 
 **Called by (statically resolved):**
 
@@ -134,7 +134,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [createConnector](<connector-store.cjs.md#s-68abee44921e90c9>) — [electron/domains/entity/connector-store.test.cjs:53](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L53>)
+- [createConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/domains/entity/connector-store.test.cjs:53](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L53>)
 
 **Called by (statically resolved):**
 
@@ -237,7 +237,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [updateConnector](<connector-store.cjs.md#s-5920f12a905870a0>) — [electron/domains/entity/connector-store.test.cjs:149](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L149>)
+- [updateConnector](<../worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/domains/entity/connector-store.test.cjs:149](<../../../../../../../electron/domains/entity/connector-store.test.cjs#L149>)
 
 **Called by (statically resolved):**
 

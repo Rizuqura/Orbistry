@@ -1,496 +1,539 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="1045" viewBox="0 0 1160 1045" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1192" height="1077" viewBox="0 0 1192 1077" role="img" aria-labelledby="title desc">
 <title id="title">Orbistry module dependency graph</title>
 <desc id="desc">Directed adjacency matrix. Row imports column. Cells count literal runtime production-file import sites; tests, tooling and type-only edges are excluded.</desc>
 <rect width="100%" height="100%" fill="#0e1a23"/>
 <g font-family="sans-serif" font-size="12" fill="#dce8ed">
 <text x="20" y="28" font-size="19">Module dependencies: row imports column</text>
 <text x="20" y="51">Numbers count literal runtime import sites. Open a label for module documentation.</text>
-<a href="../modules/portal-entities.md"><text x="268" y="341" text-anchor="end">Entity UI</text><text transform="translate(300 308) rotate(-55)">Entity UI</text></a>
-<rect x="280" y="320" width="30" height="30" fill="#263442"><title>Entity UI imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="320" width="30" height="30" fill="#225b70"><title>Entity UI imports WorldView and Knowledge Cards (Portal): 5 sites</title></rect>
-<text x="391" y="340" text-anchor="middle">5</text>
-<rect x="408" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Connectors: 0 sites</title></rect>
-<rect x="696" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="320" width="30" height="30" fill="#162734"><title>Entity UI imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-knowledge.md"><text x="268" y="373" text-anchor="end">Knowledge Cards and readers</text><text transform="translate(332 308) rotate(-55)">Knowledge Cards and readers</text></a>
-<rect x="280" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="352" width="30" height="30" fill="#263442"><title>Knowledge Cards and readers imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="352" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Portal shell: 3 sites</title></rect>
-<text x="359" y="372" text-anchor="middle">3</text>
-<rect x="376" y="352" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports WorldView and Knowledge Cards (Portal): 10 sites</title></rect>
-<text x="391" y="372" text-anchor="middle">10</text>
-<rect x="408" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="352" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Conversation presentation: 1 sites</title></rect>
-<text x="455" y="372" text-anchor="middle">1</text>
-<rect x="472" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="352" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Document workspace: 2 sites</title></rect>
-<text x="519" y="372" text-anchor="middle">2</text>
-<rect x="536" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Connectors: 0 sites</title></rect>
-<rect x="696" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="352" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-shell.md"><text x="268" y="405" text-anchor="end">Portal shell</text><text transform="translate(364 308) rotate(-55)">Portal shell</text></a>
-<rect x="280" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="384" width="30" height="30" fill="#263442"><title>Portal shell imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="384" width="30" height="30" fill="#225b70"><title>Portal shell imports WorldView and Knowledge Cards (Portal): 1 sites</title></rect>
-<text x="391" y="404" text-anchor="middle">1</text>
-<rect x="408" y="384" width="30" height="30" fill="#225b70"><title>Portal shell imports Agent workspace and construction (Portal): 2 sites</title></rect>
-<text x="423" y="404" text-anchor="middle">2</text>
-<rect x="440" y="384" width="30" height="30" fill="#225b70"><title>Portal shell imports Conversation presentation: 3 sites</title></rect>
-<text x="455" y="404" text-anchor="middle">3</text>
-<rect x="472" y="384" width="30" height="30" fill="#225b70"><title>Portal shell imports Settings and Engine list: 1 sites</title></rect>
+<a href="../modules/worldview-domain.md"><text x="268" y="341" text-anchor="end">WorldView domain aggregate</text><text transform="translate(300 308) rotate(-55)">WorldView domain aggregate</text></a>
+<rect x="280" y="320" width="30" height="30" fill="#263442"><title>WorldView domain aggregate imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="320" width="30" height="30" fill="#225b70"><title>WorldView domain aggregate imports WorldView persistence and IPC: 2 sites</title></rect>
+<text x="615" y="340" text-anchor="middle">2</text>
+<rect x="632" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Connectors: 0 sites</title></rect>
+<rect x="728" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="320" width="30" height="30" fill="#162734"><title>WorldView domain aggregate imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="320" width="30" height="30" fill="#225b70"><title>WorldView domain aggregate imports Shared deterministic infrastructure: 1 sites</title></rect>
+<text x="935" y="340" text-anchor="middle">1</text>
+<a href="../modules/portal-entities.md"><text x="268" y="373" text-anchor="end">Entity UI</text><text transform="translate(332 308) rotate(-55)">Entity UI</text></a>
+<rect x="280" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="352" width="30" height="30" fill="#263442"><title>Entity UI imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="352" width="30" height="30" fill="#225b70"><title>Entity UI imports WorldView and Knowledge Cards (Portal): 5 sites</title></rect>
+<text x="423" y="372" text-anchor="middle">5</text>
+<rect x="440" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Connectors: 0 sites</title></rect>
+<rect x="728" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="352" width="30" height="30" fill="#162734"><title>Entity UI imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-knowledge.md"><text x="268" y="405" text-anchor="end">Knowledge Cards and readers</text><text transform="translate(364 308) rotate(-55)">Knowledge Cards and readers</text></a>
+<rect x="280" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="384" width="30" height="30" fill="#263442"><title>Knowledge Cards and readers imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="384" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Portal shell: 3 sites</title></rect>
+<text x="391" y="404" text-anchor="middle">3</text>
+<rect x="408" y="384" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports WorldView and Knowledge Cards (Portal): 10 sites</title></rect>
+<text x="423" y="404" text-anchor="middle">10</text>
+<rect x="440" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="384" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Conversation presentation: 1 sites</title></rect>
 <text x="487" y="404" text-anchor="middle">1</text>
-<rect x="504" y="384" width="30" height="30" fill="#225b70"><title>Portal shell imports Document workspace: 2 sites</title></rect>
-<text x="519" y="404" text-anchor="middle">2</text>
-<rect x="536" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Connectors: 0 sites</title></rect>
-<rect x="696" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="384" width="30" height="30" fill="#162734"><title>Portal shell imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-worldview.md"><text x="268" y="437" text-anchor="end">WorldView and Knowledge Cards (Portal)</text><text transform="translate(396 308) rotate(-55)">WorldView and Knowledge Cards (Portal)</text></a>
-<rect x="280" y="416" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Entity UI: 4 sites</title></rect>
-<text x="295" y="436" text-anchor="middle">4</text>
-<rect x="312" y="416" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Knowledge Cards and readers: 2 sites</title></rect>
-<text x="327" y="436" text-anchor="middle">2</text>
-<rect x="344" y="416" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Portal shell: 1 sites</title></rect>
-<text x="359" y="436" text-anchor="middle">1</text>
-<rect x="376" y="416" width="30" height="30" fill="#263442"><title>WorldView and Knowledge Cards (Portal) imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="416" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Agent workspace and construction (Portal): 1 sites</title></rect>
+<rect x="504" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="384" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Document workspace: 2 sites</title></rect>
+<text x="551" y="404" text-anchor="middle">2</text>
+<rect x="568" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Connectors: 0 sites</title></rect>
+<rect x="728" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="384" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-shell.md"><text x="268" y="437" text-anchor="end">Portal shell</text><text transform="translate(396 308) rotate(-55)">Portal shell</text></a>
+<rect x="280" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="416" width="30" height="30" fill="#263442"><title>Portal shell imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="416" width="30" height="30" fill="#225b70"><title>Portal shell imports WorldView and Knowledge Cards (Portal): 1 sites</title></rect>
 <text x="423" y="436" text-anchor="middle">1</text>
-<rect x="440" y="416" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Conversation presentation: 1 sites</title></rect>
-<text x="455" y="436" text-anchor="middle">1</text>
-<rect x="472" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Connectors: 0 sites</title></rect>
-<rect x="696" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="416" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-agents.md"><text x="268" y="469" text-anchor="end">Agent workspace and construction (Portal)</text><text transform="translate(428 308) rotate(-55)">Agent workspace and construction (Portal)</text></a>
-<rect x="280" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="448" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports Portal shell: 3 sites</title></rect>
-<text x="359" y="468" text-anchor="middle">3</text>
-<rect x="376" y="448" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports WorldView and Knowledge Cards (Portal): 1 sites</title></rect>
+<rect x="440" y="416" width="30" height="30" fill="#225b70"><title>Portal shell imports Agent workspace and construction (Portal): 2 sites</title></rect>
+<text x="455" y="436" text-anchor="middle">2</text>
+<rect x="472" y="416" width="30" height="30" fill="#225b70"><title>Portal shell imports Conversation presentation: 3 sites</title></rect>
+<text x="487" y="436" text-anchor="middle">3</text>
+<rect x="504" y="416" width="30" height="30" fill="#225b70"><title>Portal shell imports Settings and Engine list: 1 sites</title></rect>
+<text x="519" y="436" text-anchor="middle">1</text>
+<rect x="536" y="416" width="30" height="30" fill="#225b70"><title>Portal shell imports Document workspace: 2 sites</title></rect>
+<text x="551" y="436" text-anchor="middle">2</text>
+<rect x="568" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Connectors: 0 sites</title></rect>
+<rect x="728" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="416" width="30" height="30" fill="#162734"><title>Portal shell imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-worldview.md"><text x="268" y="469" text-anchor="end">WorldView and Knowledge Cards (Portal)</text><text transform="translate(428 308) rotate(-55)">WorldView and Knowledge Cards (Portal)</text></a>
+<rect x="280" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="448" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Entity UI: 4 sites</title></rect>
+<text x="327" y="468" text-anchor="middle">4</text>
+<rect x="344" y="448" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Knowledge Cards and readers: 2 sites</title></rect>
+<text x="359" y="468" text-anchor="middle">2</text>
+<rect x="376" y="448" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Portal shell: 1 sites</title></rect>
 <text x="391" y="468" text-anchor="middle">1</text>
-<rect x="408" y="448" width="30" height="30" fill="#263442"><title>Agent workspace and construction (Portal) imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="448" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports Conversation presentation: 6 sites</title></rect>
-<text x="455" y="468" text-anchor="middle">6</text>
-<rect x="472" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Connectors: 0 sites</title></rect>
-<rect x="696" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="448" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-chat.md"><text x="268" y="501" text-anchor="end">Conversation presentation</text><text transform="translate(460 308) rotate(-55)">Conversation presentation</text></a>
-<rect x="280" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="480" width="30" height="30" fill="#225b70"><title>Conversation presentation imports Portal shell: 1 sites</title></rect>
-<text x="359" y="500" text-anchor="middle">1</text>
-<rect x="376" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="480" width="30" height="30" fill="#225b70"><title>Conversation presentation imports Agent workspace and construction (Portal): 2 sites</title></rect>
-<text x="423" y="500" text-anchor="middle">2</text>
-<rect x="440" y="480" width="30" height="30" fill="#263442"><title>Conversation presentation imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Connectors: 0 sites</title></rect>
-<rect x="696" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="480" width="30" height="30" fill="#162734"><title>Conversation presentation imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/portal-settings.md"><text x="268" y="533" text-anchor="end">Settings and Engine list</text><text transform="translate(492 308) rotate(-55)">Settings and Engine list</text></a>
-<rect x="280" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="512" width="30" height="30" fill="#263442"><title>Settings and Engine list imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Connectors: 0 sites</title></rect>
-<rect x="696" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="512" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="512" width="30" height="30" fill="#225b70"><title>Settings and Engine list imports Shared deterministic infrastructure: 1 sites</title></rect>
-<text x="903" y="532" text-anchor="middle">1</text>
-<a href="../modules/portal-documents.md"><text x="268" y="565" text-anchor="end">Document workspace</text><text transform="translate(524 308) rotate(-55)">Document workspace</text></a>
-<rect x="280" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="544" width="30" height="30" fill="#225b70"><title>Document workspace imports Knowledge Cards and readers: 1 sites</title></rect>
-<text x="327" y="564" text-anchor="middle">1</text>
-<rect x="344" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="544" width="30" height="30" fill="#263442"><title>Document workspace imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Connectors: 0 sites</title></rect>
-<rect x="696" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="544" width="30" height="30" fill="#162734"><title>Document workspace imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/desktop.md"><text x="268" y="597" text-anchor="end">Electron composition and IPC security</text><text transform="translate(556 308) rotate(-55)">Electron composition and IPC security</text></a>
-<rect x="280" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="576" width="30" height="30" fill="#263442"><title>Electron composition and IPC security imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports WorldView persistence and IPC: 1 sites</title></rect>
-<text x="583" y="596" text-anchor="middle">1</text>
-<rect x="600" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Vault and stations: 4 sites</title></rect>
-<text x="615" y="596" text-anchor="middle">4</text>
-<rect x="632" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Knowledge indexing and source access: 2 sites</title></rect>
-<text x="647" y="596" text-anchor="middle">2</text>
-<rect x="664" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Connectors: 1 sites</title></rect>
-<text x="679" y="596" text-anchor="middle">1</text>
-<rect x="696" y="576" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Backend Identity Engine: 5 sites</title></rect>
-<text x="743" y="596" text-anchor="middle">5</text>
-<rect x="760" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Built-in Engines and data adapters: 7 sites</title></rect>
-<text x="775" y="596" text-anchor="middle">7</text>
-<rect x="792" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Assigned Agents and jurisdiction: 1 sites</title></rect>
-<text x="807" y="596" text-anchor="middle">1</text>
-<rect x="824" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Model-provider adapters: 1 sites</title></rect>
-<text x="839" y="596" text-anchor="middle">1</text>
-<rect x="856" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Retained AI runtime: 8 sites</title></rect>
-<text x="871" y="596" text-anchor="middle">8</text>
-<rect x="888" y="576" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Shared deterministic infrastructure: 1 sites</title></rect>
-<text x="903" y="596" text-anchor="middle">1</text>
-<a href="../modules/worldview.md"><text x="268" y="629" text-anchor="end">WorldView persistence and IPC</text><text transform="translate(588 308) rotate(-55)">WorldView persistence and IPC</text></a>
-<rect x="280" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="608" width="30" height="30" fill="#263442"><title>WorldView persistence and IPC imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="608" width="30" height="30" fill="#225b70"><title>WorldView persistence and IPC imports Vault and stations: 1 sites</title></rect>
+<rect x="408" y="448" width="30" height="30" fill="#263442"><title>WorldView and Knowledge Cards (Portal) imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="448" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Agent workspace and construction (Portal): 1 sites</title></rect>
+<text x="455" y="468" text-anchor="middle">1</text>
+<rect x="472" y="448" width="30" height="30" fill="#225b70"><title>WorldView and Knowledge Cards (Portal) imports Conversation presentation: 1 sites</title></rect>
+<text x="487" y="468" text-anchor="middle">1</text>
+<rect x="504" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Connectors: 0 sites</title></rect>
+<rect x="728" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="448" width="30" height="30" fill="#162734"><title>WorldView and Knowledge Cards (Portal) imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-agents.md"><text x="268" y="501" text-anchor="end">Agent workspace and construction (Portal)</text><text transform="translate(460 308) rotate(-55)">Agent workspace and construction (Portal)</text></a>
+<rect x="280" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="480" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports Portal shell: 3 sites</title></rect>
+<text x="391" y="500" text-anchor="middle">3</text>
+<rect x="408" y="480" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports WorldView and Knowledge Cards (Portal): 1 sites</title></rect>
+<text x="423" y="500" text-anchor="middle">1</text>
+<rect x="440" y="480" width="30" height="30" fill="#263442"><title>Agent workspace and construction (Portal) imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="480" width="30" height="30" fill="#225b70"><title>Agent workspace and construction (Portal) imports Conversation presentation: 6 sites</title></rect>
+<text x="487" y="500" text-anchor="middle">6</text>
+<rect x="504" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Connectors: 0 sites</title></rect>
+<rect x="728" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="480" width="30" height="30" fill="#162734"><title>Agent workspace and construction (Portal) imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-chat.md"><text x="268" y="533" text-anchor="end">Conversation presentation</text><text transform="translate(492 308) rotate(-55)">Conversation presentation</text></a>
+<rect x="280" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="512" width="30" height="30" fill="#225b70"><title>Conversation presentation imports Portal shell: 1 sites</title></rect>
+<text x="391" y="532" text-anchor="middle">1</text>
+<rect x="408" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="512" width="30" height="30" fill="#225b70"><title>Conversation presentation imports Agent workspace and construction (Portal): 2 sites</title></rect>
+<text x="455" y="532" text-anchor="middle">2</text>
+<rect x="472" y="512" width="30" height="30" fill="#263442"><title>Conversation presentation imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Connectors: 0 sites</title></rect>
+<rect x="728" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="512" width="30" height="30" fill="#162734"><title>Conversation presentation imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/portal-settings.md"><text x="268" y="565" text-anchor="end">Settings and Engine list</text><text transform="translate(524 308) rotate(-55)">Settings and Engine list</text></a>
+<rect x="280" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="544" width="30" height="30" fill="#263442"><title>Settings and Engine list imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Connectors: 0 sites</title></rect>
+<rect x="728" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="544" width="30" height="30" fill="#162734"><title>Settings and Engine list imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="544" width="30" height="30" fill="#225b70"><title>Settings and Engine list imports Shared deterministic infrastructure: 1 sites</title></rect>
+<text x="935" y="564" text-anchor="middle">1</text>
+<a href="../modules/portal-documents.md"><text x="268" y="597" text-anchor="end">Document workspace</text><text transform="translate(556 308) rotate(-55)">Document workspace</text></a>
+<rect x="280" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="576" width="30" height="30" fill="#225b70"><title>Document workspace imports Knowledge Cards and readers: 1 sites</title></rect>
+<text x="359" y="596" text-anchor="middle">1</text>
+<rect x="376" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="576" width="30" height="30" fill="#263442"><title>Document workspace imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Connectors: 0 sites</title></rect>
+<rect x="728" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="576" width="30" height="30" fill="#162734"><title>Document workspace imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/desktop.md"><text x="268" y="629" text-anchor="end">Electron composition and IPC security</text><text transform="translate(588 308) rotate(-55)">Electron composition and IPC security</text></a>
+<rect x="280" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports WorldView domain aggregate: 1 sites</title></rect>
+<text x="295" y="628" text-anchor="middle">1</text>
+<rect x="312" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="608" width="30" height="30" fill="#263442"><title>Electron composition and IPC security imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports WorldView persistence and IPC: 1 sites</title></rect>
 <text x="615" y="628" text-anchor="middle">1</text>
-<rect x="632" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Connectors: 0 sites</title></rect>
-<rect x="696" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="608" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="608" width="30" height="30" fill="#225b70"><title>WorldView persistence and IPC imports Shared deterministic infrastructure: 1 sites</title></rect>
-<text x="903" y="628" text-anchor="middle">1</text>
-<a href="../modules/vault.md"><text x="268" y="661" text-anchor="end">Vault and stations</text><text transform="translate(620 308) rotate(-55)">Vault and stations</text></a>
-<rect x="280" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="640" width="30" height="30" fill="#225b70"><title>Vault and stations imports Electron composition and IPC security: 1 sites</title></rect>
-<text x="551" y="660" text-anchor="middle">1</text>
-<rect x="568" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="640" width="30" height="30" fill="#263442"><title>Vault and stations imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Connectors: 0 sites</title></rect>
-<rect x="696" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="640" width="30" height="30" fill="#162734"><title>Vault and stations imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="640" width="30" height="30" fill="#225b70"><title>Vault and stations imports Shared deterministic infrastructure: 2 sites</title></rect>
-<text x="903" y="660" text-anchor="middle">2</text>
-<a href="../modules/knowledge.md"><text x="268" y="693" text-anchor="end">Knowledge indexing and source access</text><text transform="translate(652 308) rotate(-55)">Knowledge indexing and source access</text></a>
-<rect x="280" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="672" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports WorldView persistence and IPC: 3 sites</title></rect>
-<text x="583" y="692" text-anchor="middle">3</text>
-<rect x="600" y="672" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Vault and stations: 1 sites</title></rect>
-<text x="615" y="692" text-anchor="middle">1</text>
-<rect x="632" y="672" width="30" height="30" fill="#263442"><title>Knowledge indexing and source access imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Connectors: 0 sites</title></rect>
-<rect x="696" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="672" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Built-in Engines and data adapters: 7 sites</title></rect>
-<text x="775" y="692" text-anchor="middle">7</text>
-<rect x="792" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="672" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="672" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Shared deterministic infrastructure: 3 sites</title></rect>
-<text x="903" y="692" text-anchor="middle">3</text>
-<a href="../modules/connectors.md"><text x="268" y="725" text-anchor="end">Connectors</text><text transform="translate(684 308) rotate(-55)">Connectors</text></a>
-<rect x="280" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="704" width="30" height="30" fill="#162734"><title>Connectors imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="704" width="30" height="30" fill="#225b70"><title>Connectors imports WorldView persistence and IPC: 1 sites</title></rect>
-<text x="583" y="724" text-anchor="middle">1</text>
-<rect x="600" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="704" width="30" height="30" fill="#263442"><title>Connectors imports Connectors: 0 sites</title></rect>
-<rect x="696" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="704" width="30" height="30" fill="#162734"><title>Connectors imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="704" width="30" height="30" fill="#225b70"><title>Connectors imports Shared deterministic infrastructure: 1 sites</title></rect>
-<text x="903" y="724" text-anchor="middle">1</text>
-<a href="../modules/engine-registry.md"><text x="268" y="757" text-anchor="end">Engine package registry</text><text transform="translate(716 308) rotate(-55)">Engine package registry</text></a>
-<rect x="280" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="736" width="30" height="30" fill="#225b70"><title>Engine package registry imports WorldView persistence and IPC: 5 sites</title></rect>
-<text x="583" y="756" text-anchor="middle">5</text>
-<rect x="600" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Connectors: 0 sites</title></rect>
-<rect x="696" y="736" width="30" height="30" fill="#263442"><title>Engine package registry imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="736" width="30" height="30" fill="#225b70"><title>Engine package registry imports Built-in Engines and data adapters: 1 sites</title></rect>
-<text x="775" y="756" text-anchor="middle">1</text>
-<rect x="792" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="736" width="30" height="30" fill="#162734"><title>Engine package registry imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="736" width="30" height="30" fill="#225b70"><title>Engine package registry imports Shared deterministic infrastructure: 4 sites</title></rect>
-<text x="903" y="756" text-anchor="middle">4</text>
-<a href="../modules/identity.md"><text x="268" y="789" text-anchor="end">Backend Identity Engine</text><text transform="translate(748 308) rotate(-55)">Backend Identity Engine</text></a>
-<rect x="280" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports WorldView persistence and IPC: 2 sites</title></rect>
-<text x="583" y="788" text-anchor="middle">2</text>
-<rect x="600" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Vault and stations: 1 sites</title></rect>
-<text x="615" y="788" text-anchor="middle">1</text>
-<rect x="632" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Knowledge indexing and source access: 1 sites</title></rect>
-<text x="647" y="788" text-anchor="middle">1</text>
-<rect x="664" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Connectors: 1 sites</title></rect>
-<text x="679" y="788" text-anchor="middle">1</text>
-<rect x="696" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="768" width="30" height="30" fill="#263442"><title>Backend Identity Engine imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Built-in Engines and data adapters: 5 sites</title></rect>
-<text x="775" y="788" text-anchor="middle">5</text>
-<rect x="792" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="768" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="768" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Shared deterministic infrastructure: 3 sites</title></rect>
-<text x="903" y="788" text-anchor="middle">3</text>
-<a href="../modules/engines.md"><text x="268" y="821" text-anchor="end">Built-in Engines and data adapters</text><text transform="translate(780 308) rotate(-55)">Built-in Engines and data adapters</text></a>
-<rect x="280" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="800" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Vault and stations: 3 sites</title></rect>
-<text x="615" y="820" text-anchor="middle">3</text>
-<rect x="632" y="800" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Knowledge indexing and source access: 6 sites</title></rect>
-<text x="647" y="820" text-anchor="middle">6</text>
-<rect x="664" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Connectors: 0 sites</title></rect>
-<rect x="696" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="800" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Backend Identity Engine: 1 sites</title></rect>
-<text x="743" y="820" text-anchor="middle">1</text>
-<rect x="760" y="800" width="30" height="30" fill="#263442"><title>Built-in Engines and data adapters imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="800" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="800" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Shared deterministic infrastructure: 4 sites</title></rect>
-<text x="903" y="820" text-anchor="middle">4</text>
-<a href="../modules/agents.md"><text x="268" y="853" text-anchor="end">Assigned Agents and jurisdiction</text><text transform="translate(812 308) rotate(-55)">Assigned Agents and jurisdiction</text></a>
-<rect x="280" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="832" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports WorldView persistence and IPC: 1 sites</title></rect>
-<text x="583" y="852" text-anchor="middle">1</text>
-<rect x="600" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="832" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Connectors: 1 sites</title></rect>
-<text x="679" y="852" text-anchor="middle">1</text>
-<rect x="696" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="832" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Backend Identity Engine: 3 sites</title></rect>
-<text x="743" y="852" text-anchor="middle">3</text>
-<rect x="760" y="832" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Built-in Engines and data adapters: 1 sites</title></rect>
+<rect x="632" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Vault and stations: 4 sites</title></rect>
+<text x="647" y="628" text-anchor="middle">4</text>
+<rect x="664" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Knowledge indexing and source access: 2 sites</title></rect>
+<text x="679" y="628" text-anchor="middle">2</text>
+<rect x="696" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Connectors: 0 sites</title></rect>
+<rect x="728" y="608" width="30" height="30" fill="#162734"><title>Electron composition and IPC security imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Backend Identity Engine: 5 sites</title></rect>
+<text x="775" y="628" text-anchor="middle">5</text>
+<rect x="792" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Built-in Engines and data adapters: 7 sites</title></rect>
+<text x="807" y="628" text-anchor="middle">7</text>
+<rect x="824" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Assigned Agents and jurisdiction: 1 sites</title></rect>
+<text x="839" y="628" text-anchor="middle">1</text>
+<rect x="856" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Model-provider adapters: 1 sites</title></rect>
+<text x="871" y="628" text-anchor="middle">1</text>
+<rect x="888" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Retained AI runtime: 8 sites</title></rect>
+<text x="903" y="628" text-anchor="middle">8</text>
+<rect x="920" y="608" width="30" height="30" fill="#225b70"><title>Electron composition and IPC security imports Shared deterministic infrastructure: 1 sites</title></rect>
+<text x="935" y="628" text-anchor="middle">1</text>
+<a href="../modules/worldview.md"><text x="268" y="661" text-anchor="end">WorldView persistence and IPC</text><text transform="translate(620 308) rotate(-55)">WorldView persistence and IPC</text></a>
+<rect x="280" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="640" width="30" height="30" fill="#263442"><title>WorldView persistence and IPC imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="640" width="30" height="30" fill="#225b70"><title>WorldView persistence and IPC imports Vault and stations: 1 sites</title></rect>
+<text x="647" y="660" text-anchor="middle">1</text>
+<rect x="664" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Connectors: 0 sites</title></rect>
+<rect x="728" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="640" width="30" height="30" fill="#162734"><title>WorldView persistence and IPC imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="640" width="30" height="30" fill="#225b70"><title>WorldView persistence and IPC imports Shared deterministic infrastructure: 1 sites</title></rect>
+<text x="935" y="660" text-anchor="middle">1</text>
+<a href="../modules/vault.md"><text x="268" y="693" text-anchor="end">Vault and stations</text><text transform="translate(652 308) rotate(-55)">Vault and stations</text></a>
+<rect x="280" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="672" width="30" height="30" fill="#225b70"><title>Vault and stations imports Electron composition and IPC security: 1 sites</title></rect>
+<text x="583" y="692" text-anchor="middle">1</text>
+<rect x="600" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="672" width="30" height="30" fill="#263442"><title>Vault and stations imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Connectors: 0 sites</title></rect>
+<rect x="728" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="672" width="30" height="30" fill="#162734"><title>Vault and stations imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="672" width="30" height="30" fill="#225b70"><title>Vault and stations imports Shared deterministic infrastructure: 2 sites</title></rect>
+<text x="935" y="692" text-anchor="middle">2</text>
+<a href="../modules/knowledge.md"><text x="268" y="725" text-anchor="end">Knowledge indexing and source access</text><text transform="translate(684 308) rotate(-55)">Knowledge indexing and source access</text></a>
+<rect x="280" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="704" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports WorldView persistence and IPC: 3 sites</title></rect>
+<text x="615" y="724" text-anchor="middle">3</text>
+<rect x="632" y="704" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Vault and stations: 1 sites</title></rect>
+<text x="647" y="724" text-anchor="middle">1</text>
+<rect x="664" y="704" width="30" height="30" fill="#263442"><title>Knowledge indexing and source access imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Connectors: 0 sites</title></rect>
+<rect x="728" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="704" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Built-in Engines and data adapters: 7 sites</title></rect>
+<text x="807" y="724" text-anchor="middle">7</text>
+<rect x="824" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="704" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="704" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Shared deterministic infrastructure: 3 sites</title></rect>
+<text x="935" y="724" text-anchor="middle">3</text>
+<a href="../modules/connectors.md"><text x="268" y="757" text-anchor="end">Connectors</text><text transform="translate(716 308) rotate(-55)">Connectors</text></a>
+<rect x="280" y="736" width="30" height="30" fill="#225b70"><title>Connectors imports WorldView domain aggregate: 1 sites</title></rect>
+<text x="295" y="756" text-anchor="middle">1</text>
+<rect x="312" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="736" width="30" height="30" fill="#162734"><title>Connectors imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="736" width="30" height="30" fill="#162734"><title>Connectors imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="736" width="30" height="30" fill="#263442"><title>Connectors imports Connectors: 0 sites</title></rect>
+<rect x="728" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="736" width="30" height="30" fill="#162734"><title>Connectors imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/engine-registry.md"><text x="268" y="789" text-anchor="end">Engine package registry</text><text transform="translate(748 308) rotate(-55)">Engine package registry</text></a>
+<rect x="280" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="768" width="30" height="30" fill="#225b70"><title>Engine package registry imports WorldView persistence and IPC: 5 sites</title></rect>
+<text x="615" y="788" text-anchor="middle">5</text>
+<rect x="632" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Connectors: 0 sites</title></rect>
+<rect x="728" y="768" width="30" height="30" fill="#263442"><title>Engine package registry imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="768" width="30" height="30" fill="#225b70"><title>Engine package registry imports Built-in Engines and data adapters: 1 sites</title></rect>
+<text x="807" y="788" text-anchor="middle">1</text>
+<rect x="824" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="768" width="30" height="30" fill="#162734"><title>Engine package registry imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="768" width="30" height="30" fill="#225b70"><title>Engine package registry imports Shared deterministic infrastructure: 4 sites</title></rect>
+<text x="935" y="788" text-anchor="middle">4</text>
+<a href="../modules/identity.md"><text x="268" y="821" text-anchor="end">Backend Identity Engine</text><text transform="translate(780 308) rotate(-55)">Backend Identity Engine</text></a>
+<rect x="280" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports WorldView persistence and IPC: 2 sites</title></rect>
+<text x="615" y="820" text-anchor="middle">2</text>
+<rect x="632" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Vault and stations: 1 sites</title></rect>
+<text x="647" y="820" text-anchor="middle">1</text>
+<rect x="664" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Knowledge indexing and source access: 1 sites</title></rect>
+<text x="679" y="820" text-anchor="middle">1</text>
+<rect x="696" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Connectors: 1 sites</title></rect>
+<text x="711" y="820" text-anchor="middle">1</text>
+<rect x="728" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="800" width="30" height="30" fill="#263442"><title>Backend Identity Engine imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Built-in Engines and data adapters: 5 sites</title></rect>
+<text x="807" y="820" text-anchor="middle">5</text>
+<rect x="824" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="800" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="800" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Shared deterministic infrastructure: 3 sites</title></rect>
+<text x="935" y="820" text-anchor="middle">3</text>
+<a href="../modules/engines.md"><text x="268" y="853" text-anchor="end">Built-in Engines and data adapters</text><text transform="translate(812 308) rotate(-55)">Built-in Engines and data adapters</text></a>
+<rect x="280" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="832" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Vault and stations: 3 sites</title></rect>
+<text x="647" y="852" text-anchor="middle">3</text>
+<rect x="664" y="832" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Knowledge indexing and source access: 6 sites</title></rect>
+<text x="679" y="852" text-anchor="middle">6</text>
+<rect x="696" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Connectors: 0 sites</title></rect>
+<rect x="728" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="832" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Backend Identity Engine: 1 sites</title></rect>
 <text x="775" y="852" text-anchor="middle">1</text>
-<rect x="792" y="832" width="30" height="30" fill="#263442"><title>Assigned Agents and jurisdiction imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="832" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Retained AI runtime: 34 sites</title></rect>
-<text x="871" y="852" text-anchor="middle">34</text>
-<rect x="888" y="832" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/providers.md"><text x="268" y="885" text-anchor="end">Model-provider adapters</text><text transform="translate(844 308) rotate(-55)">Model-provider adapters</text></a>
-<rect x="280" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Connectors: 0 sites</title></rect>
-<rect x="696" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="864" width="30" height="30" fill="#225b70"><title>Model-provider adapters imports Assigned Agents and jurisdiction: 2 sites</title></rect>
-<text x="807" y="884" text-anchor="middle">2</text>
-<rect x="824" y="864" width="30" height="30" fill="#263442"><title>Model-provider adapters imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="864" width="30" height="30" fill="#225b70"><title>Model-provider adapters imports Retained AI runtime: 14 sites</title></rect>
-<text x="871" y="884" text-anchor="middle">14</text>
-<rect x="888" y="864" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Shared deterministic infrastructure: 0 sites</title></rect>
-<a href="../modules/ai-runtime.md"><text x="268" y="917" text-anchor="end">Retained AI runtime</text><text transform="translate(876 308) rotate(-55)">Retained AI runtime</text></a>
-<rect x="280" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Vault and stations: 2 sites</title></rect>
-<text x="615" y="916" text-anchor="middle">2</text>
-<rect x="632" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Connectors: 0 sites</title></rect>
-<rect x="696" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Engine package registry: 1 sites</title></rect>
-<text x="711" y="916" text-anchor="middle">1</text>
-<rect x="728" y="896" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Built-in Engines and data adapters: 2 sites</title></rect>
-<text x="775" y="916" text-anchor="middle">2</text>
-<rect x="792" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Assigned Agents and jurisdiction: 9 sites</title></rect>
-<text x="807" y="916" text-anchor="middle">9</text>
-<rect x="824" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Model-provider adapters: 4 sites</title></rect>
-<text x="839" y="916" text-anchor="middle">4</text>
-<rect x="856" y="896" width="30" height="30" fill="#263442"><title>Retained AI runtime imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="896" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Shared deterministic infrastructure: 5 sites</title></rect>
-<text x="903" y="916" text-anchor="middle">5</text>
-<a href="../modules/shared.md"><text x="268" y="949" text-anchor="end">Shared deterministic infrastructure</text><text transform="translate(908 308) rotate(-55)">Shared deterministic infrastructure</text></a>
-<rect x="280" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Entity UI: 0 sites</title></rect>
-<rect x="312" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Knowledge Cards and readers: 0 sites</title></rect>
-<rect x="344" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Portal shell: 0 sites</title></rect>
-<rect x="376" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
-<rect x="408" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Agent workspace and construction (Portal): 0 sites</title></rect>
-<rect x="440" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Conversation presentation: 0 sites</title></rect>
-<rect x="472" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Settings and Engine list: 0 sites</title></rect>
-<rect x="504" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Document workspace: 0 sites</title></rect>
-<rect x="536" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Electron composition and IPC security: 0 sites</title></rect>
-<rect x="568" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports WorldView persistence and IPC: 0 sites</title></rect>
-<rect x="600" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Vault and stations: 0 sites</title></rect>
-<rect x="632" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Knowledge indexing and source access: 0 sites</title></rect>
-<rect x="664" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Connectors: 0 sites</title></rect>
-<rect x="696" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Engine package registry: 0 sites</title></rect>
-<rect x="728" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="760" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Built-in Engines and data adapters: 0 sites</title></rect>
-<rect x="792" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Assigned Agents and jurisdiction: 0 sites</title></rect>
-<rect x="824" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Model-provider adapters: 0 sites</title></rect>
-<rect x="856" y="928" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Retained AI runtime: 0 sites</title></rect>
-<rect x="888" y="928" width="30" height="30" fill="#263442"><title>Shared deterministic infrastructure imports Shared deterministic infrastructure: 0 sites</title></rect>
-<text x="20" y="1012">Self-imports within a module are omitted. This graph describes syntax, not runtime reachability or permission.</text></g></svg>
+<rect x="792" y="832" width="30" height="30" fill="#263442"><title>Built-in Engines and data adapters imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="832" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="832" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Shared deterministic infrastructure: 4 sites</title></rect>
+<text x="935" y="852" text-anchor="middle">4</text>
+<a href="../modules/agents.md"><text x="268" y="885" text-anchor="end">Assigned Agents and jurisdiction</text><text transform="translate(844 308) rotate(-55)">Assigned Agents and jurisdiction</text></a>
+<rect x="280" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="864" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports WorldView persistence and IPC: 1 sites</title></rect>
+<text x="615" y="884" text-anchor="middle">1</text>
+<rect x="632" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="864" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Connectors: 1 sites</title></rect>
+<text x="711" y="884" text-anchor="middle">1</text>
+<rect x="728" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="864" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Backend Identity Engine: 3 sites</title></rect>
+<text x="775" y="884" text-anchor="middle">3</text>
+<rect x="792" y="864" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Built-in Engines and data adapters: 1 sites</title></rect>
+<text x="807" y="884" text-anchor="middle">1</text>
+<rect x="824" y="864" width="30" height="30" fill="#263442"><title>Assigned Agents and jurisdiction imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="864" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Retained AI runtime: 34 sites</title></rect>
+<text x="903" y="884" text-anchor="middle">34</text>
+<rect x="920" y="864" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/providers.md"><text x="268" y="917" text-anchor="end">Model-provider adapters</text><text transform="translate(876 308) rotate(-55)">Model-provider adapters</text></a>
+<rect x="280" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Connectors: 0 sites</title></rect>
+<rect x="728" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="896" width="30" height="30" fill="#225b70"><title>Model-provider adapters imports Assigned Agents and jurisdiction: 2 sites</title></rect>
+<text x="839" y="916" text-anchor="middle">2</text>
+<rect x="856" y="896" width="30" height="30" fill="#263442"><title>Model-provider adapters imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="896" width="30" height="30" fill="#225b70"><title>Model-provider adapters imports Retained AI runtime: 14 sites</title></rect>
+<text x="903" y="916" text-anchor="middle">14</text>
+<rect x="920" y="896" width="30" height="30" fill="#162734"><title>Model-provider adapters imports Shared deterministic infrastructure: 0 sites</title></rect>
+<a href="../modules/ai-runtime.md"><text x="268" y="949" text-anchor="end">Retained AI runtime</text><text transform="translate(908 308) rotate(-55)">Retained AI runtime</text></a>
+<rect x="280" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Vault and stations: 2 sites</title></rect>
+<text x="647" y="948" text-anchor="middle">2</text>
+<rect x="664" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Connectors: 0 sites</title></rect>
+<rect x="728" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Engine package registry: 1 sites</title></rect>
+<text x="743" y="948" text-anchor="middle">1</text>
+<rect x="760" y="928" width="30" height="30" fill="#162734"><title>Retained AI runtime imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Built-in Engines and data adapters: 2 sites</title></rect>
+<text x="807" y="948" text-anchor="middle">2</text>
+<rect x="824" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Assigned Agents and jurisdiction: 9 sites</title></rect>
+<text x="839" y="948" text-anchor="middle">9</text>
+<rect x="856" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Model-provider adapters: 4 sites</title></rect>
+<text x="871" y="948" text-anchor="middle">4</text>
+<rect x="888" y="928" width="30" height="30" fill="#263442"><title>Retained AI runtime imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="928" width="30" height="30" fill="#225b70"><title>Retained AI runtime imports Shared deterministic infrastructure: 5 sites</title></rect>
+<text x="935" y="948" text-anchor="middle">5</text>
+<a href="../modules/shared.md"><text x="268" y="981" text-anchor="end">Shared deterministic infrastructure</text><text transform="translate(940 308) rotate(-55)">Shared deterministic infrastructure</text></a>
+<rect x="280" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports WorldView domain aggregate: 0 sites</title></rect>
+<rect x="312" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Entity UI: 0 sites</title></rect>
+<rect x="344" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Knowledge Cards and readers: 0 sites</title></rect>
+<rect x="376" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Portal shell: 0 sites</title></rect>
+<rect x="408" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports WorldView and Knowledge Cards (Portal): 0 sites</title></rect>
+<rect x="440" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Agent workspace and construction (Portal): 0 sites</title></rect>
+<rect x="472" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Conversation presentation: 0 sites</title></rect>
+<rect x="504" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Settings and Engine list: 0 sites</title></rect>
+<rect x="536" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Document workspace: 0 sites</title></rect>
+<rect x="568" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Electron composition and IPC security: 0 sites</title></rect>
+<rect x="600" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports WorldView persistence and IPC: 0 sites</title></rect>
+<rect x="632" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Vault and stations: 0 sites</title></rect>
+<rect x="664" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Connectors: 0 sites</title></rect>
+<rect x="728" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Backend Identity Engine: 0 sites</title></rect>
+<rect x="792" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Built-in Engines and data adapters: 0 sites</title></rect>
+<rect x="824" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Assigned Agents and jurisdiction: 0 sites</title></rect>
+<rect x="856" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Model-provider adapters: 0 sites</title></rect>
+<rect x="888" y="960" width="30" height="30" fill="#162734"><title>Shared deterministic infrastructure imports Retained AI runtime: 0 sites</title></rect>
+<rect x="920" y="960" width="30" height="30" fill="#263442"><title>Shared deterministic infrastructure imports Shared deterministic infrastructure: 0 sites</title></rect>
+<text x="20" y="1044">Self-imports within a module are omitted. This graph describes syntax, not runtime reachability or permission.</text></g></svg>

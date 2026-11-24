@@ -168,7 +168,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-7a750648f4dc0bed>) — [electron/core/ipc/worldview-ipc.cjs:228](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L228>)
+- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-2eb6776fa3b302a8>) — [electron/core/ipc/worldview-ipc.cjs:234](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L234>)
 - [previewKnowledgeSource](<knowledge-store.cjs.md#s-5b3b21e330d3d260>) — [electron/domains/knowledge/knowledge-store.cjs:124](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L124>)
 - [previewKnowledgeSource.previewSource](<knowledge-store.cjs.md#s-99313261c10e747c>) — [electron/domains/knowledge/knowledge-store.cjs:132](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L132>)
 - [saveKnowledgeNote.saveSourceNote](<knowledge-store.cjs.md#s-1654fd018e79f10a>) — [electron/domains/knowledge/knowledge-store.cjs:142](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L142>)

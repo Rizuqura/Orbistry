@@ -6,7 +6,7 @@ Composes backend services, creates isolated windows and exposes the narrow deskt
 
 Owns: Electron entry, preload, security, launch and window modules. This ownership is editorial; source locations and import edges below are generated facts.
 
-14 source files; 322 callable declarations; 0 contract declarations.
+14 source files; 323 callable declarations; 0 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -31,14 +31,14 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [Assigned Agents and jurisdiction](<agents.md>): 1 import sites; example [electron/main.cjs:36](<../../../electron/main.cjs#L36>).
 - [Retained AI runtime](<ai-runtime.md>): 8 import sites; example [electron/main.cjs:32](<../../../electron/main.cjs#L32>).
-- [Connectors](<connectors.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:4](<../../../electron/core/ipc/worldview-ipc.cjs#L4>).
 - [Built-in Engines and data adapters](<engines.md>): 7 import sites; example [electron/core/ipc/worldview-ipc.cjs:6](<../../../electron/core/ipc/worldview-ipc.cjs#L6>).
-- [Backend Identity Engine](<identity.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:33](<../../../electron/core/ipc/worldview-ipc.cjs#L33>).
+- [Backend Identity Engine](<identity.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:39](<../../../electron/core/ipc/worldview-ipc.cjs#L39>).
 - [Knowledge indexing and source access](<knowledge.md>): 2 import sites; example [electron/core/ipc/worldview-ipc.cjs:3](<../../../electron/core/ipc/worldview-ipc.cjs#L3>).
 - [Model-provider adapters](<providers.md>): 1 import sites; example [electron/main.cjs:37](<../../../electron/main.cjs#L37>).
 - [Shared deterministic infrastructure](<shared.md>): 1 import sites; example [electron/core/security/desktop-security.cjs:1](<../../../electron/core/security/desktop-security.cjs#L1>).
 - [Vault and stations](<vault.md>): 4 import sites; example [electron/core/ipc/worldview-ipc.cjs:10](<../../../electron/core/ipc/worldview-ipc.cjs#L10>).
 - [WorldView persistence and IPC](<worldview.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:2](<../../../electron/core/ipc/worldview-ipc.cjs#L2>).
+- [WorldView domain aggregate](<worldview-domain.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:4](<../../../electron/core/ipc/worldview-ipc.cjs#L4>).
 
 ## Depended on by
 
@@ -57,7 +57,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [electron/brain-errors.cjs:1](<../../../electron/brain-errors.cjs#L1>) | production | 4 |
 | [electron/chat-window.cjs:1](<../../../electron/chat-window.cjs#L1>) | production | 7 |
 | [electron/chat-window.test.cjs:1](<../../../electron/chat-window.test.cjs#L1>) | test | 13 |
-| [electron/core/ipc/worldview-ipc.cjs:1](<../../../electron/core/ipc/worldview-ipc.cjs#L1>) | production | 40 |
+| [electron/core/ipc/worldview-ipc.cjs:1](<../../../electron/core/ipc/worldview-ipc.cjs#L1>) | production | 41 |
 | [electron/core/ipc/worldview-ipc.test.cjs:1](<../../../electron/core/ipc/worldview-ipc.test.cjs#L1>) | test | 4 |
 | [electron/core/security/desktop-security.cjs:1](<../../../electron/core/security/desktop-security.cjs#L1>) | production | 5 |
 | [electron/core/security/desktop-security.test.cjs:1](<../../../electron/core/security/desktop-security.test.cjs#L1>) | test | 9 |

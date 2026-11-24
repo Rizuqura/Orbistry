@@ -28,11 +28,11 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Assigned Agents and jurisdiction](<agents.md>): 1 import sites; example [electron/ai/agents/entity-agents.cjs:44](<../../../electron/ai/agents/entity-agents.cjs#L44>).
-- [Connectors](<connectors.md>): 1 import sites; example [electron/domains/entity/connector-store.cjs:11](<../../../electron/domains/entity/connector-store.cjs#L11>).
 - [Electron composition and IPC security](<desktop.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:2](<../../../electron/core/ipc/worldview-ipc.cjs#L2>).
 - [Engine package registry](<engine-registry.md>): 5 import sites; example [electron/engines/registry/registry.cjs:309](<../../../electron/engines/registry/registry.cjs#L309>).
 - [Backend Identity Engine](<identity.md>): 2 import sites; example [electron/domains/knowledge/backend-identity-service.cjs:7](<../../../electron/domains/knowledge/backend-identity-service.cjs#L7>).
 - [Knowledge indexing and source access](<knowledge.md>): 3 import sites; example [electron/domains/indexing/tag-association-service.cjs:11](<../../../electron/domains/indexing/tag-association-service.cjs#L11>).
+- [WorldView domain aggregate](<worldview-domain.md>): 2 import sites; example [electron/domains/worldview/repositories/WorldViewRepository.cjs:1](<../../../electron/domains/worldview/repositories/WorldViewRepository.cjs#L1>).
 
 ## Contracts
 

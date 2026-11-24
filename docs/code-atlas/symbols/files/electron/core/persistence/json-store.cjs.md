@@ -208,8 +208,6 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [writeTextAtomic](<json-store.cjs.md#s-eaf1fb4e46036574>) — [electron/core/persistence/json-store.cjs:89](<../../../../../../../electron/core/persistence/json-store.cjs#L89>)
 - [writeTextAtomic](<json-store.cjs.md#s-eaf1fb4e46036574>) — [electron/core/persistence/json-store.cjs:108](<../../../../../../../electron/core/persistence/json-store.cjs#L108>)
 - [cachePath](<../../daily-price-service.cjs.md#s-8ce737fc5829b668>) — [electron/daily-price-service.cjs:20](<../../../../../../../electron/daily-price-service.cjs#L20>)
-- [connectorPath](<../../domains/entity/connector-store.cjs.md#s-2b79d024f1e5e30c>) — [electron/domains/entity/connector-store.cjs:38](<../../../../../../../electron/domains/entity/connector-store.cjs#L38>)
-- [connectorPath](<../../domains/entity/connector-store.cjs.md#s-2b79d024f1e5e30c>) — [electron/domains/entity/connector-store.cjs:42](<../../../../../../../electron/domains/entity/connector-store.cjs#L42>)
 - [indexDirectory](<../../domains/entity/worldview-store.cjs.md#s-2c0c5b6362339a67>) — [electron/domains/entity/worldview-store.cjs:73](<../../../../../../../electron/domains/entity/worldview-store.cjs#L73>)
 - [readRecord](<../../domains/entity/worldview-store.cjs.md#s-4cc38f17ede07256>) — [electron/domains/entity/worldview-store.cjs:154](<../../../../../../../electron/domains/entity/worldview-store.cjs#L154>)
 - [deleteWorldViewChip.deleteIndex](<../../domains/entity/worldview-store.cjs.md#s-e702e9b9791b8b87>) — [electron/domains/entity/worldview-store.cjs:400](<../../../../../../../electron/domains/entity/worldview-store.cjs#L400>)
@@ -217,6 +215,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [readOptionalText](<../../domains/indexing/tag-association-service.cjs.md#s-a79435e522fa47c3>) — [electron/domains/indexing/tag-association-service.cjs:47](<../../../../../../../electron/domains/indexing/tag-association-service.cjs#L47>)
 - [knowledgePath](<../../domains/knowledge/knowledge-source-access.cjs.md#s-a59b66a0a3d42c60>) — [electron/domains/knowledge/knowledge-source-access.cjs:16](<../../../../../../../electron/domains/knowledge/knowledge-source-access.cjs#L16>)
 - [knowledgePath](<../../domains/knowledge/knowledge-source-access.cjs.md#s-a59b66a0a3d42c60>) — [electron/domains/knowledge/knowledge-source-access.cjs:19](<../../../../../../../electron/domains/knowledge/knowledge-source-access.cjs#L19>)
+- [connectorPath](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-d166b7a4f9c51c75>) — [electron/domains/worldview/repositories/legacy-connection-store.cjs:22](<../../../../../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L22>)
+- [connectorPath](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-d166b7a4f9c51c75>) — [electron/domains/worldview/repositories/legacy-connection-store.cjs:26](<../../../../../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L26>)
 - [location](<../../engines/backend-identity/snapshot-store.cjs.md#s-d045ef361cdcece4>) — [electron/engines/backend-identity/snapshot-store.cjs:42](<../../../../../../../electron/engines/backend-identity/snapshot-store.cjs#L42>)
 - [EnginePackageRegistry.location](<../../engines/registry/registry.cjs.md#s-0a4c4c0b81b57b1a>) — [electron/engines/registry/registry.cjs:108](<../../../../../../../electron/engines/registry/registry.cjs#L108>)
 - [createFinancialService.get](<../../financial-service.cjs.md#s-370673d2451f52c8>) — [electron/financial-service.cjs:65](<../../../../../../../electron/financial-service.cjs#L65>)
@@ -517,8 +517,6 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [createConnector.writeRelationship](<../../domains/entity/connector-store.cjs.md#s-717e54eefd910ebd>) — [electron/domains/entity/connector-store.cjs:103](<../../../../../../../electron/domains/entity/connector-store.cjs#L103>)
-- [updateConnector.editRelationship](<../../domains/entity/connector-store.cjs.md#s-7f7caec55e96417a>) — [electron/domains/entity/connector-store.cjs:137](<../../../../../../../electron/domains/entity/connector-store.cjs#L137>)
 - [saveWorldViewChip.saveChipRecord](<../../domains/entity/worldview-store.cjs.md#s-39c70d397911a2cb>) — [electron/domains/entity/worldview-store.cjs:295](<../../../../../../../electron/domains/entity/worldview-store.cjs#L295>)
 - [assignWorldViewFiles.assignFiles](<../../domains/entity/worldview-store.cjs.md#s-514645164f44c531>) — [electron/domains/entity/worldview-store.cjs:361](<../../../../../../../electron/domains/entity/worldview-store.cjs#L361>)
 - [unassignWorldViewFile.unassignFile](<../../domains/entity/worldview-store.cjs.md#s-b577484bbb93df74>) — [electron/domains/entity/worldview-store.cjs:384](<../../../../../../../electron/domains/entity/worldview-store.cjs#L384>)
@@ -529,6 +527,8 @@ Returns: any (compiler-inferred). Implementation present.
 - [saveKnowledgeIndex.writeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-b342ffff622fda36>) — [electron/domains/knowledge/knowledge-store.cjs:105](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L105>)
 - [saveKnowledgeNote.saveSourceNote](<../../domains/knowledge/knowledge-store.cjs.md#s-1654fd018e79f10a>) — [electron/domains/knowledge/knowledge-store.cjs:158](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L158>)
 - [savePriceSymbol.writePriceSymbol](<../../domains/knowledge/knowledge-store.cjs.md#s-f9823235072108c5>) — [electron/domains/knowledge/knowledge-store.cjs:185](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L185>)
+- [createConnector.writeRelationship](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-46615bffd58cc088>) — [electron/domains/worldview/repositories/legacy-connection-store.cjs:87](<../../../../../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L87>)
+- [updateConnector.editRelationship](<../../domains/worldview/repositories/legacy-connection-store.cjs.md#s-cdb4ffc076e40381>) — [electron/domains/worldview/repositories/legacy-connection-store.cjs:121](<../../../../../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L121>)
 - [EnginePackageRegistry.execute](<../../engines/registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:647](<../../../../../../../electron/engines/registry/registry.cjs#L647>)
 - [signPackage](<../../engines/registry/signing.cjs.md#s-9317466d274715e3>) — [electron/engines/registry/signing.cjs:125](<../../../../../../../electron/engines/registry/signing.cjs#L125>)
 - [createImageParserService.saveCache](<../../image-parser-service.cjs.md#s-a0a8635c6101e0d6>) — [electron/image-parser-service.cjs:164](<../../../../../../../electron/image-parser-service.cjs#L164>)

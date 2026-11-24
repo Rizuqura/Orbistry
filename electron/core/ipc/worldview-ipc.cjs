@@ -1,7 +1,7 @@
 const path = require("node:path");
 const store = require("../../domains/entity/worldview-store.cjs");
 const knowledge = require("../../domains/knowledge/knowledge-store.cjs");
-const connectors = require("../../domains/entity/connector-store.cjs");
+const { WorldViewService } = require("../../domains/worldview/index.cjs");
 const tagSearch = require("../../domains/indexing/tag-association-service.cjs");
 const { imageParserService } = require("../../image-parser-service.cjs");
 const {
@@ -11,6 +11,12 @@ const {
 
 /** Registers narrow main-frame WorldView operations against the active Vault. Optional clipboard access copies only regenerated authorized Excel previews, never caller-supplied text. */
 function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
+  // trustedIpc has already authenticated the main window/frame/document. This
+  // host policy retains the existing active-Universe boundary, not a new role system.
+  const worldView = new WorldViewService({
+    authorization: async ({ root }) =>
+      path.resolve(root) === path.resolve(getRoot()),
+  });
   const operations = {
     /** Copies only freshly authorized inspector data; arbitrary caller-provided clipboard text is not accepted. */
     "identity-copy": async (root, input) => {
@@ -185,17 +191,17 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
     "tag-rebuild": (root) => tagSearch.rebuildWorldTagCache(root),
     /** Creates one independent relationship with unrestricted geometric endpoints. */
     "connector-create": (root, input) =>
-      connectors.createConnector(root, input.connector),
+      worldView.createConnection({ root }, input.connector),
     /** Updates semantic fields with the editor's expected prior connection snapshot. */
     "connector-update": (root, input) =>
-      connectors.updateConnector(
-        root,
+      worldView.updateConnection(
+        { root },
         input.connector,
         input.previousConnector,
       ),
     /** Removes a confirmed relationship by its stable identity. */
     "connector-delete": (root, input) =>
-      connectors.deleteConnector(root, input.id),
+      worldView.disconnect({ root }, input.id),
     /** Loads one entity's manual declaration draft and applied menus. */
     "knowledge-load": (root, input) =>
       knowledge.readKnowledgeIndex(root, input.id),
@@ -234,19 +240,11 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
       shell.showItemInFolder(resolved.absolutePath);
     },
     /** Loads saved indexes and current stat metadata. */
-    load: async (root) => {
-      const world = await store.loadWorldView(root);
-      const relationships = await connectors.loadConnectors(root);
-      return {
-        ...world,
-        connectors: relationships.connectors,
-        issues: [...world.issues, ...relationships.issues],
-      };
-    },
+    load: async (root) => worldView.load({ root }),
     /** Saves chip fields while retaining server-owned source associations. */
-    save: async (root, input) => store.saveWorldViewChip(root, input.chip),
+    save: async (root, input) => worldView.saveChip({ root }, input.chip),
     /** Deletes only an entity index. */
-    delete: async (root, input) => store.deleteWorldViewChip(root, input.id),
+    delete: async (root, input) => worldView.removeEntity({ root }, input.id),
     /** Lists Universe filenames and byte metadata without reading contents. */
     list: async (root, input) => listVaultMetadata(root, input),
     /** Registers confirmed file references. */

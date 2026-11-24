@@ -8,45 +8,46 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 
 - [electron/core/ipc/worldview-ipc.cjs](<worldview-ipc.cjs.md#s-ed467b4c0b047c43>) (Module)
 - [registerWorldViewIpc](<worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) (FunctionDeclaration)
-- [registerWorldViewIpc."identity-copy"](<worldview-ipc.cjs.md#s-68bfc2b69b1ac5dc>) (ArrowFunction)
-- [registerWorldViewIpc."identity-status"](<worldview-ipc.cjs.md#s-77424763308167af>) (ArrowFunction)
-- [registerWorldViewIpc."identity-generate"](<worldview-ipc.cjs.md#s-a0e3ba7d6f757f71>) (ArrowFunction)
-- [registerWorldViewIpc."identity-chunks"](<worldview-ipc.cjs.md#s-4e6cf54236725947>) (ArrowFunction)
-- [registerWorldViewIpc."identity-capabilities"](<worldview-ipc.cjs.md#s-77f25b226f3f527a>) (ArrowFunction)
-- [registerWorldViewIpc."price-history"](<worldview-ipc.cjs.md#s-62ad4564bc6a9a63>) (ArrowFunction)
-- [registerWorldViewIpc."finance-index"](<worldview-ipc.cjs.md#s-12989899bff2c3ee>) (ArrowFunction)
-- [registerWorldViewIpc."price-index"](<worldview-ipc.cjs.md#s-e31a87a4d833cbfd>) (ArrowFunction)
-- [registerWorldViewIpc."price-symbol"](<worldview-ipc.cjs.md#s-2194d998b0de67f7>) (ArrowFunction)
-- [registerWorldViewIpc."price-get"](<worldview-ipc.cjs.md#s-c26b7418c6ca4022>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-excel-copy"](<worldview-ipc.cjs.md#s-123b7f5359bf15d1>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-excel"](<worldview-ipc.cjs.md#s-5fb2ab088cf3e918>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-note"](<worldview-ipc.cjs.md#s-2cf39a31713790e1>) (ArrowFunction)
-- [registerWorldViewIpc."image-preview"](<worldview-ipc.cjs.md#s-69e6731016b4f6e4>) (ArrowFunction)
-- [registerWorldViewIpc."image-knowledge"](<worldview-ipc.cjs.md#s-9bcb3623fdf3f005>) (ArrowFunction)
-- [registerWorldViewIpc."image-parse"](<worldview-ipc.cjs.md#s-3fbcd574d6b9faa4>) (ArrowFunction)
-- [registerWorldViewIpc."image-status"](<worldview-ipc.cjs.md#s-5f5458a847ed7010>) (ArrowFunction)
-- [registerWorldViewIpc."image-cancel"](<worldview-ipc.cjs.md#s-046897cffe5aa4c6>) (ArrowFunction)
-- [registerWorldViewIpc."tag-search"](<worldview-ipc.cjs.md#s-d468225d31d7ebc8>) (ArrowFunction)
-- [registerWorldViewIpc."tag-index"](<worldview-ipc.cjs.md#s-83cb26fa02681bc6>) (ArrowFunction)
-- [registerWorldViewIpc."tag-associations"](<worldview-ipc.cjs.md#s-dbd8bde35f095bbe>) (ArrowFunction)
-- [registerWorldViewIpc."tag-rebuild"](<worldview-ipc.cjs.md#s-5ef5d79042dee1ac>) (ArrowFunction)
-- [registerWorldViewIpc."connector-create"](<worldview-ipc.cjs.md#s-0280476ff888fb64>) (ArrowFunction)
-- [registerWorldViewIpc."connector-update"](<worldview-ipc.cjs.md#s-cbf1d4375c683631>) (ArrowFunction)
-- [registerWorldViewIpc."connector-delete"](<worldview-ipc.cjs.md#s-43a269fd3db0953f>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-load"](<worldview-ipc.cjs.md#s-360eb3c34aa95f7f>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-draft"](<worldview-ipc.cjs.md#s-1f620cda4e6ed88b>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-validate"](<worldview-ipc.cjs.md#s-9ffa9de9ea70bb0c>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-apply"](<worldview-ipc.cjs.md#s-c9b171c923729df3>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-preview"](<worldview-ipc.cjs.md#s-7c37110c234d10e8>) (ArrowFunction)
-- [registerWorldViewIpc."knowledge-reveal"](<worldview-ipc.cjs.md#s-7a750648f4dc0bed>) (ArrowFunction)
-- [registerWorldViewIpc.load](<worldview-ipc.cjs.md#s-36a8f483419dd47e>) (ArrowFunction)
-- [registerWorldViewIpc.save](<worldview-ipc.cjs.md#s-3dee06b6a5e38149>) (ArrowFunction)
-- [registerWorldViewIpc.delete](<worldview-ipc.cjs.md#s-8ee24cb794c0b34c>) (ArrowFunction)
-- [registerWorldViewIpc.list](<worldview-ipc.cjs.md#s-de7c8466beef6c4f>) (ArrowFunction)
-- [registerWorldViewIpc.assign](<worldview-ipc.cjs.md#s-7e31517fb2a8baf1>) (ArrowFunction)
-- [registerWorldViewIpc.unassign](<worldview-ipc.cjs.md#s-79b436e52ba3a963>) (ArrowFunction)
-- [registerWorldViewIpc.reveal](<worldview-ipc.cjs.md#s-1622d3addef98376>) (ArrowFunction)
-- [registerWorldViewIpc.worldViewRequest](<worldview-ipc.cjs.md#s-bec0dd18ef7f33c3>) (FunctionExpression)
+- [registerWorldViewIpc.authorization](<worldview-ipc.cjs.md#s-fdfd03cccc3f29c2>) (ArrowFunction)
+- [registerWorldViewIpc."identity-copy"](<worldview-ipc.cjs.md#s-ce81b8dc279a0164>) (ArrowFunction)
+- [registerWorldViewIpc."identity-status"](<worldview-ipc.cjs.md#s-91073a3b342776be>) (ArrowFunction)
+- [registerWorldViewIpc."identity-generate"](<worldview-ipc.cjs.md#s-b117fe3e7fb48a53>) (ArrowFunction)
+- [registerWorldViewIpc."identity-chunks"](<worldview-ipc.cjs.md#s-a8b93ed20dd56505>) (ArrowFunction)
+- [registerWorldViewIpc."identity-capabilities"](<worldview-ipc.cjs.md#s-96a91b8083e8f5cf>) (ArrowFunction)
+- [registerWorldViewIpc."price-history"](<worldview-ipc.cjs.md#s-9fd66cf68647d9d1>) (ArrowFunction)
+- [registerWorldViewIpc."finance-index"](<worldview-ipc.cjs.md#s-bb277f82690073ea>) (ArrowFunction)
+- [registerWorldViewIpc."price-index"](<worldview-ipc.cjs.md#s-d05d0e19ed635e87>) (ArrowFunction)
+- [registerWorldViewIpc."price-symbol"](<worldview-ipc.cjs.md#s-fc049d41d47f8539>) (ArrowFunction)
+- [registerWorldViewIpc."price-get"](<worldview-ipc.cjs.md#s-95cd58df04b17ddc>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-excel-copy"](<worldview-ipc.cjs.md#s-33d92474a2df4a3e>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-excel"](<worldview-ipc.cjs.md#s-ba6780d5848e79a5>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-note"](<worldview-ipc.cjs.md#s-f3b9d3148ea6c85e>) (ArrowFunction)
+- [registerWorldViewIpc."image-preview"](<worldview-ipc.cjs.md#s-7aa75a6553499c2b>) (ArrowFunction)
+- [registerWorldViewIpc."image-knowledge"](<worldview-ipc.cjs.md#s-e1b5474c8cbc839a>) (ArrowFunction)
+- [registerWorldViewIpc."image-parse"](<worldview-ipc.cjs.md#s-de29dc464b2a30f0>) (ArrowFunction)
+- [registerWorldViewIpc."image-status"](<worldview-ipc.cjs.md#s-7ca64582e89f7c87>) (ArrowFunction)
+- [registerWorldViewIpc."image-cancel"](<worldview-ipc.cjs.md#s-73cff15055975e4a>) (ArrowFunction)
+- [registerWorldViewIpc."tag-search"](<worldview-ipc.cjs.md#s-476e366b072f6b6f>) (ArrowFunction)
+- [registerWorldViewIpc."tag-index"](<worldview-ipc.cjs.md#s-8267c941b8bbc223>) (ArrowFunction)
+- [registerWorldViewIpc."tag-associations"](<worldview-ipc.cjs.md#s-8853e4d6be0f55f6>) (ArrowFunction)
+- [registerWorldViewIpc."tag-rebuild"](<worldview-ipc.cjs.md#s-39e2ec3f3cd786ef>) (ArrowFunction)
+- [registerWorldViewIpc."connector-create"](<worldview-ipc.cjs.md#s-b7feba62d3302b2a>) (ArrowFunction)
+- [registerWorldViewIpc."connector-update"](<worldview-ipc.cjs.md#s-6b6e310c1447d5bd>) (ArrowFunction)
+- [registerWorldViewIpc."connector-delete"](<worldview-ipc.cjs.md#s-e12c238942743c0e>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-load"](<worldview-ipc.cjs.md#s-82fc932bef0407a2>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-draft"](<worldview-ipc.cjs.md#s-f4b74a06c58e7756>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-validate"](<worldview-ipc.cjs.md#s-b3fe92436355b812>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-apply"](<worldview-ipc.cjs.md#s-ab774a2f381ec339>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-preview"](<worldview-ipc.cjs.md#s-878c0738810f6d20>) (ArrowFunction)
+- [registerWorldViewIpc."knowledge-reveal"](<worldview-ipc.cjs.md#s-2eb6776fa3b302a8>) (ArrowFunction)
+- [registerWorldViewIpc.load](<worldview-ipc.cjs.md#s-6ecf811742c5d7a6>) (ArrowFunction)
+- [registerWorldViewIpc.save](<worldview-ipc.cjs.md#s-b279cb288a0992ae>) (ArrowFunction)
+- [registerWorldViewIpc.delete](<worldview-ipc.cjs.md#s-e414f3645116b854>) (ArrowFunction)
+- [registerWorldViewIpc.list](<worldview-ipc.cjs.md#s-34368b2a1d6f4aa4>) (ArrowFunction)
+- [registerWorldViewIpc.assign](<worldview-ipc.cjs.md#s-9e23a5c9109dac6d>) (ArrowFunction)
+- [registerWorldViewIpc.unassign](<worldview-ipc.cjs.md#s-ae670a6846bdf940>) (ArrowFunction)
+- [registerWorldViewIpc.reveal](<worldview-ipc.cjs.md#s-f94048d2803b418e>) (ArrowFunction)
+- [registerWorldViewIpc.worldViewRequest](<worldview-ipc.cjs.md#s-fb8f5f85c52badb3>) (FunctionExpression)
 
 <a id="s-ed467b4c0b047c43"></a>
 
@@ -79,6 +80,7 @@ Unresolved / external call sites: 7.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
 <a id="s-9fddfe3a6bc8df63"></a>
@@ -106,33 +108,74 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [WorldViewService.constructor](<../../domains/worldview/services/WorldViewService.cjs.md#s-1e8ff3665f91cbf2>) — [electron/core/ipc/worldview-ipc.cjs:16](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L16>)
 
 **Called by (statically resolved):**
 
 - [&lt;anonymous@9:83&gt;](<worldview-ipc.test.cjs.md#s-5112391469c89162>) — [electron/core/ipc/worldview-ipc.test.cjs:15](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L15>)
+- [&lt;anonymous@328:92&gt;](<../../domains/worldview/tests/worldview-domain.test.cjs.md#s-a99f92d221b5ce7c>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:331](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L331>)
 - [&lt;anonymous@158:84&gt;.&lt;anonymous@159:22&gt;](<../../excel-service.test.cjs.md#s-e13736c46b99f55b>) — [electron/excel-service.test.cjs:162](<../../../../../../../electron/excel-service.test.cjs#L162>)
 - [&lt;anonymous@204:89&gt;.&lt;anonymous@205:22&gt;](<../../excel-service.test.cjs.md#s-6ed995772b3bfb7d>) — [electron/excel-service.test.cjs:259](<../../../../../../../electron/excel-service.test.cjs#L259>)
 - [&lt;anonymous@163:22&gt;](<../../main.cjs.md#s-2232a6bfcb723f81>) — [electron/main.cjs:170](<../../../../../../../electron/main.cjs#L170>)
 
 Unresolved / external call sites: 2.
 
-- Object.entries — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:266](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L266>)
-- trustedIpc.handle — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:268](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L268>)
+- Object.entries — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:264](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L264>)
+- trustedIpc.handle — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:266](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L266>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:15](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L15>) — static-call-site; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:331](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L331>) — static-call-site; coverage not established.
 - [electron/excel-service.test.cjs:162](<../../../../../../../electron/excel-service.test.cjs#L162>) — static-call-site; coverage not established.
 - [electron/excel-service.test.cjs:259](<../../../../../../../electron/excel-service.test.cjs#L259>) — static-call-site; coverage not established.
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-68bfc2b69b1ac5dc"></a>
+<a id="s-fdfd03cccc3f29c2"></a>
+
+## registerWorldViewIpc.authorization
+
+[electron/core/ipc/worldview-ipc.cjs:17](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L17>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [registerWorldViewIpc](<worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| { root } | { root: any; } | compiler-inferred | required |
+
+Returns: unknown (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 3.
+
+- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:18](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L18>)
+- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:18](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L18>)
+- getRoot — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:18](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L18>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
+- [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
+
+<a id="s-ce81b8dc279a0164"></a>
 
 ## registerWorldViewIpc."identity-copy"
 
-[electron/core/ipc/worldview-ipc.cjs:16](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L16>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:22](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L22>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Copies only freshly authorized inspector data; arbitrary caller-provided clipboard text is not accepted.
 
@@ -149,7 +192,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:33](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L33>)
+- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:39](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L39>)
 
 **Called by (statically resolved):**
 
@@ -157,23 +200,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 6.
 
-- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:18](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L18>)
-- Object.hasOwn — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:20](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L20>)
-- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:31](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L31>)
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:33](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L33>)
-- clipboard.writeText — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:47](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L47>)
-- JSON.stringify — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:47](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L47>)
+- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:24](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L24>)
+- Object.hasOwn — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:26](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L26>)
+- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:37](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L37>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:39](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L39>)
+- clipboard.writeText — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:53](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L53>)
+- JSON.stringify — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:53](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L53>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-77424763308167af"></a>
+<a id="s-91073a3b342776be"></a>
 
 ## registerWorldViewIpc."identity-status"
 
-[electron/core/ipc/worldview-ipc.cjs:51](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L51>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:57](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L57>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reads a compact compiled identity and current source freshness for an existing entity.
 
@@ -190,7 +234,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:52](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L52>)
+- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:58](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L58>)
 
 **Called by (statically resolved):**
 
@@ -198,18 +242,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:52](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L52>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:58](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L58>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-a0e3ba7d6f757f71"></a>
+<a id="s-b117fe3e7fb48a53"></a>
 
 ## registerWorldViewIpc."identity-generate"
 
-[electron/core/ipc/worldview-ipc.cjs:58](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L58>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:64](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L64>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Manually compiles the applied entity index without executing declared tools.
 
@@ -226,7 +271,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:59](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L59>)
+- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:65](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L65>)
 
 **Called by (statically resolved):**
 
@@ -234,18 +279,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:59](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L59>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:65](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L65>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-4e6cf54236725947"></a>
+<a id="s-a8b93ed20dd56505"></a>
 
 ## registerWorldViewIpc."identity-chunks"
 
-[electron/core/ipc/worldview-ipc.cjs:65](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L65>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:71](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L71>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves one bounded, authorized knowledge page for the read-only inspector.
 
@@ -262,7 +308,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:66](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L66>)
+- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:72](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L72>)
 
 **Called by (statically resolved):**
 
@@ -270,18 +316,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:66](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L66>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:72](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L72>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-77f25b226f3f527a"></a>
+<a id="s-96a91b8083e8f5cf"></a>
 
 ## registerWorldViewIpc."identity-capabilities"
 
-[electron/core/ipc/worldview-ipc.cjs:72](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L72>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:78](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L78>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Discovers contracts without making provider calls or executing them.
 
@@ -298,7 +345,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:73](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L73>)
+- [inspect](<../../domains/knowledge/backend-identity-service.cjs.md#s-ce9a187a9463c465>) — [electron/core/ipc/worldview-ipc.cjs:79](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L79>)
 
 **Called by (statically resolved):**
 
@@ -306,18 +353,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:73](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L73>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:79](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L79>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-62ad4564bc6a9a63"></a>
+<a id="s-9fd66cf68647d9d1"></a>
 
 ## registerWorldViewIpc."price-history"
 
-[electron/core/ipc/worldview-ipc.cjs:79](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L79>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:85](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L85>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves range-specific history only for an authorized applied price source or saved entity ticker.
 
@@ -334,7 +382,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getAuthorizedHistory](<../../financial-service.cjs.md#s-468568001e3c5ce7>) — [electron/core/ipc/worldview-ipc.cjs:80](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L80>)
+- [getAuthorizedHistory](<../../financial-service.cjs.md#s-468568001e3c5ce7>) — [electron/core/ipc/worldview-ipc.cjs:86](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L86>)
 
 **Called by (statically resolved):**
 
@@ -342,18 +390,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:80](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L80>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:86](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L86>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-12989899bff2c3ee"></a>
+<a id="s-bb277f82690073ea"></a>
 
 ## registerWorldViewIpc."finance-index"
 
-[electron/core/ipc/worldview-ipc.cjs:82](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L82>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:88](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L88>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves an authorized financial dataset from the applied Knowledge Card index.
 
@@ -370,7 +419,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getIndexedFinance](<../../financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/core/ipc/worldview-ipc.cjs:83](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L83>)
+- [getIndexedFinance](<../../financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/core/ipc/worldview-ipc.cjs:89](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L89>)
 
 **Called by (statically resolved):**
 
@@ -378,18 +427,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:83](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L83>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:89](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L89>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-e31a87a4d833cbfd"></a>
+<a id="s-d05d0e19ed635e87"></a>
 
 ## registerWorldViewIpc."price-index"
 
-[electron/core/ipc/worldview-ipc.cjs:91](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L91>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:97](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L97>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves only the Yahoo source identified by an applied entity/menu/declaration triple.
 
@@ -406,7 +456,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getIndexedPrice](<../../daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/core/ipc/worldview-ipc.cjs:92](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L92>)
+- [getIndexedPrice](<../../daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/core/ipc/worldview-ipc.cjs:98](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L98>)
 
 **Called by (statically resolved):**
 
@@ -414,18 +464,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:92](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L92>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:98](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L98>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-2194d998b0de67f7"></a>
+<a id="s-fc049d41d47f8539"></a>
 
 ## registerWorldViewIpc."price-symbol"
 
-[electron/core/ipc/worldview-ipc.cjs:100](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L100>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:106](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L106>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Saves a revision-checked Yahoo symbol in this entity's existing Knowledge Card metadata.
 
@@ -442,7 +493,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [savePriceSymbol](<../../domains/knowledge/knowledge-store.cjs.md#s-7f44c4c9083f4688>) — [electron/core/ipc/worldview-ipc.cjs:101](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L101>)
+- [savePriceSymbol](<../../domains/knowledge/knowledge-store.cjs.md#s-7f44c4c9083f4688>) — [electron/core/ipc/worldview-ipc.cjs:107](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L107>)
 
 **Called by (statically resolved):**
 
@@ -454,13 +505,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-c26b7418c6ca4022"></a>
+<a id="s-95cd58df04b17ddc"></a>
 
 ## registerWorldViewIpc."price-get"
 
-[electron/core/ipc/worldview-ipc.cjs:103](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L103>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:109](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L109>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reads cached or fresh Yahoo prices for the currently saved entity ticker.
 
@@ -477,7 +529,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/core/ipc/worldview-ipc.cjs:104](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L104>)
+- [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/core/ipc/worldview-ipc.cjs:110](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L110>)
 
 **Called by (statically resolved):**
 
@@ -485,18 +537,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:104](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L104>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:110](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L110>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-123b7f5359bf15d1"></a>
+<a id="s-33d92474a2df4a3e"></a>
 
 ## registerWorldViewIpc."knowledge-excel-copy"
 
-[electron/core/ipc/worldview-ipc.cjs:110](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L110>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:116](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L116>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Copies a freshly authorized bounded worksheet preview through Electron without granting browser clipboard permissions.
 
@@ -521,21 +574,22 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 4.
 
-- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:111](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L111>)
-- require("../../excel-service.cjs").excelService.request — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:113](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L113>)
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:113](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L113>)
-- clipboard.writeText — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:124](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L124>)
+- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:117](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L117>)
+- require("../../excel-service.cjs").excelService.request — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:119](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L119>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:119](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L119>)
+- clipboard.writeText — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:130](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L130>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-5fb2ab088cf3e918"></a>
+<a id="s-ba6780d5848e79a5"></a>
 
 ## registerWorldViewIpc."knowledge-excel"
 
-[electron/core/ipc/worldview-ipc.cjs:128](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L128>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:134](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L134>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Pages or exports an authorized Excel source through the bounded native Engine.
 
@@ -560,19 +614,20 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- require("../../excel-service.cjs").excelService.request — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:129](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L129>)
-- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:129](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L129>)
+- require("../../excel-service.cjs").excelService.request — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:135](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L135>)
+- require — module-loader; [electron/core/ipc/worldview-ipc.cjs:135](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L135>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-2cf39a31713790e1"></a>
+<a id="s-f3b9d3148ea6c85e"></a>
 
 ## registerWorldViewIpc."knowledge-note"
 
-[electron/core/ipc/worldview-ipc.cjs:142](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L142>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:148](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L148>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Saves human-authored source notes within the existing entity-scoped Knowledge Card companion.
 
@@ -589,7 +644,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [saveKnowledgeNote](<../../domains/knowledge/knowledge-store.cjs.md#s-34066ab7f012366d>) — [electron/core/ipc/worldview-ipc.cjs:143](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L143>)
+- [saveKnowledgeNote](<../../domains/knowledge/knowledge-store.cjs.md#s-34066ab7f012366d>) — [electron/core/ipc/worldview-ipc.cjs:149](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L149>)
 
 **Called by (statically resolved):**
 
@@ -601,13 +656,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-69e6731016b4f6e4"></a>
+<a id="s-7aa75a6553499c2b"></a>
 
 ## registerWorldViewIpc."image-preview"
 
-[electron/core/ipc/worldview-ipc.cjs:151](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L151>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:157](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L157>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Loads an authorized, bounded original slide independently of image parsing.
 
@@ -632,18 +688,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- imageParserService.preview — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:152](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L152>)
+- imageParserService.preview — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:158](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L158>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-9bcb3623fdf3f005"></a>
+<a id="s-e1b5474c8cbc839a"></a>
 
 ## registerWorldViewIpc."image-knowledge"
 
-[electron/core/ipc/worldview-ipc.cjs:159](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L159>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:165](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L165>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves valid structured cached knowledge without processing or UI dependencies.
 
@@ -668,18 +725,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- imageParserService.getKnowledge — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:160](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L160>)
+- imageParserService.getKnowledge — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:166](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L166>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-3fbcd574d6b9faa4"></a>
+<a id="s-de29dc464b2a30f0"></a>
 
 ## registerWorldViewIpc."image-parse"
 
-[electron/core/ipc/worldview-ipc.cjs:167](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L167>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:173](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L173>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Starts explicitly requested background processing for this applied entity carousel.
 
@@ -704,18 +762,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- imageParserService.start — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:168](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L168>)
+- imageParserService.start — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:174](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L174>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-5f5458a847ed7010"></a>
+<a id="s-7ca64582e89f7c87"></a>
 
 ## registerWorldViewIpc."image-status"
 
-[electron/core/ipc/worldview-ipc.cjs:172](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L172>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:178](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L178>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reports the entity group's background processing state.
 
@@ -740,18 +799,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- imageParserService.status — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:173](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L173>)
+- imageParserService.status — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:179](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L179>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-046897cffe5aa4c6"></a>
+<a id="s-73cff15055975e4a"></a>
 
 ## registerWorldViewIpc."image-cancel"
 
-[electron/core/ipc/worldview-ipc.cjs:175](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L175>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:181](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L181>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Cancels the authorized group's current local processing job.
 
@@ -776,18 +836,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- imageParserService.cancel — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:176](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L176>)
+- imageParserService.cancel — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:182](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L182>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-d468225d31d7ebc8"></a>
+<a id="s-476e366b072f6b6f"></a>
 
 ## registerWorldViewIpc."tag-search"
 
-[electron/core/ipc/worldview-ipc.cjs:178](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L178>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:184](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L184>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Searches assigned persisted tags and direct entity names in this Universe's current World.
 
@@ -804,7 +865,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [searchWorldTags](<../../domains/indexing/tag-association-service.cjs.md#s-84e1d1f7ed2f2bae>) — [electron/core/ipc/worldview-ipc.cjs:178](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L178>)
+- [searchWorldTags](<../../domains/indexing/tag-association-service.cjs.md#s-84e1d1f7ed2f2bae>) — [electron/core/ipc/worldview-ipc.cjs:184](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L184>)
 
 **Called by (statically resolved):**
 
@@ -816,13 +877,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-83cb26fa02681bc6"></a>
+<a id="s-8267c941b8bbc223"></a>
 
 ## registerWorldViewIpc."tag-index"
 
-[electron/core/ipc/worldview-ipc.cjs:180](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L180>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:186](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L186>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Initializes or updates the derived index without changing user metadata.
 
@@ -838,7 +900,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getTagIndex](<../../domains/indexing/tag-association-service.cjs.md#s-78c71c503832fb15>) — [electron/core/ipc/worldview-ipc.cjs:180](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L180>)
+- [getTagIndex](<../../domains/indexing/tag-association-service.cjs.md#s-78c71c503832fb15>) — [electron/core/ipc/worldview-ipc.cjs:186](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L186>)
 
 **Called by (statically resolved):**
 
@@ -850,13 +912,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-dbd8bde35f095bbe"></a>
+<a id="s-8853e4d6be0f55f6"></a>
 
 ## registerWorldViewIpc."tag-associations"
 
-[electron/core/ipc/worldview-ipc.cjs:182](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L182>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:188](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L188>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Retrieves explainable frequency statistics within the current World.
 
@@ -873,7 +936,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getWorldTagStatistics](<../../domains/indexing/tag-association-service.cjs.md#s-d8dcfd2227d71133>) — [electron/core/ipc/worldview-ipc.cjs:183](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L183>)
+- [getWorldTagStatistics](<../../domains/indexing/tag-association-service.cjs.md#s-d8dcfd2227d71133>) — [electron/core/ipc/worldview-ipc.cjs:189](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L189>)
 
 **Called by (statically resolved):**
 
@@ -885,13 +948,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-5ef5d79042dee1ac"></a>
+<a id="s-39e2ec3f3cd786ef"></a>
 
 ## registerWorldViewIpc."tag-rebuild"
 
-[electron/core/ipc/worldview-ipc.cjs:185](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L185>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:191](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L191>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Rebuilds disposable engine cache data on explicit request.
 
@@ -907,7 +971,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [rebuildWorldTagCache](<../../domains/indexing/tag-association-service.cjs.md#s-397407a5e811d705>) — [electron/core/ipc/worldview-ipc.cjs:185](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L185>)
+- [rebuildWorldTagCache](<../../domains/indexing/tag-association-service.cjs.md#s-397407a5e811d705>) — [electron/core/ipc/worldview-ipc.cjs:191](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L191>)
 
 **Called by (statically resolved):**
 
@@ -919,13 +983,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-0280476ff888fb64"></a>
+<a id="s-b7feba62d3302b2a"></a>
 
 ## registerWorldViewIpc."connector-create"
 
-[electron/core/ipc/worldview-ipc.cjs:187](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L187>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:193](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L193>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Creates one independent relationship with unrestricted geometric endpoints.
 
@@ -942,7 +1007,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [createConnector](<../../domains/entity/connector-store.cjs.md#s-68abee44921e90c9>) — [electron/core/ipc/worldview-ipc.cjs:188](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L188>)
+- [WorldViewService.createConnection](<../../domains/worldview/services/WorldViewService.cjs.md#s-59ad55cf2312518c>) — [electron/core/ipc/worldview-ipc.cjs:194](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L194>)
 
 **Called by (statically resolved):**
 
@@ -954,13 +1019,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-cbf1d4375c683631"></a>
+<a id="s-6b6e310c1447d5bd"></a>
 
 ## registerWorldViewIpc."connector-update"
 
-[electron/core/ipc/worldview-ipc.cjs:190](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L190>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:196](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L196>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Updates semantic fields with the editor's expected prior connection snapshot.
 
@@ -977,7 +1043,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [updateConnector](<../../domains/entity/connector-store.cjs.md#s-5920f12a905870a0>) — [electron/core/ipc/worldview-ipc.cjs:191](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L191>)
+- [WorldViewService.updateConnection](<../../domains/worldview/services/WorldViewService.cjs.md#s-bf9efb3d2453cacd>) — [electron/core/ipc/worldview-ipc.cjs:197](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L197>)
 
 **Called by (statically resolved):**
 
@@ -989,13 +1055,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-43a269fd3db0953f"></a>
+<a id="s-e12c238942743c0e"></a>
 
 ## registerWorldViewIpc."connector-delete"
 
-[electron/core/ipc/worldview-ipc.cjs:197](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L197>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:203](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L203>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Removes a confirmed relationship by its stable identity.
 
@@ -1012,7 +1079,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [deleteConnector](<../../domains/entity/connector-store.cjs.md#s-023228a431672d6c>) — [electron/core/ipc/worldview-ipc.cjs:198](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L198>)
+- [WorldViewService.disconnect](<../../domains/worldview/services/WorldViewService.cjs.md#s-2486ee0c7a4665d4>) — [electron/core/ipc/worldview-ipc.cjs:204](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L204>)
 
 **Called by (statically resolved):**
 
@@ -1024,13 +1091,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-360eb3c34aa95f7f"></a>
+<a id="s-82fc932bef0407a2"></a>
 
 ## registerWorldViewIpc."knowledge-load"
 
-[electron/core/ipc/worldview-ipc.cjs:200](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L200>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:206](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L206>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Loads one entity's manual declaration draft and applied menus.
 
@@ -1047,7 +1115,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [readKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-c0c55e94f399d0ad>) — [electron/core/ipc/worldview-ipc.cjs:201](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L201>)
+- [readKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-c0c55e94f399d0ad>) — [electron/core/ipc/worldview-ipc.cjs:207](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L207>)
 
 **Called by (statically resolved):**
 
@@ -1059,13 +1127,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-1f620cda4e6ed88b"></a>
+<a id="s-f4b74a06c58e7756"></a>
 
 ## registerWorldViewIpc."knowledge-draft"
 
-[electron/core/ipc/worldview-ipc.cjs:203](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L203>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:209](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L209>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Saves explicit editor text without replacing the applied index.
 
@@ -1082,7 +1151,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [saveKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/core/ipc/worldview-ipc.cjs:204](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L204>)
+- [saveKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/core/ipc/worldview-ipc.cjs:210](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L210>)
 
 **Called by (statically resolved):**
 
@@ -1094,13 +1163,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-9ffa9de9ea70bb0c"></a>
+<a id="s-b3fe92436355b812"></a>
 
 ## registerWorldViewIpc."knowledge-validate"
 
-[electron/core/ipc/worldview-ipc.cjs:212](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L212>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:218](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L218>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Validates syntax and live assignments without reading file contents.
 
@@ -1117,7 +1187,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [validateKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-a34679b5e2ad30eb>) — [electron/core/ipc/worldview-ipc.cjs:213](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L213>)
+- [validateKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-a34679b5e2ad30eb>) — [electron/core/ipc/worldview-ipc.cjs:219](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L219>)
 
 **Called by (statically resolved):**
 
@@ -1129,13 +1199,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-c9b171c923729df3"></a>
+<a id="s-ab774a2f381ec339"></a>
 
 ## registerWorldViewIpc."knowledge-apply"
 
-[electron/core/ipc/worldview-ipc.cjs:215](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L215>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:221](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L221>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Atomically applies all declarations only after complete validation.
 
@@ -1152,7 +1223,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [saveKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/core/ipc/worldview-ipc.cjs:216](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L216>)
+- [saveKnowledgeIndex](<../../domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/core/ipc/worldview-ipc.cjs:222](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L222>)
 
 **Called by (statically resolved):**
 
@@ -1164,13 +1235,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-7c37110c234d10e8"></a>
+<a id="s-878c0738810f6d20"></a>
 
 ## registerWorldViewIpc."knowledge-preview"
 
-[electron/core/ipc/worldview-ipc.cjs:224](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L224>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:230](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L230>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reads an authorized original strictly for presentation.
 
@@ -1187,7 +1259,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [previewKnowledgeSource](<../../domains/knowledge/knowledge-store.cjs.md#s-5b3b21e330d3d260>) — [electron/core/ipc/worldview-ipc.cjs:225](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L225>)
+- [previewKnowledgeSource](<../../domains/knowledge/knowledge-store.cjs.md#s-5b3b21e330d3d260>) — [electron/core/ipc/worldview-ipc.cjs:231](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L231>)
 
 **Called by (statically resolved):**
 
@@ -1199,13 +1271,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-7a750648f4dc0bed"></a>
+<a id="s-2eb6776fa3b302a8"></a>
 
 ## registerWorldViewIpc."knowledge-reveal"
 
-[electron/core/ipc/worldview-ipc.cjs:227](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L227>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:233](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L233>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reveals a currently assigned applied reference through the existing shell.
 
@@ -1222,8 +1295,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [resolveKnowledgeSource](<../../domains/knowledge/knowledge-source-access.cjs.md#s-533d0fd9803550f8>) — [electron/core/ipc/worldview-ipc.cjs:228](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L228>)
-- [statVaultSource](<../../domains/universe/vault-service.cjs.md#s-11f97228db17e5f8>) — [electron/core/ipc/worldview-ipc.cjs:233](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L233>)
+- [resolveKnowledgeSource](<../../domains/knowledge/knowledge-source-access.cjs.md#s-533d0fd9803550f8>) — [electron/core/ipc/worldview-ipc.cjs:234](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L234>)
+- [statVaultSource](<../../domains/universe/vault-service.cjs.md#s-11f97228db17e5f8>) — [electron/core/ipc/worldview-ipc.cjs:239](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L239>)
 
 **Called by (statically resolved):**
 
@@ -1231,18 +1304,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- shell.showItemInFolder — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:234](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L234>)
+- shell.showItemInFolder — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:240](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L240>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-36a8f483419dd47e"></a>
+<a id="s-6ecf811742c5d7a6"></a>
 
 ## registerWorldViewIpc.load
 
-[electron/core/ipc/worldview-ipc.cjs:237](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L237>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:243](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L243>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Loads saved indexes and current stat metadata.
 
@@ -1258,26 +1332,26 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [loadConnectors](<../../domains/entity/connector-store.cjs.md#s-8ec496ccfadb4d52>) — [electron/core/ipc/worldview-ipc.cjs:239](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L239>)
+- [WorldViewService.load](<../../domains/worldview/services/WorldViewService.cjs.md#s-9a49a0d9bfeaa0c2>) — [electron/core/ipc/worldview-ipc.cjs:243](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L243>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 1.
+Unresolved / external call sites: 0.
 
-- store.loadWorldView — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:238](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L238>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-3dee06b6a5e38149"></a>
+<a id="s-b279cb288a0992ae"></a>
 
 ## registerWorldViewIpc.save
 
-[electron/core/ipc/worldview-ipc.cjs:247](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L247>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:245](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L245>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Saves chip fields while retaining server-owned source associations.
 
@@ -1294,26 +1368,26 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [WorldViewService.saveChip](<../../domains/worldview/services/WorldViewService.cjs.md#s-6cf167a187c419b7>) — [electron/core/ipc/worldview-ipc.cjs:245](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L245>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 1.
+Unresolved / external call sites: 0.
 
-- store.saveWorldViewChip — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:247](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L247>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-8ee24cb794c0b34c"></a>
+<a id="s-e414f3645116b854"></a>
 
 ## registerWorldViewIpc.delete
 
-[electron/core/ipc/worldview-ipc.cjs:249](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L249>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:247](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L247>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Deletes only an entity index.
 
@@ -1330,26 +1404,26 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [WorldViewService.removeEntity](<../../domains/worldview/services/WorldViewService.cjs.md#s-b2761547de1733a5>) — [electron/core/ipc/worldview-ipc.cjs:247](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L247>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 1.
+Unresolved / external call sites: 0.
 
-- store.deleteWorldViewChip — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:249](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L249>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-de7c8466beef6c4f"></a>
+<a id="s-34368b2a1d6f4aa4"></a>
 
 ## registerWorldViewIpc.list
 
-[electron/core/ipc/worldview-ipc.cjs:251](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L251>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:249](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L249>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Lists Universe filenames and byte metadata without reading contents.
 
@@ -1366,7 +1440,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [listVaultMetadata](<../../domains/universe/vault-service.cjs.md#s-2d9f46608e712f74>) — [electron/core/ipc/worldview-ipc.cjs:251](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L251>)
+- [listVaultMetadata](<../../domains/universe/vault-service.cjs.md#s-2d9f46608e712f74>) — [electron/core/ipc/worldview-ipc.cjs:249](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L249>)
 
 **Called by (statically resolved):**
 
@@ -1378,13 +1452,14 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-7e31517fb2a8baf1"></a>
+<a id="s-9e23a5c9109dac6d"></a>
 
 ## registerWorldViewIpc.assign
 
-[electron/core/ipc/worldview-ipc.cjs:253](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L253>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:251](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L251>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Registers confirmed file references.
 
@@ -1409,18 +1484,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- store.assignWorldViewFiles — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:254](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L254>)
+- store.assignWorldViewFiles — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:252](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L252>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-79b436e52ba3a963"></a>
+<a id="s-ae670a6846bdf940"></a>
 
 ## registerWorldViewIpc.unassign
 
-[electron/core/ipc/worldview-ipc.cjs:256](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L256>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:254](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L254>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Removes an entity-source association.
 
@@ -1445,18 +1521,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- store.unassignWorldViewFile — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:257](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L257>)
+- store.unassignWorldViewFile — signature-only-candidate; [electron/core/ipc/worldview-ipc.cjs:255](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L255>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-1622d3addef98376"></a>
+<a id="s-f94048d2803b418e"></a>
 
 ## registerWorldViewIpc.reveal
 
-[electron/core/ipc/worldview-ipc.cjs:259](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L259>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:257](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L257>) · ArrowFunction · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 Reveals the original file through Electron's existing OS shell without parsing it.
 
@@ -1473,7 +1550,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [statVaultSource](<../../domains/universe/vault-service.cjs.md#s-11f97228db17e5f8>) — [electron/core/ipc/worldview-ipc.cjs:260](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L260>)
+- [statVaultSource](<../../domains/universe/vault-service.cjs.md#s-11f97228db17e5f8>) — [electron/core/ipc/worldview-ipc.cjs:258](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L258>)
 
 **Called by (statically resolved):**
 
@@ -1481,20 +1558,21 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- source.stats.isFile — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:261](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L261>)
-- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:262](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L262>)
-- shell.showItemInFolder — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:263](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L263>)
+- source.stats.isFile — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:259](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L259>)
+- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:260](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L260>)
+- shell.showItemInFolder — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:261](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L261>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.
 
-<a id="s-bec0dd18ef7f33c3"></a>
+<a id="s-fb8f5f85c52badb3"></a>
 
 ## registerWorldViewIpc.worldViewRequest
 
-[electron/core/ipc/worldview-ipc.cjs:270](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L270>) · FunctionExpression · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.cjs:268](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L268>) · FunctionExpression · production · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1519,13 +1597,14 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- getRoot — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:272](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L272>)
-- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:276](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L276>)
-- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:276](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L276>)
-- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:278](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L278>)
-- operation — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:281](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L281>)
+- getRoot — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:270](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L270>)
+- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:274](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L274>)
+- path.resolve — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:274](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L274>)
+- Error — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:276](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L276>)
+- operation — external-or-dynamic-dispatch; [electron/core/ipc/worldview-ipc.cjs:279](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L279>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/core/ipc/worldview-ipc.test.cjs:6](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L6>) — file-import-only; coverage not established.
+- [electron/domains/worldview/tests/worldview-domain.test.cjs:14](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:18](<../../../../../../../electron/excel-service.test.cjs#L18>) — file-import-only; coverage not established.

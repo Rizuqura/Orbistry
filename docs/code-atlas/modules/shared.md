@@ -43,7 +43,6 @@ No cross-module production imports in this view.
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Retained AI runtime](<ai-runtime.md>): 5 import sites; example [electron/ai/context-limits.cjs:2](<../../../electron/ai/context-limits.cjs#L2>).
-- [Connectors](<connectors.md>): 1 import sites; example [electron/domains/entity/connector-store.cjs:7](<../../../electron/domains/entity/connector-store.cjs#L7>).
 - [Electron composition and IPC security](<desktop.md>): 1 import sites; example [electron/core/security/desktop-security.cjs:1](<../../../electron/core/security/desktop-security.cjs#L1>).
 - [Engine package registry](<engine-registry.md>): 4 import sites; example [electron/engines/registry/authoring.cjs:6](<../../../electron/engines/registry/authoring.cjs#L6>).
 - [Built-in Engines and data adapters](<engines.md>): 4 import sites; example [electron/daily-price-service.cjs:7](<../../../electron/daily-price-service.cjs#L7>).
@@ -51,6 +50,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 - [Knowledge indexing and source access](<knowledge.md>): 3 import sites; example [electron/domains/indexing/tag-association-service.cjs:7](<../../../electron/domains/indexing/tag-association-service.cjs#L7>).
 - [Settings and Engine list](<portal-settings.md>): 1 import sites; example [features/model-settings/model-settings.tsx:7](<../../../features/model-settings/model-settings.tsx#L7>).
 - [Vault and stations](<vault.md>): 2 import sites; example [electron/domains/universe/vault-settings.cjs:7](<../../../electron/domains/universe/vault-settings.cjs#L7>).
+- [WorldView domain aggregate](<worldview-domain.md>): 1 import sites; example [electron/domains/worldview/repositories/legacy-connection-store.cjs:6](<../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L6>).
 - [WorldView persistence and IPC](<worldview.md>): 1 import sites; example [electron/domains/entity/worldview-store.cjs:9](<../../../electron/domains/entity/worldview-store.cjs#L9>).
 
 ## Contracts

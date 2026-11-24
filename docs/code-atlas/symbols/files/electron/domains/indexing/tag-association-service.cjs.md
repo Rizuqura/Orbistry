@@ -329,7 +329,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."tag-index"](<../../core/ipc/worldview-ipc.cjs.md#s-83cb26fa02681bc6>) — [electron/core/ipc/worldview-ipc.cjs:180](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L180>)
+- [registerWorldViewIpc."tag-index"](<../../core/ipc/worldview-ipc.cjs.md#s-8267c941b8bbc223>) — [electron/core/ipc/worldview-ipc.cjs:186](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L186>)
 - [searchWorldTags](<tag-association-service.cjs.md#s-84e1d1f7ed2f2bae>) — [electron/domains/indexing/tag-association-service.cjs:197](<../../../../../../../electron/domains/indexing/tag-association-service.cjs#L197>)
 - [rebuildWorldTagCache](<tag-association-service.cjs.md#s-397407a5e811d705>) — [electron/domains/indexing/tag-association-service.cjs:207](<../../../../../../../electron/domains/indexing/tag-association-service.cjs#L207>)
 - [getWorldTagStatistics](<tag-association-service.cjs.md#s-d8dcfd2227d71133>) — [electron/domains/indexing/tag-association-service.cjs:220](<../../../../../../../electron/domains/indexing/tag-association-service.cjs#L220>)
@@ -552,7 +552,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."tag-search"](<../../core/ipc/worldview-ipc.cjs.md#s-d468225d31d7ebc8>) — [electron/core/ipc/worldview-ipc.cjs:178](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L178>)
+- [registerWorldViewIpc."tag-search"](<../../core/ipc/worldview-ipc.cjs.md#s-476e366b072f6b6f>) — [electron/core/ipc/worldview-ipc.cjs:184](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L184>)
 - [&lt;anonymous@188:85&gt;.&lt;anonymous@189:23&gt;](<../../tag-association.test.cjs.md#s-859129d99165c8ec>) — [electron/tag-association.test.cjs:202](<../../../../../../../electron/tag-association.test.cjs#L202>)
 - [&lt;anonymous@188:85&gt;.&lt;anonymous@189:23&gt;](<../../tag-association.test.cjs.md#s-859129d99165c8ec>) — [electron/tag-association.test.cjs:215](<../../../../../../../electron/tag-association.test.cjs#L215>)
 - [&lt;anonymous@188:85&gt;.&lt;anonymous@189:23&gt;](<../../tag-association.test.cjs.md#s-859129d99165c8ec>) — [electron/tag-association.test.cjs:257](<../../../../../../../electron/tag-association.test.cjs#L257>)
@@ -606,7 +606,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."tag-rebuild"](<../../core/ipc/worldview-ipc.cjs.md#s-5ef5d79042dee1ac>) — [electron/core/ipc/worldview-ipc.cjs:185](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L185>)
+- [registerWorldViewIpc."tag-rebuild"](<../../core/ipc/worldview-ipc.cjs.md#s-39e2ec3f3cd786ef>) — [electron/core/ipc/worldview-ipc.cjs:191](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L191>)
 - [&lt;anonymous@188:85&gt;.&lt;anonymous@189:23&gt;](<../../tag-association.test.cjs.md#s-859129d99165c8ec>) — [electron/tag-association.test.cjs:286](<../../../../../../../electron/tag-association.test.cjs#L286>)
 
 Unresolved / external call sites: 0.
@@ -645,7 +645,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."tag-associations"](<../../core/ipc/worldview-ipc.cjs.md#s-dbd8bde35f095bbe>) — [electron/core/ipc/worldview-ipc.cjs:183](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L183>)
+- [registerWorldViewIpc."tag-associations"](<../../core/ipc/worldview-ipc.cjs.md#s-8853e4d6be0f55f6>) — [electron/core/ipc/worldview-ipc.cjs:189](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L189>)
 
 Unresolved / external call sites: 1.
 

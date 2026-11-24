@@ -253,10 +253,10 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [createConnector](<domains/entity/connector-store.cjs.md#s-68abee44921e90c9>) — [electron/backend-identity.test.cjs:108](<../../../../../electron/backend-identity.test.cjs#L108>)
-- [createConnector](<domains/entity/connector-store.cjs.md#s-68abee44921e90c9>) — [electron/backend-identity.test.cjs:114](<../../../../../electron/backend-identity.test.cjs#L114>)
-- [updateConnector](<domains/entity/connector-store.cjs.md#s-5920f12a905870a0>) — [electron/backend-identity.test.cjs:137](<../../../../../electron/backend-identity.test.cjs#L137>)
-- [deleteConnector](<domains/entity/connector-store.cjs.md#s-023228a431672d6c>) — [electron/backend-identity.test.cjs:149](<../../../../../electron/backend-identity.test.cjs#L149>)
+- [createConnector](<domains/worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/backend-identity.test.cjs:108](<../../../../../electron/backend-identity.test.cjs#L108>)
+- [createConnector](<domains/worldview/repositories/legacy-connection-store.cjs.md#s-1cf3233508e51f50>) — [electron/backend-identity.test.cjs:114](<../../../../../electron/backend-identity.test.cjs#L114>)
+- [updateConnector](<domains/worldview/repositories/legacy-connection-store.cjs.md#s-0c4952848c75ff0b>) — [electron/backend-identity.test.cjs:137](<../../../../../electron/backend-identity.test.cjs#L137>)
+- [deleteConnector](<domains/worldview/repositories/legacy-connection-store.cjs.md#s-2ec984f7c5214ed3>) — [electron/backend-identity.test.cjs:149](<../../../../../electron/backend-identity.test.cjs#L149>)
 
 **Called by (statically resolved):**
 
