@@ -36,4 +36,5 @@ Unresolved / external call sites: 5.
 
 **Related tests / acceptance harnesses:**
 
+- [electron/domains/entity/tests/entity-repository.test.cjs:8](<../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L8>) — file-import-only; coverage not established.
 - [electron/domains/worldview/tests/worldview-domain.test.cjs:11](<../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L11>) — file-import-only; coverage not established.

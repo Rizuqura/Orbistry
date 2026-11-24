@@ -2,6 +2,8 @@
 
 WorldView now has backend domain objects and an authorized application service. React remains functional. No Entity class, Engine protocol, Agent tool, Dashboard feature or user-data migration was introduced.
 
+The later [Entity domain implementation](ENTITY_DOMAIN_OOP.md) supplies metadata validation and logical Input/Output definitions. Combined saves still enter through WorldViewService. Source-assignment IPC now uses EntityService. The following baseline and verification results describe ORB-ARCH-003.
+
 ## Baseline and ownership
 
 Baseline commit: `afe2f803b87fb87d0f5a921a6a3fd1247cb699f5`. Baseline suite: 531 tests discovered, 529 passed, two optional skips.

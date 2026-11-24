@@ -95,7 +95,7 @@ Lexical owner: [WorldViewRepository](<WorldViewRepository.cjs.md#s-4b10c526ffcac
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
-| { entityStore = entities, connectionStore = connections } | { entityStore?: { withWorldViewMutation: (rootPath: any, operation: any) =&gt; unknown; readWorldViewChip: (rootPath: any, id: any) =&gt; unknown; loadWorldView: (rootPath: any, { metadataOnly }?: { metadataOnly?: boolean; }) =&gt; unknown; saveWorldViewChip: (rootPath: any, input: any) =&gt; unknown; assignWorldViewFiles: (rootPath: any, id: any, references: any) =&gt; unknown; unassignWorldViewFile: (rootPath: any, id: any, sourceId: any) =&gt; unknown; deleteWorldViewChip: (rootPath: any, id: any) =&gt; unknow... | compiler-inferred | optional, default present |
+| { entityStore = entities, connectionStore = connections } | { entityStore?: { readEntitySnapshot: (root: any, id: any) =&gt; unknown; patchEntityMetadata: (root: any, id: any, changes: any, beforeWrite: any) =&gt; unknown; withWorldViewMutation: (rootPath: any, operation: any) =&gt; unknown; readWorldViewChip: (rootPath: any, id: any) =&gt; unknown; loadWorldView: (rootPath: any, { metadataOnly }?: { metadataOnly?: boolean; }) =&gt; unknown; saveWorldViewChip: (rootPath: any, input: any) =&gt; unknown; assignWorldViewFiles: (rootPath: any, id: any, references: any, bef... | compiler-inferred | optional, default present |
 
 Returns: WorldViewRepository (compiler-inferred). Implementation present.
 

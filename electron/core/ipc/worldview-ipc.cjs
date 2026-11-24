@@ -1,5 +1,5 @@
 const path = require("node:path");
-const store = require("../../domains/entity/worldview-store.cjs");
+const { EntityService } = require("../../domains/entity/index.cjs");
 const knowledge = require("../../domains/knowledge/knowledge-store.cjs");
 const { WorldViewService } = require("../../domains/worldview/index.cjs");
 const tagSearch = require("../../domains/indexing/tag-association-service.cjs");
@@ -13,10 +13,12 @@ const {
 function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
   // trustedIpc has already authenticated the main window/frame/document. This
   // host policy retains the existing active-Universe boundary, not a new role system.
-  const worldView = new WorldViewService({
-    authorization: async ({ root }) =>
-      path.resolve(root) === path.resolve(getRoot()),
-  });
+  /** Recheck the captured Universe for each service operation using main-process state. */
+  function authorization({ root }) {
+    return path.resolve(root) === path.resolve(getRoot());
+  }
+  const worldView = new WorldViewService({ authorization });
+  const entities = new EntityService({ authorization });
   const operations = {
     /** Copies only freshly authorized inspector data; arbitrary caller-provided clipboard text is not accepted. */
     "identity-copy": async (root, input) => {
@@ -249,10 +251,10 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
     list: async (root, input) => listVaultMetadata(root, input),
     /** Registers confirmed file references. */
     assign: async (root, input) =>
-      store.assignWorldViewFiles(root, input.id, input.sourceRefs),
+      entities.assignSources({ root }, input.id, input.sourceRefs),
     /** Removes an entity-source association. */
     unassign: async (root, input) =>
-      store.unassignWorldViewFile(root, input.id, input.sourceId),
+      entities.unassignSource({ root }, input.id, input.sourceId),
     /** Reveals the original file through Electron's existing OS shell without parsing it. */
     reveal: async (root, input) => {
       const source = await statVaultSource(root, input.sourceRef);

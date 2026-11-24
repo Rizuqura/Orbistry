@@ -62,8 +62,8 @@ Candidates from compiler export tables and methods on exported classes. Registra
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Built-in Engines and data adapters](<engines.md>): 1 import sites; example [electron/engines/registry/registry.cjs:180](<../../../electron/engines/registry/registry.cjs#L180>).
+- [Entity domain](<entity-domain.md>): 5 import sites; example [electron/engines/registry/registry.cjs:309](<../../../electron/engines/registry/registry.cjs#L309>).
 - [Shared deterministic infrastructure](<shared.md>): 4 import sites; example [electron/engines/registry/authoring.cjs:6](<../../../electron/engines/registry/authoring.cjs#L6>).
-- [WorldView persistence and IPC](<worldview.md>): 5 import sites; example [electron/engines/registry/registry.cjs:309](<../../../electron/engines/registry/registry.cjs#L309>).
 
 ## Depended on by
 

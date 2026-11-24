@@ -450,7 +450,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."finance-index"](<core/ipc/worldview-ipc.cjs.md#s-bb277f82690073ea>) — [electron/core/ipc/worldview-ipc.cjs:89](<../../../../../electron/core/ipc/worldview-ipc.cjs#L89>)
+- [registerWorldViewIpc."finance-index"](<core/ipc/worldview-ipc.cjs.md#s-cbd63c85c5f554c6>) — [electron/core/ipc/worldview-ipc.cjs:91](<../../../../../electron/core/ipc/worldview-ipc.cjs#L91>)
 - [executeCapability](<engines/backend-identity/capability-registry.cjs.md#s-701c955440e5983d>) — [electron/engines/backend-identity/capability-registry.cjs:92](<../../../../../electron/engines/backend-identity/capability-registry.cjs#L92>)
 - [&lt;anonymous@164:95&gt;.&lt;anonymous@165:16&gt;](<financial-service.test.cjs.md#s-9f14ebe7f6ca5195>) — [electron/financial-service.test.cjs:190](<../../../../../electron/financial-service.test.cjs#L190>)
 - [&lt;anonymous@164:95&gt;.&lt;anonymous@165:16&gt;.&lt;anonymous@194:28&gt;](<financial-service.test.cjs.md#s-ab3941fec9326841>) — [electron/financial-service.test.cjs:195](<../../../../../electron/financial-service.test.cjs#L195>)
@@ -498,7 +498,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."price-history"](<core/ipc/worldview-ipc.cjs.md#s-9fd66cf68647d9d1>) — [electron/core/ipc/worldview-ipc.cjs:86](<../../../../../electron/core/ipc/worldview-ipc.cjs#L86>)
+- [registerWorldViewIpc."price-history"](<core/ipc/worldview-ipc.cjs.md#s-cdfa207fb805c3f3>) — [electron/core/ipc/worldview-ipc.cjs:88](<../../../../../electron/core/ipc/worldview-ipc.cjs#L88>)
 - [&lt;anonymous@205:82&gt;.&lt;anonymous@206:12&gt;](<yahoo-engine-contract.test.cjs.md#s-12071c09bac274ad>) — [electron/yahoo-engine-contract.test.cjs:243](<../../../../../electron/yahoo-engine-contract.test.cjs#L243>)
 - [&lt;anonymous@205:82&gt;.&lt;anonymous@206:12&gt;](<yahoo-engine-contract.test.cjs.md#s-12071c09bac274ad>) — [electron/yahoo-engine-contract.test.cjs:246](<../../../../../electron/yahoo-engine-contract.test.cjs#L246>)
 - [&lt;anonymous@205:82&gt;.&lt;anonymous@206:12&gt;](<yahoo-engine-contract.test.cjs.md#s-12071c09bac274ad>) — [electron/yahoo-engine-contract.test.cjs:257](<../../../../../electron/yahoo-engine-contract.test.cjs#L257>)

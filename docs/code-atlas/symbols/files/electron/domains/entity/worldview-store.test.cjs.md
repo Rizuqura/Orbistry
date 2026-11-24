@@ -1,6 +1,6 @@
 # electron/domains/entity/worldview-store.test.cjs: symbols
 
-[Atlas](<../../../../../README.md>) / [WorldView persistence and IPC](<../../../../../modules/worldview.md>) / [electron/domains/entity/worldview-store.test.cjs:1](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L1>)
+[Atlas](<../../../../../README.md>) / [Entity domain](<../../../../../modules/entity-domain.md>) / [electron/domains/entity/worldview-store.test.cjs:1](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L1>)
 
 Compiler-inferred contracts exclude external/global types. No static relationship establishes execution, authorization or coverage.
 
@@ -36,7 +36,7 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 
 ## electron/domains/entity/worldview-store.test.cjs
 
-[electron/domains/entity/worldview-store.test.cjs:1](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L1>) · Module · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:1](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L1>) · Module · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 Source-file initialization scope; call edges here describe top-level expressions.
 
@@ -70,7 +70,7 @@ No direct static call/import association found; coverage unknown.
 
 ## withUniverse
 
-[electron/domains/entity/worldview-store.test.cjs:22](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L22>) · FunctionDeclaration · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:22](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L22>) · FunctionDeclaration · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 Creates an isolated Universe fixture and deletes only its verified temporary parent after testing.
 
@@ -122,7 +122,7 @@ Unresolved / external call sites: 12.
 
 ## chip
 
-[electron/domains/entity/worldview-store.test.cjs:38](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L38>) · FunctionDeclaration · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:38](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L38>) · FunctionDeclaration · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 Returns renderer-owned chip metadata without source contents or invented source IDs.
 
@@ -177,7 +177,7 @@ Unresolved / external call sites: 0.
 
 ## indexPath
 
-[electron/domains/entity/worldview-store.test.cjs:49](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L49>) · FunctionDeclaration · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:49](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L49>) · FunctionDeclaration · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 Returns the actual reserved Markdown index location for fixture assertions.
 
@@ -232,7 +232,7 @@ Unresolved / external call sites: 1.
 
 ## &lt;anonymous@54:92&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:54](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L54>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:54](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L54>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -265,7 +265,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@54:92&gt;.&lt;anonymous@55:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:55](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L55>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:55](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L55>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -312,7 +312,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@54:92&gt;.&lt;anonymous@55:22&gt;.&lt;anonymous@83:27&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:83](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L83>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:83](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L83>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -345,7 +345,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@54:92&gt;.&lt;anonymous@55:22&gt;.&lt;anonymous@87:27&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:87](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L87>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:87](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L87>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -378,7 +378,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@119:92&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:119](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L119>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:119](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L119>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -411,7 +411,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@119:92&gt;.&lt;anonymous@120:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:120](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L120>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:120](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L120>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -455,7 +455,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:136](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L136>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:136](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L136>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -488,7 +488,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:137](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L137>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:137](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L137>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -534,7 +534,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;.forbidSourceContent
 
-[electron/domains/entity/worldview-store.test.cjs:155](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L155>) · FunctionExpression · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:155](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L155>) · FunctionExpression · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -572,7 +572,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;.&lt;anonymous@168:29&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:168](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L168>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:168](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L168>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -605,7 +605,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;.&lt;anonymous@186:24&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:186](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L186>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:186](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L186>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -638,7 +638,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;.&lt;anonymous@191:24&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:191](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L191>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:191](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L191>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -671,7 +671,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@220:101&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:220](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L220>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:220](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L220>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -704,7 +704,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@220:101&gt;.&lt;anonymous@221:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:221](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L221>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:221](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L221>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -752,7 +752,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@273:101&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:273](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L273>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:273](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L273>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -785,7 +785,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@273:101&gt;.&lt;anonymous@274:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:274](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L274>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:274](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L274>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -830,7 +830,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@273:101&gt;.&lt;anonymous@274:22&gt;.&lt;anonymous@292:7&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:292](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L292>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:292](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L292>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -863,7 +863,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@273:101&gt;.&lt;anonymous@274:22&gt;.&lt;anonymous@300:7&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:300](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L300>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:300](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L300>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -896,7 +896,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@313:70&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:313](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L313>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:313](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L313>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -929,7 +929,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@313:70&gt;.&lt;anonymous@314:22&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:314](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L314>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:314](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L314>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -976,7 +976,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@313:70&gt;.&lt;anonymous@314:22&gt;.&lt;anonymous@351:9&gt;
 
-[electron/domains/entity/worldview-store.test.cjs:351](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L351>) · ArrowFunction · test · [WorldView persistence and IPC](<../../../../../modules/worldview.md>)
+[electron/domains/entity/worldview-store.test.cjs:351](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L351>) · ArrowFunction · test · [Entity domain](<../../../../../modules/entity-domain.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 

@@ -1,4 +1,4 @@
-# WorldView persistence and IPC: symbols
+# WorldView desktop IPC: symbols
 
 [Atlas](<../README.md>) / [Module overview](<../modules/worldview.md>)
 
@@ -6,5 +6,5 @@ Generated from AST declarations. Compiler-inferred contracts are approximate and
 
 ## Source files
 
-- [electron/domains/entity/worldview-store.cjs](<files/electron/domains/entity/worldview-store.cjs.md#s-393f835352f9ab3b>) (production; 31 declarations)
-- [electron/domains/entity/worldview-store.test.cjs](<files/electron/domains/entity/worldview-store.test.cjs.md#s-319968c7808f30a4>) (test; 24 declarations)
+- [electron/core/ipc/worldview-ipc.cjs](<files/electron/core/ipc/worldview-ipc.cjs.md#s-ed467b4c0b047c43>) (production; 41 declarations)
+- [electron/core/ipc/worldview-ipc.test.cjs](<files/electron/core/ipc/worldview-ipc.test.cjs.md#s-3db508bd03ac795c>) (test; 4 declarations)

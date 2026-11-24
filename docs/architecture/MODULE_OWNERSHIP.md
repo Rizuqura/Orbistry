@@ -1,6 +1,6 @@
 # Module ownership
 
-Current addition: [WorldView domain OOP architecture](WORLDVIEW_DOMAIN_OOP.md) owns membership/placement/connection invariants and the compatible connection persistence implementation. The Entity folder retains only its existing connector import compatibility entry. The baseline-derived associations below remain the Phase 01 inventory; the regenerated Code Atlas contains the complete current graph.
+[Entity](ENTITY_DOMAIN_OOP.md) owns keys, metadata, source associations and logical ports. [WorldView](WORLDVIEW_DOMAIN_OOP.md) owns membership, placement and connections. Their adapters share the existing Entity record and mutation queue. The connector store import in the Entity folder remains a compatibility entry. The inventory below describes Phase 01.
 
 Paths are implemented ownership. Export/import/test associations below come from the captured pre-move AST index, translated by the relocation map; they are structural associations, not coverage or runtime reachability claims. See the regenerated Code Atlas for complete post-move symbols.
 

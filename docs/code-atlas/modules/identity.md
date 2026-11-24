@@ -42,18 +42,18 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [Connectors](<connectors.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:12](<../../../electron/engines/backend-identity/identity-compiler.cjs#L12>).
 - [Built-in Engines and data adapters](<engines.md>): 5 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
+- [Entity domain](<entity-domain.md>): 2 import sites; example [electron/domains/knowledge/backend-identity-service.cjs:7](<../../../electron/domains/knowledge/backend-identity-service.cjs#L7>).
 - [Knowledge indexing and source access](<knowledge.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:11](<../../../electron/engines/backend-identity/identity-compiler.cjs#L11>).
 - [Shared deterministic infrastructure](<shared.md>): 3 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:5](<../../../electron/engines/backend-identity/identity-compiler.cjs#L5>).
 - [Vault and stations](<vault.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:13](<../../../electron/engines/backend-identity/identity-compiler.cjs#L13>).
-- [WorldView persistence and IPC](<worldview.md>): 2 import sites; example [electron/domains/knowledge/backend-identity-service.cjs:7](<../../../electron/domains/knowledge/backend-identity-service.cjs#L7>).
 
 ## Depended on by
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Assigned Agents and jurisdiction](<agents.md>): 3 import sites; example [electron/ai/agents/entity-agent-access.cjs:4](<../../../electron/ai/agents/entity-agent-access.cjs#L4>).
-- [Electron composition and IPC security](<desktop.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:39](<../../../electron/core/ipc/worldview-ipc.cjs#L39>).
 - [Built-in Engines and data adapters](<engines.md>): 1 import sites; example [electron/engines/definitions.cjs:3](<../../../electron/engines/definitions.cjs#L3>).
+- [WorldView desktop IPC](<worldview.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:41](<../../../electron/core/ipc/worldview-ipc.cjs#L41>).
 
 ## Contracts
 

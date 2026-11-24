@@ -111,6 +111,7 @@ function selectCallEdges(data) {
   }
   const priorities = [
     "worldview-domain",
+    "entity-domain",
     "engine-registry",
     "identity",
     "agents",

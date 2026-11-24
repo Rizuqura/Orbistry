@@ -84,10 +84,10 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [Assigned Agents and jurisdiction](<agents.md>): 1 import sites; example [electron/ai/agents/entity-agent-protocol.cjs:265](<../../../electron/ai/agents/entity-agent-protocol.cjs#L265>).
 - [Retained AI runtime](<ai-runtime.md>): 2 import sites; example [electron/ai/engine-registry.cjs:9](<../../../electron/ai/engine-registry.cjs#L9>).
-- [Electron composition and IPC security](<desktop.md>): 7 import sites; example [electron/core/ipc/worldview-ipc.cjs:6](<../../../electron/core/ipc/worldview-ipc.cjs#L6>).
 - [Engine package registry](<engine-registry.md>): 1 import sites; example [electron/engines/registry/registry.cjs:180](<../../../electron/engines/registry/registry.cjs#L180>).
 - [Backend Identity Engine](<identity.md>): 5 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
 - [Knowledge indexing and source access](<knowledge.md>): 7 import sites; example [electron/domains/indexing/knowledge-index.cjs:2](<../../../electron/domains/indexing/knowledge-index.cjs#L2>).
+- [WorldView desktop IPC](<worldview.md>): 7 import sites; example [electron/core/ipc/worldview-ipc.cjs:6](<../../../electron/core/ipc/worldview-ipc.cjs#L6>).
 
 ## Contracts
 

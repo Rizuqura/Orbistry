@@ -2,9 +2,15 @@
   "scope": "literal-runtime-production-imports",
   "modules": [
     {
+      "id": "entity-domain",
+      "name": "Entity domain",
+      "purpose": "Owns stable Entity keys, metadata, logical ports and recorded Vault references. Adapts shared Markdown persistence.",
+      "owns": "electron/domains/entity/ (except the connector compatibility entry)"
+    },
+    {
       "id": "worldview-domain",
       "name": "WorldView domain aggregate",
-      "purpose": "Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference.",
+      "purpose": "Owns membership, placement and connection invariants; coordinates authorized compatible persistence with Entity storage.",
       "owns": "electron/domains/worldview/"
     },
     {
@@ -63,9 +69,9 @@
     },
     {
       "id": "worldview",
-      "name": "WorldView persistence and IPC",
-      "purpose": "Owns Entity records, source associations and validated WorldView operations.",
-      "owns": "electron/worldview-*.cjs"
+      "name": "WorldView desktop IPC",
+      "purpose": "Routes validated desktop WorldView operations to their owners.",
+      "owns": "electron/core/ipc/worldview-ipc.cjs and its tests"
     },
     {
       "id": "vault",
@@ -392,6 +398,19 @@
     },
     {
       "from": "agents",
+      "to": "entity-domain",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 44,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "agents",
       "to": "identity",
       "sites": 3,
       "evidence": [
@@ -411,19 +430,6 @@
           "file": "electron/ai/agents/entity-agents.cjs",
           "line": 62,
           "target": "electron/engines/backend-identity/capability-registry.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "agents",
-      "to": "worldview",
-      "sites": 1,
-      "evidence": [
-        {
-          "file": "electron/ai/agents/entity-agents.cjs",
-          "line": 44,
-          "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": false
         }
       ]
@@ -691,111 +697,6 @@
     },
     {
       "from": "desktop",
-      "to": "engines",
-      "sites": 7,
-      "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 6,
-          "target": "electron/image-parser-service.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 86,
-          "target": "electron/financial-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 89,
-          "target": "electron/financial-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 98,
-          "target": "electron/daily-price-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 110,
-          "target": "electron/daily-price-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 119,
-          "target": "electron/excel-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 135,
-          "target": "electron/excel-service.cjs",
-          "deferred": true
-        }
-      ]
-    },
-    {
-      "from": "desktop",
-      "to": "identity",
-      "sites": 5,
-      "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 39,
-          "target": "electron/domains/knowledge/backend-identity-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 58,
-          "target": "electron/domains/knowledge/backend-identity-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 65,
-          "target": "electron/domains/knowledge/backend-identity-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 72,
-          "target": "electron/domains/knowledge/backend-identity-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 79,
-          "target": "electron/domains/knowledge/backend-identity-service.cjs",
-          "deferred": true
-        }
-      ]
-    },
-    {
-      "from": "desktop",
-      "to": "knowledge",
-      "sites": 2,
-      "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 3,
-          "target": "electron/domains/knowledge/knowledge-store.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 5,
-          "target": "electron/domains/indexing/tag-association-service.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "desktop",
       "to": "providers",
       "sites": 1,
       "evidence": [
@@ -823,14 +724,8 @@
     {
       "from": "desktop",
       "to": "vault",
-      "sites": 4,
+      "sites": 3,
       "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 10,
-          "target": "electron/domains/universe/vault-service.cjs",
-          "deferred": false
-        },
         {
           "file": "electron/main.cjs",
           "line": 17,
@@ -857,22 +752,9 @@
       "sites": 1,
       "evidence": [
         {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 2,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "desktop",
-      "to": "worldview-domain",
-      "sites": 1,
-      "evidence": [
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 4,
-          "target": "electron/domains/worldview/index.cjs",
+          "file": "electron/main.cjs",
+          "line": 31,
+          "target": "electron/core/ipc/worldview-ipc.cjs",
           "deferred": false
         }
       ]
@@ -886,6 +768,43 @@
           "file": "electron/engines/registry/registry.cjs",
           "line": 180,
           "target": "electron/engines/definitions.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "engine-registry",
+      "to": "entity-domain",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 309,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 499,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 512,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 577,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 642,
+          "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": true
         }
       ]
@@ -918,43 +837,6 @@
           "line": 14,
           "target": "electron/core/persistence/json-store.cjs",
           "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "engine-registry",
-      "to": "worldview",
-      "sites": 5,
-      "evidence": [
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 309,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 499,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 512,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 577,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 642,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
         }
       ]
     },
@@ -1071,6 +953,32 @@
       ]
     },
     {
+      "from": "entity-domain",
+      "to": "shared",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/worldview-store.cjs",
+          "line": 9,
+          "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "entity-domain",
+      "to": "vault",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/domains/entity/worldview-store.cjs",
+          "line": 10,
+          "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
       "from": "identity",
       "to": "connectors",
       "sites": 1,
@@ -1117,6 +1025,25 @@
           "line": 92,
           "target": "electron/financial-service.cjs",
           "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "entity-domain",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/domains/knowledge/backend-identity-service.cjs",
+          "line": 7,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/backend-identity/identity-compiler.cjs",
+          "line": 8,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
         }
       ]
     },
@@ -1172,25 +1099,6 @@
       ]
     },
     {
-      "from": "identity",
-      "to": "worldview",
-      "sites": 2,
-      "evidence": [
-        {
-          "file": "electron/domains/knowledge/backend-identity-service.cjs",
-          "line": 7,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/engines/backend-identity/identity-compiler.cjs",
-          "line": 8,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
       "from": "knowledge",
       "to": "engines",
       "sites": 7,
@@ -1241,6 +1149,31 @@
     },
     {
       "from": "knowledge",
+      "to": "entity-domain",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/domains/indexing/tag-association-service.cjs",
+          "line": 11,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-source-access.cjs",
+          "line": 6,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/knowledge-store.cjs",
+          "line": 7,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
       "to": "shared",
       "sites": 3,
       "evidence": [
@@ -1273,31 +1206,6 @@
           "file": "electron/domains/knowledge/knowledge-store.cjs",
           "line": 8,
           "target": "electron/domains/universe/vault-service.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "knowledge",
-      "to": "worldview",
-      "sites": 3,
-      "evidence": [
-        {
-          "file": "electron/domains/indexing/tag-association-service.cjs",
-          "line": 11,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/domains/knowledge/knowledge-source-access.cjs",
-          "line": 6,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/domains/knowledge/knowledge-store.cjs",
-          "line": 7,
-          "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": false
         }
       ]
@@ -1924,20 +1832,7 @@
     },
     {
       "from": "worldview-domain",
-      "to": "shared",
-      "sites": 1,
-      "evidence": [
-        {
-          "file": "electron/domains/worldview/repositories/legacy-connection-store.cjs",
-          "line": 6,
-          "target": "electron/core/persistence/json-store.cjs",
-          "deferred": false
-        }
-      ]
-    },
-    {
-      "from": "worldview-domain",
-      "to": "worldview",
+      "to": "entity-domain",
       "sites": 2,
       "evidence": [
         {
@@ -1955,14 +1850,132 @@
       ]
     },
     {
-      "from": "worldview",
+      "from": "worldview-domain",
       "to": "shared",
       "sites": 1,
       "evidence": [
         {
-          "file": "electron/domains/entity/worldview-store.cjs",
-          "line": 9,
+          "file": "electron/domains/worldview/repositories/legacy-connection-store.cjs",
+          "line": 6,
           "target": "electron/core/persistence/json-store.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "engines",
+      "sites": 7,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 6,
+          "target": "electron/image-parser-service.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 88,
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 91,
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 100,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 112,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 121,
+          "target": "electron/excel-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 137,
+          "target": "electron/excel-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "entity-domain",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 2,
+          "target": "electron/domains/entity/index.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "identity",
+      "sites": 5,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 41,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 60,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 67,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 74,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 81,
+          "target": "electron/domains/knowledge/backend-identity-service.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "knowledge",
+      "sites": 2,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 3,
+          "target": "electron/domains/knowledge/knowledge-store.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 5,
+          "target": "electron/domains/indexing/tag-association-service.cjs",
           "deferred": false
         }
       ]
@@ -1973,9 +1986,22 @@
       "sites": 1,
       "evidence": [
         {
-          "file": "electron/domains/entity/worldview-store.cjs",
+          "file": "electron/core/ipc/worldview-ipc.cjs",
           "line": 10,
           "target": "electron/domains/universe/vault-service.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "worldview",
+      "to": "worldview-domain",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 4,
+          "target": "electron/domains/worldview/index.cjs",
           "deferred": false
         }
       ]

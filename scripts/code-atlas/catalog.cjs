@@ -3,9 +3,15 @@ const path = require("node:path");
 // Editorial ownership describes today's implementation; it does not impose a new directory layout.
 const MODULES = [
   [
+    "entity-domain",
+    "Entity domain",
+    "Owns stable Entity keys, metadata, logical ports and recorded Vault references. Adapts shared Markdown persistence.",
+    "electron/domains/entity/ (except the connector compatibility entry)",
+  ],
+  [
     "worldview-domain",
     "WorldView domain aggregate",
-    "Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference.",
+    "Owns membership, placement and connection invariants; coordinates authorized compatible persistence with Entity storage.",
     "electron/domains/worldview/",
   ],
   [
@@ -64,9 +70,9 @@ const MODULES = [
   ],
   [
     "worldview",
-    "WorldView persistence and IPC",
-    "Owns Entity records, source associations and validated WorldView operations.",
-    "electron/worldview-*.cjs",
+    "WorldView desktop IPC",
+    "Routes validated desktop WorldView operations to their owners.",
+    "electron/core/ipc/worldview-ipc.cjs and its tests",
   ],
   [
     "vault",
@@ -161,10 +167,11 @@ function moduleFor(file) {
   if (file.startsWith("features/knowledge/")) return "portal-knowledge";
   if (file.startsWith("features/workspace/")) return "portal-documents";
   if (file.startsWith("electron/core/persistence/")) return "shared";
+  if (file.startsWith("electron/core/ipc/worldview-ipc.")) return "worldview";
   if (file.startsWith("electron/core/")) return "desktop";
   if (file.startsWith("electron/domains/entity/connector-"))
     return "connectors";
-  if (file.startsWith("electron/domains/entity/")) return "worldview";
+  if (file.startsWith("electron/domains/entity/")) return "entity-domain";
   if (file.startsWith("electron/domains/universe/")) return "vault";
   if (file.startsWith("electron/domains/knowledge/backend-identity"))
     return "identity";

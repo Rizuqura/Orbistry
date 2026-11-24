@@ -280,7 +280,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."price-get"](<core/ipc/worldview-ipc.cjs.md#s-95cd58df04b17ddc>) — [electron/core/ipc/worldview-ipc.cjs:110](<../../../../../electron/core/ipc/worldview-ipc.cjs#L110>)
+- [registerWorldViewIpc."price-get"](<core/ipc/worldview-ipc.cjs.md#s-f9eec9427feda2fb>) — [electron/core/ipc/worldview-ipc.cjs:112](<../../../../../electron/core/ipc/worldview-ipc.cjs#L112>)
 
 Unresolved / external call sites: 4.
 
@@ -440,7 +440,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."price-index"](<core/ipc/worldview-ipc.cjs.md#s-d05d0e19ed635e87>) — [electron/core/ipc/worldview-ipc.cjs:98](<../../../../../electron/core/ipc/worldview-ipc.cjs#L98>)
+- [registerWorldViewIpc."price-index"](<core/ipc/worldview-ipc.cjs.md#s-8046769bd1880f89>) — [electron/core/ipc/worldview-ipc.cjs:100](<../../../../../electron/core/ipc/worldview-ipc.cjs#L100>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:286](<../../../../../electron/daily-price.test.cjs#L286>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:295](<../../../../../electron/daily-price.test.cjs#L295>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:299](<../../../../../electron/daily-price.test.cjs#L299>)

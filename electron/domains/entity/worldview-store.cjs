@@ -9,60 +9,27 @@ const {
 } = require("../../core/persistence/json-store.cjs");
 const { statVaultSource } = require("../universe/vault-service.cjs");
 
-const idSchema = z.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
-const knowledgeMenusSchema = z
-  .array(
-    z.object({
-      id: idSchema,
-      title: z.string().trim().min(1).max(80),
-    }),
-  )
-  .min(1)
-  .max(100)
-  .refine(
-    /** Requires one protected Overview and unique menu IDs within each entity. */
-    function validMenus(menus) {
-      return (
-        menus.filter((menu) => menu.id === "overview").length === 1 &&
-        new Set(menus.map((menu) => menu.id)).size === menus.length
-      );
-    },
-    "Knowledge menus require a protected Overview and unique IDs.",
-  );
-const sourceSchema = z
-  .object({
-    source_id: z.string().min(1).max(32768),
-    source_ref: z.string().min(1).max(32768),
-    filename: z.string().min(1),
-    extension: z.string(),
-    size_bytes: z
-      .number()
-      .int()
-      .nonnegative()
-      .max(Number.MAX_SAFE_INTEGER)
-      .nullable(),
-    origin: z.literal("universe"),
-  })
-  .passthrough();
-const chipSchema = z.object({
-  id: idSchema,
-  name: z.string().trim().min(1).max(80),
-  icon: z.string().max(32).default(""),
-  iconImage: z
-    .string()
-    .max(500000)
-    .regex(/^data:image\/png;base64,[A-Za-z0-9+/=]+$/)
-    .optional(),
-  color: z.string().regex(/^#[a-f0-9]{6}$/i),
-  category: z.string().max(80).optional(),
-  tags: z.array(z.string().max(500)).max(100),
-  knowledgeMenus: knowledgeMenusSchema.optional(),
-  position: z.object({
-    x: z.number().finite().min(-1e9).max(1e9),
-    y: z.number().finite().min(-1e9).max(1e9),
-  }),
+const {
+  entityKey: idSchema,
+  sourceReference,
+} = require("./contracts/entity-schema.cjs");
+const { Entity } = require("./model/Entity.cjs");
+
+const placementSchema = z.object({
+  x: z.number().finite().min(-1e9).max(1e9),
+  y: z.number().finite().min(-1e9).max(1e9),
 });
 const queues = new Map();
+
+const columns = {
+  name: "name",
+  tags: "tags",
+  color: "color",
+  icon: "icon",
+  iconImage: "icon_image",
+  category: "category",
+  knowledgeMenus: "knowledge_menus",
+};
 
 /** Returns a protected metadata directory inside the existing Vault metadata namespace, without creating it. */
 async function indexDirectory(rootPath) {
@@ -77,9 +44,18 @@ async function indexDirectory(rootPath) {
 
 /** Validates renderer-owned fields while excluding transient source statuses and server-owned associations. */
 function validateChip(chip) {
-  const result = chipSchema.safeParse(chip);
-  if (!result.success) throw new Error("Invalid WorldView chip metadata.");
-  return result.data;
+  try {
+    const entity = new Entity({ key: chip?.id, metadata: chip });
+    return {
+      id: entity.key,
+      ...entity.getSnapshot().metadata,
+      position: placementSchema.parse(chip.position),
+    };
+  } catch (error) {
+    if (error instanceof z.ZodError)
+      throw new Error("Invalid WorldView chip metadata.");
+    throw error;
+  }
 }
 
 /** Parses only the entity metadata document, preserving unknown frontmatter and the complete Markdown body. */
@@ -98,12 +74,8 @@ function parseEntityIndex(text, expectedId) {
     throw new Error("Entity source index is malformed or too large.");
   const seen = new Set();
   for (const item of metadata.sources) {
-    const parsed = sourceSchema.safeParse(item);
-    if (
-      !parsed.success ||
-      item.source_id !== item.source_ref ||
-      seen.has(item.source_id)
-    )
+    const parsed = sourceReference.safeParse(item);
+    if (!parsed.success || seen.has(item.source_id))
       throw new Error(
         "Entity source references must be unique portable Vault references.",
       );
@@ -301,8 +273,8 @@ async function saveWorldViewChip(rootPath, input) {
   });
 }
 
-/** Adds unique file references after authoritative stat validation; never reads or copies source contents. */
-async function assignWorldViewFiles(rootPath, id, references) {
+/** Stats all selected Vault files before a single queued write. The service may recheck its grant after resolution. */
+async function assignWorldViewFiles(rootPath, id, references, beforeWrite) {
   idSchema.parse(id);
   if (
     !Array.isArray(references) ||
@@ -319,14 +291,10 @@ async function assignWorldViewFiles(rootPath, id, references) {
     throw new Error("Select 1 to 500 Universe files.");
   return mutate(rootPath, async function assignFiles() {
     const record = await readRecord(rootPath, id);
+    const entity = entityFromRecord(record);
+    // Keep extension fields when refreshing a previously recorded reference.
     const existing = new Map(
-      record.metadata.sources.map(
-        /** Maps stored references without replacing unrelated source metadata. */ function sourcePair(
-          source,
-        ) {
-          return [source.source_id, source];
-        },
-      ),
+      record.metadata.sources.map((source) => [source.source_id, source]),
     );
     for (const reference of new Set(references)) {
       const resolved = await statVaultSource(rootPath, reference);
@@ -334,8 +302,7 @@ async function assignWorldViewFiles(rootPath, id, references) {
         throw new Error(
           "Only files can be assigned; folders are navigation containers.",
         );
-      existing.set(reference, {
-        ...existing.get(reference),
+      entity.attachSource({
         source_id: reference,
         source_ref: reference,
         filename: resolved.entry.name,
@@ -344,20 +311,25 @@ async function assignWorldViewFiles(rootPath, id, references) {
         origin: "universe",
       });
     }
-    if (existing.size > 5000)
-      throw new Error("This entity supports up to 5000 file associations.");
-    record.metadata.sources = [...existing.values()].sort(
-      /** Keeps source serialization independent of picker order. */ function compareSources(
-        a,
-        b,
-      ) {
-        return a.source_id < b.source_id
-          ? -1
-          : a.source_id > b.source_id
-            ? 1
-            : 0;
-      },
-    );
+    record.metadata.sources = entity
+      .getSnapshot()
+      .sourceReferences.map((source) => ({
+        ...existing.get(source.source_id),
+        ...source,
+      }))
+      .sort(
+        /** Keeps source serialization independent of picker order. */ function compareSources(
+          a,
+          b,
+        ) {
+          return a.source_id < b.source_id
+            ? -1
+            : a.source_id > b.source_id
+              ? 1
+              : 0;
+        },
+      );
+    await beforeWrite?.();
     await writeTextAtomic(
       path.join(await indexDirectory(rootPath), `${id}.md`),
       serializeEntityIndex(record),
@@ -367,20 +339,19 @@ async function assignWorldViewFiles(rootPath, id, references) {
   });
 }
 
-/** Removes only an association from the Markdown index; the original Universe source is never modified. */
-async function unassignWorldViewFile(rootPath, id, sourceId) {
+/** Removes one recorded association after the optional host recheck. The original Vault file stays in place. */
+async function unassignWorldViewFile(rootPath, id, sourceId, beforeWrite) {
   idSchema.parse(id);
   if (typeof sourceId !== "string")
     throw new Error("Choose an assigned source.");
   return mutate(rootPath, async function unassignFile() {
     const record = await readRecord(rootPath, id);
-    record.metadata.sources = record.metadata.sources.filter(
-      /** Retains every association other than the exact requested source ID. */ function keepSource(
-        source,
-      ) {
-        return source.source_id !== sourceId;
-      },
+    const entity = entityFromRecord(record);
+    entity.detachSource(sourceId);
+    record.metadata.sources = record.metadata.sources.filter((source) =>
+      entity.hasSource(source.source_id),
     );
+    await beforeWrite?.();
     await writeTextAtomic(
       path.join(await indexDirectory(rootPath), `${id}.md`),
       serializeEntityIndex(record),
@@ -402,7 +373,49 @@ async function deleteWorldViewChip(rootPath, id) {
   });
 }
 
+/** Projects one schema-v1 record into Entity-owned state without resolving a source or opening a companion. */
+function entityFromRecord(record) {
+  return new Entity({
+    key: record.chip.id,
+    createdAt: record.chip.createdAt,
+    metadata: record.chip,
+    sourceReferences: record.metadata.sources,
+  });
+}
+
+/** Reads one bounded record and projects its known fields. Original YAML and Markdown stay inside the store. */
+async function readEntitySnapshot(root, id) {
+  return entityFromRecord(await readRecord(root, id)).getSnapshot();
+}
+
+/** Applies only validated Entity fields inside the WorldView queue. An external edit or revoked grant aborts the replacement. */
+async function patchEntityMetadata(root, id, changes, beforeWrite) {
+  idSchema.parse(id);
+  return mutate(
+    root,
+    /** Patches the latest YAML without replacing placement, source data, unknown fields or the body. */ async function writeMetadataPatch() {
+      const record = await readRecord(root, id);
+      const entity = entityFromRecord(record);
+      entity.updateMetadata(changes);
+      const snapshot = entity.getSnapshot();
+      for (const [field, column] of Object.entries(columns)) {
+        if (Object.hasOwn(changes, field))
+          record.metadata[column] = snapshot.metadata[field] ?? null;
+      }
+      await beforeWrite?.();
+      await writeTextAtomic(
+        path.join(await indexDirectory(root), id + ".md"),
+        serializeEntityIndex(record),
+        record.original,
+      );
+      return snapshot;
+    },
+  );
+}
+
 module.exports = {
+  readEntitySnapshot,
+  patchEntityMetadata,
   withWorldViewMutation: mutate,
   readWorldViewChip,
   loadWorldView,

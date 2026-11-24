@@ -23,9 +23,9 @@ Output order, IDs, LF encoding and graph layout are deterministic for the same s
 
 ## Discovery scope
 
-528 inventoried repository files; 428 analyzed source files (2 PowerShell, remainder JavaScript/TypeScript); 8104 symbols including file scopes; 7213 callable declarations; 356 TypeScript/Zod contract declarations; 910 compiler-observed/literal-bridge exports.
+537 inventoried repository files; 436 analyzed source files (2 PowerShell, remainder JavaScript/TypeScript); 8190 symbols including file scopes; 7287 callable declarations; 357 TypeScript/Zod contract declarations; 922 compiler-observed/literal-bridge exports.
 
-7223 statically resolved call sites; 32835 unresolved/external call sites; 2108 import/re-export/require sites; 246 IPC observations. 6155 callable declarations have no purpose JSDoc. These are discovery counts, not code-quality scores or coverage measurements.
+7337 statically resolved call sites; 33020 unresolved/external call sites; 2133 import/re-export/require sites; 246 IPC observations. 6198 callable declarations have no purpose JSDoc. These are discovery counts, not code-quality scores or coverage measurements.
 
 Discovery uses rg --files --hidden with repository ignore rules plus explicit exclusions for dependencies, generated output, Atlas output, temporary files, credentials, application state and Universe data. TypeScript AST analysis covers JS, JSX, CJS, MJS, TS, TSX, CTS and MTS, including tests, scripts, declarations, examples and root configuration. Native PowerShell AST analysis adds the Windows OCR helper and parser-tool script without executing them. Other inventoried formats (CSS, Markdown, YAML, images and generic JSON) are listed but are not parsed as JS/TS. Relevant Engine JSON schemas/manifests are indexed separately. Ignored local files and third-party/vendor source are not repository implementation evidence.
 
@@ -56,7 +56,8 @@ The generator checks syntax and documentation links. It does not replace applica
 
 | Module | Responsibility | Navigation |
 | --- | --- | --- |
-| [WorldView domain aggregate](<modules/worldview-domain.md>) | Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference. | [Symbols](<symbols/worldview-domain.md>) |
+| [Entity domain](<modules/entity-domain.md>) | Owns stable Entity keys, metadata, logical ports and recorded Vault references. Adapts shared Markdown persistence. | [Symbols](<symbols/entity-domain.md>) |
+| [WorldView domain aggregate](<modules/worldview-domain.md>) | Owns membership, placement and connection invariants; coordinates authorized compatible persistence with Entity storage. | [Symbols](<symbols/worldview-domain.md>) |
 | [Entity UI](<modules/portal-entities.md>) | Edits Entity metadata, source assignments and navigation. | [Symbols](<symbols/portal-entities.md>) |
 | [Knowledge Cards and readers](<modules/portal-knowledge.md>) | Presents applied indexes, source readers and existing data views. | [Symbols](<symbols/portal-knowledge.md>) |
 | [Portal shell](<modules/portal-shell.md>) | Composes the static React application, navigation, dialogs and workspace surfaces. | [Symbols](<symbols/portal-shell.md>) |
@@ -66,7 +67,7 @@ The generator checks syntax and documentation links. It does not replace applica
 | [Settings and Engine list](<modules/portal-settings.md>) | Presents provider settings and read-only Engine catalog discovery. | [Symbols](<symbols/portal-settings.md>) |
 | [Document workspace](<modules/portal-documents.md>) | Presents Vault documents, PDF navigation and the knowledge sidebar. | [Symbols](<symbols/portal-documents.md>) |
 | [Electron composition and IPC security](<modules/desktop.md>) | Composes backend services, creates isolated windows and exposes the narrow desktop bridge. | [Symbols](<symbols/desktop.md>) |
-| [WorldView persistence and IPC](<modules/worldview.md>) | Owns Entity records, source associations and validated WorldView operations. | [Symbols](<symbols/worldview.md>) |
+| [WorldView desktop IPC](<modules/worldview.md>) | Routes validated desktop WorldView operations to their owners. | [Symbols](<symbols/worldview.md>) |
 | [Vault and stations](<modules/vault.md>) | Owns controlled file access, Vault settings, stations, source bindings and OCR adapters. | [Symbols](<symbols/vault.md>) |
 | [Knowledge indexing and source access](<modules/knowledge.md>) | Parses applied index declarations and resolves authorized source references and editor state. | [Symbols](<symbols/knowledge.md>) |
 | [Connectors](<modules/connectors.md>) | Persists explicit relationship metadata; relationships do not grant endpoint permissions. | [Symbols](<symbols/connectors.md>) |

@@ -109,8 +109,8 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 - [Retained AI runtime](<ai-runtime.md>): 34 import sites; example [electron/ai/agents/agent-construction.cjs:1](<../../../electron/ai/agents/agent-construction.cjs#L1>).
 - [Connectors](<connectors.md>): 1 import sites; example [electron/ai/agents/entity-jurisdiction.cjs:3](<../../../electron/ai/agents/entity-jurisdiction.cjs#L3>).
 - [Built-in Engines and data adapters](<engines.md>): 1 import sites; example [electron/ai/agents/entity-agent-protocol.cjs:265](<../../../electron/ai/agents/entity-agent-protocol.cjs#L265>).
+- [Entity domain](<entity-domain.md>): 1 import sites; example [electron/ai/agents/entity-agents.cjs:44](<../../../electron/ai/agents/entity-agents.cjs#L44>).
 - [Backend Identity Engine](<identity.md>): 3 import sites; example [electron/ai/agents/entity-agent-access.cjs:4](<../../../electron/ai/agents/entity-agent-access.cjs#L4>).
-- [WorldView persistence and IPC](<worldview.md>): 1 import sites; example [electron/ai/agents/entity-agents.cjs:44](<../../../electron/ai/agents/entity-agents.cjs#L44>).
 
 ## Depended on by
 

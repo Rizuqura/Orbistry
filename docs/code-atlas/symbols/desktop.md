@@ -9,8 +9,6 @@ Generated from AST declarations. Compiler-inferred contracts are approximate and
 - [electron/brain-errors.cjs](<files/electron/brain-errors.cjs.md#s-cc3291ae9e830021>) (production; 4 declarations)
 - [electron/chat-window.cjs](<files/electron/chat-window.cjs.md#s-c4bd2be03dc430d3>) (production; 7 declarations)
 - [electron/chat-window.test.cjs](<files/electron/chat-window.test.cjs.md#s-dbe374555e0637c3>) (test; 13 declarations)
-- [electron/core/ipc/worldview-ipc.cjs](<files/electron/core/ipc/worldview-ipc.cjs.md#s-ed467b4c0b047c43>) (production; 41 declarations)
-- [electron/core/ipc/worldview-ipc.test.cjs](<files/electron/core/ipc/worldview-ipc.test.cjs.md#s-3db508bd03ac795c>) (test; 4 declarations)
 - [electron/core/security/desktop-security.cjs](<files/electron/core/security/desktop-security.cjs.md#s-10a91432693ff71b>) (production; 5 declarations)
 - [electron/core/security/desktop-security.test.cjs](<files/electron/core/security/desktop-security.test.cjs.md#s-a54adf31d39fe18b>) (test; 9 declarations)
 - [electron/engine-packages.test.cjs](<files/electron/engine-packages.test.cjs.md#s-10188b1e39545648>) (test; 53 declarations)

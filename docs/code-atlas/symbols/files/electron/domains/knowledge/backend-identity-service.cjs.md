@@ -109,11 +109,11 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:654](<../../../../../../../electron/backend-identity.test.cjs#L654>)
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:658](<../../../../../../../electron/backend-identity.test.cjs#L658>)
-- [registerWorldViewIpc."identity-copy"](<../../core/ipc/worldview-ipc.cjs.md#s-ce81b8dc279a0164>) — [electron/core/ipc/worldview-ipc.cjs:39](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L39>)
-- [registerWorldViewIpc."identity-status"](<../../core/ipc/worldview-ipc.cjs.md#s-91073a3b342776be>) — [electron/core/ipc/worldview-ipc.cjs:58](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L58>)
-- [registerWorldViewIpc."identity-generate"](<../../core/ipc/worldview-ipc.cjs.md#s-b117fe3e7fb48a53>) — [electron/core/ipc/worldview-ipc.cjs:65](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L65>)
-- [registerWorldViewIpc."identity-chunks"](<../../core/ipc/worldview-ipc.cjs.md#s-a8b93ed20dd56505>) — [electron/core/ipc/worldview-ipc.cjs:72](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L72>)
-- [registerWorldViewIpc."identity-capabilities"](<../../core/ipc/worldview-ipc.cjs.md#s-96a91b8083e8f5cf>) — [electron/core/ipc/worldview-ipc.cjs:79](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L79>)
+- [registerWorldViewIpc."identity-copy"](<../../core/ipc/worldview-ipc.cjs.md#s-8850723604119ed0>) — [electron/core/ipc/worldview-ipc.cjs:41](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L41>)
+- [registerWorldViewIpc."identity-status"](<../../core/ipc/worldview-ipc.cjs.md#s-b62e7c1bf9ee856a>) — [electron/core/ipc/worldview-ipc.cjs:60](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L60>)
+- [registerWorldViewIpc."identity-generate"](<../../core/ipc/worldview-ipc.cjs.md#s-79e1c96040445b97>) — [electron/core/ipc/worldview-ipc.cjs:67](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L67>)
+- [registerWorldViewIpc."identity-chunks"](<../../core/ipc/worldview-ipc.cjs.md#s-79c7118159b60c2a>) — [electron/core/ipc/worldview-ipc.cjs:74](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L74>)
+- [registerWorldViewIpc."identity-capabilities"](<../../core/ipc/worldview-ipc.cjs.md#s-8f7bf21e0ea53559>) — [electron/core/ipc/worldview-ipc.cjs:81](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L81>)
 
 Unresolved / external call sites: 9.
 

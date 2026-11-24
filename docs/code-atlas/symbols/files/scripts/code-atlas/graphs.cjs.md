@@ -18,12 +18,12 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [selectCallEdges.&lt;anonymous@85:7&gt;](<graphs.cjs.md#s-1f4dd091d8fcd5c7>) (ArrowFunction)
 - [selectCallEdges.&lt;anonymous@89:7&gt;](<graphs.cjs.md#s-8309e26858db373a>) (ArrowFunction)
 - [selectCallEdges.&lt;anonymous@91:16&gt;](<graphs.cjs.md#s-9f25dbbe1882d802>) (ArrowFunction)
-- [selectCallEdges.&lt;anonymous@134:15&gt;](<graphs.cjs.md#s-64711e702aace9e8>) (ArrowFunction)
-- [selectCallEdges.&lt;anonymous@146:13&gt;](<graphs.cjs.md#s-af482ad0a25b9e17>) (ArrowFunction)
-- [callSvg](<graphs.cjs.md#s-43afc2850469202e>) (FunctionDeclaration)
-- [callSvg.&lt;anonymous@169:41&gt;](<graphs.cjs.md#s-69da761c5466eea4>) (ArrowFunction)
-- [callSvg.&lt;anonymous@181:17&gt;](<graphs.cjs.md#s-41eed9ebd39b466b>) (ArrowFunction)
-- [callSvg.&lt;anonymous@181:17&gt;.&lt;anonymous@183:54&gt;](<graphs.cjs.md#s-2a3b3d84546016a6>) (ArrowFunction)
+- [selectCallEdges.&lt;anonymous@135:15&gt;](<graphs.cjs.md#s-70a5c3e8e545db84>) (ArrowFunction)
+- [selectCallEdges.&lt;anonymous@147:13&gt;](<graphs.cjs.md#s-8931a93ae852db29>) (ArrowFunction)
+- [callSvg](<graphs.cjs.md#s-93adb049c008bf52>) (FunctionDeclaration)
+- [callSvg.&lt;anonymous@170:41&gt;](<graphs.cjs.md#s-cadbf1e4e18562e9>) (ArrowFunction)
+- [callSvg.&lt;anonymous@182:17&gt;](<graphs.cjs.md#s-3a1b1a1b8f49abf4>) (ArrowFunction)
+- [callSvg.&lt;anonymous@182:17&gt;.&lt;anonymous@184:54&gt;](<graphs.cjs.md#s-342e1b069689b4f1>) (ArrowFunction)
 
 <a id="s-f16f4902001a59e6"></a>
 
@@ -79,9 +79,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [dependencySvg.&lt;anonymous@34:19&gt;](<graphs.cjs.md#s-c8650026870548ac>) — [scripts/code-atlas/graphs.cjs:37](<../../../../../../scripts/code-atlas/graphs.cjs#L37>)
 - [dependencySvg.&lt;anonymous@34:19&gt;.&lt;anonymous@39:21&gt;](<graphs.cjs.md#s-591837bbcd65ee2f>) — [scripts/code-atlas/graphs.cjs:45](<../../../../../../scripts/code-atlas/graphs.cjs#L45>)
 - [dependencySvg.&lt;anonymous@34:19&gt;.&lt;anonymous@39:21&gt;](<graphs.cjs.md#s-591837bbcd65ee2f>) — [scripts/code-atlas/graphs.cjs:45](<../../../../../../scripts/code-atlas/graphs.cjs#L45>)
-- [callSvg.&lt;anonymous@181:17&gt;.&lt;anonymous@183:54&gt;](<graphs.cjs.md#s-2a3b3d84546016a6>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
-- [callSvg.&lt;anonymous@181:17&gt;.&lt;anonymous@183:54&gt;](<graphs.cjs.md#s-2a3b3d84546016a6>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
-- [callSvg.&lt;anonymous@181:17&gt;.&lt;anonymous@183:54&gt;](<graphs.cjs.md#s-2a3b3d84546016a6>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
+- [callSvg.&lt;anonymous@182:17&gt;.&lt;anonymous@184:54&gt;](<graphs.cjs.md#s-342e1b069689b4f1>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
+- [callSvg.&lt;anonymous@182:17&gt;.&lt;anonymous@184:54&gt;](<graphs.cjs.md#s-342e1b069689b4f1>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
+- [callSvg.&lt;anonymous@182:17&gt;.&lt;anonymous@184:54&gt;](<graphs.cjs.md#s-342e1b069689b4f1>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
 
 Unresolved / external call sites: 2.
 
@@ -152,7 +152,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:621](<../../../../../../scripts/code-atlas/render.cjs#L621>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:623](<../../../../../../scripts/code-atlas/render.cjs#L623>)
 
 Unresolved / external call sites: 3.
 
@@ -298,7 +298,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:601](<../../../../../../scripts/code-atlas/render.cjs#L601>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:603](<../../../../../../scripts/code-atlas/render.cjs#L603>)
 
 Unresolved / external call sites: 15.
 
@@ -454,11 +454,11 @@ Unresolved / external call sites: 4.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-64711e702aace9e8"></a>
+<a id="s-70a5c3e8e545db84"></a>
 
-## selectCallEdges.&lt;anonymous@134:15&gt;
+## selectCallEdges.&lt;anonymous@135:15&gt;
 
-[scripts/code-atlas/graphs.cjs:134](<../../../../../../scripts/code-atlas/graphs.cjs#L134>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:135](<../../../../../../scripts/code-atlas/graphs.cjs#L135>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -482,18 +482,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:135](<../../../../../../scripts/code-atlas/graphs.cjs#L135>)
 - byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:136](<../../../../../../scripts/code-atlas/graphs.cjs#L136>)
+- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:137](<../../../../../../scripts/code-atlas/graphs.cjs#L137>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-af482ad0a25b9e17"></a>
+<a id="s-8931a93ae852db29"></a>
 
-## selectCallEdges.&lt;anonymous@146:13&gt;
+## selectCallEdges.&lt;anonymous@147:13&gt;
 
-[scripts/code-atlas/graphs.cjs:146](<../../../../../../scripts/code-atlas/graphs.cjs#L146>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:147](<../../../../../../scripts/code-atlas/graphs.cjs#L147>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -510,7 +510,7 @@ Returns: 0 &#124; 1 &#124; -1 (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [compare](<analyze.cjs.md#s-0f547bdcda50a0a0>) — [scripts/code-atlas/graphs.cjs:147](<../../../../../../scripts/code-atlas/graphs.cjs#L147>)
+- [compare](<analyze.cjs.md#s-0f547bdcda50a0a0>) — [scripts/code-atlas/graphs.cjs:148](<../../../../../../scripts/code-atlas/graphs.cjs#L148>)
 
 **Called by (statically resolved):**
 
@@ -518,20 +518,20 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 4.
 
-- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:148](<../../../../../../scripts/code-atlas/graphs.cjs#L148>)
-- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:148](<../../../../../../scripts/code-atlas/graphs.cjs#L148>)
 - byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:149](<../../../../../../scripts/code-atlas/graphs.cjs#L149>)
 - byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:149](<../../../../../../scripts/code-atlas/graphs.cjs#L149>)
+- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:150](<../../../../../../scripts/code-atlas/graphs.cjs#L150>)
+- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:150](<../../../../../../scripts/code-atlas/graphs.cjs#L150>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-43afc2850469202e"></a>
+<a id="s-93adb049c008bf52"></a>
 
 ## callSvg
 
-[scripts/code-atlas/graphs.cjs:168](<../../../../../../scripts/code-atlas/graphs.cjs#L168>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:169](<../../../../../../scripts/code-atlas/graphs.cjs#L169>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Renders actual symbol pairs as a readable call graph excerpt, linking every node to its complete caller/callee page.
 
@@ -554,32 +554,32 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:623](<../../../../../../scripts/code-atlas/render.cjs#L623>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:625](<../../../../../../scripts/code-atlas/render.cjs#L625>)
 
 Unresolved / external call sites: 6.
 
-- Map — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:169](<../../../../../../scripts/code-atlas/graphs.cjs#L169>)
-- data.symbols.map — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:169](<../../../../../../scripts/code-atlas/graphs.cjs#L169>)
-- Math.max — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:170](<../../../../../../scripts/code-atlas/graphs.cjs#L170>)
-- edges.forEach — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:181](<../../../../../../scripts/code-atlas/graphs.cjs#L181>)
-- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:193](<../../../../../../scripts/code-atlas/graphs.cjs#L193>)
-- parts.join — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:194](<../../../../../../scripts/code-atlas/graphs.cjs#L194>)
+- Map — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:170](<../../../../../../scripts/code-atlas/graphs.cjs#L170>)
+- data.symbols.map — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:170](<../../../../../../scripts/code-atlas/graphs.cjs#L170>)
+- Math.max — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:171](<../../../../../../scripts/code-atlas/graphs.cjs#L171>)
+- edges.forEach — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:182](<../../../../../../scripts/code-atlas/graphs.cjs#L182>)
+- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:194](<../../../../../../scripts/code-atlas/graphs.cjs#L194>)
+- parts.join — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:195](<../../../../../../scripts/code-atlas/graphs.cjs#L195>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-69da761c5466eea4"></a>
+<a id="s-cadbf1e4e18562e9"></a>
 
-## callSvg.&lt;anonymous@169:41&gt;
+## callSvg.&lt;anonymous@170:41&gt;
 
-[scripts/code-atlas/graphs.cjs:169](<../../../../../../scripts/code-atlas/graphs.cjs#L169>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:170](<../../../../../../scripts/code-atlas/graphs.cjs#L170>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [callSvg](<graphs.cjs.md#s-43afc2850469202e>).
+Lexical owner: [callSvg](<graphs.cjs.md#s-93adb049c008bf52>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -602,17 +602,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-41eed9ebd39b466b"></a>
+<a id="s-3a1b1a1b8f49abf4"></a>
 
-## callSvg.&lt;anonymous@181:17&gt;
+## callSvg.&lt;anonymous@182:17&gt;
 
-[scripts/code-atlas/graphs.cjs:181](<../../../../../../scripts/code-atlas/graphs.cjs#L181>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:182](<../../../../../../scripts/code-atlas/graphs.cjs#L182>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [callSvg](<graphs.cjs.md#s-43afc2850469202e>).
+Lexical owner: [callSvg](<graphs.cjs.md#s-93adb049c008bf52>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -631,26 +631,26 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 4.
 
-- &#91;byId.get(edge.from), byId.get(edge.to)&#93;.forEach — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:183](<../../../../../../scripts/code-atlas/graphs.cjs#L183>)
-- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:183](<../../../../../../scripts/code-atlas/graphs.cjs#L183>)
-- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:183](<../../../../../../scripts/code-atlas/graphs.cjs#L183>)
-- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:189](<../../../../../../scripts/code-atlas/graphs.cjs#L189>)
+- &#91;byId.get(edge.from), byId.get(edge.to)&#93;.forEach — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:184](<../../../../../../scripts/code-atlas/graphs.cjs#L184>)
+- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:184](<../../../../../../scripts/code-atlas/graphs.cjs#L184>)
+- byId.get — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:184](<../../../../../../scripts/code-atlas/graphs.cjs#L184>)
+- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:190](<../../../../../../scripts/code-atlas/graphs.cjs#L190>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2a3b3d84546016a6"></a>
+<a id="s-342e1b069689b4f1"></a>
 
-## callSvg.&lt;anonymous@181:17&gt;.&lt;anonymous@183:54&gt;
+## callSvg.&lt;anonymous@182:17&gt;.&lt;anonymous@184:54&gt;
 
-[scripts/code-atlas/graphs.cjs:183](<../../../../../../scripts/code-atlas/graphs.cjs#L183>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/graphs.cjs:184](<../../../../../../scripts/code-atlas/graphs.cjs#L184>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [callSvg.&lt;anonymous@181:17&gt;](<graphs.cjs.md#s-41eed9ebd39b466b>).
+Lexical owner: [callSvg.&lt;anonymous@182:17&gt;](<graphs.cjs.md#s-3a1b1a1b8f49abf4>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -661,9 +661,9 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
-- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
-- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
+- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
+- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
+- [xml](<graphs.cjs.md#s-e5d20f92d62851ad>) — [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
 
 **Called by (statically resolved):**
 
@@ -671,8 +671,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:185](<../../../../../../scripts/code-atlas/graphs.cjs#L185>)
-- symbol.qualifiedName.slice — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
+- parts.push — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:186](<../../../../../../scripts/code-atlas/graphs.cjs#L186>)
+- symbol.qualifiedName.slice — external-or-dynamic-dispatch; [scripts/code-atlas/graphs.cjs:187](<../../../../../../scripts/code-atlas/graphs.cjs#L187>)
 
 **Related tests / acceptance harnesses:**
 

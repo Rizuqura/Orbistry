@@ -72,8 +72,8 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [moduleFor](<catalog.cjs.md#s-eee321adf7819f17>) — [scripts/code-atlas/powershell.cjs:38](<../../../../../../scripts/code-atlas/powershell.cjs#L38>)
-- [roleFor](<catalog.cjs.md#s-5f489f711c67456d>) — [scripts/code-atlas/powershell.cjs:39](<../../../../../../scripts/code-atlas/powershell.cjs#L39>)
+- [moduleFor](<catalog.cjs.md#s-760ea599ad9258b2>) — [scripts/code-atlas/powershell.cjs:38](<../../../../../../scripts/code-atlas/powershell.cjs#L38>)
+- [roleFor](<catalog.cjs.md#s-923feac876424dc9>) — [scripts/code-atlas/powershell.cjs:39](<../../../../../../scripts/code-atlas/powershell.cjs#L39>)
 - [appendPowerShell.record](<powershell.cjs.md#s-b0fd03296648d3e6>) — [scripts/code-atlas/powershell.cjs:108](<../../../../../../scripts/code-atlas/powershell.cjs#L108>)
 - [appendPowerShell.record](<powershell.cjs.md#s-b0fd03296648d3e6>) — [scripts/code-atlas/powershell.cjs:119](<../../../../../../scripts/code-atlas/powershell.cjs#L119>)
 - [appendPowerShell.record](<powershell.cjs.md#s-b0fd03296648d3e6>) — [scripts/code-atlas/powershell.cjs:135](<../../../../../../scripts/code-atlas/powershell.cjs#L135>)

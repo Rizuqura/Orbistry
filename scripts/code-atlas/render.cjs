@@ -454,6 +454,8 @@ function architecturePage(data, output) {
       "",
       "## WorldView, Entity, indexing and Knowledge Cards",
       "",
+      `The ${evidence("electron/domains/entity/model/Entity.cjs", "Entity")} aggregate owns metadata, logical ports and recorded source references. ${evidence("electron/domains/entity/services/EntityService.cjs", "EntityService")} admits scoped operations and ${evidence("electron/domains/entity/repositories/EntityRepository.cjs", "EntityRepository")} adapts the existing record. See the ${link(doc, "docs/architecture/ENTITY_DOMAIN_OOP.md", "Entity ownership matrix")} for companion stores and revisions.`,
+      "",
       `WorldView membership, placement and connection invariants are modeled by ${evidence("electron/domains/worldview/model/WorldView.cjs", "WorldView")} and ${evidence("electron/domains/worldview/model/Connection.cjs", "Connection")}. ${evidence("electron/domains/worldview/services/WorldViewService.cjs", "WorldViewService")} coordinates host authorization with ${evidence("electron/domains/worldview/repositories/WorldViewRepository.cjs", "WorldViewRepository")}; existing IPC shapes and physical storage remain compatible. See ${link(doc, "docs/architecture/WORLDVIEW_DOMAIN_OOP.md", "WorldView domain report")} for revision and legacy-port limitations.`,
       "",
       `WorldView presentation ${evidence("features/worldview/worldview.tsx")} and ${evidence("features/knowledge/knowledge-workspace.tsx")} use the desktop bridge. The WorldView handler ${refs.worldIpc} dispatches a finite operation table into Entity/source metadata ${refs.world}, index/editor operations ${refs.knowledge}, authorized source resolution ${refs.source}, and Vault checks ${refs.vault}.`,

@@ -32,7 +32,7 @@ electron/
   core/security/             trusted-window IPC security
   core/persistence/          atomic JSON/text persistence and queues
   core/ipc/                  WorldView IPC registration
-  domains/entity/            Entity records/source associations; connector compatibility entry
+  domains/entity/            Entity aggregate, service, repository, shared v1 records and connector compatibility entry
   domains/worldview/         WorldView/Connection models, service, repository and graph queries
   domains/universe/          Vault/settings/stations
   domains/knowledge/         applied index state, authorized sources, Identity inspector
@@ -54,3 +54,5 @@ docs/architecture/, code-atlas/, engines/, decisions/
 No empty Dashboard or frontend indexing folders were created. The current Index editor is part of Knowledge workspace; extracting it would change component boundaries. Existing financial viewers remain Knowledge readers rather than being relabeled as a Dashboard Builder. Original Engine package examples stay in examples/engines/.
 
 See [module ownership](MODULE_OWNERSHIP.md), [relocation changelog](RESTRUCTURE_CHANGELOG.md), [exact move manifest](restructure-moves.json) and [Code Atlas](../code-atlas/README.md).
+
+See [Entity domain implementation](ENTITY_DOMAIN_OOP.md) for the storage ownership matrix and backend entry points.

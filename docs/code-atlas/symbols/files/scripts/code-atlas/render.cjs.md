@@ -48,17 +48,17 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) (FunctionDeclaration)
 - [architecturePage.evidence.&lt;anonymous@387:7&gt;](<render.cjs.md#s-38063b8972ff0948>) (ArrowFunction)
 - [architecturePage.&lt;anonymous@396:5&gt;](<render.cjs.md#s-3afa69d2cbaa4d4c>) (ArrowFunction)
-- [architecturePage.&lt;anonymous@479:109&gt;](<render.cjs.md#s-62d5eaed722db9f3>) (ArrowFunction)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) (FunctionDeclaration)
-- [render](<render.cjs.md#s-60a72fe723323605>) (FunctionDeclaration)
-- [render.&lt;anonymous@568:13&gt;](<render.cjs.md#s-caa33549f80fb8db>) (ArrowFunction)
-- [render.&lt;anonymous@569:10&gt;](<render.cjs.md#s-138a501b83f1bfb7>) (ArrowFunction)
-- [render.&lt;anonymous@614:40&gt;](<render.cjs.md#s-6d5bb07dba5871b3>) (ArrowFunction)
-- [render.&lt;anonymous@614:40&gt;.&lt;anonymous@616:7&gt;](<render.cjs.md#s-54adfd33135020f1>) (ArrowFunction)
-- [render.&lt;anonymous@658:44&gt;](<render.cjs.md#s-936da55d4f4f078c>) (ArrowFunction)
-- [render.&lt;anonymous@664:45&gt;](<render.cjs.md#s-7ab5a9c7c8a44220>) (ArrowFunction)
-- [render.&lt;anonymous@666:5&gt;](<render.cjs.md#s-4443a4f4a06fed30>) (ArrowFunction)
-- [render.&lt;anonymous@694:125&gt;](<render.cjs.md#s-0b1b52f77ac0d498>) (ArrowFunction)
+- [architecturePage.&lt;anonymous@481:109&gt;](<render.cjs.md#s-1d8ee74e8a3aed6c>) (ArrowFunction)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) (FunctionDeclaration)
+- [render](<render.cjs.md#s-795102933500a447>) (FunctionDeclaration)
+- [render.&lt;anonymous@570:13&gt;](<render.cjs.md#s-8fa47ec970c160b6>) (ArrowFunction)
+- [render.&lt;anonymous@571:10&gt;](<render.cjs.md#s-400b5418ed6f61cf>) (ArrowFunction)
+- [render.&lt;anonymous@616:40&gt;](<render.cjs.md#s-983d47f28c908432>) (ArrowFunction)
+- [render.&lt;anonymous@616:40&gt;.&lt;anonymous@618:7&gt;](<render.cjs.md#s-1a106ec423fc432f>) (ArrowFunction)
+- [render.&lt;anonymous@660:44&gt;](<render.cjs.md#s-3e12fb61e1f4e8eb>) (ArrowFunction)
+- [render.&lt;anonymous@666:45&gt;](<render.cjs.md#s-c961e08067da069e>) (ArrowFunction)
+- [render.&lt;anonymous@668:5&gt;](<render.cjs.md#s-13f1cb4cf4628af2>) (ArrowFunction)
+- [render.&lt;anonymous@696:125&gt;](<render.cjs.md#s-3687edc41b12486b>) (ArrowFunction)
 
 <a id="s-d89b48e6dca58cd5"></a>
 
@@ -126,9 +126,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [symbolPages](<render.cjs.md#s-cdf0d1b6d95dccf6>) — [scripts/code-atlas/render.cjs:215](<../../../../../../scripts/code-atlas/render.cjs#L215>)
 - [ipcPage](<render.cjs.md#s-2af97a1f4a7005af>) — [scripts/code-atlas/render.cjs:363](<../../../../../../scripts/code-atlas/render.cjs#L363>)
 - [ipcPage](<render.cjs.md#s-2af97a1f4a7005af>) — [scripts/code-atlas/render.cjs:376](<../../../../../../scripts/code-atlas/render.cjs#L376>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:649](<../../../../../../scripts/code-atlas/render.cjs#L649>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:744](<../../../../../../scripts/code-atlas/render.cjs#L744>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:744](<../../../../../../scripts/code-atlas/render.cjs#L744>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:651](<../../../../../../scripts/code-atlas/render.cjs#L651>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:746](<../../../../../../scripts/code-atlas/render.cjs#L746>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:746](<../../../../../../scripts/code-atlas/render.cjs#L746>)
 
 Unresolved / external call sites: 9.
 
@@ -193,39 +193,40 @@ Returns: string (compiler-inferred). Implementation present.
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:447](<../../../../../../scripts/code-atlas/render.cjs#L447>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:447](<../../../../../../scripts/code-atlas/render.cjs#L447>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:510](<../../../../../../scripts/code-atlas/render.cjs#L510>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:510](<../../../../../../scripts/code-atlas/render.cjs#L510>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:537](<../../../../../../scripts/code-atlas/render.cjs#L537>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:538](<../../../../../../scripts/code-atlas/render.cjs#L538>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:539](<../../../../../../scripts/code-atlas/render.cjs#L539>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:540](<../../../../../../scripts/code-atlas/render.cjs#L540>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:541](<../../../../../../scripts/code-atlas/render.cjs#L541>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:542](<../../../../../../scripts/code-atlas/render.cjs#L542>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:543](<../../../../../../scripts/code-atlas/render.cjs#L543>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:543](<../../../../../../scripts/code-atlas/render.cjs#L543>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:552](<../../../../../../scripts/code-atlas/render.cjs#L552>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:552](<../../../../../../scripts/code-atlas/render.cjs#L552>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:638](<../../../../../../scripts/code-atlas/render.cjs#L638>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:638](<../../../../../../scripts/code-atlas/render.cjs#L638>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:642](<../../../../../../scripts/code-atlas/render.cjs#L642>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:642](<../../../../../../scripts/code-atlas/render.cjs#L642>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:649](<../../../../../../scripts/code-atlas/render.cjs#L649>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:673](<../../../../../../scripts/code-atlas/render.cjs#L673>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:674](<../../../../../../scripts/code-atlas/render.cjs#L674>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:674](<../../../../../../scripts/code-atlas/render.cjs#L674>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:675](<../../../../../../scripts/code-atlas/render.cjs#L675>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:677](<../../../../../../scripts/code-atlas/render.cjs#L677>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:678](<../../../../../../scripts/code-atlas/render.cjs#L678>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:730](<../../../../../../scripts/code-atlas/render.cjs#L730>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:730](<../../../../../../scripts/code-atlas/render.cjs#L730>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:512](<../../../../../../scripts/code-atlas/render.cjs#L512>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:512](<../../../../../../scripts/code-atlas/render.cjs#L512>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:539](<../../../../../../scripts/code-atlas/render.cjs#L539>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:540](<../../../../../../scripts/code-atlas/render.cjs#L540>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:541](<../../../../../../scripts/code-atlas/render.cjs#L541>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:542](<../../../../../../scripts/code-atlas/render.cjs#L542>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:543](<../../../../../../scripts/code-atlas/render.cjs#L543>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:544](<../../../../../../scripts/code-atlas/render.cjs#L544>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:545](<../../../../../../scripts/code-atlas/render.cjs#L545>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:545](<../../../../../../scripts/code-atlas/render.cjs#L545>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:554](<../../../../../../scripts/code-atlas/render.cjs#L554>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:554](<../../../../../../scripts/code-atlas/render.cjs#L554>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:640](<../../../../../../scripts/code-atlas/render.cjs#L640>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:640](<../../../../../../scripts/code-atlas/render.cjs#L640>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:644](<../../../../../../scripts/code-atlas/render.cjs#L644>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:644](<../../../../../../scripts/code-atlas/render.cjs#L644>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:651](<../../../../../../scripts/code-atlas/render.cjs#L651>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:675](<../../../../../../scripts/code-atlas/render.cjs#L675>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:677](<../../../../../../scripts/code-atlas/render.cjs#L677>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:678](<../../../../../../scripts/code-atlas/render.cjs#L678>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:678](<../../../../../../scripts/code-atlas/render.cjs#L678>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:679](<../../../../../../scripts/code-atlas/render.cjs#L679>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:680](<../../../../../../scripts/code-atlas/render.cjs#L680>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:732](<../../../../../../scripts/code-atlas/render.cjs#L732>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:732](<../../../../../../scripts/code-atlas/render.cjs#L732>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
 
 Unresolved / external call sites: 2.
 
@@ -270,8 +271,8 @@ Returns: string (compiler-inferred). Implementation present.
 - [modulePages](<render.cjs.md#s-1908fac4bb4320d4>) — [scripts/code-atlas/render.cjs:319](<../../../../../../scripts/code-atlas/render.cjs#L319>)
 - [ipcPage](<render.cjs.md#s-2af97a1f4a7005af>) — [scripts/code-atlas/render.cjs:363](<../../../../../../scripts/code-atlas/render.cjs#L363>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:393](<../../../../../../scripts/code-atlas/render.cjs#L393>)
-- [architecturePage.&lt;anonymous@479:109&gt;](<render.cjs.md#s-62d5eaed722db9f3>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:660](<../../../../../../scripts/code-atlas/render.cjs#L660>)
+- [architecturePage.&lt;anonymous@481:109&gt;](<render.cjs.md#s-1d8ee74e8a3aed6c>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:662](<../../../../../../scripts/code-atlas/render.cjs#L662>)
 
 Unresolved / external call sites: 0.
 
@@ -350,7 +351,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:595](<../../../../../../scripts/code-atlas/render.cjs#L595>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:597](<../../../../../../scripts/code-atlas/render.cjs#L597>)
 
 Unresolved / external call sites: 1.
 
@@ -384,9 +385,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:579](<../../../../../../scripts/code-atlas/render.cjs#L579>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:582](<../../../../../../scripts/code-atlas/render.cjs#L582>)
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:604](<../../../../../../scripts/code-atlas/render.cjs#L604>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:581](<../../../../../../scripts/code-atlas/render.cjs#L581>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:584](<../../../../../../scripts/code-atlas/render.cjs#L584>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:606](<../../../../../../scripts/code-atlas/render.cjs#L606>)
 
 Unresolved / external call sites: 3.
 
@@ -496,7 +497,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:566](<../../../../../../scripts/code-atlas/render.cjs#L566>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:568](<../../../../../../scripts/code-atlas/render.cjs#L568>)
 
 Unresolved / external call sites: 10.
 
@@ -628,7 +629,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:625](<../../../../../../scripts/code-atlas/render.cjs#L625>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:627](<../../../../../../scripts/code-atlas/render.cjs#L627>)
 
 Unresolved / external call sites: 40.
 
@@ -911,7 +912,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:624](<../../../../../../scripts/code-atlas/render.cjs#L624>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:626](<../../../../../../scripts/code-atlas/render.cjs#L626>)
 
 Unresolved / external call sites: 25.
 
@@ -1357,7 +1358,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:626](<../../../../../../scripts/code-atlas/render.cjs#L626>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:628](<../../../../../../scripts/code-atlas/render.cjs#L628>)
 
 Unresolved / external call sites: 14.
 
@@ -1552,37 +1553,41 @@ Returns: void (compiler-inferred). Implementation present.
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:461](<../../../../../../scripts/code-atlas/render.cjs#L461>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:461](<../../../../../../scripts/code-atlas/render.cjs#L461>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:463](<../../../../../../scripts/code-atlas/render.cjs#L463>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:463](<../../../../../../scripts/code-atlas/render.cjs#L463>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
 - [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:473](<../../../../../../scripts/code-atlas/render.cjs#L473>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:473](<../../../../../../scripts/code-atlas/render.cjs#L473>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
-- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:471](<../../../../../../scripts/code-atlas/render.cjs#L471>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:475](<../../../../../../scripts/code-atlas/render.cjs#L475>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:475](<../../../../../../scripts/code-atlas/render.cjs#L475>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
+- [architecturePage.evidence](<render.cjs.md#s-20bd6ffeb875c9af>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:628](<../../../../../../scripts/code-atlas/render.cjs#L628>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:630](<../../../../../../scripts/code-atlas/render.cjs#L630>)
 
 Unresolved / external call sites: 5.
 
 - data.symbols.filter — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:395](<../../../../../../scripts/code-atlas/render.cjs#L395>)
 - output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:442](<../../../../../../scripts/code-atlas/render.cjs#L442>)
 - &#91; "# Architecture map and findings", "", &#96;${link(doc, "docs/code-atlas/README.md", "Atlas")} / ${link(doc, "docs/code-atlas/graphs/module-dependencies.svg", "Dependency graph")} /  — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:444](<../../../../../../scripts/code-atlas/render.cjs#L444>)
-- dashboardCandidates.map((symbol) =&gt; symbolLink(doc, symbol)).join — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
-- dashboardCandidates.map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
+- dashboardCandidates.map((symbol) =&gt; symbolLink(doc, symbol)).join — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
+- dashboardCandidates.map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
 
 **Related tests / acceptance harnesses:**
 
@@ -1635,21 +1640,24 @@ Returns: string (compiler-inferred). Implementation present.
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:457](<../../../../../../scripts/code-atlas/render.cjs#L457>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:459](<../../../../../../scripts/code-atlas/render.cjs#L459>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:461](<../../../../../../scripts/code-atlas/render.cjs#L461>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:461](<../../../../../../scripts/code-atlas/render.cjs#L461>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:465](<../../../../../../scripts/code-atlas/render.cjs#L465>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:463](<../../../../../../scripts/code-atlas/render.cjs#L463>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:463](<../../../../../../scripts/code-atlas/render.cjs#L463>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
 - [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:467](<../../../../../../scripts/code-atlas/render.cjs#L467>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:473](<../../../../../../scripts/code-atlas/render.cjs#L473>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:473](<../../../../../../scripts/code-atlas/render.cjs#L473>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:469](<../../../../../../scripts/code-atlas/render.cjs#L469>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:475](<../../../../../../scripts/code-atlas/render.cjs#L475>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:475](<../../../../../../scripts/code-atlas/render.cjs#L475>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
 
 Unresolved / external call sites: 2.
 
@@ -1727,11 +1735,11 @@ Unresolved / external call sites: 1.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-62d5eaed722db9f3"></a>
+<a id="s-1d8ee74e8a3aed6c"></a>
 
-## architecturePage.&lt;anonymous@479:109&gt;
+## architecturePage.&lt;anonymous@481:109&gt;
 
-[scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1747,7 +1755,7 @@ Returns: string (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [symbolLink](<render.cjs.md#s-b2b5ff115b311531>) — [scripts/code-atlas/render.cjs:479](<../../../../../../scripts/code-atlas/render.cjs#L479>)
+- [symbolLink](<render.cjs.md#s-b2b5ff115b311531>) — [scripts/code-atlas/render.cjs:481](<../../../../../../scripts/code-atlas/render.cjs#L481>)
 
 **Called by (statically resolved):**
 
@@ -1760,11 +1768,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7e21e212bd777019"></a>
+<a id="s-af73a0171992830d"></a>
 
 ## formatPage
 
-[scripts/code-atlas/render.cjs:503](<../../../../../../scripts/code-atlas/render.cjs#L503>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:505](<../../../../../../scripts/code-atlas/render.cjs#L505>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Documents the generated data contracts and maintenance path without treating static analysis as runtime evidence.
 
@@ -1780,37 +1788,37 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:510](<../../../../../../scripts/code-atlas/render.cjs#L510>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:510](<../../../../../../scripts/code-atlas/render.cjs#L510>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:537](<../../../../../../scripts/code-atlas/render.cjs#L537>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:538](<../../../../../../scripts/code-atlas/render.cjs#L538>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:512](<../../../../../../scripts/code-atlas/render.cjs#L512>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:512](<../../../../../../scripts/code-atlas/render.cjs#L512>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:539](<../../../../../../scripts/code-atlas/render.cjs#L539>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:540](<../../../../../../scripts/code-atlas/render.cjs#L540>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:541](<../../../../../../scripts/code-atlas/render.cjs#L541>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:542](<../../../../../../scripts/code-atlas/render.cjs#L542>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:543](<../../../../../../scripts/code-atlas/render.cjs#L543>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:543](<../../../../../../scripts/code-atlas/render.cjs#L543>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:552](<../../../../../../scripts/code-atlas/render.cjs#L552>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:552](<../../../../../../scripts/code-atlas/render.cjs#L552>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:544](<../../../../../../scripts/code-atlas/render.cjs#L544>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:545](<../../../../../../scripts/code-atlas/render.cjs#L545>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:545](<../../../../../../scripts/code-atlas/render.cjs#L545>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:554](<../../../../../../scripts/code-atlas/render.cjs#L554>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:554](<../../../../../../scripts/code-atlas/render.cjs#L554>)
 
 **Called by (statically resolved):**
 
-- [render](<render.cjs.md#s-60a72fe723323605>) — [scripts/code-atlas/render.cjs:627](<../../../../../../scripts/code-atlas/render.cjs#L627>)
+- [render](<render.cjs.md#s-795102933500a447>) — [scripts/code-atlas/render.cjs:629](<../../../../../../scripts/code-atlas/render.cjs#L629>)
 
 Unresolved / external call sites: 2.
 
-- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:505](<../../../../../../scripts/code-atlas/render.cjs#L505>)
-- &#91; "# Atlas data format and maintenance", "", &#96;${link(doc, "docs/code-atlas/README.md", "Atlas")} / ${link(doc, "docs/code-atlas/symbols/symbol-index.json", "Symbol index")}&#96;, "", " — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:507](<../../../../../../scripts/code-atlas/render.cjs#L507>)
+- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:507](<../../../../../../scripts/code-atlas/render.cjs#L507>)
+- &#91; "# Atlas data format and maintenance", "", &#96;${link(doc, "docs/code-atlas/README.md", "Atlas")} / ${link(doc, "docs/code-atlas/symbols/symbol-index.json", "Symbol index")}&#96;, "", " — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:509](<../../../../../../scripts/code-atlas/render.cjs#L509>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-60a72fe723323605"></a>
+<a id="s-795102933500a447"></a>
 
 ## render
 
-[scripts/code-atlas/render.cjs:564](<../../../../../../scripts/code-atlas/render.cjs#L564>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:566](<../../../../../../scripts/code-atlas/render.cjs#L566>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Renders every owned artifact in memory, allowing check mode to compare without writes.
 
@@ -1830,41 +1838,41 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [moduleEdges](<render.cjs.md#s-ebbb722ed10e381c>) — [scripts/code-atlas/render.cjs:566](<../../../../../../scripts/code-atlas/render.cjs#L566>)
-- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:579](<../../../../../../scripts/code-atlas/render.cjs#L579>)
-- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:582](<../../../../../../scripts/code-atlas/render.cjs#L582>)
-- [json](<render.cjs.md#s-631672aa103e9ac7>) — [scripts/code-atlas/render.cjs:595](<../../../../../../scripts/code-atlas/render.cjs#L595>)
-- [selectCallEdges](<graphs.cjs.md#s-b19bd635a203dc1c>) — [scripts/code-atlas/render.cjs:601](<../../../../../../scripts/code-atlas/render.cjs#L601>)
-- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:604](<../../../../../../scripts/code-atlas/render.cjs#L604>)
-- [dependencySvg](<graphs.cjs.md#s-6f46d2d1d02212ec>) — [scripts/code-atlas/render.cjs:621](<../../../../../../scripts/code-atlas/render.cjs#L621>)
-- [callSvg](<graphs.cjs.md#s-43afc2850469202e>) — [scripts/code-atlas/render.cjs:623](<../../../../../../scripts/code-atlas/render.cjs#L623>)
-- [modulePages](<render.cjs.md#s-1908fac4bb4320d4>) — [scripts/code-atlas/render.cjs:624](<../../../../../../scripts/code-atlas/render.cjs#L624>)
-- [symbolPages](<render.cjs.md#s-cdf0d1b6d95dccf6>) — [scripts/code-atlas/render.cjs:625](<../../../../../../scripts/code-atlas/render.cjs#L625>)
-- [ipcPage](<render.cjs.md#s-2af97a1f4a7005af>) — [scripts/code-atlas/render.cjs:626](<../../../../../../scripts/code-atlas/render.cjs#L626>)
-- [formatPage](<render.cjs.md#s-7e21e212bd777019>) — [scripts/code-atlas/render.cjs:627](<../../../../../../scripts/code-atlas/render.cjs#L627>)
-- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:628](<../../../../../../scripts/code-atlas/render.cjs#L628>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:638](<../../../../../../scripts/code-atlas/render.cjs#L638>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:638](<../../../../../../scripts/code-atlas/render.cjs#L638>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:642](<../../../../../../scripts/code-atlas/render.cjs#L642>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:642](<../../../../../../scripts/code-atlas/render.cjs#L642>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:649](<../../../../../../scripts/code-atlas/render.cjs#L649>)
-- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:649](<../../../../../../scripts/code-atlas/render.cjs#L649>)
-- [symbolLink](<render.cjs.md#s-b2b5ff115b311531>) — [scripts/code-atlas/render.cjs:660](<../../../../../../scripts/code-atlas/render.cjs#L660>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:673](<../../../../../../scripts/code-atlas/render.cjs#L673>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:674](<../../../../../../scripts/code-atlas/render.cjs#L674>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:674](<../../../../../../scripts/code-atlas/render.cjs#L674>)
+- [moduleEdges](<render.cjs.md#s-ebbb722ed10e381c>) — [scripts/code-atlas/render.cjs:568](<../../../../../../scripts/code-atlas/render.cjs#L568>)
+- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:581](<../../../../../../scripts/code-atlas/render.cjs#L581>)
+- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:584](<../../../../../../scripts/code-atlas/render.cjs#L584>)
+- [json](<render.cjs.md#s-631672aa103e9ac7>) — [scripts/code-atlas/render.cjs:597](<../../../../../../scripts/code-atlas/render.cjs#L597>)
+- [selectCallEdges](<graphs.cjs.md#s-b19bd635a203dc1c>) — [scripts/code-atlas/render.cjs:603](<../../../../../../scripts/code-atlas/render.cjs#L603>)
+- [recordJson](<render.cjs.md#s-b2d1c5a0a6f36902>) — [scripts/code-atlas/render.cjs:606](<../../../../../../scripts/code-atlas/render.cjs#L606>)
+- [dependencySvg](<graphs.cjs.md#s-6f46d2d1d02212ec>) — [scripts/code-atlas/render.cjs:623](<../../../../../../scripts/code-atlas/render.cjs#L623>)
+- [callSvg](<graphs.cjs.md#s-93adb049c008bf52>) — [scripts/code-atlas/render.cjs:625](<../../../../../../scripts/code-atlas/render.cjs#L625>)
+- [modulePages](<render.cjs.md#s-1908fac4bb4320d4>) — [scripts/code-atlas/render.cjs:626](<../../../../../../scripts/code-atlas/render.cjs#L626>)
+- [symbolPages](<render.cjs.md#s-cdf0d1b6d95dccf6>) — [scripts/code-atlas/render.cjs:627](<../../../../../../scripts/code-atlas/render.cjs#L627>)
+- [ipcPage](<render.cjs.md#s-2af97a1f4a7005af>) — [scripts/code-atlas/render.cjs:628](<../../../../../../scripts/code-atlas/render.cjs#L628>)
+- [formatPage](<render.cjs.md#s-af73a0171992830d>) — [scripts/code-atlas/render.cjs:629](<../../../../../../scripts/code-atlas/render.cjs#L629>)
+- [architecturePage](<render.cjs.md#s-4e22f174f12cca1b>) — [scripts/code-atlas/render.cjs:630](<../../../../../../scripts/code-atlas/render.cjs#L630>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:640](<../../../../../../scripts/code-atlas/render.cjs#L640>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:640](<../../../../../../scripts/code-atlas/render.cjs#L640>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:644](<../../../../../../scripts/code-atlas/render.cjs#L644>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:644](<../../../../../../scripts/code-atlas/render.cjs#L644>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:651](<../../../../../../scripts/code-atlas/render.cjs#L651>)
+- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:651](<../../../../../../scripts/code-atlas/render.cjs#L651>)
+- [symbolLink](<render.cjs.md#s-b2b5ff115b311531>) — [scripts/code-atlas/render.cjs:662](<../../../../../../scripts/code-atlas/render.cjs#L662>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:675](<../../../../../../scripts/code-atlas/render.cjs#L675>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:676](<../../../../../../scripts/code-atlas/render.cjs#L676>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:677](<../../../../../../scripts/code-atlas/render.cjs#L677>)
 - [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:678](<../../../../../../scripts/code-atlas/render.cjs#L678>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:730](<../../../../../../scripts/code-atlas/render.cjs#L730>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:730](<../../../../../../scripts/code-atlas/render.cjs#L730>)
-- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:744](<../../../../../../scripts/code-atlas/render.cjs#L744>)
-- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:744](<../../../../../../scripts/code-atlas/render.cjs#L744>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
-- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:748](<../../../../../../scripts/code-atlas/render.cjs#L748>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:678](<../../../../../../scripts/code-atlas/render.cjs#L678>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:679](<../../../../../../scripts/code-atlas/render.cjs#L679>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:680](<../../../../../../scripts/code-atlas/render.cjs#L680>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:732](<../../../../../../scripts/code-atlas/render.cjs#L732>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:732](<../../../../../../scripts/code-atlas/render.cjs#L732>)
+- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:746](<../../../../../../scripts/code-atlas/render.cjs#L746>)
+- [md](<render.cjs.md#s-95843513dd72c107>) — [scripts/code-atlas/render.cjs:746](<../../../../../../scripts/code-atlas/render.cjs#L746>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
+- [link](<render.cjs.md#s-b5d07d207706a7ec>) — [scripts/code-atlas/render.cjs:750](<../../../../../../scripts/code-atlas/render.cjs#L750>)
 
 **Called by (statically resolved):**
 
@@ -1872,31 +1880,31 @@ Returns: any (compiler-inferred). Implementation present.
 
 Unresolved / external call sites: 28.
 
-- Map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:565](<../../../../../../scripts/code-atlas/render.cjs#L565>)
-- data.symbols .filter((symbol) =&gt; symbol.contract) .map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:567](<../../../../../../scripts/code-atlas/render.cjs#L567>)
-- data.symbols .filter — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:567](<../../../../../../scripts/code-atlas/render.cjs#L567>)
-- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:579](<../../../../../../scripts/code-atlas/render.cjs#L579>)
-- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:580](<../../../../../../scripts/code-atlas/render.cjs#L580>)
-- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:593](<../../../../../../scripts/code-atlas/render.cjs#L593>)
-- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:602](<../../../../../../scripts/code-atlas/render.cjs#L602>)
-- MODULES.filter — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:614](<../../../../../../scripts/code-atlas/render.cjs#L614>)
+- Map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:567](<../../../../../../scripts/code-atlas/render.cjs#L567>)
+- data.symbols .filter((symbol) =&gt; symbol.contract) .map — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:569](<../../../../../../scripts/code-atlas/render.cjs#L569>)
+- data.symbols .filter — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:569](<../../../../../../scripts/code-atlas/render.cjs#L569>)
+- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:581](<../../../../../../scripts/code-atlas/render.cjs#L581>)
+- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:582](<../../../../../../scripts/code-atlas/render.cjs#L582>)
+- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:595](<../../../../../../scripts/code-atlas/render.cjs#L595>)
+- output.set — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:604](<../../../../../../scripts/code-atlas/render.cjs#L604>)
+- MODULES.filter — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:616](<../../../../../../scripts/code-atlas/render.cjs#L616>)
 - 20 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-caa33549f80fb8db"></a>
+<a id="s-8fa47ec970c160b6"></a>
 
-## render.&lt;anonymous@568:13&gt;
+## render.&lt;anonymous@570:13&gt;
 
-[scripts/code-atlas/render.cjs:568](<../../../../../../scripts/code-atlas/render.cjs#L568>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:570](<../../../../../../scripts/code-atlas/render.cjs#L570>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1919,17 +1927,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-138a501b83f1bfb7"></a>
+<a id="s-400b5418ed6f61cf"></a>
 
-## render.&lt;anonymous@569:10&gt;
+## render.&lt;anonymous@571:10&gt;
 
-[scripts/code-atlas/render.cjs:569](<../../../../../../scripts/code-atlas/render.cjs#L569>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:571](<../../../../../../scripts/code-atlas/render.cjs#L571>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1952,17 +1960,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6d5bb07dba5871b3"></a>
+<a id="s-983d47f28c908432"></a>
 
-## render.&lt;anonymous@614:40&gt;
+## render.&lt;anonymous@616:40&gt;
 
-[scripts/code-atlas/render.cjs:614](<../../../../../../scripts/code-atlas/render.cjs#L614>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:616](<../../../../../../scripts/code-atlas/render.cjs#L616>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1980,23 +1988,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- data.files.some — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:615](<../../../../../../scripts/code-atlas/render.cjs#L615>)
+- data.files.some — external-or-dynamic-dispatch; [scripts/code-atlas/render.cjs:617](<../../../../../../scripts/code-atlas/render.cjs#L617>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-54adfd33135020f1"></a>
+<a id="s-1a106ec423fc432f"></a>
 
-## render.&lt;anonymous@614:40&gt;.&lt;anonymous@616:7&gt;
+## render.&lt;anonymous@616:40&gt;.&lt;anonymous@618:7&gt;
 
-[scripts/code-atlas/render.cjs:616](<../../../../../../scripts/code-atlas/render.cjs#L616>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:618](<../../../../../../scripts/code-atlas/render.cjs#L618>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render.&lt;anonymous@614:40&gt;](<render.cjs.md#s-6d5bb07dba5871b3>).
+Lexical owner: [render.&lt;anonymous@616:40&gt;](<render.cjs.md#s-983d47f28c908432>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2019,17 +2027,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-936da55d4f4f078c"></a>
+<a id="s-3e12fb61e1f4e8eb"></a>
 
-## render.&lt;anonymous@658:44&gt;
+## render.&lt;anonymous@660:44&gt;
 
-[scripts/code-atlas/render.cjs:658](<../../../../../../scripts/code-atlas/render.cjs#L658>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:660](<../../../../../../scripts/code-atlas/render.cjs#L660>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2052,17 +2060,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7ab5a9c7c8a44220"></a>
+<a id="s-c961e08067da069e"></a>
 
-## render.&lt;anonymous@664:45&gt;
+## render.&lt;anonymous@666:45&gt;
 
-[scripts/code-atlas/render.cjs:664](<../../../../../../scripts/code-atlas/render.cjs#L664>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:666](<../../../../../../scripts/code-atlas/render.cjs#L666>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2085,17 +2093,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4443a4f4a06fed30"></a>
+<a id="s-13f1cb4cf4628af2"></a>
 
-## render.&lt;anonymous@666:5&gt;
+## render.&lt;anonymous@668:5&gt;
 
-[scripts/code-atlas/render.cjs:666](<../../../../../../scripts/code-atlas/render.cjs#L666>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:668](<../../../../../../scripts/code-atlas/render.cjs#L668>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2118,17 +2126,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0b1b52f77ac0d498"></a>
+<a id="s-3687edc41b12486b"></a>
 
-## render.&lt;anonymous@694:125&gt;
+## render.&lt;anonymous@696:125&gt;
 
-[scripts/code-atlas/render.cjs:694](<../../../../../../scripts/code-atlas/render.cjs#L694>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/render.cjs:696](<../../../../../../scripts/code-atlas/render.cjs#L696>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [render](<render.cjs.md#s-60a72fe723323605>).
+Lexical owner: [render](<render.cjs.md#s-795102933500a447>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |

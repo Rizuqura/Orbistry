@@ -2,7 +2,7 @@
 
 [Atlas](<../README.md>) / [All symbols and callers/callees](<../symbols/worldview-domain.md>)
 
-Owns membership, placement and connection invariants; coordinates authorized compatible persistence without Entity OOP or inference.
+Owns membership, placement and connection invariants; coordinates authorized compatible persistence with Entity storage.
 
 Owns: electron/domains/worldview/. This ownership is editorial; source locations and import edges below are generated facts.
 
@@ -62,15 +62,15 @@ Candidates from compiler export tables and methods on exported classes. Registra
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
+- [Entity domain](<entity-domain.md>): 2 import sites; example [electron/domains/worldview/repositories/WorldViewRepository.cjs:1](<../../../electron/domains/worldview/repositories/WorldViewRepository.cjs#L1>).
 - [Shared deterministic infrastructure](<shared.md>): 1 import sites; example [electron/domains/worldview/repositories/legacy-connection-store.cjs:6](<../../../electron/domains/worldview/repositories/legacy-connection-store.cjs#L6>).
-- [WorldView persistence and IPC](<worldview.md>): 2 import sites; example [electron/domains/worldview/repositories/WorldViewRepository.cjs:1](<../../../electron/domains/worldview/repositories/WorldViewRepository.cjs#L1>).
 
 ## Depended on by
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Connectors](<connectors.md>): 1 import sites; example [electron/domains/entity/connector-store.cjs:2](<../../../electron/domains/entity/connector-store.cjs#L2>).
-- [Electron composition and IPC security](<desktop.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:4](<../../../electron/core/ipc/worldview-ipc.cjs#L4>).
+- [WorldView desktop IPC](<worldview.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:4](<../../../electron/core/ipc/worldview-ipc.cjs#L4>).
 
 ## Contracts
 

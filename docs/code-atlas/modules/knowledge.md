@@ -34,17 +34,17 @@ Candidates from compiler export tables and methods on exported classes. Registra
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Built-in Engines and data adapters](<engines.md>): 7 import sites; example [electron/domains/indexing/knowledge-index.cjs:2](<../../../electron/domains/indexing/knowledge-index.cjs#L2>).
+- [Entity domain](<entity-domain.md>): 3 import sites; example [electron/domains/indexing/tag-association-service.cjs:11](<../../../electron/domains/indexing/tag-association-service.cjs#L11>).
 - [Shared deterministic infrastructure](<shared.md>): 3 import sites; example [electron/domains/indexing/tag-association-service.cjs:7](<../../../electron/domains/indexing/tag-association-service.cjs#L7>).
 - [Vault and stations](<vault.md>): 1 import sites; example [electron/domains/knowledge/knowledge-store.cjs:8](<../../../electron/domains/knowledge/knowledge-store.cjs#L8>).
-- [WorldView persistence and IPC](<worldview.md>): 3 import sites; example [electron/domains/indexing/tag-association-service.cjs:11](<../../../electron/domains/indexing/tag-association-service.cjs#L11>).
 
 ## Depended on by
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
-- [Electron composition and IPC security](<desktop.md>): 2 import sites; example [electron/core/ipc/worldview-ipc.cjs:3](<../../../electron/core/ipc/worldview-ipc.cjs#L3>).
 - [Built-in Engines and data adapters](<engines.md>): 6 import sites; example [electron/daily-price-service.cjs:106](<../../../electron/daily-price-service.cjs#L106>).
 - [Backend Identity Engine](<identity.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:11](<../../../electron/engines/backend-identity/identity-compiler.cjs#L11>).
+- [WorldView desktop IPC](<worldview.md>): 2 import sites; example [electron/core/ipc/worldview-ipc.cjs:3](<../../../electron/core/ipc/worldview-ipc.cjs#L3>).
 
 ## Contracts
 

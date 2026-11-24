@@ -135,10 +135,11 @@ TypeScript interfaces, aliases and enums are verified declarations. Zod bindings
 | [geminiPage](<../symbols/files/electron/ai/schemas.cjs.md#s-dd31eb2f37fc0ba9>) | ai-runtime | zod-syntax-candidate | yes |
 | [tokenCount](<../symbols/files/electron/ai/schemas.cjs.md#s-f630c43aa879e8fe>) | ai-runtime | zod-syntax-candidate | local |
 | [geminiChunk](<../symbols/files/electron/ai/schemas.cjs.md#s-c6e950c213a34e76>) | ai-runtime | zod-syntax-candidate | yes |
-| [idSchema](<../symbols/files/electron/domains/entity/worldview-store.cjs.md#s-cdb843d3e505540a>) | worldview | zod-syntax-candidate | local |
-| [knowledgeMenusSchema](<../symbols/files/electron/domains/entity/worldview-store.cjs.md#s-781e3d0c90ba0343>) | worldview | zod-syntax-candidate | local |
-| [sourceSchema](<../symbols/files/electron/domains/entity/worldview-store.cjs.md#s-638d96f9e3e1f6aa>) | worldview | zod-syntax-candidate | local |
-| [chipSchema](<../symbols/files/electron/domains/entity/worldview-store.cjs.md#s-68d3b072260edaa7>) | worldview | zod-syntax-candidate | local |
+| [entityKey](<../symbols/files/electron/domains/entity/contracts/entity-schema.cjs.md#s-3a0b329f3d05a841>) | entity-domain | zod-syntax-candidate | yes |
+| [knowledgeMenus](<../symbols/files/electron/domains/entity/contracts/entity-schema.cjs.md#s-e52e81c6c7a9d3de>) | entity-domain | zod-syntax-candidate | local |
+| [metadataSchema](<../symbols/files/electron/domains/entity/contracts/entity-schema.cjs.md#s-eaf753e2da5b6e2e>) | entity-domain | zod-syntax-candidate | yes |
+| [sourceReference](<../symbols/files/electron/domains/entity/contracts/entity-schema.cjs.md#s-4e6dd5a4e39a63d4>) | entity-domain | zod-syntax-candidate | yes |
+| [placementSchema](<../symbols/files/electron/domains/entity/worldview-store.cjs.md#s-bb71db40dfd0a072>) | entity-domain | zod-syntax-candidate | local |
 | [inputSchema](<../symbols/files/electron/domains/knowledge/backend-identity-service.cjs.md#s-335b6ac113030e6f>) | identity | zod-syntax-candidate | local |
 | [schema](<../symbols/files/electron/domains/universe/vault-settings.cjs.md#s-b7629a374ead0bc3>) | vault | zod-syntax-candidate | local |
 | [identifier](<../symbols/files/electron/domains/worldview/contracts/worldview-schema.cjs.md#s-598890728e7c0496>) | worldview-domain | zod-syntax-candidate | yes |

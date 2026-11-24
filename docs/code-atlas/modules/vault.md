@@ -66,11 +66,12 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Retained AI runtime](<ai-runtime.md>): 2 import sites; example [electron/ai/chat/chat-service.cjs:4](<../../../electron/ai/chat/chat-service.cjs#L4>).
-- [Electron composition and IPC security](<desktop.md>): 4 import sites; example [electron/core/ipc/worldview-ipc.cjs:10](<../../../electron/core/ipc/worldview-ipc.cjs#L10>).
+- [Electron composition and IPC security](<desktop.md>): 3 import sites; example [electron/main.cjs:17](<../../../electron/main.cjs#L17>).
 - [Built-in Engines and data adapters](<engines.md>): 3 import sites; example [electron/excel-service.cjs:4](<../../../electron/excel-service.cjs#L4>).
+- [Entity domain](<entity-domain.md>): 1 import sites; example [electron/domains/entity/worldview-store.cjs:10](<../../../electron/domains/entity/worldview-store.cjs#L10>).
 - [Backend Identity Engine](<identity.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:13](<../../../electron/engines/backend-identity/identity-compiler.cjs#L13>).
 - [Knowledge indexing and source access](<knowledge.md>): 1 import sites; example [electron/domains/knowledge/knowledge-store.cjs:8](<../../../electron/domains/knowledge/knowledge-store.cjs#L8>).
-- [WorldView persistence and IPC](<worldview.md>): 1 import sites; example [electron/domains/entity/worldview-store.cjs:10](<../../../electron/domains/entity/worldview-store.cjs#L10>).
+- [WorldView desktop IPC](<worldview.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:10](<../../../electron/core/ipc/worldview-ipc.cjs#L10>).
 
 ## Contracts
 

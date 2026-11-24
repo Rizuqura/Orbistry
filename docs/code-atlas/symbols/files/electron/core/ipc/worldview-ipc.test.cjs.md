@@ -1,6 +1,6 @@
 # electron/core/ipc/worldview-ipc.test.cjs: symbols
 
-[Atlas](<../../../../../README.md>) / [Electron composition and IPC security](<../../../../../modules/desktop.md>) / [electron/core/ipc/worldview-ipc.test.cjs:1](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L1>)
+[Atlas](<../../../../../README.md>) / [WorldView desktop IPC](<../../../../../modules/worldview.md>) / [electron/core/ipc/worldview-ipc.test.cjs:1](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L1>)
 
 Compiler-inferred contracts exclude external/global types. No static relationship establishes execution, authorization or coverage.
 
@@ -16,7 +16,7 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 
 ## electron/core/ipc/worldview-ipc.test.cjs
 
-[electron/core/ipc/worldview-ipc.test.cjs:1](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L1>) · Module · test · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.test.cjs:1](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L1>) · Module · test · [WorldView desktop IPC](<../../../../../modules/worldview.md>)
 
 Source-file initialization scope; call edges here describe top-level expressions.
 
@@ -48,7 +48,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@9:83&gt;
 
-[electron/core/ipc/worldview-ipc.test.cjs:9](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L9>) · ArrowFunction · test · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.test.cjs:9](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L9>) · ArrowFunction · test · [WorldView desktop IPC](<../../../../../modules/worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -90,7 +90,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@9:83&gt;.handle
 
-[electron/core/ipc/worldview-ipc.test.cjs:17](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L17>) · MethodDeclaration · test · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.test.cjs:17](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L17>) · MethodDeclaration · test · [WorldView desktop IPC](<../../../../../modules/worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -125,7 +125,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@9:83&gt;.&lt;anonymous@21:7&gt;
 
-[electron/core/ipc/worldview-ipc.test.cjs:21](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L21>) · ArrowFunction · test · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.test.cjs:21](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L21>) · ArrowFunction · test · [WorldView desktop IPC](<../../../../../modules/worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -158,7 +158,7 @@ No direct static call/import association found; coverage unknown.
 
 ## &lt;anonymous@9:83&gt;.showItemInFolder
 
-[electron/core/ipc/worldview-ipc.test.cjs:23](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L23>) · MethodDeclaration · test · [Electron composition and IPC security](<../../../../../modules/desktop.md>)
+[electron/core/ipc/worldview-ipc.test.cjs:23](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L23>) · MethodDeclaration · test · [WorldView desktop IPC](<../../../../../modules/worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
