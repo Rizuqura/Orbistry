@@ -560,20 +560,109 @@ class EntityAgentService {
     // Build display/tool-discovery metadata for each connected Engine instance.
     // Keep registration, Entity configuration, policy and last outcome separate;
     // discovery does not contact the provider to prove it is currently healthy.
-    const engines = connectedNodes(agent, "Engine").map((node) => {
+    const nodes = connectedNodes(agent, "Engine");
+    const sources =
+      identity.status === "fresh"
+        ? (identity.manifest?.packageSources ?? [])
+        : [];
+    const pinned = new Set(
+      nodes
+        .filter(
+          (node) =>
+            node.config.packageDigest &&
+            sources.some(
+              (ref) =>
+                ref.digest === node.config.packageDigest &&
+                ["available", "authorization_required"].includes(ref.status),
+            ),
+        )
+        .map((node) => node.config.engineId),
+    );
+    const {
+      EnginePackageRegistry,
+    } = require("../../engines/registry/registry.cjs");
+    const catalog = pinned.size
+      ? await new EnginePackageRegistry(root).catalog(
+          assignment.entityId,
+          pinned,
+        )
+      : null;
+    const engines = nodes.map((node) => {
       const operation =
         node.config.operation ??
         (node.config.engineId === "chronoz" ? "get_report" : "");
-      const matches = capabilities.filter(
-        (capability) =>
-          capability.engineId === node.config.engineId &&
-          capability.operation === operation &&
-          (!node.config.engineVersion ||
-            capability.version === node.config.engineVersion),
+      const pkg = catalog?.engines.find(
+        (item) =>
+          item.engineId === node.config.engineId &&
+          item.version === node.config.engineVersion &&
+          item.digest === node.config.packageDigest,
       );
+      const packageOp = pkg?.operations.find(
+        (op) => op.id === operation && op.available,
+      );
+      const matches = node.config.packageDigest
+        ? sources
+            .filter(
+              (ref) =>
+                packageOp &&
+                ref.engineId === pkg.engineId &&
+                ref.digest === pkg.digest &&
+                ref.operation === operation &&
+                ["available", "authorization_required"].includes(ref.status) &&
+                ref.menuId,
+            )
+            .map((ref) => ({
+              capabilityId: createHash("sha256")
+                .update(
+                  JSON.stringify([
+                    assignment.entityId,
+                    ref.declarationId,
+                    pkg.digest,
+                  ]),
+                )
+                .digest("hex"),
+              entityId: assignment.entityId,
+              engineId: pkg.engineId,
+              operation,
+              version: pkg.version,
+              declarationId: ref.declarationId,
+              menuId: ref.menuId,
+              sourceId: ref.declarationId,
+              inputSchema: {
+                type: "object",
+                properties: {},
+                additionalProperties: false,
+              },
+              outputSchema: packageOp.output_schema,
+              requiredPermissions: ["entity:read", "package:execute"],
+              executionMode: "explicit-authorized-request",
+              description: packageOp.description,
+              availability: "configured",
+              symbol: null,
+            }))
+        : capabilities
+            .filter((capability) =>
+              sources.some(
+                (ref) =>
+                  ref.declarationId === capability.sourceId &&
+                  ref.engineId === "yahoo-finance" &&
+                  ref.operation === capability.operation &&
+                  ref.status === "available",
+              ),
+            )
+            .filter(
+              (capability) =>
+                capability.engineId === node.config.engineId &&
+                capability.operation === operation &&
+                (!node.config.engineVersion ||
+                  capability.version === node.config.engineVersion),
+            );
       const registered =
-        Object.hasOwn(ENGINE_DEFINITIONS, node.config.engineId) &&
-        ENGINE_DEFINITIONS[node.config.engineId].operations.includes(operation);
+        Boolean(packageOp) ||
+        (Object.hasOwn(ENGINE_DEFINITIONS, node.config.engineId) &&
+          ENGINE_DEFINITIONS[node.config.engineId].operations.includes(
+            operation,
+          ));
       const configured = matches.some(
         (item) => item.availability === "configured",
       );
@@ -709,7 +798,7 @@ class EntityAgentService {
         );
         const raw = JSON.parse(
           (
-            await require("../chronoz-adapter.cjs").boundedRead(
+            await require("../chronoz-contract.cjs").boundedRead(
               rawFile,
               1024 * 1024,
             )
@@ -741,7 +830,7 @@ class EntityAgentService {
         results.push({ execution, contentStatus: "over-budget" });
         continue;
       }
-      const bytesBuffer = await require("../chronoz-adapter.cjs").boundedRead(
+      const bytesBuffer = await require("../chronoz-contract.cjs").boundedRead(
         file,
         remainingBytes,
       );
@@ -855,7 +944,7 @@ class EntityAgentService {
     const file = await this.checkPath(root, "results", execution.id + ".json");
     const raw = JSON.parse(
       (
-        await require("../chronoz-adapter.cjs").boundedRead(file, 1024 * 1024)
+        await require("../chronoz-contract.cjs").boundedRead(file, 1024 * 1024)
       ).toString("utf8"),
     );
     if (
@@ -1795,6 +1884,53 @@ class EntityAgentService {
     return queueFor(root)(() => this.executeBound(root, input));
   }
 
+  /** Revalidates the pinned graph, assignment and Identity at worker admission and before publishing the receipt. */
+  async executePackageSource(
+    root,
+    { assignment, agent },
+    node,
+    capability,
+    identityVersion,
+    approved,
+  ) {
+    const active = () => this.root(root) === root;
+    const authorize = async () => {
+      const binding = await this.binding(root, assignment.id);
+      if (
+        !active() ||
+        binding.assignment.entityId !== assignment.entityId ||
+        binding.assignment.agentId !== assignment.agentId ||
+        binding.agent.construction?.activeRevision !==
+          agent.construction.activeRevision
+      )
+        return false;
+      const identity = await this.runtime(root, assignment).getIdentity({
+        root,
+        entityId: assignment.entityId,
+      });
+      return (
+        identity.status === "fresh" &&
+        identity.manifest.identityVersion === identityVersion
+      );
+    };
+    const result =
+      await require("../../domains/knowledge/package-source.cjs").packageSource(
+        root,
+        { id: assignment.entityId, declarationId: capability.declarationId },
+        active,
+        true,
+        {
+          digest: node.config.packageDigest,
+          operation: node.config.operation,
+          approved: approved === true,
+          authorize,
+        },
+      );
+    if (result.status !== "completed")
+      throw Error("Package source is unavailable: " + result.status);
+    return result;
+  }
+
   /** Executes one validated input inside the caller's existing queue, retaining audit and permission checks for chat continuations and legacy direct callers. */
   async executeBound(root, input) {
     const { assignment, agent } = await this.binding(root, input.assignmentId);
@@ -1863,16 +1999,25 @@ class EntityAgentService {
       await this.saveSession(root, pendingSession);
       // Grant only this node at this applied revision to the Identity runtime.
       // That runtime still validates capability input/output and authorization.
-      const result = await this.runtime(root, assignment, {
-        nodeId: node.id,
-        graphRevision: agent.construction.activeRevision,
-      }).executeCapability({
-        root,
-        entityId: assignment.entityId,
-        capabilityId: capability.capabilityId,
-        version: context.identityVersion,
-        arguments: parameters,
-      });
+      const result = node.config.packageDigest
+        ? await this.executePackageSource(
+            root,
+            { assignment, agent },
+            node,
+            capability,
+            context.identityVersion,
+            input.approved,
+          )
+        : await this.runtime(root, assignment, {
+            nodeId: node.id,
+            graphRevision: agent.construction.activeRevision,
+          }).executeCapability({
+            root,
+            entityId: assignment.entityId,
+            capabilityId: capability.capabilityId,
+            version: context.identityVersion,
+            arguments: parameters,
+          });
       const current = await this.binding(root, assignment.id);
       if (
         current.agent.construction?.activeRevision !==

@@ -203,7 +203,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [status](<identity-compiler.cjs.md#s-028f3e6557e09194>) — [electron/engines/backend-identity/identity-runtime.cjs:35](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L35>)
+- [status](<identity-compiler.cjs.md#s-1d61d04d4313288f>) — [electron/engines/backend-identity/identity-runtime.cjs:35](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L35>)
 
 **Called by (statically resolved):**
 
@@ -286,7 +286,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [createIdentityRuntime.permit](<identity-runtime.cjs.md#s-f16fca26720e18a2>) — [electron/engines/backend-identity/identity-runtime.cjs:57](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L57>)
-- [status](<identity-compiler.cjs.md#s-028f3e6557e09194>) — [electron/engines/backend-identity/identity-runtime.cjs:58](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L58>)
+- [status](<identity-compiler.cjs.md#s-1d61d04d4313288f>) — [electron/engines/backend-identity/identity-runtime.cjs:58](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L58>)
 - [createIdentityRuntime.permit](<identity-runtime.cjs.md#s-f16fca26720e18a2>) — [electron/engines/backend-identity/identity-runtime.cjs:59](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L59>)
 
 **Called by (statically resolved):**
@@ -321,7 +321,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [createIdentityRuntime.permit](<identity-runtime.cjs.md#s-f16fca26720e18a2>) — [electron/engines/backend-identity/identity-runtime.cjs:64](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L64>)
-- [generate](<identity-compiler.cjs.md#s-7cdf112c906f5772>) — [electron/engines/backend-identity/identity-runtime.cjs:65](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L65>)
+- [generate](<identity-compiler.cjs.md#s-f539d3e969846edf>) — [electron/engines/backend-identity/identity-runtime.cjs:65](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L65>)
 - [createIdentityRuntime.finish](<identity-runtime.cjs.md#s-694fc813c960c284>) — [electron/engines/backend-identity/identity-runtime.cjs:66](<../../../../../../../electron/engines/backend-identity/identity-runtime.cjs#L66>)
 
 **Called by (statically resolved):**

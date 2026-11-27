@@ -86,6 +86,7 @@ Unresolved / external call sites: 9.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-bb71db40dfd0a072"></a>
 
@@ -139,6 +140,7 @@ Unresolved / external call sites: 9.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-319b9208e3cd4d4d"></a>
 
@@ -195,6 +197,7 @@ Unresolved / external call sites: 2.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-c8761a1b2b8d150a"></a>
 
@@ -247,6 +250,7 @@ Unresolved / external call sites: 2.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-84fad9c12df63177"></a>
 
@@ -305,6 +309,7 @@ Unresolved / external call sites: 11.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-0758221ee28cde99"></a>
 
@@ -359,6 +364,7 @@ Unresolved / external call sites: 3.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-c5630fa0b3895f83"></a>
 
@@ -424,6 +430,7 @@ Unresolved / external call sites: 6.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-c5e1330f84c72b28"></a>
 
@@ -476,6 +483,7 @@ Unresolved / external call sites: 3.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-b56e96b379cad19e"></a>
 
@@ -529,6 +537,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-caa7e4c7a75a9eac"></a>
 
@@ -589,6 +598,7 @@ Unresolved / external call sites: 10.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-83d719d5ceffe392"></a>
 
@@ -639,6 +649,7 @@ Unresolved / external call sites: 1.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-a583aea177bcd28a"></a>
 
@@ -690,6 +701,7 @@ Unresolved / external call sites: 2.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-27e76430a050e3b9"></a>
 
@@ -748,6 +760,7 @@ Unresolved / external call sites: 5.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-d896ef794577c95a"></a>
 
@@ -798,6 +811,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-c00565dd66b525dc"></a>
 
@@ -854,6 +868,7 @@ Unresolved / external call sites: 4.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-73965e4f60cae9f4"></a>
 
@@ -909,6 +924,7 @@ Unresolved / external call sites: 4.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-d20617f10dde11c0"></a>
 
@@ -957,6 +973,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-6fb69637a7e981f0"></a>
 
@@ -1022,6 +1039,7 @@ Unresolved / external call sites: 9.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-4b728c167ede280f"></a>
 
@@ -1070,6 +1088,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-d4221a2596c157b4"></a>
 
@@ -1119,6 +1138,7 @@ Unresolved / external call sites: 1.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-26d2c1647879e990"></a>
 
@@ -1168,6 +1188,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-70e7f08c811c0303"></a>
 
@@ -1221,6 +1242,7 @@ Unresolved / external call sites: 2.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-207b02cadaf17fb3"></a>
 
@@ -1278,6 +1300,7 @@ Unresolved / external call sites: 3.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-58946a1d1bf33726"></a>
 
@@ -1326,6 +1349,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-d7d7a538d1ec4149"></a>
 
@@ -1376,6 +1400,7 @@ Unresolved / external call sites: 1.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-b60cf8fc21009244"></a>
 
@@ -1428,6 +1453,7 @@ Unresolved / external call sites: 2.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-36add00d304ae43d"></a>
 
@@ -1479,6 +1505,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-0bc55610e941689d"></a>
 
@@ -1530,6 +1557,7 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-3bdb886213b684fe"></a>
 
@@ -1582,6 +1610,7 @@ Unresolved / external call sites: 1.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-7893d386a67f06d9"></a>
 
@@ -1640,6 +1669,7 @@ Unresolved / external call sites: 4.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-800a4cbef09b01fa"></a>
 
@@ -1690,3 +1720,4 @@ Unresolved / external call sites: 0.
 - [electron/tag-association.test.cjs:17](<../../../../../../../electron/tag-association.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:209](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L209>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:33](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L33>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:8](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L8>) — file-import-only; coverage not established.

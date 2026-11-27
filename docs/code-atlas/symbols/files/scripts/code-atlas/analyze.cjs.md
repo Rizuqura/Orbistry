@@ -607,12 +607,12 @@ Returns: { data: { schemaVersion: number; analyzer: { name: string; typescriptVe
 **Calls (statically resolved):**
 
 - [moduleFor](<catalog.cjs.md#s-760ea599ad9258b2>) — [scripts/code-atlas/analyze.cjs:277](<../../../../../../scripts/code-atlas/analyze.cjs#L277>)
-- [roleFor](<catalog.cjs.md#s-923feac876424dc9>) — [scripts/code-atlas/analyze.cjs:278](<../../../../../../scripts/code-atlas/analyze.cjs#L278>)
+- [roleFor](<catalog.cjs.md#s-83de78c6acc3c1e2>) — [scripts/code-atlas/analyze.cjs:278](<../../../../../../scripts/code-atlas/analyze.cjs#L278>)
 - [anchor](<analyze.cjs.md#s-7611f4c95a287aa0>) — [scripts/code-atlas/analyze.cjs:281](<../../../../../../scripts/code-atlas/analyze.cjs#L281>)
 - [analyze.declare](<analyze.cjs.md#s-c0127642adedc528>) — [scripts/code-atlas/analyze.cjs:403](<../../../../../../scripts/code-atlas/analyze.cjs#L403>)
 - [analyze.visit](<analyze.cjs.md#s-e5dfa7055a1a0b54>) — [scripts/code-atlas/analyze.cjs:553](<../../../../../../scripts/code-atlas/analyze.cjs#L553>)
 - [resolveLocal](<analyze.cjs.md#s-ce4c8696ea81a658>) — [scripts/code-atlas/analyze.cjs:601](<../../../../../../scripts/code-atlas/analyze.cjs#L601>)
-- [roleFor](<catalog.cjs.md#s-923feac876424dc9>) — [scripts/code-atlas/analyze.cjs:661](<../../../../../../scripts/code-atlas/analyze.cjs#L661>)
+- [roleFor](<catalog.cjs.md#s-83de78c6acc3c1e2>) — [scripts/code-atlas/analyze.cjs:661](<../../../../../../scripts/code-atlas/analyze.cjs#L661>)
 
 **Called by (statically resolved):**
 
@@ -700,7 +700,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [portable](<catalog.cjs.md#s-60683316afa4a320>) — [scripts/code-atlas/analyze.cjs:178](<../../../../../../scripts/code-atlas/analyze.cjs#L178>)
+- [portable](<catalog.cjs.md#s-c39d81ba81a8717f>) — [scripts/code-atlas/analyze.cjs:178](<../../../../../../scripts/code-atlas/analyze.cjs#L178>)
 
 **Called by (statically resolved):**
 
@@ -842,7 +842,7 @@ Returns: { resolvedFileName: any; isExternalLibraryImport: boolean; } (compiler-
 **Calls (statically resolved):**
 
 - [resolveLocal](<analyze.cjs.md#s-ce4c8696ea81a658>) — [scripts/code-atlas/analyze.cjs:189](<../../../../../../scripts/code-atlas/analyze.cjs#L189>)
-- [portable](<catalog.cjs.md#s-60683316afa4a320>) — [scripts/code-atlas/analyze.cjs:190](<../../../../../../scripts/code-atlas/analyze.cjs#L190>)
+- [portable](<catalog.cjs.md#s-c39d81ba81a8717f>) — [scripts/code-atlas/analyze.cjs:190](<../../../../../../scripts/code-atlas/analyze.cjs#L190>)
 
 **Called by (statically resolved):**
 

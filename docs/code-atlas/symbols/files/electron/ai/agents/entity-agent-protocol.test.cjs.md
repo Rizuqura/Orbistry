@@ -494,8 +494,8 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [isApproval](<entity-agent-protocol.cjs.md#s-5a44932718fabc6c>) — [electron/ai/agents/entity-agent-protocol.test.cjs:103](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L103>)
-- [isApproval](<entity-agent-protocol.cjs.md#s-5a44932718fabc6c>) — [electron/ai/agents/entity-agent-protocol.test.cjs:110](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L110>)
+- [isApproval](<entity-agent-protocol.cjs.md#s-645d1351c7efd68d>) — [electron/ai/agents/entity-agent-protocol.test.cjs:103](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L103>)
+- [isApproval](<entity-agent-protocol.cjs.md#s-645d1351c7efd68d>) — [electron/ai/agents/entity-agent-protocol.test.cjs:110](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L110>)
 
 **Called by (statically resolved):**
 

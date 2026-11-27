@@ -6,7 +6,7 @@ Presents applied indexes, source readers and existing data views.
 
 Owns: features/knowledge/. This ownership is editorial; source locations and import edges below are generated facts.
 
-17 source files; 214 callable declarations; 2 contract declarations.
+18 source files; 232 callable declarations; 3 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -30,7 +30,9 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [DocumentSection](<../symbols/files/features/knowledge/indexed-document.ts.md#s-caa4944fa9047c41>) | [features/knowledge/indexed-document.ts:1](<../../../features/knowledge/indexed-document.ts#L1>) | TypeAliasDeclaration |
 | [structureDocument](<../symbols/files/features/knowledge/indexed-document.ts.md#s-1fcc41dabcdb65d9>) | [features/knowledge/indexed-document.ts:9](<../../../features/knowledge/indexed-document.ts#L9>) | FunctionDeclaration |
 | [KnowledgeCard](<../symbols/files/features/knowledge/knowledge-card.tsx.md#s-ed4922b5c749bb24>) | [features/knowledge/knowledge-card.tsx:16](<../../../features/knowledge/knowledge-card.tsx#L16>) | FunctionDeclaration |
-| [KnowledgeWorkspace](<../symbols/files/features/knowledge/knowledge-workspace.tsx.md#s-de61e2373aa42255>) | [features/knowledge/knowledge-workspace.tsx:26](<../../../features/knowledge/knowledge-workspace.tsx#L26>) | FunctionDeclaration |
+| [KnowledgeWorkspace](<../symbols/files/features/knowledge/knowledge-workspace.tsx.md#s-31cae44ec8ab38a9>) | [features/knowledge/knowledge-workspace.tsx:27](<../../../features/knowledge/knowledge-workspace.tsx#L27>) | FunctionDeclaration |
+| [PackageSource](<../symbols/files/features/knowledge/package-source.tsx.md#s-e35dc4578616f23a>) | [features/knowledge/package-source.tsx:7](<../../../features/knowledge/package-source.tsx#L7>) | FunctionDeclaration |
+| [SourceCatalog](<../symbols/files/features/knowledge/package-source.tsx.md#s-f00ffce34945a9ac>) | [features/knowledge/package-source.tsx:80](<../../../features/knowledge/package-source.tsx#L80>) | FunctionDeclaration |
 | [SourcePreview](<../symbols/files/features/knowledge/source-preview.tsx.md#s-6ab24bde8475f00a>) | [features/knowledge/source-preview.tsx:15](<../../../features/knowledge/source-preview.tsx#L15>) | FunctionDeclaration |
 
 ## Depends on
@@ -40,7 +42,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 - [Conversation presentation](<portal-chat.md>): 1 import sites; example [features/knowledge/indexed-document-view.tsx:4](<../../../features/knowledge/indexed-document-view.tsx#L4>).
 - [Document workspace](<portal-documents.md>): 2 import sites; example [features/knowledge/source-preview.tsx:4](<../../../features/knowledge/source-preview.tsx#L4>).
 - [Portal shell](<portal-shell.md>): 3 import sites; example [features/knowledge/file-inspector.tsx:9](<../../../features/knowledge/file-inspector.tsx#L9>).
-- [WorldView and Knowledge Cards (Portal)](<portal-worldview.md>): 10 import sites; example [features/knowledge/carousel-source.tsx:4](<../../../features/knowledge/carousel-source.tsx#L4>).
+- [WorldView and Knowledge Cards (Portal)](<portal-worldview.md>): 11 import sites; example [features/knowledge/carousel-source.tsx:4](<../../../features/knowledge/carousel-source.tsx#L4>).
 
 ## Depended on by
 
@@ -53,6 +55,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [CarouselSlide](<../symbols/files/features/knowledge/carousel-model.ts.md#s-537f79990cca4bed>) — typescript-declaration; exported.
 - [DocumentSection](<../symbols/files/features/knowledge/indexed-document.ts.md#s-caa4944fa9047c41>) — typescript-declaration; exported.
+- [Result](<../symbols/files/features/knowledge/package-source.tsx.md#s-e5993b8ea252abc4>) — typescript-declaration; local schema/type.
 
 ## Source inventory
 
@@ -73,5 +76,6 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | [features/knowledge/indexed-document.test.cjs:1](<../../../features/knowledge/indexed-document.test.cjs#L1>) | test | 2 |
 | [features/knowledge/indexed-document.ts:1](<../../../features/knowledge/indexed-document.ts#L1>) | production | 5 |
 | [features/knowledge/knowledge-card.tsx:1](<../../../features/knowledge/knowledge-card.tsx#L1>) | production | 14 |
-| [features/knowledge/knowledge-workspace.tsx:1](<../../../features/knowledge/knowledge-workspace.tsx#L1>) | production | 40 |
+| [features/knowledge/knowledge-workspace.tsx:1](<../../../features/knowledge/knowledge-workspace.tsx#L1>) | production | 41 |
+| [features/knowledge/package-source.tsx:1](<../../../features/knowledge/package-source.tsx#L1>) | production | 18 |
 | [features/knowledge/source-preview.tsx:1](<../../../features/knowledge/source-preview.tsx#L1>) | production | 9 |

@@ -66,7 +66,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [&lt;anonymous@12:3&gt;](<../../electron/document-ocr.test.cjs.md#s-f5ecd73b921128cc>) — [electron/document-ocr.test.cjs:24](<../../../../../../electron/document-ocr.test.cjs#L24>)
-- [main](<../acceptance/electron-packaged-smoke.cjs.md#s-f882e9165e7b6781>) — [scripts/acceptance/electron-packaged-smoke.cjs:63](<../../../../../../scripts/acceptance/electron-packaged-smoke.cjs#L63>)
+- [main](<../acceptance/electron-packaged-smoke.cjs.md#s-f882e9165e7b6781>) — [scripts/acceptance/electron-packaged-smoke.cjs:66](<../../../../../../scripts/acceptance/electron-packaged-smoke.cjs#L66>)
 - [main](<../acceptance/electron-pdf-image-smoke.cjs.md#s-f679c8105b6317ac>) — [scripts/acceptance/electron-pdf-image-smoke.cjs:24](<../../../../../../scripts/acceptance/electron-pdf-image-smoke.cjs#L24>)
 
 Unresolved / external call sites: 22.
@@ -84,7 +84,7 @@ Unresolved / external call sites: 22.
 **Related tests / acceptance harnesses:**
 
 - [electron/document-ocr.test.cjs:24](<../../../../../../electron/document-ocr.test.cjs#L24>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-packaged-smoke.cjs:63](<../../../../../../scripts/acceptance/electron-packaged-smoke.cjs#L63>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-packaged-smoke.cjs:66](<../../../../../../scripts/acceptance/electron-packaged-smoke.cjs#L66>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-pdf-image-smoke.cjs:24](<../../../../../../scripts/acceptance/electron-pdf-image-smoke.cjs#L24>) — static-call-site; coverage not established.
 - [electron/document-ocr.test.cjs:8](<../../../../../../electron/document-ocr.test.cjs#L8>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-packaged-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-packaged-smoke.cjs#L6>) — file-import-only; coverage not established.

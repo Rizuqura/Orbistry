@@ -4,7 +4,7 @@ const { randomUUID } = require("node:crypto");
 const { z, parse } = require("./schemas.cjs");
 const { readJson, writeJson } = require("./json-store.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
-const adapter = require("./chronoz-adapter.cjs");
+const adapter = require("./chronoz-contract.cjs");
 const { EnginePackageRegistry } = require("../engines/registry/registry.cjs");
 const { ENGINE_DEFINITIONS } = require("../engines/definitions.cjs");
 const { executeNativeEngine } = require("../engines/native.cjs");
@@ -44,22 +44,20 @@ class EngineRegistry {
   }
   constructor(
     directory,
-    {
-      agents,
-      chooseFolder,
-      openPath,
-      adapterImpl = adapter,
-      processOptions = {},
-    } = {},
+    { agents, chooseFolder, openPath, adapterImpl, processOptions = {} } = {},
   ) {
     this.directory = directory;
     this.file = path.join(directory, "engines.json");
     this.agents = agents;
     this.chooseFolder = chooseFolder;
     this.openPath = openPath;
-    this.adapter = adapterImpl;
+    this.adapterImpl = adapterImpl;
     this.processOptions = processOptions;
     this.running = null;
+  }
+  // The portable bundle adapter is loaded only for a configured CHronoZ operation.
+  get adapter() {
+    return this.adapterImpl ?? require("./chronoz-adapter.cjs");
   }
   async registration() {
     return readJson(this.file, (v) => parse(registrationSchema, v), null);

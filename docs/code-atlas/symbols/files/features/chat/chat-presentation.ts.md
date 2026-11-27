@@ -98,7 +98,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@524:39&gt;](<../agents/agent-construction.tsx.md#s-3f11db69ac8b8780>) — [features/agents/agent-construction.tsx:526](<../../../../../../features/agents/agent-construction.tsx#L526>)
+- [AgentConstruction.&lt;anonymous@544:39&gt;](<../agents/agent-construction.tsx.md#s-eca646042b2b8de2>) — [features/agents/agent-construction.tsx:546](<../../../../../../features/agents/agent-construction.tsx#L546>)
 - [wallpaperStyle](<chat-presentation.ts.md#s-f651f5a4d6934160>) — [features/chat/chat-presentation.ts:21](<../../../../../../features/chat/chat-presentation.ts#L21>)
 
 Unresolved / external call sites: 1.
@@ -135,7 +135,7 @@ Returns: CSSProperties (annotation). Implementation present.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction](<../agents/agent-construction.tsx.md#s-56fc0c6bc133a86f>) — [features/agents/agent-construction.tsx:536](<../../../../../../features/agents/agent-construction.tsx#L536>)
+- [AgentConstruction](<../agents/agent-construction.tsx.md#s-56fc0c6bc133a86f>) — [features/agents/agent-construction.tsx:556](<../../../../../../features/agents/agent-construction.tsx#L556>)
 - [ChatPanel](<chat-panel.tsx.md#s-e38ffd3c06175ce1>) — [features/chat/chat-panel.tsx:632](<../../../../../../features/chat/chat-panel.tsx#L632>)
 
 Unresolved / external call sites: 0.

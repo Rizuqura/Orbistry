@@ -8,7 +8,7 @@ Generated from AST declarations. Compiler-inferred contracts are approximate and
 
 - [features/agents/add-agent-dialog.tsx](<files/features/agents/add-agent-dialog.tsx.md#s-463ffec23470f0bd>) (production; 7 declarations)
 - [features/agents/agent-avatar.tsx](<files/features/agents/agent-avatar.tsx.md#s-eb565205fd69be6d>) (production; 3 declarations)
-- [features/agents/agent-construction.tsx](<files/features/agents/agent-construction.tsx.md#s-fce3967ddc03ecbc>) (production; 114 declarations)
+- [features/agents/agent-construction.tsx](<files/features/agents/agent-construction.tsx.md#s-fce3967ddc03ecbc>) (production; 119 declarations)
 - [features/agents/agent-contacts.tsx](<files/features/agents/agent-contacts.tsx.md#s-d7c2028acd56504c>) (production; 28 declarations)
 - [features/agents/agent-layout.ts](<files/features/agents/agent-layout.ts.md#s-14a3541aa8d7cba4>) (production; 3 declarations)
 - [features/agents/agent-settings.tsx](<files/features/agents/agent-settings.tsx.md#s-ae20be86a56c0e9b>) (production; 7 declarations)

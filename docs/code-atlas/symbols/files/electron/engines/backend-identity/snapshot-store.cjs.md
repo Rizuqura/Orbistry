@@ -250,7 +250,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [generate.compileIdentity](<identity-compiler.cjs.md#s-433e03f963d494bb>) — [electron/engines/backend-identity/identity-compiler.cjs:320](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L320>)
+- [generate.compileIdentity](<identity-compiler.cjs.md#s-06dcf38dc3b100c8>) — [electron/engines/backend-identity/identity-compiler.cjs:335](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L335>)
 - [current](<snapshot-store.cjs.md#s-1b3b25fe1054f619>) — [electron/engines/backend-identity/snapshot-store.cjs:95](<../../../../../../../electron/engines/backend-identity/snapshot-store.cjs#L95>)
 - [publish](<snapshot-store.cjs.md#s-aad15ef56f75a7c7>) — [electron/engines/backend-identity/snapshot-store.cjs:172](<../../../../../../../electron/engines/backend-identity/snapshot-store.cjs#L172>)
 
@@ -295,7 +295,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 - [&lt;anonymous@183:122&gt;.&lt;anonymous@184:17&gt;](<../../backend-identity.test.cjs.md#s-432a7be95c4ed388>) — [electron/backend-identity.test.cjs:211](<../../../../../../../electron/backend-identity.test.cjs#L211>)
 - [&lt;anonymous@573:116&gt;.&lt;anonymous@574:11&gt;](<../../backend-identity.test.cjs.md#s-65925d3a759e86b5>) — [electron/backend-identity.test.cjs:597](<../../../../../../../electron/backend-identity.test.cjs#L597>)
-- [status](<identity-compiler.cjs.md#s-028f3e6557e09194>) — [electron/engines/backend-identity/identity-compiler.cjs:426](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L426>)
+- [status](<identity-compiler.cjs.md#s-1d61d04d4313288f>) — [electron/engines/backend-identity/identity-compiler.cjs:444](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L444>)
 
 Unresolved / external call sites: 3.
 
@@ -497,7 +497,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Called by (statically resolved):**
 
 - [&lt;anonymous@573:116&gt;.&lt;anonymous@574:11&gt;.&lt;anonymous@578:24&gt;](<../../backend-identity.test.cjs.md#s-9d7fd2c5546ba8f7>) — [electron/backend-identity.test.cjs:579](<../../../../../../../electron/backend-identity.test.cjs#L579>)
-- [generate.compileIdentity.encodeSource](<identity-compiler.cjs.md#s-ae162f23d69f55da>) — [electron/engines/backend-identity/identity-compiler.cjs:290](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L290>)
+- [generate.compileIdentity.encodeSource](<identity-compiler.cjs.md#s-80e161a08d14a00f>) — [electron/engines/backend-identity/identity-compiler.cjs:305](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L305>)
 
 Unresolved / external call sites: 3.
 
@@ -553,7 +553,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Called by (statically resolved):**
 
 - [&lt;anonymous@183:122&gt;.&lt;anonymous@184:17&gt;](<../../backend-identity.test.cjs.md#s-432a7be95c4ed388>) — [electron/backend-identity.test.cjs:199](<../../../../../../../electron/backend-identity.test.cjs#L199>)
-- [generate.compileIdentity](<identity-compiler.cjs.md#s-433e03f963d494bb>) — [electron/engines/backend-identity/identity-compiler.cjs:385](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L385>)
+- [generate.compileIdentity](<identity-compiler.cjs.md#s-06dcf38dc3b100c8>) — [electron/engines/backend-identity/identity-compiler.cjs:403](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L403>)
 
 Unresolved / external call sites: 9.
 
@@ -636,8 +636,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [generate.compileIdentity](<identity-compiler.cjs.md#s-433e03f963d494bb>) — [electron/engines/backend-identity/identity-compiler.cjs:392](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L392>)
-- [generate.compileIdentity](<identity-compiler.cjs.md#s-433e03f963d494bb>) — [electron/engines/backend-identity/identity-compiler.cjs:405](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L405>)
+- [generate.compileIdentity](<identity-compiler.cjs.md#s-06dcf38dc3b100c8>) — [electron/engines/backend-identity/identity-compiler.cjs:410](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L410>)
+- [generate.compileIdentity](<identity-compiler.cjs.md#s-06dcf38dc3b100c8>) — [electron/engines/backend-identity/identity-compiler.cjs:423](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L423>)
 
 Unresolved / external call sites: 2.
 
@@ -675,7 +675,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [status](<identity-compiler.cjs.md#s-028f3e6557e09194>) — [electron/engines/backend-identity/identity-compiler.cjs:436](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L436>)
+- [status](<identity-compiler.cjs.md#s-1d61d04d4313288f>) — [electron/engines/backend-identity/identity-compiler.cjs:454](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L454>)
 
 Unresolved / external call sites: 1.
 

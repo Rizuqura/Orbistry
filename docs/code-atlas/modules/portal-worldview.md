@@ -133,7 +133,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [Agent workspace and construction (Portal)](<portal-agents.md>): 1 import sites; example [features/agents/agent-workspace.tsx:17](<../../../features/agents/agent-workspace.tsx#L17>).
 - [Entity UI](<portal-entities.md>): 5 import sites; example [features/entities/assign-files-dialog.tsx:11](<../../../features/entities/assign-files-dialog.tsx#L11>).
-- [Knowledge Cards and readers](<portal-knowledge.md>): 10 import sites; example [features/knowledge/carousel-source.tsx:4](<../../../features/knowledge/carousel-source.tsx#L4>).
+- [Knowledge Cards and readers](<portal-knowledge.md>): 11 import sites; example [features/knowledge/carousel-source.tsx:4](<../../../features/knowledge/carousel-source.tsx#L4>).
 - [Portal shell](<portal-shell.md>): 1 import sites; example [components/app-shell.tsx:9](<../../../components/app-shell.tsx#L9>).
 
 ## Contracts

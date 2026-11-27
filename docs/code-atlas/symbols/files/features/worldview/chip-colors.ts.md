@@ -288,7 +288,7 @@ Returns: string (annotation). Implementation present.
 **Called by (statically resolved):**
 
 - [EntityActions](<../entities/entity-actions.tsx.md#s-37edcde199a52244>) — [features/entities/entity-actions.tsx:50](<../../../../../../features/entities/entity-actions.tsx#L50>)
-- [KnowledgeWorkspace](<../knowledge/knowledge-workspace.tsx.md#s-de61e2373aa42255>) — [features/knowledge/knowledge-workspace.tsx:290](<../../../../../../features/knowledge/knowledge-workspace.tsx#L290>)
+- [KnowledgeWorkspace](<../knowledge/knowledge-workspace.tsx.md#s-31cae44ec8ab38a9>) — [features/knowledge/knowledge-workspace.tsx:291](<../../../../../../features/knowledge/knowledge-workspace.tsx#L291>)
 - [drawFileBuildings](<building-renderer.ts.md#s-70841a890f106cba>) — [features/worldview/building-renderer.ts:138](<../../../../../../features/worldview/building-renderer.ts#L138>)
 - [&lt;anonymous@34:78&gt;](<chip-colors.test.cjs.md#s-323d0dc1e4d963dd>) — [features/worldview/chip-colors.test.cjs:40](<../../../../../../features/worldview/chip-colors.test.cjs#L40>)
 - [&lt;anonymous@34:78&gt;](<chip-colors.test.cjs.md#s-323d0dc1e4d963dd>) — [features/worldview/chip-colors.test.cjs:41](<../../../../../../features/worldview/chip-colors.test.cjs#L41>)

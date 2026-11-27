@@ -99,13 +99,13 @@ Returns: any (compiler-inferred). Implementation present.
 - [initPackage](<../../electron/engines/registry/authoring.cjs.md#s-bbfb28bee2f9c0b0>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:65](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L65>)
 - [createSigningKey](<../../electron/engines/registry/signing.cjs.md#s-dbf5e585ccf2aea6>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:75](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L75>)
 - [signPackage](<../../electron/engines/registry/signing.cjs.md#s-9317466d274715e3>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:76](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L76>)
-- [EnginePackageRegistry.constructor](<../../electron/engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:78](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L78>)
-- [EnginePackageRegistry.install](<../../electron/engines/registry/registry.cjs.md#s-23fa9e3f7160bfa9>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:81](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L81>)
-- [EnginePackageRegistry.trust](<../../electron/engines/registry/registry.cjs.md#s-875db17c7cae1a9d>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:82](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L82>)
-- [EnginePackageRegistry.link](<../../electron/engines/registry/registry.cjs.md#s-cc2ef75797a08101>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:83](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L83>)
+- [EnginePackageRegistry.constructor](<../../electron/engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:78](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L78>)
+- [EnginePackageRegistry.install](<../../electron/engines/registry/registry.cjs.md#s-b97b1298e6d6e88c>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:81](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L81>)
+- [EnginePackageRegistry.trust](<../../electron/engines/registry/registry.cjs.md#s-c4a76488a257429f>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:82](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L82>)
+- [EnginePackageRegistry.link](<../../electron/engines/registry/registry.cjs.md#s-4a5a96d46040ffbd>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:83](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L83>)
 - [initPackage](<../../electron/engines/registry/authoring.cjs.md#s-bbfb28bee2f9c0b0>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:89](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L89>)
-- [EnginePackageRegistry.install](<../../electron/engines/registry/registry.cjs.md#s-23fa9e3f7160bfa9>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:93](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L93>)
-- [EntityAgentService.open](<../../electron/ai/agents/entity-agents.cjs.md#s-34702ed2b007581b>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:410](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L410>)
+- [EnginePackageRegistry.install](<../../electron/engines/registry/registry.cjs.md#s-b97b1298e6d6e88c>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:93](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L93>)
+- [EntityAgentService.open](<../../electron/ai/agents/entity-agents.cjs.md#s-bfc1e695eb6cb3f7>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:410](<../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L410>)
 
 **Called by (statically resolved):**
 

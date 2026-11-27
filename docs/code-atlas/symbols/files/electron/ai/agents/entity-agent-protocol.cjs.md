@@ -20,7 +20,7 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [runEntityProtocol](<entity-agent-protocol.cjs.md#s-5093e0259461bc43>) (FunctionDeclaration)
 - [priceEvidence](<entity-agent-protocol.cjs.md#s-db43e3ad616645c2>) (FunctionDeclaration)
 - [priceEvidence.validated](<entity-agent-protocol.cjs.md#s-a363e2c6f8c99552>) (SchemaBinding)
-- [isApproval](<entity-agent-protocol.cjs.md#s-5a44932718fabc6c>) (FunctionDeclaration)
+- [isApproval](<entity-agent-protocol.cjs.md#s-645d1351c7efd68d>) (FunctionDeclaration)
 
 <a id="s-f770a0e0024db4e4"></a>
 
@@ -506,17 +506,17 @@ Returns: { executionId: any; engineId: any; operation: any; status: string; symb
 
 **Calls (statically resolved):**
 
-- [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/entity-agent-protocol.cjs:273](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L273>)
-- [quoteOrigin](<../quote-origin.cjs.md#s-d2bb16ed0ae1f043>) — [electron/ai/agents/entity-agent-protocol.cjs:295](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L295>)
+- [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/entity-agent-protocol.cjs:274](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L274>)
+- [quoteOrigin](<../quote-origin.cjs.md#s-d2bb16ed0ae1f043>) — [electron/ai/agents/entity-agent-protocol.cjs:296](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L296>)
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.recentResults](<entity-agents.cjs.md#s-a5ea2573cd1f234a>) — [electron/ai/agents/entity-agents.cjs:728](<../../../../../../../electron/ai/agents/entity-agents.cjs#L728>)
-- [EntityAgentService.executeBound](<entity-agents.cjs.md#s-05ab3da1509c33bf>) — [electron/ai/agents/entity-agents.cjs:1882](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1882>)
+- [EntityAgentService.recentResults](<entity-agents.cjs.md#s-8a9788a3c797a765>) — [electron/ai/agents/entity-agents.cjs:817](<../../../../../../../electron/ai/agents/entity-agents.cjs#L817>)
+- [EntityAgentService.executeBound](<entity-agents.cjs.md#s-23dd00b1b12e2790>) — [electron/ai/agents/entity-agents.cjs:2027](<../../../../../../../electron/ai/agents/entity-agents.cjs#L2027>)
 
 Unresolved / external call sites: 1.
 
-- require — module-loader; [electron/ai/agents/entity-agent-protocol.cjs:295](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L295>)
+- require — module-loader; [electron/ai/agents/entity-agent-protocol.cjs:296](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L296>)
 
 **Related tests / acceptance harnesses:**
 
@@ -548,14 +548,14 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 8.
 
-- z .object({ snapshot: require("../../engines/daily-price/index.cjs").snapshotSchema, cached: z.boolean(), stale: z.boolean(), warning: z.string().nullable(), }) .passthrough() .par — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:263](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L263>)
-- z .object({ snapshot: require("../../engines/daily-price/index.cjs").snapshotSchema, cached: z.boolean(), stale: z.boolean(), warning: z.string().nullable(), }) .passthrough — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:263](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L263>)
+- z .object({ snapshot: require("../../engines/contracts/yahoo-legacy/daily.cjs") .snapshotSchema, cached: z.boolean(), stale: z.boolean(), warning: z.string().nullable(), }) .passth — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:263](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L263>)
+- z .object({ snapshot: require("../../engines/contracts/yahoo-legacy/daily.cjs") .snapshotSchema, cached: z.boolean(), stale: z.boolean(), warning: z.string().nullable(), }) .passth — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:263](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L263>)
 - z .object — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:263](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L263>)
 - require — module-loader; [electron/ai/agents/entity-agent-protocol.cjs:265](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L265>)
-- z.boolean — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:266](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L266>)
 - z.boolean — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:267](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L267>)
-- z.string().nullable — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:268](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L268>)
-- z.string — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:268](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L268>)
+- z.boolean — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:268](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L268>)
+- z.string().nullable — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:269](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L269>)
+- z.string — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:269](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L269>)
 
 **Related tests / acceptance harnesses:**
 
@@ -563,11 +563,11 @@ Unresolved / external call sites: 8.
 - [electron/ai/providers/gemini-provider.test.cjs:14](<../../../../../../../electron/ai/providers/gemini-provider.test.cjs#L14>) — file-import-only; coverage not established.
 - [electron/ai/providers/nvidia-provider.test.cjs:13](<../../../../../../../electron/ai/providers/nvidia-provider.test.cjs#L13>) — file-import-only; coverage not established.
 
-<a id="s-5a44932718fabc6c"></a>
+<a id="s-645d1351c7efd68d"></a>
 
 ## isApproval
 
-[electron/ai/agents/entity-agent-protocol.cjs:301](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L301>) · FunctionDeclaration · production · [Assigned Agents and jurisdiction](<../../../../../modules/agents.md>)
+[electron/ai/agents/entity-agent-protocol.cjs:302](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L302>) · FunctionDeclaration · production · [Assigned Agents and jurisdiction](<../../../../../modules/agents.md>)
 
 Recognizes only an unambiguous whole-message approval for one existing pending request. Arbitrary conversation text carries no permission.
 
@@ -591,14 +591,14 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 - [&lt;anonymous@101:81&gt;](<entity-agent-protocol.test.cjs.md#s-e985ff582724167f>) — [electron/ai/agents/entity-agent-protocol.test.cjs:103](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L103>)
 - [&lt;anonymous@101:81&gt;](<entity-agent-protocol.test.cjs.md#s-e985ff582724167f>) — [electron/ai/agents/entity-agent-protocol.test.cjs:110](<../../../../../../../electron/ai/agents/entity-agent-protocol.test.cjs#L110>)
-- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-5e1a2fcddec46961>) — [electron/ai/agents/entity-agents.cjs:1527](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1527>)
-- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-5e1a2fcddec46961>) — [electron/ai/agents/entity-agents.cjs:1534](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1534>)
-- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-5e1a2fcddec46961>) — [electron/ai/agents/entity-agents.cjs:1546](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1546>)
+- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-680c60784ebeb982>) — [electron/ai/agents/entity-agents.cjs:1616](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1616>)
+- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-680c60784ebeb982>) — [electron/ai/agents/entity-agents.cjs:1623](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1623>)
+- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-680c60784ebeb982>) — [electron/ai/agents/entity-agents.cjs:1635](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1635>)
 
 Unresolved / external call sites: 2.
 
-- /^(?:yes(?:&#91;, &#93;+please&#124;&#91;, &#93;+pls)?&#124;yes pls&#124;approve&#124;approved&#124;go ahead&#124;please proceed)&#91;.!\\s&#93;*$/i.test — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:302](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L302>)
-- message.trim — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:303](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L303>)
+- /^(?:yes(?:&#91;, &#93;+please&#124;&#91;, &#93;+pls)?&#124;yes pls&#124;approve&#124;approved&#124;go ahead&#124;please proceed)&#91;.!\\s&#93;*$/i.test — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:303](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L303>)
+- message.trim — external-or-dynamic-dispatch; [electron/ai/agents/entity-agent-protocol.cjs:304](<../../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L304>)
 
 **Related tests / acceptance harnesses:**
 

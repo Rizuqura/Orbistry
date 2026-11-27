@@ -6,7 +6,7 @@ Owns CLI commands, package/build tooling, architecture checks, Atlas generation 
 
 Owns: scripts/. This ownership is editorial; source locations and import edges below are generated facts.
 
-105 source files; 1594 callable declarations; 0 contract declarations.
+110 source files; 1630 callable declarations; 0 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -39,8 +39,8 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [analyze](<../symbols/files/scripts/code-atlas/analyze.cjs.md#s-50c93f94f5c6bf5b>) | [scripts/code-atlas/analyze.cjs:161](<../../../scripts/code-atlas/analyze.cjs#L161>) | FunctionDeclaration |
 | [MODULES](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-8e32e0098d4ac13f>) | [scripts/code-atlas/catalog.cjs:4](<../../../scripts/code-atlas/catalog.cjs#L4>) | VariableDeclaration |
 | [moduleFor](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-760ea599ad9258b2>) | [scripts/code-atlas/catalog.cjs:164](<../../../scripts/code-atlas/catalog.cjs#L164>) | FunctionDeclaration |
-| [roleFor](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-923feac876424dc9>) | [scripts/code-atlas/catalog.cjs:245](<../../../scripts/code-atlas/catalog.cjs#L245>) | FunctionDeclaration |
-| [portable](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-60683316afa4a320>) | [scripts/code-atlas/catalog.cjs:256](<../../../scripts/code-atlas/catalog.cjs#L256>) | FunctionDeclaration |
+| [roleFor](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-83de78c6acc3c1e2>) | [scripts/code-atlas/catalog.cjs:246](<../../../scripts/code-atlas/catalog.cjs#L246>) | FunctionDeclaration |
+| [portable](<../symbols/files/scripts/code-atlas/catalog.cjs.md#s-c39d81ba81a8717f>) | [scripts/code-atlas/catalog.cjs:257](<../../../scripts/code-atlas/catalog.cjs#L257>) | FunctionDeclaration |
 | [included](<../symbols/files/scripts/code-atlas/generate.cjs.md#s-2a2e1b797f0a0359>) | [scripts/code-atlas/generate.cjs:42](<../../../scripts/code-atlas/generate.cjs#L42>) | FunctionDeclaration |
 | [inventory](<../symbols/files/scripts/code-atlas/generate.cjs.md#s-02a34d5fca877940>) | [scripts/code-atlas/generate.cjs:63](<../../../scripts/code-atlas/generate.cjs#L63>) | FunctionDeclaration |
 | [buildAtlas](<../symbols/files/scripts/code-atlas/generate.cjs.md#s-5686d6c95fadcfb1>) | [scripts/code-atlas/generate.cjs:106](<../../../scripts/code-atlas/generate.cjs#L106>) | FunctionDeclaration |
@@ -57,6 +57,7 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [moduleEdges](<../symbols/files/scripts/code-atlas/render.cjs.md#s-ebbb722ed10e381c>) | [scripts/code-atlas/render.cjs:59](<../../../scripts/code-atlas/render.cjs#L59>) | FunctionDeclaration |
 | [render](<../symbols/files/scripts/code-atlas/render.cjs.md#s-795102933500a447>) | [scripts/code-atlas/render.cjs:566](<../../../scripts/code-atlas/render.cjs#L566>) | FunctionDeclaration |
 | [main](<../symbols/files/scripts/enable-entity-agent-read-access.cjs.md#s-86d517edd5e58413>) | [scripts/enable-entity-agent-read-access.cjs:12](<../../../scripts/enable-entity-agent-read-access.cjs#L12>) | FunctionDeclaration |
+| [linkMockYahoo](<../symbols/files/scripts/fixtures/assigned-yahoo-package.cjs.md#s-1c33c078b3b94add>) | [scripts/fixtures/assigned-yahoo-package.cjs:8](<../../../scripts/fixtures/assigned-yahoo-package.cjs#L8>) | FunctionDeclaration |
 | [openContextTools](<../symbols/files/scripts/fixtures/chat-context-tools.cjs.md#s-e7640695526089a7>) | [scripts/fixtures/chat-context-tools.cjs:2](<../../../scripts/fixtures/chat-context-tools.cjs#L2>) | FunctionDeclaration |
 | [cmapPdf](<../symbols/files/scripts/fixtures/cmap-pdf.cjs.md#s-8d66225473a2ebb8>) | [scripts/fixtures/cmap-pdf.cjs:3](<../../../scripts/fixtures/cmap-pdf.cjs#L3>) | FunctionDeclaration |
 | [zip](<../symbols/files/scripts/fixtures/excel.cjs.md#s-6b585801c616fb06>) | [scripts/fixtures/excel.cjs:4](<../../../scripts/fixtures/excel.cjs#L4>) | FunctionDeclaration |
@@ -100,10 +101,11 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/acceptance/electron-chat-smoke.cjs:1](<../../../scripts/acceptance/electron-chat-smoke.cjs#L1>) | tooling | 57 |
 | [scripts/acceptance/electron-chronoz-smoke.cjs:1](<../../../scripts/acceptance/electron-chronoz-smoke.cjs#L1>) | tooling | 26 |
 | [scripts/acceptance/electron-construction-smoke.cjs:1](<../../../scripts/acceptance/electron-construction-smoke.cjs#L1>) | tooling | 32 |
+| [scripts/acceptance/electron-core-only.cjs:1](<../../../scripts/acceptance/electron-core-only.cjs#L1>) | tooling | 8 |
 | [scripts/acceptance/electron-daily-price-smoke.cjs:1](<../../../scripts/acceptance/electron-daily-price-smoke.cjs#L1>) | tooling | 4 |
 | [scripts/acceptance/electron-empty-agents-smoke.cjs:1](<../../../scripts/acceptance/electron-empty-agents-smoke.cjs#L1>) | tooling | 8 |
 | [scripts/acceptance/electron-engine-smoke.cjs:1](<../../../scripts/acceptance/electron-engine-smoke.cjs#L1>) | tooling | 27 |
-| [scripts/acceptance/electron-entity-agents-smoke.cjs:1](<../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L1>) | tooling | 19 |
+| [scripts/acceptance/electron-entity-agents-smoke.cjs:1](<../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L1>) | tooling | 20 |
 | [scripts/acceptance/electron-entity-runtime-live-main.cjs:1](<../../../scripts/acceptance/electron-entity-runtime-live-main.cjs#L1>) | tooling | 7 |
 | [scripts/acceptance/electron-entity-runtime-live.cjs:1](<../../../scripts/acceptance/electron-entity-runtime-live.cjs#L1>) | tooling | 21 |
 | [scripts/acceptance/electron-financials-smoke.cjs:1](<../../../scripts/acceptance/electron-financials-smoke.cjs#L1>) | tooling | 4 |
@@ -118,7 +120,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/acceptance/electron-openrouter-live-catalog.cjs:1](<../../../scripts/acceptance/electron-openrouter-live-catalog.cjs#L1>) | tooling | 3 |
 | [scripts/acceptance/electron-openrouter-live-main.cjs:1](<../../../scripts/acceptance/electron-openrouter-live-main.cjs#L1>) | tooling | 1 |
 | [scripts/acceptance/electron-openrouter-smoke.cjs:1](<../../../scripts/acceptance/electron-openrouter-smoke.cjs#L1>) | tooling | 47 |
-| [scripts/acceptance/electron-packaged-smoke.cjs:1](<../../../scripts/acceptance/electron-packaged-smoke.cjs#L1>) | tooling | 10 |
+| [scripts/acceptance/electron-packaged-smoke.cjs:1](<../../../scripts/acceptance/electron-packaged-smoke.cjs#L1>) | tooling | 11 |
 | [scripts/acceptance/electron-pdf-image-smoke.cjs:1](<../../../scripts/acceptance/electron-pdf-image-smoke.cjs#L1>) | tooling | 13 |
 | [scripts/acceptance/electron-provider-budget-smoke.cjs:1](<../../../scripts/acceptance/electron-provider-budget-smoke.cjs#L1>) | tooling | 15 |
 | [scripts/acceptance/electron-release-smoke-main.cjs:1](<../../../scripts/acceptance/electron-release-smoke-main.cjs#L1>) | tooling | 0 |
@@ -133,16 +135,17 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/acceptance/electron-ui-polish-smoke.cjs:1](<../../../scripts/acceptance/electron-ui-polish-smoke.cjs#L1>) | tooling | 14 |
 | [scripts/acceptance/electron-usage-monitor-smoke.cjs:1](<../../../scripts/acceptance/electron-usage-monitor-smoke.cjs#L1>) | tooling | 28 |
 | [scripts/acceptance/electron-victoria-smoke.cjs:1](<../../../scripts/acceptance/electron-victoria-smoke.cjs#L1>) | tooling | 13 |
-| [scripts/acceptance/electron-worldview-smoke.cjs:1](<../../../scripts/acceptance/electron-worldview-smoke.cjs#L1>) | tooling | 76 |
+| [scripts/acceptance/electron-worldview-smoke.cjs:1](<../../../scripts/acceptance/electron-worldview-smoke.cjs#L1>) | tooling | 81 |
 | [scripts/acceptance/worldview-excel-check.cjs:1](<../../../scripts/acceptance/worldview-excel-check.cjs#L1>) | tooling | 13 |
 | [scripts/acceptance/worldview-financial-check.cjs:1](<../../../scripts/acceptance/worldview-financial-check.cjs#L1>) | tooling | 13 |
 | [scripts/acceptance/worldview-phase03-check.cjs:1](<../../../scripts/acceptance/worldview-phase03-check.cjs#L1>) | tooling | 30 |
-| [scripts/acceptance/worldview-phase04-check.cjs:1](<../../../scripts/acceptance/worldview-phase04-check.cjs#L1>) | tooling | 9 |
+| [scripts/acceptance/worldview-phase04-check.cjs:1](<../../../scripts/acceptance/worldview-phase04-check.cjs#L1>) | tooling | 10 |
 | [scripts/acceptance/worldview-phase05-check.cjs:1](<../../../scripts/acceptance/worldview-phase05-check.cjs#L1>) | tooling | 23 |
 | [scripts/acceptance/worldview-phase06-check.cjs:1](<../../../scripts/acceptance/worldview-phase06-check.cjs#L1>) | tooling | 37 |
 | [scripts/acceptance/worldview-phase07-check.cjs:1](<../../../scripts/acceptance/worldview-phase07-check.cjs#L1>) | tooling | 20 |
 | [scripts/acceptance/worldview-phase08-check.cjs:1](<../../../scripts/acceptance/worldview-phase08-check.cjs#L1>) | tooling | 15 |
 | [scripts/acceptance/worldview-price-check.cjs:1](<../../../scripts/acceptance/worldview-price-check.cjs#L1>) | tooling | 20 |
+| [scripts/acceptance/yahoo-package-lifecycle.cjs:1](<../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L1>) | tooling | 10 |
 | [scripts/agent-electron-acceptance.cjs:1](<../../../scripts/agent-electron-acceptance.cjs#L1>) | tooling | 63 |
 | [scripts/audit/audit-architecture.cjs:1](<../../../scripts/audit/audit-architecture.cjs#L1>) | tooling | 17 |
 | [scripts/audit/audit-package.cjs:1](<../../../scripts/audit/audit-package.cjs#L1>) | tooling | 6 |
@@ -150,6 +153,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/audit/release-secret-audit.cjs:1](<../../../scripts/audit/release-secret-audit.cjs#L1>) | tooling | 3 |
 | [scripts/audit/release-size-audit.cjs:1](<../../../scripts/audit/release-size-audit.cjs#L1>) | tooling | 10 |
 | [scripts/build-daily-price-engine.cjs:1](<../../../scripts/build-daily-price-engine.cjs#L1>) | tooling | 3 |
+| [scripts/build/build-core-only.cjs:1](<../../../scripts/build/build-core-only.cjs#L1>) | tooling | 4 |
 | [scripts/build/build-excel-engine.cjs:1](<../../../scripts/build/build-excel-engine.cjs#L1>) | tooling | 7 |
 | [scripts/build/build-yahoo-financials-engine.cjs:1](<../../../scripts/build/build-yahoo-financials-engine.cjs#L1>) | tooling | 4 |
 | [scripts/build/prepare-icons.cjs:1](<../../../scripts/build/prepare-icons.cjs#L1>) | tooling | 5 |
@@ -170,6 +174,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/dataset-live-acceptance.cjs:1](<../../../scripts/dataset-live-acceptance.cjs#L1>) | tooling | 12 |
 | [scripts/enable-entity-agent-read-access.cjs:1](<../../../scripts/enable-entity-agent-read-access.cjs#L1>) | tooling | 4 |
 | [scripts/engine-chat-live.cjs:1](<../../../scripts/engine-chat-live.cjs#L1>) | tooling | 6 |
+| [scripts/fixtures/assigned-yahoo-package.cjs:1](<../../../scripts/fixtures/assigned-yahoo-package.cjs#L1>) | tooling | 1 |
 | [scripts/fixtures/chat-context-tools.cjs:1](<../../../scripts/fixtures/chat-context-tools.cjs#L1>) | tooling | 1 |
 | [scripts/fixtures/chronoz-trigger.cjs:1](<../../../scripts/fixtures/chronoz-trigger.cjs#L1>) | tooling | 3 |
 | [scripts/fixtures/cmap-pdf.cjs:1](<../../../scripts/fixtures/cmap-pdf.cjs#L1>) | tooling | 2 |
@@ -178,6 +183,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [scripts/fixtures/legacy-agents.cjs:1](<../../../scripts/fixtures/legacy-agents.cjs#L1>) | tooling | 2 |
 | [scripts/fixtures/online-smoke-fetch.cjs:1](<../../../scripts/fixtures/online-smoke-fetch.cjs#L1>) | tooling | 17 |
 | [scripts/fixtures/text-pdf.cjs:1](<../../../scripts/fixtures/text-pdf.cjs#L1>) | tooling | 4 |
+| [scripts/fixtures/yahoo-client.cjs:1](<../../../scripts/fixtures/yahoo-client.cjs#L1>) | tooling | 5 |
 | [scripts/front-office-benchmark.cjs:1](<../../../scripts/front-office-benchmark.cjs#L1>) | tooling | 10 |
 | [scripts/front-office-metrics-export.cjs:1](<../../../scripts/front-office-metrics-export.cjs#L1>) | tooling | 2 |
 | [scripts/knowledge-review.cjs:1](<../../../scripts/knowledge-review.cjs#L1>) | tooling | 3 |

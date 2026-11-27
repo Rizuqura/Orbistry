@@ -79,6 +79,7 @@ async function main() {
         "pull --vault <Universe> --source <https-manifest-url>",
         "trust|revoke --vault <Universe> --id <engine-id> --digest <sha256>",
         "link --vault <Universe> --entity <id> --id <engine-id> --operations <comma-list> [--policy manual|automatic] [--allow-network]",
+        "enable|disable|uninstall --vault <Universe> --id <engine-id> --digest <sha256>",
         "unlink --vault <Universe> --entity <id> --id <engine-id>",
         "list|describe --vault <Universe> [--entity <id>]",
         "run --vault <Universe> --entity <id> --id <engine-id> --operation <id> --input <json-file> [--approve]",
@@ -138,6 +139,9 @@ async function main() {
       policy: o.policy ?? "manual",
       allowNetwork: o["allow-network"] === true,
     });
+  if (command === "enable" || command === "disable")
+    return registry.setEnabled(o.id, o.digest, command === "enable");
+  if (command === "uninstall") return registry.uninstall(o.id, o.digest);
   if (command === "unlink") return registry.unlink(o.entity, o.id);
   if (command === "list" || command === "describe")
     return registry.catalog(o.entity ?? null);

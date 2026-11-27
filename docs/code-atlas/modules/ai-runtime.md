@@ -6,7 +6,7 @@ Owns optional model configuration, context, conversation stores and legacy/exper
 
 Owns: Remaining electron/ai/ modules. This ownership is editorial; source locations and import edges below are generated facts.
 
-92 source files; 1790 callable declarations; 66 contract declarations.
+93 source files; 1791 callable declarations; 66 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -21,14 +21,16 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [validateConversation](<../symbols/files/electron/ai/chat/conversation-store.cjs.md#s-8fcc95a0b5a57e3e>) | [electron/ai/chat/conversation-store.cjs:25](<../../../electron/ai/chat/conversation-store.cjs#L25>) | FunctionDeclaration |
 | [applyRun](<../symbols/files/electron/ai/chat/conversation-store.cjs.md#s-3844eb73bb69ccca>) | [electron/ai/chat/conversation-store.cjs:226](<../../../electron/ai/chat/conversation-store.cjs#L226>) | FunctionDeclaration |
 | [ConversationStore](<../symbols/files/electron/ai/chat/conversation-store.cjs.md#s-a8bd7ce130e13fa0>) | [electron/ai/chat/conversation-store.cjs:310](<../../../electron/ai/chat/conversation-store.cjs#L310>) | ClassDeclaration |
-| [sha](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-c95e7f0287adc21f>) | [electron/ai/chronoz-adapter.cjs:8](<../../../electron/ai/chronoz-adapter.cjs#L8>) | ArrowFunction |
-| [monthSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-bd133e0c2f103dba>) | [electron/ai/chronoz-adapter.cjs:9](<../../../electron/ai/chronoz-adapter.cjs#L9>) | SchemaBinding |
-| [argumentsSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-8b77fa8b5f5a4017>) | [electron/ai/chronoz-adapter.cjs:10](<../../../electron/ai/chronoz-adapter.cjs#L10>) | SchemaBinding |
-| [unlinked](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-44f5cb0fb77f737c>) | [electron/ai/chronoz-adapter.cjs:48](<../../../electron/ai/chronoz-adapter.cjs#L48>) | FunctionDeclaration |
-| [boundedRead](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-ab7f70176d8b6e40>) | [electron/ai/chronoz-adapter.cjs:60](<../../../electron/ai/chronoz-adapter.cjs#L60>) | FunctionDeclaration |
-| [inspectBundle](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-ca72c2c506d158b6>) | [electron/ai/chronoz-adapter.cjs:89](<../../../electron/ai/chronoz-adapter.cjs#L89>) | FunctionDeclaration |
-| [runTrigger](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-1578e21474f428b1>) | [electron/ai/chronoz-adapter.cjs:194](<../../../electron/ai/chronoz-adapter.cjs#L194>) | FunctionDeclaration |
-| [verifyReport](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-d95eb12fa1b37a46>) | [electron/ai/chronoz-adapter.cjs:341](<../../../electron/ai/chronoz-adapter.cjs#L341>) | FunctionDeclaration |
+| [inspectBundle](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-27254e2757fbd276>) | [electron/ai/chronoz-adapter.cjs:42](<../../../electron/ai/chronoz-adapter.cjs#L42>) | FunctionDeclaration |
+| [runTrigger](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-9a8362270da4fd67>) | [electron/ai/chronoz-adapter.cjs:147](<../../../electron/ai/chronoz-adapter.cjs#L147>) | FunctionDeclaration |
+| [verifyReport](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-99b6ea0d2b1d6595>) | [electron/ai/chronoz-adapter.cjs:294](<../../../electron/ai/chronoz-adapter.cjs#L294>) | FunctionDeclaration |
+| [sha](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-be6194fd3a77a55d>) | [electron/ai/chronoz-contract.cjs:6](<../../../electron/ai/chronoz-contract.cjs#L6>) | ArrowFunction |
+| [monthSchema](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-ac76f681e96c018b>) | [electron/ai/chronoz-contract.cjs:7](<../../../electron/ai/chronoz-contract.cjs#L7>) | SchemaBinding |
+| [argumentsSchema](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-733b5e3a382e5a9a>) | [electron/ai/chronoz-contract.cjs:8](<../../../electron/ai/chronoz-contract.cjs#L8>) | SchemaBinding |
+| [fail](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-0a5da8b8dbe15a4c>) | [electron/ai/chronoz-contract.cjs:9](<../../../electron/ai/chronoz-contract.cjs#L9>) | FunctionDeclaration |
+| [contained](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-7c17f67290ab9c26>) | [electron/ai/chronoz-contract.cjs:12](<../../../electron/ai/chronoz-contract.cjs#L12>) | FunctionDeclaration |
+| [unlinked](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-4c704f10680e63b0>) | [electron/ai/chronoz-contract.cjs:21](<../../../electron/ai/chronoz-contract.cjs#L21>) | FunctionDeclaration |
+| [boundedRead](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-6dd18264afbdab77>) | [electron/ai/chronoz-contract.cjs:33](<../../../electron/ai/chronoz-contract.cjs#L33>) | FunctionDeclaration |
 | [ContextBoxStore](<../symbols/files/electron/ai/context-box-store.cjs.md#s-ffcdbdc5ad477305>) | [electron/ai/context-box-store.cjs:66](<../../../electron/ai/context-box-store.cjs#L66>) | ClassDeclaration |
 | [contextIdentity](<../symbols/files/electron/ai/context-identity.cjs.md#s-9645374bbdc64d1f>) | [electron/ai/context-identity.cjs:4](<../../../electron/ai/context-identity.cjs#L4>) | FunctionDeclaration |
 | [validateContextIdentity](<../symbols/files/electron/ai/context-identity.cjs.md#s-074b8d05ecfc17f5>) | [electron/ai/context-identity.cjs:47](<../../../electron/ai/context-identity.cjs#L47>) | FunctionDeclaration |
@@ -251,19 +253,19 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [CredentialStore.get](<../symbols/files/electron/ai/credential-store.cjs.md#s-0c057213a95118a0>) | [electron/ai/credential-store.cjs:128](<../../../electron/ai/credential-store.cjs#L128>) | MethodDeclaration |
 | [createDatasetSession.call](<../symbols/files/electron/ai/dataset-session.cjs.md#s-417114a38f1c6cd4>) | [electron/ai/dataset-session.cjs:61](<../../../electron/ai/dataset-session.cjs#L61>) | MethodDeclaration |
 | [EngineRegistry.packages](<../symbols/files/electron/ai/engine-registry.cjs.md#s-a29e8bc55fbeda42>) | [electron/ai/engine-registry.cjs:42](<../../../electron/ai/engine-registry.cjs#L42>) | MethodDeclaration |
-| [EngineRegistry.registration](<../symbols/files/electron/ai/engine-registry.cjs.md#s-8ab6043db31cc707>) | [electron/ai/engine-registry.cjs:64](<../../../electron/ai/engine-registry.cjs#L64>) | MethodDeclaration |
-| [EngineRegistry.checked](<../symbols/files/electron/ai/engine-registry.cjs.md#s-8396dabf7b2bc949>) | [electron/ai/engine-registry.cjs:67](<../../../electron/ai/engine-registry.cjs#L67>) | MethodDeclaration |
-| [EngineRegistry.state](<../symbols/files/electron/ai/engine-registry.cjs.md#s-06645e4647def7ef>) | [electron/ai/engine-registry.cjs:82](<../../../electron/ai/engine-registry.cjs#L82>) | MethodDeclaration |
-| [EngineRegistry.exclusive](<../symbols/files/electron/ai/engine-registry.cjs.md#s-554a6859398689fa>) | [electron/ai/engine-registry.cjs:107](<../../../electron/ai/engine-registry.cjs#L107>) | MethodDeclaration |
-| [EngineRegistry.cancel](<../symbols/files/electron/ai/engine-registry.cjs.md#s-15051950a5638b03>) | [electron/ai/engine-registry.cjs:125](<../../../electron/ai/engine-registry.cjs#L125>) | MethodDeclaration |
-| [EngineRegistry.shutdown](<../symbols/files/electron/ai/engine-registry.cjs.md#s-922650a4d5052117>) | [electron/ai/engine-registry.cjs:128](<../../../electron/ai/engine-registry.cjs#L128>) | MethodDeclaration |
-| [EngineRegistry.configure](<../symbols/files/electron/ai/engine-registry.cjs.md#s-296305f9b4abd79c>) | [electron/ai/engine-registry.cjs:131](<../../../electron/ai/engine-registry.cjs#L131>) | MethodDeclaration |
-| [EngineRegistry.probeResult](<../symbols/files/electron/ai/engine-registry.cjs.md#s-62de64944a666b6c>) | [electron/ai/engine-registry.cjs:173](<../../../electron/ai/engine-registry.cjs#L173>) | MethodDeclaration |
-| [EngineRegistry.probe](<../symbols/files/electron/ai/engine-registry.cjs.md#s-e093b5f5f5d00fe2>) | [electron/ai/engine-registry.cjs:195](<../../../electron/ai/engine-registry.cjs#L195>) | MethodDeclaration |
-| [EngineRegistry.binding](<../symbols/files/electron/ai/engine-registry.cjs.md#s-780b5088edc49ed5>) | [electron/ai/engine-registry.cjs:220](<../../../electron/ai/engine-registry.cjs#L220>) | MethodDeclaration |
-| [EngineRegistry.execute](<../symbols/files/electron/ai/engine-registry.cjs.md#s-918f1571185e7e73>) | [electron/ai/engine-registry.cjs:247](<../../../electron/ai/engine-registry.cjs#L247>) | MethodDeclaration |
-| [EngineRegistry.record](<../symbols/files/electron/ai/engine-registry.cjs.md#s-16e1ffd3b44b809e>) | [electron/ai/engine-registry.cjs:347](<../../../electron/ai/engine-registry.cjs#L347>) | MethodDeclaration |
-| [EngineRegistry.open](<../symbols/files/electron/ai/engine-registry.cjs.md#s-d94730f5ef785e5f>) | [electron/ai/engine-registry.cjs:353](<../../../electron/ai/engine-registry.cjs#L353>) | MethodDeclaration |
+| [EngineRegistry.registration](<../symbols/files/electron/ai/engine-registry.cjs.md#s-b8a4cb300b636c21>) | [electron/ai/engine-registry.cjs:62](<../../../electron/ai/engine-registry.cjs#L62>) | MethodDeclaration |
+| [EngineRegistry.checked](<../symbols/files/electron/ai/engine-registry.cjs.md#s-122ca8b3584a7a02>) | [electron/ai/engine-registry.cjs:65](<../../../electron/ai/engine-registry.cjs#L65>) | MethodDeclaration |
+| [EngineRegistry.state](<../symbols/files/electron/ai/engine-registry.cjs.md#s-4aff15db21fd48a2>) | [electron/ai/engine-registry.cjs:80](<../../../electron/ai/engine-registry.cjs#L80>) | MethodDeclaration |
+| [EngineRegistry.exclusive](<../symbols/files/electron/ai/engine-registry.cjs.md#s-d0f8dde8baf2ee15>) | [electron/ai/engine-registry.cjs:105](<../../../electron/ai/engine-registry.cjs#L105>) | MethodDeclaration |
+| [EngineRegistry.cancel](<../symbols/files/electron/ai/engine-registry.cjs.md#s-540fcc7c581d5730>) | [electron/ai/engine-registry.cjs:123](<../../../electron/ai/engine-registry.cjs#L123>) | MethodDeclaration |
+| [EngineRegistry.shutdown](<../symbols/files/electron/ai/engine-registry.cjs.md#s-82da9094ec0d68df>) | [electron/ai/engine-registry.cjs:126](<../../../electron/ai/engine-registry.cjs#L126>) | MethodDeclaration |
+| [EngineRegistry.configure](<../symbols/files/electron/ai/engine-registry.cjs.md#s-3e866b331ac40f05>) | [electron/ai/engine-registry.cjs:129](<../../../electron/ai/engine-registry.cjs#L129>) | MethodDeclaration |
+| [EngineRegistry.probeResult](<../symbols/files/electron/ai/engine-registry.cjs.md#s-81aa3b3147f2cbc6>) | [electron/ai/engine-registry.cjs:171](<../../../electron/ai/engine-registry.cjs#L171>) | MethodDeclaration |
+| [EngineRegistry.probe](<../symbols/files/electron/ai/engine-registry.cjs.md#s-64207e9c39d81a79>) | [electron/ai/engine-registry.cjs:193](<../../../electron/ai/engine-registry.cjs#L193>) | MethodDeclaration |
+| [EngineRegistry.binding](<../symbols/files/electron/ai/engine-registry.cjs.md#s-d2b2849dffb7882e>) | [electron/ai/engine-registry.cjs:218](<../../../electron/ai/engine-registry.cjs#L218>) | MethodDeclaration |
+| [EngineRegistry.execute](<../symbols/files/electron/ai/engine-registry.cjs.md#s-119128e3bab0ee5c>) | [electron/ai/engine-registry.cjs:245](<../../../electron/ai/engine-registry.cjs#L245>) | MethodDeclaration |
+| [EngineRegistry.record](<../symbols/files/electron/ai/engine-registry.cjs.md#s-9be6b57412fb340f>) | [electron/ai/engine-registry.cjs:345](<../../../electron/ai/engine-registry.cjs#L345>) | MethodDeclaration |
+| [EngineRegistry.open](<../symbols/files/electron/ai/engine-registry.cjs.md#s-3478cb94d7277ce5>) | [electron/ai/engine-registry.cjs:351](<../../../electron/ai/engine-registry.cjs#L351>) | MethodDeclaration |
 | [KnowledgeStore.assertOutputOutside](<../symbols/files/electron/ai/knowledge-store.cjs.md#s-3291f7baae4ee583>) | [electron/ai/knowledge-store.cjs:129](<../../../electron/ai/knowledge-store.cjs#L129>) | MethodDeclaration |
 | [KnowledgeStore.checkBoundary](<../symbols/files/electron/ai/knowledge-store.cjs.md#s-f55db66529327881>) | [electron/ai/knowledge-store.cjs:139](<../../../electron/ai/knowledge-store.cjs#L139>) | MethodDeclaration |
 | [KnowledgeStore.locked](<../symbols/files/electron/ai/knowledge-store.cjs.md#s-a3b8ad6701208628>) | [electron/ai/knowledge-store.cjs:164](<../../../electron/ai/knowledge-store.cjs#L164>) | MethodDeclaration |
@@ -356,15 +358,15 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 ## Contracts
 
-- [monthSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-bd133e0c2f103dba>) — zod-syntax-candidate; exported.
-- [argumentsSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-8b77fa8b5f5a4017>) — zod-syntax-candidate; exported.
-- [responseSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-f29e5e9d10aa411f>) — zod-syntax-candidate; local schema/type.
+- [responseSchema](<../symbols/files/electron/ai/chronoz-adapter.cjs.md#s-887c2eca70194af9>) — zod-syntax-candidate; local schema/type.
+- [monthSchema](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-ac76f681e96c018b>) — zod-syntax-candidate; exported.
+- [argumentsSchema](<../symbols/files/electron/ai/chronoz-contract.cjs.md#s-733b5e3a382e5a9a>) — zod-syntax-candidate; exported.
 - [schema](<../symbols/files/electron/ai/credential-store.cjs.md#s-d39f126b5538dbe2>) — zod-syntax-candidate; local schema/type.
 - [reportSchema](<../symbols/files/electron/ai/engine-chat.cjs.md#s-388644b265f372d9>) — zod-syntax-candidate; exported.
 - [registrationSchema](<../symbols/files/electron/ai/engine-registry.cjs.md#s-94ccd034fe51efb1>) — zod-syntax-candidate; local schema/type.
 - [bindingInput](<../symbols/files/electron/ai/engine-registry.cjs.md#s-9f177894e4772dca>) — zod-syntax-candidate; local schema/type.
 - [executeSchema](<../symbols/files/electron/ai/engine-registry.cjs.md#s-a33fb616f7ae6afe>) — zod-syntax-candidate; local schema/type.
-- [EngineRegistry.open.input](<../symbols/files/electron/ai/engine-registry.cjs.md#s-fc98a438951bc5ae>) — zod-syntax-candidate; local schema/type.
+- [EngineRegistry.open.input](<../symbols/files/electron/ai/engine-registry.cjs.md#s-82e59078a13c16b3>) — zod-syntax-candidate; local schema/type.
 - [registerAiIpc.&lt;anonymous@227:29&gt;.options](<../symbols/files/electron/ai/ipc.cjs.md#s-f40fd67736fda4dc>) — zod-syntax-candidate; local schema/type.
 - [registerAiIpc.&lt;anonymous@234:27&gt;.options](<../symbols/files/electron/ai/ipc.cjs.md#s-8d235ebcfa7d799d>) — zod-syntax-candidate; local schema/type.
 - [registerAiIpc.&lt;anonymous@259:34&gt;.selection](<../symbols/files/electron/ai/ipc.cjs.md#s-ec503438e2f120de>) — zod-syntax-candidate; local schema/type.
@@ -432,7 +434,8 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | [electron/ai/backend-reset.test.cjs:1](<../../../electron/ai/backend-reset.test.cjs#L1>) | test | 12 |
 | [electron/ai/chat/chat-service.cjs:1](<../../../electron/ai/chat/chat-service.cjs#L1>) | production | 69 |
 | [electron/ai/chat/conversation-store.cjs:1](<../../../electron/ai/chat/conversation-store.cjs#L1>) | production | 35 |
-| [electron/ai/chronoz-adapter.cjs:1](<../../../electron/ai/chronoz-adapter.cjs#L1>) | production | 24 |
+| [electron/ai/chronoz-adapter.cjs:1](<../../../electron/ai/chronoz-adapter.cjs#L1>) | production | 17 |
+| [electron/ai/chronoz-contract.cjs:1](<../../../electron/ai/chronoz-contract.cjs#L1>) | production | 7 |
 | [electron/ai/context-box-store.cjs:1](<../../../electron/ai/context-box-store.cjs#L1>) | production | 36 |
 | [electron/ai/context-box-store.test.cjs:1](<../../../electron/ai/context-box-store.test.cjs#L1>) | test | 17 |
 | [electron/ai/context-identity.cjs:1](<../../../electron/ai/context-identity.cjs#L1>) | production | 12 |
@@ -449,7 +452,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | [electron/ai/dataset-worker.cjs:1](<../../../electron/ai/dataset-worker.cjs#L1>) | production | 3 |
 | [electron/ai/dataset.test.cjs:1](<../../../electron/ai/dataset.test.cjs#L1>) | test | 54 |
 | [electron/ai/engine-chat.cjs:1](<../../../electron/ai/engine-chat.cjs#L1>) | production | 14 |
-| [electron/ai/engine-registry.cjs:1](<../../../electron/ai/engine-registry.cjs#L1>) | production | 30 |
+| [electron/ai/engine-registry.cjs:1](<../../../electron/ai/engine-registry.cjs#L1>) | production | 31 |
 | [electron/ai/engine-registry.test.cjs:1](<../../../electron/ai/engine-registry.test.cjs#L1>) | test | 34 |
 | [electron/ai/front-office-engine.test.cjs:1](<../../../electron/ai/front-office-engine.test.cjs#L1>) | test | 120 |
 | [electron/ai/front-office-evaluation.test.cjs:1](<../../../electron/ai/front-office-evaluation.test.cjs#L1>) | test | 24 |

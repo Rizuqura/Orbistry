@@ -89,7 +89,7 @@ Returns: any (compiler-inferred). Implementation present.
 - [main.launch](<electron-engine-smoke.cjs.md#s-558b4f1455352e24>) — [scripts/acceptance/electron-engine-smoke.cjs:73](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L73>)
 - [main.open](<electron-engine-smoke.cjs.md#s-8d96412ac1765a1a>) — [scripts/acceptance/electron-engine-smoke.cjs:74](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L74>)
 - [main.get](<electron-engine-smoke.cjs.md#s-dd490d3f91019d55>) — [scripts/acceptance/electron-engine-smoke.cjs:115](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L115>)
-- [sha](<../../electron/ai/chronoz-adapter.cjs.md#s-c95e7f0287adc21f>) — [scripts/acceptance/electron-engine-smoke.cjs:168](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L168>)
+- [sha](<../../electron/ai/chronoz-contract.cjs.md#s-be6194fd3a77a55d>) — [scripts/acceptance/electron-engine-smoke.cjs:168](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L168>)
 - [main.open](<electron-engine-smoke.cjs.md#s-8d96412ac1765a1a>) — [scripts/acceptance/electron-engine-smoke.cjs:245](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L245>)
 - [main.launch](<electron-engine-smoke.cjs.md#s-558b4f1455352e24>) — [scripts/acceptance/electron-engine-smoke.cjs:276](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L276>)
 - [main.open](<electron-engine-smoke.cjs.md#s-8d96412ac1765a1a>) — [scripts/acceptance/electron-engine-smoke.cjs:277](<../../../../../../scripts/acceptance/electron-engine-smoke.cjs#L277>)

@@ -68,12 +68,12 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:19](<../../../../../../../electron/engines/registry/signing.cjs#L19>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:26](<../../../../../../../electron/engines/registry/signing.cjs#L26>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:19](<../../../../../../../electron/engines/registry/signing.cjs#L19>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:26](<../../../../../../../electron/engines/registry/signing.cjs#L26>)
 - [safeDirectory](<../../core/persistence/json-store.cjs.md#s-429fa54bc1a890a0>) — [electron/engines/registry/signing.cjs:27](<../../../../../../../electron/engines/registry/signing.cjs#L27>)
 - [safeDirectory](<../../core/persistence/json-store.cjs.md#s-429fa54bc1a890a0>) — [electron/engines/registry/signing.cjs:28](<../../../../../../../electron/engines/registry/signing.cjs#L28>)
 - [publicIdentity](<signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signing.cjs:54](<../../../../../../../electron/engines/registry/signing.cjs#L54>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:66](<../../../../../../../electron/engines/registry/signing.cjs#L66>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:66](<../../../../../../../electron/engines/registry/signing.cjs#L66>)
 
 **Called by (statically resolved):**
 
@@ -86,7 +86,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@176:104&gt;](<../../engine-signing.test.cjs.md#s-090bc15d5cdc7060>) — [electron/engine-signing.test.cjs:181](<../../../../../../../electron/engine-signing.test.cjs#L181>)
 - [&lt;anonymous@194:103&gt;](<../../engine-signing.test.cjs.md#s-41839bdef2512cfd>) — [electron/engine-signing.test.cjs:196](<../../../../../../../electron/engine-signing.test.cjs#L196>)
 - [main](<../../../scripts/acceptance/electron-backend-reset-smoke.cjs.md#s-648eff2573c5a425>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:75](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L75>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:102](<../../../../../../../scripts/orbistry-engine.cjs#L102>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:103](<../../../../../../../scripts/orbistry-engine.cjs#L103>)
 
 Unresolved / external call sites: 18.
 
@@ -138,15 +138,15 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:78](<../../../../../../../electron/engines/registry/signing.cjs#L78>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:87](<../../../../../../../electron/engines/registry/signing.cjs#L87>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:98](<../../../../../../../electron/engines/registry/signing.cjs#L98>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:78](<../../../../../../../electron/engines/registry/signing.cjs#L78>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:87](<../../../../../../../electron/engines/registry/signing.cjs#L87>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:98](<../../../../../../../electron/engines/registry/signing.cjs#L98>)
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/signing.cjs:102](<../../../../../../../electron/engines/registry/signing.cjs#L102>)
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/signing.cjs:106](<../../../../../../../electron/engines/registry/signing.cjs#L106>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:111](<../../../../../../../electron/engines/registry/signing.cjs#L111>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:111](<../../../../../../../electron/engines/registry/signing.cjs#L111>)
 - [parseJson](<package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/registry/signing.cjs:117](<../../../../../../../electron/engines/registry/signing.cjs#L117>)
 - [createSignature](<signature.cjs.md#s-429b3d691e551f54>) — [electron/engines/registry/signing.cjs:118](<../../../../../../../electron/engines/registry/signing.cjs#L118>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:121](<../../../../../../../electron/engines/registry/signing.cjs#L121>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:121](<../../../../../../../electron/engines/registry/signing.cjs#L121>)
 - [writeTextAtomic](<../../core/persistence/json-store.cjs.md#s-eaf1fb4e46036574>) — [electron/engines/registry/signing.cjs:125](<../../../../../../../electron/engines/registry/signing.cjs#L125>)
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/signing.cjs:130](<../../../../../../../electron/engines/registry/signing.cjs#L130>)
 
@@ -161,7 +161,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@176:104&gt;](<../../engine-signing.test.cjs.md#s-090bc15d5cdc7060>) — [electron/engine-signing.test.cjs:189](<../../../../../../../electron/engine-signing.test.cjs#L189>)
 - [&lt;anonymous@194:103&gt;](<../../engine-signing.test.cjs.md#s-41839bdef2512cfd>) — [electron/engine-signing.test.cjs:197](<../../../../../../../electron/engine-signing.test.cjs#L197>)
 - [main](<../../../scripts/acceptance/electron-backend-reset-smoke.cjs.md#s-648eff2573c5a425>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:76](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L76>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:105](<../../../../../../../scripts/orbistry-engine.cjs#L105>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:106](<../../../../../../../scripts/orbistry-engine.cjs#L106>)
 
 Unresolved / external call sites: 12.
 
@@ -213,7 +213,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/signing.cjs:142](<../../../../../../../electron/engines/registry/signing.cjs#L142>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signing.cjs:144](<../../../../../../../electron/engines/registry/signing.cjs#L144>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signing.cjs:144](<../../../../../../../electron/engines/registry/signing.cjs#L144>)
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/signing.cjs:149](<../../../../../../../electron/engines/registry/signing.cjs#L149>)
 - [verifySignature](<signature.cjs.md#s-9f88c255d4e362de>) — [electron/engines/registry/signing.cjs:151](<../../../../../../../electron/engines/registry/signing.cjs#L151>)
 - [parseJson](<package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/registry/signing.cjs:152](<../../../../../../../electron/engines/registry/signing.cjs#L152>)
@@ -224,7 +224,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@84:116&gt;](<../../engine-signing.test.cjs.md#s-02bf4bb73d3661ee>) — [electron/engine-signing.test.cjs:94](<../../../../../../../electron/engine-signing.test.cjs#L94>)
 - [&lt;anonymous@100:109&gt;](<../../engine-signing.test.cjs.md#s-6bb332f41f761ed8>) — [electron/engine-signing.test.cjs:164](<../../../../../../../electron/engine-signing.test.cjs#L164>)
 - [&lt;anonymous@176:104&gt;](<../../engine-signing.test.cjs.md#s-090bc15d5cdc7060>) — [electron/engine-signing.test.cjs:178](<../../../../../../../electron/engine-signing.test.cjs#L178>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:106](<../../../../../../../scripts/orbistry-engine.cjs#L106>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:107](<../../../../../../../scripts/orbistry-engine.cjs#L107>)
 
 Unresolved / external call sites: 4.
 

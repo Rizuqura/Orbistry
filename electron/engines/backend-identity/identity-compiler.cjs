@@ -223,7 +223,14 @@ async function capture(root, entityId, onSource) {
     relationships.connectors,
     relationships.issues.length,
   );
+  const packageSources =
+    await require("./package-sources.cjs").describePackageSources(
+      root,
+      entityId,
+      index,
+    );
   const fingerprint = digest({
+    ...(packageSources.length ? { packageSources } : {}),
     entity,
     applied: index.applied,
     priceSymbol: index.priceSymbol ?? null,
@@ -233,7 +240,15 @@ async function capture(root, entityId, onSource) {
     capabilities,
     connections,
   });
-  return { entity, index, sources, capabilities, connections, fingerprint };
+  return {
+    entity,
+    index,
+    sources,
+    capabilities,
+    connections,
+    packageSources,
+    fingerprint,
+  };
 }
 /** Compiles only on explicit invocation. Identical inputs reuse immutable versions and unchanged chunks; concurrent changes leave the current snapshot intact. */
 async function generate(root, entityId) {
@@ -360,6 +375,9 @@ async function generate(root, entityId) {
               chunkIndexHash: digest(references),
               retrieval: "entity-scoped-chunks",
             },
+            ...(input.packageSources.length
+              ? { packageSources: input.packageSources }
+              : {}),
             capabilities: input.capabilities.map(
               ({
                 capabilityId,

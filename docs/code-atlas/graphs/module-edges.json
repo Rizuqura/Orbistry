@@ -184,19 +184,19 @@
         },
         {
           "file": "electron/ai/agents/agent-construction.cjs",
-          "line": 266,
+          "line": 271,
           "target": "electron/ai/engine-registry.cjs",
           "deferred": true
         },
         {
           "file": "electron/ai/agents/agent-construction.cjs",
-          "line": 299,
+          "line": 323,
           "target": "electron/ai/context-identity.cjs",
           "deferred": true
         },
         {
           "file": "electron/ai/agents/agent-construction.cjs",
-          "line": 305,
+          "line": 329,
           "target": "electron/ai/context-identity.cjs",
           "deferred": true
         },
@@ -322,7 +322,7 @@
         },
         {
           "file": "electron/ai/agents/entity-agent-protocol.cjs",
-          "line": 295,
+          "line": 296,
           "target": "electron/ai/quote-origin.cjs",
           "deferred": true
         },
@@ -346,20 +346,20 @@
         },
         {
           "file": "electron/ai/agents/entity-agents.cjs",
-          "line": 712,
-          "target": "electron/ai/chronoz-adapter.cjs",
+          "line": 801,
+          "target": "electron/ai/chronoz-contract.cjs",
           "deferred": true
         },
         {
           "file": "electron/ai/agents/entity-agents.cjs",
-          "line": 744,
-          "target": "electron/ai/chronoz-adapter.cjs",
+          "line": 833,
+          "target": "electron/ai/chronoz-contract.cjs",
           "deferred": true
         },
         {
           "file": "electron/ai/agents/entity-agents.cjs",
-          "line": 858,
-          "target": "electron/ai/chronoz-adapter.cjs",
+          "line": 947,
+          "target": "electron/ai/chronoz-contract.cjs",
           "deferred": true
         },
         {
@@ -385,13 +385,19 @@
     },
     {
       "from": "agents",
-      "to": "engines",
-      "sites": 1,
+      "to": "engine-registry",
+      "sites": 2,
       "evidence": [
         {
           "file": "electron/ai/agents/entity-agent-protocol.cjs",
           "line": 265,
-          "target": "electron/engines/daily-price/index.cjs",
+          "target": "electron/engines/contracts/yahoo-legacy/daily.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 583,
+          "target": "electron/engines/registry/registry.cjs",
           "deferred": true
         }
       ]
@@ -431,6 +437,19 @@
           "line": 62,
           "target": "electron/engines/backend-identity/capability-registry.cjs",
           "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "agents",
+      "to": "knowledge",
+      "sites": 1,
+      "evidence": [
+        {
+          "file": "electron/ai/agents/entity-agents.cjs",
+          "line": 1917,
+          "target": "electron/domains/knowledge/package-source.cjs",
+          "deferred": true
         }
       ]
     },
@@ -766,7 +785,7 @@
       "evidence": [
         {
           "file": "electron/engines/registry/registry.cjs",
-          "line": 180,
+          "line": 183,
           "target": "electron/engines/definitions.cjs",
           "deferred": true
         }
@@ -779,31 +798,31 @@
       "evidence": [
         {
           "file": "electron/engines/registry/registry.cjs",
-          "line": 309,
+          "line": 365,
           "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": true
         },
         {
           "file": "electron/engines/registry/registry.cjs",
-          "line": 499,
+          "line": 562,
           "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": true
         },
         {
           "file": "electron/engines/registry/registry.cjs",
-          "line": 512,
-          "target": "electron/domains/entity/worldview-store.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/registry/registry.cjs",
-          "line": 577,
+          "line": 575,
           "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": true
         },
         {
           "file": "electron/engines/registry/registry.cjs",
           "line": 642,
+          "target": "electron/domains/entity/worldview-store.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/registry/registry.cjs",
+          "line": 714,
           "target": "electron/domains/entity/worldview-store.cjs",
           "deferred": true
         }
@@ -842,6 +861,31 @@
     },
     {
       "from": "engines",
+      "to": "engine-registry",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 8,
+          "target": "electron/engines/contracts/yahoo-legacy/daily.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 8,
+          "target": "electron/engines/contracts/yahoo-legacy/financials.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 11,
+          "target": "electron/engines/contracts/yahoo-legacy/market.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "engines",
       "to": "identity",
       "sites": 1,
       "evidence": [
@@ -856,17 +900,29 @@
     {
       "from": "engines",
       "to": "knowledge",
-      "sites": 6,
+      "sites": 10,
       "evidence": [
         {
           "file": "electron/daily-price-service.cjs",
-          "line": 106,
+          "line": 9,
+          "target": "electron/domains/indexing/ticker-syntax.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 10,
+          "target": "electron/domains/knowledge/yahoo-package.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/daily-price-service.cjs",
+          "line": 128,
           "target": "electron/domains/knowledge/knowledge-store.cjs",
           "deferred": true
         },
         {
           "file": "electron/daily-price-service.cjs",
-          "line": 119,
+          "line": 149,
           "target": "electron/domains/knowledge/knowledge-store.cjs",
           "deferred": true
         },
@@ -878,13 +934,25 @@
         },
         {
           "file": "electron/financial-service.cjs",
-          "line": 133,
+          "line": 9,
+          "target": "electron/domains/indexing/ticker-syntax.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 10,
+          "target": "electron/domains/knowledge/yahoo-package.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/financial-service.cjs",
+          "line": 168,
           "target": "electron/domains/knowledge/knowledge-store.cjs",
           "deferred": true
         },
         {
           "file": "electron/financial-service.cjs",
-          "line": 170,
+          "line": 211,
           "target": "electron/domains/knowledge/knowledge-store.cjs",
           "deferred": true
         },
@@ -993,25 +1061,44 @@
     },
     {
       "from": "identity",
-      "to": "engines",
-      "sites": 5,
+      "to": "engine-registry",
+      "sites": 4,
       "evidence": [
         {
           "file": "electron/engines/backend-identity/capability-registry.cjs",
-          "line": 16,
-          "target": "electron/engines/definitions.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/engines/backend-identity/capability-registry.cjs",
           "line": 33,
-          "target": "electron/engines/daily-price/index.cjs",
+          "target": "electron/engines/contracts/yahoo-legacy/daily.cjs",
           "deferred": true
         },
         {
           "file": "electron/engines/backend-identity/capability-registry.cjs",
           "line": 34,
-          "target": "electron/engines/yahoo-financials/index.cjs",
+          "target": "electron/engines/contracts/yahoo-legacy/financials.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/engines/backend-identity/package-sources.cjs",
+          "line": 1,
+          "target": "electron/engines/registry/registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/engines/backend-identity/package-sources.cjs",
+          "line": 108,
+          "target": "electron/engines/contracts/contract.cjs",
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "from": "identity",
+      "to": "engines",
+      "sites": 3,
+      "evidence": [
+        {
+          "file": "electron/engines/backend-identity/capability-registry.cjs",
+          "line": 16,
+          "target": "electron/engines/definitions.cjs",
           "deferred": true
         },
         {
@@ -1100,15 +1187,40 @@
     },
     {
       "from": "knowledge",
-      "to": "engines",
-      "sites": 7,
+      "to": "engine-registry",
+      "sites": 4,
       "evidence": [
         {
           "file": "electron/domains/indexing/knowledge-index.cjs",
-          "line": 2,
-          "target": "electron/engines/daily-price/index.cjs",
+          "line": 4,
+          "target": "electron/engines/contracts/contract.cjs",
           "deferred": false
         },
+        {
+          "file": "electron/domains/knowledge/package-source.cjs",
+          "line": 3,
+          "target": "electron/engines/registry/registry.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/package-source.cjs",
+          "line": 5,
+          "target": "electron/engines/contracts/contract.cjs",
+          "deferred": false
+        },
+        {
+          "file": "electron/domains/knowledge/yahoo-package.cjs",
+          "line": 3,
+          "target": "electron/engines/registry/registry.cjs",
+          "deferred": false
+        }
+      ]
+    },
+    {
+      "from": "knowledge",
+      "to": "engines",
+      "sites": 5,
+      "evidence": [
         {
           "file": "electron/domains/indexing/tag-association-service.cjs",
           "line": 16,
@@ -1131,12 +1243,6 @@
           "file": "electron/domains/indexing/tag-association-service.cjs",
           "line": 21,
           "target": "electron/engines/tag-association/association.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/domains/knowledge/knowledge-store.cjs",
-          "line": 10,
-          "target": "electron/engines/daily-price/index.cjs",
           "deferred": false
         },
         {
@@ -1424,7 +1530,7 @@
         },
         {
           "file": "features/knowledge/knowledge-workspace.tsx",
-          "line": 23,
+          "line": 24,
           "target": "features/dialogs/use-confirmation.tsx",
           "deferred": false
         }
@@ -1433,7 +1539,7 @@
     {
       "from": "portal-knowledge",
       "to": "portal-worldview",
-      "sites": 10,
+      "sites": 11,
       "evidence": [
         {
           "file": "features/knowledge/carousel-source.tsx",
@@ -1486,6 +1592,12 @@
         {
           "file": "features/knowledge/knowledge-workspace.tsx",
           "line": 15,
+          "target": "features/worldview/chip-session.ts",
+          "deferred": false
+        },
+        {
+          "file": "features/knowledge/package-source.tsx",
+          "line": 3,
           "target": "features/worldview/chip-session.ts",
           "deferred": false
         },
@@ -1869,26 +1981,20 @@
       "evidence": [
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 6,
+          "line": 8,
           "target": "electron/image-parser-service.cjs",
-          "deferred": false
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 88,
-          "target": "electron/financial-service.cjs",
-          "deferred": true
-        },
-        {
-          "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 91,
-          "target": "electron/financial-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
           "line": 100,
-          "target": "electron/daily-price-service.cjs",
+          "target": "electron/financial-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 103,
+          "target": "electron/financial-service.cjs",
           "deferred": true
         },
         {
@@ -1899,13 +2005,19 @@
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 121,
+          "line": 124,
+          "target": "electron/daily-price-service.cjs",
+          "deferred": true
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 133,
           "target": "electron/excel-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 137,
+          "line": 149,
           "target": "electron/excel-service.cjs",
           "deferred": true
         }
@@ -1931,31 +2043,31 @@
       "evidence": [
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 41,
+          "line": 53,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 60,
+          "line": 72,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 67,
+          "line": 79,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 74,
+          "line": 86,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         },
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 81,
+          "line": 93,
           "target": "electron/domains/knowledge/backend-identity-service.cjs",
           "deferred": true
         }
@@ -1964,7 +2076,7 @@
     {
       "from": "worldview",
       "to": "knowledge",
-      "sites": 2,
+      "sites": 3,
       "evidence": [
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
@@ -1977,6 +2089,12 @@
           "line": 5,
           "target": "electron/domains/indexing/tag-association-service.cjs",
           "deferred": false
+        },
+        {
+          "file": "electron/core/ipc/worldview-ipc.cjs",
+          "line": 27,
+          "target": "electron/domains/knowledge/package-source.cjs",
+          "deferred": true
         }
       ]
     },
@@ -1987,7 +2105,7 @@
       "evidence": [
         {
           "file": "electron/core/ipc/worldview-ipc.cjs",
-          "line": 10,
+          "line": 13,
           "target": "electron/domains/universe/vault-service.cjs",
           "deferred": false
         }

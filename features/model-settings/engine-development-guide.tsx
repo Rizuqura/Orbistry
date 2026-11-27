@@ -32,6 +32,13 @@ export function EngineDevelopmentGuide() {
       <summary>Register and sign your own Engine</summary>
       <h3>Engine development</h3>
       <p>
+        Use manifest schema 2 for operations or schema 3 for Knowledge Card
+        sources. Both use orbistry.engine/1. A source declares its ID,
+        operation, data kind and JSON presentation. The weather-demo package in
+        examples/engines includes a complete schema 3 manifest. In Write Index,
+        open Installed Engine sources to inspect its arguments.
+      </p>
+      <p>
         Build and publish an Orbistry Engine. CLI-based development · Local
         execution · Explicit authorization.
       </p>

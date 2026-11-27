@@ -47,7 +47,7 @@ Unresolved / external call sites: 7.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -100,7 +100,7 @@ Unresolved / external call sites: 9.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -146,7 +146,7 @@ Unresolved / external call sites: 9.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -186,7 +186,7 @@ Unresolved / external call sites: 2.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -226,7 +226,7 @@ Unresolved / external call sites: 4.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -275,7 +275,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [&lt;anonymous@154:89&gt;](<agents/entity-agents.test.cjs.md#s-c86a63c27523760e>) — [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>)
+- [&lt;anonymous@158:89&gt;](<agents/entity-agents.test.cjs.md#s-21024ee92564c8ac>) — [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>)
 - [&lt;anonymous@77:89&gt;](<backend-audit.test.cjs.md#s-2b329a7382c5a6fb>) — [electron/ai/backend-audit.test.cjs:87](<../../../../../../electron/ai/backend-audit.test.cjs#L87>)
 - [&lt;anonymous@96:65&gt;](<backend-audit.test.cjs.md#s-a94d01819c5fe5a5>) — [electron/ai/backend-audit.test.cjs:99](<../../../../../../electron/ai/backend-audit.test.cjs#L99>)
 - [&lt;anonymous@109:67&gt;](<backend-audit.test.cjs.md#s-2ed6410f2f314d5d>) — [electron/ai/backend-audit.test.cjs:121](<../../../../../../electron/ai/backend-audit.test.cjs#L121>)
@@ -301,7 +301,7 @@ Unresolved / external call sites: 32.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — static-call-site; coverage not established.
 - [electron/ai/backend-audit.test.cjs:87](<../../../../../../electron/ai/backend-audit.test.cjs#L87>) — static-call-site; coverage not established.
 - [electron/ai/backend-audit.test.cjs:99](<../../../../../../electron/ai/backend-audit.test.cjs#L99>) — static-call-site; coverage not established.
 - [electron/ai/backend-audit.test.cjs:121](<../../../../../../electron/ai/backend-audit.test.cjs#L121>) — static-call-site; coverage not established.
@@ -311,7 +311,7 @@ Unresolved / external call sites: 32.
 - [electron/ai/backend-reset.test.cjs:110](<../../../../../../electron/ai/backend-reset.test.cjs#L110>) — static-call-site; coverage not established.
 - [electron/ai/backend-reset.test.cjs:131](<../../../../../../electron/ai/backend-reset.test.cjs#L131>) — static-call-site; coverage not established.
 - [electron/ai/backend-reset.test.cjs:148](<../../../../../../electron/ai/backend-reset.test.cjs#L148>) — static-call-site; coverage not established.
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -346,7 +346,7 @@ Unresolved / external call sites: 0.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -381,7 +381,7 @@ Unresolved / external call sites: 0.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -416,7 +416,7 @@ Unresolved / external call sites: 0.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.
 
@@ -452,6 +452,6 @@ Unresolved / external call sites: 0.
 
 **Related tests / acceptance harnesses:**
 
-- [electron/ai/agents/entity-agents.test.cjs:163](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L163>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:167](<../../../../../../electron/ai/agents/entity-agents.test.cjs#L167>) — file-import-only; coverage not established.
 - [electron/ai/backend-audit.test.cjs:10](<../../../../../../electron/ai/backend-audit.test.cjs#L10>) — file-import-only; coverage not established.
 - [electron/ai/backend-reset.test.cjs:6](<../../../../../../electron/ai/backend-reset.test.cjs#L6>) — file-import-only; coverage not established.

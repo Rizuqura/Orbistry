@@ -95,8 +95,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:8](<../../../../../../../electron/engines/registry/signature.cjs#L8>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:36](<../../../../../../../electron/engines/registry/signature.cjs#L36>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:8](<../../../../../../../electron/engines/registry/signature.cjs#L8>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:36](<../../../../../../../electron/engines/registry/signature.cjs#L36>)
 
 **Called by (statically resolved):**
 
@@ -209,7 +209,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [sha](<../contracts/contract.cjs.md#s-f99f5cdd253f65c9>) — [electron/engines/registry/signature.cjs:45](<../../../../../../../electron/engines/registry/signature.cjs#L45>)
+- [sha](<../contracts/contract.cjs.md#s-27c50df18ef30dc9>) — [electron/engines/registry/signature.cjs:45](<../../../../../../../electron/engines/registry/signature.cjs#L45>)
 - [canonicalJson](<signature.cjs.md#s-8b357e437a59fd61>) — [electron/engines/registry/signature.cjs:45](<../../../../../../../electron/engines/registry/signature.cjs#L45>)
 
 **Called by (statically resolved):**
@@ -246,8 +246,8 @@ Returns: { key: any; keyId: string; } (compiler-inferred). Implementation presen
 
 **Calls (statically resolved):**
 
-- [sha](<../contracts/contract.cjs.md#s-f99f5cdd253f65c9>) — [electron/engines/registry/signature.cjs:65](<../../../../../../../electron/engines/registry/signature.cjs#L65>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:68](<../../../../../../../electron/engines/registry/signature.cjs#L68>)
+- [sha](<../contracts/contract.cjs.md#s-27c50df18ef30dc9>) — [electron/engines/registry/signature.cjs:65](<../../../../../../../electron/engines/registry/signature.cjs#L65>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:68](<../../../../../../../electron/engines/registry/signature.cjs#L68>)
 
 **Called by (statically resolved):**
 
@@ -292,12 +292,12 @@ Returns: { status: string; keyId: string; algorithm: string; } (compiler-inferre
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:80](<../../../../../../../electron/engines/registry/signature.cjs#L80>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:80](<../../../../../../../electron/engines/registry/signature.cjs#L80>)
 - [publicIdentity](<signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signature.cjs:86](<../../../../../../../electron/engines/registry/signature.cjs#L86>)
 - [signingDigest](<signature.cjs.md#s-41e21f01cf00ee75>) — [electron/engines/registry/signature.cjs:87](<../../../../../../../electron/engines/registry/signature.cjs#L87>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:96](<../../../../../../../electron/engines/registry/signature.cjs#L96>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:96](<../../../../../../../electron/engines/registry/signature.cjs#L96>)
 - [publicIdentity](<signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signature.cjs:100](<../../../../../../../electron/engines/registry/signature.cjs#L100>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:101](<../../../../../../../electron/engines/registry/signature.cjs#L101>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:101](<../../../../../../../electron/engines/registry/signature.cjs#L101>)
 
 **Called by (statically resolved):**
 
@@ -338,7 +338,7 @@ Returns: { signature_version: number; algorithm: string; key_id: string; public_
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/signature.cjs:111](<../../../../../../../electron/engines/registry/signature.cjs#L111>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/signature.cjs:111](<../../../../../../../electron/engines/registry/signature.cjs#L111>)
 - [signingDigest](<signature.cjs.md#s-41e21f01cf00ee75>) — [electron/engines/registry/signature.cjs:116](<../../../../../../../electron/engines/registry/signature.cjs#L116>)
 - [publicIdentity](<signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signature.cjs:120](<../../../../../../../electron/engines/registry/signature.cjs#L120>)
 

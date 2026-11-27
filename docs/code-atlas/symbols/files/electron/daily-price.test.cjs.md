@@ -535,25 +535,32 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fakeClient](<daily-price.test.cjs.md#s-d5d9d9248d73b70e>) — [electron/daily-price.test.cjs:158](<../../../../../electron/daily-price.test.cjs#L158>)
-- [createDailyPriceService](<daily-price-service.cjs.md#s-79fd9f26e8210a5a>) — [electron/daily-price.test.cjs:160](<../../../../../electron/daily-price.test.cjs#L160>)
-- [createDailyPriceService](<daily-price-service.cjs.md#s-79fd9f26e8210a5a>) — [electron/daily-price.test.cjs:172](<../../../../../electron/daily-price.test.cjs#L172>)
-- [createDailyPriceService](<daily-price-service.cjs.md#s-79fd9f26e8210a5a>) — [electron/daily-price.test.cjs:193](<../../../../../electron/daily-price.test.cjs#L193>)
+- [createDailyPriceService](<daily-price-service.cjs.md#s-20ea2e6e10b18679>) — [electron/daily-price.test.cjs:160](<../../../../../electron/daily-price.test.cjs#L160>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:165](<../../../../../electron/daily-price.test.cjs#L165>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:166](<../../../../../electron/daily-price.test.cjs#L166>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:170](<../../../../../electron/daily-price.test.cjs#L170>)
+- [createDailyPriceService](<daily-price-service.cjs.md#s-20ea2e6e10b18679>) — [electron/daily-price.test.cjs:172](<../../../../../electron/daily-price.test.cjs#L172>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:178](<../../../../../electron/daily-price.test.cjs#L178>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:180](<../../../../../electron/daily-price.test.cjs#L180>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:184](<../../../../../electron/daily-price.test.cjs#L184>)
+- [createDailyPriceService.get](<daily-price-service.cjs.md#s-1fec4ab2add44ebc>) — [electron/daily-price.test.cjs:193](<../../../../../electron/daily-price.test.cjs#L193>)
+- [createDailyPriceService](<daily-price-service.cjs.md#s-20ea2e6e10b18679>) — [electron/daily-price.test.cjs:193](<../../../../../electron/daily-price.test.cjs#L193>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 26.
+Unresolved / external call sites: 19.
 
 - Date.parse — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:157](<../../../../../electron/daily-price.test.cjs#L157>)
 - createDailyPriceEngine — signature-only-candidate; [electron/daily-price.test.cjs:159](<../../../../../electron/daily-price.test.cjs#L159>)
 - Promise.all — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:164](<../../../../../electron/daily-price.test.cjs#L164>)
-- service.get — signature-only-candidate; [electron/daily-price.test.cjs:165](<../../../../../electron/daily-price.test.cjs#L165>)
-- service.get — signature-only-candidate; [electron/daily-price.test.cjs:166](<../../../../../electron/daily-price.test.cjs#L166>)
 - assert.equal — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:168](<../../../../../electron/daily-price.test.cjs#L168>)
 - assert.equal — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:169](<../../../../../electron/daily-price.test.cjs#L169>)
 - assert.equal — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:170](<../../../../../electron/daily-price.test.cjs#L170>)
-- 18 additional sites in [symbol-index.json](<../../symbol-index.json>).
+- assert.equal — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:171](<../../../../../electron/daily-price.test.cjs#L171>)
+- assert.equal — external-or-dynamic-dispatch; [electron/daily-price.test.cjs:178](<../../../../../electron/daily-price.test.cjs#L178>)
+- 11 additional sites in [symbol-index.json](<../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
@@ -824,9 +831,9 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/daily-price.test.cjs:238](<../../../../../electron/daily-price.test.cjs#L238>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/daily-price.test.cjs:249](<../../../../../electron/daily-price.test.cjs#L249>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/daily-price.test.cjs:261](<../../../../../electron/daily-price.test.cjs#L261>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/daily-price.test.cjs:238](<../../../../../electron/daily-price.test.cjs#L238>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/daily-price.test.cjs:249](<../../../../../electron/daily-price.test.cjs#L249>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/daily-price.test.cjs:261](<../../../../../electron/daily-price.test.cjs#L261>)
 
 **Called by (statically resolved):**
 
@@ -933,16 +940,16 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/daily-price.test.cjs:274](<../../../../../electron/daily-price.test.cjs#L274>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:286](<../../../../../electron/daily-price.test.cjs#L286>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:295](<../../../../../electron/daily-price.test.cjs#L295>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:299](<../../../../../electron/daily-price.test.cjs#L299>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:303](<../../../../../electron/daily-price.test.cjs#L303>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:286](<../../../../../electron/daily-price.test.cjs#L286>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:295](<../../../../../electron/daily-price.test.cjs#L295>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:299](<../../../../../electron/daily-price.test.cjs#L299>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:303](<../../../../../electron/daily-price.test.cjs#L303>)
 - [savePriceSymbol](<domains/knowledge/knowledge-store.cjs.md#s-7f44c4c9083f4688>) — [electron/daily-price.test.cjs:311](<../../../../../electron/daily-price.test.cjs#L311>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:313](<../../../../../electron/daily-price.test.cjs#L313>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:313](<../../../../../electron/daily-price.test.cjs#L313>)
 - [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/daily-price.test.cjs:321](<../../../../../electron/daily-price.test.cjs#L321>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/daily-price.test.cjs:328](<../../../../../electron/daily-price.test.cjs#L328>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:330](<../../../../../electron/daily-price.test.cjs#L330>)
-- [getIndexedPrice](<daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/daily-price.test.cjs:345](<../../../../../electron/daily-price.test.cjs#L345>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/daily-price.test.cjs:328](<../../../../../electron/daily-price.test.cjs#L328>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:330](<../../../../../electron/daily-price.test.cjs#L330>)
+- [getIndexedPrice](<daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/daily-price.test.cjs:345](<../../../../../electron/daily-price.test.cjs#L345>)
 
 **Called by (statically resolved):**
 

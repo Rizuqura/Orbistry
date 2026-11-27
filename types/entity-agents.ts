@@ -33,6 +33,7 @@ export type AssignmentContext = {
 export type EngineDefinition = {
   id: string;
   name?: string;
+  packageDigest?: string;
   version: string;
   operations: string[];
 };

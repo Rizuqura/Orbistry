@@ -3,7 +3,10 @@ const { EntityService } = require("../../domains/entity/index.cjs");
 const knowledge = require("../../domains/knowledge/knowledge-store.cjs");
 const { WorldViewService } = require("../../domains/worldview/index.cjs");
 const tagSearch = require("../../domains/indexing/tag-association-service.cjs");
-const { imageParserService } = require("../../image-parser-service.cjs");
+/** Loads the optional processor only for its five desktop actions. */
+function imageParser() {
+  return require("../../image-parser-service.cjs").imageParserService;
+}
 const {
   listVaultMetadata,
   statVaultSource,
@@ -19,7 +22,16 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
   }
   const worldView = new WorldViewService({ authorization });
   const entities = new EntityService({ authorization });
+  const {
+    packageSource,
+  } = require("../../domains/knowledge/package-source.cjs");
   const operations = {
+    /** Describes a persisted package source without invoking its implementation. */
+    "package-source-status": (root, input) =>
+      packageSource(root, input, () => authorization({ root })),
+    /** Runs only the applied declaration under the live Entity link. */
+    "package-source-run": (root, input) =>
+      packageSource(root, input, () => authorization({ root }), true),
     /** Copies only freshly authorized inspector data; arbitrary caller-provided clipboard text is not accepted. */
     "identity-copy": async (root, input) => {
       if (!clipboard?.writeText)
@@ -157,15 +169,10 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
       ),
     /** Loads an authorized, bounded original slide independently of image parsing. */
     "image-preview": (root, input) =>
-      imageParserService.preview(
-        root,
-        input.id,
-        input.carouselId,
-        input.sourceId,
-      ),
+      imageParser().preview(root, input.id, input.carouselId, input.sourceId),
     /** Retrieves valid structured cached knowledge without processing or UI dependencies. */
     "image-knowledge": (root, input) =>
-      imageParserService.getKnowledge(
+      imageParser().getKnowledge(
         root,
         input.id,
         input.carouselId,
@@ -173,15 +180,15 @@ function registerWorldViewIpc(trustedIpc, getRoot, shell, clipboard) {
       ),
     /** Starts explicitly requested background processing for this applied entity carousel. */
     "image-parse": (root, input) =>
-      imageParserService.start(root, input.id, input.carouselId, {
+      imageParser().start(root, input.id, input.carouselId, {
         force: input.force,
       }),
     /** Reports the entity group's background processing state. */
     "image-status": (root, input) =>
-      imageParserService.status(root, input.id, input.carouselId),
+      imageParser().status(root, input.id, input.carouselId),
     /** Cancels the authorized group's current local processing job. */
     "image-cancel": (root, input) =>
-      imageParserService.cancel(root, input.id, input.carouselId),
+      imageParser().cancel(root, input.id, input.carouselId),
     /** Searches assigned persisted tags and direct entity names in this Universe's current World. */
     "tag-search": (root, input) => tagSearch.searchWorldTags(root, input.query),
     /** Initializes or updates the derived index without changing user metadata. */

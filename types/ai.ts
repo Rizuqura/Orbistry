@@ -305,6 +305,7 @@ export type AgentConstructionConfig = {
       engineId?: string;
       operation?: string;
       engineVersion?: string;
+      packageDigest?: string;
       parameters?: { force?: boolean };
       permissionPolicy?: "disabled" | "read-only-approval" | "read-only-auto";
       instanceId?: string;

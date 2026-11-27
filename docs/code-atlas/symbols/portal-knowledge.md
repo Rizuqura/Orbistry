@@ -21,5 +21,6 @@ Generated from AST declarations. Compiler-inferred contracts are approximate and
 - [features/knowledge/indexed-document.test.cjs](<files/features/knowledge/indexed-document.test.cjs.md#s-267730e25a56ed89>) (test; 2 declarations)
 - [features/knowledge/indexed-document.ts](<files/features/knowledge/indexed-document.ts.md#s-ed5c6cf46498d9b1>) (production; 5 declarations)
 - [features/knowledge/knowledge-card.tsx](<files/features/knowledge/knowledge-card.tsx.md#s-9336cbbe8a009572>) (production; 14 declarations)
-- [features/knowledge/knowledge-workspace.tsx](<files/features/knowledge/knowledge-workspace.tsx.md#s-093e2f0675251cbd>) (production; 40 declarations)
+- [features/knowledge/knowledge-workspace.tsx](<files/features/knowledge/knowledge-workspace.tsx.md#s-093e2f0675251cbd>) (production; 41 declarations)
+- [features/knowledge/package-source.tsx](<files/features/knowledge/package-source.tsx.md#s-39624bbcef5e8981>) (production; 18 declarations)
 - [features/knowledge/source-preview.tsx](<files/features/knowledge/source-preview.tsx.md#s-7a89ca781eb7ca3b>) (production; 9 declarations)

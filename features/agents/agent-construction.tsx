@@ -98,8 +98,28 @@ export function AgentConstruction({
     if (api?.engineDefinitions)
       void api
         .engineDefinitions()
-        .then((definitions) => {
-          if (alive) setEngineDefinitions(definitions);
+        .then(async (definitions) => {
+          const catalog = await api
+            .enginePackageCatalog()
+            .catch(() => ({ engines: [] }));
+          const external = catalog.engines
+            .filter(
+              (pkg) =>
+                pkg.trusted &&
+                !pkg.disabled &&
+                !definitions.some((item) => item.id === pkg.engineId) &&
+                pkg.sources.length,
+            )
+            .map((pkg) => ({
+              id: pkg.engineId,
+              name: pkg.name,
+              version: pkg.version,
+              operations: [
+                ...new Set(pkg.sources.map((source) => source.operation)),
+              ],
+              packageDigest: pkg.digest,
+            }));
+          if (alive) setEngineDefinitions([...definitions, ...external]);
         })
         .catch((error: Error) => {
           if (alive) setError(error.message);

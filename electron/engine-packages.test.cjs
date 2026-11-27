@@ -791,3 +791,121 @@ test("terminal workflow installs, trusts, links and executes through the same pe
     "historical",
   );
 });
+
+/** Exercises the same applied-index, scoped source and history routes used by the desktop, across a registry restart. */
+test("external weather declaration survives disable, removal and reviewed restoration", async (t) => {
+  const f = await fixture(t);
+  const {
+    saveKnowledgeIndex,
+    readKnowledgeIndex,
+  } = require("./domains/knowledge/knowledge-store.cjs");
+  const { packageSource } = require("./domains/knowledge/package-source.cjs");
+  const source = path.join(f.root, "outside-core");
+  await fs.cp(path.resolve("examples/engines/weather-demo"), source, {
+    recursive: true,
+  });
+  const declaration =
+    '# Climate\nsource: engineSource("weather-demo","hourly",1,{"station":"test"})';
+  const saved = await saveKnowledgeIndex(
+    f.vault,
+    "tsmc",
+    declaration,
+    null,
+    true,
+  );
+  const input = {
+    id: "tsmc",
+    declarationId: saved.menus[0].packageSources[0].id,
+  };
+  const status = async () =>
+    (await packageSource(f.vault, input, () => true)).status;
+  assert.equal(await status(), "package_missing");
+  const { digest } = await f.registry.install(source);
+  const trust = () => f.registry.trust("weather-demo", digest);
+  const link = () =>
+    f.registry.link({
+      entityId: "tsmc",
+      engineId: "weather-demo",
+      operations: ["temperature"],
+      policy: "automatic",
+    });
+  assert.equal(await status(), "untrusted");
+  await trust();
+  await link();
+  const first = await packageSource(f.vault, input, () => true, true);
+  assert.equal(first.data.observations[1].value, 19);
+  await f.registry.setEnabled("weather-demo", digest, false);
+  assert.equal(await status(), "package_disabled");
+  await f.registry.uninstall("weather-demo", digest);
+  assert.equal(await status(), "package_missing");
+  assert.equal(
+    (await f.registry.readResult("tsmc", first.executionId)).origin,
+    "historical",
+  );
+  assert.equal(
+    (await readKnowledgeIndex(f.vault, "tsmc")).applied,
+    declaration,
+  );
+  await f.registry.install(source);
+  assert.equal(await status(), "untrusted");
+  await trust();
+  assert.equal(await status(), "unlinked");
+  await link();
+  assert.deepEqual(
+    (await packageSource(f.vault, input, () => true, true)).data,
+    first.data,
+  );
+  await assert.rejects(
+    packageSource(f.vault, { ...input, id: "asml" }, () => true, true),
+  );
+  await assert.rejects(packageSource(f.vault, input, () => false, true));
+});
+
+test("incompatible restoration and altered runtime bytes preserve the declaration without exposing execution", async (t) => {
+  const f = await fixture(t);
+  const {
+    saveKnowledgeIndex,
+    readKnowledgeIndex,
+  } = require("./domains/knowledge/knowledge-store.cjs");
+  const { packageSource } = require("./domains/knowledge/package-source.cjs");
+  const source = path.join(f.root, "external-source");
+  await fs.cp(path.resolve("examples/engines/weather-demo"), source, {
+    recursive: true,
+  });
+  const draft =
+    '# Lab\nsource: engineSource("weather-demo","hourly",1,{"station":"lab"})';
+  const state = await saveKnowledgeIndex(f.vault, "tsmc", draft, null, true);
+  const ref = {
+    id: "tsmc",
+    declarationId: state.menus[0].packageSources[0].id,
+  };
+  const file = path.join(source, "engine_manifest.json");
+  const manifest = JSON.parse(await fs.readFile(file, "utf8"));
+  manifest.engine_version = "2.0.0";
+  await fs.writeFile(file, JSON.stringify(manifest));
+  const { engineId, digest } = await f.registry.install(source);
+  await f.registry.trust(engineId, digest);
+  await f.registry.link({
+    entityId: "tsmc",
+    engineId,
+    operations: ["temperature"],
+    policy: "automatic",
+  });
+  assert.equal(
+    (await packageSource(f.vault, ref, () => true, true)).status,
+    "incompatible_version",
+  );
+  const runtime = path.join(
+    (await f.registry.installed(engineId)).root,
+    "index.cjs",
+  );
+  await fs.appendFile(runtime, "\n// changed");
+  await assert.rejects(f.registry.uninstall(engineId, digest), {
+    code: "ENGINE_INTEGRITY_FAILED",
+  });
+  await assert.rejects(
+    packageSource(f.vault, ref, () => true, true),
+    { code: "ENGINE_INTEGRITY_FAILED" },
+  );
+  assert.equal((await readKnowledgeIndex(f.vault, "tsmc")).applied, draft);
+});

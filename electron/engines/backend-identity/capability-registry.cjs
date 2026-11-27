@@ -30,8 +30,8 @@ function discoverCapabilities(entityId, index) {
       const symbol = source.symbol ?? index.priceSymbol ?? null;
       const output =
         source.kind === "price"
-          ? require("../daily-price/index.cjs").snapshotSchema
-          : require("../yahoo-financials/index.cjs").snapshotSchema;
+          ? require("../contracts/yahoo-legacy/daily.cjs").snapshotSchema
+          : require("../contracts/yahoo-legacy/financials.cjs").snapshotSchema;
       capabilities.push(
         capabilitySchema.parse({
           capabilityId: digest([

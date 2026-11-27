@@ -42,7 +42,7 @@ const signatureSchema = z
     value: z.string().regex(/^[A-Za-z0-9+/]{86}==$/),
   })
   .strict();
-const manifestSchema = z
+const baseManifest = z
   .object({
     schema_version: z.literal(2),
     protocol: z.literal(PROTOCOL),
@@ -56,6 +56,24 @@ const manifestSchema = z
     signature: signatureSchema.optional(),
   })
   .strict();
+// Schema 3 extends the manifest only. Worker requests and receipts keep protocol 1.
+const sourceContribution = z
+  .object({
+    id,
+    operation: id,
+    kind: z.enum(["scalar", "table", "time_series", "document"]),
+    presentation: z.literal("json"),
+  })
+  .strict();
+const manifestSchema = z.discriminatedUnion("schema_version", [
+  baseManifest,
+  baseManifest
+    .extend({
+      schema_version: z.literal(3),
+      sources: z.array(sourceContribution).min(1).max(32),
+    })
+    .strict(),
+]);
 const allowed = new Set([
   "$schema",
   "title",
@@ -120,7 +138,20 @@ function filePath(value) {
 }
 
 /** Validates the deliberately bounded JSON Schema subset supported by protocol v1. Unsupported keywords fail rather than being silently ignored; no remote refs or evaluated code. */
-function checkSchema(schema, depth = 0) {
+function checkSchema(schema, depth = 0, extended = false) {
+  if (
+    extended &&
+    depth <= 8 &&
+    schema &&
+    Object.keys(schema).length === 1 &&
+    Array.isArray(schema.anyOf) &&
+    schema.anyOf.length === 2 &&
+    schema.anyOf[1]?.type === "null" &&
+    Object.keys(schema.anyOf[1]).length === 1
+  ) {
+    checkSchema(schema.anyOf[0], depth + 1, true);
+    return schema;
+  }
   if (
     !schema ||
     Array.isArray(schema) ||
@@ -170,7 +201,12 @@ function checkSchema(schema, depth = 0) {
       Array.isArray(properties) ||
       typeof properties !== "object" ||
       Object.keys(properties).length > 64 ||
-      schema.additionalProperties !== false ||
+      (schema.additionalProperties !== false &&
+        !(
+          extended &&
+          schema.additionalProperties &&
+          typeof schema.additionalProperties === "object"
+        )) ||
       !Array.isArray(schema.required) ||
       new Set(schema.required).size !== schema.required.length ||
       schema.required.some(
@@ -181,16 +217,18 @@ function checkSchema(schema, depth = 0) {
         "ENGINE_SCHEMA_INVALID",
         "Object schemas require properties, required and additionalProperties=false.",
       );
+    if (schema.additionalProperties !== false)
+      checkSchema(schema.additionalProperties, depth + 1, extended);
     for (const [key, value] of Object.entries(properties)) {
       if (
         !/^[a-zA-Z][a-zA-Z0-9_]{0,63}$/.test(key) ||
         ["constructor", "prototype", "__proto__"].includes(key)
       )
         fail("ENGINE_SCHEMA_INVALID", "Invalid schema property.");
-      checkSchema(value, depth + 1);
+      checkSchema(value, depth + 1, extended);
     }
   }
-  if (schema.type === "array") checkSchema(schema.items, depth + 1);
+  if (schema.type === "array") checkSchema(schema.items, depth + 1, extended);
   for (const key of [
     "minimum",
     "maximum",
@@ -242,6 +280,10 @@ function checkSchema(schema, depth = 0) {
 /** Validates JSON data against a checked contract. Extra properties, type coercion and prototype-bearing inputs are rejected; errors never include values. */
 function validateData(schema, value, depth = 0) {
   if (depth > 8) fail("ENGINE_DATA_INVALID", "Data exceeds protocol depth.");
+  if (schema.anyOf)
+    return value === null
+      ? value
+      : validateData(schema.anyOf[0], value, depth + 1);
   const actual =
     value === null ? "null" : Array.isArray(value) ? "array" : typeof value;
   if (
@@ -262,13 +304,23 @@ function validateData(schema, value, depth = 0) {
     if (
       ![Object.prototype, null].includes(Object.getPrototypeOf(value)) ||
       Object.keys(value).some(
-        (key) => !Object.hasOwn(schema.properties, key),
+        (key) =>
+          !Object.hasOwn(schema.properties, key) &&
+          (!schema.additionalProperties ||
+            key.length > 128 ||
+            ["constructor", "prototype", "__proto__"].includes(key)),
       ) ||
       schema.required.some((key) => !Object.hasOwn(value, key))
     )
       fail("ENGINE_DATA_INVALID", "Object fields do not match the contract.");
     for (const key of Object.keys(value))
-      validateData(schema.properties[key], value[key], depth + 1);
+      validateData(
+        Object.hasOwn(schema.properties, key)
+          ? schema.properties[key]
+          : schema.additionalProperties,
+        value[key],
+        depth + 1,
+      );
   }
   if (actual === "array") {
     if (
@@ -297,13 +349,25 @@ function validateData(schema, value, depth = 0) {
 function manifest(value) {
   const parsed = manifestSchema.safeParse(value);
   if (!parsed.success)
-    fail("ENGINE_MANIFEST_INVALID", "Invalid Orbistry Engine manifest v2.");
+    fail("ENGINE_MANIFEST_INVALID", "Invalid Orbistry Engine manifest.");
   const data = parsed.data;
   if (
     new Set(data.operations.map((item) => item.id)).size !==
     data.operations.length
   )
     fail("ENGINE_MANIFEST_INVALID", "Operation IDs must be unique.");
+  if (
+    data.sources &&
+    (new Set(data.sources.map((source) => source.id)).size !==
+      data.sources.length ||
+      data.sources.some(
+        (source) => !data.operations.some((op) => op.id === source.operation),
+      ))
+  )
+    fail(
+      "ENGINE_MANIFEST_INVALID",
+      "Source IDs must be unique and refer to declared operations.",
+    );
   const files = Object.keys(data.files);
   if (
     !files.length ||
@@ -324,7 +388,7 @@ function manifest(value) {
     );
   for (const op of data.operations) {
     checkSchema(op.input_schema);
-    checkSchema(op.output_schema);
+    checkSchema(op.output_schema, 0, data.schema_version === 3);
     if (op.input_schema.type !== "object")
       fail("ENGINE_SCHEMA_INVALID", "Tool input must be an object.");
   }

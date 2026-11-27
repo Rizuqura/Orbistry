@@ -1,7 +1,7 @@
 // Native provider tool selection. No prose/JSON-in-text is ever executed.
 const { z, parse, settingsSchema } = require("./schemas.cjs");
 const { ModelRuntimeError } = require("./model-errors.cjs");
-const { argumentsSchema } = require("./chronoz-adapter.cjs");
+const { argumentsSchema } = require("./chronoz-contract.cjs");
 const TOOL_NAME = "chronoz_get_report"; // Wire-safe alias for chronoz.get_report.
 const tool = {
   type: "function",
@@ -306,7 +306,7 @@ async function selectTool(
 const reportSchema = z
   .object({
     runId: z.string().uuid(),
-    month: require("./chronoz-adapter.cjs").monthSchema,
+    month: require("./chronoz-contract.cjs").monthSchema,
     researchStatus: z.enum(["PUBLISHED", "PARTIAL", "READY"]),
     sha256: z.string().regex(/^[a-f0-9]{64}$/),
     sourcePath: z.string().min(1).max(4096),

@@ -64,7 +64,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [registerWorldViewIpc](<worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/core/ipc/worldview-ipc.test.cjs:15](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L15>)
+- [registerWorldViewIpc](<worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/core/ipc/worldview-ipc.test.cjs:15](<../../../../../../../electron/core/ipc/worldview-ipc.test.cjs#L15>)
 
 **Called by (statically resolved):**
 

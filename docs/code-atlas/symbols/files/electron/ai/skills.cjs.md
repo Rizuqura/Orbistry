@@ -96,9 +96,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [defaults](<agents/agent-construction.cjs.md#s-b11797218b524d62>) — [electron/ai/agents/agent-construction.cjs:204](<../../../../../../electron/ai/agents/agent-construction.cjs#L204>)
-- [defaults](<agents/agent-construction.cjs.md#s-b11797218b524d62>) — [electron/ai/agents/agent-construction.cjs:205](<../../../../../../electron/ai/agents/agent-construction.cjs#L205>)
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:295](<../../../../../../electron/ai/agents/agent-construction.cjs#L295>)
+- [defaults](<agents/agent-construction.cjs.md#s-a6f7591b9f78cb97>) — [electron/ai/agents/agent-construction.cjs:208](<../../../../../../electron/ai/agents/agent-construction.cjs#L208>)
+- [defaults](<agents/agent-construction.cjs.md#s-a6f7591b9f78cb97>) — [electron/ai/agents/agent-construction.cjs:209](<../../../../../../electron/ai/agents/agent-construction.cjs#L209>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:319](<../../../../../../electron/ai/agents/agent-construction.cjs#L319>)
 - [AgentStore.get](<agents/agent-store.cjs.md#s-feff3820609fc57c>) — [electron/ai/agents/agent-store.cjs:265](<../../../../../../electron/ai/agents/agent-store.cjs#L265>)
 - [AgentStore.get](<agents/agent-store.cjs.md#s-feff3820609fc57c>) — [electron/ai/agents/agent-store.cjs:268](<../../../../../../electron/ai/agents/agent-store.cjs#L268>)
 - [&lt;anonymous@412:78&gt;](<knowledge-store.test.cjs.md#s-a3d1c3c16080d410>) — [electron/ai/knowledge-store.test.cjs:413](<../../../../../../electron/ai/knowledge-store.test.cjs#L413>)

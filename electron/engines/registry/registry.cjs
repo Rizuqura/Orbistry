@@ -26,6 +26,7 @@ const storedVersion = z
     digest: z.string().regex(/^[a-f0-9]{64}$/),
     trusted: z.boolean(),
     source: z.string().max(2000),
+    disabled: z.boolean().optional(),
     installedAt: z.string().datetime(),
   })
   .strict();
@@ -42,6 +43,7 @@ const stateSchema = z
       .array(
         z
           .object({
+            grantId: z.string().uuid().optional(),
             entityId: entityIdSchema,
             engineId: id,
             operations: z.array(id).min(1).max(32),
@@ -131,7 +133,7 @@ class EnginePackageRegistry {
   }
 
   /** Serializes registry mutations in-process and across CLI processes. A stale lock fails explicitly; it is never deleted speculatively. */
-  async mutate(operation, { rollback } = {}) {
+  async mutate(operation, { rollback, persist = true } = {}) {
     const directory = await this.location("registry");
     if (!queues.has(directory)) queues.set(directory, serialQueue());
     return queues.get(directory)(async () => {
@@ -148,6 +150,7 @@ class EnginePackageRegistry {
       try {
         const state = await this.read(),
           result = await operation(state);
+        if (!persist) return result;
         const checkedState = stateSchema.parse(state);
         if (
           Buffer.byteLength(JSON.stringify(checkedState, null, 2) + "\n") >
@@ -296,6 +299,59 @@ class EnginePackageRegistry {
     });
   }
 
+  /** Enables or disables the reviewed active digest. Disabling drops links, including their network grants. */
+  async setEnabled(engineId, digest, enabled) {
+    id.parse(engineId);
+    z.boolean().parse(enabled);
+    return this.mutate(async (state) => {
+      const checked = await this.installed(engineId, state);
+      if (digest !== checked.digest)
+        fail("ENGINE_CHANGED", "Review the current package digest.");
+      checked.record.disabled = !enabled;
+      if (!enabled)
+        state.links = state.links.filter((link) => link.engineId !== engineId);
+      return { engineId, enabled };
+    });
+  }
+
+  /** Detaches all registered versions of one package under the writer lock. History and Entity documents live outside these directories. */
+  async uninstall(engineId, digest) {
+    id.parse(engineId);
+    const moved = [];
+    const result = await this.mutate(
+      async (state) => {
+        const item = state.packages[engineId];
+        if (!item)
+          fail("ENGINE_NOT_INSTALLED", "Engine package is not installed.");
+        if (item.versions[item.active].digest !== digest)
+          fail("ENGINE_CHANGED", "Review the current package digest.");
+        for (const v of Object.keys(item.versions)) {
+          // Verify exact inventory before removing any directory that might contain user edits.
+          await this.installed(engineId, state, v);
+          const source = await this.location("packages", engineId, v);
+          const trash = await this.location(
+            "packages",
+            engineId,
+            ".removed-" + randomUUID(),
+          );
+          await fs.rename(source, trash);
+          moved.push({ source, trash });
+        }
+        delete state.packages[engineId];
+        state.links = state.links.filter((link) => link.engineId !== engineId);
+        return { engineId, uninstalled: true };
+      },
+      {
+        rollback: async () => {
+          for (const { source, trash } of moved.reverse())
+            await fs.rename(trash, source);
+        },
+      },
+    );
+    for (const { trash } of moved) await fs.rm(trash, { recursive: true });
+    return result;
+  }
+
   /** Links explicitly chosen operations to an existing Entity. Automatic permission and outbound-network consent are separate host-owned settings. */
   async link({
     entityId,
@@ -317,7 +373,10 @@ class EnginePackageRegistry {
           "ENGINE_NOT_TRUSTED",
           "Review and trust the exact Engine package first.",
         );
+      if (checked.record.disabled)
+        fail("ENGINE_DISABLED", "Enable this package before linking.");
       const requested = {
+        grantId: randomUUID(),
         entityId,
         engineId,
         operations,
@@ -358,11 +417,12 @@ class EnginePackageRegistry {
   }
 
   /** Exposes verified contracts, signature status and scope-filtered Entity links without loading package code. Descriptions and proof metadata never grant authorization. */
-  async catalog(entityId = null) {
+  async catalog(entityId = null, selectedIds = null) {
     if (entityId !== null) entityIdSchema.parse(entityId);
     const state = await this.read(),
       engines = [];
     for (const engineId of Object.keys(state.packages).sort()) {
+      if (selectedIds && !selectedIds.has(engineId)) continue;
       const checked = await this.installed(engineId, state);
       const link = state.links.find(
         (item) =>
@@ -373,6 +433,7 @@ class EnginePackageRegistry {
       const operations = checked.manifest.operations.map((op) => ({
         ...op,
         available: Boolean(
+          !checked.record.disabled &&
           checked.record.trusted &&
           link?.operations.includes(op.id) &&
           (op.network === "none" || link.allowNetwork),
@@ -385,6 +446,8 @@ class EnginePackageRegistry {
         description: checked.manifest.description,
         digest: checked.digest,
         trusted: checked.record.trusted,
+        disabled: checked.record.disabled === true,
+        sources: checked.manifest.sources ?? [],
         policy: link?.policy ?? "unlinked",
         operations,
         signature: checked.signature,
@@ -539,6 +602,8 @@ class EnginePackageRegistry {
     const op = checked.manifest.operations.find(
       (item) => item.id === operation,
     );
+    if (checked.record.disabled)
+      fail("ENGINE_DISABLED", "Engine package is disabled.");
     if (!checked.record.trusted || !op || !link?.operations.includes(operation))
       fail(
         "ENGINE_NOT_AUTHORIZED",
@@ -623,36 +688,49 @@ class EnginePackageRegistry {
           "ENGINE_AUTHORIZATION_CHANGED",
           "Engine authorization changed during execution.",
         );
-      const current = await this.read();
-      await this.installed(engineId, current);
-      if (
-        JSON.stringify(
-          current.links.find(
-            (item) => item.entityId === entityId && item.engineId === engineId,
-          ),
-        ) !== JSON.stringify(link) ||
-        current.packages[engineId].active !== checked.manifest.engine_version ||
-        !current.packages[engineId].versions[checked.manifest.engine_version]
-          .trusted
-      )
-        fail(
-          "ENGINE_AUTHORIZATION_CHANGED",
-          "Engine authorization changed during execution.",
-        );
-      await require("../../domains/entity/worldview-store.cjs").readWorldViewChip(
-        this.root,
-        entityId,
+      // Linearize grant revocation and successful receipt publication across CLI and desktop writers.
+      return await this.mutate(
+        async (current) => {
+          await this.installed(engineId, current);
+          if (
+            JSON.stringify(
+              current.links.find(
+                (item) =>
+                  item.entityId === entityId && item.engineId === engineId,
+              ),
+            ) !== JSON.stringify(link) ||
+            current.packages[engineId].versions[checked.manifest.engine_version]
+              ?.disabled ||
+            current.packages[engineId].active !==
+              checked.manifest.engine_version ||
+            !current.packages[engineId].versions[
+              checked.manifest.engine_version
+            ].trusted
+          )
+            fail(
+              "ENGINE_AUTHORIZATION_CHANGED",
+              "Engine authorization changed during execution.",
+            );
+          await require("../../domains/entity/worldview-store.cjs").readWorldViewChip(
+            this.root,
+            entityId,
+          );
+          // Preserve the protocol byte bound on disk; indentation can expand valid nested JSON beyond the historical reader's limit.
+          await writeTextAtomic(
+            await this.location("registry", "results", executionId + ".json"),
+            JSON.stringify(data) + "\n",
+            null,
+          );
+          signal?.throwIfAborted();
+          receipt.resultHash = sha(JSON.stringify(data));
+          receipt.status = "succeeded";
+          receipt.finishedAt = new Date().toISOString();
+          receipt.durationMs = Date.now() - started;
+          await writeJson(receiptPath, receipt);
+          return { receipt, data };
+        },
+        { persist: false },
       );
-      // Preserve the protocol byte bound on disk; indentation can expand valid nested JSON beyond the historical reader's limit.
-      await writeTextAtomic(
-        await this.location("registry", "results", executionId + ".json"),
-        JSON.stringify(data) + "\n",
-        null,
-      );
-      signal?.throwIfAborted();
-      receipt.resultHash = sha(JSON.stringify(data));
-      receipt.status = "succeeded";
-      return { receipt, data };
     } catch (error) {
       receipt.status =
         signal?.aborted || error.code === "ENGINE_CANCELLED"
@@ -666,9 +744,11 @@ class EnginePackageRegistry {
         { code: receipt.errorCode, executionId },
       );
     } finally {
-      receipt.finishedAt = new Date().toISOString();
-      receipt.durationMs = Date.now() - started;
-      await writeJson(receiptPath, receipt);
+      if (receipt.status !== "succeeded") {
+        receipt.finishedAt = new Date().toISOString();
+        receipt.durationMs = Date.now() - started;
+        await writeJson(receiptPath, receipt);
+      }
     }
   }
 }

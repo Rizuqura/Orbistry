@@ -14,8 +14,9 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) (MethodDeclaration)
 - [verifyKnowledgeCards.click.&lt;anonymous@32:9&gt;](<worldview-phase04-check.cjs.md#s-58a5aa1535ff06a1>) (ArrowFunction)
 - [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) (FunctionDeclaration)
-- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-ca5c8526cf94c9e6>) (FunctionDeclaration)
-- [verifyKnowledgeCards.&lt;anonymous@165:34&gt;](<worldview-phase04-check.cjs.md#s-fc69e4b81c02e572>) (ArrowFunction)
+- [verifyKnowledgeCards.&lt;anonymous@72:42&gt;](<worldview-phase04-check.cjs.md#s-fdbfb766138e32e9>) (ArrowFunction)
+- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-4f9166ef42f35da3>) (FunctionDeclaration)
+- [verifyKnowledgeCards.&lt;anonymous@176:34&gt;](<worldview-phase04-check.cjs.md#s-eca2255fb48ef447>) (ArrowFunction)
 
 <a id="s-b2715adb48392f65"></a>
 
@@ -67,9 +68,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:151](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L151>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:176](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L176>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:162](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L162>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:187](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L187>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:190](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L190>)
 
 Unresolved / external call sites: 1.
 
@@ -77,9 +78,9 @@ Unresolved / external call sites: 1.
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/worldview-phase04-check.cjs:151](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L151>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:176](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L176>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:162](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L162>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:187](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L187>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:190](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L190>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-cf2ac87ed44a7166"></a>
@@ -144,30 +145,30 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:37](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L37>)
 - [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:68](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L68>)
 - [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:69](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L69>)
-- [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:75](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L75>)
-- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:82](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L82>)
-- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-ca5c8526cf94c9e6>) — [scripts/acceptance/worldview-phase04-check.cjs:143](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L143>)
-- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-ca5c8526cf94c9e6>) — [scripts/acceptance/worldview-phase04-check.cjs:144](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L144>)
-- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-ca5c8526cf94c9e6>) — [scripts/acceptance/worldview-phase04-check.cjs:145](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L145>)
-- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:151](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L151>)
-- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:168](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L168>)
-- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:169](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L169>)
-- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-ca5c8526cf94c9e6>) — [scripts/acceptance/worldview-phase04-check.cjs:175](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L175>)
-- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:176](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L176>)
-- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>)
-- [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>)
-- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:181](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L181>)
-- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:183](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L183>)
-- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:203](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L203>)
-- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:204](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L204>)
-- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:212](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L212>)
-- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:213](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L213>)
+- [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:86](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L86>)
+- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:93](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L93>)
+- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-4f9166ef42f35da3>) — [scripts/acceptance/worldview-phase04-check.cjs:154](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L154>)
+- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-4f9166ef42f35da3>) — [scripts/acceptance/worldview-phase04-check.cjs:155](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L155>)
+- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-4f9166ef42f35da3>) — [scripts/acceptance/worldview-phase04-check.cjs:156](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L156>)
+- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:162](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L162>)
+- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>)
+- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>)
+- [verifyKnowledgeCards.applyMenus](<worldview-phase04-check.cjs.md#s-4f9166ef42f35da3>) — [scripts/acceptance/worldview-phase04-check.cjs:186](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L186>)
+- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:187](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L187>)
+- [waitSaved](<worldview-phase04-check.cjs.md#s-1b873beff8c4232d>) — [scripts/acceptance/worldview-phase04-check.cjs:190](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L190>)
+- [verifyKnowledgeCards.count](<worldview-phase04-check.cjs.md#s-be50e8de5438101f>) — [scripts/acceptance/worldview-phase04-check.cjs:191](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L191>)
+- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:192](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L192>)
+- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:194](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L194>)
+- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:214](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L214>)
+- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:215](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L215>)
+- [verifyKnowledgeCards.select](<worldview-phase04-check.cjs.md#s-6d24d33fb839c21e>) — [scripts/acceptance/worldview-phase04-check.cjs:223](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L223>)
+- [verifyKnowledgeCards.click](<worldview-phase04-check.cjs.md#s-fbef32edfa6944f2>) — [scripts/acceptance/worldview-phase04-check.cjs:224](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L224>)
 
 **Called by (statically resolved):**
 
 - [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1223](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1223>)
 
-Unresolved / external call sites: 113.
+Unresolved / external call sites: 114.
 
 - console.log — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:19](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L19>)
 - page.getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:22](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L22>)
@@ -177,7 +178,7 @@ Unresolved / external call sites: 113.
 - (await readChips(page)).at — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:40](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L40>)
 - readChips — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:40](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L40>)
 - createChip — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:41](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L41>)
-- 105 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- 106 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
@@ -210,8 +211,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 - [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:37](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L37>)
 - [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:68](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L68>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:75](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L75>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:86](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L86>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:191](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L191>)
 
 Unresolved / external call sites: 1.
 
@@ -221,8 +222,8 @@ Unresolved / external call sites: 1.
 
 - [scripts/acceptance/worldview-phase04-check.cjs:37](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L37>) — static-call-site; coverage not established.
 - [scripts/acceptance/worldview-phase04-check.cjs:68](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L68>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:75](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L75>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:86](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L86>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:191](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L191>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-fbef32edfa6944f2"></a>
@@ -249,11 +250,11 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:82](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L82>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:169](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L169>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:183](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L183>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:204](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L204>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:213](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L213>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:93](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L93>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:194](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L194>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:215](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L215>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:224](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L224>)
 
 Unresolved / external call sites: 2.
 
@@ -262,11 +263,11 @@ Unresolved / external call sites: 2.
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/worldview-phase04-check.cjs:82](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L82>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:169](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L169>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:183](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L183>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:204](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L204>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:213](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L213>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:93](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L93>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:180](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L180>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:194](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L194>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:215](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L215>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:224](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L224>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
 
 <a id="s-58a5aa1535ff06a1"></a>
@@ -328,10 +329,10 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:69](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L69>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:168](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L168>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:181](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L181>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:203](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L203>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:212](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L212>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:192](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L192>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:214](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L214>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:223](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L223>)
 
 Unresolved / external call sites: 11.
 
@@ -348,17 +349,53 @@ Unresolved / external call sites: 11.
 **Related tests / acceptance harnesses:**
 
 - [scripts/acceptance/worldview-phase04-check.cjs:69](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L69>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:168](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L168>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:181](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L181>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:203](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L203>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:212](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L212>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:179](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L179>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:192](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L192>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:214](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L214>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:223](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L223>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
 
-<a id="s-ca5c8526cf94c9e6"></a>
+<a id="s-fdbfb766138e32e9"></a>
+
+## verifyKnowledgeCards.&lt;anonymous@72:42&gt;
+
+[scripts/acceptance/worldview-phase04-check.cjs:72](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L72>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| element | any | compiler-inferred | required |
+
+Returns: { x: any; y: any; } (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 3.
+
+- element.getBoundingClientRect — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:73](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L73>)
+- document.elementFromPoint — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:78](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L78>)
+- Error — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:80](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L80>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
+
+<a id="s-4f9166ef42f35da3"></a>
 
 ## verifyKnowledgeCards.applyMenus
 
-[scripts/acceptance/worldview-phase04-check.cjs:131](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L131>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/worldview-phase04-check.cjs:142](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L142>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Updates empty navigation declarations through the Phase 05 authoritative index editor.
 
@@ -378,35 +415,35 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:143](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L143>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:144](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L144>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:145](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L145>)
-- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:175](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L175>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:154](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L154>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:155](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L155>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:156](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L156>)
+- [verifyKnowledgeCards](<worldview-phase04-check.cjs.md#s-735eeedac3d937b3>) — [scripts/acceptance/worldview-phase04-check.cjs:186](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L186>)
 
 Unresolved / external call sites: 8.
 
-- card .getByRole("button", { name: "Write Index", exact: true }) .click — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:132](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L132>)
-- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:132](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L132>)
-- card .getByRole("textbox", { name: "Index declarations", exact: true }) .fill — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:135](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L135>)
-- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:135](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L135>)
-- card .getByRole("button", { name: "Apply Index", exact: true }) .click — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:138](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L138>)
-- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:138](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L138>)
-- card.locator(".knowledge-index-editor").waitFor — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:141](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L141>)
-- card.locator — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:141](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L141>)
+- card .getByRole("button", { name: "Write Index", exact: true }) .click — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:143](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L143>)
+- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:143](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L143>)
+- card .getByRole("textbox", { name: "Index declarations", exact: true }) .fill — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:146](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L146>)
+- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:146](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L146>)
+- card .getByRole("button", { name: "Apply Index", exact: true }) .click — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:149](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L149>)
+- card .getByRole — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:149](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L149>)
+- card.locator(".knowledge-index-editor").waitFor — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:152](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L152>)
+- card.locator — external-or-dynamic-dispatch; [scripts/acceptance/worldview-phase04-check.cjs:152](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L152>)
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/worldview-phase04-check.cjs:143](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L143>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:144](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L144>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:145](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L145>) — static-call-site; coverage not established.
-- [scripts/acceptance/worldview-phase04-check.cjs:175](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L175>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:154](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L154>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:155](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L155>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:156](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L156>) — static-call-site; coverage not established.
+- [scripts/acceptance/worldview-phase04-check.cjs:186](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L186>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:8](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L8>) — file-import-only; coverage not established.
 
-<a id="s-fc69e4b81c02e572"></a>
+<a id="s-eca2255fb48ef447"></a>
 
-## verifyKnowledgeCards.&lt;anonymous@165:34&gt;
+## verifyKnowledgeCards.&lt;anonymous@176:34&gt;
 
-[scripts/acceptance/worldview-phase04-check.cjs:165](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L165>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/worldview-phase04-check.cjs:176](<../../../../../../scripts/acceptance/worldview-phase04-check.cjs#L176>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 

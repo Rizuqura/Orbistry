@@ -71,7 +71,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 - [Entity domain](<entity-domain.md>): 1 import sites; example [electron/domains/entity/worldview-store.cjs:10](<../../../electron/domains/entity/worldview-store.cjs#L10>).
 - [Backend Identity Engine](<identity.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:13](<../../../electron/engines/backend-identity/identity-compiler.cjs#L13>).
 - [Knowledge indexing and source access](<knowledge.md>): 1 import sites; example [electron/domains/knowledge/knowledge-store.cjs:8](<../../../electron/domains/knowledge/knowledge-store.cjs#L8>).
-- [WorldView desktop IPC](<worldview.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:10](<../../../electron/core/ipc/worldview-ipc.cjs#L10>).
+- [WorldView desktop IPC](<worldview.md>): 1 import sites; example [electron/core/ipc/worldview-ipc.cjs:13](<../../../electron/core/ipc/worldview-ipc.cjs#L13>).
 
 ## Contracts
 

@@ -86,8 +86,8 @@
 <rect x="376" y="416" width="30" height="30" fill="#263442"><title>Knowledge Cards and readers imports Knowledge Cards and readers: 0 sites</title></rect>
 <rect x="408" y="416" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Portal shell: 3 sites</title></rect>
 <text x="423" y="436" text-anchor="middle">3</text>
-<rect x="440" y="416" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports WorldView and Knowledge Cards (Portal): 10 sites</title></rect>
-<text x="455" y="436" text-anchor="middle">10</text>
+<rect x="440" y="416" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports WorldView and Knowledge Cards (Portal): 11 sites</title></rect>
+<text x="455" y="436" text-anchor="middle">11</text>
 <rect x="472" y="416" width="30" height="30" fill="#162734"><title>Knowledge Cards and readers imports Agent workspace and construction (Portal): 0 sites</title></rect>
 <rect x="504" y="416" width="30" height="30" fill="#225b70"><title>Knowledge Cards and readers imports Conversation presentation: 1 sites</title></rect>
 <text x="519" y="436" text-anchor="middle">1</text>
@@ -307,8 +307,8 @@
 <rect x="632" y="672" width="30" height="30" fill="#263442"><title>WorldView desktop IPC imports WorldView desktop IPC: 0 sites</title></rect>
 <rect x="664" y="672" width="30" height="30" fill="#225b70"><title>WorldView desktop IPC imports Vault and stations: 1 sites</title></rect>
 <text x="679" y="692" text-anchor="middle">1</text>
-<rect x="696" y="672" width="30" height="30" fill="#225b70"><title>WorldView desktop IPC imports Knowledge indexing and source access: 2 sites</title></rect>
-<text x="711" y="692" text-anchor="middle">2</text>
+<rect x="696" y="672" width="30" height="30" fill="#225b70"><title>WorldView desktop IPC imports Knowledge indexing and source access: 3 sites</title></rect>
+<text x="711" y="692" text-anchor="middle">3</text>
 <rect x="728" y="672" width="30" height="30" fill="#162734"><title>WorldView desktop IPC imports Connectors: 0 sites</title></rect>
 <rect x="760" y="672" width="30" height="30" fill="#162734"><title>WorldView desktop IPC imports Engine package registry: 0 sites</title></rect>
 <rect x="792" y="672" width="30" height="30" fill="#225b70"><title>WorldView desktop IPC imports Backend Identity Engine: 5 sites</title></rect>
@@ -362,10 +362,11 @@
 <text x="679" y="756" text-anchor="middle">1</text>
 <rect x="696" y="736" width="30" height="30" fill="#263442"><title>Knowledge indexing and source access imports Knowledge indexing and source access: 0 sites</title></rect>
 <rect x="728" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Connectors: 0 sites</title></rect>
-<rect x="760" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="736" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Engine package registry: 4 sites</title></rect>
+<text x="775" y="756" text-anchor="middle">4</text>
 <rect x="792" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="824" y="736" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Built-in Engines and data adapters: 7 sites</title></rect>
-<text x="839" y="756" text-anchor="middle">7</text>
+<rect x="824" y="736" width="30" height="30" fill="#225b70"><title>Knowledge indexing and source access imports Built-in Engines and data adapters: 5 sites</title></rect>
+<text x="839" y="756" text-anchor="middle">5</text>
 <rect x="856" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Assigned Agents and jurisdiction: 0 sites</title></rect>
 <rect x="888" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Model-provider adapters: 0 sites</title></rect>
 <rect x="920" y="736" width="30" height="30" fill="#162734"><title>Knowledge indexing and source access imports Retained AI runtime: 0 sites</title></rect>
@@ -441,10 +442,11 @@
 <text x="711" y="852" text-anchor="middle">1</text>
 <rect x="728" y="832" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Connectors: 1 sites</title></rect>
 <text x="743" y="852" text-anchor="middle">1</text>
-<rect x="760" y="832" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="832" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Engine package registry: 4 sites</title></rect>
+<text x="775" y="852" text-anchor="middle">4</text>
 <rect x="792" y="832" width="30" height="30" fill="#263442"><title>Backend Identity Engine imports Backend Identity Engine: 0 sites</title></rect>
-<rect x="824" y="832" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Built-in Engines and data adapters: 5 sites</title></rect>
-<text x="839" y="852" text-anchor="middle">5</text>
+<rect x="824" y="832" width="30" height="30" fill="#225b70"><title>Backend Identity Engine imports Built-in Engines and data adapters: 3 sites</title></rect>
+<text x="839" y="852" text-anchor="middle">3</text>
 <rect x="856" y="832" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Assigned Agents and jurisdiction: 0 sites</title></rect>
 <rect x="888" y="832" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Model-provider adapters: 0 sites</title></rect>
 <rect x="920" y="832" width="30" height="30" fill="#162734"><title>Backend Identity Engine imports Retained AI runtime: 0 sites</title></rect>
@@ -465,10 +467,11 @@
 <rect x="632" y="864" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports WorldView desktop IPC: 0 sites</title></rect>
 <rect x="664" y="864" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Vault and stations: 3 sites</title></rect>
 <text x="679" y="884" text-anchor="middle">3</text>
-<rect x="696" y="864" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Knowledge indexing and source access: 6 sites</title></rect>
-<text x="711" y="884" text-anchor="middle">6</text>
+<rect x="696" y="864" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Knowledge indexing and source access: 10 sites</title></rect>
+<text x="711" y="884" text-anchor="middle">10</text>
 <rect x="728" y="864" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Connectors: 0 sites</title></rect>
-<rect x="760" y="864" width="30" height="30" fill="#162734"><title>Built-in Engines and data adapters imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="864" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Engine package registry: 3 sites</title></rect>
+<text x="775" y="884" text-anchor="middle">3</text>
 <rect x="792" y="864" width="30" height="30" fill="#225b70"><title>Built-in Engines and data adapters imports Backend Identity Engine: 1 sites</title></rect>
 <text x="807" y="884" text-anchor="middle">1</text>
 <rect x="824" y="864" width="30" height="30" fill="#263442"><title>Built-in Engines and data adapters imports Built-in Engines and data adapters: 0 sites</title></rect>
@@ -492,14 +495,15 @@
 <rect x="600" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Electron composition and IPC security: 0 sites</title></rect>
 <rect x="632" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports WorldView desktop IPC: 0 sites</title></rect>
 <rect x="664" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Vault and stations: 0 sites</title></rect>
-<rect x="696" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Knowledge indexing and source access: 0 sites</title></rect>
+<rect x="696" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Knowledge indexing and source access: 1 sites</title></rect>
+<text x="711" y="916" text-anchor="middle">1</text>
 <rect x="728" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Connectors: 1 sites</title></rect>
 <text x="743" y="916" text-anchor="middle">1</text>
-<rect x="760" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Engine package registry: 0 sites</title></rect>
+<rect x="760" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Engine package registry: 2 sites</title></rect>
+<text x="775" y="916" text-anchor="middle">2</text>
 <rect x="792" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Backend Identity Engine: 3 sites</title></rect>
 <text x="807" y="916" text-anchor="middle">3</text>
-<rect x="824" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Built-in Engines and data adapters: 1 sites</title></rect>
-<text x="839" y="916" text-anchor="middle">1</text>
+<rect x="824" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Built-in Engines and data adapters: 0 sites</title></rect>
 <rect x="856" y="896" width="30" height="30" fill="#263442"><title>Assigned Agents and jurisdiction imports Assigned Agents and jurisdiction: 0 sites</title></rect>
 <rect x="888" y="896" width="30" height="30" fill="#162734"><title>Assigned Agents and jurisdiction imports Model-provider adapters: 0 sites</title></rect>
 <rect x="920" y="896" width="30" height="30" fill="#225b70"><title>Assigned Agents and jurisdiction imports Retained AI runtime: 34 sites</title></rect>

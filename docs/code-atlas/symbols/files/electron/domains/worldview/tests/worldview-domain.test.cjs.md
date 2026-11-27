@@ -1657,7 +1657,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<worldview-domain.test.cjs.md#s-4337a6c8e6e4f156>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:329](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L329>)
-- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:331](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L331>)
+- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:331](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L331>)
 - [edge](<worldview-domain.test.cjs.md#s-426c80b200c5641d>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:339](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L339>)
 - [edge](<worldview-domain.test.cjs.md#s-426c80b200c5641d>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:341](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L341>)
 - [edge](<worldview-domain.test.cjs.md#s-426c80b200c5641d>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:345](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L345>)

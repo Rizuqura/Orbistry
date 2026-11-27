@@ -72,11 +72,11 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/runtime/runner.cjs:11](<../../../../../../../electron/engines/runtime/runner.cjs#L11>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/runtime/runner.cjs:11](<../../../../../../../electron/engines/runtime/runner.cjs#L11>)
 
 **Called by (statically resolved):**
 
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:613](<../../../../../../../electron/engines/registry/registry.cjs#L613>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:678](<../../../../../../../electron/engines/registry/registry.cjs#L678>)
 
 Unresolved / external call sites: 5.
 
@@ -400,7 +400,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [parseJson](<../registry/package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/runtime/runner.cjs:93](<../../../../../../../electron/engines/runtime/runner.cjs#L93>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/runtime/runner.cjs:100](<../../../../../../../electron/engines/runtime/runner.cjs#L100>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/runtime/runner.cjs:100](<../../../../../../../electron/engines/runtime/runner.cjs#L100>)
 
 **Called by (statically resolved):**
 

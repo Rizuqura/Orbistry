@@ -9,6 +9,13 @@ export type EnginePackageCatalog = {
     description: string;
     digest: string;
     trusted: boolean;
+    disabled: boolean;
+    sources: {
+      id: string;
+      operation: string;
+      kind: "scalar" | "table" | "time_series" | "document";
+      presentation: "json";
+    }[];
     policy: "unlinked" | "manual" | "automatic";
     signature: {
       status: "unsigned" | "valid";

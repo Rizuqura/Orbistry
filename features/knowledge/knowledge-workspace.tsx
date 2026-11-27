@@ -19,6 +19,7 @@ import {
 import { SourcePreview } from "./source-preview";
 import { ImageCarousel } from "./image-carousel";
 import { FinancialViewer } from "./financial-viewer";
+import { PackageSource, SourceCatalog } from "./package-source";
 import { DailyPrice } from "./daily-price";
 import { useConfirmation } from "../dialogs/use-confirmation";
 
@@ -332,6 +333,9 @@ export function KnowledgeWorkspace({
               aria-label="Manual index editor"
             >
               <h2>Write Index</h2>
+              {vaultPath && (
+                <SourceCatalog vaultPath={vaultPath} entityId={chip.id} />
+              )}
               <p>
                 Use # Menu title and source: followed by an assigned source ID.
                 Use source: yahooPrice(&quot;BBCA.JK&quot;) for a price chart in
@@ -445,6 +449,7 @@ export function KnowledgeWorkspace({
               )}
               {activeGenerated &&
                 activeGenerated.sourceIds.length === 0 &&
+                !activeGenerated.packageSources?.length &&
                 !activeGenerated.prices?.length &&
                 !activeGenerated.finance?.length &&
                 !activeGenerated.carousels?.length && (
@@ -452,6 +457,16 @@ export function KnowledgeWorkspace({
                     No sources declared for this menu.
                   </p>
                 )}
+              {vaultPath &&
+                activeGenerated?.packageSources?.map((source) => (
+                  <PackageSource
+                    key={JSON.stringify([vaultPath, chip.id, source.id])}
+                    vaultPath={vaultPath}
+                    id={chip.id}
+                    declarationId={source.id}
+                    label={source.engineId + " / " + source.sourceId}
+                  />
+                ))}
               {vaultPath &&
                 index &&
                 activeGenerated?.prices?.map((source) => (

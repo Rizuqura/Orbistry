@@ -6,7 +6,7 @@ Presents assigned-agent conversations, assignment controls and retained agent co
 
 Owns: features/agents/. This ownership is editorial; source locations and import edges below are generated facts.
 
-13 source files; 447 callable declarations; 4 contract declarations.
+13 source files; 452 callable declarations; 4 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -59,7 +59,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | --- | --- | --- |
 | [features/agents/add-agent-dialog.tsx:1](<../../../features/agents/add-agent-dialog.tsx#L1>) | production | 7 |
 | [features/agents/agent-avatar.tsx:1](<../../../features/agents/agent-avatar.tsx#L1>) | production | 3 |
-| [features/agents/agent-construction.tsx:1](<../../../features/agents/agent-construction.tsx#L1>) | production | 114 |
+| [features/agents/agent-construction.tsx:1](<../../../features/agents/agent-construction.tsx#L1>) | production | 119 |
 | [features/agents/agent-contacts.tsx:1](<../../../features/agents/agent-contacts.tsx#L1>) | production | 28 |
 | [features/agents/agent-layout.ts:1](<../../../features/agents/agent-layout.ts#L1>) | production | 3 |
 | [features/agents/agent-settings.tsx:1](<../../../features/agents/agent-settings.tsx#L1>) | production | 7 |

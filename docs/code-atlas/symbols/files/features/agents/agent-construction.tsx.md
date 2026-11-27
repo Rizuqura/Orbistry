@@ -12,115 +12,120 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [AgentConstruction.&lt;anonymous@67:17&gt;](<agent-construction.tsx.md#s-e0445286209f3187>) (FunctionType)
 - [AgentConstruction.&lt;anonymous@95:13&gt;](<agent-construction.tsx.md#s-e951983d7d0d3604>) (ArrowFunction)
 - [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;](<agent-construction.tsx.md#s-98d1983905d563c8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@104:16&gt;](<agent-construction.tsx.md#s-df8aed73515b1bd7>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@107:12&gt;](<agent-construction.tsx.md#s-b8549c7d7abd1230>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@115:13&gt;](<agent-construction.tsx.md#s-32093d58e5492198>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@115:13&gt;.fit](<agent-construction.tsx.md#s-d3704e26e79f9e87>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@115:13&gt;.&lt;anonymous@125:12&gt;](<agent-construction.tsx.md#s-ae0d76a7e28ec9e6>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@147:19&gt;](<agent-construction.tsx.md#s-497e75f00fa027e5>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@150:13&gt;](<agent-construction.tsx.md#s-8650f68769936449>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@150:13&gt;.&lt;anonymous@150:19&gt;](<agent-construction.tsx.md#s-1bf35dc8d15120cf>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@151:19&gt;](<agent-construction.tsx.md#s-f334d6ddf8ddcdf3>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@159:34&gt;](<agent-construction.tsx.md#s-834452718d4171ff>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@161:5&gt;](<agent-construction.tsx.md#s-5a55028fbf5db33b>) (ArrowFunction)
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) (ArrowFunction)
-- [AgentConstruction.update.&lt;anonymous@165:15&gt;](<agent-construction.tsx.md#s-2b3d4493db3169a8>) (ArrowFunction)
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) (ArrowFunction)
-- [AgentConstruction.updateNode.&lt;anonymous@170:15&gt;](<agent-construction.tsx.md#s-234541c3e86d64b0>) (ArrowFunction)
-- [AgentConstruction.updateNode.&lt;anonymous@170:15&gt;.&lt;anonymous@174:38&gt;](<agent-construction.tsx.md#s-c6b8870052ee2485>) (ArrowFunction)
-- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-b4204108b0eaa200>) (ArrowFunction)
-- [AgentConstruction.move](<agent-construction.tsx.md#s-df4871005f8d5c62>) (ArrowFunction)
-- [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>) (ArrowFunction)
-- [AgentConstruction.connect.&lt;anonymous@195:38&gt;](<agent-construction.tsx.md#s-f39ac948fe2c8b58>) (ArrowFunction)
-- [AgentConstruction.connect.&lt;anonymous@196:34&gt;](<agent-construction.tsx.md#s-b5952abcfde68c4e>) (ArrowFunction)
-- [AgentConstruction.connect.&lt;anonymous@211:27&gt;](<agent-construction.tsx.md#s-d2ad3080d65f85ec>) (ArrowFunction)
-- [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@222:48&gt;](<agent-construction.tsx.md#s-478b5fd2615a3de0>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@231:7&gt;](<agent-construction.tsx.md#s-a97120447fd75acc>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@256:16&gt;](<agent-construction.tsx.md#s-2a6e83dd62f5dd6d>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@256:16&gt;.&lt;anonymous@256:47&gt;](<agent-construction.tsx.md#s-3b37bc84ab920d0a>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@257:13&gt;](<agent-construction.tsx.md#s-b1171398767a9957>) (ArrowFunction)
-- [AgentConstruction.add.&lt;anonymous@257:13&gt;.&lt;anonymous@259:11&gt;](<agent-construction.tsx.md#s-6c431300df02cc2b>) (ArrowFunction)
-- [AgentConstruction.save](<agent-construction.tsx.md#s-9f2d71e2bec09ee0>) (ArrowFunction)
-- [AgentConstruction.startDrag](<agent-construction.tsx.md#s-2e3c726be850058f>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@338:42&gt;](<agent-construction.tsx.md#s-6c4064a1d0c8c35d>) (ArrowFunction)
-- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-e30669e1b781849c>) (ArrowFunction)
-- [AgentConstruction.chooseBackdrop.&lt;anonymous@351:25&gt;](<agent-construction.tsx.md#s-9ce6dd0278234e90>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@391:23&gt;](<agent-construction.tsx.md#s-c4e961a2f68fa36d>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@401:23&gt;](<agent-construction.tsx.md#s-04300e176e2a6839>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@407:22&gt;](<agent-construction.tsx.md#s-df3d782eebcc9884>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@423:47&gt;](<agent-construction.tsx.md#s-85e0e1412f98eb85>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@439:24&gt;](<agent-construction.tsx.md#s-bdb25e335bfe58e0>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@445:24&gt;](<agent-construction.tsx.md#s-1e366f1304303ba8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@459:27&gt;](<agent-construction.tsx.md#s-885dff9db1bd2aa8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@459:27&gt;.&lt;anonymous@460:33&gt;](<agent-construction.tsx.md#s-bd48a171d44427d4>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@476:24&gt;](<agent-construction.tsx.md#s-142d60f1e7431fa9>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@482:24&gt;](<agent-construction.tsx.md#s-6c196e059c0536a3>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@482:24&gt;.&lt;anonymous@484:31&gt;](<agent-construction.tsx.md#s-da49fe059a1dac0a>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@501:27&gt;](<agent-construction.tsx.md#s-59fa429aacc2b167>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@501:27&gt;.&lt;anonymous@502:33&gt;](<agent-construction.tsx.md#s-b47d6a297ce40359>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@515:27&gt;](<agent-construction.tsx.md#s-7c633f93c0e1e047>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@515:27&gt;.&lt;anonymous@516:33&gt;](<agent-construction.tsx.md#s-c8cd68b3c981f57c>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@524:39&gt;](<agent-construction.tsx.md#s-3f11db69ac8b8780>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@583:40&gt;](<agent-construction.tsx.md#s-af8aef21bf4e0492>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@585:30&gt;](<agent-construction.tsx.md#s-0b71d3ddd64687eb>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@594:39&gt;](<agent-construction.tsx.md#s-75ebc86db75bcd86>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@596:26&gt;](<agent-construction.tsx.md#s-b27051dc001aab92>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@602:41&gt;](<agent-construction.tsx.md#s-eb1345bd27025edb>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@640:30&gt;](<agent-construction.tsx.md#s-1fdcfab9f6160ca8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@646:31&gt;](<agent-construction.tsx.md#s-5125f21ed7e22bb8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@647:27&gt;](<agent-construction.tsx.md#s-6d9b134288316f5f>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@673:39&gt;](<agent-construction.tsx.md#s-a3f8e473fd3c4dba>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@673:39&gt;.&lt;anonymous@674:54&gt;](<agent-construction.tsx.md#s-1f1633387dfc2003>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@673:39&gt;.&lt;anonymous@675:48&gt;](<agent-construction.tsx.md#s-5b881129f0e3f1f9>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@686:24&gt;](<agent-construction.tsx.md#s-04246319649a6be6>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@686:24&gt;.&lt;anonymous@688:27&gt;](<agent-construction.tsx.md#s-4a455bad63d105c7>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@707:32&gt;](<agent-construction.tsx.md#s-5fdd85ddd2ca0f2e>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@708:38&gt;](<agent-construction.tsx.md#s-d2a4d327fc8079af>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@709:38&gt;](<agent-construction.tsx.md#s-f71638776ffc6bf8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@719:36&gt;](<agent-construction.tsx.md#s-fe6956e6ea209367>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@725:40&gt;](<agent-construction.tsx.md#s-0343e11c0f6fde9f>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;](<agent-construction.tsx.md#s-92558eff9b9261e1>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;.&lt;anonymous@752:56&gt;](<agent-construction.tsx.md#s-5bfcf07fe8e26f3e>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;.&lt;anonymous@754:31&gt;](<agent-construction.tsx.md#s-f6b7c1f1e9ee562a>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@775:35&gt;](<agent-construction.tsx.md#s-33a12af6f1985399>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@806:42&gt;](<agent-construction.tsx.md#s-1d4b3d9cc383d0f0>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@810:36&gt;](<agent-construction.tsx.md#s-77f888afeca56ae3>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@821:42&gt;](<agent-construction.tsx.md#s-5ee0d1ec6b299c21>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@828:42&gt;](<agent-construction.tsx.md#s-3801549a88d100aa>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@832:40&gt;](<agent-construction.tsx.md#s-e1321e3ec2cc2056>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@844:36&gt;](<agent-construction.tsx.md#s-1d7e1f1aaf980fb5>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@908:35&gt;](<agent-construction.tsx.md#s-cbcab045f9d642e9>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@925:31&gt;](<agent-construction.tsx.md#s-e25fbd5316f6b2dd>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@937:27&gt;](<agent-construction.tsx.md#s-f1f57f792bb599d3>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@937:27&gt;.&lt;anonymous@941:31&gt;](<agent-construction.tsx.md#s-e5f04d8579edd23d>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@937:27&gt;.&lt;anonymous@941:31&gt;.&lt;anonymous@944:35&gt;](<agent-construction.tsx.md#s-9757d803120b6261>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@960:31&gt;](<agent-construction.tsx.md#s-abe1f9518e8f36b4>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@971:25&gt;](<agent-construction.tsx.md#s-f7c1b61d8f69880a>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@990:35&gt;](<agent-construction.tsx.md#s-85320385fb26ed43>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1009:33&gt;](<agent-construction.tsx.md#s-742cb311ae521cb0>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1031:33&gt;](<agent-construction.tsx.md#s-932fc4bf54751d80>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1031:33&gt;.&lt;anonymous@1033:27&gt;](<agent-construction.tsx.md#s-add004a82f92fa5b>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1047:50&gt;](<agent-construction.tsx.md#s-580ceb277bef7ece>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1065:33&gt;](<agent-construction.tsx.md#s-7098dc5263e10cde>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1074:52&gt;](<agent-construction.tsx.md#s-37018c18b42798ed>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1085:21&gt;](<agent-construction.tsx.md#s-65107e29e2ab749e>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1087:24&gt;](<agent-construction.tsx.md#s-e73d0ec6afa5f28b>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;](<agent-construction.tsx.md#s-aa3d90af31174823>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;.&lt;anonymous@1093:54&gt;](<agent-construction.tsx.md#s-24a0adf10b4de7c2>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1102:28&gt;](<agent-construction.tsx.md#s-f4aea5cc7fd9f5d0>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1102:28&gt;.&lt;anonymous@1104:50&gt;](<agent-construction.tsx.md#s-758be9b2c5ddaae8>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1102:28&gt;.&lt;anonymous@1106:25&gt;](<agent-construction.tsx.md#s-ffd02b21e1461d00>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1114:34&gt;](<agent-construction.tsx.md#s-33540f35f3fa3d16>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1127:31&gt;](<agent-construction.tsx.md#s-15b6f59ee2261a62>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1137:31&gt;](<agent-construction.tsx.md#s-2bd6c79f63b15109>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1159:34&gt;](<agent-construction.tsx.md#s-565ab45227ccac7d>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1161:35&gt;](<agent-construction.tsx.md#s-ed3a1cc54de966e3>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1182:22&gt;](<agent-construction.tsx.md#s-237ad5aa69daac19>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1226:22&gt;](<agent-construction.tsx.md#s-e71657e5b1bb2174>) (ArrowFunction)
-- [AgentConstruction.&lt;anonymous@1230:47&gt;](<agent-construction.tsx.md#s-92a20b43b70df0da>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@104:20&gt;](<agent-construction.tsx.md#s-0205cf9b6ebdac9f>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@107:15&gt;](<agent-construction.tsx.md#s-1b956bdd2b3ac8a9>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@107:15&gt;.&lt;anonymous@110:35&gt;](<agent-construction.tsx.md#s-2b2f36e1f6ba4ebc>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@113:18&gt;](<agent-construction.tsx.md#s-b3cf7d7836caa922>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@113:18&gt;.&lt;anonymous@118:44&gt;](<agent-construction.tsx.md#s-d583f824a1ae74b0>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@124:16&gt;](<agent-construction.tsx.md#s-12b33ad4391f77e3>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@127:12&gt;](<agent-construction.tsx.md#s-0194fd9cd6e078d1>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@135:13&gt;](<agent-construction.tsx.md#s-8957267e4d0908ed>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@135:13&gt;.fit](<agent-construction.tsx.md#s-4f36fe41693cab9e>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@135:13&gt;.&lt;anonymous@145:12&gt;](<agent-construction.tsx.md#s-7d5be4cf4138895c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@167:19&gt;](<agent-construction.tsx.md#s-594a2e5f941e4fe7>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@170:13&gt;](<agent-construction.tsx.md#s-3dfcec4025fc0b58>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@170:13&gt;.&lt;anonymous@170:19&gt;](<agent-construction.tsx.md#s-353675abd87f5399>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@171:19&gt;](<agent-construction.tsx.md#s-157e87bff048f5b2>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@179:34&gt;](<agent-construction.tsx.md#s-9e471149530cdbf5>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@181:5&gt;](<agent-construction.tsx.md#s-bc45a3baa717e607>) (ArrowFunction)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) (ArrowFunction)
+- [AgentConstruction.update.&lt;anonymous@185:15&gt;](<agent-construction.tsx.md#s-4ce6c6c020685a49>) (ArrowFunction)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) (ArrowFunction)
+- [AgentConstruction.updateNode.&lt;anonymous@190:15&gt;](<agent-construction.tsx.md#s-c480c2e518b73215>) (ArrowFunction)
+- [AgentConstruction.updateNode.&lt;anonymous@190:15&gt;.&lt;anonymous@194:38&gt;](<agent-construction.tsx.md#s-4d925cc4cf340a95>) (ArrowFunction)
+- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-3a0d69325767ceb6>) (ArrowFunction)
+- [AgentConstruction.move](<agent-construction.tsx.md#s-c4990ec8bf644aef>) (ArrowFunction)
+- [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>) (ArrowFunction)
+- [AgentConstruction.connect.&lt;anonymous@215:38&gt;](<agent-construction.tsx.md#s-c3321ce7479290b7>) (ArrowFunction)
+- [AgentConstruction.connect.&lt;anonymous@216:34&gt;](<agent-construction.tsx.md#s-e4790e1ad5764337>) (ArrowFunction)
+- [AgentConstruction.connect.&lt;anonymous@231:27&gt;](<agent-construction.tsx.md#s-b0b4f0333f946930>) (ArrowFunction)
+- [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@242:48&gt;](<agent-construction.tsx.md#s-866da2bf7c4a7bd6>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@251:7&gt;](<agent-construction.tsx.md#s-5987ca02075f1c26>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@276:16&gt;](<agent-construction.tsx.md#s-8a9cf7af3de7c72c>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@276:16&gt;.&lt;anonymous@276:47&gt;](<agent-construction.tsx.md#s-2a2b9ba580ace255>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@277:13&gt;](<agent-construction.tsx.md#s-38da8ede445f85a3>) (ArrowFunction)
+- [AgentConstruction.add.&lt;anonymous@277:13&gt;.&lt;anonymous@279:11&gt;](<agent-construction.tsx.md#s-b5d2c31285f25d10>) (ArrowFunction)
+- [AgentConstruction.save](<agent-construction.tsx.md#s-e2505ac0e017667c>) (ArrowFunction)
+- [AgentConstruction.startDrag](<agent-construction.tsx.md#s-a952783bfe62a082>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@358:42&gt;](<agent-construction.tsx.md#s-9a388f6dd28225e0>) (ArrowFunction)
+- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-52dae90416ac535c>) (ArrowFunction)
+- [AgentConstruction.chooseBackdrop.&lt;anonymous@371:25&gt;](<agent-construction.tsx.md#s-18ea6c33c6dfa9a9>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@411:23&gt;](<agent-construction.tsx.md#s-dacf49dc2653a900>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@421:23&gt;](<agent-construction.tsx.md#s-0cc7664e96043a6d>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@427:22&gt;](<agent-construction.tsx.md#s-6b59c0c786f28f7c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@443:47&gt;](<agent-construction.tsx.md#s-76d4726b8dbfac00>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@459:24&gt;](<agent-construction.tsx.md#s-bc9e90cb32894b37>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@465:24&gt;](<agent-construction.tsx.md#s-8ad4f32275b7a1c2>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@479:27&gt;](<agent-construction.tsx.md#s-cdd8b9aabb0a18c7>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@479:27&gt;.&lt;anonymous@480:33&gt;](<agent-construction.tsx.md#s-87b864a7f1d98c0c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@496:24&gt;](<agent-construction.tsx.md#s-1e93b321d3b30ddc>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@502:24&gt;](<agent-construction.tsx.md#s-daac0c86e02cffb3>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@502:24&gt;.&lt;anonymous@504:31&gt;](<agent-construction.tsx.md#s-9f25518abc94be88>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@521:27&gt;](<agent-construction.tsx.md#s-2d5627f3c5007be8>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@521:27&gt;.&lt;anonymous@522:33&gt;](<agent-construction.tsx.md#s-3d3c7e3d5c1b6cc0>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@535:27&gt;](<agent-construction.tsx.md#s-4f0ed3c217214f5c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@535:27&gt;.&lt;anonymous@536:33&gt;](<agent-construction.tsx.md#s-9a9b6787dc1f3e7d>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@544:39&gt;](<agent-construction.tsx.md#s-eca646042b2b8de2>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@603:40&gt;](<agent-construction.tsx.md#s-0d7b23db6c4c10dd>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@605:30&gt;](<agent-construction.tsx.md#s-29cd240fd535d6ac>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@614:39&gt;](<agent-construction.tsx.md#s-c3bb1660897fbb88>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@616:26&gt;](<agent-construction.tsx.md#s-1cb58b2b114b69e5>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@622:41&gt;](<agent-construction.tsx.md#s-41f7468f916cc692>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@660:30&gt;](<agent-construction.tsx.md#s-62f1cab70d1606d1>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@666:31&gt;](<agent-construction.tsx.md#s-163517908749351b>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@667:27&gt;](<agent-construction.tsx.md#s-c062a40e04843739>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@693:39&gt;](<agent-construction.tsx.md#s-8f4f3c96cb7d6230>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@693:39&gt;.&lt;anonymous@694:54&gt;](<agent-construction.tsx.md#s-f0cc0099ceae895c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@693:39&gt;.&lt;anonymous@695:48&gt;](<agent-construction.tsx.md#s-477cae7f126aa3b8>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@706:24&gt;](<agent-construction.tsx.md#s-7de5c08d27b0aa42>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@706:24&gt;.&lt;anonymous@708:27&gt;](<agent-construction.tsx.md#s-913744f0b0a1f712>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@727:32&gt;](<agent-construction.tsx.md#s-dd01860408f15f27>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@728:38&gt;](<agent-construction.tsx.md#s-915de90a5a02de66>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@729:38&gt;](<agent-construction.tsx.md#s-afdb60d3de98823a>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@739:36&gt;](<agent-construction.tsx.md#s-143385f9cab74139>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@745:40&gt;](<agent-construction.tsx.md#s-fda244c065d004d6>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;](<agent-construction.tsx.md#s-d54e1e1c84fb8c73>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;.&lt;anonymous@772:56&gt;](<agent-construction.tsx.md#s-bb0b209252889792>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;.&lt;anonymous@774:31&gt;](<agent-construction.tsx.md#s-a12caa090ea5ba5e>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@795:35&gt;](<agent-construction.tsx.md#s-5096fb37ddee1a5b>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@826:42&gt;](<agent-construction.tsx.md#s-ba83d3a1dff8250a>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@830:36&gt;](<agent-construction.tsx.md#s-1039a1b92ee3e984>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@841:42&gt;](<agent-construction.tsx.md#s-33405200b3410c93>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@848:42&gt;](<agent-construction.tsx.md#s-03ad0b910ce9a1b6>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@852:40&gt;](<agent-construction.tsx.md#s-94d5d12264bbcc40>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@864:36&gt;](<agent-construction.tsx.md#s-dab603e4b578bc33>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@928:35&gt;](<agent-construction.tsx.md#s-65ec92bc7c8be8c7>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@945:31&gt;](<agent-construction.tsx.md#s-15f0ac4307ebe379>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@957:27&gt;](<agent-construction.tsx.md#s-4e99fbe46b36ba84>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@957:27&gt;.&lt;anonymous@961:31&gt;](<agent-construction.tsx.md#s-37cbcd5a9591fd4c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@957:27&gt;.&lt;anonymous@961:31&gt;.&lt;anonymous@964:35&gt;](<agent-construction.tsx.md#s-d4876815616f5fa1>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@980:31&gt;](<agent-construction.tsx.md#s-858a08fa41498201>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@991:25&gt;](<agent-construction.tsx.md#s-d09d6e6187f12b16>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1010:35&gt;](<agent-construction.tsx.md#s-9b5d1f8e29fd6b90>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1029:33&gt;](<agent-construction.tsx.md#s-b55375f991accbda>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1051:33&gt;](<agent-construction.tsx.md#s-f75dbf83112815d4>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1051:33&gt;.&lt;anonymous@1053:27&gt;](<agent-construction.tsx.md#s-ed939805668bf75c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1067:50&gt;](<agent-construction.tsx.md#s-22cd5a52c84baa8f>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1085:33&gt;](<agent-construction.tsx.md#s-70a853c6b6d2d3e1>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1094:52&gt;](<agent-construction.tsx.md#s-9bde246f99deeaf0>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1105:21&gt;](<agent-construction.tsx.md#s-85719e761e4439ef>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1107:24&gt;](<agent-construction.tsx.md#s-54aee8ef3800c780>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;](<agent-construction.tsx.md#s-95560aef7fa7beea>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;.&lt;anonymous@1113:54&gt;](<agent-construction.tsx.md#s-76ec4bf45e9975ef>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1122:28&gt;](<agent-construction.tsx.md#s-2a7908d587b19c4a>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1122:28&gt;.&lt;anonymous@1124:50&gt;](<agent-construction.tsx.md#s-e6fa4e131dd83511>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1122:28&gt;.&lt;anonymous@1126:25&gt;](<agent-construction.tsx.md#s-2782e815e828227f>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1134:34&gt;](<agent-construction.tsx.md#s-746f4deb91148436>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1147:31&gt;](<agent-construction.tsx.md#s-20133fe07b5ff09b>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1157:31&gt;](<agent-construction.tsx.md#s-62629a1eeca1222c>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1179:34&gt;](<agent-construction.tsx.md#s-6e4e80463cf82531>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1181:35&gt;](<agent-construction.tsx.md#s-3c2969068194a4a6>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1202:22&gt;](<agent-construction.tsx.md#s-64fead108bc3d247>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1246:22&gt;](<agent-construction.tsx.md#s-0def2a6bd4a60464>) (ArrowFunction)
+- [AgentConstruction.&lt;anonymous@1250:47&gt;](<agent-construction.tsx.md#s-eb2d43c316cb9082>) (ArrowFunction)
 
 <a id="s-fce3967ddc03ecbc"></a>
 
@@ -169,8 +174,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [wallpaperStyle](<../chat/chat-presentation.ts.md#s-f651f5a4d6934160>) — [features/agents/agent-construction.tsx:536](<../../../../../../features/agents/agent-construction.tsx#L536>)
-- [AgentConstruction.&lt;anonymous@686:24&gt;](<agent-construction.tsx.md#s-04246319649a6be6>) — [features/agents/agent-construction.tsx:686](<../../../../../../features/agents/agent-construction.tsx#L686>)
+- [wallpaperStyle](<../chat/chat-presentation.ts.md#s-f651f5a4d6934160>) — [features/agents/agent-construction.tsx:556](<../../../../../../features/agents/agent-construction.tsx#L556>)
+- [AgentConstruction.&lt;anonymous@706:24&gt;](<agent-construction.tsx.md#s-7de5c08d27b0aa42>) — [features/agents/agent-construction.tsx:706](<../../../../../../features/agents/agent-construction.tsx#L706>)
 
 **Called by (statically resolved):**
 
@@ -286,7 +291,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- api .engineDefinitions() .then((definitions) =&gt; { if (alive) setEngineDefinitions(definitions); }) .catch — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:99](<../../../../../../features/agents/agent-construction.tsx#L99>)
+- api .engineDefinitions() .then(async (definitions) =&gt; { const catalog = await api .enginePackageCatalog() .catch(() =&gt; ({ engines: &#91;&#93; })); const external = catalog.engines .filter( — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:99](<../../../../../../features/agents/agent-construction.tsx#L99>)
 - api .engineDefinitions() .then — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:99](<../../../../../../features/agents/agent-construction.tsx#L99>)
 - api .engineDefinitions — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:99](<../../../../../../features/agents/agent-construction.tsx#L99>)
 
@@ -310,7 +315,78 @@ Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;](<agent-construction.t
 | --- | --- | --- | --- |
 | definitions | any | compiler-inferred | required |
 
-Returns: void (compiler-inferred). Implementation present.
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 5.
+
+- api .enginePackageCatalog() .catch — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:102](<../../../../../../features/agents/agent-construction.tsx#L102>)
+- api .enginePackageCatalog — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:102](<../../../../../../features/agents/agent-construction.tsx#L102>)
+- catalog.engines .filter( (pkg) =&gt; pkg.trusted && !pkg.disabled && !definitions.some((item) =&gt; item.id === pkg.engineId) && pkg.sources.length, ) .map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:105](<../../../../../../features/agents/agent-construction.tsx#L105>)
+- catalog.engines .filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:105](<../../../../../../features/agents/agent-construction.tsx#L105>)
+- setEngineDefinitions — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:122](<../../../../../../features/agents/agent-construction.tsx#L122>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-0205cf9b6ebdac9f"></a>
+
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@104:20&gt;
+
+[features/agents/agent-construction.tsx:104](<../../../../../../features/agents/agent-construction.tsx#L104>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;](<agent-construction.tsx.md#s-98d1983905d563c8>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: { engines: {}; } (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-1b956bdd2b3ac8a9"></a>
+
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@107:15&gt;
+
+[features/agents/agent-construction.tsx:107](<../../../../../../features/agents/agent-construction.tsx#L107>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;](<agent-construction.tsx.md#s-98d1983905d563c8>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| pkg | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
@@ -322,17 +398,118 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setEngineDefinitions — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:102](<../../../../../../features/agents/agent-construction.tsx#L102>)
+- definitions.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:110](<../../../../../../features/agents/agent-construction.tsx#L110>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-df8aed73515b1bd7"></a>
+<a id="s-2b2f36e1f6ba4ebc"></a>
 
-## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@104:16&gt;
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@107:15&gt;.&lt;anonymous@110:35&gt;
 
-[features/agents/agent-construction.tsx:104](<../../../../../../features/agents/agent-construction.tsx#L104>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:110](<../../../../../../features/agents/agent-construction.tsx#L110>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@107:15&gt;](<agent-construction.tsx.md#s-1b956bdd2b3ac8a9>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| item | any | compiler-inferred | required |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-b3cf7d7836caa922"></a>
+
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@113:18&gt;
+
+[features/agents/agent-construction.tsx:113](<../../../../../../features/agents/agent-construction.tsx#L113>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;](<agent-construction.tsx.md#s-98d1983905d563c8>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| pkg | any | compiler-inferred | required |
+
+Returns: { id: any; name: any; version: any; operations: {}; packageDigest: any; } (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 2.
+
+- Set — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:118](<../../../../../../features/agents/agent-construction.tsx#L118>)
+- pkg.sources.map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:118](<../../../../../../features/agents/agent-construction.tsx#L118>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-d583f824a1ae74b0"></a>
+
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@113:18&gt;.&lt;anonymous@118:44&gt;
+
+[features/agents/agent-construction.tsx:118](<../../../../../../features/agents/agent-construction.tsx#L118>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@101:15&gt;.&lt;anonymous@113:18&gt;](<agent-construction.tsx.md#s-b3cf7d7836caa922>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| source | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-12b33ad4391f77e3"></a>
+
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@124:16&gt;
+
+[features/agents/agent-construction.tsx:124](<../../../../../../features/agents/agent-construction.tsx#L124>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -356,17 +533,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:105](<../../../../../../features/agents/agent-construction.tsx#L105>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:125](<../../../../../../features/agents/agent-construction.tsx#L125>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b8549c7d7abd1230"></a>
+<a id="s-0194fd9cd6e078d1"></a>
 
-## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@107:12&gt;
+## AgentConstruction.&lt;anonymous@95:13&gt;.&lt;anonymous@127:12&gt;
 
-[features/agents/agent-construction.tsx:107](<../../../../../../features/agents/agent-construction.tsx#L107>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:127](<../../../../../../features/agents/agent-construction.tsx#L127>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -395,11 +572,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-32093d58e5492198"></a>
+<a id="s-8957267e4d0908ed"></a>
 
-## AgentConstruction.&lt;anonymous@115:13&gt;
+## AgentConstruction.&lt;anonymous@135:13&gt;
 
-[features/agents/agent-construction.tsx:115](<../../../../../../features/agents/agent-construction.tsx#L115>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:135](<../../../../../../features/agents/agent-construction.tsx#L135>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -415,7 +592,7 @@ Returns: () =&gt; any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@115:13&gt;.fit](<agent-construction.tsx.md#s-d3704e26e79f9e87>) — [features/agents/agent-construction.tsx:122](<../../../../../../features/agents/agent-construction.tsx#L122>)
+- [AgentConstruction.&lt;anonymous@135:13&gt;.fit](<agent-construction.tsx.md#s-4f36fe41693cab9e>) — [features/agents/agent-construction.tsx:142](<../../../../../../features/agents/agent-construction.tsx#L142>)
 
 **Called by (statically resolved):**
 
@@ -423,24 +600,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- ResizeObserver — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:123](<../../../../../../features/agents/agent-construction.tsx#L123>)
-- observer.observe — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:124](<../../../../../../features/agents/agent-construction.tsx#L124>)
+- ResizeObserver — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:143](<../../../../../../features/agents/agent-construction.tsx#L143>)
+- observer.observe — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:144](<../../../../../../features/agents/agent-construction.tsx#L144>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d3704e26e79f9e87"></a>
+<a id="s-4f36fe41693cab9e"></a>
 
-## AgentConstruction.&lt;anonymous@115:13&gt;.fit
+## AgentConstruction.&lt;anonymous@135:13&gt;.fit
 
-[features/agents/agent-construction.tsx:118](<../../../../../../features/agents/agent-construction.tsx#L118>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:138](<../../../../../../features/agents/agent-construction.tsx#L138>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@115:13&gt;](<agent-construction.tsx.md#s-32093d58e5492198>).
+Lexical owner: [AgentConstruction.&lt;anonymous@135:13&gt;](<agent-construction.tsx.md#s-8957267e4d0908ed>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -454,29 +631,29 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@115:13&gt;](<agent-construction.tsx.md#s-32093d58e5492198>) — [features/agents/agent-construction.tsx:122](<../../../../../../features/agents/agent-construction.tsx#L122>)
+- [AgentConstruction.&lt;anonymous@135:13&gt;](<agent-construction.tsx.md#s-8957267e4d0908ed>) — [features/agents/agent-construction.tsx:142](<../../../../../../features/agents/agent-construction.tsx#L142>)
 
 Unresolved / external call sites: 3.
 
-- setCanvasScale — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:119](<../../../../../../features/agents/agent-construction.tsx#L119>)
-- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:120](<../../../../../../features/agents/agent-construction.tsx#L120>)
-- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:120](<../../../../../../features/agents/agent-construction.tsx#L120>)
+- setCanvasScale — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:139](<../../../../../../features/agents/agent-construction.tsx#L139>)
+- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:140](<../../../../../../features/agents/agent-construction.tsx#L140>)
+- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:140](<../../../../../../features/agents/agent-construction.tsx#L140>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ae0d76a7e28ec9e6"></a>
+<a id="s-7d5be4cf4138895c"></a>
 
-## AgentConstruction.&lt;anonymous@115:13&gt;.&lt;anonymous@125:12&gt;
+## AgentConstruction.&lt;anonymous@135:13&gt;.&lt;anonymous@145:12&gt;
 
-[features/agents/agent-construction.tsx:125](<../../../../../../features/agents/agent-construction.tsx#L125>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:145](<../../../../../../features/agents/agent-construction.tsx#L145>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@115:13&gt;](<agent-construction.tsx.md#s-32093d58e5492198>).
+Lexical owner: [AgentConstruction.&lt;anonymous@135:13&gt;](<agent-construction.tsx.md#s-8957267e4d0908ed>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -494,17 +671,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- observer.disconnect — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:125](<../../../../../../features/agents/agent-construction.tsx#L125>)
+- observer.disconnect — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:145](<../../../../../../features/agents/agent-construction.tsx#L145>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-497e75f00fa027e5"></a>
+<a id="s-594a2e5f941e4fe7"></a>
 
-## AgentConstruction.&lt;anonymous@147:19&gt;
+## AgentConstruction.&lt;anonymous@167:19&gt;
 
-[features/agents/agent-construction.tsx:147](<../../../../../../features/agents/agent-construction.tsx#L147>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:167](<../../../../../../features/agents/agent-construction.tsx#L167>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -528,17 +705,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- onDirtyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:148](<../../../../../../features/agents/agent-construction.tsx#L148>)
+- onDirtyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:168](<../../../../../../features/agents/agent-construction.tsx#L168>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8650f68769936449"></a>
+<a id="s-3dfcec4025fc0b58"></a>
 
-## AgentConstruction.&lt;anonymous@150:13&gt;
+## AgentConstruction.&lt;anonymous@170:13&gt;
 
-[features/agents/agent-construction.tsx:150](<../../../../../../features/agents/agent-construction.tsx#L150>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:170](<../../../../../../features/agents/agent-construction.tsx#L170>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -567,17 +744,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1bf35dc8d15120cf"></a>
+<a id="s-353675abd87f5399"></a>
 
-## AgentConstruction.&lt;anonymous@150:13&gt;.&lt;anonymous@150:19&gt;
+## AgentConstruction.&lt;anonymous@170:13&gt;.&lt;anonymous@170:19&gt;
 
-[features/agents/agent-construction.tsx:150](<../../../../../../features/agents/agent-construction.tsx#L150>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:170](<../../../../../../features/agents/agent-construction.tsx#L170>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@150:13&gt;](<agent-construction.tsx.md#s-8650f68769936449>).
+Lexical owner: [AgentConstruction.&lt;anonymous@170:13&gt;](<agent-construction.tsx.md#s-3dfcec4025fc0b58>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -595,17 +772,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- onDirtyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:150](<../../../../../../features/agents/agent-construction.tsx#L150>)
+- onDirtyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:170](<../../../../../../features/agents/agent-construction.tsx#L170>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f334d6ddf8ddcdf3"></a>
+<a id="s-157e87bff048f5b2"></a>
 
-## AgentConstruction.&lt;anonymous@151:19&gt;
+## AgentConstruction.&lt;anonymous@171:19&gt;
 
-[features/agents/agent-construction.tsx:151](<../../../../../../features/agents/agent-construction.tsx#L151>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:171](<../../../../../../features/agents/agent-construction.tsx#L171>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -629,17 +806,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- onBusyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:152](<../../../../../../features/agents/agent-construction.tsx#L152>)
+- onBusyChange — declaration-without-runtime-body; [features/agents/agent-construction.tsx:172](<../../../../../../features/agents/agent-construction.tsx#L172>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-834452718d4171ff"></a>
+<a id="s-9e471149530cdbf5"></a>
 
-## AgentConstruction.&lt;anonymous@159:34&gt;
+## AgentConstruction.&lt;anonymous@179:34&gt;
 
-[features/agents/agent-construction.tsx:159](<../../../../../../features/agents/agent-construction.tsx#L159>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:179](<../../../../../../features/agents/agent-construction.tsx#L179>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -668,11 +845,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5a55028fbf5db33b"></a>
+<a id="s-bc45a3baa717e607"></a>
 
-## AgentConstruction.&lt;anonymous@161:5&gt;
+## AgentConstruction.&lt;anonymous@181:5&gt;
 
-[features/agents/agent-construction.tsx:161](<../../../../../../features/agents/agent-construction.tsx#L161>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:181](<../../../../../../features/agents/agent-construction.tsx#L181>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -701,11 +878,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c465a95fb9af26c3"></a>
+<a id="s-dc71e91853f2cb6a"></a>
 
 ## AgentConstruction.update
 
-[features/agents/agent-construction.tsx:164](<../../../../../../features/agents/agent-construction.tsx#L164>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:184](<../../../../../../features/agents/agent-construction.tsx#L184>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -725,35 +902,35 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>) — [features/agents/agent-construction.tsx:215](<../../../../../../features/agents/agent-construction.tsx#L215>)
-- [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>) — [features/agents/agent-construction.tsx:265](<../../../../../../features/agents/agent-construction.tsx#L265>)
-- [AgentConstruction.&lt;anonymous@391:23&gt;](<agent-construction.tsx.md#s-c4e961a2f68fa36d>) — [features/agents/agent-construction.tsx:391](<../../../../../../features/agents/agent-construction.tsx#L391>)
-- [AgentConstruction.&lt;anonymous@401:23&gt;](<agent-construction.tsx.md#s-04300e176e2a6839>) — [features/agents/agent-construction.tsx:401](<../../../../../../features/agents/agent-construction.tsx#L401>)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;](<agent-construction.tsx.md#s-92558eff9b9261e1>) — [features/agents/agent-construction.tsx:751](<../../../../../../features/agents/agent-construction.tsx#L751>)
-- [AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;](<agent-construction.tsx.md#s-aa3d90af31174823>) — [features/agents/agent-construction.tsx:1092](<../../../../../../features/agents/agent-construction.tsx#L1092>)
-- [AgentConstruction.&lt;anonymous@1102:28&gt;](<agent-construction.tsx.md#s-f4aea5cc7fd9f5d0>) — [features/agents/agent-construction.tsx:1103](<../../../../../../features/agents/agent-construction.tsx#L1103>)
-- [AgentConstruction.&lt;anonymous@1127:31&gt;](<agent-construction.tsx.md#s-15b6f59ee2261a62>) — [features/agents/agent-construction.tsx:1127](<../../../../../../features/agents/agent-construction.tsx#L1127>)
-- [AgentConstruction.&lt;anonymous@1137:31&gt;](<agent-construction.tsx.md#s-2bd6c79f63b15109>) — [features/agents/agent-construction.tsx:1137](<../../../../../../features/agents/agent-construction.tsx#L1137>)
+- [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>) — [features/agents/agent-construction.tsx:235](<../../../../../../features/agents/agent-construction.tsx#L235>)
+- [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>) — [features/agents/agent-construction.tsx:285](<../../../../../../features/agents/agent-construction.tsx#L285>)
+- [AgentConstruction.&lt;anonymous@411:23&gt;](<agent-construction.tsx.md#s-dacf49dc2653a900>) — [features/agents/agent-construction.tsx:411](<../../../../../../features/agents/agent-construction.tsx#L411>)
+- [AgentConstruction.&lt;anonymous@421:23&gt;](<agent-construction.tsx.md#s-0cc7664e96043a6d>) — [features/agents/agent-construction.tsx:421](<../../../../../../features/agents/agent-construction.tsx#L421>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;](<agent-construction.tsx.md#s-d54e1e1c84fb8c73>) — [features/agents/agent-construction.tsx:771](<../../../../../../features/agents/agent-construction.tsx#L771>)
+- [AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;](<agent-construction.tsx.md#s-95560aef7fa7beea>) — [features/agents/agent-construction.tsx:1112](<../../../../../../features/agents/agent-construction.tsx#L1112>)
+- [AgentConstruction.&lt;anonymous@1122:28&gt;](<agent-construction.tsx.md#s-2a7908d587b19c4a>) — [features/agents/agent-construction.tsx:1123](<../../../../../../features/agents/agent-construction.tsx#L1123>)
+- [AgentConstruction.&lt;anonymous@1147:31&gt;](<agent-construction.tsx.md#s-20133fe07b5ff09b>) — [features/agents/agent-construction.tsx:1147](<../../../../../../features/agents/agent-construction.tsx#L1147>)
+- [AgentConstruction.&lt;anonymous@1157:31&gt;](<agent-construction.tsx.md#s-62629a1eeca1222c>) — [features/agents/agent-construction.tsx:1157](<../../../../../../features/agents/agent-construction.tsx#L1157>)
 
 Unresolved / external call sites: 1.
 
-- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:165](<../../../../../../features/agents/agent-construction.tsx#L165>)
+- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:185](<../../../../../../features/agents/agent-construction.tsx#L185>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2b3d4493db3169a8"></a>
+<a id="s-4ce6c6c020685a49"></a>
 
-## AgentConstruction.update.&lt;anonymous@165:15&gt;
+## AgentConstruction.update.&lt;anonymous@185:15&gt;
 
-[features/agents/agent-construction.tsx:165](<../../../../../../features/agents/agent-construction.tsx#L165>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:185](<../../../../../../features/agents/agent-construction.tsx#L185>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>).
+Lexical owner: [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -776,11 +953,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1512df2571097f36"></a>
+<a id="s-aa294a80ab806a0d"></a>
 
 ## AgentConstruction.updateNode
 
-[features/agents/agent-construction.tsx:166](<../../../../../../features/agents/agent-construction.tsx#L166>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:186](<../../../../../../features/agents/agent-construction.tsx#L186>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -801,34 +978,34 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.move](<agent-construction.tsx.md#s-df4871005f8d5c62>) — [features/agents/agent-construction.tsx:188](<../../../../../../features/agents/agent-construction.tsx#L188>)
-- [AgentConstruction.&lt;anonymous@908:35&gt;](<agent-construction.tsx.md#s-cbcab045f9d642e9>) — [features/agents/agent-construction.tsx:909](<../../../../../../features/agents/agent-construction.tsx#L909>)
-- [AgentConstruction.&lt;anonymous@925:31&gt;](<agent-construction.tsx.md#s-e25fbd5316f6b2dd>) — [features/agents/agent-construction.tsx:925](<../../../../../../features/agents/agent-construction.tsx#L925>)
-- [AgentConstruction.&lt;anonymous@960:31&gt;](<agent-construction.tsx.md#s-abe1f9518e8f36b4>) — [features/agents/agent-construction.tsx:960](<../../../../../../features/agents/agent-construction.tsx#L960>)
-- [AgentConstruction.&lt;anonymous@990:35&gt;](<agent-construction.tsx.md#s-85320385fb26ed43>) — [features/agents/agent-construction.tsx:991](<../../../../../../features/agents/agent-construction.tsx#L991>)
-- [AgentConstruction.&lt;anonymous@1009:33&gt;](<agent-construction.tsx.md#s-742cb311ae521cb0>) — [features/agents/agent-construction.tsx:1010](<../../../../../../features/agents/agent-construction.tsx#L1010>)
-- [AgentConstruction.&lt;anonymous@1031:33&gt;](<agent-construction.tsx.md#s-932fc4bf54751d80>) — [features/agents/agent-construction.tsx:1036](<../../../../../../features/agents/agent-construction.tsx#L1036>)
-- [AgentConstruction.&lt;anonymous@1065:33&gt;](<agent-construction.tsx.md#s-7098dc5263e10cde>) — [features/agents/agent-construction.tsx:1066](<../../../../../../features/agents/agent-construction.tsx#L1066>)
+- [AgentConstruction.move](<agent-construction.tsx.md#s-c4990ec8bf644aef>) — [features/agents/agent-construction.tsx:208](<../../../../../../features/agents/agent-construction.tsx#L208>)
+- [AgentConstruction.&lt;anonymous@928:35&gt;](<agent-construction.tsx.md#s-65ec92bc7c8be8c7>) — [features/agents/agent-construction.tsx:929](<../../../../../../features/agents/agent-construction.tsx#L929>)
+- [AgentConstruction.&lt;anonymous@945:31&gt;](<agent-construction.tsx.md#s-15f0ac4307ebe379>) — [features/agents/agent-construction.tsx:945](<../../../../../../features/agents/agent-construction.tsx#L945>)
+- [AgentConstruction.&lt;anonymous@980:31&gt;](<agent-construction.tsx.md#s-858a08fa41498201>) — [features/agents/agent-construction.tsx:980](<../../../../../../features/agents/agent-construction.tsx#L980>)
+- [AgentConstruction.&lt;anonymous@1010:35&gt;](<agent-construction.tsx.md#s-9b5d1f8e29fd6b90>) — [features/agents/agent-construction.tsx:1011](<../../../../../../features/agents/agent-construction.tsx#L1011>)
+- [AgentConstruction.&lt;anonymous@1029:33&gt;](<agent-construction.tsx.md#s-b55375f991accbda>) — [features/agents/agent-construction.tsx:1030](<../../../../../../features/agents/agent-construction.tsx#L1030>)
+- [AgentConstruction.&lt;anonymous@1051:33&gt;](<agent-construction.tsx.md#s-f75dbf83112815d4>) — [features/agents/agent-construction.tsx:1056](<../../../../../../features/agents/agent-construction.tsx#L1056>)
+- [AgentConstruction.&lt;anonymous@1085:33&gt;](<agent-construction.tsx.md#s-70a853c6b6d2d3e1>) — [features/agents/agent-construction.tsx:1086](<../../../../../../features/agents/agent-construction.tsx#L1086>)
 
 Unresolved / external call sites: 1.
 
-- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:170](<../../../../../../features/agents/agent-construction.tsx#L170>)
+- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:190](<../../../../../../features/agents/agent-construction.tsx#L190>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-234541c3e86d64b0"></a>
+<a id="s-c480c2e518b73215"></a>
 
-## AgentConstruction.updateNode.&lt;anonymous@170:15&gt;
+## AgentConstruction.updateNode.&lt;anonymous@190:15&gt;
 
-[features/agents/agent-construction.tsx:170](<../../../../../../features/agents/agent-construction.tsx#L170>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:190](<../../../../../../features/agents/agent-construction.tsx#L190>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>).
+Lexical owner: [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -846,23 +1023,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- current.nodes.map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:174](<../../../../../../features/agents/agent-construction.tsx#L174>)
+- current.nodes.map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:194](<../../../../../../features/agents/agent-construction.tsx#L194>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c6b8870052ee2485"></a>
+<a id="s-4d925cc4cf340a95"></a>
 
-## AgentConstruction.updateNode.&lt;anonymous@170:15&gt;.&lt;anonymous@174:38&gt;
+## AgentConstruction.updateNode.&lt;anonymous@190:15&gt;.&lt;anonymous@194:38&gt;
 
-[features/agents/agent-construction.tsx:174](<../../../../../../features/agents/agent-construction.tsx#L174>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:194](<../../../../../../features/agents/agent-construction.tsx#L194>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.updateNode.&lt;anonymous@170:15&gt;](<agent-construction.tsx.md#s-234541c3e86d64b0>).
+Lexical owner: [AgentConstruction.updateNode.&lt;anonymous@190:15&gt;](<agent-construction.tsx.md#s-c480c2e518b73215>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -885,11 +1062,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b4204108b0eaa200"></a>
+<a id="s-3a0d69325767ceb6"></a>
 
 ## AgentConstruction.localPoint
 
-[features/agents/agent-construction.tsx:180](<../../../../../../features/agents/agent-construction.tsx#L180>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:200](<../../../../../../features/agents/agent-construction.tsx#L200>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -910,23 +1087,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@647:27&gt;](<agent-construction.tsx.md#s-6d9b134288316f5f>) — [features/agents/agent-construction.tsx:655](<../../../../../../features/agents/agent-construction.tsx#L655>)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@821:42&gt;](<agent-construction.tsx.md#s-5ee0d1ec6b299c21>) — [features/agents/agent-construction.tsx:826](<../../../../../../features/agents/agent-construction.tsx#L826>)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@828:42&gt;](<agent-construction.tsx.md#s-3801549a88d100aa>) — [features/agents/agent-construction.tsx:830](<../../../../../../features/agents/agent-construction.tsx#L830>)
+- [AgentConstruction.&lt;anonymous@667:27&gt;](<agent-construction.tsx.md#s-c062a40e04843739>) — [features/agents/agent-construction.tsx:675](<../../../../../../features/agents/agent-construction.tsx#L675>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@841:42&gt;](<agent-construction.tsx.md#s-33405200b3410c93>) — [features/agents/agent-construction.tsx:846](<../../../../../../features/agents/agent-construction.tsx#L846>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@848:42&gt;](<agent-construction.tsx.md#s-03ad0b910ce9a1b6>) — [features/agents/agent-construction.tsx:850](<../../../../../../features/agents/agent-construction.tsx#L850>)
 
 Unresolved / external call sites: 1.
 
-- canvas.current!.getBoundingClientRect — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:181](<../../../../../../features/agents/agent-construction.tsx#L181>)
+- canvas.current!.getBoundingClientRect — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:201](<../../../../../../features/agents/agent-construction.tsx#L201>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-df4871005f8d5c62"></a>
+<a id="s-c4990ec8bf644aef"></a>
 
 ## AgentConstruction.move
 
-[features/agents/agent-construction.tsx:187](<../../../../../../features/agents/agent-construction.tsx#L187>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:207](<../../../../../../features/agents/agent-construction.tsx#L207>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -944,31 +1121,31 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:188](<../../../../../../features/agents/agent-construction.tsx#L188>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:208](<../../../../../../features/agents/agent-construction.tsx#L208>)
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@709:38&gt;](<agent-construction.tsx.md#s-f71638776ffc6bf8>) — [features/agents/agent-construction.tsx:711](<../../../../../../features/agents/agent-construction.tsx#L711>)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;](<agent-construction.tsx.md#s-92558eff9b9261e1>) — [features/agents/agent-construction.tsx:733](<../../../../../../features/agents/agent-construction.tsx#L733>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@729:38&gt;](<agent-construction.tsx.md#s-afdb60d3de98823a>) — [features/agents/agent-construction.tsx:731](<../../../../../../features/agents/agent-construction.tsx#L731>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;](<agent-construction.tsx.md#s-d54e1e1c84fb8c73>) — [features/agents/agent-construction.tsx:753](<../../../../../../features/agents/agent-construction.tsx#L753>)
 
 Unresolved / external call sites: 6.
 
-- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:189](<../../../../../../features/agents/agent-construction.tsx#L189>)
-- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:189](<../../../../../../features/agents/agent-construction.tsx#L189>)
-- Math.round — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:189](<../../../../../../features/agents/agent-construction.tsx#L189>)
-- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:190](<../../../../../../features/agents/agent-construction.tsx#L190>)
-- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:190](<../../../../../../features/agents/agent-construction.tsx#L190>)
-- Math.round — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:190](<../../../../../../features/agents/agent-construction.tsx#L190>)
+- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:209](<../../../../../../features/agents/agent-construction.tsx#L209>)
+- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:209](<../../../../../../features/agents/agent-construction.tsx#L209>)
+- Math.round — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:209](<../../../../../../features/agents/agent-construction.tsx#L209>)
+- Math.max — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:210](<../../../../../../features/agents/agent-construction.tsx#L210>)
+- Math.min — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:210](<../../../../../../features/agents/agent-construction.tsx#L210>)
+- Math.round — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:210](<../../../../../../features/agents/agent-construction.tsx#L210>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-83ed57f8453c9aa9"></a>
+<a id="s-f1767aa30007a88a"></a>
 
 ## AgentConstruction.connect
 
-[features/agents/agent-construction.tsx:192](<../../../../../../features/agents/agent-construction.tsx#L192>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:212](<../../../../../../features/agents/agent-construction.tsx#L212>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -985,40 +1162,40 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:215](<../../../../../../features/agents/agent-construction.tsx#L215>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:235](<../../../../../../features/agents/agent-construction.tsx#L235>)
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@810:36&gt;](<agent-construction.tsx.md#s-77f888afeca56ae3>) — [features/agents/agent-construction.tsx:811](<../../../../../../features/agents/agent-construction.tsx#L811>)
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@832:40&gt;](<agent-construction.tsx.md#s-e1321e3ec2cc2056>) — [features/agents/agent-construction.tsx:841](<../../../../../../features/agents/agent-construction.tsx#L841>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@830:36&gt;](<agent-construction.tsx.md#s-1039a1b92ee3e984>) — [features/agents/agent-construction.tsx:831](<../../../../../../features/agents/agent-construction.tsx#L831>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@852:40&gt;](<agent-construction.tsx.md#s-94d5d12264bbcc40>) — [features/agents/agent-construction.tsx:861](<../../../../../../features/agents/agent-construction.tsx#L861>)
 
 Unresolved / external call sites: 10.
 
-- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:193](<../../../../../../features/agents/agent-construction.tsx#L193>)
-- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:194](<../../../../../../features/agents/agent-construction.tsx#L194>)
-- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:195](<../../../../../../features/agents/agent-construction.tsx#L195>)
-- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:196](<../../../../../../features/agents/agent-construction.tsx#L196>)
-- &#91;"LLM", "Output"&#93;.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:203](<../../../../../../features/agents/agent-construction.tsx#L203>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:206](<../../../../../../features/agents/agent-construction.tsx#L206>)
-- config.edges.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:211](<../../../../../../features/agents/agent-construction.tsx#L211>)
-- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:212](<../../../../../../features/agents/agent-construction.tsx#L212>)
+- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:213](<../../../../../../features/agents/agent-construction.tsx#L213>)
+- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:214](<../../../../../../features/agents/agent-construction.tsx#L214>)
+- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:215](<../../../../../../features/agents/agent-construction.tsx#L215>)
+- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:216](<../../../../../../features/agents/agent-construction.tsx#L216>)
+- &#91;"LLM", "Output"&#93;.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:223](<../../../../../../features/agents/agent-construction.tsx#L223>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:226](<../../../../../../features/agents/agent-construction.tsx#L226>)
+- config.edges.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:231](<../../../../../../features/agents/agent-construction.tsx#L231>)
+- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:232](<../../../../../../features/agents/agent-construction.tsx#L232>)
 - 2 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f39ac948fe2c8b58"></a>
+<a id="s-c3321ce7479290b7"></a>
 
-## AgentConstruction.connect.&lt;anonymous@195:38&gt;
+## AgentConstruction.connect.&lt;anonymous@215:38&gt;
 
-[features/agents/agent-construction.tsx:195](<../../../../../../features/agents/agent-construction.tsx#L195>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:215](<../../../../../../features/agents/agent-construction.tsx#L215>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>).
+Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1041,17 +1218,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b5952abcfde68c4e"></a>
+<a id="s-e4790e1ad5764337"></a>
 
-## AgentConstruction.connect.&lt;anonymous@196:34&gt;
+## AgentConstruction.connect.&lt;anonymous@216:34&gt;
 
-[features/agents/agent-construction.tsx:196](<../../../../../../features/agents/agent-construction.tsx#L196>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:216](<../../../../../../features/agents/agent-construction.tsx#L216>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>).
+Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1074,17 +1251,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d2ad3080d65f85ec"></a>
+<a id="s-b0b4f0333f946930"></a>
 
-## AgentConstruction.connect.&lt;anonymous@211:27&gt;
+## AgentConstruction.connect.&lt;anonymous@231:27&gt;
 
-[features/agents/agent-construction.tsx:211](<../../../../../../features/agents/agent-construction.tsx#L211>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:231](<../../../../../../features/agents/agent-construction.tsx#L231>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>).
+Lexical owner: [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1107,11 +1284,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d0aae1c4d5f4a475"></a>
+<a id="s-a13eb25d4cd781de"></a>
 
 ## AgentConstruction.add
 
-[features/agents/agent-construction.tsx:220](<../../../../../../features/agents/agent-construction.tsx#L220>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:240](<../../../../../../features/agents/agent-construction.tsx#L240>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 Adds a stable node at a free position, allowing repeated Engine nodes while retaining every other category's singleton constraint.
 
@@ -1128,40 +1305,40 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:265](<../../../../../../features/agents/agent-construction.tsx#L265>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:285](<../../../../../../features/agents/agent-construction.tsx#L285>)
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@596:26&gt;](<agent-construction.tsx.md#s-b27051dc001aab92>) — [features/agents/agent-construction.tsx:596](<../../../../../../features/agents/agent-construction.tsx#L596>)
-- [AgentConstruction.&lt;anonymous@647:27&gt;](<agent-construction.tsx.md#s-6d9b134288316f5f>) — [features/agents/agent-construction.tsx:653](<../../../../../../features/agents/agent-construction.tsx#L653>)
+- [AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@616:26&gt;](<agent-construction.tsx.md#s-1cb58b2b114b69e5>) — [features/agents/agent-construction.tsx:616](<../../../../../../features/agents/agent-construction.tsx#L616>)
+- [AgentConstruction.&lt;anonymous@667:27&gt;](<agent-construction.tsx.md#s-c062a40e04843739>) — [features/agents/agent-construction.tsx:673](<../../../../../../features/agents/agent-construction.tsx#L673>)
 
 Unresolved / external call sites: 18.
 
-- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:222](<../../../../../../features/agents/agent-construction.tsx#L222>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:223](<../../../../../../features/agents/agent-construction.tsx#L223>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:227](<../../../../../../features/agents/agent-construction.tsx#L227>)
-- engineDefinitions.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:230](<../../../../../../features/agents/agent-construction.tsx#L230>)
-- crypto.randomUUID — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:245](<../../../../../../features/agents/agent-construction.tsx#L245>)
-- crypto.randomUUID — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:254](<../../../../../../features/agents/agent-construction.tsx#L254>)
-- kind.toLowerCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:254](<../../../../../../features/agents/agent-construction.tsx#L254>)
-- &#91;368, 0, 520, 160&#93; .flatMap((y) =&gt; &#91;64, 352, 640, 880&#93;.map((x) =&gt; ({ x, y }))) .find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:255](<../../../../../../features/agents/agent-construction.tsx#L255>)
+- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:242](<../../../../../../features/agents/agent-construction.tsx#L242>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:243](<../../../../../../features/agents/agent-construction.tsx#L243>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:247](<../../../../../../features/agents/agent-construction.tsx#L247>)
+- engineDefinitions.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:250](<../../../../../../features/agents/agent-construction.tsx#L250>)
+- crypto.randomUUID — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:265](<../../../../../../features/agents/agent-construction.tsx#L265>)
+- crypto.randomUUID — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:274](<../../../../../../features/agents/agent-construction.tsx#L274>)
+- kind.toLowerCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:274](<../../../../../../features/agents/agent-construction.tsx#L274>)
+- &#91;368, 0, 520, 160&#93; .flatMap((y) =&gt; &#91;64, 352, 640, 880&#93;.map((x) =&gt; ({ x, y }))) .find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:275](<../../../../../../features/agents/agent-construction.tsx#L275>)
 - 10 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-478b5fd2615a3de0"></a>
+<a id="s-866da2bf7c4a7bd6"></a>
 
-## AgentConstruction.add.&lt;anonymous@222:48&gt;
+## AgentConstruction.add.&lt;anonymous@242:48&gt;
 
-[features/agents/agent-construction.tsx:222](<../../../../../../features/agents/agent-construction.tsx#L222>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:242](<../../../../../../features/agents/agent-construction.tsx#L242>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>).
+Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1184,17 +1361,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a97120447fd75acc"></a>
+<a id="s-5987ca02075f1c26"></a>
 
-## AgentConstruction.add.&lt;anonymous@231:7&gt;
+## AgentConstruction.add.&lt;anonymous@251:7&gt;
 
-[features/agents/agent-construction.tsx:231](<../../../../../../features/agents/agent-construction.tsx#L231>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:251](<../../../../../../features/agents/agent-construction.tsx#L251>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>).
+Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1217,17 +1394,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2a6e83dd62f5dd6d"></a>
+<a id="s-8a9cf7af3de7c72c"></a>
 
-## AgentConstruction.add.&lt;anonymous@256:16&gt;
+## AgentConstruction.add.&lt;anonymous@276:16&gt;
 
-[features/agents/agent-construction.tsx:256](<../../../../../../features/agents/agent-construction.tsx#L256>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:276](<../../../../../../features/agents/agent-construction.tsx#L276>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>).
+Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1245,23 +1422,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- &#91;64, 352, 640, 880&#93;.map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:256](<../../../../../../features/agents/agent-construction.tsx#L256>)
+- &#91;64, 352, 640, 880&#93;.map — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:276](<../../../../../../features/agents/agent-construction.tsx#L276>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3b37bc84ab920d0a"></a>
+<a id="s-2a2b9ba580ace255"></a>
 
-## AgentConstruction.add.&lt;anonymous@256:16&gt;.&lt;anonymous@256:47&gt;
+## AgentConstruction.add.&lt;anonymous@276:16&gt;.&lt;anonymous@276:47&gt;
 
-[features/agents/agent-construction.tsx:256](<../../../../../../features/agents/agent-construction.tsx#L256>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:276](<../../../../../../features/agents/agent-construction.tsx#L276>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add.&lt;anonymous@256:16&gt;](<agent-construction.tsx.md#s-2a6e83dd62f5dd6d>).
+Lexical owner: [AgentConstruction.add.&lt;anonymous@276:16&gt;](<agent-construction.tsx.md#s-8a9cf7af3de7c72c>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1284,17 +1461,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b1171398767a9957"></a>
+<a id="s-38da8ede445f85a3"></a>
 
-## AgentConstruction.add.&lt;anonymous@257:13&gt;
+## AgentConstruction.add.&lt;anonymous@277:13&gt;
 
-[features/agents/agent-construction.tsx:257](<../../../../../../features/agents/agent-construction.tsx#L257>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:277](<../../../../../../features/agents/agent-construction.tsx#L277>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>).
+Lexical owner: [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1312,23 +1489,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- config.nodes.every — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:258](<../../../../../../features/agents/agent-construction.tsx#L258>)
+- config.nodes.every — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:278](<../../../../../../features/agents/agent-construction.tsx#L278>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6c431300df02cc2b"></a>
+<a id="s-b5d2c31285f25d10"></a>
 
-## AgentConstruction.add.&lt;anonymous@257:13&gt;.&lt;anonymous@259:11&gt;
+## AgentConstruction.add.&lt;anonymous@277:13&gt;.&lt;anonymous@279:11&gt;
 
-[features/agents/agent-construction.tsx:259](<../../../../../../features/agents/agent-construction.tsx#L259>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:279](<../../../../../../features/agents/agent-construction.tsx#L279>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.add.&lt;anonymous@257:13&gt;](<agent-construction.tsx.md#s-b1171398767a9957>).
+Lexical owner: [AgentConstruction.add.&lt;anonymous@277:13&gt;](<agent-construction.tsx.md#s-38da8ede445f85a3>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1346,18 +1523,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- Math.abs — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:260](<../../../../../../features/agents/agent-construction.tsx#L260>)
-- Math.abs — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:261](<../../../../../../features/agents/agent-construction.tsx#L261>)
+- Math.abs — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:280](<../../../../../../features/agents/agent-construction.tsx#L280>)
+- Math.abs — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:281](<../../../../../../features/agents/agent-construction.tsx#L281>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9f2d71e2bec09ee0"></a>
+<a id="s-e2505ac0e017667c"></a>
 
 ## AgentConstruction.save
 
-[features/agents/agent-construction.tsx:281](<../../../../../../features/agents/agent-construction.tsx#L281>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:301](<../../../../../../features/agents/agent-construction.tsx#L301>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1377,30 +1554,30 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@1226:22&gt;](<agent-construction.tsx.md#s-e71657e5b1bb2174>) — [features/agents/agent-construction.tsx:1226](<../../../../../../features/agents/agent-construction.tsx#L1226>)
-- [AgentConstruction.&lt;anonymous@1230:47&gt;](<agent-construction.tsx.md#s-92a20b43b70df0da>) — [features/agents/agent-construction.tsx:1230](<../../../../../../features/agents/agent-construction.tsx#L1230>)
+- [AgentConstruction.&lt;anonymous@1246:22&gt;](<agent-construction.tsx.md#s-0def2a6bd4a60464>) — [features/agents/agent-construction.tsx:1246](<../../../../../../features/agents/agent-construction.tsx#L1246>)
+- [AgentConstruction.&lt;anonymous@1250:47&gt;](<agent-construction.tsx.md#s-eb2d43c316cb9082>) — [features/agents/agent-construction.tsx:1250](<../../../../../../features/agents/agent-construction.tsx#L1250>)
 
 Unresolved / external call sites: 10.
 
-- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:284](<../../../../../../features/agents/agent-construction.tsx#L284>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:285](<../../../../../../features/agents/agent-construction.tsx#L285>)
-- chat.saveConstruction — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:287](<../../../../../../features/agents/agent-construction.tsx#L287>)
-- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:298](<../../../../../../features/agents/agent-construction.tsx#L298>)
-- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:299](<../../../../../../features/agents/agent-construction.tsx#L299>)
-- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:300](<../../../../../../features/agents/agent-construction.tsx#L300>)
-- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:301](<../../../../../../features/agents/agent-construction.tsx#L301>)
-- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:302](<../../../../../../features/agents/agent-construction.tsx#L302>)
+- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:304](<../../../../../../features/agents/agent-construction.tsx#L304>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:305](<../../../../../../features/agents/agent-construction.tsx#L305>)
+- chat.saveConstruction — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:307](<../../../../../../features/agents/agent-construction.tsx#L307>)
+- setConfig — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:318](<../../../../../../features/agents/agent-construction.tsx#L318>)
+- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:319](<../../../../../../features/agents/agent-construction.tsx#L319>)
+- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:320](<../../../../../../features/agents/agent-construction.tsx#L320>)
+- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:321](<../../../../../../features/agents/agent-construction.tsx#L321>)
+- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:322](<../../../../../../features/agents/agent-construction.tsx#L322>)
 - 2 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2e3c726be850058f"></a>
+<a id="s-a952783bfe62a082"></a>
 
 ## AgentConstruction.startDrag
 
-[features/agents/agent-construction.tsx:316](<../../../../../../features/agents/agent-construction.tsx#L316>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:336](<../../../../../../features/agents/agent-construction.tsx#L336>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1421,25 +1598,25 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@708:38&gt;](<agent-construction.tsx.md#s-d2a4d327fc8079af>) — [features/agents/agent-construction.tsx:708](<../../../../../../features/agents/agent-construction.tsx#L708>)
+- [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@728:38&gt;](<agent-construction.tsx.md#s-915de90a5a02de66>) — [features/agents/agent-construction.tsx:728](<../../../../../../features/agents/agent-construction.tsx#L728>)
 
 Unresolved / external call sites: 5.
 
-- (event.target as HTMLElement).closest — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:323](<../../../../../../features/agents/agent-construction.tsx#L323>)
-- event.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:326](<../../../../../../features/agents/agent-construction.tsx#L326>)
-- event.currentTarget.setPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:327](<../../../../../../features/agents/agent-construction.tsx#L327>)
-- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:328](<../../../../../../features/agents/agent-construction.tsx#L328>)
-- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:329](<../../../../../../features/agents/agent-construction.tsx#L329>)
+- (event.target as HTMLElement).closest — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:343](<../../../../../../features/agents/agent-construction.tsx#L343>)
+- event.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:346](<../../../../../../features/agents/agent-construction.tsx#L346>)
+- event.currentTarget.setPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:347](<../../../../../../features/agents/agent-construction.tsx#L347>)
+- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:348](<../../../../../../features/agents/agent-construction.tsx#L348>)
+- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:349](<../../../../../../features/agents/agent-construction.tsx#L349>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6c4064a1d0c8c35d"></a>
+<a id="s-9a388f6dd28225e0"></a>
 
-## AgentConstruction.&lt;anonymous@338:42&gt;
+## AgentConstruction.&lt;anonymous@358:42&gt;
 
-[features/agents/agent-construction.tsx:338](<../../../../../../features/agents/agent-construction.tsx#L338>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:358](<../../../../../../features/agents/agent-construction.tsx#L358>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1468,11 +1645,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e30669e1b781849c"></a>
+<a id="s-52dae90416ac535c"></a>
 
 ## AgentConstruction.chooseBackdrop
 
-[features/agents/agent-construction.tsx:342](<../../../../../../features/agents/agent-construction.tsx#L342>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:362](<../../../../../../features/agents/agent-construction.tsx#L362>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1492,35 +1669,35 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction.&lt;anonymous@439:24&gt;](<agent-construction.tsx.md#s-bdb25e335bfe58e0>) — [features/agents/agent-construction.tsx:439](<../../../../../../features/agents/agent-construction.tsx#L439>)
-- [AgentConstruction.&lt;anonymous@476:24&gt;](<agent-construction.tsx.md#s-142d60f1e7431fa9>) — [features/agents/agent-construction.tsx:476](<../../../../../../features/agents/agent-construction.tsx#L476>)
+- [AgentConstruction.&lt;anonymous@459:24&gt;](<agent-construction.tsx.md#s-bc9e90cb32894b37>) — [features/agents/agent-construction.tsx:459](<../../../../../../features/agents/agent-construction.tsx#L459>)
+- [AgentConstruction.&lt;anonymous@496:24&gt;](<agent-construction.tsx.md#s-1e93b321d3b30ddc>) — [features/agents/agent-construction.tsx:496](<../../../../../../features/agents/agent-construction.tsx#L496>)
 
 Unresolved / external call sites: 8.
 
-- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:343](<../../../../../../features/agents/agent-construction.tsx#L343>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:344](<../../../../../../features/agents/agent-construction.tsx#L344>)
-- chat.chooseAgentBackdrop — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:346](<../../../../../../features/agents/agent-construction.tsx#L346>)
-- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:348](<../../../../../../features/agents/agent-construction.tsx#L348>)
-- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:350](<../../../../../../features/agents/agent-construction.tsx#L350>)
-- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:351](<../../../../../../features/agents/agent-construction.tsx#L351>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:355](<../../../../../../features/agents/agent-construction.tsx#L355>)
-- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:359](<../../../../../../features/agents/agent-construction.tsx#L359>)
+- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:363](<../../../../../../features/agents/agent-construction.tsx#L363>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:364](<../../../../../../features/agents/agent-construction.tsx#L364>)
+- chat.chooseAgentBackdrop — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:366](<../../../../../../features/agents/agent-construction.tsx#L366>)
+- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:368](<../../../../../../features/agents/agent-construction.tsx#L368>)
+- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:370](<../../../../../../features/agents/agent-construction.tsx#L370>)
+- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:371](<../../../../../../features/agents/agent-construction.tsx#L371>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:375](<../../../../../../features/agents/agent-construction.tsx#L375>)
+- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:379](<../../../../../../features/agents/agent-construction.tsx#L379>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9ce6dd0278234e90"></a>
+<a id="s-18ea6c33c6dfa9a9"></a>
 
-## AgentConstruction.chooseBackdrop.&lt;anonymous@351:25&gt;
+## AgentConstruction.chooseBackdrop.&lt;anonymous@371:25&gt;
 
-[features/agents/agent-construction.tsx:351](<../../../../../../features/agents/agent-construction.tsx#L351>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:371](<../../../../../../features/agents/agent-construction.tsx#L371>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-e30669e1b781849c>).
+Lexical owner: [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-52dae90416ac535c>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1543,44 +1720,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c4e961a2f68fa36d"></a>
+<a id="s-dacf49dc2653a900"></a>
 
-## AgentConstruction.&lt;anonymous@391:23&gt;
+## AgentConstruction.&lt;anonymous@411:23&gt;
 
-[features/agents/agent-construction.tsx:391](<../../../../../../features/agents/agent-construction.tsx#L391>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| e | any | compiler-inferred | required |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:391](<../../../../../../features/agents/agent-construction.tsx#L391>)
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-04300e176e2a6839"></a>
-
-## AgentConstruction.&lt;anonymous@401:23&gt;
-
-[features/agents/agent-construction.tsx:401](<../../../../../../features/agents/agent-construction.tsx#L401>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:411](<../../../../../../features/agents/agent-construction.tsx#L411>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1596,7 +1740,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:401](<../../../../../../features/agents/agent-construction.tsx#L401>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:411](<../../../../../../features/agents/agent-construction.tsx#L411>)
 
 **Called by (statically resolved):**
 
@@ -1609,11 +1753,44 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-df3d782eebcc9884"></a>
+<a id="s-0cc7664e96043a6d"></a>
 
-## AgentConstruction.&lt;anonymous@407:22&gt;
+## AgentConstruction.&lt;anonymous@421:23&gt;
 
-[features/agents/agent-construction.tsx:407](<../../../../../../features/agents/agent-construction.tsx#L407>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:421](<../../../../../../features/agents/agent-construction.tsx#L421>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| e | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:421](<../../../../../../features/agents/agent-construction.tsx#L421>)
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-6b59c0c786f28f7c"></a>
+
+## AgentConstruction.&lt;anonymous@427:22&gt;
+
+[features/agents/agent-construction.tsx:427](<../../../../../../features/agents/agent-construction.tsx#L427>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1637,21 +1814,21 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:408](<../../../../../../features/agents/agent-construction.tsx#L408>)
-- chat.chooseAgentAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:410](<../../../../../../features/agents/agent-construction.tsx#L410>)
-- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:411](<../../../../../../features/agents/agent-construction.tsx#L411>)
-- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:413](<../../../../../../features/agents/agent-construction.tsx#L413>)
-- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:417](<../../../../../../features/agents/agent-construction.tsx#L417>)
+- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:428](<../../../../../../features/agents/agent-construction.tsx#L428>)
+- chat.chooseAgentAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:430](<../../../../../../features/agents/agent-construction.tsx#L430>)
+- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:431](<../../../../../../features/agents/agent-construction.tsx#L431>)
+- setError — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:433](<../../../../../../features/agents/agent-construction.tsx#L433>)
+- setBusy — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:437](<../../../../../../features/agents/agent-construction.tsx#L437>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-85e0e1412f98eb85"></a>
+<a id="s-76d4726b8dbfac00"></a>
 
-## AgentConstruction.&lt;anonymous@423:47&gt;
+## AgentConstruction.&lt;anonymous@443:47&gt;
 
-[features/agents/agent-construction.tsx:423](<../../../../../../features/agents/agent-construction.tsx#L423>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:443](<../../../../../../features/agents/agent-construction.tsx#L443>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1675,17 +1852,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:423](<../../../../../../features/agents/agent-construction.tsx#L423>)
+- setAvatar — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:443](<../../../../../../features/agents/agent-construction.tsx#L443>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-bdb25e335bfe58e0"></a>
+<a id="s-bc9e90cb32894b37"></a>
 
-## AgentConstruction.&lt;anonymous@439:24&gt;
+## AgentConstruction.&lt;anonymous@459:24&gt;
 
-[features/agents/agent-construction.tsx:439](<../../../../../../features/agents/agent-construction.tsx#L439>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:459](<../../../../../../features/agents/agent-construction.tsx#L459>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1701,7 +1878,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-e30669e1b781849c>) — [features/agents/agent-construction.tsx:439](<../../../../../../features/agents/agent-construction.tsx#L439>)
+- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-52dae90416ac535c>) — [features/agents/agent-construction.tsx:459](<../../../../../../features/agents/agent-construction.tsx#L459>)
 
 **Called by (statically resolved):**
 
@@ -1714,11 +1891,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1e366f1304303ba8"></a>
+<a id="s-8ad4f32275b7a1c2"></a>
 
-## AgentConstruction.&lt;anonymous@445:24&gt;
+## AgentConstruction.&lt;anonymous@465:24&gt;
 
-[features/agents/agent-construction.tsx:445](<../../../../../../features/agents/agent-construction.tsx#L445>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:465](<../../../../../../features/agents/agent-construction.tsx#L465>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1742,17 +1919,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:445](<../../../../../../features/agents/agent-construction.tsx#L445>)
+- setBanner — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:465](<../../../../../../features/agents/agent-construction.tsx#L465>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-885dff9db1bd2aa8"></a>
+<a id="s-cdd8b9aabb0a18c7"></a>
 
-## AgentConstruction.&lt;anonymous@459:27&gt;
+## AgentConstruction.&lt;anonymous@479:27&gt;
 
-[features/agents/agent-construction.tsx:459](<../../../../../../features/agents/agent-construction.tsx#L459>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:479](<../../../../../../features/agents/agent-construction.tsx#L479>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1776,23 +1953,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:460](<../../../../../../features/agents/agent-construction.tsx#L460>)
+- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:480](<../../../../../../features/agents/agent-construction.tsx#L480>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-bd48a171d44427d4"></a>
+<a id="s-87b864a7f1d98c0c"></a>
 
-## AgentConstruction.&lt;anonymous@459:27&gt;.&lt;anonymous@460:33&gt;
+## AgentConstruction.&lt;anonymous@479:27&gt;.&lt;anonymous@480:33&gt;
 
-[features/agents/agent-construction.tsx:460](<../../../../../../features/agents/agent-construction.tsx#L460>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:480](<../../../../../../features/agents/agent-construction.tsx#L480>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@459:27&gt;](<agent-construction.tsx.md#s-885dff9db1bd2aa8>).
+Lexical owner: [AgentConstruction.&lt;anonymous@479:27&gt;](<agent-construction.tsx.md#s-cdd8b9aabb0a18c7>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1815,11 +1992,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-142d60f1e7431fa9"></a>
+<a id="s-1e93b321d3b30ddc"></a>
 
-## AgentConstruction.&lt;anonymous@476:24&gt;
+## AgentConstruction.&lt;anonymous@496:24&gt;
 
-[features/agents/agent-construction.tsx:476](<../../../../../../features/agents/agent-construction.tsx#L476>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:496](<../../../../../../features/agents/agent-construction.tsx#L496>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1835,7 +2012,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-e30669e1b781849c>) — [features/agents/agent-construction.tsx:476](<../../../../../../features/agents/agent-construction.tsx#L476>)
+- [AgentConstruction.chooseBackdrop](<agent-construction.tsx.md#s-52dae90416ac535c>) — [features/agents/agent-construction.tsx:496](<../../../../../../features/agents/agent-construction.tsx#L496>)
 
 **Called by (statically resolved):**
 
@@ -1848,11 +2025,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6c196e059c0536a3"></a>
+<a id="s-daac0c86e02cffb3"></a>
 
-## AgentConstruction.&lt;anonymous@482:24&gt;
+## AgentConstruction.&lt;anonymous@502:24&gt;
 
-[features/agents/agent-construction.tsx:482](<../../../../../../features/agents/agent-construction.tsx#L482>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:502](<../../../../../../features/agents/agent-construction.tsx#L502>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1876,24 +2053,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:483](<../../../../../../features/agents/agent-construction.tsx#L483>)
-- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:484](<../../../../../../features/agents/agent-construction.tsx#L484>)
+- setWallpaper — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:503](<../../../../../../features/agents/agent-construction.tsx#L503>)
+- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:504](<../../../../../../features/agents/agent-construction.tsx#L504>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-da49fe059a1dac0a"></a>
+<a id="s-9f25518abc94be88"></a>
 
-## AgentConstruction.&lt;anonymous@482:24&gt;.&lt;anonymous@484:31&gt;
+## AgentConstruction.&lt;anonymous@502:24&gt;.&lt;anonymous@504:31&gt;
 
-[features/agents/agent-construction.tsx:484](<../../../../../../features/agents/agent-construction.tsx#L484>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:504](<../../../../../../features/agents/agent-construction.tsx#L504>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@482:24&gt;](<agent-construction.tsx.md#s-6c196e059c0536a3>).
+Lexical owner: [AgentConstruction.&lt;anonymous@502:24&gt;](<agent-construction.tsx.md#s-daac0c86e02cffb3>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1916,79 +2093,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-59fa429aacc2b167"></a>
+<a id="s-2d5627f3c5007be8"></a>
 
-## AgentConstruction.&lt;anonymous@501:27&gt;
+## AgentConstruction.&lt;anonymous@521:27&gt;
 
-[features/agents/agent-construction.tsx:501](<../../../../../../features/agents/agent-construction.tsx#L501>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| event | any | compiler-inferred | required |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 1.
-
-- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:502](<../../../../../../features/agents/agent-construction.tsx#L502>)
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-b47d6a297ce40359"></a>
-
-## AgentConstruction.&lt;anonymous@501:27&gt;.&lt;anonymous@502:33&gt;
-
-[features/agents/agent-construction.tsx:502](<../../../../../../features/agents/agent-construction.tsx#L502>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [AgentConstruction.&lt;anonymous@501:27&gt;](<agent-construction.tsx.md#s-59fa429aacc2b167>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| current | any | compiler-inferred | required |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 1.
-
-- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:504](<../../../../../../features/agents/agent-construction.tsx#L504>)
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-7c633f93c0e1e047"></a>
-
-## AgentConstruction.&lt;anonymous@515:27&gt;
-
-[features/agents/agent-construction.tsx:515](<../../../../../../features/agents/agent-construction.tsx#L515>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:521](<../../../../../../features/agents/agent-construction.tsx#L521>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2012,23 +2121,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:516](<../../../../../../features/agents/agent-construction.tsx#L516>)
+- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:522](<../../../../../../features/agents/agent-construction.tsx#L522>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c8cd68b3c981f57c"></a>
+<a id="s-3d3c7e3d5c1b6cc0"></a>
 
-## AgentConstruction.&lt;anonymous@515:27&gt;.&lt;anonymous@516:33&gt;
+## AgentConstruction.&lt;anonymous@521:27&gt;.&lt;anonymous@522:33&gt;
 
-[features/agents/agent-construction.tsx:516](<../../../../../../features/agents/agent-construction.tsx#L516>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:522](<../../../../../../features/agents/agent-construction.tsx#L522>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@515:27&gt;](<agent-construction.tsx.md#s-7c633f93c0e1e047>).
+Lexical owner: [AgentConstruction.&lt;anonymous@521:27&gt;](<agent-construction.tsx.md#s-2d5627f3c5007be8>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2046,17 +2155,85 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:518](<../../../../../../features/agents/agent-construction.tsx#L518>)
+- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:524](<../../../../../../features/agents/agent-construction.tsx#L524>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3f11db69ac8b8780"></a>
+<a id="s-4f0ed3c217214f5c"></a>
 
-## AgentConstruction.&lt;anonymous@524:39&gt;
+## AgentConstruction.&lt;anonymous@535:27&gt;
 
-[features/agents/agent-construction.tsx:524](<../../../../../../features/agents/agent-construction.tsx#L524>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:535](<../../../../../../features/agents/agent-construction.tsx#L535>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| event | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- setAppearance — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:536](<../../../../../../features/agents/agent-construction.tsx#L536>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-9a9b6787dc1f3e7d"></a>
+
+## AgentConstruction.&lt;anonymous@535:27&gt;.&lt;anonymous@536:33&gt;
+
+[features/agents/agent-construction.tsx:536](<../../../../../../features/agents/agent-construction.tsx#L536>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [AgentConstruction.&lt;anonymous@535:27&gt;](<agent-construction.tsx.md#s-4f0ed3c217214f5c>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| current | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:538](<../../../../../../features/agents/agent-construction.tsx#L538>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-eca646042b2b8de2"></a>
+
+## AgentConstruction.&lt;anonymous@544:39&gt;
+
+[features/agents/agent-construction.tsx:544](<../../../../../../features/agents/agent-construction.tsx#L544>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2072,7 +2249,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [chatReadingSize](<../chat/chat-presentation.ts.md#s-d1401d6d0629913e>) — [features/agents/agent-construction.tsx:526](<../../../../../../features/agents/agent-construction.tsx#L526>)
+- [chatReadingSize](<../chat/chat-presentation.ts.md#s-d1401d6d0629913e>) — [features/agents/agent-construction.tsx:546](<../../../../../../features/agents/agent-construction.tsx#L546>)
 
 **Called by (statically resolved):**
 
@@ -2085,11 +2262,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f68fcaa9bab9a767"></a>
+<a id="s-8eda6ee9fafc64cf"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;
 
-[features/agents/agent-construction.tsx:577](<../../../../../../features/agents/agent-construction.tsx#L577>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:597](<../../../../../../features/agents/agent-construction.tsx#L597>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2113,25 +2290,25 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:583](<../../../../../../features/agents/agent-construction.tsx#L583>)
-- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:594](<../../../../../../features/agents/agent-construction.tsx#L594>)
-- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:602](<../../../../../../features/agents/agent-construction.tsx#L602>)
+- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:603](<../../../../../../features/agents/agent-construction.tsx#L603>)
+- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:614](<../../../../../../features/agents/agent-construction.tsx#L614>)
+- config.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:622](<../../../../../../features/agents/agent-construction.tsx#L622>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-af8aef21bf4e0492"></a>
+<a id="s-0d7b23db6c4c10dd"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@583:40&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@603:40&gt;
 
-[features/agents/agent-construction.tsx:583](<../../../../../../features/agents/agent-construction.tsx#L583>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:603](<../../../../../../features/agents/agent-construction.tsx#L603>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>).
+Lexical owner: [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2154,17 +2331,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0b71d3ddd64687eb"></a>
+<a id="s-29cd240fd535d6ac"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@585:30&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@605:30&gt;
 
-[features/agents/agent-construction.tsx:585](<../../../../../../features/agents/agent-construction.tsx#L585>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:605](<../../../../../../features/agents/agent-construction.tsx#L605>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>).
+Lexical owner: [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2182,23 +2359,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- e.dataTransfer.setData — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:586](<../../../../../../features/agents/agent-construction.tsx#L586>)
+- e.dataTransfer.setData — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:606](<../../../../../../features/agents/agent-construction.tsx#L606>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-75ebc86db75bcd86"></a>
+<a id="s-c3bb1660897fbb88"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@594:39&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@614:39&gt;
 
-[features/agents/agent-construction.tsx:594](<../../../../../../features/agents/agent-construction.tsx#L594>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:614](<../../../../../../features/agents/agent-construction.tsx#L614>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>).
+Lexical owner: [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2221,17 +2398,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b27051dc001aab92"></a>
+<a id="s-1cb58b2b114b69e5"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@596:26&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@616:26&gt;
 
-[features/agents/agent-construction.tsx:596](<../../../../../../features/agents/agent-construction.tsx#L596>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:616](<../../../../../../features/agents/agent-construction.tsx#L616>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>).
+Lexical owner: [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2241,7 +2418,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>) — [features/agents/agent-construction.tsx:596](<../../../../../../features/agents/agent-construction.tsx#L596>)
+- [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>) — [features/agents/agent-construction.tsx:616](<../../../../../../features/agents/agent-construction.tsx#L616>)
 
 **Called by (statically resolved):**
 
@@ -2254,17 +2431,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-eb1345bd27025edb"></a>
+<a id="s-41f7468f916cc692"></a>
 
-## AgentConstruction.&lt;anonymous@577:24&gt;.&lt;anonymous@602:41&gt;
+## AgentConstruction.&lt;anonymous@597:24&gt;.&lt;anonymous@622:41&gt;
 
-[features/agents/agent-construction.tsx:602](<../../../../../../features/agents/agent-construction.tsx#L602>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:622](<../../../../../../features/agents/agent-construction.tsx#L622>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@577:24&gt;](<agent-construction.tsx.md#s-f68fcaa9bab9a767>).
+Lexical owner: [AgentConstruction.&lt;anonymous@597:24&gt;](<agent-construction.tsx.md#s-8eda6ee9fafc64cf>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2287,11 +2464,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1fdcfab9f6160ca8"></a>
+<a id="s-62f1cab70d1606d1"></a>
 
-## AgentConstruction.&lt;anonymous@640:30&gt;
+## AgentConstruction.&lt;anonymous@660:30&gt;
 
-[features/agents/agent-construction.tsx:640](<../../../../../../features/agents/agent-construction.tsx#L640>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:660](<../../../../../../features/agents/agent-construction.tsx#L660>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2315,18 +2492,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:642](<../../../../../../features/agents/agent-construction.tsx#L642>)
-- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:643](<../../../../../../features/agents/agent-construction.tsx#L643>)
+- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:662](<../../../../../../features/agents/agent-construction.tsx#L662>)
+- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:663](<../../../../../../features/agents/agent-construction.tsx#L663>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5125f21ed7e22bb8"></a>
+<a id="s-163517908749351b"></a>
 
-## AgentConstruction.&lt;anonymous@646:31&gt;
+## AgentConstruction.&lt;anonymous@666:31&gt;
 
-[features/agents/agent-construction.tsx:646](<../../../../../../features/agents/agent-construction.tsx#L646>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:666](<../../../../../../features/agents/agent-construction.tsx#L666>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2350,17 +2527,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:646](<../../../../../../features/agents/agent-construction.tsx#L646>)
+- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:666](<../../../../../../features/agents/agent-construction.tsx#L666>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6d9b134288316f5f"></a>
+<a id="s-c062a40e04843739"></a>
 
-## AgentConstruction.&lt;anonymous@647:27&gt;
+## AgentConstruction.&lt;anonymous@667:27&gt;
 
-[features/agents/agent-construction.tsx:647](<../../../../../../features/agents/agent-construction.tsx#L647>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:667](<../../../../../../features/agents/agent-construction.tsx#L667>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2376,8 +2553,8 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.add](<agent-construction.tsx.md#s-d0aae1c4d5f4a475>) — [features/agents/agent-construction.tsx:653](<../../../../../../features/agents/agent-construction.tsx#L653>)
-- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-b4204108b0eaa200>) — [features/agents/agent-construction.tsx:655](<../../../../../../features/agents/agent-construction.tsx#L655>)
+- [AgentConstruction.add](<agent-construction.tsx.md#s-a13eb25d4cd781de>) — [features/agents/agent-construction.tsx:673](<../../../../../../features/agents/agent-construction.tsx#L673>)
+- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-3a0d69325767ceb6>) — [features/agents/agent-construction.tsx:675](<../../../../../../features/agents/agent-construction.tsx#L675>)
 
 **Called by (statically resolved):**
 
@@ -2385,19 +2562,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:648](<../../../../../../features/agents/agent-construction.tsx#L648>)
-- e.dataTransfer.getData — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:649](<../../../../../../features/agents/agent-construction.tsx#L649>)
-- kinds.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:652](<../../../../../../features/agents/agent-construction.tsx#L652>)
+- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:668](<../../../../../../features/agents/agent-construction.tsx#L668>)
+- e.dataTransfer.getData — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:669](<../../../../../../features/agents/agent-construction.tsx#L669>)
+- kinds.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:672](<../../../../../../features/agents/agent-construction.tsx#L672>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a3f8e473fd3c4dba"></a>
+<a id="s-8f4f3c96cb7d6230"></a>
 
-## AgentConstruction.&lt;anonymous@673:39&gt;
+## AgentConstruction.&lt;anonymous@693:39&gt;
 
-[features/agents/agent-construction.tsx:673](<../../../../../../features/agents/agent-construction.tsx#L673>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:693](<../../../../../../features/agents/agent-construction.tsx#L693>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2421,24 +2598,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:674](<../../../../../../features/agents/agent-construction.tsx#L674>)
-- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:675](<../../../../../../features/agents/agent-construction.tsx#L675>)
+- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:694](<../../../../../../features/agents/agent-construction.tsx#L694>)
+- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:695](<../../../../../../features/agents/agent-construction.tsx#L695>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1f1633387dfc2003"></a>
+<a id="s-f0cc0099ceae895c"></a>
 
-## AgentConstruction.&lt;anonymous@673:39&gt;.&lt;anonymous@674:54&gt;
+## AgentConstruction.&lt;anonymous@693:39&gt;.&lt;anonymous@694:54&gt;
 
-[features/agents/agent-construction.tsx:674](<../../../../../../features/agents/agent-construction.tsx#L674>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:694](<../../../../../../features/agents/agent-construction.tsx#L694>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@673:39&gt;](<agent-construction.tsx.md#s-a3f8e473fd3c4dba>).
+Lexical owner: [AgentConstruction.&lt;anonymous@693:39&gt;](<agent-construction.tsx.md#s-8f4f3c96cb7d6230>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2461,17 +2638,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5b881129f0e3f1f9"></a>
+<a id="s-477cae7f126aa3b8"></a>
 
-## AgentConstruction.&lt;anonymous@673:39&gt;.&lt;anonymous@675:48&gt;
+## AgentConstruction.&lt;anonymous@693:39&gt;.&lt;anonymous@695:48&gt;
 
-[features/agents/agent-construction.tsx:675](<../../../../../../features/agents/agent-construction.tsx#L675>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:695](<../../../../../../features/agents/agent-construction.tsx#L695>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@673:39&gt;](<agent-construction.tsx.md#s-a3f8e473fd3c4dba>).
+Lexical owner: [AgentConstruction.&lt;anonymous@693:39&gt;](<agent-construction.tsx.md#s-8f4f3c96cb7d6230>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2494,11 +2671,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-04246319649a6be6"></a>
+<a id="s-7de5c08d27b0aa42"></a>
 
-## AgentConstruction.&lt;anonymous@686:24&gt;
+## AgentConstruction.&lt;anonymous@706:24&gt;
 
-[features/agents/agent-construction.tsx:686](<../../../../../../features/agents/agent-construction.tsx#L686>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:706](<../../../../../../features/agents/agent-construction.tsx#L706>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2518,27 +2695,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>) — [features/agents/agent-construction.tsx:686](<../../../../../../features/agents/agent-construction.tsx#L686>)
+- [AgentConstruction](<agent-construction.tsx.md#s-56fc0c6bc133a86f>) — [features/agents/agent-construction.tsx:706](<../../../../../../features/agents/agent-construction.tsx#L706>)
 
 Unresolved / external call sites: 1.
 
-- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:687](<../../../../../../features/agents/agent-construction.tsx#L687>)
+- config.nodes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:707](<../../../../../../features/agents/agent-construction.tsx#L707>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4a455bad63d105c7"></a>
+<a id="s-913744f0b0a1f712"></a>
 
-## AgentConstruction.&lt;anonymous@686:24&gt;.&lt;anonymous@688:27&gt;
+## AgentConstruction.&lt;anonymous@706:24&gt;.&lt;anonymous@708:27&gt;
 
-[features/agents/agent-construction.tsx:688](<../../../../../../features/agents/agent-construction.tsx#L688>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:708](<../../../../../../features/agents/agent-construction.tsx#L708>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@686:24&gt;](<agent-construction.tsx.md#s-04246319649a6be6>).
+Lexical owner: [AgentConstruction.&lt;anonymous@706:24&gt;](<agent-construction.tsx.md#s-7de5c08d27b0aa42>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2561,11 +2738,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-cc4faeb2c781ffed"></a>
+<a id="s-aaf726485e76ba2e"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;
 
-[features/agents/agent-construction.tsx:698](<../../../../../../features/agents/agent-construction.tsx#L698>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:718](<../../../../../../features/agents/agent-construction.tsx#L718>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -2589,27 +2766,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- item.kind.toLowerCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:701](<../../../../../../features/agents/agent-construction.tsx#L701>)
-- item.kind.slice(0, 3).toUpperCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:767](<../../../../../../features/agents/agent-construction.tsx#L767>)
-- item.kind.slice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:767](<../../../../../../features/agents/agent-construction.tsx#L767>)
-- chat.contextBoxes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:774](<../../../../../../features/agents/agent-construction.tsx#L774>)
-- &#91;"Context", "Engine"&#93;.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:801](<../../../../../../features/agents/agent-construction.tsx#L801>)
+- item.kind.toLowerCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:721](<../../../../../../features/agents/agent-construction.tsx#L721>)
+- item.kind.slice(0, 3).toUpperCase — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:787](<../../../../../../features/agents/agent-construction.tsx#L787>)
+- item.kind.slice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:787](<../../../../../../features/agents/agent-construction.tsx#L787>)
+- chat.contextBoxes.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:794](<../../../../../../features/agents/agent-construction.tsx#L794>)
+- &#91;"Context", "Engine"&#93;.includes — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:821](<../../../../../../features/agents/agent-construction.tsx#L821>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5fdd85ddd2ca0f2e"></a>
+<a id="s-dd01860408f15f27"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@707:32&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@727:32&gt;
 
-[features/agents/agent-construction.tsx:707](<../../../../../../features/agents/agent-construction.tsx#L707>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:727](<../../../../../../features/agents/agent-construction.tsx#L727>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2627,23 +2804,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:707](<../../../../../../features/agents/agent-construction.tsx#L707>)
+- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:727](<../../../../../../features/agents/agent-construction.tsx#L727>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d2a4d327fc8079af"></a>
+<a id="s-915de90a5a02de66"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@708:38&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@728:38&gt;
 
-[features/agents/agent-construction.tsx:708](<../../../../../../features/agents/agent-construction.tsx#L708>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:728](<../../../../../../features/agents/agent-construction.tsx#L728>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2653,7 +2830,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.startDrag](<agent-construction.tsx.md#s-2e3c726be850058f>) — [features/agents/agent-construction.tsx:708](<../../../../../../features/agents/agent-construction.tsx#L708>)
+- [AgentConstruction.startDrag](<agent-construction.tsx.md#s-a952783bfe62a082>) — [features/agents/agent-construction.tsx:728](<../../../../../../features/agents/agent-construction.tsx#L728>)
 
 **Called by (statically resolved):**
 
@@ -2666,17 +2843,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f71638776ffc6bf8"></a>
+<a id="s-afdb60d3de98823a"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@709:38&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@729:38&gt;
 
-[features/agents/agent-construction.tsx:709](<../../../../../../features/agents/agent-construction.tsx#L709>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:729](<../../../../../../features/agents/agent-construction.tsx#L729>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2686,7 +2863,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.move](<agent-construction.tsx.md#s-df4871005f8d5c62>) — [features/agents/agent-construction.tsx:711](<../../../../../../features/agents/agent-construction.tsx#L711>)
+- [AgentConstruction.move](<agent-construction.tsx.md#s-c4990ec8bf644aef>) — [features/agents/agent-construction.tsx:731](<../../../../../../features/agents/agent-construction.tsx#L731>)
 
 **Called by (statically resolved):**
 
@@ -2699,17 +2876,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-fe6956e6ea209367"></a>
+<a id="s-143385f9cab74139"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@719:36&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@739:36&gt;
 
-[features/agents/agent-construction.tsx:719](<../../../../../../features/agents/agent-construction.tsx#L719>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:739](<../../../../../../features/agents/agent-construction.tsx#L739>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2727,25 +2904,25 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:720](<../../../../../../features/agents/agent-construction.tsx#L720>)
-- e.currentTarget.releasePointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:721](<../../../../../../features/agents/agent-construction.tsx#L721>)
-- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:723](<../../../../../../features/agents/agent-construction.tsx#L723>)
+- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:740](<../../../../../../features/agents/agent-construction.tsx#L740>)
+- e.currentTarget.releasePointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:741](<../../../../../../features/agents/agent-construction.tsx#L741>)
+- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:743](<../../../../../../features/agents/agent-construction.tsx#L743>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0343e11c0f6fde9f"></a>
+<a id="s-fda244c065d004d6"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@725:40&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@745:40&gt;
 
-[features/agents/agent-construction.tsx:725](<../../../../../../features/agents/agent-construction.tsx#L725>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:745](<../../../../../../features/agents/agent-construction.tsx#L745>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2763,23 +2940,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:727](<../../../../../../features/agents/agent-construction.tsx#L727>)
+- setDragging — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:747](<../../../../../../features/agents/agent-construction.tsx#L747>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-92558eff9b9261e1"></a>
+<a id="s-d54e1e1c84fb8c73"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;
 
-[features/agents/agent-construction.tsx:729](<../../../../../../features/agents/agent-construction.tsx#L729>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:749](<../../../../../../features/agents/agent-construction.tsx#L749>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2789,8 +2966,8 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.move](<agent-construction.tsx.md#s-df4871005f8d5c62>) — [features/agents/agent-construction.tsx:733](<../../../../../../features/agents/agent-construction.tsx#L733>)
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:751](<../../../../../../features/agents/agent-construction.tsx#L751>)
+- [AgentConstruction.move](<agent-construction.tsx.md#s-c4990ec8bf644aef>) — [features/agents/agent-construction.tsx:753](<../../../../../../features/agents/agent-construction.tsx#L753>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:771](<../../../../../../features/agents/agent-construction.tsx#L771>)
 
 **Called by (statically resolved):**
 
@@ -2798,28 +2975,28 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 6.
 
-- e.key.startsWith — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:731](<../../../../../../features/agents/agent-construction.tsx#L731>)
-- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:732](<../../../../../../features/agents/agent-construction.tsx#L732>)
-- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:750](<../../../../../../features/agents/agent-construction.tsx#L750>)
-- config.nodes.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:752](<../../../../../../features/agents/agent-construction.tsx#L752>)
-- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:753](<../../../../../../features/agents/agent-construction.tsx#L753>)
-- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:758](<../../../../../../features/agents/agent-construction.tsx#L758>)
+- e.key.startsWith — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:751](<../../../../../../features/agents/agent-construction.tsx#L751>)
+- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:752](<../../../../../../features/agents/agent-construction.tsx#L752>)
+- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:770](<../../../../../../features/agents/agent-construction.tsx#L770>)
+- config.nodes.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:772](<../../../../../../features/agents/agent-construction.tsx#L772>)
+- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:773](<../../../../../../features/agents/agent-construction.tsx#L773>)
+- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:778](<../../../../../../features/agents/agent-construction.tsx#L778>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5bfcf07fe8e26f3e"></a>
+<a id="s-bb0b209252889792"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;.&lt;anonymous@752:56&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;.&lt;anonymous@772:56&gt;
 
-[features/agents/agent-construction.tsx:752](<../../../../../../features/agents/agent-construction.tsx#L752>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:772](<../../../../../../features/agents/agent-construction.tsx#L772>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;](<agent-construction.tsx.md#s-92558eff9b9261e1>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;](<agent-construction.tsx.md#s-d54e1e1c84fb8c73>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2842,17 +3019,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f6b7c1f1e9ee562a"></a>
+<a id="s-a12caa090ea5ba5e"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;.&lt;anonymous@754:31&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;.&lt;anonymous@774:31&gt;
 
-[features/agents/agent-construction.tsx:754](<../../../../../../features/agents/agent-construction.tsx#L754>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:774](<../../../../../../features/agents/agent-construction.tsx#L774>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@729:34&gt;](<agent-construction.tsx.md#s-92558eff9b9261e1>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@749:34&gt;](<agent-construction.tsx.md#s-d54e1e1c84fb8c73>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2875,17 +3052,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-33a12af6f1985399"></a>
+<a id="s-5096fb37ddee1a5b"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@775:35&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@795:35&gt;
 
-[features/agents/agent-construction.tsx:775](<../../../../../../features/agents/agent-construction.tsx#L775>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:795](<../../../../../../features/agents/agent-construction.tsx#L795>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2908,17 +3085,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1d4b3d9cc383d0f0"></a>
+<a id="s-ba83d3a1dff8250a"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@806:42&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@826:42&gt;
 
-[features/agents/agent-construction.tsx:806](<../../../../../../features/agents/agent-construction.tsx#L806>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:826](<../../../../../../features/agents/agent-construction.tsx#L826>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2936,24 +3113,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- event.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:807](<../../../../../../features/agents/agent-construction.tsx#L807>)
-- event.stopPropagation — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:808](<../../../../../../features/agents/agent-construction.tsx#L808>)
+- event.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:827](<../../../../../../features/agents/agent-construction.tsx#L827>)
+- event.stopPropagation — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:828](<../../../../../../features/agents/agent-construction.tsx#L828>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-77f888afeca56ae3"></a>
+<a id="s-1039a1b92ee3e984"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@810:36&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@830:36&gt;
 
-[features/agents/agent-construction.tsx:810](<../../../../../../features/agents/agent-construction.tsx#L810>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:830](<../../../../../../features/agents/agent-construction.tsx#L830>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2963,7 +3140,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>) — [features/agents/agent-construction.tsx:811](<../../../../../../features/agents/agent-construction.tsx#L811>)
+- [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>) — [features/agents/agent-construction.tsx:831](<../../../../../../features/agents/agent-construction.tsx#L831>)
 
 **Called by (statically resolved):**
 
@@ -2976,17 +3153,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5ee0d1ec6b299c21"></a>
+<a id="s-33405200b3410c93"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@821:42&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@841:42&gt;
 
-[features/agents/agent-construction.tsx:821](<../../../../../../features/agents/agent-construction.tsx#L821>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:841](<../../../../../../features/agents/agent-construction.tsx#L841>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2996,7 +3173,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-b4204108b0eaa200>) — [features/agents/agent-construction.tsx:826](<../../../../../../features/agents/agent-construction.tsx#L826>)
+- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-3a0d69325767ceb6>) — [features/agents/agent-construction.tsx:846](<../../../../../../features/agents/agent-construction.tsx#L846>)
 
 **Called by (statically resolved):**
 
@@ -3004,27 +3181,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:822](<../../../../../../features/agents/agent-construction.tsx#L822>)
-- e.stopPropagation — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:823](<../../../../../../features/agents/agent-construction.tsx#L823>)
-- e.currentTarget.setPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:824](<../../../../../../features/agents/agent-construction.tsx#L824>)
-- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:825](<../../../../../../features/agents/agent-construction.tsx#L825>)
-- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:826](<../../../../../../features/agents/agent-construction.tsx#L826>)
+- e.preventDefault — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:842](<../../../../../../features/agents/agent-construction.tsx#L842>)
+- e.stopPropagation — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:843](<../../../../../../features/agents/agent-construction.tsx#L843>)
+- e.currentTarget.setPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:844](<../../../../../../features/agents/agent-construction.tsx#L844>)
+- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:845](<../../../../../../features/agents/agent-construction.tsx#L845>)
+- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:846](<../../../../../../features/agents/agent-construction.tsx#L846>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3801549a88d100aa"></a>
+<a id="s-03ad0b910ce9a1b6"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@828:42&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@848:42&gt;
 
-[features/agents/agent-construction.tsx:828](<../../../../../../features/agents/agent-construction.tsx#L828>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:848](<../../../../../../features/agents/agent-construction.tsx#L848>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3034,7 +3211,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-b4204108b0eaa200>) — [features/agents/agent-construction.tsx:830](<../../../../../../features/agents/agent-construction.tsx#L830>)
+- [AgentConstruction.localPoint](<agent-construction.tsx.md#s-3a0d69325767ceb6>) — [features/agents/agent-construction.tsx:850](<../../../../../../features/agents/agent-construction.tsx#L850>)
 
 **Called by (statically resolved):**
 
@@ -3042,24 +3219,24 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:829](<../../../../../../features/agents/agent-construction.tsx#L829>)
-- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:830](<../../../../../../features/agents/agent-construction.tsx#L830>)
+- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:849](<../../../../../../features/agents/agent-construction.tsx#L849>)
+- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:850](<../../../../../../features/agents/agent-construction.tsx#L850>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e1321e3ec2cc2056"></a>
+<a id="s-94d5d12264bbcc40"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@832:40&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@852:40&gt;
 
-[features/agents/agent-construction.tsx:832](<../../../../../../features/agents/agent-construction.tsx#L832>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:852](<../../../../../../features/agents/agent-construction.tsx#L852>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3069,7 +3246,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.connect](<agent-construction.tsx.md#s-83ed57f8453c9aa9>) — [features/agents/agent-construction.tsx:841](<../../../../../../features/agents/agent-construction.tsx#L841>)
+- [AgentConstruction.connect](<agent-construction.tsx.md#s-f1767aa30007a88a>) — [features/agents/agent-construction.tsx:861](<../../../../../../features/agents/agent-construction.tsx#L861>)
 
 **Called by (statically resolved):**
 
@@ -3077,27 +3254,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:833](<../../../../../../features/agents/agent-construction.tsx#L833>)
-- e.currentTarget.releasePointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:834](<../../../../../../features/agents/agent-construction.tsx#L834>)
-- document .elementFromPoint(e.clientX, e.clientY) ?.closest — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:837](<../../../../../../features/agents/agent-construction.tsx#L837>)
-- document .elementFromPoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:837](<../../../../../../features/agents/agent-construction.tsx#L837>)
-- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:842](<../../../../../../features/agents/agent-construction.tsx#L842>)
+- e.currentTarget.hasPointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:853](<../../../../../../features/agents/agent-construction.tsx#L853>)
+- e.currentTarget.releasePointerCapture — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:854](<../../../../../../features/agents/agent-construction.tsx#L854>)
+- document .elementFromPoint(e.clientX, e.clientY) ?.closest — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:857](<../../../../../../features/agents/agent-construction.tsx#L857>)
+- document .elementFromPoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:857](<../../../../../../features/agents/agent-construction.tsx#L857>)
+- setWirePoint — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:862](<../../../../../../features/agents/agent-construction.tsx#L862>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1d7e1f1aaf980fb5"></a>
+<a id="s-dab603e4b578bc33"></a>
 
-## AgentConstruction.&lt;anonymous@698:37&gt;.&lt;anonymous@844:36&gt;
+## AgentConstruction.&lt;anonymous@718:37&gt;.&lt;anonymous@864:36&gt;
 
-[features/agents/agent-construction.tsx:844](<../../../../../../features/agents/agent-construction.tsx#L844>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:864](<../../../../../../features/agents/agent-construction.tsx#L864>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@698:37&gt;](<agent-construction.tsx.md#s-cc4faeb2c781ffed>).
+Lexical owner: [AgentConstruction.&lt;anonymous@718:37&gt;](<agent-construction.tsx.md#s-aaf726485e76ba2e>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3115,18 +3292,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:846](<../../../../../../features/agents/agent-construction.tsx#L846>)
-- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:847](<../../../../../../features/agents/agent-construction.tsx#L847>)
+- setConnecting — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:866](<../../../../../../features/agents/agent-construction.tsx#L866>)
+- setNotice — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:867](<../../../../../../features/agents/agent-construction.tsx#L867>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-cbcab045f9d642e9"></a>
+<a id="s-65ec92bc7c8be8c7"></a>
 
-## AgentConstruction.&lt;anonymous@908:35&gt;
+## AgentConstruction.&lt;anonymous@928:35&gt;
 
-[features/agents/agent-construction.tsx:908](<../../../../../../features/agents/agent-construction.tsx#L908>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:928](<../../../../../../features/agents/agent-construction.tsx#L928>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3142,7 +3319,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:909](<../../../../../../features/agents/agent-construction.tsx#L909>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:929](<../../../../../../features/agents/agent-construction.tsx#L929>)
 
 **Called by (statically resolved):**
 
@@ -3150,17 +3327,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:912](<../../../../../../features/agents/agent-construction.tsx#L912>)
+- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:932](<../../../../../../features/agents/agent-construction.tsx#L932>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e25fbd5316f6b2dd"></a>
+<a id="s-15f0ac4307ebe379"></a>
 
-## AgentConstruction.&lt;anonymous@925:31&gt;
+## AgentConstruction.&lt;anonymous@945:31&gt;
 
-[features/agents/agent-construction.tsx:925](<../../../../../../features/agents/agent-construction.tsx#L925>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:945](<../../../../../../features/agents/agent-construction.tsx#L945>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3176,7 +3353,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:925](<../../../../../../features/agents/agent-construction.tsx#L925>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:945](<../../../../../../features/agents/agent-construction.tsx#L945>)
 
 **Called by (statically resolved):**
 
@@ -3189,11 +3366,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f1f57f792bb599d3"></a>
+<a id="s-4e99fbe46b36ba84"></a>
 
-## AgentConstruction.&lt;anonymous@937:27&gt;
+## AgentConstruction.&lt;anonymous@957:27&gt;
 
-[features/agents/agent-construction.tsx:937](<../../../../../../features/agents/agent-construction.tsx#L937>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:957](<../../../../../../features/agents/agent-construction.tsx#L957>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3217,23 +3394,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- construction.active?.edges.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:940](<../../../../../../features/agents/agent-construction.tsx#L940>)
+- construction.active?.edges.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:960](<../../../../../../features/agents/agent-construction.tsx#L960>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e5f04d8579edd23d"></a>
+<a id="s-37cbcd5a9591fd4c"></a>
 
-## AgentConstruction.&lt;anonymous@937:27&gt;.&lt;anonymous@941:31&gt;
+## AgentConstruction.&lt;anonymous@957:27&gt;.&lt;anonymous@961:31&gt;
 
-[features/agents/agent-construction.tsx:941](<../../../../../../features/agents/agent-construction.tsx#L941>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:961](<../../../../../../features/agents/agent-construction.tsx#L961>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@937:27&gt;](<agent-construction.tsx.md#s-f1f57f792bb599d3>).
+Lexical owner: [AgentConstruction.&lt;anonymous@957:27&gt;](<agent-construction.tsx.md#s-4e99fbe46b36ba84>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3251,23 +3428,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- construction.active?.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:943](<../../../../../../features/agents/agent-construction.tsx#L943>)
+- construction.active?.nodes.some — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:963](<../../../../../../features/agents/agent-construction.tsx#L963>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9757d803120b6261"></a>
+<a id="s-d4876815616f5fa1"></a>
 
-## AgentConstruction.&lt;anonymous@937:27&gt;.&lt;anonymous@941:31&gt;.&lt;anonymous@944:35&gt;
+## AgentConstruction.&lt;anonymous@957:27&gt;.&lt;anonymous@961:31&gt;.&lt;anonymous@964:35&gt;
 
-[features/agents/agent-construction.tsx:944](<../../../../../../features/agents/agent-construction.tsx#L944>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:964](<../../../../../../features/agents/agent-construction.tsx#L964>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@937:27&gt;.&lt;anonymous@941:31&gt;](<agent-construction.tsx.md#s-e5f04d8579edd23d>).
+Lexical owner: [AgentConstruction.&lt;anonymous@957:27&gt;.&lt;anonymous@961:31&gt;](<agent-construction.tsx.md#s-37cbcd5a9591fd4c>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3290,11 +3467,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-abe1f9518e8f36b4"></a>
+<a id="s-858a08fa41498201"></a>
 
-## AgentConstruction.&lt;anonymous@960:31&gt;
+## AgentConstruction.&lt;anonymous@980:31&gt;
 
-[features/agents/agent-construction.tsx:960](<../../../../../../features/agents/agent-construction.tsx#L960>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:980](<../../../../../../features/agents/agent-construction.tsx#L980>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3310,7 +3487,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:960](<../../../../../../features/agents/agent-construction.tsx#L960>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:980](<../../../../../../features/agents/agent-construction.tsx#L980>)
 
 **Called by (statically resolved):**
 
@@ -3323,11 +3500,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f7c1b61d8f69880a"></a>
+<a id="s-d09d6e6187f12b16"></a>
 
-## AgentConstruction.&lt;anonymous@971:25&gt;
+## AgentConstruction.&lt;anonymous@991:25&gt;
 
-[features/agents/agent-construction.tsx:971](<../../../../../../features/agents/agent-construction.tsx#L971>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:991](<../../../../../../features/agents/agent-construction.tsx#L991>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3356,11 +3533,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-85320385fb26ed43"></a>
+<a id="s-9b5d1f8e29fd6b90"></a>
 
-## AgentConstruction.&lt;anonymous@990:35&gt;
+## AgentConstruction.&lt;anonymous@1010:35&gt;
 
-[features/agents/agent-construction.tsx:990](<../../../../../../features/agents/agent-construction.tsx#L990>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1010](<../../../../../../features/agents/agent-construction.tsx#L1010>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3376,7 +3553,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:991](<../../../../../../features/agents/agent-construction.tsx#L991>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:1011](<../../../../../../features/agents/agent-construction.tsx#L1011>)
 
 **Called by (statically resolved):**
 
@@ -3384,17 +3561,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:994](<../../../../../../features/agents/agent-construction.tsx#L994>)
+- Number — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1014](<../../../../../../features/agents/agent-construction.tsx#L1014>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-742cb311ae521cb0"></a>
+<a id="s-b55375f991accbda"></a>
 
-## AgentConstruction.&lt;anonymous@1009:33&gt;
+## AgentConstruction.&lt;anonymous@1029:33&gt;
 
-[features/agents/agent-construction.tsx:1009](<../../../../../../features/agents/agent-construction.tsx#L1009>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1029](<../../../../../../features/agents/agent-construction.tsx#L1029>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3410,7 +3587,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:1010](<../../../../../../features/agents/agent-construction.tsx#L1010>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:1030](<../../../../../../features/agents/agent-construction.tsx#L1030>)
 
 **Called by (statically resolved):**
 
@@ -3423,11 +3600,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-932fc4bf54751d80"></a>
+<a id="s-f75dbf83112815d4"></a>
 
-## AgentConstruction.&lt;anonymous@1031:33&gt;
+## AgentConstruction.&lt;anonymous@1051:33&gt;
 
-[features/agents/agent-construction.tsx:1031](<../../../../../../features/agents/agent-construction.tsx#L1031>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1051](<../../../../../../features/agents/agent-construction.tsx#L1051>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3443,7 +3620,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:1036](<../../../../../../features/agents/agent-construction.tsx#L1036>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:1056](<../../../../../../features/agents/agent-construction.tsx#L1056>)
 
 **Called by (statically resolved):**
 
@@ -3451,23 +3628,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- chat.registry?.models.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1032](<../../../../../../features/agents/agent-construction.tsx#L1032>)
+- chat.registry?.models.find — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1052](<../../../../../../features/agents/agent-construction.tsx#L1052>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-add004a82f92fa5b"></a>
+<a id="s-ed939805668bf75c"></a>
 
-## AgentConstruction.&lt;anonymous@1031:33&gt;.&lt;anonymous@1033:27&gt;
+## AgentConstruction.&lt;anonymous@1051:33&gt;.&lt;anonymous@1053:27&gt;
 
-[features/agents/agent-construction.tsx:1033](<../../../../../../features/agents/agent-construction.tsx#L1033>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1053](<../../../../../../features/agents/agent-construction.tsx#L1053>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@1031:33&gt;](<agent-construction.tsx.md#s-932fc4bf54751d80>).
+Lexical owner: [AgentConstruction.&lt;anonymous@1051:33&gt;](<agent-construction.tsx.md#s-f75dbf83112815d4>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3490,11 +3667,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-580ceb277bef7ece"></a>
+<a id="s-22cd5a52c84baa8f"></a>
 
-## AgentConstruction.&lt;anonymous@1047:50&gt;
+## AgentConstruction.&lt;anonymous@1067:50&gt;
 
-[features/agents/agent-construction.tsx:1047](<../../../../../../features/agents/agent-construction.tsx#L1047>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1067](<../../../../../../features/agents/agent-construction.tsx#L1067>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3523,11 +3700,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7098dc5263e10cde"></a>
+<a id="s-70a853c6b6d2d3e1"></a>
 
-## AgentConstruction.&lt;anonymous@1065:33&gt;
+## AgentConstruction.&lt;anonymous@1085:33&gt;
 
-[features/agents/agent-construction.tsx:1065](<../../../../../../features/agents/agent-construction.tsx#L1065>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1085](<../../../../../../features/agents/agent-construction.tsx#L1085>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3543,7 +3720,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-1512df2571097f36>) — [features/agents/agent-construction.tsx:1066](<../../../../../../features/agents/agent-construction.tsx#L1066>)
+- [AgentConstruction.updateNode](<agent-construction.tsx.md#s-aa294a80ab806a0d>) — [features/agents/agent-construction.tsx:1086](<../../../../../../features/agents/agent-construction.tsx#L1086>)
 
 **Called by (statically resolved):**
 
@@ -3556,11 +3733,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-37018c18b42798ed"></a>
+<a id="s-9bde246f99deeaf0"></a>
 
-## AgentConstruction.&lt;anonymous@1074:52&gt;
+## AgentConstruction.&lt;anonymous@1094:52&gt;
 
-[features/agents/agent-construction.tsx:1074](<../../../../../../features/agents/agent-construction.tsx#L1074>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1094](<../../../../../../features/agents/agent-construction.tsx#L1094>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3589,11 +3766,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-65107e29e2ab749e"></a>
+<a id="s-85719e761e4439ef"></a>
 
-## AgentConstruction.&lt;anonymous@1085:21&gt;
+## AgentConstruction.&lt;anonymous@1105:21&gt;
 
-[features/agents/agent-construction.tsx:1085](<../../../../../../features/agents/agent-construction.tsx#L1085>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1105](<../../../../../../features/agents/agent-construction.tsx#L1105>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3622,11 +3799,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e73d0ec6afa5f28b"></a>
+<a id="s-54aee8ef3800c780"></a>
 
-## AgentConstruction.&lt;anonymous@1087:24&gt;
+## AgentConstruction.&lt;anonymous@1107:24&gt;
 
-[features/agents/agent-construction.tsx:1087](<../../../../../../features/agents/agent-construction.tsx#L1087>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1107](<../../../../../../features/agents/agent-construction.tsx#L1107>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3655,17 +3832,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-aa3d90af31174823"></a>
+<a id="s-95560aef7fa7beea"></a>
 
-## AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;
+## AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;
 
-[features/agents/agent-construction.tsx:1091](<../../../../../../features/agents/agent-construction.tsx#L1091>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1111](<../../../../../../features/agents/agent-construction.tsx#L1111>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@1087:24&gt;](<agent-construction.tsx.md#s-e73d0ec6afa5f28b>).
+Lexical owner: [AgentConstruction.&lt;anonymous@1107:24&gt;](<agent-construction.tsx.md#s-54aee8ef3800c780>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3675,7 +3852,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:1092](<../../../../../../features/agents/agent-construction.tsx#L1092>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:1112](<../../../../../../features/agents/agent-construction.tsx#L1112>)
 
 **Called by (statically resolved):**
 
@@ -3683,23 +3860,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1093](<../../../../../../features/agents/agent-construction.tsx#L1093>)
+- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1113](<../../../../../../features/agents/agent-construction.tsx#L1113>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-24a0adf10b4de7c2"></a>
+<a id="s-76ec4bf45e9975ef"></a>
 
-## AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;.&lt;anonymous@1093:54&gt;
+## AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;.&lt;anonymous@1113:54&gt;
 
-[features/agents/agent-construction.tsx:1093](<../../../../../../features/agents/agent-construction.tsx#L1093>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1113](<../../../../../../features/agents/agent-construction.tsx#L1113>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@1087:24&gt;.&lt;anonymous@1091:32&gt;](<agent-construction.tsx.md#s-aa3d90af31174823>).
+Lexical owner: [AgentConstruction.&lt;anonymous@1107:24&gt;.&lt;anonymous@1111:32&gt;](<agent-construction.tsx.md#s-95560aef7fa7beea>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3722,11 +3899,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f4aea5cc7fd9f5d0"></a>
+<a id="s-2a7908d587b19c4a"></a>
 
-## AgentConstruction.&lt;anonymous@1102:28&gt;
+## AgentConstruction.&lt;anonymous@1122:28&gt;
 
-[features/agents/agent-construction.tsx:1102](<../../../../../../features/agents/agent-construction.tsx#L1102>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1122](<../../../../../../features/agents/agent-construction.tsx#L1122>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3742,7 +3919,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:1103](<../../../../../../features/agents/agent-construction.tsx#L1103>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:1123](<../../../../../../features/agents/agent-construction.tsx#L1123>)
 
 **Called by (statically resolved):**
 
@@ -3750,25 +3927,25 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- config.nodes.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1104](<../../../../../../features/agents/agent-construction.tsx#L1104>)
-- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1105](<../../../../../../features/agents/agent-construction.tsx#L1105>)
-- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1109](<../../../../../../features/agents/agent-construction.tsx#L1109>)
+- config.nodes.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1124](<../../../../../../features/agents/agent-construction.tsx#L1124>)
+- config.edges.filter — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1125](<../../../../../../features/agents/agent-construction.tsx#L1125>)
+- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1129](<../../../../../../features/agents/agent-construction.tsx#L1129>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-758be9b2c5ddaae8"></a>
+<a id="s-e6fa4e131dd83511"></a>
 
-## AgentConstruction.&lt;anonymous@1102:28&gt;.&lt;anonymous@1104:50&gt;
+## AgentConstruction.&lt;anonymous@1122:28&gt;.&lt;anonymous@1124:50&gt;
 
-[features/agents/agent-construction.tsx:1104](<../../../../../../features/agents/agent-construction.tsx#L1104>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1124](<../../../../../../features/agents/agent-construction.tsx#L1124>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@1102:28&gt;](<agent-construction.tsx.md#s-f4aea5cc7fd9f5d0>).
+Lexical owner: [AgentConstruction.&lt;anonymous@1122:28&gt;](<agent-construction.tsx.md#s-2a7908d587b19c4a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3791,17 +3968,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ffd02b21e1461d00"></a>
+<a id="s-2782e815e828227f"></a>
 
-## AgentConstruction.&lt;anonymous@1102:28&gt;.&lt;anonymous@1106:25&gt;
+## AgentConstruction.&lt;anonymous@1122:28&gt;.&lt;anonymous@1126:25&gt;
 
-[features/agents/agent-construction.tsx:1106](<../../../../../../features/agents/agent-construction.tsx#L1106>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1126](<../../../../../../features/agents/agent-construction.tsx#L1126>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AgentConstruction.&lt;anonymous@1102:28&gt;](<agent-construction.tsx.md#s-f4aea5cc7fd9f5d0>).
+Lexical owner: [AgentConstruction.&lt;anonymous@1122:28&gt;](<agent-construction.tsx.md#s-2a7908d587b19c4a>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3824,11 +4001,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-33540f35f3fa3d16"></a>
+<a id="s-746f4deb91148436"></a>
 
-## AgentConstruction.&lt;anonymous@1114:34&gt;
+## AgentConstruction.&lt;anonymous@1134:34&gt;
 
-[features/agents/agent-construction.tsx:1114](<../../../../../../features/agents/agent-construction.tsx#L1114>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1134](<../../../../../../features/agents/agent-construction.tsx#L1134>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3852,17 +4029,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1114](<../../../../../../features/agents/agent-construction.tsx#L1114>)
+- setSelected — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1134](<../../../../../../features/agents/agent-construction.tsx#L1134>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-15b6f59ee2261a62"></a>
+<a id="s-20133fe07b5ff09b"></a>
 
-## AgentConstruction.&lt;anonymous@1127:31&gt;
+## AgentConstruction.&lt;anonymous@1147:31&gt;
 
-[features/agents/agent-construction.tsx:1127](<../../../../../../features/agents/agent-construction.tsx#L1127>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1147](<../../../../../../features/agents/agent-construction.tsx#L1147>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3878,7 +4055,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:1127](<../../../../../../features/agents/agent-construction.tsx#L1127>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:1147](<../../../../../../features/agents/agent-construction.tsx#L1147>)
 
 **Called by (statically resolved):**
 
@@ -3891,11 +4068,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2bd6c79f63b15109"></a>
+<a id="s-62629a1eeca1222c"></a>
 
-## AgentConstruction.&lt;anonymous@1137:31&gt;
+## AgentConstruction.&lt;anonymous@1157:31&gt;
 
-[features/agents/agent-construction.tsx:1137](<../../../../../../features/agents/agent-construction.tsx#L1137>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1157](<../../../../../../features/agents/agent-construction.tsx#L1157>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3911,7 +4088,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.update](<agent-construction.tsx.md#s-c465a95fb9af26c3>) — [features/agents/agent-construction.tsx:1137](<../../../../../../features/agents/agent-construction.tsx#L1137>)
+- [AgentConstruction.update](<agent-construction.tsx.md#s-dc71e91853f2cb6a>) — [features/agents/agent-construction.tsx:1157](<../../../../../../features/agents/agent-construction.tsx#L1157>)
 
 **Called by (statically resolved):**
 
@@ -3924,11 +4101,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-565ab45227ccac7d"></a>
+<a id="s-6e4e80463cf82531"></a>
 
-## AgentConstruction.&lt;anonymous@1159:34&gt;
+## AgentConstruction.&lt;anonymous@1179:34&gt;
 
-[features/agents/agent-construction.tsx:1159](<../../../../../../features/agents/agent-construction.tsx#L1159>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1179](<../../../../../../features/agents/agent-construction.tsx#L1179>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3957,11 +4134,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ed3a1cc54de966e3"></a>
+<a id="s-3c2969068194a4a6"></a>
 
-## AgentConstruction.&lt;anonymous@1161:35&gt;
+## AgentConstruction.&lt;anonymous@1181:35&gt;
 
-[features/agents/agent-construction.tsx:1161](<../../../../../../features/agents/agent-construction.tsx#L1161>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1181](<../../../../../../features/agents/agent-construction.tsx#L1181>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3990,11 +4167,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-237ad5aa69daac19"></a>
+<a id="s-64fead108bc3d247"></a>
 
-## AgentConstruction.&lt;anonymous@1182:22&gt;
+## AgentConstruction.&lt;anonymous@1202:22&gt;
 
-[features/agents/agent-construction.tsx:1182](<../../../../../../features/agents/agent-construction.tsx#L1182>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1202](<../../../../../../features/agents/agent-construction.tsx#L1202>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4018,18 +4195,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- new Date(event.at).toLocaleString — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1185](<../../../../../../features/agents/agent-construction.tsx#L1185>)
-- Date — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1185](<../../../../../../features/agents/agent-construction.tsx#L1185>)
+- new Date(event.at).toLocaleString — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1205](<../../../../../../features/agents/agent-construction.tsx#L1205>)
+- Date — external-or-dynamic-dispatch; [features/agents/agent-construction.tsx:1205](<../../../../../../features/agents/agent-construction.tsx#L1205>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e71657e5b1bb2174"></a>
+<a id="s-0def2a6bd4a60464"></a>
 
-## AgentConstruction.&lt;anonymous@1226:22&gt;
+## AgentConstruction.&lt;anonymous@1246:22&gt;
 
-[features/agents/agent-construction.tsx:1226](<../../../../../../features/agents/agent-construction.tsx#L1226>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1246](<../../../../../../features/agents/agent-construction.tsx#L1246>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4045,7 +4222,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.save](<agent-construction.tsx.md#s-9f2d71e2bec09ee0>) — [features/agents/agent-construction.tsx:1226](<../../../../../../features/agents/agent-construction.tsx#L1226>)
+- [AgentConstruction.save](<agent-construction.tsx.md#s-e2505ac0e017667c>) — [features/agents/agent-construction.tsx:1246](<../../../../../../features/agents/agent-construction.tsx#L1246>)
 
 **Called by (statically resolved):**
 
@@ -4058,11 +4235,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-92a20b43b70df0da"></a>
+<a id="s-eb2d43c316cb9082"></a>
 
-## AgentConstruction.&lt;anonymous@1230:47&gt;
+## AgentConstruction.&lt;anonymous@1250:47&gt;
 
-[features/agents/agent-construction.tsx:1230](<../../../../../../features/agents/agent-construction.tsx#L1230>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/agent-construction.tsx:1250](<../../../../../../features/agents/agent-construction.tsx#L1250>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4078,7 +4255,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [AgentConstruction.save](<agent-construction.tsx.md#s-9f2d71e2bec09ee0>) — [features/agents/agent-construction.tsx:1230](<../../../../../../features/agents/agent-construction.tsx#L1230>)
+- [AgentConstruction.save](<agent-construction.tsx.md#s-e2505ac0e017667c>) — [features/agents/agent-construction.tsx:1250](<../../../../../../features/agents/agent-construction.tsx#L1250>)
 
 **Called by (statically resolved):**
 

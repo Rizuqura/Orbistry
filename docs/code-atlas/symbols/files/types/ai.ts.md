@@ -41,115 +41,115 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [ConstructionSourceBinding](<ai.ts.md#s-cf28c67a79d5fe7a>) (TypeAliasDeclaration)
 - [ConstructionFilePreview](<ai.ts.md#s-81b526593588999c>) (TypeAliasDeclaration)
 - [AgentConstructionConfig](<ai.ts.md#s-ef1eebef6cd825c4>) (TypeAliasDeclaration)
-- [AgentConstructionInput](<ai.ts.md#s-242448fc17ab17c4>) (TypeAliasDeclaration)
-- [AgentAppearanceOptions](<ai.ts.md#s-56b49edd0459be1c>) (TypeAliasDeclaration)
-- [AgentAppearance](<ai.ts.md#s-244d27dba13bfc1c>) (TypeAliasDeclaration)
-- [AgentConfig](<ai.ts.md#s-b84fc6813b118bd2>) (TypeAliasDeclaration)
-- [RuntimeStatus](<ai.ts.md#s-a29e78620c60bc72>) (TypeAliasDeclaration)
-- [ModelPullStatus](<ai.ts.md#s-6b59e64e8fff86d7>) (TypeAliasDeclaration)
-- [ChatState](<ai.ts.md#s-2095c2e0d7934e6b>) (TypeAliasDeclaration)
-- [ModelSettings](<ai.ts.md#s-5dadaff5874cf530>) (TypeAliasDeclaration)
-- [ModelDescriptor](<ai.ts.md#s-21e30963aad22e77>) (TypeAliasDeclaration)
-- [ProviderStatus](<ai.ts.md#s-78b3ce1227ee5bbb>) (TypeAliasDeclaration)
-- [RegistryState](<ai.ts.md#s-97b7c51534cbb4ed>) (TypeAliasDeclaration)
-- [ScopeSelection](<ai.ts.md#s-6b8a4984864ded7f>) (TypeAliasDeclaration)
-- [ChatRequest](<ai.ts.md#s-4f8c9f5ab7afb732>) (TypeAliasDeclaration)
-- [ChatRun](<ai.ts.md#s-da60a1b7966fb6a0>) (TypeAliasDeclaration)
-- [ChatResult](<ai.ts.md#s-de4145961eaf5c4a>) (TypeAliasDeclaration)
-- [ChatEvent](<ai.ts.md#s-4a6807f210250f67>) (TypeAliasDeclaration)
-- [ProviderUsageSnapshot](<ai.ts.md#s-d153d9883d24b49f>) (InterfaceDeclaration)
-- [OpenRouterUsageSnapshot](<ai.ts.md#s-af7aafdf4801596f>) (TypeAliasDeclaration)
-- [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>) (InterfaceDeclaration)
-- [AiBridge.connectCredential](<ai.ts.md#s-181579073eb5a0f7>) (MethodSignature)
-- [AiBridge.providedModels](<ai.ts.md#s-2206b13ad2b01a46>) (MethodSignature)
-- [AiBridge.modelFavorites](<ai.ts.md#s-e0a1282a6bb1315c>) (MethodSignature)
-- [AiBridge.frontOfficeState](<ai.ts.md#s-372223938e36c7af>) (MethodSignature)
-- [AiBridge.frontOfficeConfig](<ai.ts.md#s-c9d56919d9ecb38a>) (MethodSignature)
-- [AiBridge.frontOfficeRefresh](<ai.ts.md#s-faf4fc278d3fc171>) (MethodSignature)
-- [AiBridge.frontOfficeOverride](<ai.ts.md#s-70db7b350975128f>) (MethodSignature)
-- [AiBridge.frontOfficeEvidence](<ai.ts.md#s-cad05ad9ae03a547>) (MethodSignature)
-- [AiBridge.frontOfficeFavorite](<ai.ts.md#s-e24c53592e947a4b>) (MethodSignature)
-- [AiBridge.frontOfficeHealth](<ai.ts.md#s-3012d33704e42fd9>) (MethodSignature)
-- [AiBridge.frontOfficeList](<ai.ts.md#s-42a1cb7a5a0f026f>) (MethodSignature)
-- [AiBridge.frontOfficeRead](<ai.ts.md#s-7bcadcf1430caf08>) (MethodSignature)
-- [AiBridge.frontOfficeCreate](<ai.ts.md#s-3efbe382e8c0a678>) (MethodSignature)
-- [AiBridge.frontOfficeDelete](<ai.ts.md#s-db03858bd5d7b55b>) (MethodSignature)
-- [AiBridge.frontOfficeExport](<ai.ts.md#s-96e6a56482723511>) (MethodSignature)
-- [AiBridge.frontOfficeChat](<ai.ts.md#s-ea1aef498f3b5b5d>) (MethodSignature)
-- [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-f46cff0e4051a943>) (MethodSignature)
-- [AiBridge.onFrontOfficeEvent.&lt;anonymous@552:32&gt;](<ai.ts.md#s-bf4a948f40bc5539>) (FunctionType)
-- [AiBridge.onFrontOfficeEvent.&lt;anonymous@552:67&gt;](<ai.ts.md#s-b13530df5197c580>) (FunctionType)
-- [AiBridge.listConstructionFiles](<ai.ts.md#s-8e879b17b766ff3d>) (MethodSignature)
-- [AiBridge.engineState](<ai.ts.md#s-c9009f766fc0ed7c>) (MethodSignature)
-- [AiBridge.enginePackageCatalog](<ai.ts.md#s-4987979d7ae08dd0>) (MethodSignature)
-- [AiBridge.chooseEngineFolder](<ai.ts.md#s-508aed69eb04fa45>) (MethodSignature)
-- [AiBridge.probeEngine](<ai.ts.md#s-31b6057466762475>) (MethodSignature)
-- [AiBridge.executeEngine](<ai.ts.md#s-e9128003f83108a0>) (MethodSignature)
-- [AiBridge.cancelEngine](<ai.ts.md#s-a0cd2aa3e42d317e>) (MethodSignature)
-- [AiBridge.openEngineReport](<ai.ts.md#s-25b219c5da134b63>) (MethodSignature)
-- [AiBridge.previewConstructionFile](<ai.ts.md#s-a03718902a060fa9>) (MethodSignature)
-- [AiBridge.getVaultIdentity](<ai.ts.md#s-c3d19c2775957600>) (MethodSignature)
-- [AiBridge.previewConstructionBox](<ai.ts.md#s-4cc14588b8a5520a>) (MethodSignature)
-- [AiBridge.listAgents](<ai.ts.md#s-00754034472eca50>) (MethodSignature)
-- [AiBridge.deleteAgent](<ai.ts.md#s-3d1edd93ce06b45b>) (MethodSignature)
-- [AiBridge.createAgent](<ai.ts.md#s-f4d0e5d0349c76d3>) (MethodSignature)
-- [AiBridge.saveAgentConstruction](<ai.ts.md#s-8cb08a3a3a8da40a>) (MethodSignature)
-- [AiBridge.proposeKnowledge](<ai.ts.md#s-90eb73f760d548fe>) (MethodSignature)
-- [AiBridge.retrieveKnowledge](<ai.ts.md#s-2b067bbbb6313188>) (MethodSignature)
-- [AiBridge.providerUsage](<ai.ts.md#s-6780f10fb2303b41>) (MethodSignature)
-- [AiBridge.openRouterUsage](<ai.ts.md#s-60cec0df47152739>) (MethodSignature)
-- [AiBridge.onUsageChanged](<ai.ts.md#s-e4c0a4241b20f47b>) (MethodSignature)
-- [AiBridge.onUsageChanged.&lt;anonymous@603:28&gt;](<ai.ts.md#s-ff9ee514c397d80d>) (FunctionType)
-- [AiBridge.onUsageChanged.&lt;anonymous@603:41&gt;](<ai.ts.md#s-d9421b1a1e68a259>) (FunctionType)
-- [AiBridge.getAgent](<ai.ts.md#s-37724e99e6383dd9>) (MethodSignature)
-- [AiBridge.saveAgent](<ai.ts.md#s-76d08a0ddc4163e4>) (MethodSignature)
-- [AiBridge.chooseAgentAvatar](<ai.ts.md#s-83695ed90390f13f>) (MethodSignature)
-- [AiBridge.chooseAgentBackdrop](<ai.ts.md#s-88ae1f2ec1de2b78>) (MethodSignature)
-- [AiBridge.previewBoxSelection](<ai.ts.md#s-b500165fe7addbaa>) (MethodSignature)
-- [AiBridge.inspectContextBox](<ai.ts.md#s-c2ceb97898f0dfff>) (MethodSignature)
-- [AiBridge.editContextBox](<ai.ts.md#s-5d03e7332c23679a>) (MethodSignature)
-- [AiBridge.switchContextBox](<ai.ts.md#s-0dc53340e10ac1c5>) (MethodSignature)
-- [AiBridge.listContextBoxes](<ai.ts.md#s-9d8a512729685a4c>) (MethodSignature)
-- [AiBridge.saveContextBox](<ai.ts.md#s-303d7e7a5a10f42c>) (MethodSignature)
-- [AiBridge.renameContextBox](<ai.ts.md#s-0f23e71ca0677339>) (MethodSignature)
-- [AiBridge.checkConversation](<ai.ts.md#s-77cd772b4420709d>) (MethodSignature)
-- [AiBridge.pullModel](<ai.ts.md#s-608b0d87a07dc2f8>) (MethodSignature)
-- [AiBridge.pullStatus](<ai.ts.md#s-28b75953b596429f>) (MethodSignature)
-- [AiBridge.cancelPull](<ai.ts.md#s-832b7fbd0d1fd9eb>) (MethodSignature)
-- [AiBridge.onPull](<ai.ts.md#s-7c9eb1c302b2843a>) (MethodSignature)
-- [AiBridge.onPull.&lt;anonymous@628:20&gt;](<ai.ts.md#s-5f3de3fc5fb92318>) (FunctionType)
-- [AiBridge.onPull.&lt;anonymous@628:56&gt;](<ai.ts.md#s-6b9f10bf2f30c275>) (FunctionType)
-- [AiBridge.checkRemoteModel](<ai.ts.md#s-20e53755a098c4b1>) (MethodSignature)
-- [AiBridge.stopModelChecks](<ai.ts.md#s-4813b836c71f90d5>) (MethodSignature)
-- [AiBridge.checkNvidiaModel](<ai.ts.md#s-38f4b1d8c116e7e1>) (MethodSignature)
-- [AiBridge.handshake](<ai.ts.md#s-9ec7c89602ab13ac>) (MethodSignature)
-- [AiBridge.getStatus](<ai.ts.md#s-3d8ea44b16f15999>) (MethodSignature)
-- [AiBridge.listModels](<ai.ts.md#s-d93fc679d9ed8491>) (MethodSignature)
-- [AiBridge.testModel](<ai.ts.md#s-7ebe9ea591c8df02>) (MethodSignature)
-- [AiBridge.models](<ai.ts.md#s-abf1053ae60bfda0>) (MethodSignature)
-- [AiBridge.settings](<ai.ts.md#s-aba31c1b0854cea9>) (MethodSignature)
-- [AiBridge.saveCredential](<ai.ts.md#s-c1ebea0136f6829d>) (MethodSignature)
-- [AiBridge.removeCredential](<ai.ts.md#s-d36e299dcb35d447>) (MethodSignature)
-- [AiBridge.context](<ai.ts.md#s-8dfd603c1f9c8e55>) (MethodSignature)
-- [AiBridge.listConversations](<ai.ts.md#s-fad9c0d10f14a731>) (MethodSignature)
-- [AiBridge.createConversation](<ai.ts.md#s-896f37493c228533>) (MethodSignature)
-- [AiBridge.renameConversation](<ai.ts.md#s-ce1ac9ead18ff6c0>) (MethodSignature)
-- [AiBridge.deleteConversation](<ai.ts.md#s-bf1cfa4f8cde17c3>) (MethodSignature)
-- [AiBridge.deleteMessage](<ai.ts.md#s-b0f4609b7f0342d5>) (MethodSignature)
-- [AiBridge.clearConversations](<ai.ts.md#s-e3e78a41ee41bf3b>) (MethodSignature)
-- [AiBridge.resumeConversation](<ai.ts.md#s-517005c6d482dfca>) (MethodSignature)
-- [AiBridge.gatewayActivity](<ai.ts.md#s-09b707ed8571aa92>) (MethodSignature)
-- [AiBridge.refreshSource](<ai.ts.md#s-8d6e77c409051ad7>) (MethodSignature)
-- [AiBridge.chat](<ai.ts.md#s-cf679c3295512db0>) (MethodSignature)
-- [AiBridge.cancel](<ai.ts.md#s-1622494a11dede38>) (MethodSignature)
-- [AiBridge.onEvent](<ai.ts.md#s-9402296fac70c02d>) (MethodSignature)
-- [AiBridge.onEvent.&lt;anonymous@680:21&gt;](<ai.ts.md#s-a5c41a0e9e5420d8>) (FunctionType)
-- [AiBridge.onEvent.&lt;anonymous@680:50&gt;](<ai.ts.md#s-18e9838ed67582e9>) (FunctionType)
-- [ProviderVerification](<ai.ts.md#s-194806ed7a9630cd>) (TypeAliasDeclaration)
-- [CredentialScope](<ai.ts.md#s-3746f3ad068df01b>) (TypeAliasDeclaration)
-- [ProviderConnection](<ai.ts.md#s-39fc7aab9c8fd197>) (TypeAliasDeclaration)
-- [ProvidedModelPreview](<ai.ts.md#s-971e43147c7f6a25>) (TypeAliasDeclaration)
-- [ModelCheckResult](<ai.ts.md#s-7546247c5a03d92f>) (TypeAliasDeclaration)
+- [AgentConstructionInput](<ai.ts.md#s-74d85efe0921c277>) (TypeAliasDeclaration)
+- [AgentAppearanceOptions](<ai.ts.md#s-91cc29a95882e12d>) (TypeAliasDeclaration)
+- [AgentAppearance](<ai.ts.md#s-c8db8f1b85604f50>) (TypeAliasDeclaration)
+- [AgentConfig](<ai.ts.md#s-7fabf125e03924c2>) (TypeAliasDeclaration)
+- [RuntimeStatus](<ai.ts.md#s-2ea9ec62145bd012>) (TypeAliasDeclaration)
+- [ModelPullStatus](<ai.ts.md#s-6177168ce053c1a5>) (TypeAliasDeclaration)
+- [ChatState](<ai.ts.md#s-b33685998a6ef895>) (TypeAliasDeclaration)
+- [ModelSettings](<ai.ts.md#s-0c3bd69bf5867a3e>) (TypeAliasDeclaration)
+- [ModelDescriptor](<ai.ts.md#s-a7e8e3ea7958330a>) (TypeAliasDeclaration)
+- [ProviderStatus](<ai.ts.md#s-f0c8ee1b47b7c6b4>) (TypeAliasDeclaration)
+- [RegistryState](<ai.ts.md#s-2e8b7c0211a0d8c5>) (TypeAliasDeclaration)
+- [ScopeSelection](<ai.ts.md#s-9bed5990beb64a01>) (TypeAliasDeclaration)
+- [ChatRequest](<ai.ts.md#s-b65846af22b827bc>) (TypeAliasDeclaration)
+- [ChatRun](<ai.ts.md#s-7e88b00495a0d498>) (TypeAliasDeclaration)
+- [ChatResult](<ai.ts.md#s-4a6807f210250f67>) (TypeAliasDeclaration)
+- [ChatEvent](<ai.ts.md#s-ebb24d591ce21f44>) (TypeAliasDeclaration)
+- [ProviderUsageSnapshot](<ai.ts.md#s-3b716dc64e9d971c>) (InterfaceDeclaration)
+- [OpenRouterUsageSnapshot](<ai.ts.md#s-b3fca13754a76d01>) (TypeAliasDeclaration)
+- [AiBridge](<ai.ts.md#s-03f31b4f40138481>) (InterfaceDeclaration)
+- [AiBridge.connectCredential](<ai.ts.md#s-2206b13ad2b01a46>) (MethodSignature)
+- [AiBridge.providedModels](<ai.ts.md#s-e0a1282a6bb1315c>) (MethodSignature)
+- [AiBridge.modelFavorites](<ai.ts.md#s-372223938e36c7af>) (MethodSignature)
+- [AiBridge.frontOfficeState](<ai.ts.md#s-135635905396a0ac>) (MethodSignature)
+- [AiBridge.frontOfficeConfig](<ai.ts.md#s-faf4fc278d3fc171>) (MethodSignature)
+- [AiBridge.frontOfficeRefresh](<ai.ts.md#s-70db7b350975128f>) (MethodSignature)
+- [AiBridge.frontOfficeOverride](<ai.ts.md#s-92241af9c25d01a7>) (MethodSignature)
+- [AiBridge.frontOfficeEvidence](<ai.ts.md#s-e24c53592e947a4b>) (MethodSignature)
+- [AiBridge.frontOfficeFavorite](<ai.ts.md#s-e3fb3a32ef93d299>) (MethodSignature)
+- [AiBridge.frontOfficeHealth](<ai.ts.md#s-cf7026f79772f065>) (MethodSignature)
+- [AiBridge.frontOfficeList](<ai.ts.md#s-7bcadcf1430caf08>) (MethodSignature)
+- [AiBridge.frontOfficeRead](<ai.ts.md#s-3efbe382e8c0a678>) (MethodSignature)
+- [AiBridge.frontOfficeCreate](<ai.ts.md#s-db03858bd5d7b55b>) (MethodSignature)
+- [AiBridge.frontOfficeDelete](<ai.ts.md#s-96e6a56482723511>) (MethodSignature)
+- [AiBridge.frontOfficeExport](<ai.ts.md#s-ea1aef498f3b5b5d>) (MethodSignature)
+- [AiBridge.frontOfficeChat](<ai.ts.md#s-cdc2fe462392fc47>) (MethodSignature)
+- [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-8e879b17b766ff3d>) (MethodSignature)
+- [AiBridge.onFrontOfficeEvent.&lt;anonymous@553:32&gt;](<ai.ts.md#s-f06cc89fce95b6fe>) (FunctionType)
+- [AiBridge.onFrontOfficeEvent.&lt;anonymous@553:67&gt;](<ai.ts.md#s-444f6f93291b90e7>) (FunctionType)
+- [AiBridge.listConstructionFiles](<ai.ts.md#s-c9009f766fc0ed7c>) (MethodSignature)
+- [AiBridge.engineState](<ai.ts.md#s-4987979d7ae08dd0>) (MethodSignature)
+- [AiBridge.enginePackageCatalog](<ai.ts.md#s-a8b93a947f442fd2>) (MethodSignature)
+- [AiBridge.chooseEngineFolder](<ai.ts.md#s-31b6057466762475>) (MethodSignature)
+- [AiBridge.probeEngine](<ai.ts.md#s-e9128003f83108a0>) (MethodSignature)
+- [AiBridge.executeEngine](<ai.ts.md#s-373798c9d4f3dfb9>) (MethodSignature)
+- [AiBridge.cancelEngine](<ai.ts.md#s-25b219c5da134b63>) (MethodSignature)
+- [AiBridge.openEngineReport](<ai.ts.md#s-5386b9be8db612fa>) (MethodSignature)
+- [AiBridge.previewConstructionFile](<ai.ts.md#s-5f58f0ea3e4c01a1>) (MethodSignature)
+- [AiBridge.getVaultIdentity](<ai.ts.md#s-4cc14588b8a5520a>) (MethodSignature)
+- [AiBridge.previewConstructionBox](<ai.ts.md#s-62d750f471da0a5e>) (MethodSignature)
+- [AiBridge.listAgents](<ai.ts.md#s-3d1edd93ce06b45b>) (MethodSignature)
+- [AiBridge.deleteAgent](<ai.ts.md#s-f4d0e5d0349c76d3>) (MethodSignature)
+- [AiBridge.createAgent](<ai.ts.md#s-8f5db6e094978b67>) (MethodSignature)
+- [AiBridge.saveAgentConstruction](<ai.ts.md#s-90eb73f760d548fe>) (MethodSignature)
+- [AiBridge.proposeKnowledge](<ai.ts.md#s-3de56265a457b5e3>) (MethodSignature)
+- [AiBridge.retrieveKnowledge](<ai.ts.md#s-f480782ce0d11a42>) (MethodSignature)
+- [AiBridge.providerUsage](<ai.ts.md#s-80a3d610798e2531>) (MethodSignature)
+- [AiBridge.openRouterUsage](<ai.ts.md#s-3b5f584cf38e255b>) (MethodSignature)
+- [AiBridge.onUsageChanged](<ai.ts.md#s-37724e99e6383dd9>) (MethodSignature)
+- [AiBridge.onUsageChanged.&lt;anonymous@604:28&gt;](<ai.ts.md#s-dfdd4e0c88d38bdd>) (FunctionType)
+- [AiBridge.onUsageChanged.&lt;anonymous@604:41&gt;](<ai.ts.md#s-762f1c0870caaddd>) (FunctionType)
+- [AiBridge.getAgent](<ai.ts.md#s-76d08a0ddc4163e4>) (MethodSignature)
+- [AiBridge.saveAgent](<ai.ts.md#s-aea2bba16763dd54>) (MethodSignature)
+- [AiBridge.chooseAgentAvatar](<ai.ts.md#s-88ae1f2ec1de2b78>) (MethodSignature)
+- [AiBridge.chooseAgentBackdrop](<ai.ts.md#s-b500165fe7addbaa>) (MethodSignature)
+- [AiBridge.previewBoxSelection](<ai.ts.md#s-05c44597482a4242>) (MethodSignature)
+- [AiBridge.inspectContextBox](<ai.ts.md#s-5d03e7332c23679a>) (MethodSignature)
+- [AiBridge.editContextBox](<ai.ts.md#s-0dc53340e10ac1c5>) (MethodSignature)
+- [AiBridge.switchContextBox](<ai.ts.md#s-d53646fe5900fa3f>) (MethodSignature)
+- [AiBridge.listContextBoxes](<ai.ts.md#s-303d7e7a5a10f42c>) (MethodSignature)
+- [AiBridge.saveContextBox](<ai.ts.md#s-0f23e71ca0677339>) (MethodSignature)
+- [AiBridge.renameContextBox](<ai.ts.md#s-77cd772b4420709d>) (MethodSignature)
+- [AiBridge.checkConversation](<ai.ts.md#s-608b0d87a07dc2f8>) (MethodSignature)
+- [AiBridge.pullModel](<ai.ts.md#s-28b75953b596429f>) (MethodSignature)
+- [AiBridge.pullStatus](<ai.ts.md#s-832b7fbd0d1fd9eb>) (MethodSignature)
+- [AiBridge.cancelPull](<ai.ts.md#s-7c9eb1c302b2843a>) (MethodSignature)
+- [AiBridge.onPull](<ai.ts.md#s-20e53755a098c4b1>) (MethodSignature)
+- [AiBridge.onPull.&lt;anonymous@629:20&gt;](<ai.ts.md#s-cb5ecc2db800ec9d>) (FunctionType)
+- [AiBridge.onPull.&lt;anonymous@629:56&gt;](<ai.ts.md#s-5c39e63c2acb539c>) (FunctionType)
+- [AiBridge.checkRemoteModel](<ai.ts.md#s-a753b9d29d8a8f98>) (MethodSignature)
+- [AiBridge.stopModelChecks](<ai.ts.md#s-38f4b1d8c116e7e1>) (MethodSignature)
+- [AiBridge.checkNvidiaModel](<ai.ts.md#s-002e5fc5afa5cc13>) (MethodSignature)
+- [AiBridge.handshake](<ai.ts.md#s-3d8ea44b16f15999>) (MethodSignature)
+- [AiBridge.getStatus](<ai.ts.md#s-d93fc679d9ed8491>) (MethodSignature)
+- [AiBridge.listModels](<ai.ts.md#s-7ebe9ea591c8df02>) (MethodSignature)
+- [AiBridge.testModel](<ai.ts.md#s-abf1053ae60bfda0>) (MethodSignature)
+- [AiBridge.models](<ai.ts.md#s-aba31c1b0854cea9>) (MethodSignature)
+- [AiBridge.settings](<ai.ts.md#s-c1ebea0136f6829d>) (MethodSignature)
+- [AiBridge.saveCredential](<ai.ts.md#s-dcfd993f9f9a4ab1>) (MethodSignature)
+- [AiBridge.removeCredential](<ai.ts.md#s-fe0653bcfe3234eb>) (MethodSignature)
+- [AiBridge.context](<ai.ts.md#s-fad9c0d10f14a731>) (MethodSignature)
+- [AiBridge.listConversations](<ai.ts.md#s-896f37493c228533>) (MethodSignature)
+- [AiBridge.createConversation](<ai.ts.md#s-6bf6b6db39c4f852>) (MethodSignature)
+- [AiBridge.renameConversation](<ai.ts.md#s-e3b10755b4f7984d>) (MethodSignature)
+- [AiBridge.deleteConversation](<ai.ts.md#s-b0f4609b7f0342d5>) (MethodSignature)
+- [AiBridge.deleteMessage](<ai.ts.md#s-f1bb104c18dec9a3>) (MethodSignature)
+- [AiBridge.clearConversations](<ai.ts.md#s-517005c6d482dfca>) (MethodSignature)
+- [AiBridge.resumeConversation](<ai.ts.md#s-09b707ed8571aa92>) (MethodSignature)
+- [AiBridge.gatewayActivity](<ai.ts.md#s-8d6e77c409051ad7>) (MethodSignature)
+- [AiBridge.refreshSource](<ai.ts.md#s-cf679c3295512db0>) (MethodSignature)
+- [AiBridge.chat](<ai.ts.md#s-1622494a11dede38>) (MethodSignature)
+- [AiBridge.cancel](<ai.ts.md#s-9402296fac70c02d>) (MethodSignature)
+- [AiBridge.onEvent](<ai.ts.md#s-1d7ca29f76291be3>) (MethodSignature)
+- [AiBridge.onEvent.&lt;anonymous@681:21&gt;](<ai.ts.md#s-5d583a2fdc791b16>) (FunctionType)
+- [AiBridge.onEvent.&lt;anonymous@681:50&gt;](<ai.ts.md#s-c79c9a6b2296efba>) (FunctionType)
+- [ProviderVerification](<ai.ts.md#s-b25940ee6d4d5f7a>) (TypeAliasDeclaration)
+- [CredentialScope](<ai.ts.md#s-30f39e44c2439c5c>) (TypeAliasDeclaration)
+- [ProviderConnection](<ai.ts.md#s-72eeaaf697f8cabc>) (TypeAliasDeclaration)
+- [ProvidedModelPreview](<ai.ts.md#s-04123d652bd8f0f7>) (TypeAliasDeclaration)
+- [ModelCheckResult](<ai.ts.md#s-09d5209868e9067e>) (TypeAliasDeclaration)
 
 <a id="s-182303090ef3783b"></a>
 
@@ -1234,11 +1234,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-242448fc17ab17c4"></a>
+<a id="s-74d85efe0921c277"></a>
 
 ## AgentConstructionInput
 
-[types/ai.ts:316](<../../../../../types/ai.ts#L316>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:317](<../../../../../types/ai.ts#L317>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1265,11 +1265,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-56b49edd0459be1c"></a>
+<a id="s-91cc29a95882e12d"></a>
 
 ## AgentAppearanceOptions
 
-[types/ai.ts:326](<../../../../../types/ai.ts#L326>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:327](<../../../../../types/ai.ts#L327>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1296,11 +1296,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-244d27dba13bfc1c"></a>
+<a id="s-c8db8f1b85604f50"></a>
 
 ## AgentAppearance
 
-[types/ai.ts:331](<../../../../../types/ai.ts#L331>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:332](<../../../../../types/ai.ts#L332>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1327,11 +1327,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b84fc6813b118bd2"></a>
+<a id="s-7fabf125e03924c2"></a>
 
 ## AgentConfig
 
-[types/ai.ts:337](<../../../../../types/ai.ts#L337>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:338](<../../../../../types/ai.ts#L338>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1358,11 +1358,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a29e78620c60bc72"></a>
+<a id="s-2ea9ec62145bd012"></a>
 
 ## RuntimeStatus
 
-[types/ai.ts:373](<../../../../../types/ai.ts#L373>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:374](<../../../../../types/ai.ts#L374>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1389,11 +1389,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6b59e64e8fff86d7"></a>
+<a id="s-6177168ce053c1a5"></a>
 
 ## ModelPullStatus
 
-[types/ai.ts:379](<../../../../../types/ai.ts#L379>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:380](<../../../../../types/ai.ts#L380>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1420,11 +1420,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2095c2e0d7934e6b"></a>
+<a id="s-b33685998a6ef895"></a>
 
 ## ChatState
 
-[types/ai.ts:384](<../../../../../types/ai.ts#L384>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:385](<../../../../../types/ai.ts#L385>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1451,11 +1451,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5dadaff5874cf530"></a>
+<a id="s-0c3bd69bf5867a3e"></a>
 
 ## ModelSettings
 
-[types/ai.ts:407](<../../../../../types/ai.ts#L407>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:408](<../../../../../types/ai.ts#L408>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1482,11 +1482,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-21e30963aad22e77"></a>
+<a id="s-a7e8e3ea7958330a"></a>
 
 ## ModelDescriptor
 
-[types/ai.ts:420](<../../../../../types/ai.ts#L420>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:421](<../../../../../types/ai.ts#L421>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1513,11 +1513,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-78b3ce1227ee5bbb"></a>
+<a id="s-f0c8ee1b47b7c6b4"></a>
 
 ## ProviderStatus
 
-[types/ai.ts:438](<../../../../../types/ai.ts#L438>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:439](<../../../../../types/ai.ts#L439>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1544,11 +1544,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-97b7c51534cbb4ed"></a>
+<a id="s-2e8b7c0211a0d8c5"></a>
 
 ## RegistryState
 
-[types/ai.ts:447](<../../../../../types/ai.ts#L447>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:448](<../../../../../types/ai.ts#L448>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1575,11 +1575,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6b8a4984864ded7f"></a>
+<a id="s-9bed5990beb64a01"></a>
 
 ## ScopeSelection
 
-[types/ai.ts:454](<../../../../../types/ai.ts#L454>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:455](<../../../../../types/ai.ts#L455>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1606,11 +1606,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4f8c9f5ab7afb732"></a>
+<a id="s-b65846af22b827bc"></a>
 
 ## ChatRequest
 
-[types/ai.ts:458](<../../../../../types/ai.ts#L458>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:459](<../../../../../types/ai.ts#L459>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1637,11 +1637,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-da60a1b7966fb6a0"></a>
+<a id="s-7e88b00495a0d498"></a>
 
 ## ChatRun
 
-[types/ai.ts:465](<../../../../../types/ai.ts#L465>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:466](<../../../../../types/ai.ts#L466>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1668,11 +1668,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-de4145961eaf5c4a"></a>
+<a id="s-4a6807f210250f67"></a>
 
 ## ChatResult
 
-[types/ai.ts:474](<../../../../../types/ai.ts#L474>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:475](<../../../../../types/ai.ts#L475>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1699,11 +1699,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4a6807f210250f67"></a>
+<a id="s-ebb24d591ce21f44"></a>
 
 ## ChatEvent
 
-[types/ai.ts:475](<../../../../../types/ai.ts#L475>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:476](<../../../../../types/ai.ts#L476>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1730,11 +1730,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d153d9883d24b49f"></a>
+<a id="s-3b716dc64e9d971c"></a>
 
 ## ProviderUsageSnapshot
 
-[types/ai.ts:486](<../../../../../types/ai.ts#L486>) · InterfaceDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:487](<../../../../../types/ai.ts#L487>) · InterfaceDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1761,11 +1761,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-af7aafdf4801596f"></a>
+<a id="s-b3fca13754a76d01"></a>
 
 ## OpenRouterUsageSnapshot
 
-[types/ai.ts:512](<../../../../../types/ai.ts#L512>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:513](<../../../../../types/ai.ts#L513>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1792,11 +1792,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-12ce5222eeb8af3a"></a>
+<a id="s-03f31b4f40138481"></a>
 
 ## AiBridge
 
-[types/ai.ts:516](<../../../../../types/ai.ts#L516>) · InterfaceDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:517](<../../../../../types/ai.ts#L517>) · InterfaceDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1823,17 +1823,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-181579073eb5a0f7"></a>
+<a id="s-2206b13ad2b01a46"></a>
 
 ## AiBridge.connectCredential
 
-[types/ai.ts:517](<../../../../../types/ai.ts#L517>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:518](<../../../../../types/ai.ts#L518>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1856,17 +1856,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2206b13ad2b01a46"></a>
+<a id="s-e0a1282a6bb1315c"></a>
 
 ## AiBridge.providedModels
 
-[types/ai.ts:518](<../../../../../types/ai.ts#L518>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:519](<../../../../../types/ai.ts#L519>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1889,17 +1889,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e0a1282a6bb1315c"></a>
+<a id="s-372223938e36c7af"></a>
 
 ## AiBridge.modelFavorites
 
-[types/ai.ts:519](<../../../../../types/ai.ts#L519>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:520](<../../../../../types/ai.ts#L520>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1922,17 +1922,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-372223938e36c7af"></a>
+<a id="s-135635905396a0ac"></a>
 
 ## AiBridge.frontOfficeState
 
-[types/ai.ts:520](<../../../../../types/ai.ts#L520>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:521](<../../../../../types/ai.ts#L521>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1955,17 +1955,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c9d56919d9ecb38a"></a>
+<a id="s-faf4fc278d3fc171"></a>
 
 ## AiBridge.frontOfficeConfig
 
-[types/ai.ts:523](<../../../../../types/ai.ts#L523>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:524](<../../../../../types/ai.ts#L524>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1988,17 +1988,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-faf4fc278d3fc171"></a>
+<a id="s-70db7b350975128f"></a>
 
 ## AiBridge.frontOfficeRefresh
 
-[types/ai.ts:524](<../../../../../types/ai.ts#L524>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:525](<../../../../../types/ai.ts#L525>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2021,17 +2021,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-70db7b350975128f"></a>
+<a id="s-92241af9c25d01a7"></a>
 
 ## AiBridge.frontOfficeOverride
 
-[types/ai.ts:525](<../../../../../types/ai.ts#L525>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:526](<../../../../../types/ai.ts#L526>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2054,17 +2054,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-cad05ad9ae03a547"></a>
+<a id="s-e24c53592e947a4b"></a>
 
 ## AiBridge.frontOfficeEvidence
 
-[types/ai.ts:529](<../../../../../types/ai.ts#L529>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:530](<../../../../../types/ai.ts#L530>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2087,17 +2087,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e24c53592e947a4b"></a>
+<a id="s-e3fb3a32ef93d299"></a>
 
 ## AiBridge.frontOfficeFavorite
 
-[types/ai.ts:530](<../../../../../types/ai.ts#L530>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:531](<../../../../../types/ai.ts#L531>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2120,17 +2120,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3012d33704e42fd9"></a>
+<a id="s-cf7026f79772f065"></a>
 
 ## AiBridge.frontOfficeHealth
 
-[types/ai.ts:534](<../../../../../types/ai.ts#L534>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:535](<../../../../../types/ai.ts#L535>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2153,17 +2153,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-42a1cb7a5a0f026f"></a>
+<a id="s-7bcadcf1430caf08"></a>
 
 ## AiBridge.frontOfficeList
 
-[types/ai.ts:539](<../../../../../types/ai.ts#L539>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:540](<../../../../../types/ai.ts#L540>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2186,17 +2186,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7bcadcf1430caf08"></a>
+<a id="s-3efbe382e8c0a678"></a>
 
 ## AiBridge.frontOfficeRead
 
-[types/ai.ts:540](<../../../../../types/ai.ts#L540>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:541](<../../../../../types/ai.ts#L541>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2219,17 +2219,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3efbe382e8c0a678"></a>
+<a id="s-db03858bd5d7b55b"></a>
 
 ## AiBridge.frontOfficeCreate
 
-[types/ai.ts:541](<../../../../../types/ai.ts#L541>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:542](<../../../../../types/ai.ts#L542>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2252,17 +2252,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-db03858bd5d7b55b"></a>
+<a id="s-96e6a56482723511"></a>
 
 ## AiBridge.frontOfficeDelete
 
-[types/ai.ts:542](<../../../../../types/ai.ts#L542>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:543](<../../../../../types/ai.ts#L543>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2285,17 +2285,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-96e6a56482723511"></a>
+<a id="s-ea1aef498f3b5b5d"></a>
 
 ## AiBridge.frontOfficeExport
 
-[types/ai.ts:543](<../../../../../types/ai.ts#L543>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:544](<../../../../../types/ai.ts#L544>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2318,17 +2318,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ea1aef498f3b5b5d"></a>
+<a id="s-cdc2fe462392fc47"></a>
 
 ## AiBridge.frontOfficeChat
 
-[types/ai.ts:544](<../../../../../types/ai.ts#L544>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:545](<../../../../../types/ai.ts#L545>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2351,17 +2351,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f46cff0e4051a943"></a>
+<a id="s-8e879b17b766ff3d"></a>
 
 ## AiBridge.onFrontOfficeEvent
 
-[types/ai.ts:552](<../../../../../types/ai.ts#L552>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:553](<../../../../../types/ai.ts#L553>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2384,17 +2384,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-bf4a948f40bc5539"></a>
+<a id="s-f06cc89fce95b6fe"></a>
 
-## AiBridge.onFrontOfficeEvent.&lt;anonymous@552:32&gt;
+## AiBridge.onFrontOfficeEvent.&lt;anonymous@553:32&gt;
 
-[types/ai.ts:552](<../../../../../types/ai.ts#L552>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:553](<../../../../../types/ai.ts#L553>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-f46cff0e4051a943>).
+Lexical owner: [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-8e879b17b766ff3d>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2417,17 +2417,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b13530df5197c580"></a>
+<a id="s-444f6f93291b90e7"></a>
 
-## AiBridge.onFrontOfficeEvent.&lt;anonymous@552:67&gt;
+## AiBridge.onFrontOfficeEvent.&lt;anonymous@553:67&gt;
 
-[types/ai.ts:552](<../../../../../types/ai.ts#L552>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:553](<../../../../../types/ai.ts#L553>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-f46cff0e4051a943>).
+Lexical owner: [AiBridge.onFrontOfficeEvent](<ai.ts.md#s-8e879b17b766ff3d>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2450,17 +2450,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8e879b17b766ff3d"></a>
+<a id="s-c9009f766fc0ed7c"></a>
 
 ## AiBridge.listConstructionFiles
 
-[types/ai.ts:553](<../../../../../types/ai.ts#L553>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:554](<../../../../../types/ai.ts#L554>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2483,17 +2483,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c9009f766fc0ed7c"></a>
+<a id="s-4987979d7ae08dd0"></a>
 
 ## AiBridge.engineState
 
-[types/ai.ts:554](<../../../../../types/ai.ts#L554>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:555](<../../../../../types/ai.ts#L555>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2516,17 +2516,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4987979d7ae08dd0"></a>
+<a id="s-a8b93a947f442fd2"></a>
 
 ## AiBridge.enginePackageCatalog
 
-[types/ai.ts:555](<../../../../../types/ai.ts#L555>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:556](<../../../../../types/ai.ts#L556>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2549,17 +2549,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-508aed69eb04fa45"></a>
+<a id="s-31b6057466762475"></a>
 
 ## AiBridge.chooseEngineFolder
 
-[types/ai.ts:559](<../../../../../types/ai.ts#L559>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:560](<../../../../../types/ai.ts#L560>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2582,17 +2582,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-31b6057466762475"></a>
+<a id="s-e9128003f83108a0"></a>
 
 ## AiBridge.probeEngine
 
-[types/ai.ts:560](<../../../../../types/ai.ts#L560>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:561](<../../../../../types/ai.ts#L561>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2615,17 +2615,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e9128003f83108a0"></a>
+<a id="s-373798c9d4f3dfb9"></a>
 
 ## AiBridge.executeEngine
 
-[types/ai.ts:561](<../../../../../types/ai.ts#L561>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:562](<../../../../../types/ai.ts#L562>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2648,17 +2648,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a0cd2aa3e42d317e"></a>
+<a id="s-25b219c5da134b63"></a>
 
 ## AiBridge.cancelEngine
 
-[types/ai.ts:568](<../../../../../types/ai.ts#L568>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:569](<../../../../../types/ai.ts#L569>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2681,17 +2681,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-25b219c5da134b63"></a>
+<a id="s-5386b9be8db612fa"></a>
 
 ## AiBridge.openEngineReport
 
-[types/ai.ts:569](<../../../../../types/ai.ts#L569>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:570](<../../../../../types/ai.ts#L570>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2714,17 +2714,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a03718902a060fa9"></a>
+<a id="s-5f58f0ea3e4c01a1"></a>
 
 ## AiBridge.previewConstructionFile
 
-[types/ai.ts:574](<../../../../../types/ai.ts#L574>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:575](<../../../../../types/ai.ts#L575>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2747,17 +2747,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c3d19c2775957600"></a>
+<a id="s-4cc14588b8a5520a"></a>
 
 ## AiBridge.getVaultIdentity
 
-[types/ai.ts:577](<../../../../../types/ai.ts#L577>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:578](<../../../../../types/ai.ts#L578>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2780,17 +2780,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4cc14588b8a5520a"></a>
+<a id="s-62d750f471da0a5e"></a>
 
 ## AiBridge.previewConstructionBox
 
-[types/ai.ts:578](<../../../../../types/ai.ts#L578>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:579](<../../../../../types/ai.ts#L579>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2813,17 +2813,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-00754034472eca50"></a>
+<a id="s-3d1edd93ce06b45b"></a>
 
 ## AiBridge.listAgents
 
-[types/ai.ts:581](<../../../../../types/ai.ts#L581>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:582](<../../../../../types/ai.ts#L582>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2846,17 +2846,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3d1edd93ce06b45b"></a>
+<a id="s-f4d0e5d0349c76d3"></a>
 
 ## AiBridge.deleteAgent
 
-[types/ai.ts:582](<../../../../../types/ai.ts#L582>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:583](<../../../../../types/ai.ts#L583>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2879,17 +2879,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-f4d0e5d0349c76d3"></a>
+<a id="s-8f5db6e094978b67"></a>
 
 ## AiBridge.createAgent
 
-[types/ai.ts:583](<../../../../../types/ai.ts#L583>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:584](<../../../../../types/ai.ts#L584>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2912,17 +2912,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8cb08a3a3a8da40a"></a>
+<a id="s-90eb73f760d548fe"></a>
 
 ## AiBridge.saveAgentConstruction
 
-[types/ai.ts:587](<../../../../../types/ai.ts#L587>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:588](<../../../../../types/ai.ts#L588>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2945,17 +2945,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-90eb73f760d548fe"></a>
+<a id="s-3de56265a457b5e3"></a>
 
 ## AiBridge.proposeKnowledge
 
-[types/ai.ts:588](<../../../../../types/ai.ts#L588>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:589](<../../../../../types/ai.ts#L589>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -2978,17 +2978,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-2b067bbbb6313188"></a>
+<a id="s-f480782ce0d11a42"></a>
 
 ## AiBridge.retrieveKnowledge
 
-[types/ai.ts:592](<../../../../../types/ai.ts#L592>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:593](<../../../../../types/ai.ts#L593>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3011,17 +3011,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6780f10fb2303b41"></a>
+<a id="s-80a3d610798e2531"></a>
 
 ## AiBridge.providerUsage
 
-[types/ai.ts:596](<../../../../../types/ai.ts#L596>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:597](<../../../../../types/ai.ts#L597>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3044,17 +3044,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-60cec0df47152739"></a>
+<a id="s-3b5f584cf38e255b"></a>
 
 ## AiBridge.openRouterUsage
 
-[types/ai.ts:600](<../../../../../types/ai.ts#L600>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:601](<../../../../../types/ai.ts#L601>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3077,17 +3077,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e4c0a4241b20f47b"></a>
+<a id="s-37724e99e6383dd9"></a>
 
 ## AiBridge.onUsageChanged
 
-[types/ai.ts:603](<../../../../../types/ai.ts#L603>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:604](<../../../../../types/ai.ts#L604>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3110,17 +3110,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ff9ee514c397d80d"></a>
+<a id="s-dfdd4e0c88d38bdd"></a>
 
-## AiBridge.onUsageChanged.&lt;anonymous@603:28&gt;
+## AiBridge.onUsageChanged.&lt;anonymous@604:28&gt;
 
-[types/ai.ts:603](<../../../../../types/ai.ts#L603>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:604](<../../../../../types/ai.ts#L604>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onUsageChanged](<ai.ts.md#s-e4c0a4241b20f47b>).
+Lexical owner: [AiBridge.onUsageChanged](<ai.ts.md#s-37724e99e6383dd9>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3143,17 +3143,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d9421b1a1e68a259"></a>
+<a id="s-762f1c0870caaddd"></a>
 
-## AiBridge.onUsageChanged.&lt;anonymous@603:41&gt;
+## AiBridge.onUsageChanged.&lt;anonymous@604:41&gt;
 
-[types/ai.ts:603](<../../../../../types/ai.ts#L603>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:604](<../../../../../types/ai.ts#L604>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onUsageChanged](<ai.ts.md#s-e4c0a4241b20f47b>).
+Lexical owner: [AiBridge.onUsageChanged](<ai.ts.md#s-37724e99e6383dd9>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3176,17 +3176,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-37724e99e6383dd9"></a>
+<a id="s-76d08a0ddc4163e4"></a>
 
 ## AiBridge.getAgent
 
-[types/ai.ts:604](<../../../../../types/ai.ts#L604>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:605](<../../../../../types/ai.ts#L605>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3209,17 +3209,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-76d08a0ddc4163e4"></a>
+<a id="s-aea2bba16763dd54"></a>
 
 ## AiBridge.saveAgent
 
-[types/ai.ts:605](<../../../../../types/ai.ts#L605>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:606](<../../../../../types/ai.ts#L606>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3242,17 +3242,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-83695ed90390f13f"></a>
+<a id="s-88ae1f2ec1de2b78"></a>
 
 ## AiBridge.chooseAgentAvatar
 
-[types/ai.ts:610](<../../../../../types/ai.ts#L610>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:611](<../../../../../types/ai.ts#L611>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3275,17 +3275,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-88ae1f2ec1de2b78"></a>
+<a id="s-b500165fe7addbaa"></a>
 
 ## AiBridge.chooseAgentBackdrop
 
-[types/ai.ts:611](<../../../../../types/ai.ts#L611>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:612](<../../../../../types/ai.ts#L612>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3308,17 +3308,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b500165fe7addbaa"></a>
+<a id="s-05c44597482a4242"></a>
 
 ## AiBridge.previewBoxSelection
 
-[types/ai.ts:612](<../../../../../types/ai.ts#L612>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:613](<../../../../../types/ai.ts#L613>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3341,17 +3341,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c2ceb97898f0dfff"></a>
+<a id="s-5d03e7332c23679a"></a>
 
 ## AiBridge.inspectContextBox
 
-[types/ai.ts:615](<../../../../../types/ai.ts#L615>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:616](<../../../../../types/ai.ts#L616>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3374,17 +3374,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5d03e7332c23679a"></a>
+<a id="s-0dc53340e10ac1c5"></a>
 
 ## AiBridge.editContextBox
 
-[types/ai.ts:616](<../../../../../types/ai.ts#L616>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:617](<../../../../../types/ai.ts#L617>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3407,17 +3407,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0dc53340e10ac1c5"></a>
+<a id="s-d53646fe5900fa3f"></a>
 
 ## AiBridge.switchContextBox
 
-[types/ai.ts:617](<../../../../../types/ai.ts#L617>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:618](<../../../../../types/ai.ts#L618>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3440,17 +3440,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9d8a512729685a4c"></a>
+<a id="s-303d7e7a5a10f42c"></a>
 
 ## AiBridge.listContextBoxes
 
-[types/ai.ts:621](<../../../../../types/ai.ts#L621>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:622](<../../../../../types/ai.ts#L622>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3473,17 +3473,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-303d7e7a5a10f42c"></a>
+<a id="s-0f23e71ca0677339"></a>
 
 ## AiBridge.saveContextBox
 
-[types/ai.ts:622](<../../../../../types/ai.ts#L622>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:623](<../../../../../types/ai.ts#L623>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3506,17 +3506,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0f23e71ca0677339"></a>
+<a id="s-77cd772b4420709d"></a>
 
 ## AiBridge.renameContextBox
 
-[types/ai.ts:623](<../../../../../types/ai.ts#L623>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:624](<../../../../../types/ai.ts#L624>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3539,17 +3539,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-77cd772b4420709d"></a>
+<a id="s-608b0d87a07dc2f8"></a>
 
 ## AiBridge.checkConversation
 
-[types/ai.ts:624](<../../../../../types/ai.ts#L624>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:625](<../../../../../types/ai.ts#L625>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3572,17 +3572,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-608b0d87a07dc2f8"></a>
+<a id="s-28b75953b596429f"></a>
 
 ## AiBridge.pullModel
 
-[types/ai.ts:625](<../../../../../types/ai.ts#L625>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:626](<../../../../../types/ai.ts#L626>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3605,17 +3605,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-28b75953b596429f"></a>
+<a id="s-832b7fbd0d1fd9eb"></a>
 
 ## AiBridge.pullStatus
 
-[types/ai.ts:626](<../../../../../types/ai.ts#L626>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:627](<../../../../../types/ai.ts#L627>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3638,17 +3638,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-832b7fbd0d1fd9eb"></a>
+<a id="s-7c9eb1c302b2843a"></a>
 
 ## AiBridge.cancelPull
 
-[types/ai.ts:627](<../../../../../types/ai.ts#L627>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:628](<../../../../../types/ai.ts#L628>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3671,17 +3671,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7c9eb1c302b2843a"></a>
+<a id="s-20e53755a098c4b1"></a>
 
 ## AiBridge.onPull
 
-[types/ai.ts:628](<../../../../../types/ai.ts#L628>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:629](<../../../../../types/ai.ts#L629>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3704,17 +3704,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-5f3de3fc5fb92318"></a>
+<a id="s-cb5ecc2db800ec9d"></a>
 
-## AiBridge.onPull.&lt;anonymous@628:20&gt;
+## AiBridge.onPull.&lt;anonymous@629:20&gt;
 
-[types/ai.ts:628](<../../../../../types/ai.ts#L628>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:629](<../../../../../types/ai.ts#L629>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onPull](<ai.ts.md#s-7c9eb1c302b2843a>).
+Lexical owner: [AiBridge.onPull](<ai.ts.md#s-20e53755a098c4b1>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3737,17 +3737,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6b9f10bf2f30c275"></a>
+<a id="s-5c39e63c2acb539c"></a>
 
-## AiBridge.onPull.&lt;anonymous@628:56&gt;
+## AiBridge.onPull.&lt;anonymous@629:56&gt;
 
-[types/ai.ts:628](<../../../../../types/ai.ts#L628>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:629](<../../../../../types/ai.ts#L629>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onPull](<ai.ts.md#s-7c9eb1c302b2843a>).
+Lexical owner: [AiBridge.onPull](<ai.ts.md#s-20e53755a098c4b1>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3770,17 +3770,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-20e53755a098c4b1"></a>
+<a id="s-a753b9d29d8a8f98"></a>
 
 ## AiBridge.checkRemoteModel
 
-[types/ai.ts:629](<../../../../../types/ai.ts#L629>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:630](<../../../../../types/ai.ts#L630>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3803,17 +3803,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4813b836c71f90d5"></a>
+<a id="s-38f4b1d8c116e7e1"></a>
 
 ## AiBridge.stopModelChecks
 
-[types/ai.ts:633](<../../../../../types/ai.ts#L633>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:634](<../../../../../types/ai.ts#L634>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3836,17 +3836,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-38f4b1d8c116e7e1"></a>
+<a id="s-002e5fc5afa5cc13"></a>
 
 ## AiBridge.checkNvidiaModel
 
-[types/ai.ts:634](<../../../../../types/ai.ts#L634>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:635](<../../../../../types/ai.ts#L635>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3869,17 +3869,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9ec7c89602ab13ac"></a>
+<a id="s-3d8ea44b16f15999"></a>
 
 ## AiBridge.handshake
 
-[types/ai.ts:642](<../../../../../types/ai.ts#L642>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:643](<../../../../../types/ai.ts#L643>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3902,17 +3902,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3d8ea44b16f15999"></a>
+<a id="s-d93fc679d9ed8491"></a>
 
 ## AiBridge.getStatus
 
-[types/ai.ts:643](<../../../../../types/ai.ts#L643>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:644](<../../../../../types/ai.ts#L644>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3935,17 +3935,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d93fc679d9ed8491"></a>
+<a id="s-7ebe9ea591c8df02"></a>
 
 ## AiBridge.listModels
 
-[types/ai.ts:644](<../../../../../types/ai.ts#L644>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:645](<../../../../../types/ai.ts#L645>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -3968,17 +3968,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7ebe9ea591c8df02"></a>
+<a id="s-abf1053ae60bfda0"></a>
 
 ## AiBridge.testModel
 
-[types/ai.ts:645](<../../../../../types/ai.ts#L645>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:646](<../../../../../types/ai.ts#L646>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4001,17 +4001,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-abf1053ae60bfda0"></a>
+<a id="s-aba31c1b0854cea9"></a>
 
 ## AiBridge.models
 
-[types/ai.ts:646](<../../../../../types/ai.ts#L646>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:647](<../../../../../types/ai.ts#L647>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4034,17 +4034,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-aba31c1b0854cea9"></a>
+<a id="s-c1ebea0136f6829d"></a>
 
 ## AiBridge.settings
 
-[types/ai.ts:647](<../../../../../types/ai.ts#L647>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:648](<../../../../../types/ai.ts#L648>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4067,17 +4067,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c1ebea0136f6829d"></a>
+<a id="s-dcfd993f9f9a4ab1"></a>
 
 ## AiBridge.saveCredential
 
-[types/ai.ts:648](<../../../../../types/ai.ts#L648>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:649](<../../../../../types/ai.ts#L649>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4100,17 +4100,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d36e299dcb35d447"></a>
+<a id="s-fe0653bcfe3234eb"></a>
 
 ## AiBridge.removeCredential
 
-[types/ai.ts:652](<../../../../../types/ai.ts#L652>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:653](<../../../../../types/ai.ts#L653>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4133,17 +4133,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8dfd603c1f9c8e55"></a>
+<a id="s-fad9c0d10f14a731"></a>
 
 ## AiBridge.context
 
-[types/ai.ts:655](<../../../../../types/ai.ts#L655>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:656](<../../../../../types/ai.ts#L656>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4166,17 +4166,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-fad9c0d10f14a731"></a>
+<a id="s-896f37493c228533"></a>
 
 ## AiBridge.listConversations
 
-[types/ai.ts:656](<../../../../../types/ai.ts#L656>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:657](<../../../../../types/ai.ts#L657>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4199,17 +4199,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-896f37493c228533"></a>
+<a id="s-6bf6b6db39c4f852"></a>
 
 ## AiBridge.createConversation
 
-[types/ai.ts:657](<../../../../../types/ai.ts#L657>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:658](<../../../../../types/ai.ts#L658>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4232,17 +4232,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-ce1ac9ead18ff6c0"></a>
+<a id="s-e3b10755b4f7984d"></a>
 
 ## AiBridge.renameConversation
 
-[types/ai.ts:665](<../../../../../types/ai.ts#L665>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:666](<../../../../../types/ai.ts#L666>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4265,17 +4265,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-bf1cfa4f8cde17c3"></a>
+<a id="s-b0f4609b7f0342d5"></a>
 
 ## AiBridge.deleteConversation
 
-[types/ai.ts:669](<../../../../../types/ai.ts#L669>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:670](<../../../../../types/ai.ts#L670>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4298,17 +4298,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b0f4609b7f0342d5"></a>
+<a id="s-f1bb104c18dec9a3"></a>
 
 ## AiBridge.deleteMessage
 
-[types/ai.ts:670](<../../../../../types/ai.ts#L670>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:671](<../../../../../types/ai.ts#L671>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4331,17 +4331,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-e3e78a41ee41bf3b"></a>
+<a id="s-517005c6d482dfca"></a>
 
 ## AiBridge.clearConversations
 
-[types/ai.ts:674](<../../../../../types/ai.ts#L674>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:675](<../../../../../types/ai.ts#L675>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4364,17 +4364,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-517005c6d482dfca"></a>
+<a id="s-09b707ed8571aa92"></a>
 
 ## AiBridge.resumeConversation
 
-[types/ai.ts:675](<../../../../../types/ai.ts#L675>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:676](<../../../../../types/ai.ts#L676>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4397,17 +4397,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-09b707ed8571aa92"></a>
+<a id="s-8d6e77c409051ad7"></a>
 
 ## AiBridge.gatewayActivity
 
-[types/ai.ts:676](<../../../../../types/ai.ts#L676>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:677](<../../../../../types/ai.ts#L677>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4430,17 +4430,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8d6e77c409051ad7"></a>
+<a id="s-cf679c3295512db0"></a>
 
 ## AiBridge.refreshSource
 
-[types/ai.ts:677](<../../../../../types/ai.ts#L677>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:678](<../../../../../types/ai.ts#L678>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4463,17 +4463,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-cf679c3295512db0"></a>
+<a id="s-1622494a11dede38"></a>
 
 ## AiBridge.chat
 
-[types/ai.ts:678](<../../../../../types/ai.ts#L678>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:679](<../../../../../types/ai.ts#L679>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4496,17 +4496,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1622494a11dede38"></a>
+<a id="s-9402296fac70c02d"></a>
 
 ## AiBridge.cancel
 
-[types/ai.ts:679](<../../../../../types/ai.ts#L679>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:680](<../../../../../types/ai.ts#L680>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4529,17 +4529,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-9402296fac70c02d"></a>
+<a id="s-1d7ca29f76291be3"></a>
 
 ## AiBridge.onEvent
 
-[types/ai.ts:680](<../../../../../types/ai.ts#L680>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:681](<../../../../../types/ai.ts#L681>) · MethodSignature · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge](<ai.ts.md#s-12ce5222eeb8af3a>).
+Lexical owner: [AiBridge](<ai.ts.md#s-03f31b4f40138481>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4562,17 +4562,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-a5c41a0e9e5420d8"></a>
+<a id="s-5d583a2fdc791b16"></a>
 
-## AiBridge.onEvent.&lt;anonymous@680:21&gt;
+## AiBridge.onEvent.&lt;anonymous@681:21&gt;
 
-[types/ai.ts:680](<../../../../../types/ai.ts#L680>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:681](<../../../../../types/ai.ts#L681>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onEvent](<ai.ts.md#s-9402296fac70c02d>).
+Lexical owner: [AiBridge.onEvent](<ai.ts.md#s-1d7ca29f76291be3>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4595,17 +4595,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-18e9838ed67582e9"></a>
+<a id="s-c79c9a6b2296efba"></a>
 
-## AiBridge.onEvent.&lt;anonymous@680:50&gt;
+## AiBridge.onEvent.&lt;anonymous@681:50&gt;
 
-[types/ai.ts:680](<../../../../../types/ai.ts#L680>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:681](<../../../../../types/ai.ts#L681>) · FunctionType · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [AiBridge.onEvent](<ai.ts.md#s-9402296fac70c02d>).
+Lexical owner: [AiBridge.onEvent](<ai.ts.md#s-1d7ca29f76291be3>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -4628,11 +4628,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-194806ed7a9630cd"></a>
+<a id="s-b25940ee6d4d5f7a"></a>
 
 ## ProviderVerification
 
-[types/ai.ts:682](<../../../../../types/ai.ts#L682>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:683](<../../../../../types/ai.ts#L683>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4659,11 +4659,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-3746f3ad068df01b"></a>
+<a id="s-30f39e44c2439c5c"></a>
 
 ## CredentialScope
 
-[types/ai.ts:689](<../../../../../types/ai.ts#L689>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:690](<../../../../../types/ai.ts#L690>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4690,11 +4690,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-39fc7aab9c8fd197"></a>
+<a id="s-72eeaaf697f8cabc"></a>
 
 ## ProviderConnection
 
-[types/ai.ts:691](<../../../../../types/ai.ts#L691>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:692](<../../../../../types/ai.ts#L692>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -4721,11 +4721,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-971e43147c7f6a25"></a>
+<a id="s-04123d652bd8f0f7"></a>
 
 ## ProvidedModelPreview
 
-[types/ai.ts:699](<../../../../../types/ai.ts#L699>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:700](<../../../../../types/ai.ts#L700>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 Metadata only. There is intentionally no managed execution API.
 
@@ -4752,11 +4752,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-7546247c5a03d92f"></a>
+<a id="s-09d5209868e9067e"></a>
 
 ## ModelCheckResult
 
-[types/ai.ts:712](<../../../../../types/ai.ts#L712>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/ai.ts:713](<../../../../../types/ai.ts#L713>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 

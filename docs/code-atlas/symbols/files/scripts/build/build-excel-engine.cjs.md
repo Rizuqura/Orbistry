@@ -124,7 +124,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [main](<../build-daily-price-engine.cjs.md#s-ff5ef06e63aa8ff4>) — [scripts/build-daily-price-engine.cjs:31](<../../../../../../scripts/build-daily-price-engine.cjs#L31>)
 - [copyDependencies](<build-excel-engine.cjs.md#s-d0f75114d535da4d>) — [scripts/build/build-excel-engine.cjs:52](<../../../../../../scripts/build/build-excel-engine.cjs#L52>)
 - [main](<build-excel-engine.cjs.md#s-c4423626340c2941>) — [scripts/build/build-excel-engine.cjs:98](<../../../../../../scripts/build/build-excel-engine.cjs#L98>)
-- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:38](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L38>)
+- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:53](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L53>)
 
 Unresolved / external call sites: 15.
 
@@ -174,8 +174,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [checksums](<build-excel-engine.cjs.md#s-cba22f66c8f6ca49>) — [scripts/build/build-excel-engine.cjs:70](<../../../../../../scripts/build/build-excel-engine.cjs#L70>)
 - [main](<build-excel-engine.cjs.md#s-c4423626340c2941>) — [scripts/build/build-excel-engine.cjs:114](<../../../../../../scripts/build/build-excel-engine.cjs#L114>)
 - [main](<build-excel-engine.cjs.md#s-c4423626340c2941>) — [scripts/build/build-excel-engine.cjs:173](<../../../../../../scripts/build/build-excel-engine.cjs#L173>)
-- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:59](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L59>)
-- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:137](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L137>)
+- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:74](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L74>)
+- [main](<build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:152](<../../../../../../scripts/build/build-yahoo-financials-engine.cjs#L152>)
 - [verify](<../clean-engine-backups.cjs.md#s-243b632d010e605f>) — [scripts/clean-engine-backups.cjs:19](<../../../../../../scripts/clean-engine-backups.cjs#L19>)
 
 Unresolved / external call sites: 11.

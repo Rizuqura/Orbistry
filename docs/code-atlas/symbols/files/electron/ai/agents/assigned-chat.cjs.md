@@ -127,7 +127,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-5e1a2fcddec46961>) — [electron/ai/agents/entity-agents.cjs:1667](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1667>)
+- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-680c60784ebeb982>) — [electron/ai/agents/entity-agents.cjs:1756](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1756>)
 
 Unresolved / external call sites: 26.
 

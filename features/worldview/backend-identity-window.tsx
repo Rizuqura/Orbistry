@@ -536,6 +536,12 @@ export function BackendIdentityWindow({
                 permissions.
               </p>
               <StructuredContent value={capabilities} />
+              {Boolean(manifest?.packageSources?.length) && (
+                <>
+                  <h4>Package sources</h4>
+                  <StructuredContent value={manifest?.packageSources} />
+                </>
+              )}
             </>
           ))}
       </div>

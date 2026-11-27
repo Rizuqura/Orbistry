@@ -96,7 +96,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [sha](<chronoz-adapter.cjs.md#s-c95e7f0287adc21f>) — [electron/ai/engine-registry.test.cjs:68](<../../../../../../electron/ai/engine-registry.test.cjs#L68>)
+- [sha](<chronoz-contract.cjs.md#s-be6194fd3a77a55d>) — [electron/ai/engine-registry.test.cjs:68](<../../../../../../electron/ai/engine-registry.test.cjs#L68>)
 - [fixture.mode](<engine-registry.test.cjs.md#s-48bf80f8525714d9>) — [electron/ai/engine-registry.test.cjs:74](<../../../../../../electron/ai/engine-registry.test.cjs#L74>)
 - [AgentStore.constructor](<agents/agent-store.cjs.md#s-61feae93fee7ec73>) — [electron/ai/engine-registry.test.cjs:75](<../../../../../../electron/ai/engine-registry.test.cjs#L75>)
 - [AgentStore.create](<agents/agent-store.cjs.md#s-a855b2d37033dc99>) — [electron/ai/engine-registry.test.cjs:76](<../../../../../../electron/ai/engine-registry.test.cjs#L76>)
@@ -198,7 +198,7 @@ Returns: { path: any; sha256: any; } (compiler-inferred). Implementation present
 
 **Calls (statically resolved):**
 
-- [sha](<chronoz-adapter.cjs.md#s-c95e7f0287adc21f>) — [electron/ai/engine-registry.test.cjs:50](<../../../../../../electron/ai/engine-registry.test.cjs#L50>)
+- [sha](<chronoz-contract.cjs.md#s-be6194fd3a77a55d>) — [electron/ai/engine-registry.test.cjs:50](<../../../../../../electron/ai/engine-registry.test.cjs#L50>)
 
 **Called by (statically resolved):**
 
@@ -408,9 +408,9 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:153](<../../../../../../electron/ai/engine-registry.test.cjs#L153>)
-- [defaults](<agents/agent-construction.cjs.md#s-b11797218b524d62>) — [electron/ai/engine-registry.test.cjs:154](<../../../../../../electron/ai/engine-registry.test.cjs#L154>)
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/engine-registry.test.cjs:159](<../../../../../../electron/ai/engine-registry.test.cjs#L159>)
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/engine-registry.test.cjs:160](<../../../../../../electron/ai/engine-registry.test.cjs#L160>)
+- [defaults](<agents/agent-construction.cjs.md#s-a6f7591b9f78cb97>) — [electron/ai/engine-registry.test.cjs:154](<../../../../../../electron/ai/engine-registry.test.cjs#L154>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/engine-registry.test.cjs:159](<../../../../../../electron/ai/engine-registry.test.cjs#L159>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/engine-registry.test.cjs:160](<../../../../../../electron/ai/engine-registry.test.cjs#L160>)
 
 **Called by (statically resolved):**
 
@@ -755,7 +755,7 @@ Returns: { config: any; preferences: any; model: any; skills: any; } (compiler-i
 
 **Calls (statically resolved):**
 
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/engine-registry.test.cjs:178](<../../../../../../electron/ai/engine-registry.test.cjs#L178>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/engine-registry.test.cjs:178](<../../../../../../electron/ai/engine-registry.test.cjs#L178>)
 
 **Called by (statically resolved):**
 
@@ -791,7 +791,7 @@ Returns: any (compiler-inferred). Implementation present.
 - [fixture](<engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:184](<../../../../../../electron/ai/engine-registry.test.cjs#L184>)
 - [AgentStore.get](<agents/agent-store.cjs.md#s-feff3820609fc57c>) — [electron/ai/engine-registry.test.cjs:206](<../../../../../../electron/ai/engine-registry.test.cjs#L206>)
 - [AgentStore.constructor](<agents/agent-store.cjs.md#s-61feae93fee7ec73>) — [electron/ai/engine-registry.test.cjs:206](<../../../../../../electron/ai/engine-registry.test.cjs#L206>)
-- [EngineRegistry.state](<engine-registry.cjs.md#s-06645e4647def7ef>) — [electron/ai/engine-registry.test.cjs:209](<../../../../../../electron/ai/engine-registry.test.cjs#L209>)
+- [EngineRegistry.state](<engine-registry.cjs.md#s-4aff15db21fd48a2>) — [electron/ai/engine-registry.test.cjs:209](<../../../../../../electron/ai/engine-registry.test.cjs#L209>)
 - [EngineRegistry.constructor](<engine-registry.cjs.md#s-ce9e7ec9029897d3>) — [electron/ai/engine-registry.test.cjs:209](<../../../../../../electron/ai/engine-registry.test.cjs#L209>)
 
 **Called by (statically resolved):**
@@ -1015,9 +1015,9 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:339](<../../../../../../electron/ai/engine-registry.test.cjs#L339>)
-- [inspectBundle](<chronoz-adapter.cjs.md#s-ca72c2c506d158b6>) — [electron/ai/engine-registry.test.cjs:340](<../../../../../../electron/ai/engine-registry.test.cjs#L340>)
-- [sha](<chronoz-adapter.cjs.md#s-c95e7f0287adc21f>) — [electron/ai/engine-registry.test.cjs:356](<../../../../../../electron/ai/engine-registry.test.cjs#L356>)
-- [verifyReport](<chronoz-adapter.cjs.md#s-d95eb12fa1b37a46>) — [electron/ai/engine-registry.test.cjs:369](<../../../../../../electron/ai/engine-registry.test.cjs#L369>)
+- [inspectBundle](<chronoz-adapter.cjs.md#s-27254e2757fbd276>) — [electron/ai/engine-registry.test.cjs:340](<../../../../../../electron/ai/engine-registry.test.cjs#L340>)
+- [sha](<chronoz-contract.cjs.md#s-be6194fd3a77a55d>) — [electron/ai/engine-registry.test.cjs:356](<../../../../../../electron/ai/engine-registry.test.cjs#L356>)
+- [verifyReport](<chronoz-adapter.cjs.md#s-99b6ea0d2b1d6595>) — [electron/ai/engine-registry.test.cjs:369](<../../../../../../electron/ai/engine-registry.test.cjs#L369>)
 
 **Called by (statically resolved):**
 
@@ -1060,12 +1060,12 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:373](<../../../../../../electron/ai/engine-registry.test.cjs#L373>)
-- [inspectBundle](<chronoz-adapter.cjs.md#s-ca72c2c506d158b6>) — [electron/ai/engine-registry.test.cjs:374](<../../../../../../electron/ai/engine-registry.test.cjs#L374>)
-- [runTrigger](<chronoz-adapter.cjs.md#s-1578e21474f428b1>) — [electron/ai/engine-registry.test.cjs:378](<../../../../../../electron/ai/engine-registry.test.cjs#L378>)
-- [runTrigger](<chronoz-adapter.cjs.md#s-1578e21474f428b1>) — [electron/ai/engine-registry.test.cjs:389](<../../../../../../electron/ai/engine-registry.test.cjs#L389>)
-- [runTrigger](<chronoz-adapter.cjs.md#s-1578e21474f428b1>) — [electron/ai/engine-registry.test.cjs:394](<../../../../../../electron/ai/engine-registry.test.cjs#L394>)
-- [runTrigger](<chronoz-adapter.cjs.md#s-1578e21474f428b1>) — [electron/ai/engine-registry.test.cjs:403](<../../../../../../electron/ai/engine-registry.test.cjs#L403>)
-- [runTrigger](<chronoz-adapter.cjs.md#s-1578e21474f428b1>) — [electron/ai/engine-registry.test.cjs:412](<../../../../../../electron/ai/engine-registry.test.cjs#L412>)
+- [inspectBundle](<chronoz-adapter.cjs.md#s-27254e2757fbd276>) — [electron/ai/engine-registry.test.cjs:374](<../../../../../../electron/ai/engine-registry.test.cjs#L374>)
+- [runTrigger](<chronoz-adapter.cjs.md#s-9a8362270da4fd67>) — [electron/ai/engine-registry.test.cjs:378](<../../../../../../electron/ai/engine-registry.test.cjs#L378>)
+- [runTrigger](<chronoz-adapter.cjs.md#s-9a8362270da4fd67>) — [electron/ai/engine-registry.test.cjs:389](<../../../../../../electron/ai/engine-registry.test.cjs#L389>)
+- [runTrigger](<chronoz-adapter.cjs.md#s-9a8362270da4fd67>) — [electron/ai/engine-registry.test.cjs:394](<../../../../../../electron/ai/engine-registry.test.cjs#L394>)
+- [runTrigger](<chronoz-adapter.cjs.md#s-9a8362270da4fd67>) — [electron/ai/engine-registry.test.cjs:403](<../../../../../../electron/ai/engine-registry.test.cjs#L403>)
+- [runTrigger](<chronoz-adapter.cjs.md#s-9a8362270da4fd67>) — [electron/ai/engine-registry.test.cjs:412](<../../../../../../electron/ai/engine-registry.test.cjs#L412>)
 
 **Called by (statically resolved):**
 
@@ -1150,7 +1150,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:440](<../../../../../../electron/ai/engine-registry.test.cjs#L440>)
-- [inspectBundle](<chronoz-adapter.cjs.md#s-ca72c2c506d158b6>) — [electron/ai/engine-registry.test.cjs:444](<../../../../../../electron/ai/engine-registry.test.cjs#L444>)
+- [inspectBundle](<chronoz-adapter.cjs.md#s-27254e2757fbd276>) — [electron/ai/engine-registry.test.cjs:444](<../../../../../../electron/ai/engine-registry.test.cjs#L444>)
 
 **Called by (statically resolved):**
 

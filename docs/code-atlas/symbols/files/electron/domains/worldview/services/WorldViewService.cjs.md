@@ -104,7 +104,7 @@ Returns: WorldViewService (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/core/ipc/worldview-ipc.cjs:20](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L20>)
+- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/core/ipc/worldview-ipc.cjs:23](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L23>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:41](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L41>)
 - [fixture](<../tests/worldview-domain.test.cjs.md#s-4337a6c8e6e4f156>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:61](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L61>)
 - [&lt;anonymous@186:97&gt;](<../tests/worldview-domain.test.cjs.md#s-4ddaa2cce846c1fa>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:200](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L200>)
@@ -232,7 +232,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc.load](<../../../core/ipc/worldview-ipc.cjs.md#s-b279cb288a0992ae>) — [electron/core/ipc/worldview-ipc.cjs:245](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L245>)
+- [registerWorldViewIpc.load](<../../../core/ipc/worldview-ipc.cjs.md#s-d0cfa872371d4860>) — [electron/core/ipc/worldview-ipc.cjs:252](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L252>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:97](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L97>)
 - [&lt;anonymous@186:97&gt;](<../tests/worldview-domain.test.cjs.md#s-4ddaa2cce846c1fa>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:202](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L202>)
 - [&lt;anonymous@314:75&gt;](<../tests/worldview-domain.test.cjs.md#s-03349abb7988ac1b>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:325](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L325>)
@@ -275,7 +275,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc.save](<../../../core/ipc/worldview-ipc.cjs.md#s-3dee06b6a5e38149>) — [electron/core/ipc/worldview-ipc.cjs:247](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L247>)
+- [registerWorldViewIpc.save](<../../../core/ipc/worldview-ipc.cjs.md#s-f650eb938c652013>) — [electron/core/ipc/worldview-ipc.cjs:254](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L254>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:44](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L44>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:45](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L45>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:99](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L99>)
@@ -320,7 +320,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc.delete](<../../../core/ipc/worldview-ipc.cjs.md#s-8ee24cb794c0b34c>) — [electron/core/ipc/worldview-ipc.cjs:249](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L249>)
+- [registerWorldViewIpc.delete](<../../../core/ipc/worldview-ipc.cjs.md#s-135b8d862c7ba5c6>) — [electron/core/ipc/worldview-ipc.cjs:256](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L256>)
 
 Unresolved / external call sites: 2.
 
@@ -362,7 +362,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."connector-create"](<../../../core/ipc/worldview-ipc.cjs.md#s-4a0d0a59eb981147>) — [electron/core/ipc/worldview-ipc.cjs:196](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L196>)
+- [registerWorldViewIpc."connector-create"](<../../../core/ipc/worldview-ipc.cjs.md#s-318d63dacd47aae1>) — [electron/core/ipc/worldview-ipc.cjs:203](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L203>)
 - [&lt;anonymous@35:94&gt;](<../../entity/tests/entity-repository.test.cjs.md#s-f6295f2de7da93d4>) — [electron/domains/entity/tests/entity-repository.test.cjs:56](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L56>)
 - [&lt;anonymous@186:97&gt;](<../tests/worldview-domain.test.cjs.md#s-4ddaa2cce846c1fa>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:213](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L213>)
 
@@ -407,7 +407,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."connector-update"](<../../../core/ipc/worldview-ipc.cjs.md#s-9a1fa1b45f0aa886>) — [electron/core/ipc/worldview-ipc.cjs:199](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L199>)
+- [registerWorldViewIpc."connector-update"](<../../../core/ipc/worldview-ipc.cjs.md#s-6b25495fb101391e>) — [electron/core/ipc/worldview-ipc.cjs:206](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L206>)
 
 Unresolved / external call sites: 3.
 
@@ -480,7 +480,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."connector-delete"](<../../../core/ipc/worldview-ipc.cjs.md#s-6b25495fb101391e>) — [electron/core/ipc/worldview-ipc.cjs:206](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L206>)
+- [registerWorldViewIpc."connector-delete"](<../../../core/ipc/worldview-ipc.cjs.md#s-aeee55f272f1e88c>) — [electron/core/ipc/worldview-ipc.cjs:213](<../../../../../../../../electron/core/ipc/worldview-ipc.cjs#L213>)
 - [&lt;anonymous@186:97&gt;](<../tests/worldview-domain.test.cjs.md#s-4ddaa2cce846c1fa>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:217](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L217>)
 - [&lt;anonymous@223:99&gt;](<../tests/worldview-domain.test.cjs.md#s-bbf315728a031ceb>) — [electron/domains/worldview/tests/worldview-domain.test.cjs:253](<../../../../../../../../electron/domains/worldview/tests/worldview-domain.test.cjs#L253>)
 

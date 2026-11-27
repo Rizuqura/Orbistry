@@ -6,7 +6,7 @@ Owns deterministic native dispatch, parsing, indexing and market-data integratio
 
 Owns: Other electron/engines/ and their host services. This ownership is editorial; source locations and import edges below are generated facts.
 
-32 source files; 380 callable declarations; 9 contract declarations.
+39 source files; 393 callable declarations; 9 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -14,11 +14,11 @@ Candidates from compiler export tables and methods on exported classes. Registra
 
 | Symbol | Source | Kind |
 | --- | --- | --- |
-| [createDailyPriceService](<../symbols/files/electron/daily-price-service.cjs.md#s-79fd9f26e8210a5a>) | [electron/daily-price-service.cjs:26](<../../../electron/daily-price-service.cjs#L26>) | FunctionDeclaration |
-| [dailyPriceService](<../symbols/files/electron/daily-price-service.cjs.md#s-f6e7b2410292bd5b>) | [electron/daily-price-service.cjs:102](<../../../electron/daily-price-service.cjs#L102>) | VariableDeclaration |
-| [getEntityPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-d2b17dd7b406f45e>) | [electron/daily-price-service.cjs:105](<../../../electron/daily-price-service.cjs#L105>) | FunctionDeclaration |
-| [resolveIndexedPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-ed4eb674fb9b15e6>) | [electron/daily-price-service.cjs:117](<../../../electron/daily-price-service.cjs#L117>) | FunctionDeclaration |
-| [getIndexedPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-985657f4b0e3a350>) | [electron/daily-price-service.cjs:137](<../../../electron/daily-price-service.cjs#L137>) | FunctionDeclaration |
+| [createDailyPriceService](<../symbols/files/electron/daily-price-service.cjs.md#s-20ea2e6e10b18679>) | [electron/daily-price-service.cjs:28](<../../../electron/daily-price-service.cjs#L28>) | FunctionDeclaration |
+| [dailyPriceService](<../symbols/files/electron/daily-price-service.cjs.md#s-854ae66d4cec4f38>) | [electron/daily-price-service.cjs:116](<../../../electron/daily-price-service.cjs#L116>) | VariableDeclaration |
+| [getEntityPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-228713be9d1393e3>) | [electron/daily-price-service.cjs:127](<../../../electron/daily-price-service.cjs#L127>) | FunctionDeclaration |
+| [resolveIndexedPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-bc6ef6804f3a2ab0>) | [electron/daily-price-service.cjs:147](<../../../electron/daily-price-service.cjs#L147>) | FunctionDeclaration |
+| [getIndexedPrice](<../symbols/files/electron/daily-price-service.cjs.md#s-7b912d435b7535f2>) | [electron/daily-price-service.cjs:167](<../../../electron/daily-price-service.cjs#L167>) | FunctionDeclaration |
 | [ENGINE_DEFINITIONS](<../symbols/files/electron/engines/definitions.cjs.md#s-bd8a3f86a0f2ac56>) | [electron/engines/definitions.cjs:2](<../../../electron/engines/definitions.cjs#L2>) | VariableDeclaration |
 | [openArchive](<../symbols/files/electron/engines/excel/archive.cjs.md#s-c55324de9f4e9cf0>) | [electron/engines/excel/archive.cjs:40](<../../../electron/engines/excel/archive.cjs#L40>) | FunctionDeclaration |
 | [scanXml](<../symbols/files/electron/engines/excel/archive.cjs.md#s-dd6b7a2034ed0d5f>) | [electron/engines/excel/archive.cjs:100](<../../../electron/engines/excel/archive.cjs#L100>) | FunctionDeclaration |
@@ -54,27 +54,34 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [normalizeEntityTags](<../symbols/files/electron/engines/tag-association/normalizer.cjs.md#s-806115fa5819ac79>) | [electron/engines/tag-association/normalizer.cjs:9](<../../../electron/engines/tag-association/normalizer.cjs#L9>) | FunctionDeclaration |
 | [compareText](<../symbols/files/electron/engines/tag-association/normalizer.cjs.md#s-c87526cd72a39569>) | [electron/engines/tag-association/normalizer.cjs:20](<../../../electron/engines/tag-association/normalizer.cjs#L20>) | FunctionDeclaration |
 | [searchEntities](<../symbols/files/electron/engines/tag-association/search.cjs.md#s-4b1bc7bc0802b0f4>) | [electron/engines/tag-association/search.cjs:5](<../../../electron/engines/tag-association/search.cjs#L5>) | FunctionDeclaration |
-| [RANGES](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-aa45d5e36cc85964>) | [electron/engines/yahoo-financials/market.cjs:2](<../../../electron/engines/yahoo-financials/market.cjs#L2>) | VariableDeclaration |
-| [quoteSchema](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-d6da2ebaf6dbfb3b>) | [electron/engines/yahoo-financials/market.cjs:4](<../../../electron/engines/yahoo-financials/market.cjs#L4>) | SchemaBinding |
-| [historySchema](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-588a721b10a61755>) | [electron/engines/yahoo-financials/market.cjs:25](<../../../electron/engines/yahoo-financials/market.cjs#L25>) | SchemaBinding |
-| [createMarketProvider](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-43dae10f39c26f94>) | [electron/engines/yahoo-financials/market.cjs:79](<../../../electron/engines/yahoo-financials/market.cjs#L79>) | FunctionDeclaration |
 | [createExcelService](<../symbols/files/electron/excel-service.cjs.md#s-adfd4f07e6ae9eaf>) | [electron/excel-service.cjs:70](<../../../electron/excel-service.cjs#L70>) | FunctionDeclaration |
 | [excelService](<../symbols/files/electron/excel-service.cjs.md#s-3b352274d348339f>) | [electron/excel-service.cjs:202](<../../../electron/excel-service.cjs#L202>) | VariableDeclaration |
-| [createFinancialService](<../symbols/files/electron/financial-service.cjs.md#s-b66de62a4b41c1b8>) | [electron/financial-service.cjs:12](<../../../electron/financial-service.cjs#L12>) | FunctionDeclaration |
-| [financialService](<../symbols/files/electron/financial-service.cjs.md#s-6754561cc21192a2>) | [electron/financial-service.cjs:129](<../../../electron/financial-service.cjs#L129>) | VariableDeclaration |
-| [getIndexedFinance](<../symbols/files/electron/financial-service.cjs.md#s-c1c4f6362733e9d7>) | [electron/financial-service.cjs:144](<../../../electron/financial-service.cjs#L144>) | FunctionDeclaration |
-| [getAuthorizedHistory](<../symbols/files/electron/financial-service.cjs.md#s-468568001e3c5ce7>) | [electron/financial-service.cjs:158](<../../../electron/financial-service.cjs#L158>) | FunctionDeclaration |
+| [createFinancialService](<../symbols/files/electron/financial-service.cjs.md#s-f177f750334ab374>) | [electron/financial-service.cjs:14](<../../../electron/financial-service.cjs#L14>) | FunctionDeclaration |
+| [financialService](<../symbols/files/electron/financial-service.cjs.md#s-471cf3c9305cefa6>) | [electron/financial-service.cjs:149](<../../../electron/financial-service.cjs#L149>) | VariableDeclaration |
+| [getIndexedFinance](<../symbols/files/electron/financial-service.cjs.md#s-5cdbc96d6a69cfe2>) | [electron/financial-service.cjs:179](<../../../electron/financial-service.cjs#L179>) | FunctionDeclaration |
+| [getAuthorizedHistory](<../symbols/files/electron/financial-service.cjs.md#s-e00c905ba349043c>) | [electron/financial-service.cjs:199](<../../../electron/financial-service.cjs#L199>) | FunctionDeclaration |
 | [createImageParserService](<../symbols/files/electron/image-parser-service.cjs.md#s-4f26f99ee660dc42>) | [electron/image-parser-service.cjs:60](<../../../electron/image-parser-service.cjs#L60>) | FunctionDeclaration |
 | [imageParserService](<../symbols/files/electron/image-parser-service.cjs.md#s-befb4d53bee4f38e>) | [electron/image-parser-service.cjs:430](<../../../electron/image-parser-service.cjs#L430>) | VariableDeclaration |
+| [build](<../symbols/files/packages/yahoo-finance/build.cjs.md#s-baf3ec01e83ea7d5>) | [packages/yahoo-finance/build.cjs:5](<../../../packages/yahoo-finance/build.cjs#L5>) | FunctionDeclaration |
+| [execute](<../symbols/files/packages/yahoo-finance/index.cjs.md#s-98004d6513de9c4f>) | [packages/yahoo-finance/index.cjs:4](<../../../packages/yahoo-finance/index.cjs#L4>) | FunctionDeclaration |
+| [getClient](<../symbols/files/packages/yahoo-finance/src/client.cjs.md#s-b0f0c6073f4df961>) | [packages/yahoo-finance/src/client.cjs:3](<../../../packages/yahoo-finance/src/client.cjs#L3>) | FunctionDeclaration |
+| [RANGES](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-7c9a72537aea65a0>) | [packages/yahoo-finance/src/market.cjs:2](<../../../packages/yahoo-finance/src/market.cjs#L2>) | VariableDeclaration |
+| [quoteSchema](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-022e5d11ca9a3fac>) | [packages/yahoo-finance/src/market.cjs:4](<../../../packages/yahoo-finance/src/market.cjs#L4>) | SchemaBinding |
+| [historySchema](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-55c49e01867527db>) | [packages/yahoo-finance/src/market.cjs:25](<../../../packages/yahoo-finance/src/market.cjs#L25>) | SchemaBinding |
+| [createMarketProvider](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-67d0bc4563003a0a>) | [packages/yahoo-finance/src/market.cjs:79](<../../../packages/yahoo-finance/src/market.cjs#L79>) | FunctionDeclaration |
+| [normalizeSymbol](<../symbols/files/packages/yahoo-finance/src/ticker.cjs.md#s-097f2be1dc9346ef>) | [packages/yahoo-finance/src/ticker.cjs:2](<../../../packages/yahoo-finance/src/ticker.cjs#L2>) | FunctionDeclaration |
+| [dailyPriceService.get](<../symbols/files/electron/daily-price-service.cjs.md#s-4a666375398d6888>) | [electron/daily-price-service.cjs:118](<../../../electron/daily-price-service.cjs#L118>) | MethodDeclaration |
 | [readWorkbook.open](<../symbols/files/electron/engines/excel/reader.cjs.md#s-edf5439a2aa19058>) | [electron/engines/excel/reader.cjs:323](<../../../electron/engines/excel/reader.cjs#L323>) | MethodDeclaration |
 | [readWorkbook.open](<../symbols/files/electron/engines/excel/reader.cjs.md#s-a55e36a960bc9823>) | [electron/engines/excel/reader.cjs:358](<../../../electron/engines/excel/reader.cjs#L358>) | MethodDeclaration |
+| [financialService.get](<../symbols/files/electron/financial-service.cjs.md#s-2f73e01fe6b09018>) | [electron/financial-service.cjs:151](<../../../electron/financial-service.cjs#L151>) | MethodDeclaration |
 
 ## Depends on
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
+- [Engine package registry](<engine-registry.md>): 3 import sites; example [electron/daily-price-service.cjs:8](<../../../electron/daily-price-service.cjs#L8>).
 - [Backend Identity Engine](<identity.md>): 1 import sites; example [electron/engines/definitions.cjs:3](<../../../electron/engines/definitions.cjs#L3>).
-- [Knowledge indexing and source access](<knowledge.md>): 6 import sites; example [electron/daily-price-service.cjs:106](<../../../electron/daily-price-service.cjs#L106>).
+- [Knowledge indexing and source access](<knowledge.md>): 10 import sites; example [electron/daily-price-service.cjs:9](<../../../electron/daily-price-service.cjs#L9>).
 - [Shared deterministic infrastructure](<shared.md>): 4 import sites; example [electron/daily-price-service.cjs:7](<../../../electron/daily-price-service.cjs#L7>).
 - [Vault and stations](<vault.md>): 3 import sites; example [electron/excel-service.cjs:4](<../../../electron/excel-service.cjs#L4>).
 
@@ -82,32 +89,31 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
-- [Assigned Agents and jurisdiction](<agents.md>): 1 import sites; example [electron/ai/agents/entity-agent-protocol.cjs:265](<../../../electron/ai/agents/entity-agent-protocol.cjs#L265>).
 - [Retained AI runtime](<ai-runtime.md>): 2 import sites; example [electron/ai/engine-registry.cjs:9](<../../../electron/ai/engine-registry.cjs#L9>).
-- [Engine package registry](<engine-registry.md>): 1 import sites; example [electron/engines/registry/registry.cjs:180](<../../../electron/engines/registry/registry.cjs#L180>).
-- [Backend Identity Engine](<identity.md>): 5 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
-- [Knowledge indexing and source access](<knowledge.md>): 7 import sites; example [electron/domains/indexing/knowledge-index.cjs:2](<../../../electron/domains/indexing/knowledge-index.cjs#L2>).
-- [WorldView desktop IPC](<worldview.md>): 7 import sites; example [electron/core/ipc/worldview-ipc.cjs:6](<../../../electron/core/ipc/worldview-ipc.cjs#L6>).
+- [Engine package registry](<engine-registry.md>): 1 import sites; example [electron/engines/registry/registry.cjs:183](<../../../electron/engines/registry/registry.cjs#L183>).
+- [Backend Identity Engine](<identity.md>): 3 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
+- [Knowledge indexing and source access](<knowledge.md>): 5 import sites; example [electron/domains/indexing/tag-association-service.cjs:16](<../../../electron/domains/indexing/tag-association-service.cjs#L16>).
+- [WorldView desktop IPC](<worldview.md>): 7 import sites; example [electron/core/ipc/worldview-ipc.cjs:8](<../../../electron/core/ipc/worldview-ipc.cjs#L8>).
 
 ## Contracts
 
-- [snapshotSchema](<../symbols/files/electron/engines/daily-price/index.cjs.md#s-6e8ec316612d7dfe>) — zod-syntax-candidate; local schema/type.
-- [argumentsSchema](<../symbols/files/electron/engines/yahoo-financials/index.cjs.md#s-969bb4a72f334c56>) — zod-syntax-candidate; local schema/type.
-- [nullableNumber](<../symbols/files/electron/engines/yahoo-financials/index.cjs.md#s-77db237bbcabd335>) — zod-syntax-candidate; local schema/type.
-- [recordSchema](<../symbols/files/electron/engines/yahoo-financials/index.cjs.md#s-67d881e8a8d6de63>) — zod-syntax-candidate; local schema/type.
-- [snapshotSchema](<../symbols/files/electron/engines/yahoo-financials/index.cjs.md#s-d629928ddb317a5d>) — zod-syntax-candidate; local schema/type.
-- [numeric](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-92c1749f78c55f9d>) — zod-syntax-candidate; local schema/type.
-- [quoteSchema](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-d6da2ebaf6dbfb3b>) — zod-syntax-candidate; exported.
-- [historySchema](<../symbols/files/electron/engines/yahoo-financials/market.cjs.md#s-588a721b10a61755>) — zod-syntax-candidate; exported.
 - [knowledgeSchema](<../symbols/files/electron/image-parser-service.cjs.md#s-31a5b398f5a4ce9e>) — zod-syntax-candidate; local schema/type.
+- [snapshotSchema](<../symbols/files/packages/yahoo-finance/src/daily.cjs.md#s-3549437b0e58d1c1>) — zod-syntax-candidate; local schema/type.
+- [argumentsSchema](<../symbols/files/packages/yahoo-finance/src/financials.cjs.md#s-a7cce49c3ab1fb5b>) — zod-syntax-candidate; local schema/type.
+- [nullableNumber](<../symbols/files/packages/yahoo-finance/src/financials.cjs.md#s-5974eb5c68426f40>) — zod-syntax-candidate; local schema/type.
+- [recordSchema](<../symbols/files/packages/yahoo-finance/src/financials.cjs.md#s-265207aa09f99f92>) — zod-syntax-candidate; local schema/type.
+- [snapshotSchema](<../symbols/files/packages/yahoo-finance/src/financials.cjs.md#s-1ad63f63f9164d62>) — zod-syntax-candidate; local schema/type.
+- [numeric](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-a0f869d20bdcb2ff>) — zod-syntax-candidate; local schema/type.
+- [quoteSchema](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-022e5d11ca9a3fac>) — zod-syntax-candidate; exported.
+- [historySchema](<../symbols/files/packages/yahoo-finance/src/market.cjs.md#s-55c49e01867527db>) — zod-syntax-candidate; exported.
 
 ## Source inventory
 
 | File | Role | Declarations |
 | --- | --- | --- |
-| [electron/daily-price-service.cjs:1](<../../../electron/daily-price-service.cjs#L1>) | production | 10 |
+| [electron/daily-price-service.cjs:1](<../../../electron/daily-price-service.cjs#L1>) | production | 15 |
 | [electron/daily-price.test.cjs:1](<../../../electron/daily-price.test.cjs#L1>) | test | 26 |
-| [electron/engines/daily-price/index.cjs:1](<../../../electron/engines/daily-price/index.cjs#L1>) | production | 13 |
+| [electron/engines/daily-price/index.cjs:1](<../../../electron/engines/daily-price/index.cjs#L1>) | production | 0 |
 | [electron/engines/definitions.cjs:1](<../../../electron/engines/definitions.cjs#L1>) | production | 1 |
 | [electron/engines/excel/archive.cjs:1](<../../../electron/engines/excel/archive.cjs#L1>) | production | 9 |
 | [electron/engines/excel/cells.cjs:1](<../../../electron/engines/excel/cells.cjs#L1>) | production | 10 |
@@ -125,15 +131,22 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | [electron/engines/tag-association/normalizer.cjs:1](<../../../electron/engines/tag-association/normalizer.cjs#L1>) | production | 3 |
 | [electron/engines/tag-association/search.cjs:1](<../../../electron/engines/tag-association/search.cjs#L1>) | production | 11 |
 | [electron/engines/yahoo-financials/cli.cjs:1](<../../../electron/engines/yahoo-financials/cli.cjs#L1>) | production | 2 |
-| [electron/engines/yahoo-financials/index.cjs:1](<../../../electron/engines/yahoo-financials/index.cjs#L1>) | production | 23 |
-| [electron/engines/yahoo-financials/market.cjs:1](<../../../electron/engines/yahoo-financials/market.cjs#L1>) | production | 15 |
+| [electron/engines/yahoo-financials/index.cjs:1](<../../../electron/engines/yahoo-financials/index.cjs#L1>) | production | 0 |
+| [electron/engines/yahoo-financials/market.cjs:1](<../../../electron/engines/yahoo-financials/market.cjs#L1>) | production | 0 |
 | [electron/excel-engine.test.cjs:1](<../../../electron/excel-engine.test.cjs#L1>) | test | 18 |
 | [electron/excel-package.test.cjs:1](<../../../electron/excel-package.test.cjs#L1>) | test | 1 |
 | [electron/excel-service.cjs:1](<../../../electron/excel-service.cjs#L1>) | production | 9 |
 | [electron/excel-service.test.cjs:1](<../../../electron/excel-service.test.cjs#L1>) | test | 18 |
-| [electron/financial-service.cjs:1](<../../../electron/financial-service.cjs#L1>) | production | 12 |
+| [electron/financial-service.cjs:1](<../../../electron/financial-service.cjs#L1>) | production | 16 |
 | [electron/financial-service.test.cjs:1](<../../../electron/financial-service.test.cjs#L1>) | test | 26 |
 | [electron/image-parser-service.cjs:1](<../../../electron/image-parser-service.cjs#L1>) | production | 27 |
 | [electron/image-parser.test.cjs:1](<../../../electron/image-parser.test.cjs#L1>) | test | 34 |
 | [electron/tag-association.test.cjs:1](<../../../electron/tag-association.test.cjs#L1>) | test | 28 |
 | [electron/yahoo-engine-contract.test.cjs:1](<../../../electron/yahoo-engine-contract.test.cjs#L1>) | test | 22 |
+| [packages/yahoo-finance/build.cjs:1](<../../../packages/yahoo-finance/build.cjs#L1>) | configuration | 2 |
+| [packages/yahoo-finance/index.cjs:1](<../../../packages/yahoo-finance/index.cjs#L1>) | configuration | 1 |
+| [packages/yahoo-finance/src/client.cjs:1](<../../../packages/yahoo-finance/src/client.cjs#L1>) | configuration | 1 |
+| [packages/yahoo-finance/src/daily.cjs:1](<../../../packages/yahoo-finance/src/daily.cjs#L1>) | configuration | 12 |
+| [packages/yahoo-finance/src/financials.cjs:1](<../../../packages/yahoo-finance/src/financials.cjs#L1>) | configuration | 23 |
+| [packages/yahoo-finance/src/market.cjs:1](<../../../packages/yahoo-finance/src/market.cjs#L1>) | configuration | 15 |
+| [packages/yahoo-finance/src/ticker.cjs:1](<../../../packages/yahoo-finance/src/ticker.cjs#L1>) | configuration | 1 |

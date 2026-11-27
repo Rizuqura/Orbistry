@@ -6,7 +6,7 @@ Provides a package-format example independent of the application runtime.
 
 Owns: examples/. This ownership is editorial; source locations and import edges below are generated facts.
 
-1 source files; 1 callable declarations; 0 contract declarations.
+2 source files; 2 callable declarations; 0 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -15,6 +15,7 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | Symbol | Source | Kind |
 | --- | --- | --- |
 | [execute](<../symbols/files/examples/engines/number-tools/index.cjs.md#s-5468301120940838>) | [examples/engines/number-tools/index.cjs:2](<../../../examples/engines/number-tools/index.cjs#L2>) | FunctionDeclaration |
+| [execute](<../symbols/files/examples/engines/weather-demo/index.cjs.md#s-e7ece744e2d42614>) | [examples/engines/weather-demo/index.cjs:2](<../../../examples/engines/weather-demo/index.cjs#L2>) | FunctionDeclaration |
 
 ## Depends on
 
@@ -37,3 +38,4 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | File | Role | Declarations |
 | --- | --- | --- |
 | [examples/engines/number-tools/index.cjs:1](<../../../examples/engines/number-tools/index.cjs#L1>) | example | 1 |
+| [examples/engines/weather-demo/index.cjs:1](<../../../examples/engines/weather-demo/index.cjs#L1>) | example | 1 |

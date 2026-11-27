@@ -502,7 +502,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<agent-construction.test.cjs.md#s-342a4c141f480910>) — [electron/ai/agents/agent-construction.test.cjs:112](<../../../../../../../electron/ai/agents/agent-construction.test.cjs#L112>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.test.cjs:121](<../../../../../../../electron/ai/agents/agent-construction.test.cjs#L121>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.test.cjs:121](<../../../../../../../electron/ai/agents/agent-construction.test.cjs#L121>)
 
 **Called by (statically resolved):**
 

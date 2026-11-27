@@ -2573,8 +2573,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-123b7234d7ed68d1>) — [electron/core/ipc/worldview-ipc.cjs:241](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L241>)
-- [registerWorldViewIpc.reveal](<../../core/ipc/worldview-ipc.cjs.md#s-1622d3addef98376>) — [electron/core/ipc/worldview-ipc.cjs:260](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L260>)
+- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-dfb9b12a2bb8154c>) — [electron/core/ipc/worldview-ipc.cjs:248](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L248>)
+- [registerWorldViewIpc.reveal](<../../core/ipc/worldview-ipc.cjs.md#s-a5a132a600c633a3>) — [electron/core/ipc/worldview-ipc.cjs:267](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L267>)
 - [resolveSources](<../entity/worldview-store.cjs.md#s-c5e1330f84c72b28>) — [electron/domains/entity/worldview-store.cjs:154](<../../../../../../../electron/domains/entity/worldview-store.cjs#L154>)
 - [assignWorldViewFiles.assignFiles](<../entity/worldview-store.cjs.md#s-6fb69637a7e981f0>) — [electron/domains/entity/worldview-store.cjs:300](<../../../../../../../electron/domains/entity/worldview-store.cjs#L300>)
 - [&lt;anonymous@313:70&gt;.&lt;anonymous@314:22&gt;](<../entity/worldview-store.test.cjs.md#s-a06957cf3fc441cf>) — [electron/domains/entity/worldview-store.test.cjs:325](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L325>)
@@ -2691,7 +2691,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc.list](<../../core/ipc/worldview-ipc.cjs.md#s-de7c8466beef6c4f>) — [electron/core/ipc/worldview-ipc.cjs:251](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L251>)
+- [registerWorldViewIpc.list](<../../core/ipc/worldview-ipc.cjs.md#s-7258a0f93c86a762>) — [electron/core/ipc/worldview-ipc.cjs:258](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L258>)
 - [&lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;](<../entity/worldview-store.test.cjs.md#s-088e8df121489d59>) — [electron/domains/entity/worldview-store.test.cjs:166](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L166>)
 - [&lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;](<../entity/worldview-store.test.cjs.md#s-088e8df121489d59>) — [electron/domains/entity/worldview-store.test.cjs:171](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L171>)
 - [&lt;anonymous@136:94&gt;.&lt;anonymous@137:22&gt;](<../entity/worldview-store.test.cjs.md#s-088e8df121489d59>) — [electron/domains/entity/worldview-store.test.cjs:175](<../../../../../../../electron/domains/entity/worldview-store.test.cjs#L175>)

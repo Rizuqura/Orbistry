@@ -110,7 +110,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [knowledgePath](<knowledge-source-access.cjs.md#s-a59b66a0a3d42c60>) — [electron/domains/knowledge/knowledge-source-access.cjs:25](<../../../../../../../electron/domains/knowledge/knowledge-source-access.cjs#L25>)
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-source-access.cjs:63](<../../../../../../../electron/domains/knowledge/knowledge-source-access.cjs#L63>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-source-access.cjs:63](<../../../../../../../electron/domains/knowledge/knowledge-source-access.cjs#L63>)
 
 **Called by (statically resolved):**
 
@@ -168,7 +168,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-123b7234d7ed68d1>) — [electron/core/ipc/worldview-ipc.cjs:236](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L236>)
+- [registerWorldViewIpc."knowledge-reveal"](<../../core/ipc/worldview-ipc.cjs.md#s-dfb9b12a2bb8154c>) — [electron/core/ipc/worldview-ipc.cjs:243](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L243>)
 - [previewKnowledgeSource](<knowledge-store.cjs.md#s-5b3b21e330d3d260>) — [electron/domains/knowledge/knowledge-store.cjs:124](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L124>)
 - [previewKnowledgeSource.previewSource](<knowledge-store.cjs.md#s-99313261c10e747c>) — [electron/domains/knowledge/knowledge-store.cjs:132](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L132>)
 - [saveKnowledgeNote.saveSourceNote](<knowledge-store.cjs.md#s-1654fd018e79f10a>) — [electron/domains/knowledge/knowledge-store.cjs:142](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L142>)

@@ -324,7 +324,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [ConversationHistory](<../chat/conversation-history.tsx.md#s-6d7ac1ac2fcf1950>) — [features/chat/conversation-history.tsx:41](<../../../../../../features/chat/conversation-history.tsx#L41>)
 - [FileInspector](<../knowledge/file-inspector.tsx.md#s-daeb528002ede13d>) — [features/knowledge/file-inspector.tsx:27](<../../../../../../features/knowledge/file-inspector.tsx#L27>)
 - [KnowledgeCard](<../knowledge/knowledge-card.tsx.md#s-ed4922b5c749bb24>) — [features/knowledge/knowledge-card.tsx:33](<../../../../../../features/knowledge/knowledge-card.tsx#L33>)
-- [KnowledgeWorkspace](<../knowledge/knowledge-workspace.tsx.md#s-de61e2373aa42255>) — [features/knowledge/knowledge-workspace.tsx:51](<../../../../../../features/knowledge/knowledge-workspace.tsx#L51>)
+- [KnowledgeWorkspace](<../knowledge/knowledge-workspace.tsx.md#s-31cae44ec8ab38a9>) — [features/knowledge/knowledge-workspace.tsx:52](<../../../../../../features/knowledge/knowledge-workspace.tsx#L52>)
 - [WorldView](<../worldview/worldview.tsx.md#s-892af518b4cf6aae>) — [features/worldview/worldview.tsx:204](<../../../../../../features/worldview/worldview.tsx#L204>)
 
 Unresolved / external call sites: 5.

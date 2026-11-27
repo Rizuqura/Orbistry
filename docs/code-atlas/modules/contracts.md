@@ -46,38 +46,38 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [ConstructionSourceBinding](<../symbols/files/types/ai.ts.md#s-cf28c67a79d5fe7a>) | [types/ai.ts:281](<../../../types/ai.ts#L281>) | TypeAliasDeclaration |
 | [ConstructionFilePreview](<../symbols/files/types/ai.ts.md#s-81b526593588999c>) | [types/ai.ts:283](<../../../types/ai.ts#L283>) | TypeAliasDeclaration |
 | [AgentConstructionConfig](<../symbols/files/types/ai.ts.md#s-ef1eebef6cd825c4>) | [types/ai.ts:287](<../../../types/ai.ts#L287>) | TypeAliasDeclaration |
-| [AgentConstructionInput](<../symbols/files/types/ai.ts.md#s-242448fc17ab17c4>) | [types/ai.ts:316](<../../../types/ai.ts#L316>) | TypeAliasDeclaration |
-| [AgentAppearanceOptions](<../symbols/files/types/ai.ts.md#s-56b49edd0459be1c>) | [types/ai.ts:326](<../../../types/ai.ts#L326>) | TypeAliasDeclaration |
-| [AgentAppearance](<../symbols/files/types/ai.ts.md#s-244d27dba13bfc1c>) | [types/ai.ts:331](<../../../types/ai.ts#L331>) | TypeAliasDeclaration |
-| [AgentConfig](<../symbols/files/types/ai.ts.md#s-b84fc6813b118bd2>) | [types/ai.ts:337](<../../../types/ai.ts#L337>) | TypeAliasDeclaration |
-| [RuntimeStatus](<../symbols/files/types/ai.ts.md#s-a29e78620c60bc72>) | [types/ai.ts:373](<../../../types/ai.ts#L373>) | TypeAliasDeclaration |
-| [ModelPullStatus](<../symbols/files/types/ai.ts.md#s-6b59e64e8fff86d7>) | [types/ai.ts:379](<../../../types/ai.ts#L379>) | TypeAliasDeclaration |
-| [ChatState](<../symbols/files/types/ai.ts.md#s-2095c2e0d7934e6b>) | [types/ai.ts:384](<../../../types/ai.ts#L384>) | TypeAliasDeclaration |
-| [ModelSettings](<../symbols/files/types/ai.ts.md#s-5dadaff5874cf530>) | [types/ai.ts:407](<../../../types/ai.ts#L407>) | TypeAliasDeclaration |
-| [ModelDescriptor](<../symbols/files/types/ai.ts.md#s-21e30963aad22e77>) | [types/ai.ts:420](<../../../types/ai.ts#L420>) | TypeAliasDeclaration |
-| [ProviderStatus](<../symbols/files/types/ai.ts.md#s-78b3ce1227ee5bbb>) | [types/ai.ts:438](<../../../types/ai.ts#L438>) | TypeAliasDeclaration |
-| [RegistryState](<../symbols/files/types/ai.ts.md#s-97b7c51534cbb4ed>) | [types/ai.ts:447](<../../../types/ai.ts#L447>) | TypeAliasDeclaration |
-| [ScopeSelection](<../symbols/files/types/ai.ts.md#s-6b8a4984864ded7f>) | [types/ai.ts:454](<../../../types/ai.ts#L454>) | TypeAliasDeclaration |
-| [ChatRequest](<../symbols/files/types/ai.ts.md#s-4f8c9f5ab7afb732>) | [types/ai.ts:458](<../../../types/ai.ts#L458>) | TypeAliasDeclaration |
-| [ChatRun](<../symbols/files/types/ai.ts.md#s-da60a1b7966fb6a0>) | [types/ai.ts:465](<../../../types/ai.ts#L465>) | TypeAliasDeclaration |
-| [ChatResult](<../symbols/files/types/ai.ts.md#s-de4145961eaf5c4a>) | [types/ai.ts:474](<../../../types/ai.ts#L474>) | TypeAliasDeclaration |
-| [ChatEvent](<../symbols/files/types/ai.ts.md#s-4a6807f210250f67>) | [types/ai.ts:475](<../../../types/ai.ts#L475>) | TypeAliasDeclaration |
-| [ProviderUsageSnapshot](<../symbols/files/types/ai.ts.md#s-d153d9883d24b49f>) | [types/ai.ts:486](<../../../types/ai.ts#L486>) | InterfaceDeclaration |
-| [OpenRouterUsageSnapshot](<../symbols/files/types/ai.ts.md#s-af7aafdf4801596f>) | [types/ai.ts:512](<../../../types/ai.ts#L512>) | TypeAliasDeclaration |
-| [AiBridge](<../symbols/files/types/ai.ts.md#s-12ce5222eeb8af3a>) | [types/ai.ts:516](<../../../types/ai.ts#L516>) | InterfaceDeclaration |
-| [ProviderVerification](<../symbols/files/types/ai.ts.md#s-194806ed7a9630cd>) | [types/ai.ts:682](<../../../types/ai.ts#L682>) | TypeAliasDeclaration |
-| [CredentialScope](<../symbols/files/types/ai.ts.md#s-3746f3ad068df01b>) | [types/ai.ts:689](<../../../types/ai.ts#L689>) | TypeAliasDeclaration |
-| [ProviderConnection](<../symbols/files/types/ai.ts.md#s-39fc7aab9c8fd197>) | [types/ai.ts:691](<../../../types/ai.ts#L691>) | TypeAliasDeclaration |
-| [ProvidedModelPreview](<../symbols/files/types/ai.ts.md#s-971e43147c7f6a25>) | [types/ai.ts:699](<../../../types/ai.ts#L699>) | TypeAliasDeclaration |
-| [ModelCheckResult](<../symbols/files/types/ai.ts.md#s-7546247c5a03d92f>) | [types/ai.ts:712](<../../../types/ai.ts#L712>) | TypeAliasDeclaration |
+| [AgentConstructionInput](<../symbols/files/types/ai.ts.md#s-74d85efe0921c277>) | [types/ai.ts:317](<../../../types/ai.ts#L317>) | TypeAliasDeclaration |
+| [AgentAppearanceOptions](<../symbols/files/types/ai.ts.md#s-91cc29a95882e12d>) | [types/ai.ts:327](<../../../types/ai.ts#L327>) | TypeAliasDeclaration |
+| [AgentAppearance](<../symbols/files/types/ai.ts.md#s-c8db8f1b85604f50>) | [types/ai.ts:332](<../../../types/ai.ts#L332>) | TypeAliasDeclaration |
+| [AgentConfig](<../symbols/files/types/ai.ts.md#s-7fabf125e03924c2>) | [types/ai.ts:338](<../../../types/ai.ts#L338>) | TypeAliasDeclaration |
+| [RuntimeStatus](<../symbols/files/types/ai.ts.md#s-2ea9ec62145bd012>) | [types/ai.ts:374](<../../../types/ai.ts#L374>) | TypeAliasDeclaration |
+| [ModelPullStatus](<../symbols/files/types/ai.ts.md#s-6177168ce053c1a5>) | [types/ai.ts:380](<../../../types/ai.ts#L380>) | TypeAliasDeclaration |
+| [ChatState](<../symbols/files/types/ai.ts.md#s-b33685998a6ef895>) | [types/ai.ts:385](<../../../types/ai.ts#L385>) | TypeAliasDeclaration |
+| [ModelSettings](<../symbols/files/types/ai.ts.md#s-0c3bd69bf5867a3e>) | [types/ai.ts:408](<../../../types/ai.ts#L408>) | TypeAliasDeclaration |
+| [ModelDescriptor](<../symbols/files/types/ai.ts.md#s-a7e8e3ea7958330a>) | [types/ai.ts:421](<../../../types/ai.ts#L421>) | TypeAliasDeclaration |
+| [ProviderStatus](<../symbols/files/types/ai.ts.md#s-f0c8ee1b47b7c6b4>) | [types/ai.ts:439](<../../../types/ai.ts#L439>) | TypeAliasDeclaration |
+| [RegistryState](<../symbols/files/types/ai.ts.md#s-2e8b7c0211a0d8c5>) | [types/ai.ts:448](<../../../types/ai.ts#L448>) | TypeAliasDeclaration |
+| [ScopeSelection](<../symbols/files/types/ai.ts.md#s-9bed5990beb64a01>) | [types/ai.ts:455](<../../../types/ai.ts#L455>) | TypeAliasDeclaration |
+| [ChatRequest](<../symbols/files/types/ai.ts.md#s-b65846af22b827bc>) | [types/ai.ts:459](<../../../types/ai.ts#L459>) | TypeAliasDeclaration |
+| [ChatRun](<../symbols/files/types/ai.ts.md#s-7e88b00495a0d498>) | [types/ai.ts:466](<../../../types/ai.ts#L466>) | TypeAliasDeclaration |
+| [ChatResult](<../symbols/files/types/ai.ts.md#s-4a6807f210250f67>) | [types/ai.ts:475](<../../../types/ai.ts#L475>) | TypeAliasDeclaration |
+| [ChatEvent](<../symbols/files/types/ai.ts.md#s-ebb24d591ce21f44>) | [types/ai.ts:476](<../../../types/ai.ts#L476>) | TypeAliasDeclaration |
+| [ProviderUsageSnapshot](<../symbols/files/types/ai.ts.md#s-3b716dc64e9d971c>) | [types/ai.ts:487](<../../../types/ai.ts#L487>) | InterfaceDeclaration |
+| [OpenRouterUsageSnapshot](<../symbols/files/types/ai.ts.md#s-b3fca13754a76d01>) | [types/ai.ts:513](<../../../types/ai.ts#L513>) | TypeAliasDeclaration |
+| [AiBridge](<../symbols/files/types/ai.ts.md#s-03f31b4f40138481>) | [types/ai.ts:517](<../../../types/ai.ts#L517>) | InterfaceDeclaration |
+| [ProviderVerification](<../symbols/files/types/ai.ts.md#s-b25940ee6d4d5f7a>) | [types/ai.ts:683](<../../../types/ai.ts#L683>) | TypeAliasDeclaration |
+| [CredentialScope](<../symbols/files/types/ai.ts.md#s-30f39e44c2439c5c>) | [types/ai.ts:690](<../../../types/ai.ts#L690>) | TypeAliasDeclaration |
+| [ProviderConnection](<../symbols/files/types/ai.ts.md#s-72eeaaf697f8cabc>) | [types/ai.ts:692](<../../../types/ai.ts#L692>) | TypeAliasDeclaration |
+| [ProvidedModelPreview](<../symbols/files/types/ai.ts.md#s-04123d652bd8f0f7>) | [types/ai.ts:700](<../../../types/ai.ts#L700>) | TypeAliasDeclaration |
+| [ModelCheckResult](<../symbols/files/types/ai.ts.md#s-09d5209868e9067e>) | [types/ai.ts:713](<../../../types/ai.ts#L713>) | TypeAliasDeclaration |
 | [IdentitySource](<../symbols/files/types/backend-identity.ts.md#s-4d1c2a23af6fcb8a>) | [types/backend-identity.ts:1](<../../../types/backend-identity.ts#L1>) | TypeAliasDeclaration |
 | [IdentityChunk](<../symbols/files/types/backend-identity.ts.md#s-57f48bdacc7dfb96>) | [types/backend-identity.ts:14](<../../../types/backend-identity.ts#L14>) | TypeAliasDeclaration |
 | [IdentityCapability](<../symbols/files/types/backend-identity.ts.md#s-7409876be641d7e1>) | [types/backend-identity.ts:30](<../../../types/backend-identity.ts#L30>) | TypeAliasDeclaration |
 | [IdentityLogEntry](<../symbols/files/types/backend-identity.ts.md#s-1fcc0c365da66d26>) | [types/backend-identity.ts:46](<../../../types/backend-identity.ts#L46>) | TypeAliasDeclaration |
 | [IdentityConnection](<../symbols/files/types/backend-identity.ts.md#s-3f5cfa6204606a95>) | [types/backend-identity.ts:52](<../../../types/backend-identity.ts#L52>) | TypeAliasDeclaration |
 | [IdentityManifest](<../symbols/files/types/backend-identity.ts.md#s-aa91ba36f0e5be90>) | [types/backend-identity.ts:64](<../../../types/backend-identity.ts#L64>) | TypeAliasDeclaration |
-| [BackendIdentityState](<../symbols/files/types/backend-identity.ts.md#s-33fd1adfdfac41f1>) | [types/backend-identity.ts:110](<../../../types/backend-identity.ts#L110>) | TypeAliasDeclaration |
-| [IdentityChunkPage](<../symbols/files/types/backend-identity.ts.md#s-09fc2b5745fc6542>) | [types/backend-identity.ts:122](<../../../types/backend-identity.ts#L122>) | TypeAliasDeclaration |
+| [BackendIdentityState](<../symbols/files/types/backend-identity.ts.md#s-13d52ea672dc4e1d>) | [types/backend-identity.ts:121](<../../../types/backend-identity.ts#L121>) | TypeAliasDeclaration |
+| [IdentityChunkPage](<../symbols/files/types/backend-identity.ts.md#s-2dc474f1aa68f8ae>) | [types/backend-identity.ts:133](<../../../types/backend-identity.ts#L133>) | TypeAliasDeclaration |
 | [VaultEntry](<../symbols/files/types/electron.d.ts.md#s-e7fa56c6f824a06d>) | [types/electron.d.ts:5](<../../../types/electron.d.ts#L5>) | TypeAliasDeclaration |
 | [VaultSnapshot](<../symbols/files/types/electron.d.ts.md#s-2f53be0c4bcd1857>) | [types/electron.d.ts:19](<../../../types/electron.d.ts#L19>) | TypeAliasDeclaration |
 | [VaultIssue](<../symbols/files/types/electron.d.ts.md#s-345f7380a570d160>) | [types/electron.d.ts:30](<../../../types/electron.d.ts#L30>) | TypeAliasDeclaration |
@@ -104,12 +104,12 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [AgentAssignment](<../symbols/files/types/entity-agents.ts.md#s-9cd095537abbe572>) | [types/entity-agents.ts:18](<../../../types/entity-agents.ts#L18>) | TypeAliasDeclaration |
 | [AssignmentContext](<../symbols/files/types/entity-agents.ts.md#s-cd9228441b9ac380>) | [types/entity-agents.ts:26](<../../../types/entity-agents.ts#L26>) | TypeAliasDeclaration |
 | [EngineDefinition](<../symbols/files/types/entity-agents.ts.md#s-42f74bf50c325a5b>) | [types/entity-agents.ts:33](<../../../types/entity-agents.ts#L33>) | TypeAliasDeclaration |
-| [AssignmentScope](<../symbols/files/types/entity-agents.ts.md#s-a8f29ad94ad7984a>) | [types/entity-agents.ts:40](<../../../types/entity-agents.ts#L40>) | TypeAliasDeclaration |
-| [AgentEvidenceReference](<../symbols/files/types/entity-agents.ts.md#s-81e3479276694ba9>) | [types/entity-agents.ts:42](<../../../types/entity-agents.ts#L42>) | TypeAliasDeclaration |
-| [PriceEvidence](<../symbols/files/types/entity-agents.ts.md#s-dc4e85d8f7967b77>) | [types/entity-agents.ts:54](<../../../types/entity-agents.ts#L54>) | TypeAliasDeclaration |
-| [AgentToolRequest](<../symbols/files/types/entity-agents.ts.md#s-846f6645c399ce9d>) | [types/entity-agents.ts:76](<../../../types/entity-agents.ts#L76>) | TypeAliasDeclaration |
-| [EntityAgentState](<../symbols/files/types/entity-agents.ts.md#s-9d03ec0a2b78223d>) | [types/entity-agents.ts:109](<../../../types/entity-agents.ts#L109>) | TypeAliasDeclaration |
-| [EntityAgentBridge](<../symbols/files/types/entity-agents.ts.md#s-426353399ca8348c>) | [types/entity-agents.ts:212](<../../../types/entity-agents.ts#L212>) | InterfaceDeclaration |
+| [AssignmentScope](<../symbols/files/types/entity-agents.ts.md#s-e74aa358a489962f>) | [types/entity-agents.ts:41](<../../../types/entity-agents.ts#L41>) | TypeAliasDeclaration |
+| [AgentEvidenceReference](<../symbols/files/types/entity-agents.ts.md#s-1ce660572bf34161>) | [types/entity-agents.ts:43](<../../../types/entity-agents.ts#L43>) | TypeAliasDeclaration |
+| [PriceEvidence](<../symbols/files/types/entity-agents.ts.md#s-f1172313c0034f4e>) | [types/entity-agents.ts:55](<../../../types/entity-agents.ts#L55>) | TypeAliasDeclaration |
+| [AgentToolRequest](<../symbols/files/types/entity-agents.ts.md#s-8e5654657624db12>) | [types/entity-agents.ts:77](<../../../types/entity-agents.ts#L77>) | TypeAliasDeclaration |
+| [EntityAgentState](<../symbols/files/types/entity-agents.ts.md#s-ba5f3917f89d7b06>) | [types/entity-agents.ts:110](<../../../types/entity-agents.ts#L110>) | TypeAliasDeclaration |
+| [EntityAgentBridge](<../symbols/files/types/entity-agents.ts.md#s-2bd2e209dad96d7a>) | [types/entity-agents.ts:213](<../../../types/entity-agents.ts#L213>) | InterfaceDeclaration |
 | [EntityScopeContract](<../symbols/files/types/entity-scope.ts.md#s-bd758b5c07f77e29>) | [types/entity-scope.ts:2](<../../../types/entity-scope.ts#L2>) | TypeAliasDeclaration |
 | [FinancialEvidence](<../symbols/files/types/entity-scope.ts.md#s-51cdbe0d98e2c06c>) | [types/entity-scope.ts:32](<../../../types/entity-scope.ts#L32>) | TypeAliasDeclaration |
 | [BaselineCallPhase](<../symbols/files/types/front-office.ts.md#s-a064484de70b0f4e>) | [types/front-office.ts:2](<../../../types/front-office.ts#L2>) | TypeAliasDeclaration |
@@ -139,26 +139,26 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [UniverseEntry](<../symbols/files/types/worldview.ts.md#s-d9b233e4d5232411>) | [types/worldview.ts:22](<../../../types/worldview.ts#L22>) | TypeAliasDeclaration |
 | [UniverseListing](<../symbols/files/types/worldview.ts.md#s-0a3b919df9182e13>) | [types/worldview.ts:29](<../../../types/worldview.ts#L29>) | TypeAliasDeclaration |
 | [WorldViewOperation](<../symbols/files/types/worldview.ts.md#s-6854f2a83cb58d60>) | [types/worldview.ts:36](<../../../types/worldview.ts#L36>) | TypeAliasDeclaration |
-| [WorldViewRequest](<../symbols/files/types/worldview.ts.md#s-f4657cfa80228b24>) | [types/worldview.ts:75](<../../../types/worldview.ts#L75>) | TypeAliasDeclaration |
-| [WorldTagSearchResult](<../symbols/files/types/worldview.ts.md#s-7ad4e18e80c8946b>) | [types/worldview.ts:107](<../../../types/worldview.ts#L107>) | TypeAliasDeclaration |
-| [WorldTagSearchResponse](<../symbols/files/types/worldview.ts.md#s-31765735a8dd6464>) | [types/worldview.ts:118](<../../../types/worldview.ts#L118>) | TypeAliasDeclaration |
-| [IndexedKnowledgeMenu](<../symbols/files/types/worldview.ts.md#s-9b8d717554791614>) | [types/worldview.ts:135](<../../../types/worldview.ts#L135>) | TypeAliasDeclaration |
-| [IndexedPriceSource](<../symbols/files/types/worldview.ts.md#s-2f243fdf772fe1df>) | [types/worldview.ts:144](<../../../types/worldview.ts#L144>) | TypeAliasDeclaration |
-| [IndexedFinanceSource](<../symbols/files/types/worldview.ts.md#s-e8062bbfa0844875>) | [types/worldview.ts:149](<../../../types/worldview.ts#L149>) | TypeAliasDeclaration |
-| [FinancialSnapshot](<../symbols/files/types/worldview.ts.md#s-756bc0067a864c68>) | [types/worldview.ts:155](<../../../types/worldview.ts#L155>) | TypeAliasDeclaration |
-| [FinancialResponse](<../symbols/files/types/worldview.ts.md#s-4a9f56ce6334a279>) | [types/worldview.ts:186](<../../../types/worldview.ts#L186>) | TypeAliasDeclaration |
-| [KnowledgeCarousel](<../symbols/files/types/worldview.ts.md#s-d103a6a025d3cbe2>) | [types/worldview.ts:192](<../../../types/worldview.ts#L192>) | TypeAliasDeclaration |
-| [CarouselObservation](<../symbols/files/types/worldview.ts.md#s-0458bbb14878b6a3>) | [types/worldview.ts:200](<../../../types/worldview.ts#L200>) | TypeAliasDeclaration |
-| [ImageKnowledgeResult](<../symbols/files/types/worldview.ts.md#s-59850c58875c6d4f>) | [types/worldview.ts:208](<../../../types/worldview.ts#L208>) | TypeAliasDeclaration |
-| [ImageParseJob](<../symbols/files/types/worldview.ts.md#s-c9912a41020749de>) | [types/worldview.ts:239](<../../../types/worldview.ts#L239>) | TypeAliasDeclaration |
-| [IndexValidation](<../symbols/files/types/worldview.ts.md#s-202103782fd5fe1e>) | [types/worldview.ts:251](<../../../types/worldview.ts#L251>) | TypeAliasDeclaration |
-| [KnowledgeIndexState](<../symbols/files/types/worldview.ts.md#s-67a5861fe4bb3a78>) | [types/worldview.ts:255](<../../../types/worldview.ts#L255>) | TypeAliasDeclaration |
-| [DailyPriceResponse](<../symbols/files/types/worldview.ts.md#s-d2ad2fa2a444e962>) | [types/worldview.ts:263](<../../../types/worldview.ts#L263>) | TypeAliasDeclaration |
-| [MarketHistoryResponse](<../symbols/files/types/worldview.ts.md#s-03edbc994621926a>) | [types/worldview.ts:289](<../../../types/worldview.ts#L289>) | TypeAliasDeclaration |
-| [KnowledgeIndexSave](<../symbols/files/types/worldview.ts.md#s-a26f8fbb8c0f81cc>) | [types/worldview.ts:316](<../../../types/worldview.ts#L316>) | TypeAliasDeclaration |
-| [ExcelSourcePreview](<../symbols/files/types/worldview.ts.md#s-719c00db0849a3c5>) | [types/worldview.ts:324](<../../../types/worldview.ts#L324>) | TypeAliasDeclaration |
-| [KnowledgeSourcePreview](<../symbols/files/types/worldview.ts.md#s-5a1c7d51d04acdb2>) | [types/worldview.ts:359](<../../../types/worldview.ts#L359>) | TypeAliasDeclaration |
-| [WorldViewBridge](<../symbols/files/types/worldview.ts.md#s-2660ae5b1fd935a5>) | [types/worldview.ts:367](<../../../types/worldview.ts#L367>) | TypeAliasDeclaration |
+| [WorldViewRequest](<../symbols/files/types/worldview.ts.md#s-f5b12a95902deb76>) | [types/worldview.ts:77](<../../../types/worldview.ts#L77>) | TypeAliasDeclaration |
+| [WorldTagSearchResult](<../symbols/files/types/worldview.ts.md#s-c935416bb9c57909>) | [types/worldview.ts:110](<../../../types/worldview.ts#L110>) | TypeAliasDeclaration |
+| [WorldTagSearchResponse](<../symbols/files/types/worldview.ts.md#s-80f74e55daee9ccf>) | [types/worldview.ts:121](<../../../types/worldview.ts#L121>) | TypeAliasDeclaration |
+| [IndexedKnowledgeMenu](<../symbols/files/types/worldview.ts.md#s-5524a4061d71be3c>) | [types/worldview.ts:138](<../../../types/worldview.ts#L138>) | TypeAliasDeclaration |
+| [IndexedPriceSource](<../symbols/files/types/worldview.ts.md#s-b86489f0c1d69e32>) | [types/worldview.ts:154](<../../../types/worldview.ts#L154>) | TypeAliasDeclaration |
+| [IndexedFinanceSource](<../symbols/files/types/worldview.ts.md#s-ce65a90339108413>) | [types/worldview.ts:159](<../../../types/worldview.ts#L159>) | TypeAliasDeclaration |
+| [FinancialSnapshot](<../symbols/files/types/worldview.ts.md#s-6c71238f0ff8c25c>) | [types/worldview.ts:165](<../../../types/worldview.ts#L165>) | TypeAliasDeclaration |
+| [FinancialResponse](<../symbols/files/types/worldview.ts.md#s-3feafe7f8e755115>) | [types/worldview.ts:196](<../../../types/worldview.ts#L196>) | TypeAliasDeclaration |
+| [KnowledgeCarousel](<../symbols/files/types/worldview.ts.md#s-105b5fde2b3b09fe>) | [types/worldview.ts:202](<../../../types/worldview.ts#L202>) | TypeAliasDeclaration |
+| [CarouselObservation](<../symbols/files/types/worldview.ts.md#s-a8b13a6301d0ae11>) | [types/worldview.ts:210](<../../../types/worldview.ts#L210>) | TypeAliasDeclaration |
+| [ImageKnowledgeResult](<../symbols/files/types/worldview.ts.md#s-81c9097a6afcb2ea>) | [types/worldview.ts:218](<../../../types/worldview.ts#L218>) | TypeAliasDeclaration |
+| [ImageParseJob](<../symbols/files/types/worldview.ts.md#s-df10a522399561b0>) | [types/worldview.ts:249](<../../../types/worldview.ts#L249>) | TypeAliasDeclaration |
+| [IndexValidation](<../symbols/files/types/worldview.ts.md#s-2fa48bba2d96da48>) | [types/worldview.ts:261](<../../../types/worldview.ts#L261>) | TypeAliasDeclaration |
+| [KnowledgeIndexState](<../symbols/files/types/worldview.ts.md#s-49327a9b59357064>) | [types/worldview.ts:265](<../../../types/worldview.ts#L265>) | TypeAliasDeclaration |
+| [DailyPriceResponse](<../symbols/files/types/worldview.ts.md#s-1915b9e77edea1a8>) | [types/worldview.ts:273](<../../../types/worldview.ts#L273>) | TypeAliasDeclaration |
+| [MarketHistoryResponse](<../symbols/files/types/worldview.ts.md#s-0f332e94c6e5fdda>) | [types/worldview.ts:299](<../../../types/worldview.ts#L299>) | TypeAliasDeclaration |
+| [KnowledgeIndexSave](<../symbols/files/types/worldview.ts.md#s-ad926f804294df1a>) | [types/worldview.ts:326](<../../../types/worldview.ts#L326>) | TypeAliasDeclaration |
+| [ExcelSourcePreview](<../symbols/files/types/worldview.ts.md#s-f489700739fde3a2>) | [types/worldview.ts:334](<../../../types/worldview.ts#L334>) | TypeAliasDeclaration |
+| [KnowledgeSourcePreview](<../symbols/files/types/worldview.ts.md#s-9bb384ef0ce4238c>) | [types/worldview.ts:369](<../../../types/worldview.ts#L369>) | TypeAliasDeclaration |
+| [WorldViewBridge](<../symbols/files/types/worldview.ts.md#s-d07368615aba6e20>) | [types/worldview.ts:377](<../../../types/worldview.ts#L377>) | TypeAliasDeclaration |
 
 ## Depends on
 
@@ -206,38 +206,38 @@ No cross-module production imports in this view.
 - [ConstructionSourceBinding](<../symbols/files/types/ai.ts.md#s-cf28c67a79d5fe7a>) — typescript-declaration; exported.
 - [ConstructionFilePreview](<../symbols/files/types/ai.ts.md#s-81b526593588999c>) — typescript-declaration; exported.
 - [AgentConstructionConfig](<../symbols/files/types/ai.ts.md#s-ef1eebef6cd825c4>) — typescript-declaration; exported.
-- [AgentConstructionInput](<../symbols/files/types/ai.ts.md#s-242448fc17ab17c4>) — typescript-declaration; exported.
-- [AgentAppearanceOptions](<../symbols/files/types/ai.ts.md#s-56b49edd0459be1c>) — typescript-declaration; exported.
-- [AgentAppearance](<../symbols/files/types/ai.ts.md#s-244d27dba13bfc1c>) — typescript-declaration; exported.
-- [AgentConfig](<../symbols/files/types/ai.ts.md#s-b84fc6813b118bd2>) — typescript-declaration; exported.
-- [RuntimeStatus](<../symbols/files/types/ai.ts.md#s-a29e78620c60bc72>) — typescript-declaration; exported.
-- [ModelPullStatus](<../symbols/files/types/ai.ts.md#s-6b59e64e8fff86d7>) — typescript-declaration; exported.
-- [ChatState](<../symbols/files/types/ai.ts.md#s-2095c2e0d7934e6b>) — typescript-declaration; exported.
-- [ModelSettings](<../symbols/files/types/ai.ts.md#s-5dadaff5874cf530>) — typescript-declaration; exported.
-- [ModelDescriptor](<../symbols/files/types/ai.ts.md#s-21e30963aad22e77>) — typescript-declaration; exported.
-- [ProviderStatus](<../symbols/files/types/ai.ts.md#s-78b3ce1227ee5bbb>) — typescript-declaration; exported.
-- [RegistryState](<../symbols/files/types/ai.ts.md#s-97b7c51534cbb4ed>) — typescript-declaration; exported.
-- [ScopeSelection](<../symbols/files/types/ai.ts.md#s-6b8a4984864ded7f>) — typescript-declaration; exported.
-- [ChatRequest](<../symbols/files/types/ai.ts.md#s-4f8c9f5ab7afb732>) — typescript-declaration; exported.
-- [ChatRun](<../symbols/files/types/ai.ts.md#s-da60a1b7966fb6a0>) — typescript-declaration; exported.
-- [ChatResult](<../symbols/files/types/ai.ts.md#s-de4145961eaf5c4a>) — typescript-declaration; exported.
-- [ChatEvent](<../symbols/files/types/ai.ts.md#s-4a6807f210250f67>) — typescript-declaration; exported.
-- [ProviderUsageSnapshot](<../symbols/files/types/ai.ts.md#s-d153d9883d24b49f>) — typescript-declaration; exported.
-- [OpenRouterUsageSnapshot](<../symbols/files/types/ai.ts.md#s-af7aafdf4801596f>) — typescript-declaration; exported.
-- [AiBridge](<../symbols/files/types/ai.ts.md#s-12ce5222eeb8af3a>) — typescript-declaration; exported.
-- [ProviderVerification](<../symbols/files/types/ai.ts.md#s-194806ed7a9630cd>) — typescript-declaration; exported.
-- [CredentialScope](<../symbols/files/types/ai.ts.md#s-3746f3ad068df01b>) — typescript-declaration; exported.
-- [ProviderConnection](<../symbols/files/types/ai.ts.md#s-39fc7aab9c8fd197>) — typescript-declaration; exported.
-- [ProvidedModelPreview](<../symbols/files/types/ai.ts.md#s-971e43147c7f6a25>) — typescript-declaration; exported.
-- [ModelCheckResult](<../symbols/files/types/ai.ts.md#s-7546247c5a03d92f>) — typescript-declaration; exported.
+- [AgentConstructionInput](<../symbols/files/types/ai.ts.md#s-74d85efe0921c277>) — typescript-declaration; exported.
+- [AgentAppearanceOptions](<../symbols/files/types/ai.ts.md#s-91cc29a95882e12d>) — typescript-declaration; exported.
+- [AgentAppearance](<../symbols/files/types/ai.ts.md#s-c8db8f1b85604f50>) — typescript-declaration; exported.
+- [AgentConfig](<../symbols/files/types/ai.ts.md#s-7fabf125e03924c2>) — typescript-declaration; exported.
+- [RuntimeStatus](<../symbols/files/types/ai.ts.md#s-2ea9ec62145bd012>) — typescript-declaration; exported.
+- [ModelPullStatus](<../symbols/files/types/ai.ts.md#s-6177168ce053c1a5>) — typescript-declaration; exported.
+- [ChatState](<../symbols/files/types/ai.ts.md#s-b33685998a6ef895>) — typescript-declaration; exported.
+- [ModelSettings](<../symbols/files/types/ai.ts.md#s-0c3bd69bf5867a3e>) — typescript-declaration; exported.
+- [ModelDescriptor](<../symbols/files/types/ai.ts.md#s-a7e8e3ea7958330a>) — typescript-declaration; exported.
+- [ProviderStatus](<../symbols/files/types/ai.ts.md#s-f0c8ee1b47b7c6b4>) — typescript-declaration; exported.
+- [RegistryState](<../symbols/files/types/ai.ts.md#s-2e8b7c0211a0d8c5>) — typescript-declaration; exported.
+- [ScopeSelection](<../symbols/files/types/ai.ts.md#s-9bed5990beb64a01>) — typescript-declaration; exported.
+- [ChatRequest](<../symbols/files/types/ai.ts.md#s-b65846af22b827bc>) — typescript-declaration; exported.
+- [ChatRun](<../symbols/files/types/ai.ts.md#s-7e88b00495a0d498>) — typescript-declaration; exported.
+- [ChatResult](<../symbols/files/types/ai.ts.md#s-4a6807f210250f67>) — typescript-declaration; exported.
+- [ChatEvent](<../symbols/files/types/ai.ts.md#s-ebb24d591ce21f44>) — typescript-declaration; exported.
+- [ProviderUsageSnapshot](<../symbols/files/types/ai.ts.md#s-3b716dc64e9d971c>) — typescript-declaration; exported.
+- [OpenRouterUsageSnapshot](<../symbols/files/types/ai.ts.md#s-b3fca13754a76d01>) — typescript-declaration; exported.
+- [AiBridge](<../symbols/files/types/ai.ts.md#s-03f31b4f40138481>) — typescript-declaration; exported.
+- [ProviderVerification](<../symbols/files/types/ai.ts.md#s-b25940ee6d4d5f7a>) — typescript-declaration; exported.
+- [CredentialScope](<../symbols/files/types/ai.ts.md#s-30f39e44c2439c5c>) — typescript-declaration; exported.
+- [ProviderConnection](<../symbols/files/types/ai.ts.md#s-72eeaaf697f8cabc>) — typescript-declaration; exported.
+- [ProvidedModelPreview](<../symbols/files/types/ai.ts.md#s-04123d652bd8f0f7>) — typescript-declaration; exported.
+- [ModelCheckResult](<../symbols/files/types/ai.ts.md#s-09d5209868e9067e>) — typescript-declaration; exported.
 - [IdentitySource](<../symbols/files/types/backend-identity.ts.md#s-4d1c2a23af6fcb8a>) — typescript-declaration; exported.
 - [IdentityChunk](<../symbols/files/types/backend-identity.ts.md#s-57f48bdacc7dfb96>) — typescript-declaration; exported.
 - [IdentityCapability](<../symbols/files/types/backend-identity.ts.md#s-7409876be641d7e1>) — typescript-declaration; exported.
 - [IdentityLogEntry](<../symbols/files/types/backend-identity.ts.md#s-1fcc0c365da66d26>) — typescript-declaration; exported.
 - [IdentityConnection](<../symbols/files/types/backend-identity.ts.md#s-3f5cfa6204606a95>) — typescript-declaration; exported.
 - [IdentityManifest](<../symbols/files/types/backend-identity.ts.md#s-aa91ba36f0e5be90>) — typescript-declaration; exported.
-- [BackendIdentityState](<../symbols/files/types/backend-identity.ts.md#s-33fd1adfdfac41f1>) — typescript-declaration; exported.
-- [IdentityChunkPage](<../symbols/files/types/backend-identity.ts.md#s-09fc2b5745fc6542>) — typescript-declaration; exported.
+- [BackendIdentityState](<../symbols/files/types/backend-identity.ts.md#s-13d52ea672dc4e1d>) — typescript-declaration; exported.
+- [IdentityChunkPage](<../symbols/files/types/backend-identity.ts.md#s-2dc474f1aa68f8ae>) — typescript-declaration; exported.
 - [VaultEntry](<../symbols/files/types/electron.d.ts.md#s-e7fa56c6f824a06d>) — typescript-declaration; exported.
 - [VaultSnapshot](<../symbols/files/types/electron.d.ts.md#s-2f53be0c4bcd1857>) — typescript-declaration; exported.
 - [VaultIssue](<../symbols/files/types/electron.d.ts.md#s-345f7380a570d160>) — typescript-declaration; exported.
@@ -265,12 +265,12 @@ No cross-module production imports in this view.
 - [AgentAssignment](<../symbols/files/types/entity-agents.ts.md#s-9cd095537abbe572>) — typescript-declaration; exported.
 - [AssignmentContext](<../symbols/files/types/entity-agents.ts.md#s-cd9228441b9ac380>) — typescript-declaration; exported.
 - [EngineDefinition](<../symbols/files/types/entity-agents.ts.md#s-42f74bf50c325a5b>) — typescript-declaration; exported.
-- [AssignmentScope](<../symbols/files/types/entity-agents.ts.md#s-a8f29ad94ad7984a>) — typescript-declaration; exported.
-- [AgentEvidenceReference](<../symbols/files/types/entity-agents.ts.md#s-81e3479276694ba9>) — typescript-declaration; exported.
-- [PriceEvidence](<../symbols/files/types/entity-agents.ts.md#s-dc4e85d8f7967b77>) — typescript-declaration; exported.
-- [AgentToolRequest](<../symbols/files/types/entity-agents.ts.md#s-846f6645c399ce9d>) — typescript-declaration; exported.
-- [EntityAgentState](<../symbols/files/types/entity-agents.ts.md#s-9d03ec0a2b78223d>) — typescript-declaration; exported.
-- [EntityAgentBridge](<../symbols/files/types/entity-agents.ts.md#s-426353399ca8348c>) — typescript-declaration; exported.
+- [AssignmentScope](<../symbols/files/types/entity-agents.ts.md#s-e74aa358a489962f>) — typescript-declaration; exported.
+- [AgentEvidenceReference](<../symbols/files/types/entity-agents.ts.md#s-1ce660572bf34161>) — typescript-declaration; exported.
+- [PriceEvidence](<../symbols/files/types/entity-agents.ts.md#s-f1172313c0034f4e>) — typescript-declaration; exported.
+- [AgentToolRequest](<../symbols/files/types/entity-agents.ts.md#s-8e5654657624db12>) — typescript-declaration; exported.
+- [EntityAgentState](<../symbols/files/types/entity-agents.ts.md#s-ba5f3917f89d7b06>) — typescript-declaration; exported.
+- [EntityAgentBridge](<../symbols/files/types/entity-agents.ts.md#s-2bd2e209dad96d7a>) — typescript-declaration; exported.
 - [EntityScopeContract](<../symbols/files/types/entity-scope.ts.md#s-bd758b5c07f77e29>) — typescript-declaration; exported.
 - [FinancialEvidence](<../symbols/files/types/entity-scope.ts.md#s-51cdbe0d98e2c06c>) — typescript-declaration; exported.
 - [BaselineCallPhase](<../symbols/files/types/front-office.ts.md#s-a064484de70b0f4e>) — typescript-declaration; exported.
@@ -300,27 +300,27 @@ No cross-module production imports in this view.
 - [UniverseEntry](<../symbols/files/types/worldview.ts.md#s-d9b233e4d5232411>) — typescript-declaration; exported.
 - [UniverseListing](<../symbols/files/types/worldview.ts.md#s-0a3b919df9182e13>) — typescript-declaration; exported.
 - [WorldViewOperation](<../symbols/files/types/worldview.ts.md#s-6854f2a83cb58d60>) — typescript-declaration; exported.
-- [WorldViewRequest](<../symbols/files/types/worldview.ts.md#s-f4657cfa80228b24>) — typescript-declaration; exported.
-- [WorldTagSearchResult](<../symbols/files/types/worldview.ts.md#s-7ad4e18e80c8946b>) — typescript-declaration; exported.
-- [WorldTagSearchResponse](<../symbols/files/types/worldview.ts.md#s-31765735a8dd6464>) — typescript-declaration; exported.
-- [IndexedKnowledgeMenu](<../symbols/files/types/worldview.ts.md#s-9b8d717554791614>) — typescript-declaration; exported.
-- [IndexedPriceSource](<../symbols/files/types/worldview.ts.md#s-2f243fdf772fe1df>) — typescript-declaration; exported.
-- [IndexedFinanceSource](<../symbols/files/types/worldview.ts.md#s-e8062bbfa0844875>) — typescript-declaration; exported.
-- [FinancialSnapshot](<../symbols/files/types/worldview.ts.md#s-756bc0067a864c68>) — typescript-declaration; exported.
-- [FinancialResponse](<../symbols/files/types/worldview.ts.md#s-4a9f56ce6334a279>) — typescript-declaration; exported.
-- [KnowledgeCarousel](<../symbols/files/types/worldview.ts.md#s-d103a6a025d3cbe2>) — typescript-declaration; exported.
-- [CarouselObservation](<../symbols/files/types/worldview.ts.md#s-0458bbb14878b6a3>) — typescript-declaration; exported.
-- [ImageKnowledgeResult](<../symbols/files/types/worldview.ts.md#s-59850c58875c6d4f>) — typescript-declaration; exported.
-- [ImageParseJob](<../symbols/files/types/worldview.ts.md#s-c9912a41020749de>) — typescript-declaration; exported.
-- [IndexValidation](<../symbols/files/types/worldview.ts.md#s-202103782fd5fe1e>) — typescript-declaration; exported.
-- [KnowledgeIndexState](<../symbols/files/types/worldview.ts.md#s-67a5861fe4bb3a78>) — typescript-declaration; exported.
-- [DailyPriceResponse](<../symbols/files/types/worldview.ts.md#s-d2ad2fa2a444e962>) — typescript-declaration; exported.
-- [MarketHistoryResponse](<../symbols/files/types/worldview.ts.md#s-03edbc994621926a>) — typescript-declaration; exported.
-- [KnowledgeIndexSave](<../symbols/files/types/worldview.ts.md#s-a26f8fbb8c0f81cc>) — typescript-declaration; exported.
-- [PreviewMetadata](<../symbols/files/types/worldview.ts.md#s-d4e0b92223cc2c91>) — typescript-declaration; local schema/type.
-- [ExcelSourcePreview](<../symbols/files/types/worldview.ts.md#s-719c00db0849a3c5>) — typescript-declaration; exported.
-- [KnowledgeSourcePreview](<../symbols/files/types/worldview.ts.md#s-5a1c7d51d04acdb2>) — typescript-declaration; exported.
-- [WorldViewBridge](<../symbols/files/types/worldview.ts.md#s-2660ae5b1fd935a5>) — typescript-declaration; exported.
+- [WorldViewRequest](<../symbols/files/types/worldview.ts.md#s-f5b12a95902deb76>) — typescript-declaration; exported.
+- [WorldTagSearchResult](<../symbols/files/types/worldview.ts.md#s-c935416bb9c57909>) — typescript-declaration; exported.
+- [WorldTagSearchResponse](<../symbols/files/types/worldview.ts.md#s-80f74e55daee9ccf>) — typescript-declaration; exported.
+- [IndexedKnowledgeMenu](<../symbols/files/types/worldview.ts.md#s-5524a4061d71be3c>) — typescript-declaration; exported.
+- [IndexedPriceSource](<../symbols/files/types/worldview.ts.md#s-b86489f0c1d69e32>) — typescript-declaration; exported.
+- [IndexedFinanceSource](<../symbols/files/types/worldview.ts.md#s-ce65a90339108413>) — typescript-declaration; exported.
+- [FinancialSnapshot](<../symbols/files/types/worldview.ts.md#s-6c71238f0ff8c25c>) — typescript-declaration; exported.
+- [FinancialResponse](<../symbols/files/types/worldview.ts.md#s-3feafe7f8e755115>) — typescript-declaration; exported.
+- [KnowledgeCarousel](<../symbols/files/types/worldview.ts.md#s-105b5fde2b3b09fe>) — typescript-declaration; exported.
+- [CarouselObservation](<../symbols/files/types/worldview.ts.md#s-a8b13a6301d0ae11>) — typescript-declaration; exported.
+- [ImageKnowledgeResult](<../symbols/files/types/worldview.ts.md#s-81c9097a6afcb2ea>) — typescript-declaration; exported.
+- [ImageParseJob](<../symbols/files/types/worldview.ts.md#s-df10a522399561b0>) — typescript-declaration; exported.
+- [IndexValidation](<../symbols/files/types/worldview.ts.md#s-2fa48bba2d96da48>) — typescript-declaration; exported.
+- [KnowledgeIndexState](<../symbols/files/types/worldview.ts.md#s-49327a9b59357064>) — typescript-declaration; exported.
+- [DailyPriceResponse](<../symbols/files/types/worldview.ts.md#s-1915b9e77edea1a8>) — typescript-declaration; exported.
+- [MarketHistoryResponse](<../symbols/files/types/worldview.ts.md#s-0f332e94c6e5fdda>) — typescript-declaration; exported.
+- [KnowledgeIndexSave](<../symbols/files/types/worldview.ts.md#s-ad926f804294df1a>) — typescript-declaration; exported.
+- [PreviewMetadata](<../symbols/files/types/worldview.ts.md#s-a7db14037a5ab2d1>) — typescript-declaration; local schema/type.
+- [ExcelSourcePreview](<../symbols/files/types/worldview.ts.md#s-f489700739fde3a2>) — typescript-declaration; exported.
+- [KnowledgeSourcePreview](<../symbols/files/types/worldview.ts.md#s-9bb384ef0ce4238c>) — typescript-declaration; exported.
+- [WorldViewBridge](<../symbols/files/types/worldview.ts.md#s-d07368615aba6e20>) — typescript-declaration; exported.
 
 ## Source inventory
 

@@ -60,9 +60,9 @@ Unresolved / external call sites: 5.
 
 - Object.freeze — external-or-dynamic-dispatch; [electron/engines/definitions.cjs:2](<../../../../../../electron/engines/definitions.cjs#L2>)
 - require — module-loader; [electron/engines/definitions.cjs:3](<../../../../../../electron/engines/definitions.cjs#L3>)
-- require — module-loader; [electron/engines/definitions.cjs:4](<../../../../../../electron/engines/definitions.cjs#L4>)
-- require — module-loader; [electron/engines/definitions.cjs:5](<../../../../../../electron/engines/definitions.cjs#L5>)
-- require — module-loader; [electron/engines/definitions.cjs:6](<../../../../../../electron/engines/definitions.cjs#L6>)
+- Object.freeze — external-or-dynamic-dispatch; [electron/engines/definitions.cjs:4](<../../../../../../electron/engines/definitions.cjs#L4>)
+- Object.freeze — external-or-dynamic-dispatch; [electron/engines/definitions.cjs:12](<../../../../../../electron/engines/definitions.cjs#L12>)
+- Object.freeze — external-or-dynamic-dispatch; [electron/engines/definitions.cjs:20](<../../../../../../electron/engines/definitions.cjs#L20>)
 
 **Related tests / acceptance harnesses:**
 

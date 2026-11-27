@@ -74,15 +74,20 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [main.&lt;anonymous@1188:21&gt;](<electron-worldview-smoke.cjs.md#s-f226e9097fe37215>) (ArrowFunction)
 - [main.&lt;anonymous@1195:21&gt;](<electron-worldview-smoke.cjs.md#s-feb35fd5fd5d2d15>) (ArrowFunction)
 - [main.&lt;anonymous@1263:25&gt;](<electron-worldview-smoke.cjs.md#s-1bd2b635fb730a23>) (ArrowFunction)
-- [main.&lt;anonymous@1292:25&gt;](<electron-worldview-smoke.cjs.md#s-980f8fd7a7a1aced>) (ArrowFunction)
-- [main.&lt;anonymous@1316:38&gt;](<electron-worldview-smoke.cjs.md#s-b7d38f0b18a7b98b>) (ArrowFunction)
-- [main.&lt;anonymous@1320:26&gt;](<electron-worldview-smoke.cjs.md#s-561aa18a97988153>) (ArrowFunction)
-- [main.&lt;anonymous@1333:39&gt;](<electron-worldview-smoke.cjs.md#s-b9d091380c0b499c>) (ArrowFunction)
-- [main.&lt;anonymous@1337:27&gt;](<electron-worldview-smoke.cjs.md#s-ffd916f7b54bc59c>) (ArrowFunction)
-- [main.&lt;anonymous@1341:47&gt;](<electron-worldview-smoke.cjs.md#s-729c44039301123a>) (ArrowFunction)
-- [main.&lt;anonymous@1383:45&gt;](<electron-worldview-smoke.cjs.md#s-9a0bc3ab81962f7c>) (ArrowFunction)
-- [main.&lt;anonymous@1403:16&gt;](<electron-worldview-smoke.cjs.md#s-f8a843d069832ca3>) (ArrowFunction)
-- [&lt;anonymous@1422:16&gt;](<electron-worldview-smoke.cjs.md#s-452293c0ca8d23d7>) (ArrowFunction)
+- [main.&lt;anonymous@1298:25&gt;](<electron-worldview-smoke.cjs.md#s-11130c051ca2bf09>) (ArrowFunction)
+- [main.&lt;anonymous@1330:42&gt;](<electron-worldview-smoke.cjs.md#s-6384c529be2abcaa>) (ArrowFunction)
+- [main.count](<electron-worldview-smoke.cjs.md#s-8719b72886b30b47>) (ArrowFunction)
+- [main.count.&lt;anonymous@1335:11&gt;](<electron-worldview-smoke.cjs.md#s-34ba75f7fa568369>) (ArrowFunction)
+- [main.&lt;anonymous@1343:11&gt;](<electron-worldview-smoke.cjs.md#s-5fd9c79e665fb8ed>) (ArrowFunction)
+- [main.&lt;anonymous@1353:29&gt;](<electron-worldview-smoke.cjs.md#s-b3466c79b413f3b0>) (ArrowFunction)
+- [main.&lt;anonymous@1365:40&gt;](<electron-worldview-smoke.cjs.md#s-523f82a5fcaf986c>) (ArrowFunction)
+- [main.&lt;anonymous@1369:28&gt;](<electron-worldview-smoke.cjs.md#s-191b27af99550b47>) (ArrowFunction)
+- [main.&lt;anonymous@1385:41&gt;](<electron-worldview-smoke.cjs.md#s-8ee36b9a6b5f6fdd>) (ArrowFunction)
+- [main.&lt;anonymous@1389:29&gt;](<electron-worldview-smoke.cjs.md#s-9a39e3988ec9038a>) (ArrowFunction)
+- [main.&lt;anonymous@1392:42&gt;](<electron-worldview-smoke.cjs.md#s-3f472a9bfa270828>) (ArrowFunction)
+- [main.&lt;anonymous@1395:47&gt;](<electron-worldview-smoke.cjs.md#s-d07cb1a6b11564f2>) (ArrowFunction)
+- [main.&lt;anonymous@1459:16&gt;](<electron-worldview-smoke.cjs.md#s-3df0796d0ba7780d>) (ArrowFunction)
+- [&lt;anonymous@1478:16&gt;](<electron-worldview-smoke.cjs.md#s-20bbc5c14b610a65>) (ArrowFunction)
 
 <a id="s-2417f5fc5c6c66d4"></a>
 
@@ -96,7 +101,7 @@ Purpose evidence: structural.
 
 **Calls (statically resolved):**
 
-- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1422](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1422>)
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1478](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1478>)
 
 **Called by (statically resolved):**
 
@@ -150,9 +155,9 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [assertGridMatches](<electron-worldview-smoke.cjs.md#s-3d526cf9ca8f6e85>) — [scripts/acceptance/electron-worldview-smoke.cjs:42](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L42>)
 - [assertGridMatches](<electron-worldview-smoke.cjs.md#s-3d526cf9ca8f6e85>) — [scripts/acceptance/electron-worldview-smoke.cjs:53](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L53>)
 - [assertGridMatches](<electron-worldview-smoke.cjs.md#s-3d526cf9ca8f6e85>) — [scripts/acceptance/electron-worldview-smoke.cjs:53](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L53>)
-- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1359](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1359>)
-- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1360](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1360>)
-- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1384](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1384>)
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1413](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1413>)
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1414](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1414>)
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1440](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1440>)
 
 Unresolved / external call sites: 3.
 
@@ -164,9 +169,9 @@ Unresolved / external call sites: 3.
 
 - [scripts/acceptance/electron-worldview-smoke.cjs:42](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L42>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:53](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L53>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-worldview-smoke.cjs:1359](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1359>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-worldview-smoke.cjs:1360](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1360>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-worldview-smoke.cjs:1384](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1384>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-worldview-smoke.cjs:1413](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1413>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-worldview-smoke.cjs:1414](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1414>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-worldview-smoke.cjs:1440](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1440>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
@@ -996,8 +1001,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 - [main](<electron-backend-identity-smoke.cjs.md#s-05124267a5569e9e>) — [scripts/acceptance/electron-backend-identity-smoke.cjs:69](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L69>)
 - [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:92](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L92>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:123](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L123>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:204](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L204>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:126](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L126>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:207](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L207>)
 - [main](<electron-entity-runtime-live.cjs.md#s-7c16308cb86cc2d4>) — [scripts/acceptance/electron-entity-runtime-live.cjs:119](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L119>)
 - [verifyChips](<electron-worldview-smoke.cjs.md#s-940685a781c663db>) — [scripts/acceptance/electron-worldview-smoke.cjs:273](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L273>)
 - [verifyChips](<electron-worldview-smoke.cjs.md#s-940685a781c663db>) — [scripts/acceptance/electron-worldview-smoke.cjs:286](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L286>)
@@ -1058,8 +1063,8 @@ Unresolved / external call sites: 2.
 
 - [scripts/acceptance/electron-backend-identity-smoke.cjs:69](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L69>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-entity-agents-smoke.cjs:92](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L92>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:123](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L123>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:204](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L204>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:126](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L126>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:207](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L207>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:119](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L119>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:273](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L273>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:286](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L286>) — static-call-site; coverage not established.
@@ -1222,7 +1227,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [main](<electron-backend-identity-smoke.cjs.md#s-05124267a5569e9e>) — [scripts/acceptance/electron-backend-identity-smoke.cjs:62](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L62>)
 - [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:91](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L91>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:267](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L267>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:270](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L270>)
 - [main](<electron-entity-runtime-live.cjs.md#s-7c16308cb86cc2d4>) — [scripts/acceptance/electron-entity-runtime-live.cjs:118](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L118>)
 - [verifyChips](<electron-worldview-smoke.cjs.md#s-940685a781c663db>) — [scripts/acceptance/electron-worldview-smoke.cjs:423](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L423>)
 - [verifyChips](<electron-worldview-smoke.cjs.md#s-940685a781c663db>) — [scripts/acceptance/electron-worldview-smoke.cjs:534](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L534>)
@@ -1243,7 +1248,7 @@ Unresolved / external call sites: 8.
 
 - [scripts/acceptance/electron-backend-identity-smoke.cjs:62](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L62>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-entity-agents-smoke.cjs:91](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L91>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:267](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L267>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:270](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L270>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:118](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L118>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:423](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L423>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-worldview-smoke.cjs:534](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L534>) — static-call-site; coverage not established.
@@ -2770,15 +2775,17 @@ Returns: any (compiler-inferred). Implementation present.
 - [verifyDailyPrices](<worldview-price-check.cjs.md#s-983372c47379ea5c>) — [scripts/acceptance/electron-worldview-smoke.cjs:1250](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1250>)
 - [verifyChipDeletion](<electron-worldview-smoke.cjs.md#s-6fee10455eb9b92b>) — [scripts/acceptance/electron-worldview-smoke.cjs:1256](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1256>)
 - [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-worldview-smoke.cjs:1273](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1273>)
-- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1359](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1359>)
-- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1360](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1360>)
-- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1384](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1384>)
+- [main.count](<electron-worldview-smoke.cjs.md#s-8719b72886b30b47>) — [scripts/acceptance/electron-worldview-smoke.cjs:1339](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1339>)
+- [main.count](<electron-worldview-smoke.cjs.md#s-8719b72886b30b47>) — [scripts/acceptance/electron-worldview-smoke.cjs:1358](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1358>)
+- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1413](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1413>)
+- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1414](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1414>)
+- [digest](<electron-worldview-smoke.cjs.md#s-aa42c1f784358105>) — [scripts/acceptance/electron-worldview-smoke.cjs:1440](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1440>)
 
 **Called by (statically resolved):**
 
-- [scripts/acceptance/electron-worldview-smoke.cjs](<electron-worldview-smoke.cjs.md#s-2417f5fc5c6c66d4>) — [scripts/acceptance/electron-worldview-smoke.cjs:1422](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1422>)
+- [scripts/acceptance/electron-worldview-smoke.cjs](<electron-worldview-smoke.cjs.md#s-2417f5fc5c6c66d4>) — [scripts/acceptance/electron-worldview-smoke.cjs:1478](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1478>)
 
-Unresolved / external call sites: 122.
+Unresolved / external call sites: 136.
 
 - fs.mkdtemp — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1129](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1129>)
 - path.join — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1129](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1129>)
@@ -2788,11 +2795,11 @@ Unresolved / external call sites: 122.
 - fs.mkdir — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1136](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1136>)
 - fs.mkdir — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1137](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1137>)
 - fs.writeFile — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1138](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1138>)
-- 114 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- 128 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/electron-worldview-smoke.cjs:1422](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1422>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-worldview-smoke.cjs:1478](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1478>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
@@ -3104,11 +3111,50 @@ Unresolved / external call sites: 1.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-980f8fd7a7a1aced"></a>
+<a id="s-11130c051ca2bf09"></a>
 
-## main.&lt;anonymous@1292:25&gt;
+## main.&lt;anonymous@1298:25&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1292](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1292>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1298](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1298>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 2.
+
+- window.orbistryDesktop.ai.saveCredential — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1299](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1299>)
+- window.orbistryDesktop.ai.settings — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1303](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1303>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-6384c529be2abcaa"></a>
+
+## main.&lt;anonymous@1330:42&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1330](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1330>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3132,7 +3178,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- window.orbistryDesktop.ai.settings — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1293](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1293>)
+- window.orbistryDesktop.ai.listConversations — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1331](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1331>)
 
 **Related tests / acceptance harnesses:**
 
@@ -3142,84 +3188,9 @@ Unresolved / external call sites: 1.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-b7d38f0b18a7b98b"></a>
+<a id="s-8719b72886b30b47"></a>
 
-## main.&lt;anonymous@1316:38&gt;
-
-[scripts/acceptance/electron-worldview-smoke.cjs:1316](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1316>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| (none) | — | source syntax | — |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 1.
-
-- globalThis.onlineSmoke.localRequests.at — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1317](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1317>)
-
-**Related tests / acceptance harnesses:**
-
-- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
-
-<a id="s-561aa18a97988153"></a>
-
-## main.&lt;anonymous@1320:26&gt;
-
-[scripts/acceptance/electron-worldview-smoke.cjs:1320](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1320>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| m | any | compiler-inferred | required |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
-- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
-
-<a id="s-b9d091380c0b499c"></a>
-
-## main.&lt;anonymous@1333:39&gt;
+## main.count
 
 [scripts/acceptance/electron-worldview-smoke.cjs:1333](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1333>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
@@ -3241,35 +3212,38 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1339](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1339>)
+- [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>) — [scripts/acceptance/electron-worldview-smoke.cjs:1358](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1358>)
 
 Unresolved / external call sites: 1.
 
-- globalThis.onlineSmoke.localRequests.at — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1334](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1334>)
+- app.evaluate — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1334](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1334>)
 
 **Related tests / acceptance harnesses:**
 
+- [scripts/acceptance/electron-worldview-smoke.cjs:1339](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1339>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-worldview-smoke.cjs:1358](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1358>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-ffd916f7b54bc59c"></a>
+<a id="s-34ba75f7fa568369"></a>
 
-## main.&lt;anonymous@1337:27&gt;
+## main.count.&lt;anonymous@1335:11&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1337](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1337>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1335](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1335>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+Lexical owner: [main.count](<electron-worldview-smoke.cjs.md#s-8719b72886b30b47>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
-| m | any | compiler-inferred | required |
+| (none) | — | source syntax | — |
 
 Returns: any (compiler-inferred). Implementation present.
 
@@ -3292,11 +3266,49 @@ Unresolved / external call sites: 0.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-729c44039301123a"></a>
+<a id="s-5fd9c79e665fb8ed"></a>
 
-## main.&lt;anonymous@1341:47&gt;
+## main.&lt;anonymous@1343:11&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1341](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1341>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1343](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1343>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| id | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- window.orbistryDesktop.ai.chat — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1344](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1344>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-b3466c79b413f3b0"></a>
+
+## main.&lt;anonymous@1353:29&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1353](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1353>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3320,7 +3332,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- window.orbistryDesktop.ai.listConversations — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1342](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1342>)
+- window.orbistryDesktop.ai.listConversations — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1354](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1354>)
 
 **Related tests / acceptance harnesses:**
 
@@ -3330,11 +3342,49 @@ Unresolved / external call sites: 1.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-9a0bc3ab81962f7c"></a>
+<a id="s-523f82a5fcaf986c"></a>
 
-## main.&lt;anonymous@1383:45&gt;
+## main.&lt;anonymous@1365:40&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1383](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1383>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1365](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1365>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- globalThis.onlineSmoke.requests.at — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1366](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1366>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-191b27af99550b47"></a>
+
+## main.&lt;anonymous@1369:28&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1369](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1369>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3367,11 +3417,161 @@ Unresolved / external call sites: 0.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-f8a843d069832ca3"></a>
+<a id="s-8ee36b9a6b5f6fdd"></a>
 
-## main.&lt;anonymous@1403:16&gt;
+## main.&lt;anonymous@1385:41&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1403](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1403>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1385](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1385>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- globalThis.onlineSmoke.requests.at — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1386](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1386>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-9a39e3988ec9038a"></a>
+
+## main.&lt;anonymous@1389:29&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1389](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1389>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| m | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-3f472a9bfa270828"></a>
+
+## main.&lt;anonymous@1392:42&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1392](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1392>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| m | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-d07cb1a6b11564f2"></a>
+
+## main.&lt;anonymous@1395:47&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1395](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1395>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-worldview-smoke.cjs.md#s-d74fd257ed7793d3>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- window.orbistryDesktop.ai.listConversations — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1396](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1396>)
+
+**Related tests / acceptance harnesses:**
+
+- [scripts/acceptance/electron-backend-identity-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-backend-identity-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-daily-price-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-daily-price-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
+- [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
+
+<a id="s-3df0796d0ba7780d"></a>
+
+## main.&lt;anonymous@1459:16&gt;
+
+[scripts/acceptance/electron-worldview-smoke.cjs:1459](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1459>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3395,7 +3595,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1404](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1404>)
+- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1460](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1460>)
 
 **Related tests / acceptance harnesses:**
 
@@ -3405,11 +3605,11 @@ Unresolved / external call sites: 1.
 - [scripts/acceptance/electron-entity-runtime-live.cjs:7](<../../../../../../scripts/acceptance/electron-entity-runtime-live.cjs#L7>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-financials-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-financials-smoke.cjs#L6>) — file-import-only; coverage not established.
 
-<a id="s-452293c0ca8d23d7"></a>
+<a id="s-20bbc5c14b610a65"></a>
 
-## &lt;anonymous@1422:16&gt;
+## &lt;anonymous@1478:16&gt;
 
-[scripts/acceptance/electron-worldview-smoke.cjs:1422](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1422>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-worldview-smoke.cjs:1478](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1478>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -3433,7 +3633,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1423](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1423>)
+- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-worldview-smoke.cjs:1479](<../../../../../../scripts/acceptance/electron-worldview-smoke.cjs#L1479>)
 
 **Related tests / acceptance harnesses:**
 

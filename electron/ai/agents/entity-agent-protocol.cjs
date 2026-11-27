@@ -262,7 +262,8 @@ function priceEvidence(execution, raw, historical = false) {
     return null;
   const validated = z
     .object({
-      snapshot: require("../../engines/daily-price/index.cjs").snapshotSchema,
+      snapshot: require("../../engines/contracts/yahoo-legacy/daily.cjs")
+        .snapshotSchema,
       cached: z.boolean(),
       stale: z.boolean(),
       warning: z.string().nullable(),

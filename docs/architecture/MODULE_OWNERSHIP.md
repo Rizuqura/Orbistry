@@ -133,3 +133,7 @@ Derived Entity snapshots and scoped retrieval; no behavior refactor.
 - Dependencies: `zod`, `electron/engines/backend-identity/schema.cjs`, `electron/engines/backend-identity/identity-compiler.cjs`, `electron/engines/backend-identity/snapshot-store.cjs`, `electron/engines/backend-identity/capability-registry.cjs`
 - Related tests/harnesses: [electron/backend-identity.test.cjs](../../electron/backend-identity.test.cjs)
 - Limitation: internal dynamic dispatch and injection require runtime verification; location is not an authorization grant.
+
+## External Engine packages
+
+`packages/yahoo-finance/` owns the independently built market-data implementation. `electron/engines/registry/` owns registration, grants and receipts. `electron/domains/knowledge/package-source.cjs` resolves applied source declarations. See the [Engine ownership and execution map](ENGINE_PLUGIN_ARCHITECTURE.md).

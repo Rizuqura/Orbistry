@@ -1,0 +1,15 @@
+{
+  "name": "orbistry-yahoo-finance-package",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs"
+  },
+  "dependencies": {
+    "yahoo-finance2": "4.0.6",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

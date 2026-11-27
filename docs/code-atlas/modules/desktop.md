@@ -6,7 +6,7 @@ Composes backend services, creates isolated windows and exposes the narrow deskt
 
 Owns: Electron entry, preload, security, launch and window modules. This ownership is editorial; source locations and import edges below are generated facts.
 
-12 source files; 278 callable declarations; 0 contract declarations.
+12 source files; 290 callable declarations; 0 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -54,7 +54,7 @@ No TypeScript/Zod contract declaration indexed here. Function signatures and IPC
 | [electron/chat-window.test.cjs:1](<../../../electron/chat-window.test.cjs#L1>) | test | 13 |
 | [electron/core/security/desktop-security.cjs:1](<../../../electron/core/security/desktop-security.cjs#L1>) | production | 5 |
 | [electron/core/security/desktop-security.test.cjs:1](<../../../electron/core/security/desktop-security.test.cjs#L1>) | test | 9 |
-| [electron/engine-packages.test.cjs:1](<../../../electron/engine-packages.test.cjs#L1>) | test | 53 |
+| [electron/engine-packages.test.cjs:1](<../../../electron/engine-packages.test.cjs#L1>) | test | 65 |
 | [electron/engine-signing.test.cjs:1](<../../../electron/engine-signing.test.cjs#L1>) | test | 12 |
 | [electron/launch.cjs:1](<../../../electron/launch.cjs#L1>) | production | 2 |
 | [electron/main.cjs:1](<../../../electron/main.cjs#L1>) | production | 39 |

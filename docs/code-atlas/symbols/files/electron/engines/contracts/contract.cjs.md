@@ -15,22 +15,27 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [jsonSchema](<contract.cjs.md#s-79ed7f539d7f049a>) (SchemaBinding)
 - [operation](<contract.cjs.md#s-dc9f8167926f6363>) (SchemaBinding)
 - [signatureSchema](<contract.cjs.md#s-38081e1e3278077d>) (SchemaBinding)
-- [manifestSchema](<contract.cjs.md#s-e238501c58432962>) (SchemaBinding)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) (FunctionDeclaration)
-- [sha](<contract.cjs.md#s-f99f5cdd253f65c9>) (FunctionDeclaration)
-- [filePath](<contract.cjs.md#s-c6ea6c7627e0d854>) (FunctionDeclaration)
-- [filePath.&lt;anonymous@111:9&gt;](<contract.cjs.md#s-9c968ac272d6b17b>) (ArrowFunction)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) (FunctionDeclaration)
-- [checkSchema.&lt;anonymous@135:32&gt;](<contract.cjs.md#s-59475c0f82250b1f>) (ArrowFunction)
-- [checkSchema.&lt;anonymous@177:9&gt;](<contract.cjs.md#s-0c43e635ab4c6eb7>) (ArrowFunction)
-- [checkSchema.&lt;anonymous@225:31&gt;](<contract.cjs.md#s-53b7e5c11ed98ce1>) (ArrowFunction)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) (FunctionDeclaration)
-- [validateData.&lt;anonymous@257:9&gt;](<contract.cjs.md#s-3d37b85e5d782494>) (ArrowFunction)
-- [validateData.&lt;anonymous@265:9&gt;](<contract.cjs.md#s-bcb2eb3736842964>) (ArrowFunction)
-- [validateData.&lt;anonymous@267:28&gt;](<contract.cjs.md#s-730cc5cf5ae313ca>) (ArrowFunction)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) (FunctionDeclaration)
-- [manifest.&lt;anonymous@303:33&gt;](<contract.cjs.md#s-49d147632cfecd6d>) (ArrowFunction)
-- [manifest.&lt;anonymous@311:23&gt;](<contract.cjs.md#s-c749f713cb1cb74b>) (ArrowFunction)
+- [baseManifest](<contract.cjs.md#s-e238501c58432962>) (SchemaBinding)
+- [sourceContribution](<contract.cjs.md#s-365fad6cee622009>) (SchemaBinding)
+- [manifestSchema](<contract.cjs.md#s-87463fb13a9665dd>) (SchemaBinding)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) (FunctionDeclaration)
+- [sha](<contract.cjs.md#s-27c50df18ef30dc9>) (FunctionDeclaration)
+- [filePath](<contract.cjs.md#s-37950761339869ee>) (FunctionDeclaration)
+- [filePath.&lt;anonymous@129:9&gt;](<contract.cjs.md#s-ab804528c60192fd>) (ArrowFunction)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) (FunctionDeclaration)
+- [checkSchema.&lt;anonymous@166:32&gt;](<contract.cjs.md#s-e87bcb02b0ee8ba6>) (ArrowFunction)
+- [checkSchema.&lt;anonymous@213:9&gt;](<contract.cjs.md#s-d6d5b9eb7d4e7927>) (ArrowFunction)
+- [checkSchema.&lt;anonymous@263:31&gt;](<contract.cjs.md#s-dc8d2477909ae49a>) (ArrowFunction)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) (FunctionDeclaration)
+- [validateData.&lt;anonymous@299:9&gt;](<contract.cjs.md#s-a8060486e443dfbc>) (ArrowFunction)
+- [validateData.&lt;anonymous@307:9&gt;](<contract.cjs.md#s-44bad216811a5941>) (ArrowFunction)
+- [validateData.&lt;anonymous@313:28&gt;](<contract.cjs.md#s-7921ef15265c1e3d>) (ArrowFunction)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) (FunctionDeclaration)
+- [manifest.&lt;anonymous@355:33&gt;](<contract.cjs.md#s-ad4d2acd0a3bf346>) (ArrowFunction)
+- [manifest.&lt;anonymous@361:31&gt;](<contract.cjs.md#s-2730ddfddd681b32>) (ArrowFunction)
+- [manifest.&lt;anonymous@364:9&gt;](<contract.cjs.md#s-520143fe83e16ae5>) (ArrowFunction)
+- [manifest.&lt;anonymous@364:9&gt;.&lt;anonymous@364:43&gt;](<contract.cjs.md#s-2e242666b2e73f5f>) (ArrowFunction)
+- [manifest.&lt;anonymous@375:23&gt;](<contract.cjs.md#s-de937bf430d4806f>) (ArrowFunction)
 
 <a id="s-e68c5008b30bf7e9"></a>
 
@@ -54,7 +59,7 @@ Unresolved / external call sites: 3.
 
 - require — module-loader; [electron/engines/contracts/contract.cjs:1](<../../../../../../../electron/engines/contracts/contract.cjs#L1>)
 - require — module-loader; [electron/engines/contracts/contract.cjs:2](<../../../../../../../electron/engines/contracts/contract.cjs#L2>)
-- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:59](<../../../../../../../electron/engines/contracts/contract.cjs#L59>)
+- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:77](<../../../../../../../electron/engines/contracts/contract.cjs#L77>)
 
 **Related tests / acceptance harnesses:**
 
@@ -333,15 +338,13 @@ Unresolved / external call sites: 12.
 
 <a id="s-e238501c58432962"></a>
 
-## manifestSchema
+## baseManifest
 
 [electron/engines/contracts/contract.cjs:45](<../../../../../../../electron/engines/contracts/contract.cjs#L45>) · SchemaBinding · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
-
-Exported as: manifestSchema ([electron/engines/contracts/contract.cjs:1](<../../../../../../../electron/engines/contracts/contract.cjs#L1>)).
 
 Lexical owner: [electron/engines/contracts/contract.cjs](<contract.cjs.md#s-e68c5008b30bf7e9>).
 
@@ -371,11 +374,82 @@ Unresolved / external call sites: 20.
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-85aeb8bea7b60d5e"></a>
+<a id="s-365fad6cee622009"></a>
+
+## sourceContribution
+
+[electron/engines/contracts/contract.cjs:60](<../../../../../../../electron/engines/contracts/contract.cjs#L60>) · SchemaBinding · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [electron/engines/contracts/contract.cjs](<contract.cjs.md#s-e68c5008b30bf7e9>).
+
+Contract evidence: zod-syntax-candidate. [Full declaration index](<../../../../../contracts/contract-index.json>).
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 4.
+
+- z .object({ id, operation: id, kind: z.enum(&#91;"scalar", "table", "time_series", "document"&#93;), presentation: z.literal("json"), }) .strict — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:60](<../../../../../../../electron/engines/contracts/contract.cjs#L60>)
+- z .object — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:60](<../../../../../../../electron/engines/contracts/contract.cjs#L60>)
+- z.enum — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:64](<../../../../../../../electron/engines/contracts/contract.cjs#L64>)
+- z.literal — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:65](<../../../../../../../electron/engines/contracts/contract.cjs#L65>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-87463fb13a9665dd"></a>
+
+## manifestSchema
+
+[electron/engines/contracts/contract.cjs:68](<../../../../../../../electron/engines/contracts/contract.cjs#L68>) · SchemaBinding · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Exported as: manifestSchema ([electron/engines/contracts/contract.cjs:1](<../../../../../../../electron/engines/contracts/contract.cjs#L1>)).
+
+Lexical owner: [electron/engines/contracts/contract.cjs](<contract.cjs.md#s-e68c5008b30bf7e9>).
+
+Contract evidence: zod-syntax-candidate. [Full declaration index](<../../../../../contracts/contract-index.json>).
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 7.
+
+- z.discriminatedUnion — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:68](<../../../../../../../electron/engines/contracts/contract.cjs#L68>)
+- baseManifest .extend({ schema_version: z.literal(3), sources: z.array(sourceContribution).min(1).max(32), }) .strict — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:70](<../../../../../../../electron/engines/contracts/contract.cjs#L70>)
+- baseManifest .extend — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:70](<../../../../../../../electron/engines/contracts/contract.cjs#L70>)
+- z.literal — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:72](<../../../../../../../electron/engines/contracts/contract.cjs#L72>)
+- z.array(sourceContribution).min(1).max — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:73](<../../../../../../../electron/engines/contracts/contract.cjs#L73>)
+- z.array(sourceContribution).min — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:73](<../../../../../../../electron/engines/contracts/contract.cjs#L73>)
+- z.array — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:73](<../../../../../../../electron/engines/contracts/contract.cjs#L73>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-b26f7a166006912b"></a>
 
 ## fail
 
-[electron/engines/contracts/contract.cjs:87](<../../../../../../../electron/engines/contracts/contract.cjs#L87>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:105](<../../../../../../../electron/engines/contracts/contract.cjs#L105>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Makes protocol failures identifiable without including package output, credentials or input values.
 
@@ -398,31 +472,32 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [filePath](<contract.cjs.md#s-c6ea6c7627e0d854>) — [electron/engines/contracts/contract.cjs:103](<../../../../../../../electron/engines/contracts/contract.cjs#L103>)
-- [filePath](<contract.cjs.md#s-c6ea6c7627e0d854>) — [electron/engines/contracts/contract.cjs:118](<../../../../../../../electron/engines/contracts/contract.cjs#L118>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:131](<../../../../../../../electron/engines/contracts/contract.cjs#L131>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:136](<../../../../../../../electron/engines/contracts/contract.cjs#L136>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:141](<../../../../../../../electron/engines/contracts/contract.cjs#L141>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:147](<../../../../../../../electron/engines/contracts/contract.cjs#L147>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:162](<../../../../../../../electron/engines/contracts/contract.cjs#L162>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:180](<../../../../../../../electron/engines/contracts/contract.cjs#L180>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:189](<../../../../../../../electron/engines/contracts/contract.cjs#L189>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:208](<../../../../../../../electron/engines/contracts/contract.cjs#L208>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:219](<../../../../../../../electron/engines/contracts/contract.cjs#L219>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:228](<../../../../../../../electron/engines/contracts/contract.cjs#L228>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:233](<../../../../../../../electron/engines/contracts/contract.cjs#L233>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:244](<../../../../../../../electron/engines/contracts/contract.cjs#L244>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:252](<../../../../../../../electron/engines/contracts/contract.cjs#L252>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:260](<../../../../../../../electron/engines/contracts/contract.cjs#L260>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:269](<../../../../../../../electron/engines/contracts/contract.cjs#L269>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:278](<../../../../../../../electron/engines/contracts/contract.cjs#L278>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:286](<../../../../../../../electron/engines/contracts/contract.cjs#L286>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:292](<../../../../../../../electron/engines/contracts/contract.cjs#L292>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:300](<../../../../../../../electron/engines/contracts/contract.cjs#L300>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:306](<../../../../../../../electron/engines/contracts/contract.cjs#L306>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:313](<../../../../../../../electron/engines/contracts/contract.cjs#L313>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:321](<../../../../../../../electron/engines/contracts/contract.cjs#L321>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:329](<../../../../../../../electron/engines/contracts/contract.cjs#L329>)
+- [filePath](<contract.cjs.md#s-37950761339869ee>) — [electron/engines/contracts/contract.cjs:121](<../../../../../../../electron/engines/contracts/contract.cjs#L121>)
+- [filePath](<contract.cjs.md#s-37950761339869ee>) — [electron/engines/contracts/contract.cjs:136](<../../../../../../../electron/engines/contracts/contract.cjs#L136>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:162](<../../../../../../../electron/engines/contracts/contract.cjs#L162>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:167](<../../../../../../../electron/engines/contracts/contract.cjs#L167>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:172](<../../../../../../../electron/engines/contracts/contract.cjs#L172>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:178](<../../../../../../../electron/engines/contracts/contract.cjs#L178>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:193](<../../../../../../../electron/engines/contracts/contract.cjs#L193>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:216](<../../../../../../../electron/engines/contracts/contract.cjs#L216>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:227](<../../../../../../../electron/engines/contracts/contract.cjs#L227>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:246](<../../../../../../../electron/engines/contracts/contract.cjs#L246>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:257](<../../../../../../../electron/engines/contracts/contract.cjs#L257>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:266](<../../../../../../../electron/engines/contracts/contract.cjs#L266>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:271](<../../../../../../../electron/engines/contracts/contract.cjs#L271>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:282](<../../../../../../../electron/engines/contracts/contract.cjs#L282>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:294](<../../../../../../../electron/engines/contracts/contract.cjs#L294>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:302](<../../../../../../../electron/engines/contracts/contract.cjs#L302>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:315](<../../../../../../../electron/engines/contracts/contract.cjs#L315>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:330](<../../../../../../../electron/engines/contracts/contract.cjs#L330>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:338](<../../../../../../../electron/engines/contracts/contract.cjs#L338>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:344](<../../../../../../../electron/engines/contracts/contract.cjs#L344>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:352](<../../../../../../../electron/engines/contracts/contract.cjs#L352>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:358](<../../../../../../../electron/engines/contracts/contract.cjs#L358>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:367](<../../../../../../../electron/engines/contracts/contract.cjs#L367>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:377](<../../../../../../../electron/engines/contracts/contract.cjs#L377>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:385](<../../../../../../../electron/engines/contracts/contract.cjs#L385>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:393](<../../../../../../../electron/engines/contracts/contract.cjs#L393>)
 - [download](<../registry/authoring.cjs.md#s-0041180bfde21954>) — [electron/engines/registry/authoring.cjs:71](<../../../../../../../electron/engines/registry/authoring.cjs#L71>)
 - [download](<../registry/authoring.cjs.md#s-0041180bfde21954>) — [electron/engines/registry/authoring.cjs:73](<../../../../../../../electron/engines/registry/authoring.cjs#L73>)
 - [download](<../registry/authoring.cjs.md#s-0041180bfde21954>) — [electron/engines/registry/authoring.cjs:82](<../../../../../../../electron/engines/registry/authoring.cjs#L82>)
@@ -441,35 +516,40 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:100](<../../../../../../../electron/engines/registry/package.cjs#L100>)
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:110](<../../../../../../../electron/engines/registry/package.cjs#L110>)
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:112](<../../../../../../../electron/engines/registry/package.cjs#L112>)
-- [EnginePackageRegistry.location](<../registry/registry.cjs.md#s-0a4c4c0b81b57b1a>) — [electron/engines/registry/registry.cjs:107](<../../../../../../../electron/engines/registry/registry.cjs#L107>)
-- [EnginePackageRegistry.read](<../registry/registry.cjs.md#s-56d760ca822ea66d>) — [electron/engines/registry/registry.cjs:126](<../../../../../../../electron/engines/registry/registry.cjs#L126>)
-- [EnginePackageRegistry.read](<../registry/registry.cjs.md#s-56d760ca822ea66d>) — [electron/engines/registry/registry.cjs:129](<../../../../../../../electron/engines/registry/registry.cjs#L129>)
-- [EnginePackageRegistry.mutate.&lt;anonymous@137:34&gt;](<../registry/registry.cjs.md#s-381523032586942a>) — [electron/engines/registry/registry.cjs:145](<../../../../../../../electron/engines/registry/registry.cjs#L145>)
-- [EnginePackageRegistry.mutate.&lt;anonymous@137:34&gt;](<../registry/registry.cjs.md#s-381523032586942a>) — [electron/engines/registry/registry.cjs:156](<../../../../../../../electron/engines/registry/registry.cjs#L156>)
-- [EnginePackageRegistry.install](<../registry/registry.cjs.md#s-23fa9e3f7160bfa9>) — [electron/engines/registry/registry.cjs:176](<../../../../../../../electron/engines/registry/registry.cjs#L176>)
-- [EnginePackageRegistry.install](<../registry/registry.cjs.md#s-23fa9e3f7160bfa9>) — [electron/engines/registry/registry.cjs:184](<../../../../../../../electron/engines/registry/registry.cjs#L184>)
-- [EnginePackageRegistry.install.&lt;anonymous@190:7&gt;](<../registry/registry.cjs.md#s-51c72b574a03f2a9>) — [electron/engines/registry/registry.cjs:196](<../../../../../../../electron/engines/registry/registry.cjs#L196>)
-- [EnginePackageRegistry.install.&lt;anonymous@190:7&gt;](<../registry/registry.cjs.md#s-51c72b574a03f2a9>) — [electron/engines/registry/registry.cjs:213](<../../../../../../../electron/engines/registry/registry.cjs#L213>)
-- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-c4934370e6e6f669>) — [electron/engines/registry/registry.cjs:266](<../../../../../../../electron/engines/registry/registry.cjs#L266>)
-- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-c4934370e6e6f669>) — [electron/engines/registry/registry.cjs:270](<../../../../../../../electron/engines/registry/registry.cjs#L270>)
-- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-c4934370e6e6f669>) — [electron/engines/registry/registry.cjs:279](<../../../../../../../electron/engines/registry/registry.cjs#L279>)
-- [EnginePackageRegistry.trust.&lt;anonymous@285:24&gt;](<../registry/registry.cjs.md#s-0941c07eb72747d0>) — [electron/engines/registry/registry.cjs:288](<../../../../../../../electron/engines/registry/registry.cjs#L288>)
-- [EnginePackageRegistry.link.&lt;anonymous@313:24&gt;](<../registry/registry.cjs.md#s-5b77c110c54e8b25>) — [electron/engines/registry/registry.cjs:316](<../../../../../../../electron/engines/registry/registry.cjs#L316>)
-- [EnginePackageRegistry.link.&lt;anonymous@313:24&gt;](<../registry/registry.cjs.md#s-5b77c110c54e8b25>) — [electron/engines/registry/registry.cjs:336](<../../../../../../../electron/engines/registry/registry.cjs#L336>)
-- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-340eb5dbd3aa5064>) — [electron/engines/registry/registry.cjs:440](<../../../../../../../electron/engines/registry/registry.cjs#L440>)
-- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-340eb5dbd3aa5064>) — [electron/engines/registry/registry.cjs:444](<../../../../../../../electron/engines/registry/registry.cjs#L444>)
-- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-340eb5dbd3aa5064>) — [electron/engines/registry/registry.cjs:452](<../../../../../../../electron/engines/registry/registry.cjs#L452>)
-- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:484](<../../../../../../../electron/engines/registry/registry.cjs#L484>)
-- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:498](<../../../../../../../electron/engines/registry/registry.cjs#L498>)
-- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:509](<../../../../../../../electron/engines/registry/registry.cjs#L509>)
-- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:511](<../../../../../../../electron/engines/registry/registry.cjs#L511>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:543](<../../../../../../../electron/engines/registry/registry.cjs#L543>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:548](<../../../../../../../electron/engines/registry/registry.cjs#L548>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:553](<../../../../../../../electron/engines/registry/registry.cjs#L553>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:560](<../../../../../../../electron/engines/registry/registry.cjs#L560>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:576](<../../../../../../../electron/engines/registry/registry.cjs#L576>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:622](<../../../../../../../electron/engines/registry/registry.cjs#L622>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:638](<../../../../../../../electron/engines/registry/registry.cjs#L638>)
+- [EnginePackageRegistry.location](<../registry/registry.cjs.md#s-8b2449642ff6e4f2>) — [electron/engines/registry/registry.cjs:109](<../../../../../../../electron/engines/registry/registry.cjs#L109>)
+- [EnginePackageRegistry.read](<../registry/registry.cjs.md#s-abffabd42b530015>) — [electron/engines/registry/registry.cjs:128](<../../../../../../../electron/engines/registry/registry.cjs#L128>)
+- [EnginePackageRegistry.read](<../registry/registry.cjs.md#s-abffabd42b530015>) — [electron/engines/registry/registry.cjs:131](<../../../../../../../electron/engines/registry/registry.cjs#L131>)
+- [EnginePackageRegistry.mutate.&lt;anonymous@139:34&gt;](<../registry/registry.cjs.md#s-29d3ee5083d62443>) — [electron/engines/registry/registry.cjs:147](<../../../../../../../electron/engines/registry/registry.cjs#L147>)
+- [EnginePackageRegistry.mutate.&lt;anonymous@139:34&gt;](<../registry/registry.cjs.md#s-29d3ee5083d62443>) — [electron/engines/registry/registry.cjs:159](<../../../../../../../electron/engines/registry/registry.cjs#L159>)
+- [EnginePackageRegistry.install](<../registry/registry.cjs.md#s-b97b1298e6d6e88c>) — [electron/engines/registry/registry.cjs:179](<../../../../../../../electron/engines/registry/registry.cjs#L179>)
+- [EnginePackageRegistry.install](<../registry/registry.cjs.md#s-b97b1298e6d6e88c>) — [electron/engines/registry/registry.cjs:187](<../../../../../../../electron/engines/registry/registry.cjs#L187>)
+- [EnginePackageRegistry.install.&lt;anonymous@193:7&gt;](<../registry/registry.cjs.md#s-dea4290d847ccc21>) — [electron/engines/registry/registry.cjs:199](<../../../../../../../electron/engines/registry/registry.cjs#L199>)
+- [EnginePackageRegistry.install.&lt;anonymous@193:7&gt;](<../registry/registry.cjs.md#s-dea4290d847ccc21>) — [electron/engines/registry/registry.cjs:216](<../../../../../../../electron/engines/registry/registry.cjs#L216>)
+- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-4b2796c726a80a4b>) — [electron/engines/registry/registry.cjs:269](<../../../../../../../electron/engines/registry/registry.cjs#L269>)
+- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-4b2796c726a80a4b>) — [electron/engines/registry/registry.cjs:273](<../../../../../../../electron/engines/registry/registry.cjs#L273>)
+- [EnginePackageRegistry.installed](<../registry/registry.cjs.md#s-4b2796c726a80a4b>) — [electron/engines/registry/registry.cjs:282](<../../../../../../../electron/engines/registry/registry.cjs#L282>)
+- [EnginePackageRegistry.trust.&lt;anonymous@288:24&gt;](<../registry/registry.cjs.md#s-b2367ffb9b945b8c>) — [electron/engines/registry/registry.cjs:291](<../../../../../../../electron/engines/registry/registry.cjs#L291>)
+- [EnginePackageRegistry.setEnabled.&lt;anonymous@306:24&gt;](<../registry/registry.cjs.md#s-4d91ff55bab74d1a>) — [electron/engines/registry/registry.cjs:309](<../../../../../../../electron/engines/registry/registry.cjs#L309>)
+- [EnginePackageRegistry.uninstall.&lt;anonymous@322:7&gt;](<../registry/registry.cjs.md#s-fb606170e0b4c869>) — [electron/engines/registry/registry.cjs:325](<../../../../../../../electron/engines/registry/registry.cjs#L325>)
+- [EnginePackageRegistry.uninstall.&lt;anonymous@322:7&gt;](<../registry/registry.cjs.md#s-fb606170e0b4c869>) — [electron/engines/registry/registry.cjs:327](<../../../../../../../electron/engines/registry/registry.cjs#L327>)
+- [EnginePackageRegistry.link.&lt;anonymous@369:24&gt;](<../registry/registry.cjs.md#s-fdf0ebf07d0716c6>) — [electron/engines/registry/registry.cjs:372](<../../../../../../../electron/engines/registry/registry.cjs#L372>)
+- [EnginePackageRegistry.link.&lt;anonymous@369:24&gt;](<../registry/registry.cjs.md#s-fdf0ebf07d0716c6>) — [electron/engines/registry/registry.cjs:377](<../../../../../../../electron/engines/registry/registry.cjs#L377>)
+- [EnginePackageRegistry.link.&lt;anonymous@369:24&gt;](<../registry/registry.cjs.md#s-fdf0ebf07d0716c6>) — [electron/engines/registry/registry.cjs:395](<../../../../../../../electron/engines/registry/registry.cjs#L395>)
+- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-f025f9ee5da1f3ed>) — [electron/engines/registry/registry.cjs:503](<../../../../../../../electron/engines/registry/registry.cjs#L503>)
+- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-f025f9ee5da1f3ed>) — [electron/engines/registry/registry.cjs:507](<../../../../../../../electron/engines/registry/registry.cjs#L507>)
+- [EnginePackageRegistry.executeTool](<../registry/registry.cjs.md#s-f025f9ee5da1f3ed>) — [electron/engines/registry/registry.cjs:515](<../../../../../../../electron/engines/registry/registry.cjs#L515>)
+- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:547](<../../../../../../../electron/engines/registry/registry.cjs#L547>)
+- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:561](<../../../../../../../electron/engines/registry/registry.cjs#L561>)
+- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:572](<../../../../../../../electron/engines/registry/registry.cjs#L572>)
+- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:574](<../../../../../../../electron/engines/registry/registry.cjs#L574>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:606](<../../../../../../../electron/engines/registry/registry.cjs#L606>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:608](<../../../../../../../electron/engines/registry/registry.cjs#L608>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:613](<../../../../../../../electron/engines/registry/registry.cjs#L613>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:618](<../../../../../../../electron/engines/registry/registry.cjs#L618>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:625](<../../../../../../../electron/engines/registry/registry.cjs#L625>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:641](<../../../../../../../electron/engines/registry/registry.cjs#L641>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:687](<../../../../../../../electron/engines/registry/registry.cjs#L687>)
+- [EnginePackageRegistry.execute.&lt;anonymous@693:9&gt;](<../registry/registry.cjs.md#s-055e8a8974f0f246>) — [electron/engines/registry/registry.cjs:710](<../../../../../../../electron/engines/registry/registry.cjs#L710>)
 - [canonicalJson](<../registry/signature.cjs.md#s-8b357e437a59fd61>) — [electron/engines/registry/signature.cjs:8](<../../../../../../../electron/engines/registry/signature.cjs#L8>)
 - [canonicalJson](<../registry/signature.cjs.md#s-8b357e437a59fd61>) — [electron/engines/registry/signature.cjs:36](<../../../../../../../electron/engines/registry/signature.cjs#L36>)
 - [publicIdentity](<../registry/signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signature.cjs:68](<../../../../../../../electron/engines/registry/signature.cjs#L68>)
@@ -491,18 +571,18 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- Object.assign — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:88](<../../../../../../../electron/engines/contracts/contract.cjs#L88>)
-- Error — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:88](<../../../../../../../electron/engines/contracts/contract.cjs#L88>)
+- Object.assign — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:106](<../../../../../../../electron/engines/contracts/contract.cjs#L106>)
+- Error — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:106](<../../../../../../../electron/engines/contracts/contract.cjs#L106>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-f99f5cdd253f65c9"></a>
+<a id="s-27c50df18ef30dc9"></a>
 
 ## sha
 
-[electron/engines/contracts/contract.cjs:92](<../../../../../../../electron/engines/contracts/contract.cjs#L92>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:110](<../../../../../../../electron/engines/contracts/contract.cjs#L110>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Hashes exact bytes for content integrity. Hashes attest to reviewed bytes, not publisher identity.
 
@@ -527,28 +607,28 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:111](<../../../../../../../electron/engines/registry/package.cjs#L111>)
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:118](<../../../../../../../electron/engines/registry/package.cjs#L118>)
 - [sealPackage](<../registry/package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:135](<../../../../../../../electron/engines/registry/package.cjs#L135>)
-- [EnginePackageRegistry.catalog.&lt;anonymous@406:38&gt;.&lt;anonymous@409:14&gt;](<../registry/registry.cjs.md#s-afe52eb924e1cdc9>) — [electron/engines/registry/registry.cjs:410](<../../../../../../../electron/engines/registry/registry.cjs#L410>)
-- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:508](<../../../../../../../electron/engines/registry/registry.cjs#L508>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:564](<../../../../../../../electron/engines/registry/registry.cjs#L564>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:653](<../../../../../../../electron/engines/registry/registry.cjs#L653>)
+- [EnginePackageRegistry.catalog.&lt;anonymous@469:38&gt;.&lt;anonymous@472:14&gt;](<../registry/registry.cjs.md#s-32d840e2ec4e0924>) — [electron/engines/registry/registry.cjs:473](<../../../../../../../electron/engines/registry/registry.cjs#L473>)
+- [EnginePackageRegistry.readResult](<../registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:571](<../../../../../../../electron/engines/registry/registry.cjs#L571>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:629](<../../../../../../../electron/engines/registry/registry.cjs#L629>)
+- [EnginePackageRegistry.execute.&lt;anonymous@693:9&gt;](<../registry/registry.cjs.md#s-055e8a8974f0f246>) — [electron/engines/registry/registry.cjs:725](<../../../../../../../electron/engines/registry/registry.cjs#L725>)
 - [signingDigest](<../registry/signature.cjs.md#s-41e21f01cf00ee75>) — [electron/engines/registry/signature.cjs:45](<../../../../../../../electron/engines/registry/signature.cjs#L45>)
 - [publicIdentity](<../registry/signature.cjs.md#s-c2fa63b996ceefd7>) — [electron/engines/registry/signature.cjs:65](<../../../../../../../electron/engines/registry/signature.cjs#L65>)
 
 Unresolved / external call sites: 3.
 
-- createHash("sha256").update(value).digest — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:93](<../../../../../../../electron/engines/contracts/contract.cjs#L93>)
-- createHash("sha256").update — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:93](<../../../../../../../electron/engines/contracts/contract.cjs#L93>)
-- createHash — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:93](<../../../../../../../electron/engines/contracts/contract.cjs#L93>)
+- createHash("sha256").update(value).digest — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:111](<../../../../../../../electron/engines/contracts/contract.cjs#L111>)
+- createHash("sha256").update — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:111](<../../../../../../../electron/engines/contracts/contract.cjs#L111>)
+- createHash — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:111](<../../../../../../../electron/engines/contracts/contract.cjs#L111>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-c6ea6c7627e0d854"></a>
+<a id="s-37950761339869ee"></a>
 
 ## filePath
 
-[electron/engines/contracts/contract.cjs:97](<../../../../../../../electron/engines/contracts/contract.cjs#L97>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:115](<../../../../../../../electron/engines/contracts/contract.cjs#L115>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Allows portable relative package files only; traversal, links, hidden metadata and device/stream names never become installation targets.
 
@@ -566,35 +646,35 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:103](<../../../../../../../electron/engines/contracts/contract.cjs#L103>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:118](<../../../../../../../electron/engines/contracts/contract.cjs#L118>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:121](<../../../../../../../electron/engines/contracts/contract.cjs#L121>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:136](<../../../../../../../electron/engines/contracts/contract.cjs#L136>)
 
 **Called by (statically resolved):**
 
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:315](<../../../../../../../electron/engines/contracts/contract.cjs#L315>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:379](<../../../../../../../electron/engines/contracts/contract.cjs#L379>)
 - [filesIn](<../registry/package.cjs.md#s-7a153ed7a6996a97>) — [electron/engines/registry/package.cjs:72](<../../../../../../../electron/engines/registry/package.cjs#L72>)
 
 Unresolved / external call sites: 3.
 
-- /^&#91;a-zA-Z0-9._/-&#93;+$/.test — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:101](<../../../../../../../electron/engines/contracts/contract.cjs#L101>)
-- value .split("/") .some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:108](<../../../../../../../electron/engines/contracts/contract.cjs#L108>)
-- value .split — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:108](<../../../../../../../electron/engines/contracts/contract.cjs#L108>)
+- /^&#91;a-zA-Z0-9._/-&#93;+$/.test — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:119](<../../../../../../../electron/engines/contracts/contract.cjs#L119>)
+- value .split("/") .some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:126](<../../../../../../../electron/engines/contracts/contract.cjs#L126>)
+- value .split — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:126](<../../../../../../../electron/engines/contracts/contract.cjs#L126>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-9c968ac272d6b17b"></a>
+<a id="s-ab804528c60192fd"></a>
 
-## filePath.&lt;anonymous@111:9&gt;
+## filePath.&lt;anonymous@129:9&gt;
 
-[electron/engines/contracts/contract.cjs:111](<../../../../../../../electron/engines/contracts/contract.cjs#L111>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:129](<../../../../../../../electron/engines/contracts/contract.cjs#L129>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [filePath](<contract.cjs.md#s-c6ea6c7627e0d854>).
+Lexical owner: [filePath](<contract.cjs.md#s-37950761339869ee>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -612,19 +692,19 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 3.
 
-- part.startsWith — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:113](<../../../../../../../electron/engines/contracts/contract.cjs#L113>)
-- part.endsWith — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:114](<../../../../../../../electron/engines/contracts/contract.cjs#L114>)
-- /^(con&#124;prn&#124;aux&#124;nul&#124;com\\d&#124;lpt\\d)(\\.&#124;$)/i.test — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:115](<../../../../../../../electron/engines/contracts/contract.cjs#L115>)
+- part.startsWith — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:131](<../../../../../../../electron/engines/contracts/contract.cjs#L131>)
+- part.endsWith — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:132](<../../../../../../../electron/engines/contracts/contract.cjs#L132>)
+- /^(con&#124;prn&#124;aux&#124;nul&#124;com\\d&#124;lpt\\d)(\\.&#124;$)/i.test — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:133](<../../../../../../../electron/engines/contracts/contract.cjs#L133>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-0dde703b8b1c929a"></a>
+<a id="s-760f3047fac594e7"></a>
 
 ## checkSchema
 
-[electron/engines/contracts/contract.cjs:123](<../../../../../../../electron/engines/contracts/contract.cjs#L123>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:141](<../../../../../../../electron/engines/contracts/contract.cjs#L141>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Validates the deliberately bounded JSON Schema subset supported by protocol v1. Unsupported keywords fail rather than being silently ignored; no remote refs or evaluated code.
 
@@ -638,62 +718,67 @@ Lexical owner: [electron/engines/contracts/contract.cjs](<contract.cjs.md#s-e68c
 | --- | --- | --- | --- |
 | schema | any | compiler-inferred | required |
 | depth | number | compiler-inferred | optional, default present |
+| extended | boolean | compiler-inferred | optional, default present |
 
 Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:131](<../../../../../../../electron/engines/contracts/contract.cjs#L131>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:136](<../../../../../../../electron/engines/contracts/contract.cjs#L136>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:141](<../../../../../../../electron/engines/contracts/contract.cjs#L141>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:147](<../../../../../../../electron/engines/contracts/contract.cjs#L147>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:162](<../../../../../../../electron/engines/contracts/contract.cjs#L162>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:180](<../../../../../../../electron/engines/contracts/contract.cjs#L180>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:189](<../../../../../../../electron/engines/contracts/contract.cjs#L189>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:190](<../../../../../../../electron/engines/contracts/contract.cjs#L190>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:193](<../../../../../../../electron/engines/contracts/contract.cjs#L193>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:208](<../../../../../../../electron/engines/contracts/contract.cjs#L208>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:219](<../../../../../../../electron/engines/contracts/contract.cjs#L219>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:228](<../../../../../../../electron/engines/contracts/contract.cjs#L228>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:231](<../../../../../../../electron/engines/contracts/contract.cjs#L231>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:233](<../../../../../../../electron/engines/contracts/contract.cjs#L233>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:152](<../../../../../../../electron/engines/contracts/contract.cjs#L152>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:162](<../../../../../../../electron/engines/contracts/contract.cjs#L162>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:167](<../../../../../../../electron/engines/contracts/contract.cjs#L167>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:172](<../../../../../../../electron/engines/contracts/contract.cjs#L172>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:178](<../../../../../../../electron/engines/contracts/contract.cjs#L178>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:193](<../../../../../../../electron/engines/contracts/contract.cjs#L193>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:216](<../../../../../../../electron/engines/contracts/contract.cjs#L216>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:221](<../../../../../../../electron/engines/contracts/contract.cjs#L221>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:227](<../../../../../../../electron/engines/contracts/contract.cjs#L227>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:228](<../../../../../../../electron/engines/contracts/contract.cjs#L228>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:231](<../../../../../../../electron/engines/contracts/contract.cjs#L231>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:246](<../../../../../../../electron/engines/contracts/contract.cjs#L246>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:257](<../../../../../../../electron/engines/contracts/contract.cjs#L257>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:266](<../../../../../../../electron/engines/contracts/contract.cjs#L266>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:269](<../../../../../../../electron/engines/contracts/contract.cjs#L269>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:271](<../../../../../../../electron/engines/contracts/contract.cjs#L271>)
 
 **Called by (statically resolved):**
 
 - [&lt;anonymous@310:74&gt;.&lt;anonymous@319:19&gt;](<../../engine-packages.test.cjs.md#s-54b5397370bcd930>) — [electron/engine-packages.test.cjs:319](<../../../../../../../electron/engine-packages.test.cjs#L319>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:190](<../../../../../../../electron/engines/contracts/contract.cjs#L190>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:193](<../../../../../../../electron/engines/contracts/contract.cjs#L193>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:326](<../../../../../../../electron/engines/contracts/contract.cjs#L326>)
-- [manifest](<contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/contracts/contract.cjs:327](<../../../../../../../electron/engines/contracts/contract.cjs#L327>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:152](<../../../../../../../electron/engines/contracts/contract.cjs#L152>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:221](<../../../../../../../electron/engines/contracts/contract.cjs#L221>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:228](<../../../../../../../electron/engines/contracts/contract.cjs#L228>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:231](<../../../../../../../electron/engines/contracts/contract.cjs#L231>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:390](<../../../../../../../electron/engines/contracts/contract.cjs#L390>)
+- [manifest](<contract.cjs.md#s-419652773bdad136>) — [electron/engines/contracts/contract.cjs:391](<../../../../../../../electron/engines/contracts/contract.cjs#L391>)
 
-Unresolved / external call sites: 23.
+Unresolved / external call sites: 26.
 
-- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:126](<../../../../../../../electron/engines/contracts/contract.cjs#L126>)
-- types.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:129](<../../../../../../../electron/engines/contracts/contract.cjs#L129>)
-- Object.keys(schema).some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:135](<../../../../../../../electron/engines/contracts/contract.cjs#L135>)
-- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:135](<../../../../../../../electron/engines/contracts/contract.cjs#L135>)
-- Object.entries — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:160](<../../../../../../../electron/engines/contracts/contract.cjs#L160>)
-- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:161](<../../../../../../../electron/engines/contracts/contract.cjs#L161>)
-- permittedTypes.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:161](<../../../../../../../electron/engines/contracts/contract.cjs#L161>)
-- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:170](<../../../../../../../electron/engines/contracts/contract.cjs#L170>)
-- 15 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
+- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:146](<../../../../../../../electron/engines/contracts/contract.cjs#L146>)
+- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:147](<../../../../../../../electron/engines/contracts/contract.cjs#L147>)
+- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:150](<../../../../../../../electron/engines/contracts/contract.cjs#L150>)
+- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:157](<../../../../../../../electron/engines/contracts/contract.cjs#L157>)
+- types.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:160](<../../../../../../../electron/engines/contracts/contract.cjs#L160>)
+- Object.keys(schema).some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:166](<../../../../../../../electron/engines/contracts/contract.cjs#L166>)
+- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:166](<../../../../../../../electron/engines/contracts/contract.cjs#L166>)
+- Object.entries — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:191](<../../../../../../../electron/engines/contracts/contract.cjs#L191>)
+- 18 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:319](<../../../../../../../electron/engine-packages.test.cjs#L319>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-59475c0f82250b1f"></a>
+<a id="s-e87bcb02b0ee8ba6"></a>
 
-## checkSchema.&lt;anonymous@135:32&gt;
+## checkSchema.&lt;anonymous@166:32&gt;
 
-[electron/engines/contracts/contract.cjs:135](<../../../../../../../electron/engines/contracts/contract.cjs#L135>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:166](<../../../../../../../electron/engines/contracts/contract.cjs#L166>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>).
+Lexical owner: [checkSchema](<contract.cjs.md#s-760f3047fac594e7>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -711,23 +796,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- allowed.has — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:135](<../../../../../../../electron/engines/contracts/contract.cjs#L135>)
+- allowed.has — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:166](<../../../../../../../electron/engines/contracts/contract.cjs#L166>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-0c43e635ab4c6eb7"></a>
+<a id="s-d6d5b9eb7d4e7927"></a>
 
-## checkSchema.&lt;anonymous@177:9&gt;
+## checkSchema.&lt;anonymous@213:9&gt;
 
-[electron/engines/contracts/contract.cjs:177](<../../../../../../../electron/engines/contracts/contract.cjs#L177>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:213](<../../../../../../../electron/engines/contracts/contract.cjs#L213>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>).
+Lexical owner: [checkSchema](<contract.cjs.md#s-760f3047fac594e7>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -745,23 +830,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:177](<../../../../../../../electron/engines/contracts/contract.cjs#L177>)
+- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:213](<../../../../../../../electron/engines/contracts/contract.cjs#L213>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-53b7e5c11ed98ce1"></a>
+<a id="s-dc8d2477909ae49a"></a>
 
-## checkSchema.&lt;anonymous@225:31&gt;
+## checkSchema.&lt;anonymous@263:31&gt;
 
-[electron/engines/contracts/contract.cjs:225](<../../../../../../../electron/engines/contracts/contract.cjs#L225>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:263](<../../../../../../../electron/engines/contracts/contract.cjs#L263>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>).
+Lexical owner: [checkSchema](<contract.cjs.md#s-760f3047fac594e7>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -779,17 +864,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:225](<../../../../../../../electron/engines/contracts/contract.cjs#L225>)
+- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:263](<../../../../../../../electron/engines/contracts/contract.cjs#L263>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-5f70c362b7bc04d9"></a>
+<a id="s-567344da6db54f40"></a>
 
 ## validateData
 
-[electron/engines/contracts/contract.cjs:243](<../../../../../../../electron/engines/contracts/contract.cjs#L243>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:281](<../../../../../../../electron/engines/contracts/contract.cjs#L281>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Validates JSON data against a checked contract. Extra properties, type coercion and prototype-bearing inputs are rejected; errors never include values.
 
@@ -809,54 +894,58 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:244](<../../../../../../../electron/engines/contracts/contract.cjs#L244>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:252](<../../../../../../../electron/engines/contracts/contract.cjs#L252>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:260](<../../../../../../../electron/engines/contracts/contract.cjs#L260>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:269](<../../../../../../../electron/engines/contracts/contract.cjs#L269>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:271](<../../../../../../../electron/engines/contracts/contract.cjs#L271>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:278](<../../../../../../../electron/engines/contracts/contract.cjs#L278>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:279](<../../../../../../../electron/engines/contracts/contract.cjs#L279>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:286](<../../../../../../../electron/engines/contracts/contract.cjs#L286>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:292](<../../../../../../../electron/engines/contracts/contract.cjs#L292>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:282](<../../../../../../../electron/engines/contracts/contract.cjs#L282>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:286](<../../../../../../../electron/engines/contracts/contract.cjs#L286>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:294](<../../../../../../../electron/engines/contracts/contract.cjs#L294>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:302](<../../../../../../../electron/engines/contracts/contract.cjs#L302>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:315](<../../../../../../../electron/engines/contracts/contract.cjs#L315>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:317](<../../../../../../../electron/engines/contracts/contract.cjs#L317>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:330](<../../../../../../../electron/engines/contracts/contract.cjs#L330>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:331](<../../../../../../../electron/engines/contracts/contract.cjs#L331>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:338](<../../../../../../../electron/engines/contracts/contract.cjs#L338>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:344](<../../../../../../../electron/engines/contracts/contract.cjs#L344>)
 
 **Called by (statically resolved):**
 
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:231](<../../../../../../../electron/engines/contracts/contract.cjs#L231>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:271](<../../../../../../../electron/engines/contracts/contract.cjs#L271>)
-- [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/contracts/contract.cjs:279](<../../../../../../../electron/engines/contracts/contract.cjs#L279>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:557](<../../../../../../../electron/engines/registry/registry.cjs#L557>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:563](<../../../../../../../electron/engines/registry/registry.cjs#L563>)
-- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:619](<../../../../../../../electron/engines/registry/registry.cjs#L619>)
+- [packageSource](<../../domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/domains/knowledge/package-source.cjs:62](<../../../../../../../electron/domains/knowledge/package-source.cjs#L62>)
+- [validInput](<../backend-identity/package-sources.cjs.md#s-b29dcc40c328ce24>) — [electron/engines/backend-identity/package-sources.cjs:108](<../../../../../../../electron/engines/backend-identity/package-sources.cjs#L108>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:269](<../../../../../../../electron/engines/contracts/contract.cjs#L269>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:286](<../../../../../../../electron/engines/contracts/contract.cjs#L286>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:317](<../../../../../../../electron/engines/contracts/contract.cjs#L317>)
+- [validateData](<contract.cjs.md#s-567344da6db54f40>) — [electron/engines/contracts/contract.cjs:331](<../../../../../../../electron/engines/contracts/contract.cjs#L331>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:622](<../../../../../../../electron/engines/registry/registry.cjs#L622>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:628](<../../../../../../../electron/engines/registry/registry.cjs#L628>)
+- [EnginePackageRegistry.execute](<../registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:684](<../../../../../../../electron/engines/registry/registry.cjs#L684>)
 - [main](<../runtime/worker.cjs.md#s-fb07682c5c8192d8>) — [electron/engines/runtime/worker.cjs:20](<../../../../../../../electron/engines/runtime/worker.cjs#L20>)
 - [main](<../runtime/worker.cjs.md#s-fb07682c5c8192d8>) — [electron/engines/runtime/worker.cjs:33](<../../../../../../../electron/engines/runtime/worker.cjs#L33>)
 
-Unresolved / external call sites: 10.
+Unresolved / external call sites: 11.
 
-- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:246](<../../../../../../../electron/engines/contracts/contract.cjs#L246>)
-- Number.isSafeInteger — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:249](<../../../../../../../electron/engines/contracts/contract.cjs#L249>)
-- Number.isFinite — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:254](<../../../../../../../electron/engines/contracts/contract.cjs#L254>)
-- schema.enum.some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:256](<../../../../../../../electron/engines/contracts/contract.cjs#L256>)
-- &#91;Object.prototype, null&#93;.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:263](<../../../../../../../electron/engines/contracts/contract.cjs#L263>)
-- Object.getPrototypeOf — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:263](<../../../../../../../electron/engines/contracts/contract.cjs#L263>)
-- Object.keys(value).some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:264](<../../../../../../../electron/engines/contracts/contract.cjs#L264>)
-- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:264](<../../../../../../../electron/engines/contracts/contract.cjs#L264>)
-- 2 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
+- Array.isArray — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:288](<../../../../../../../electron/engines/contracts/contract.cjs#L288>)
+- Number.isSafeInteger — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:291](<../../../../../../../electron/engines/contracts/contract.cjs#L291>)
+- Number.isFinite — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:296](<../../../../../../../electron/engines/contracts/contract.cjs#L296>)
+- schema.enum.some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:298](<../../../../../../../electron/engines/contracts/contract.cjs#L298>)
+- &#91;Object.prototype, null&#93;.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:305](<../../../../../../../electron/engines/contracts/contract.cjs#L305>)
+- Object.getPrototypeOf — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:305](<../../../../../../../electron/engines/contracts/contract.cjs#L305>)
+- Object.keys(value).some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:306](<../../../../../../../electron/engines/contracts/contract.cjs#L306>)
+- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:306](<../../../../../../../electron/engines/contracts/contract.cjs#L306>)
+- 3 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-3d37b85e5d782494"></a>
+<a id="s-a8060486e443dfbc"></a>
 
-## validateData.&lt;anonymous@257:9&gt;
+## validateData.&lt;anonymous@299:9&gt;
 
-[electron/engines/contracts/contract.cjs:257](<../../../../../../../electron/engines/contracts/contract.cjs#L257>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:299](<../../../../../../../electron/engines/contracts/contract.cjs#L299>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>).
+Lexical owner: [validateData](<contract.cjs.md#s-567344da6db54f40>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -874,24 +963,59 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:257](<../../../../../../../electron/engines/contracts/contract.cjs#L257>)
-- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:257](<../../../../../../../electron/engines/contracts/contract.cjs#L257>)
+- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:299](<../../../../../../../electron/engines/contracts/contract.cjs#L299>)
+- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:299](<../../../../../../../electron/engines/contracts/contract.cjs#L299>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-bcb2eb3736842964"></a>
+<a id="s-44bad216811a5941"></a>
 
-## validateData.&lt;anonymous@265:9&gt;
+## validateData.&lt;anonymous@307:9&gt;
 
-[electron/engines/contracts/contract.cjs:265](<../../../../../../../electron/engines/contracts/contract.cjs#L265>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:307](<../../../../../../../electron/engines/contracts/contract.cjs#L307>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>).
+Lexical owner: [validateData](<contract.cjs.md#s-567344da6db54f40>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| key | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 2.
+
+- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:308](<../../../../../../../electron/engines/contracts/contract.cjs#L308>)
+- &#91;"constructor", "prototype", "__proto__"&#93;.includes — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:311](<../../../../../../../electron/engines/contracts/contract.cjs#L311>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-7921ef15265c1e3d"></a>
+
+## validateData.&lt;anonymous@313:28&gt;
+
+[electron/engines/contracts/contract.cjs:313](<../../../../../../../electron/engines/contracts/contract.cjs#L313>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [validateData](<contract.cjs.md#s-567344da6db54f40>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -909,51 +1033,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:265](<../../../../../../../electron/engines/contracts/contract.cjs#L265>)
+- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:313](<../../../../../../../electron/engines/contracts/contract.cjs#L313>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-730cc5cf5ae313ca"></a>
-
-## validateData.&lt;anonymous@267:28&gt;
-
-[electron/engines/contracts/contract.cjs:267](<../../../../../../../electron/engines/contracts/contract.cjs#L267>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [validateData](<contract.cjs.md#s-5f70c362b7bc04d9>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| key | any | compiler-inferred | required |
-
-Returns: boolean (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 1.
-
-- Object.hasOwn — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:267](<../../../../../../../electron/engines/contracts/contract.cjs#L267>)
-
-**Related tests / acceptance harnesses:**
-
-- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
-
-<a id="s-b1886f302525e88e"></a>
+<a id="s-419652773bdad136"></a>
 
 ## manifest
 
-[electron/engines/contracts/contract.cjs:297](<../../../../../../../electron/engines/contracts/contract.cjs#L297>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:349](<../../../../../../../electron/engines/contracts/contract.cjs#L349>) · FunctionDeclaration · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 Parses a manifest without loading its entry. Requires exact integrity coverage and unique operations; public validation errors contain no source snippets.
 
@@ -971,14 +1061,15 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:300](<../../../../../../../electron/engines/contracts/contract.cjs#L300>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:306](<../../../../../../../electron/engines/contracts/contract.cjs#L306>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:313](<../../../../../../../electron/engines/contracts/contract.cjs#L313>)
-- [filePath](<contract.cjs.md#s-c6ea6c7627e0d854>) — [electron/engines/contracts/contract.cjs:315](<../../../../../../../electron/engines/contracts/contract.cjs#L315>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:321](<../../../../../../../electron/engines/contracts/contract.cjs#L321>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:326](<../../../../../../../electron/engines/contracts/contract.cjs#L326>)
-- [checkSchema](<contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engines/contracts/contract.cjs:327](<../../../../../../../electron/engines/contracts/contract.cjs#L327>)
-- [fail](<contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/contracts/contract.cjs:329](<../../../../../../../electron/engines/contracts/contract.cjs#L329>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:352](<../../../../../../../electron/engines/contracts/contract.cjs#L352>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:358](<../../../../../../../electron/engines/contracts/contract.cjs#L358>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:367](<../../../../../../../electron/engines/contracts/contract.cjs#L367>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:377](<../../../../../../../electron/engines/contracts/contract.cjs#L377>)
+- [filePath](<contract.cjs.md#s-37950761339869ee>) — [electron/engines/contracts/contract.cjs:379](<../../../../../../../electron/engines/contracts/contract.cjs#L379>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:385](<../../../../../../../electron/engines/contracts/contract.cjs#L385>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:390](<../../../../../../../electron/engines/contracts/contract.cjs#L390>)
+- [checkSchema](<contract.cjs.md#s-760f3047fac594e7>) — [electron/engines/contracts/contract.cjs:391](<../../../../../../../electron/engines/contracts/contract.cjs#L391>)
+- [fail](<contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/contracts/contract.cjs:393](<../../../../../../../electron/engines/contracts/contract.cjs#L393>)
 
 **Called by (statically resolved):**
 
@@ -988,17 +1079,17 @@ Returns: any (compiler-inferred). Implementation present.
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:92](<../../../../../../../electron/engines/registry/package.cjs#L92>)
 - [sealPackage](<../registry/package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:138](<../../../../../../../electron/engines/registry/package.cjs#L138>)
 
-Unresolved / external call sites: 10.
+Unresolved / external call sites: 13.
 
-- manifestSchema.safeParse — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:298](<../../../../../../../electron/engines/contracts/contract.cjs#L298>)
-- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:303](<../../../../../../../electron/engines/contracts/contract.cjs#L303>)
-- data.operations.map — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:303](<../../../../../../../electron/engines/contracts/contract.cjs#L303>)
-- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:307](<../../../../../../../electron/engines/contracts/contract.cjs#L307>)
-- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:311](<../../../../../../../electron/engines/contracts/contract.cjs#L311>)
-- files.map — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:311](<../../../../../../../electron/engines/contracts/contract.cjs#L311>)
-- files.forEach — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:314](<../../../../../../../electron/engines/contracts/contract.cjs#L314>)
-- data.entry.endsWith — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:317](<../../../../../../../electron/engines/contracts/contract.cjs#L317>)
-- 2 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
+- manifestSchema.safeParse — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:350](<../../../../../../../electron/engines/contracts/contract.cjs#L350>)
+- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:355](<../../../../../../../electron/engines/contracts/contract.cjs#L355>)
+- data.operations.map — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:355](<../../../../../../../electron/engines/contracts/contract.cjs#L355>)
+- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:361](<../../../../../../../electron/engines/contracts/contract.cjs#L361>)
+- data.sources.map — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:361](<../../../../../../../electron/engines/contracts/contract.cjs#L361>)
+- data.sources.some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:363](<../../../../../../../electron/engines/contracts/contract.cjs#L363>)
+- Object.keys — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:371](<../../../../../../../electron/engines/contracts/contract.cjs#L371>)
+- Set — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:375](<../../../../../../../electron/engines/contracts/contract.cjs#L375>)
+- 5 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
@@ -1006,17 +1097,17 @@ Unresolved / external call sites: 10.
 - [electron/engine-packages.test.cjs:282](<../../../../../../../electron/engine-packages.test.cjs#L282>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-49d147632cfecd6d"></a>
+<a id="s-ad4d2acd0a3bf346"></a>
 
-## manifest.&lt;anonymous@303:33&gt;
+## manifest.&lt;anonymous@355:33&gt;
 
-[electron/engines/contracts/contract.cjs:303](<../../../../../../../electron/engines/contracts/contract.cjs#L303>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:355](<../../../../../../../electron/engines/contracts/contract.cjs#L355>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [manifest](<contract.cjs.md#s-b1886f302525e88e>).
+Lexical owner: [manifest](<contract.cjs.md#s-419652773bdad136>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1039,17 +1130,117 @@ Unresolved / external call sites: 0.
 
 - [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
 
-<a id="s-c749f713cb1cb74b"></a>
+<a id="s-2730ddfddd681b32"></a>
 
-## manifest.&lt;anonymous@311:23&gt;
+## manifest.&lt;anonymous@361:31&gt;
 
-[electron/engines/contracts/contract.cjs:311](<../../../../../../../electron/engines/contracts/contract.cjs#L311>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+[electron/engines/contracts/contract.cjs:361](<../../../../../../../electron/engines/contracts/contract.cjs#L361>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [manifest](<contract.cjs.md#s-b1886f302525e88e>).
+Lexical owner: [manifest](<contract.cjs.md#s-419652773bdad136>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| source | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-520143fe83e16ae5"></a>
+
+## manifest.&lt;anonymous@364:9&gt;
+
+[electron/engines/contracts/contract.cjs:364](<../../../../../../../electron/engines/contracts/contract.cjs#L364>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [manifest](<contract.cjs.md#s-419652773bdad136>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| source | any | compiler-inferred | required |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- data.operations.some — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:364](<../../../../../../../electron/engines/contracts/contract.cjs#L364>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-2e242666b2e73f5f"></a>
+
+## manifest.&lt;anonymous@364:9&gt;.&lt;anonymous@364:43&gt;
+
+[electron/engines/contracts/contract.cjs:364](<../../../../../../../electron/engines/contracts/contract.cjs#L364>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [manifest.&lt;anonymous@364:9&gt;](<contract.cjs.md#s-520143fe83e16ae5>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| op | any | compiler-inferred | required |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:17](<../../../../../../../electron/engine-packages.test.cjs#L17>) — file-import-only; coverage not established.
+
+<a id="s-de937bf430d4806f"></a>
+
+## manifest.&lt;anonymous@375:23&gt;
+
+[electron/engines/contracts/contract.cjs:375](<../../../../../../../electron/engines/contracts/contract.cjs#L375>) · ArrowFunction · production · [Engine package registry](<../../../../../modules/engine-registry.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [manifest](<contract.cjs.md#s-419652773bdad136>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -1067,7 +1258,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- file.toLowerCase — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:311](<../../../../../../../electron/engines/contracts/contract.cjs#L311>)
+- file.toLowerCase — external-or-dynamic-dispatch; [electron/engines/contracts/contract.cjs:375](<../../../../../../../electron/engines/contracts/contract.cjs#L375>)
 
 **Related tests / acceptance harnesses:**
 

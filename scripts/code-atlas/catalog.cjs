@@ -188,6 +188,7 @@ function moduleFor(file) {
   if (file.startsWith("electron/ai/agents/")) return "agents";
   if (file.startsWith("tests/integration/")) return "tooling";
   if (file.startsWith("scripts/")) return "tooling";
+  if (file.startsWith("packages/")) return "engines";
   if (file.startsWith("examples/")) return "examples";
   if (file.startsWith("types/")) return "contracts";
   if (

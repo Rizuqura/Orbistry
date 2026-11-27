@@ -159,11 +159,11 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.test.cjs:63](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L63>)
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.test.cjs:76](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L76>)
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.test.cjs:88](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L88>)
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.test.cjs:90](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L90>)
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.test.cjs:94](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L94>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.test.cjs:63](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L63>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.test.cjs:76](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L76>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.test.cjs:88](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L88>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.test.cjs:90](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L90>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.test.cjs:94](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L94>)
 
 **Called by (statically resolved):**
 

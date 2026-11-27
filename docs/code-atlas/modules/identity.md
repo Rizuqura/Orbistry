@@ -6,7 +6,7 @@ Compiles versioned Entity identity/knowledge snapshots and exposes scoped retrie
 
 Owns: electron/engines/backend-identity/ and backend-identity-service.cjs. This ownership is editorial; source locations and import edges below are generated facts.
 
-9 source files; 110 callable declarations; 18 contract declarations.
+10 source files; 119 callable declarations; 18 contract declarations.
 
 ## Entry points and exported symbols
 
@@ -20,10 +20,11 @@ Candidates from compiler export tables and methods on exported classes. Registra
 | [executeCapability](<../symbols/files/electron/engines/backend-identity/capability-registry.cjs.md#s-701c955440e5983d>) | [electron/engines/backend-identity/capability-registry.cjs:73](<../../../electron/engines/backend-identity/capability-registry.cjs#L73>) | FunctionDeclaration |
 | [encodeConnections](<../symbols/files/electron/engines/backend-identity/connector-encoder.cjs.md#s-4cb717248b131954>) | [electron/engines/backend-identity/connector-encoder.cjs:2](<../../../electron/engines/backend-identity/connector-encoder.cjs#L2>) | FunctionDeclaration |
 | [capture](<../symbols/files/electron/engines/backend-identity/identity-compiler.cjs.md#s-1f99e7da5df73158>) | [electron/engines/backend-identity/identity-compiler.cjs:150](<../../../electron/engines/backend-identity/identity-compiler.cjs#L150>) | FunctionDeclaration |
-| [generate](<../symbols/files/electron/engines/backend-identity/identity-compiler.cjs.md#s-7cdf112c906f5772>) | [electron/engines/backend-identity/identity-compiler.cjs:239](<../../../electron/engines/backend-identity/identity-compiler.cjs#L239>) | FunctionDeclaration |
-| [status](<../symbols/files/electron/engines/backend-identity/identity-compiler.cjs.md#s-028f3e6557e09194>) | [electron/engines/backend-identity/identity-compiler.cjs:424](<../../../electron/engines/backend-identity/identity-compiler.cjs#L424>) | FunctionDeclaration |
+| [generate](<../symbols/files/electron/engines/backend-identity/identity-compiler.cjs.md#s-f539d3e969846edf>) | [electron/engines/backend-identity/identity-compiler.cjs:254](<../../../electron/engines/backend-identity/identity-compiler.cjs#L254>) | FunctionDeclaration |
+| [status](<../symbols/files/electron/engines/backend-identity/identity-compiler.cjs.md#s-1d61d04d4313288f>) | [electron/engines/backend-identity/identity-compiler.cjs:442](<../../../electron/engines/backend-identity/identity-compiler.cjs#L442>) | FunctionDeclaration |
 | [createIdentityRuntime](<../symbols/files/electron/engines/backend-identity/identity-runtime.cjs.md#s-f3672ac091501d51>) | [electron/engines/backend-identity/identity-runtime.cjs:14](<../../../electron/engines/backend-identity/identity-runtime.cjs#L14>) | FunctionDeclaration |
 | [chunkMarkdown](<../symbols/files/electron/engines/backend-identity/markdown-chunker.cjs.md#s-647ff3dd5dad92e8>) | [electron/engines/backend-identity/markdown-chunker.cjs:5](<../../../electron/engines/backend-identity/markdown-chunker.cjs#L5>) | FunctionDeclaration |
+| [describePackageSources](<../symbols/files/electron/engines/backend-identity/package-sources.cjs.md#s-94666ad1ea56bbdc>) | [electron/engines/backend-identity/package-sources.cjs:3](<../../../electron/engines/backend-identity/package-sources.cjs#L3>) | FunctionDeclaration |
 | [location](<../symbols/files/electron/engines/backend-identity/snapshot-store.cjs.md#s-d045ef361cdcece4>) | [electron/engines/backend-identity/snapshot-store.cjs:36](<../../../electron/engines/backend-identity/snapshot-store.cjs#L36>) | FunctionDeclaration |
 | [read](<../symbols/files/electron/engines/backend-identity/snapshot-store.cjs.md#s-c2efce1b7070b548>) | [electron/engines/backend-identity/snapshot-store.cjs:47](<../../../electron/engines/backend-identity/snapshot-store.cjs#L47>) | FunctionDeclaration |
 | [readVersion](<../symbols/files/electron/engines/backend-identity/snapshot-store.cjs.md#s-a51351659d223525>) | [electron/engines/backend-identity/snapshot-store.cjs:62](<../../../electron/engines/backend-identity/snapshot-store.cjs#L62>) | FunctionDeclaration |
@@ -41,7 +42,8 @@ Candidates from compiler export tables and methods on exported classes. Registra
 Literal runtime production-file imports only; lazy imports are included. Type, test, tool and external dependencies remain available in the full index.
 
 - [Connectors](<connectors.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:12](<../../../electron/engines/backend-identity/identity-compiler.cjs#L12>).
-- [Built-in Engines and data adapters](<engines.md>): 5 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
+- [Engine package registry](<engine-registry.md>): 4 import sites; example [electron/engines/backend-identity/capability-registry.cjs:33](<../../../electron/engines/backend-identity/capability-registry.cjs#L33>).
+- [Built-in Engines and data adapters](<engines.md>): 3 import sites; example [electron/engines/backend-identity/capability-registry.cjs:16](<../../../electron/engines/backend-identity/capability-registry.cjs#L16>).
 - [Entity domain](<entity-domain.md>): 2 import sites; example [electron/domains/knowledge/backend-identity-service.cjs:7](<../../../electron/domains/knowledge/backend-identity-service.cjs#L7>).
 - [Knowledge indexing and source access](<knowledge.md>): 1 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:11](<../../../electron/engines/backend-identity/identity-compiler.cjs#L11>).
 - [Shared deterministic infrastructure](<shared.md>): 3 import sites; example [electron/engines/backend-identity/identity-compiler.cjs:5](<../../../electron/engines/backend-identity/identity-compiler.cjs#L5>).
@@ -53,7 +55,7 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 
 - [Assigned Agents and jurisdiction](<agents.md>): 3 import sites; example [electron/ai/agents/entity-agent-access.cjs:4](<../../../electron/ai/agents/entity-agent-access.cjs#L4>).
 - [Built-in Engines and data adapters](<engines.md>): 1 import sites; example [electron/engines/definitions.cjs:3](<../../../electron/engines/definitions.cjs#L3>).
-- [WorldView desktop IPC](<worldview.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:41](<../../../electron/core/ipc/worldview-ipc.cjs#L41>).
+- [WorldView desktop IPC](<worldview.md>): 5 import sites; example [electron/core/ipc/worldview-ipc.cjs:53](<../../../electron/core/ipc/worldview-ipc.cjs#L53>).
 
 ## Contracts
 
@@ -87,5 +89,6 @@ Literal runtime production-file imports only; lazy imports are included. Type, t
 | [electron/engines/backend-identity/identity-compiler.cjs:1](<../../../electron/engines/backend-identity/identity-compiler.cjs#L1>) | production | 20 |
 | [electron/engines/backend-identity/identity-runtime.cjs:1](<../../../electron/engines/backend-identity/identity-runtime.cjs#L1>) | production | 19 |
 | [electron/engines/backend-identity/markdown-chunker.cjs:1](<../../../electron/engines/backend-identity/markdown-chunker.cjs#L1>) | production | 3 |
+| [electron/engines/backend-identity/package-sources.cjs:1](<../../../electron/engines/backend-identity/package-sources.cjs#L1>) | production | 9 |
 | [electron/engines/backend-identity/schema.cjs:1](<../../../electron/engines/backend-identity/schema.cjs#L1>) | production | 12 |
 | [electron/engines/backend-identity/snapshot-store.cjs:1](<../../../electron/engines/backend-identity/snapshot-store.cjs#L1>) | production | 15 |

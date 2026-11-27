@@ -103,6 +103,10 @@ async function fixture(t, configured = false, compiled = true) {
       null,
       true,
     );
+    await require("../../../scripts/fixtures/assigned-yahoo-package.cjs").linkMockYahoo(
+      root,
+      entityId,
+    );
     if (compiled) await compiler.generate(root, entityId);
   }
   const requests = [];
@@ -1357,4 +1361,76 @@ test("a failed automatic identity refresh preserves the previous snapshot and st
   );
   assert.deepEqual(await fs.readFile(path.join(f.root, "tsmc.md")), source);
   assert.doesNotMatch(JSON.stringify(result), /PRIVATE_COMPILER_DETAIL/);
+});
+
+test("Assigned Agent runs a digest-pinned external declaration only with a matching graph, grant and human decision", async (t) => {
+  const f = await fixture(t);
+  const {
+    EnginePackageRegistry,
+  } = require("../../engines/registry/registry.cjs");
+  const r = new EnginePackageRegistry(f.root);
+  const { engineId, digest } = await r.install(
+    path.resolve("examples/engines/weather-demo"),
+  );
+  await r.trust(engineId, digest);
+  const link = () =>
+    r.link({
+      entityId: "tsmc",
+      engineId,
+      operations: ["temperature"],
+      policy: "manual",
+    });
+  await link();
+  const knowledge = require("../../domains/knowledge/knowledge-store.cjs");
+  const original = await knowledge.readKnowledgeIndex(f.root, "tsmc");
+  await knowledge.saveKnowledgeIndex(
+    f.root,
+    "tsmc",
+    original.applied +
+      '\n# Weather\nsource: engineSource("weather-demo","hourly",1,{"station":"lab"})',
+    original.revision,
+    true,
+  );
+  await compiler.generate(f.root, "tsmc");
+  const graph = structuredClone(f.graph),
+    node = graph.nodes.find((n) => n.id === "engine-0");
+  Object.assign(node.config, {
+    engineId,
+    packageDigest: digest,
+    engineVersion: "1.0.0",
+    operation: "temperature",
+    permissionPolicy: "read-only-approval",
+  });
+  await f.agents.saveConstruction({
+    id: f.agent.id,
+    action: "apply",
+    expectedRevision: 1,
+    config: graph,
+  });
+  const offered = async () =>
+    (await f.service.open(f.scope)).context.engines.find(
+      (n) => n.nodeId === node.id,
+    ).capabilities;
+  const [cap] = await offered();
+  assert.ok(cap);
+  const input = { ...f.scope, nodeId: node.id, capabilityId: cap.capabilityId };
+  await assert.rejects(f.service.execute({ ...input, approved: false }));
+  const receipt = await f.service.execute({ ...input, approved: true });
+  assert.equal(receipt.result.data.observations[1].value, 19);
+  assert.equal(
+    (
+      await new EnginePackageRegistry(f.root, {
+        authorize: async () => true,
+      }).readResult("tsmc", receipt.result.executionId)
+    ).origin,
+    "historical",
+  );
+  await r.uninstall(engineId, digest);
+  assert.deepEqual(await offered(), []);
+  await r.install(path.resolve("examples/engines/weather-demo"));
+  await r.trust(engineId, digest);
+  assert.deepEqual(await offered(), []);
+  await link();
+  await compiler.generate(f.root, "tsmc");
+  assert.equal((await offered())[0].capabilityId, cap.capabilityId);
 });

@@ -23,9 +23,9 @@ Output order, IDs, LF encoding and graph layout are deterministic for the same s
 
 ## Discovery scope
 
-537 inventoried repository files; 436 analyzed source files (2 PowerShell, remainder JavaScript/TypeScript); 8190 symbols including file scopes; 7287 callable declarations; 357 TypeScript/Zod contract declarations; 922 compiler-observed/literal-bridge exports.
+569 inventoried repository files; 458 analyzed source files (2 PowerShell, remainder JavaScript/TypeScript); 8377 symbols including file scopes; 7439 callable declarations; 367 TypeScript/Zod contract declarations; 953 compiler-observed/literal-bridge exports.
 
-7337 statically resolved call sites; 33020 unresolved/external call sites; 2133 import/re-export/require sites; 246 IPC observations. 6198 callable declarations have no purpose JSDoc. These are discovery counts, not code-quality scores or coverage measurements.
+7540 statically resolved call sites; 33689 unresolved/external call sites; 2207 import/re-export/require sites; 248 IPC observations. 6322 callable declarations have no purpose JSDoc. These are discovery counts, not code-quality scores or coverage measurements.
 
 Discovery uses rg --files --hidden with repository ignore rules plus explicit exclusions for dependencies, generated output, Atlas output, temporary files, credentials, application state and Universe data. TypeScript AST analysis covers JS, JSX, CJS, MJS, TS, TSX, CTS and MTS, including tests, scripts, declarations, examples and root configuration. Native PowerShell AST analysis adds the Windows OCR helper and parser-tool script without executing them. Other inventoried formats (CSS, Markdown, YAML, images and generic JSON) are listed but are not parsed as JS/TS. Relevant Engine JSON schemas/manifests are indexed separately. Ignored local files and third-party/vendor source are not repository implementation evidence.
 

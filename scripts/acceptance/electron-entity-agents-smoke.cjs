@@ -114,6 +114,9 @@ async function main() {
           true,
         );
         await require(
+          repository + "/scripts/fixtures/assigned-yahoo-package.cjs",
+        ).linkMockYahoo(root, entityId);
+        await require(
           repository +
             "/electron/engines/backend-identity/identity-compiler.cjs",
         ).generate(root, entityId);
@@ -319,6 +322,12 @@ async function main() {
     await manager
       .getByRole("button", { name: "Close assigned agents", exact: true })
       .click();
+    await page.evaluate(() =>
+      window.orbistryDesktop.ai.saveCredential({
+        providerId: "nvidia",
+        apiKey: "nvapi-synthetic-smoke-key",
+      }),
+    );
     await app.evaluate(async ({ app }, repository) => {
       const require = process
         .getBuiltinModule("node:module")
@@ -328,7 +337,8 @@ async function main() {
         path.join(app.getPath("userData"), "model-settings.json"),
         {
           ...require(repository + "/electron/ai/model-registry.cjs").DEFAULTS,
-          modelId: "qwen3:4b",
+          providerId: "nvidia",
+          modelId: "nvidia/nemotron-smoke",
         },
       );
       globalThis.entityAgentSyntheticExecutions = 0;

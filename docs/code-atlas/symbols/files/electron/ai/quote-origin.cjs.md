@@ -61,7 +61,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [priceEvidence](<agents/entity-agent-protocol.cjs.md#s-db43e3ad616645c2>) — [electron/ai/agents/entity-agent-protocol.cjs:295](<../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L295>)
+- [priceEvidence](<agents/entity-agent-protocol.cjs.md#s-db43e3ad616645c2>) — [electron/ai/agents/entity-agent-protocol.cjs:296](<../../../../../../electron/ai/agents/entity-agent-protocol.cjs#L296>)
 
 Unresolved / external call sites: 0.
 

@@ -2,6 +2,8 @@
 
 This guide is for developers publishing engines and developers connecting Orbistry or an LLM host to them. Orbistry provides a terminal/API registry, a starter package, Entity links, discoverable function contracts and persistent execution receipts. **Settings → Engines** lists registered integrations and installed packages with local trust, signature status and operation details. Registration and signing remain explicit terminal actions; see [Engine Signing](ENGINE_SIGNING.md) for key generation, signatures and their exact format.
 
+For the standardized source declaration and complete runnable example, see [Engine contributions](ENGINE_CONTRIBUTIONS.md). See [Engine lifecycle](ENGINE_LIFECYCLE.md) for removal and restoration.
+
 ## Main integration portal
 
 The provider-independent package entry is `electron/engines/registry/registry.cjs`, exporting `EnginePackageRegistry`. The existing `electron/ai/engine-registry.cjs` entry re-exports the same class for compatibility; existing `EngineRegistry` instances can also call `packages(universeRoot, options)`. Built-in native dispatch is available through `electron/engines/native.cjs`; its trusted caller must authorize Entity/source/network access before invoking it. The terminal entry is `scripts/orbistry-engine.cjs`, available as `npm run engine -- ...` from this repository.
@@ -140,7 +142,7 @@ npm.cmd run engine -- revoke --vault "$universe" --id number-tools --digest "<re
 
 `result` performs an authorized historical read and checks Entity ownership and the result hash. It does not load package code, contact a provider or create an execution. Existing results remain readable after unlink/revoke when the host still authorizes historical access. Missing, failed or changed records are errors, never a fallback to a new run.
 
-Installing a new version activates it **untrusted** and removes that engine's Entity links. The owner reviews, trusts and relinks the new version. Older versions and execution history remain. Reinstalling identical existing bytes is idempotent and does not reactivate an older version. There is no automatic update, uninstall or garbage-collection policy in this release.
+Installing a new version activates it **untrusted** and removes that engine's Entity links. The owner reviews, trusts and relinks the new version. Older versions and execution history remain. Reinstalling identical existing bytes is idempotent and does not reactivate an older version. Explicit disable, enable and uninstall are available through the digest-checked CLI.
 
 ## Pull a published package
 
@@ -187,15 +189,15 @@ const historical = await engines.readResult(
 
 Catalog `available` means registry/link prerequisites are met. It does not mean the host has admitted a request, manual approval has occurred, an execution completed, or external data is verified. The package version is the version of its operation contracts. Protocol v1 has no automatic retries or cache: each admitted call creates a fresh execution UUID; retrying an operation is a new call. Hosts should bound concurrent calls and history retention according to their resource budget.
 
-Direct APIs are `install(directory)`, `trust(engineId, digest, trusted?)`, `link(settings)`, `unlink(entityId, engineId)`, `catalog(entityId?)`, `execute(request)`, `executeTool(entityId, call, options)` and `readResult(entityId, executionId)`. `pullPackage(registry, url)` is exported by `authoring.cjs`.
+Direct APIs are `install(directory)`, `trust(engineId, digest, trusted?)`, `link(settings)`, `unlink(entityId, engineId)`, `setEnabled(engineId,digest,enabled)`, `uninstall(engineId,digest)`, `catalog(entityId?)`, `execute(request)`, `executeTool(entityId, call, options)` and `readResult(entityId, executionId)`. `pullPackage(registry, url)` is exported by `authoring.cjs`.
 
-The desktop bridge exposes **read-only discovery** through `window.orbistryDesktop.ai.enginePackageCatalog({ entityId, vaultPath })`, guarded by the existing versioned main-frame IPC. `vaultPath` optionally binds the read to the caller's captured Universe. Settings → Engines shows all installed package links; Entity-scoped calls return only that Entity's links. Catalog entries include signature status and signing-key fingerprints. No package signing, installation, trust or execution endpoint is exposed to renderer code. Existing built-in Workbench actions retain their own authorization paths.
+The desktop bridge exposes **read-only discovery** through `window.orbistryDesktop.ai.enginePackageCatalog({ entityId, vaultPath })`, guarded by the existing versioned main-frame IPC. `vaultPath` optionally binds the read to the caller's captured Universe. Settings → Engines shows all installed package links; Entity-scoped calls return only that Entity's links. Catalog entries include signature status and signing-key fingerprints. Signing, installation and trust use the terminal. The Knowledge Card can request execution of one applied source by declaration ID. Existing built-in Workbench actions retain their own authorization paths.
 
-**Integration boundary:** this registry does not automatically add packages to existing agent construction nodes, Identity DSL declarations or assigned-agent prompt tools. Those existing adapters, approvals and bindings keep their current behavior. A later agent/Gateway integration can consume the catalog and call the authorized API shown above. Universe chat generation stays reset; this release establishes the registry contract it can use later.
+Workbench can pin a trusted source-contributing package to a connected Engine node. The Assigned Agent resolves the applied source in its assigned Entity, checks current grants and requests approval. See [Engine contributions](ENGINE_CONTRIBUTIONS.md).
 
 ## Contract rules and runtime limits
 
-Manifest format is version **2**; execution protocol is **`orbistry.engine/1`**. Existing built-in engine manifests and adapters keep their existing formats and are not silently migrated. Reserved built-in IDs cannot be shadowed by third-party packages.
+Manifest formats **2** (operations) and **3** (operations and sources) use execution protocol **`orbistry.engine/1`**. Existing built-in engine manifests and adapters keep their existing formats and are not silently migrated. Reserved built-in IDs cannot be shadowed by third-party packages.
 
 Engine and operation IDs contain 2–64 lowercase letters, digits or hyphens, start with a letter, and exclude reserved prototype/device names. Versions use `major.minor.patch` with an optional prerelease suffix. Paths are portable relative paths; traversal, absolute paths, symlinks/junctions, hidden segments, Windows device names, alternate data streams and case-colliding filenames are rejected.
 

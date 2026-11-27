@@ -121,6 +121,34 @@ const manifestSchema = z
         createdAt: z.string().nullable(),
       })
       .strict(),
+    packageSources: z
+      .array(
+        z
+          .object({
+            grantId: z.string().uuid().optional(),
+            menuId: id.optional(),
+            declarationId: id,
+            engineId: id,
+            sourceId: id,
+            version: z.string().nullable(),
+            digest: hash.nullable(),
+            operation: id.nullable(),
+            status: z.enum([
+              "available",
+              "package_missing",
+              "package_disabled",
+              "untrusted",
+              "unlinked",
+              "authorization_required",
+              "incompatible_version",
+              "invalid_configuration",
+              "integrity_failed",
+            ]),
+          })
+          .strict(),
+      )
+      .max(1000)
+      .optional(),
     indexedMenus: z.array(
       z
         .object({

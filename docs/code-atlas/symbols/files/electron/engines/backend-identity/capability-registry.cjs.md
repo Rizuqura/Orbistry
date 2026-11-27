@@ -102,8 +102,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 - [withReadOnlyAccess](<../../ai/agents/entity-agent-access.cjs.md#s-380698e47cd9410a>) — [electron/ai/agents/entity-agent-access.cjs:12](<../../../../../../../electron/ai/agents/entity-agent-access.cjs#L12>)
 - [EntityAgentService.runtime.authorize.&lt;anonymous@514:13&gt;](<../../ai/agents/entity-agents.cjs.md#s-243ea832d5a73adc>) — [electron/ai/agents/entity-agents.cjs:518](<../../../../../../../electron/ai/agents/entity-agents.cjs#L518>)
-- [EntityAgentService.context.&lt;anonymous@563:57&gt;](<../../ai/agents/entity-agents.cjs.md#s-4c46ef83abfe0ad6>) — [electron/ai/agents/entity-agents.cjs:582](<../../../../../../../electron/ai/agents/entity-agents.cjs#L582>)
-- [EntityAgentService.executeBound](<../../ai/agents/entity-agents.cjs.md#s-05ab3da1509c33bf>) — [electron/ai/agents/entity-agents.cjs:1827](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1827>)
+- [EntityAgentService.context.&lt;anonymous@590:31&gt;](<../../ai/agents/entity-agents.cjs.md#s-220521fd0017f458>) — [electron/ai/agents/entity-agents.cjs:671](<../../../../../../../electron/ai/agents/entity-agents.cjs#L671>)
+- [EntityAgentService.executeBound](<../../ai/agents/entity-agents.cjs.md#s-23dd00b1b12e2790>) — [electron/ai/agents/entity-agents.cjs:1963](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1963>)
 
 Unresolved / external call sites: 1.
 
@@ -216,8 +216,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getIndexedPrice](<../../daily-price-service.cjs.md#s-985657f4b0e3a350>) — [electron/engines/backend-identity/capability-registry.cjs:81](<../../../../../../../electron/engines/backend-identity/capability-registry.cjs#L81>)
-- [getIndexedFinance](<../../financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/engines/backend-identity/capability-registry.cjs:92](<../../../../../../../electron/engines/backend-identity/capability-registry.cjs#L92>)
+- [getIndexedPrice](<../../daily-price-service.cjs.md#s-7b912d435b7535f2>) — [electron/engines/backend-identity/capability-registry.cjs:81](<../../../../../../../electron/engines/backend-identity/capability-registry.cjs#L81>)
+- [getIndexedFinance](<../../financial-service.cjs.md#s-5cdbc96d6a69cfe2>) — [electron/engines/backend-identity/capability-registry.cjs:92](<../../../../../../../electron/engines/backend-identity/capability-registry.cjs#L92>)
 
 **Called by (statically resolved):**
 

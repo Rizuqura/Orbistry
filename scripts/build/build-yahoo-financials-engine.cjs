@@ -35,6 +35,21 @@ async function main() {
     path.join(stageRoot, `yahoo-financials-${version}-`),
   );
   await fs.cp(source, stage, { recursive: true });
+  // Copy the standalone implementation behind the application compatibility entry.
+  const implementation = path.join(
+    repository,
+    "packages",
+    "yahoo-finance",
+    "src",
+  );
+  for (const [from, to] of [
+    ["financials.cjs", "index.cjs"],
+    ["market.cjs", "market.cjs"],
+    ["client.cjs", "client.cjs"],
+    ["tools.json", "tools.json"],
+  ]) {
+    await fs.copyFile(path.join(implementation, from), path.join(stage, to));
+  }
   const dependencies = await copyDependencies(
     path.join(source, "package.json"),
     stage,

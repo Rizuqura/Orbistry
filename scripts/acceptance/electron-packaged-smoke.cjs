@@ -18,7 +18,7 @@ async function main() {
     delete env.ORBISTRY_SMOKE_DATA;
     app = await electron.launch({
       executablePath: path.resolve(
-        "dist/win-unpacked",
+        process.argv[2] ?? "dist/win-unpacked",
         `${require("../../package.json").build.productName}.exe`,
       ),
       args: [`--user-data-dir=${profile}`, "--hidden"],
@@ -29,6 +29,9 @@ async function main() {
     page.setDefaultTimeout(30000);
     page.on("pageerror", (error) => errors.push(error.message));
     await page.locator(".startup-screen").waitFor({ state: "hidden" });
+    await page
+      .getByRole("heading", { name: "WorldView", exact: true })
+      .waitFor();
     const state = await page.evaluate(async () => {
       const { ai, vault } = window.orbistryDesktop;
       return {
@@ -54,7 +57,7 @@ async function main() {
     assert.match(state.csp, /script-src 'self'/);
     assert.equal(
       await page.locator(".version").textContent(),
-      `v${require("../../package.json").version} Victoria (Beta)`,
+      `Victoria ${require("../../package.json").version} (Beta)`,
     );
     await fs.copyFile(
       "scripts/fixtures/ocr-text.png",
@@ -68,6 +71,12 @@ async function main() {
     assert.match(extracted.image.content, /ALPHA/i);
     assert.equal(extracted.pdf.textStatus, "ready");
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
+    await page
+      .getByRole("button", {
+        name: "Manage agents & conversations",
+        exact: true,
+      })
+      .click();
     await page
       .getByRole("heading", { name: "Build your first agent" })
       .waitFor();
@@ -143,6 +152,20 @@ async function main() {
     console.log(
       "PASS: actual packaged executable; empty state and keys; CSP; native image/scanned-PDF OCR; first custom agent and Context Box.",
     );
+  } catch (error) {
+    if (app) {
+      const page = app.windows()[0];
+      console.error(
+        "Packaged window",
+        page?.url(),
+        await page
+          ?.locator("body")
+          .innerText({ timeout: 2000 })
+          .catch(() => ""),
+        errors,
+      );
+    }
+    throw error;
   } finally {
     if (app) await app.close().catch(() => {});
     await fs.rm(root, { recursive: true, force: true });

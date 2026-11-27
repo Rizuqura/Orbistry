@@ -146,10 +146,10 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:40](<../../../../../electron/image-parser.test.cjs#L40>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:55](<../../../../../electron/image-parser.test.cjs#L55>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:67](<../../../../../electron/image-parser.test.cjs#L67>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:69](<../../../../../electron/image-parser.test.cjs#L69>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:40](<../../../../../electron/image-parser.test.cjs#L40>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:55](<../../../../../electron/image-parser.test.cjs#L55>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:67](<../../../../../electron/image-parser.test.cjs#L67>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:69](<../../../../../electron/image-parser.test.cjs#L69>)
 
 **Called by (statically resolved):**
 
@@ -480,7 +480,7 @@ Returns: any (compiler-inferred). Implementation present.
 - [image](<image-parser.test.cjs.md#s-9226fcf1f64a6a0b>) — [electron/image-parser.test.cjs:140](<../../../../../electron/image-parser.test.cjs#L140>)
 - [image](<image-parser.test.cjs.md#s-9226fcf1f64a6a0b>) — [electron/image-parser.test.cjs:141](<../../../../../electron/image-parser.test.cjs#L141>)
 - [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/image-parser.test.cjs:157](<../../../../../electron/image-parser.test.cjs#L157>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:159](<../../../../../electron/image-parser.test.cjs#L159>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:159](<../../../../../electron/image-parser.test.cjs#L159>)
 
 **Called by (statically resolved):**
 
@@ -1292,11 +1292,11 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:432](<../../../../../electron/image-parser.test.cjs#L432>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:436](<../../../../../electron/image-parser.test.cjs#L436>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:440](<../../../../../electron/image-parser.test.cjs#L440>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:447](<../../../../../electron/image-parser.test.cjs#L447>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/image-parser.test.cjs:449](<../../../../../electron/image-parser.test.cjs#L449>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:432](<../../../../../electron/image-parser.test.cjs#L432>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:436](<../../../../../electron/image-parser.test.cjs#L436>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:440](<../../../../../electron/image-parser.test.cjs#L440>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:447](<../../../../../electron/image-parser.test.cjs#L447>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/image-parser.test.cjs:449](<../../../../../electron/image-parser.test.cjs#L449>)
 - [fixture](<image-parser.test.cjs.md#s-440e32716d73e488>) — [electron/image-parser.test.cjs:452](<../../../../../electron/image-parser.test.cjs#L452>)
 
 **Called by (statically resolved):**

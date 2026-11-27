@@ -546,7 +546,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [fixture](<entity-repository.test.cjs.md#s-fc680e4d85b97eb6>) — [electron/domains/entity/tests/entity-repository.test.cjs:157](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L157>)
 - [chip](<entity-repository.test.cjs.md#s-7d635c5e6fdf3844>) — [electron/domains/entity/tests/entity-repository.test.cjs:158](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L158>)
-- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/domains/entity/tests/entity-repository.test.cjs:161](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L161>)
+- [registerWorldViewIpc](<../../../core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/domains/entity/tests/entity-repository.test.cjs:161](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L161>)
 - [chip](<entity-repository.test.cjs.md#s-7d635c5e6fdf3844>) — [electron/domains/entity/tests/entity-repository.test.cjs:182](<../../../../../../../../electron/domains/entity/tests/entity-repository.test.cjs#L182>)
 
 **Called by (statically resolved):**

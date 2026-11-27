@@ -104,6 +104,10 @@ const nodeSchema = z
         skillId: z.enum(["knowledge-consolidation"]).optional(),
         engineId: identifier.optional(),
         operation: identifier.optional(),
+        packageDigest: z
+          .string()
+          .regex(/^[0-9a-f]{64}$/)
+          .optional(),
         engineVersion: z.string().max(64).optional(),
         parameters: z
           .object({ force: z.boolean().optional() })
@@ -249,6 +253,7 @@ function validateConstruction(value, agentId, apply = false) {
       "instanceId",
       "operation",
       "engineVersion",
+      "packageDigest",
       "parameters",
       "permissionPolicy",
     ],
@@ -271,9 +276,28 @@ function validateConstruction(value, agentId, apply = false) {
       const operation =
         node.config.operation ??
         (node.config.engineId === "chronoz" ? "get_report" : undefined);
-      if (apply && (!definition || !definition.operations.includes(operation)))
+      // A digest-pinned package node is portable configuration. The assignment checks the active Universe at execution.
+      const external = Boolean(
+        !definition &&
+        node.config.packageDigest &&
+        node.config.engineVersion &&
+        operation,
+      );
+      if (
+        node.config.packageDigest &&
+        (!external || node.config.permissionPolicy === "read-only-auto")
+      )
+        invalid(
+          "External Engine nodes require a pinned version and explicit approval.",
+        );
+      if (
+        apply &&
+        !external &&
+        (!definition || !definition.operations.includes(operation))
+      )
         invalid(`Engine ${node.id} needs a registered engine and operation.`);
       if (
+        !external &&
         node.config.engineVersion &&
         definition?.version !== node.config.engineVersion
       )

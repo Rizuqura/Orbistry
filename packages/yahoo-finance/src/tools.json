@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "engineId": "yahoo-financials",
+  "description": "Read-only Yahoo Finance company datasets. External network access; no orders or arbitrary code. Caller must authorize provider access.",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["operation", "symbol"],
+    "properties": {
+      "operation": {
+        "type": "string",
+        "enum": ["quote", "history", "financials", "earnings"]
+      },
+      "symbol": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32,
+        "description": "Exact Yahoo ticker. TSM and 2330.TW identify different listings."
+      },
+      "range": {
+        "type": "string",
+        "enum": ["1M", "3M", "6M", "1Y", "5Y", "MAX"],
+        "description": "History only. Defaults to 1Y; MAX uses monthly observations."
+      }
+    }
+  },
+  "output": {
+    "format": "JSON",
+    "provenance": ["provider", "symbol", "fetchedAt", "currency"],
+    "missingValues": "null",
+    "financials": "Statements preserve provider keys, units, currency, fiscal period ends and reporting frequency.",
+    "market": "Latest available regular-session data; not labeled real-time. History includes OHLCV and corporate actions when provided."
+  },
+  "entrypoints": {
+    "javascript": "execute(request, options?)",
+    "cli": "node cli.cjs",
+    "discovery": "node cli.cjs --describe"
+  }
+}

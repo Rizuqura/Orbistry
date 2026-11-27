@@ -69,9 +69,9 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:17](<../../../../../../../electron/engines/registry/package.cjs#L17>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:25](<../../../../../../../electron/engines/registry/package.cjs#L25>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:39](<../../../../../../../electron/engines/registry/package.cjs#L39>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:17](<../../../../../../../electron/engines/registry/package.cjs#L17>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:25](<../../../../../../../electron/engines/registry/package.cjs#L25>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:39](<../../../../../../../electron/engines/registry/package.cjs#L39>)
 
 **Called by (statically resolved):**
 
@@ -79,12 +79,12 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:107](<../../../../../../../electron/engines/registry/package.cjs#L107>)
 - [sealPackage](<package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:129](<../../../../../../../electron/engines/registry/package.cjs#L129>)
 - [sealPackage](<package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:135](<../../../../../../../electron/engines/registry/package.cjs#L135>)
-- [EnginePackageRegistry.read](<registry.cjs.md#s-56d760ca822ea66d>) — [electron/engines/registry/registry.cjs:118](<../../../../../../../electron/engines/registry/registry.cjs#L118>)
-- [EnginePackageRegistry.readResult](<registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:473](<../../../../../../../electron/engines/registry/registry.cjs#L473>)
-- [EnginePackageRegistry.readResult](<registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:504](<../../../../../../../electron/engines/registry/registry.cjs#L504>)
+- [EnginePackageRegistry.read](<registry.cjs.md#s-abffabd42b530015>) — [electron/engines/registry/registry.cjs:120](<../../../../../../../electron/engines/registry/registry.cjs#L120>)
+- [EnginePackageRegistry.readResult](<registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:536](<../../../../../../../electron/engines/registry/registry.cjs#L536>)
+- [EnginePackageRegistry.readResult](<registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:567](<../../../../../../../electron/engines/registry/registry.cjs#L567>)
 - [signPackage](<signing.cjs.md#s-9317466d274715e3>) — [electron/engines/registry/signing.cjs:106](<../../../../../../../electron/engines/registry/signing.cjs#L106>)
 - [verifyPackage](<signing.cjs.md#s-3b8c467c9b1420c7>) — [electron/engines/registry/signing.cjs:149](<../../../../../../../electron/engines/registry/signing.cjs#L149>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:152](<../../../../../../../scripts/orbistry-engine.cjs#L152>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:156](<../../../../../../../scripts/orbistry-engine.cjs#L156>)
 
 Unresolved / external call sites: 11.
 
@@ -125,23 +125,23 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:51](<../../../../../../../electron/engines/registry/package.cjs#L51>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:51](<../../../../../../../electron/engines/registry/package.cjs#L51>)
 
 **Called by (statically resolved):**
 
 - [pullPackage](<authoring.cjs.md#s-dd26bc55111fb682>) — [electron/engines/registry/authoring.cjs:118](<../../../../../../../electron/engines/registry/authoring.cjs#L118>)
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:91](<../../../../../../../electron/engines/registry/package.cjs#L91>)
 - [sealPackage](<package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:128](<../../../../../../../electron/engines/registry/package.cjs#L128>)
-- [EnginePackageRegistry.read](<registry.cjs.md#s-56d760ca822ea66d>) — [electron/engines/registry/registry.cjs:118](<../../../../../../../electron/engines/registry/registry.cjs#L118>)
-- [EnginePackageRegistry.executeTool](<registry.cjs.md#s-340eb5dbd3aa5064>) — [electron/engines/registry/registry.cjs:455](<../../../../../../../electron/engines/registry/registry.cjs#L455>)
-- [EnginePackageRegistry.readResult](<registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:472](<../../../../../../../electron/engines/registry/registry.cjs#L472>)
-- [EnginePackageRegistry.readResult](<registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engines/registry/registry.cjs:503](<../../../../../../../electron/engines/registry/registry.cjs#L503>)
-- [EnginePackageRegistry.execute](<registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engines/registry/registry.cjs:562](<../../../../../../../electron/engines/registry/registry.cjs#L562>)
+- [EnginePackageRegistry.read](<registry.cjs.md#s-abffabd42b530015>) — [electron/engines/registry/registry.cjs:120](<../../../../../../../electron/engines/registry/registry.cjs#L120>)
+- [EnginePackageRegistry.executeTool](<registry.cjs.md#s-f025f9ee5da1f3ed>) — [electron/engines/registry/registry.cjs:518](<../../../../../../../electron/engines/registry/registry.cjs#L518>)
+- [EnginePackageRegistry.readResult](<registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:535](<../../../../../../../electron/engines/registry/registry.cjs#L535>)
+- [EnginePackageRegistry.readResult](<registry.cjs.md#s-34db5a148ab121e2>) — [electron/engines/registry/registry.cjs:566](<../../../../../../../electron/engines/registry/registry.cjs#L566>)
+- [EnginePackageRegistry.execute](<registry.cjs.md#s-61267d4d373b62b8>) — [electron/engines/registry/registry.cjs:627](<../../../../../../../electron/engines/registry/registry.cjs#L627>)
 - [signPackage](<signing.cjs.md#s-9317466d274715e3>) — [electron/engines/registry/signing.cjs:117](<../../../../../../../electron/engines/registry/signing.cjs#L117>)
 - [verifyPackage](<signing.cjs.md#s-3b8c467c9b1420c7>) — [electron/engines/registry/signing.cjs:152](<../../../../../../../electron/engines/registry/signing.cjs#L152>)
 - [runPackage.&lt;anonymous@12:22&gt;.&lt;anonymous@80:23&gt;](<../runtime/runner.cjs.md#s-1caa8432e824596f>) — [electron/engines/runtime/runner.cjs:93](<../../../../../../../electron/engines/runtime/runner.cjs#L93>)
 - [main](<../runtime/worker.cjs.md#s-fb07682c5c8192d8>) — [electron/engines/runtime/worker.cjs:13](<../../../../../../../electron/engines/runtime/worker.cjs#L13>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:151](<../../../../../../../scripts/orbistry-engine.cjs#L151>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:155](<../../../../../../../scripts/orbistry-engine.cjs#L155>)
 
 Unresolved / external call sites: 3.
 
@@ -179,13 +179,13 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:63](<../../../../../../../electron/engines/registry/package.cjs#L63>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:66](<../../../../../../../electron/engines/registry/package.cjs#L66>)
-- [filePath](<../contracts/contract.cjs.md#s-c6ea6c7627e0d854>) — [electron/engines/registry/package.cjs:72](<../../../../../../../electron/engines/registry/package.cjs#L72>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:74](<../../../../../../../electron/engines/registry/package.cjs#L74>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:63](<../../../../../../../electron/engines/registry/package.cjs#L63>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:66](<../../../../../../../electron/engines/registry/package.cjs#L66>)
+- [filePath](<../contracts/contract.cjs.md#s-37950761339869ee>) — [electron/engines/registry/package.cjs:72](<../../../../../../../electron/engines/registry/package.cjs#L72>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:74](<../../../../../../../electron/engines/registry/package.cjs#L74>)
 - [filesIn](<package.cjs.md#s-7a153ed7a6996a97>) — [electron/engines/registry/package.cjs:75](<../../../../../../../electron/engines/registry/package.cjs#L75>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:77](<../../../../../../../electron/engines/registry/package.cjs#L77>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:79](<../../../../../../../electron/engines/registry/package.cjs#L79>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:77](<../../../../../../../electron/engines/registry/package.cjs#L77>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:79](<../../../../../../../electron/engines/registry/package.cjs#L79>)
 
 **Called by (statically resolved):**
 
@@ -234,15 +234,15 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/package.cjs:87](<../../../../../../../electron/engines/registry/package.cjs#L87>)
 - [parseJson](<package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/registry/package.cjs:91](<../../../../../../../electron/engines/registry/package.cjs#L91>)
-- [manifest](<../contracts/contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/registry/package.cjs:92](<../../../../../../../electron/engines/registry/package.cjs#L92>)
+- [manifest](<../contracts/contract.cjs.md#s-419652773bdad136>) — [electron/engines/registry/package.cjs:92](<../../../../../../../electron/engines/registry/package.cjs#L92>)
 - [verifySignature](<signature.cjs.md#s-9f88c255d4e362de>) — [electron/engines/registry/package.cjs:93](<../../../../../../../electron/engines/registry/package.cjs#L93>)
 - [filesIn](<package.cjs.md#s-7a153ed7a6996a97>) — [electron/engines/registry/package.cjs:94](<../../../../../../../electron/engines/registry/package.cjs#L94>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:100](<../../../../../../../electron/engines/registry/package.cjs#L100>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:100](<../../../../../../../electron/engines/registry/package.cjs#L100>)
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/package.cjs:107](<../../../../../../../electron/engines/registry/package.cjs#L107>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:110](<../../../../../../../electron/engines/registry/package.cjs#L110>)
-- [sha](<../contracts/contract.cjs.md#s-f99f5cdd253f65c9>) — [electron/engines/registry/package.cjs:111](<../../../../../../../electron/engines/registry/package.cjs#L111>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/package.cjs:112](<../../../../../../../electron/engines/registry/package.cjs#L112>)
-- [sha](<../contracts/contract.cjs.md#s-f99f5cdd253f65c9>) — [electron/engines/registry/package.cjs:118](<../../../../../../../electron/engines/registry/package.cjs#L118>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:110](<../../../../../../../electron/engines/registry/package.cjs#L110>)
+- [sha](<../contracts/contract.cjs.md#s-27c50df18ef30dc9>) — [electron/engines/registry/package.cjs:111](<../../../../../../../electron/engines/registry/package.cjs#L111>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/package.cjs:112](<../../../../../../../electron/engines/registry/package.cjs#L112>)
+- [sha](<../contracts/contract.cjs.md#s-27c50df18ef30dc9>) — [electron/engines/registry/package.cjs:118](<../../../../../../../electron/engines/registry/package.cjs#L118>)
 
 **Called by (statically resolved):**
 
@@ -259,13 +259,13 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@194:103&gt;](<../../engine-signing.test.cjs.md#s-41839bdef2512cfd>) — [electron/engine-signing.test.cjs:212](<../../../../../../../electron/engine-signing.test.cjs#L212>)
 - [pullPackage](<authoring.cjs.md#s-dd26bc55111fb682>) — [electron/engines/registry/authoring.cjs:155](<../../../../../../../electron/engines/registry/authoring.cjs#L155>)
 - [sealPackage](<package.cjs.md#s-d9c25ce14dcf2863>) — [electron/engines/registry/package.cjs:140](<../../../../../../../electron/engines/registry/package.cjs#L140>)
-- [EnginePackageRegistry.install](<registry.cjs.md#s-23fa9e3f7160bfa9>) — [electron/engines/registry/registry.cjs:177](<../../../../../../../electron/engines/registry/registry.cjs#L177>)
-- [EnginePackageRegistry.installed](<registry.cjs.md#s-c4934370e6e6f669>) — [electron/engines/registry/registry.cjs:271](<../../../../../../../electron/engines/registry/registry.cjs#L271>)
+- [EnginePackageRegistry.install](<registry.cjs.md#s-b97b1298e6d6e88c>) — [electron/engines/registry/registry.cjs:180](<../../../../../../../electron/engines/registry/registry.cjs#L180>)
+- [EnginePackageRegistry.installed](<registry.cjs.md#s-4b2796c726a80a4b>) — [electron/engines/registry/registry.cjs:274](<../../../../../../../electron/engines/registry/registry.cjs#L274>)
 - [signPackage](<signing.cjs.md#s-9317466d274715e3>) — [electron/engines/registry/signing.cjs:102](<../../../../../../../electron/engines/registry/signing.cjs#L102>)
 - [signPackage](<signing.cjs.md#s-9317466d274715e3>) — [electron/engines/registry/signing.cjs:130](<../../../../../../../electron/engines/registry/signing.cjs#L130>)
 - [verifyPackage](<signing.cjs.md#s-3b8c467c9b1420c7>) — [electron/engines/registry/signing.cjs:142](<../../../../../../../electron/engines/registry/signing.cjs#L142>)
 - [main](<../runtime/worker.cjs.md#s-fb07682c5c8192d8>) — [electron/engines/runtime/worker.cjs:14](<../../../../../../../electron/engines/runtime/worker.cjs#L14>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:115](<../../../../../../../scripts/orbistry-engine.cjs#L115>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:116](<../../../../../../../scripts/orbistry-engine.cjs#L116>)
 
 Unresolved / external call sites: 10.
 
@@ -354,9 +354,9 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [parseJson](<package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/registry/package.cjs:128](<../../../../../../../electron/engines/registry/package.cjs#L128>)
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/package.cjs:129](<../../../../../../../electron/engines/registry/package.cjs#L129>)
 - [filesIn](<package.cjs.md#s-7a153ed7a6996a97>) — [electron/engines/registry/package.cjs:132](<../../../../../../../electron/engines/registry/package.cjs#L132>)
-- [sha](<../contracts/contract.cjs.md#s-f99f5cdd253f65c9>) — [electron/engines/registry/package.cjs:135](<../../../../../../../electron/engines/registry/package.cjs#L135>)
+- [sha](<../contracts/contract.cjs.md#s-27c50df18ef30dc9>) — [electron/engines/registry/package.cjs:135](<../../../../../../../electron/engines/registry/package.cjs#L135>)
 - [readBytes](<package.cjs.md#s-a5f5a53e124cf066>) — [electron/engines/registry/package.cjs:135](<../../../../../../../electron/engines/registry/package.cjs#L135>)
-- [manifest](<../contracts/contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/registry/package.cjs:138](<../../../../../../../electron/engines/registry/package.cjs#L138>)
+- [manifest](<../contracts/contract.cjs.md#s-419652773bdad136>) — [electron/engines/registry/package.cjs:138](<../../../../../../../electron/engines/registry/package.cjs#L138>)
 - [writeJson](<../../core/persistence/json-store.cjs.md#s-5030c6156f98dba1>) — [electron/engines/registry/package.cjs:139](<../../../../../../../electron/engines/registry/package.cjs#L139>)
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/package.cjs:140](<../../../../../../../electron/engines/registry/package.cjs#L140>)
 
@@ -370,7 +370,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@661:86&gt;](<../../engine-packages.test.cjs.md#s-61bdae00820745a0>) — [electron/engine-packages.test.cjs:672](<../../../../../../../electron/engine-packages.test.cjs#L672>)
 - [&lt;anonymous@176:104&gt;](<../../engine-signing.test.cjs.md#s-090bc15d5cdc7060>) — [electron/engine-signing.test.cjs:184](<../../../../../../../electron/engine-signing.test.cjs#L184>)
 - [initPackage](<authoring.cjs.md#s-bbfb28bee2f9c0b0>) — [electron/engines/registry/authoring.cjs:64](<../../../../../../../electron/engines/registry/authoring.cjs#L64>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:114](<../../../../../../../scripts/orbistry-engine.cjs#L114>)
+- [linkMockYahoo](<../../../scripts/fixtures/assigned-yahoo-package.cjs.md#s-1c33c078b3b94add>) — [scripts/fixtures/assigned-yahoo-package.cjs:26](<../../../../../../../scripts/fixtures/assigned-yahoo-package.cjs#L26>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:115](<../../../../../../../scripts/orbistry-engine.cjs#L115>)
 
 Unresolved / external call sites: 5.
 

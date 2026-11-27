@@ -200,7 +200,11 @@ export function EngineSettings({ vaultPath }: { vaultPath: string | null }) {
                 <span
                   className={`engine-state${item.trusted ? " is-trusted" : ""}`}
                 >
-                  {item.trusted ? "Locally trusted" : "Review required"}
+                  {item.disabled
+                    ? "Disabled"
+                    : item.trusted
+                      ? "Locally trusted"
+                      : "Review required"}
                 </span>
               </button>
             ))}

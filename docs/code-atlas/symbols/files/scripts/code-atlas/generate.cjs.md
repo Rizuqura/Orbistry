@@ -376,7 +376,7 @@ Returns: void (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [existingArtifacts.visit](<generate.cjs.md#s-41d7adecf44416f5>) — [scripts/code-atlas/generate.cjs:166](<../../../../../../scripts/code-atlas/generate.cjs#L166>)
-- [portable](<catalog.cjs.md#s-60683316afa4a320>) — [scripts/code-atlas/generate.cjs:168](<../../../../../../scripts/code-atlas/generate.cjs#L168>)
+- [portable](<catalog.cjs.md#s-c39d81ba81a8717f>) — [scripts/code-atlas/generate.cjs:168](<../../../../../../scripts/code-atlas/generate.cjs#L168>)
 
 **Called by (statically resolved):**
 

@@ -56,3 +56,7 @@ No empty Dashboard or frontend indexing folders were created. The current Index 
 See [module ownership](MODULE_OWNERSHIP.md), [relocation changelog](RESTRUCTURE_CHANGELOG.md), [exact move manifest](restructure-moves.json) and [Code Atlas](../code-atlas/README.md).
 
 See [Entity domain implementation](ENTITY_DOMAIN_OOP.md) for the storage ownership matrix and backend entry points.
+
+## External Engine packages
+
+`packages/yahoo-finance/` owns the independently built market-data implementation. `electron/engines/registry/` owns registration, grants and receipts. `electron/domains/knowledge/package-source.cjs` resolves applied source declarations. See the [Engine ownership and execution map](ENGINE_PLUGIN_ARCHITECTURE.md).

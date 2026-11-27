@@ -481,8 +481,8 @@ Returns: AgentStore (compiler-inferred). Implementation present.
 - [&lt;anonymous@392:85&gt;](<agent-store.test.cjs.md#s-872f64c210c4127c>) — [electron/ai/agents/agent-store.test.cjs:395](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L395>)
 - [&lt;anonymous@403:107&gt;](<agent-store.test.cjs.md#s-af456ca4470f940b>) — [electron/ai/agents/agent-store.test.cjs:411](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L411>)
 - [fixture](<entity-agents.test.cjs.md#s-9ad48d6b7854c1ed>) — [electron/ai/agents/entity-agents.test.cjs:35](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L35>)
-- [&lt;anonymous@263:122&gt;](<entity-agents.test.cjs.md#s-d033ccc335f50627>) — [electron/ai/agents/entity-agents.test.cjs:265](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L265>)
-- [&lt;anonymous@1293:116&gt;](<entity-agents.test.cjs.md#s-ecc1d3d95f53db50>) — [electron/ai/agents/entity-agents.test.cjs:1331](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1331>)
+- [&lt;anonymous@267:122&gt;](<entity-agents.test.cjs.md#s-170a0d3c49e413cb>) — [electron/ai/agents/entity-agents.test.cjs:269](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L269>)
+- [&lt;anonymous@1297:116&gt;](<entity-agents.test.cjs.md#s-912c4903c18a71e9>) — [electron/ai/agents/entity-agents.test.cjs:1335](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1335>)
 - [fixture](<../engine-registry.test.cjs.md#s-65055825671a5a43>) — [electron/ai/engine-registry.test.cjs:75](<../../../../../../../electron/ai/engine-registry.test.cjs#L75>)
 - [&lt;anonymous@183:106&gt;](<../engine-registry.test.cjs.md#s-4ed4a78d66cd545d>) — [electron/ai/engine-registry.test.cjs:206](<../../../../../../../electron/ai/engine-registry.test.cjs#L206>)
 - [&lt;anonymous@163:22&gt;](<../../main.cjs.md#s-2232a6bfcb723f81>) — [electron/main.cjs:229](<../../../../../../../electron/main.cjs#L229>)
@@ -501,8 +501,8 @@ Unresolved / external call sites: 2.
 - [electron/ai/agents/agent-store.test.cjs:395](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L395>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:411](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L411>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:35](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L35>) — static-call-site; coverage not established.
-- [electron/ai/agents/entity-agents.test.cjs:265](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L265>) — static-call-site; coverage not established.
-- [electron/ai/agents/entity-agents.test.cjs:1331](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1331>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:269](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L269>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1335](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1335>) — static-call-site; coverage not established.
 - [electron/ai/engine-registry.test.cjs:75](<../../../../../../../electron/ai/engine-registry.test.cjs#L75>) — static-call-site; coverage not established.
 - [electron/ai/engine-registry.test.cjs:206](<../../../../../../../electron/ai/engine-registry.test.cjs#L206>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:20](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L20>) — static-call-site; coverage not established.
@@ -750,7 +750,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@80:101&gt;](<agent-store.test.cjs.md#s-0dbef8c3f34bd547>) — [electron/ai/agents/agent-store.test.cjs:119](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L119>)
 - [&lt;anonymous@392:85&gt;](<agent-store.test.cjs.md#s-872f64c210c4127c>) — [electron/ai/agents/agent-store.test.cjs:398](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L398>)
 - [&lt;anonymous@403:107&gt;](<agent-store.test.cjs.md#s-af456ca4470f940b>) — [electron/ai/agents/agent-store.test.cjs:412](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L412>)
-- [&lt;anonymous@1293:116&gt;](<entity-agents.test.cjs.md#s-ecc1d3d95f53db50>) — [electron/ai/agents/entity-agents.test.cjs:1332](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1332>)
+- [&lt;anonymous@1297:116&gt;](<entity-agents.test.cjs.md#s-912c4903c18a71e9>) — [electron/ai/agents/entity-agents.test.cjs:1336](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1336>)
 
 Unresolved / external call sites: 5.
 
@@ -767,7 +767,7 @@ Unresolved / external call sites: 5.
 - [electron/ai/agents/agent-store.test.cjs:119](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L119>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:398](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L398>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:412](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L412>) — static-call-site; coverage not established.
-- [electron/ai/agents/entity-agents.test.cjs:1332](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1332>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1336](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1336>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:24](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L24>) — file-import-only; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:394](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L394>) — file-import-only; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:410](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L410>) — file-import-only; coverage not established.
@@ -1247,7 +1247,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [gatewayProfile](<gateway-profile.cjs.md#s-a31ba5d37b2db799>) — [electron/ai/agents/agent-store.cjs:250](<../../../../../../../electron/ai/agents/agent-store.cjs#L250>)
 - [storedOrDefault](<agent-store.cjs.md#s-450719ec7ed10db2>) — [electron/ai/agents/agent-store.cjs:251](<../../../../../../../electron/ai/agents/agent-store.cjs#L251>)
 - [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/agent-store.cjs:253](<../../../../../../../electron/ai/agents/agent-store.cjs#L253>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-store.cjs:255](<../../../../../../../electron/ai/agents/agent-store.cjs#L255>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-store.cjs:255](<../../../../../../../electron/ai/agents/agent-store.cjs#L255>)
 - [skillsFor](<../skills.cjs.md#s-b3ded4fcddd47806>) — [electron/ai/agents/agent-store.cjs:265](<../../../../../../../electron/ai/agents/agent-store.cjs#L265>)
 - [skillsFor](<../skills.cjs.md#s-b3ded4fcddd47806>) — [electron/ai/agents/agent-store.cjs:268](<../../../../../../../electron/ai/agents/agent-store.cjs#L268>)
 - [AgentStore.resolveAppearance](<agent-store.cjs.md#s-131f9ea2850450d6>) — [electron/ai/agents/agent-store.cjs:274](<../../../../../../../electron/ai/agents/agent-store.cjs#L274>)
@@ -1255,7 +1255,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [AgentStore.avatarUrl](<agent-store.cjs.md#s-78d662b9ac7d6d48>) — [electron/ai/agents/agent-store.cjs:280](<../../../../../../../electron/ai/agents/agent-store.cjs#L280>)
 - [AgentStore.resolveAppearance](<agent-store.cjs.md#s-131f9ea2850450d6>) — [electron/ai/agents/agent-store.cjs:281](<../../../../../../../electron/ai/agents/agent-store.cjs#L281>)
 - [defaultAppearance](<agent-construction.cjs.md#s-69bd5cab9d7b2fa1>) — [electron/ai/agents/agent-store.cjs:284](<../../../../../../../electron/ai/agents/agent-store.cjs#L284>)
-- [defaults](<agent-construction.cjs.md#s-b11797218b524d62>) — [electron/ai/agents/agent-store.cjs:291](<../../../../../../../electron/ai/agents/agent-store.cjs#L291>)
+- [defaults](<agent-construction.cjs.md#s-a6f7591b9f78cb97>) — [electron/ai/agents/agent-store.cjs:291](<../../../../../../../electron/ai/agents/agent-store.cjs#L291>)
 - [AgentStore.avatarUrl](<agent-store.cjs.md#s-78d662b9ac7d6d48>) — [electron/ai/agents/agent-store.cjs:294](<../../../../../../../electron/ai/agents/agent-store.cjs#L294>)
 - [AgentStore.resolveAppearance](<agent-store.cjs.md#s-131f9ea2850450d6>) — [electron/ai/agents/agent-store.cjs:295](<../../../../../../../electron/ai/agents/agent-store.cjs#L295>)
 - [defaultAppearance](<agent-construction.cjs.md#s-69bd5cab9d7b2fa1>) — [electron/ai/agents/agent-store.cjs:296](<../../../../../../../electron/ai/agents/agent-store.cjs#L296>)
@@ -1286,7 +1286,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@252:102&gt;](<agent-store.test.cjs.md#s-919270a70c69e6e2>) — [electron/ai/agents/agent-store.test.cjs:277](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L277>)
 - [&lt;anonymous@297:106&gt;](<agent-store.test.cjs.md#s-4a0a1b0f13ec255e>) — [electron/ai/agents/agent-store.test.cjs:309](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L309>)
 - [&lt;anonymous@392:85&gt;](<agent-store.test.cjs.md#s-872f64c210c4127c>) — [electron/ai/agents/agent-store.test.cjs:399](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L399>)
-- [&lt;anonymous@263:122&gt;](<entity-agents.test.cjs.md#s-d033ccc335f50627>) — [electron/ai/agents/entity-agents.test.cjs:265](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L265>)
+- [&lt;anonymous@267:122&gt;](<entity-agents.test.cjs.md#s-170a0d3c49e413cb>) — [electron/ai/agents/entity-agents.test.cjs:269](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L269>)
 - [&lt;anonymous@183:106&gt;](<../engine-registry.test.cjs.md#s-4ed4a78d66cd545d>) — [electron/ai/engine-registry.test.cjs:206](<../../../../../../../electron/ai/engine-registry.test.cjs#L206>)
 - [main](<../../../scripts/enable-entity-agent-read-access.cjs.md#s-86d517edd5e58413>) — [scripts/enable-entity-agent-read-access.cjs:34](<../../../../../../../scripts/enable-entity-agent-read-access.cjs#L34>)
 
@@ -1321,7 +1321,7 @@ Unresolved / external call sites: 12.
 - [electron/ai/agents/agent-store.test.cjs:277](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L277>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:309](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L309>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:399](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L399>) — static-call-site; coverage not established.
-- [electron/ai/agents/entity-agents.test.cjs:265](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L265>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:269](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L269>) — static-call-site; coverage not established.
 - [electron/ai/engine-registry.test.cjs:206](<../../../../../../../electron/ai/engine-registry.test.cjs#L206>) — static-call-site; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:24](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L24>) — file-import-only; coverage not established.
 - [electron/ai/agents/agent-store.test.cjs:394](<../../../../../../../electron/ai/agents/agent-store.test.cjs#L394>) — file-import-only; coverage not established.
@@ -1606,7 +1606,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [storedOrDefault](<agent-store.cjs.md#s-450719ec7ed10db2>) — [electron/ai/agents/agent-store.cjs:406](<../../../../../../../electron/ai/agents/agent-store.cjs#L406>)
 - [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/agent-store.cjs:408](<../../../../../../../electron/ai/agents/agent-store.cjs#L408>)
 - [ModelRuntimeError.constructor](<../../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/agents/agent-store.cjs:410](<../../../../../../../electron/ai/agents/agent-store.cjs#L410>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-store.cjs:414](<../../../../../../../electron/ai/agents/agent-store.cjs#L414>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-store.cjs:414](<../../../../../../../electron/ai/agents/agent-store.cjs#L414>)
 - [AgentStore.constructionAvatar](<agent-store.cjs.md#s-7aaef4f6575aff33>) — [electron/ai/agents/agent-store.cjs:419](<../../../../../../../electron/ai/agents/agent-store.cjs#L419>)
 - [defaultAppearance](<agent-construction.cjs.md#s-69bd5cab9d7b2fa1>) — [electron/ai/agents/agent-store.cjs:428](<../../../../../../../electron/ai/agents/agent-store.cjs#L428>)
 - [AgentStore.backdropAsset](<agent-store.cjs.md#s-3f40538fbdbbeacd>) — [electron/ai/agents/agent-store.cjs:432](<../../../../../../../electron/ai/agents/agent-store.cjs#L432>)

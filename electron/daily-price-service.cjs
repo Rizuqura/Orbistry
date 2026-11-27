@@ -5,7 +5,9 @@ const {
   rejectSymlink,
   writeJson,
 } = require("./core/persistence/json-store.cjs");
-const engine = require("./engines/daily-price/index.cjs");
+const engine = require("./engines/contracts/yahoo-legacy/daily.cjs");
+const { normalizeSymbol } = require("./domains/indexing/ticker-syntax.cjs");
+const { admitYahoo } = require("./domains/knowledge/yahoo-package.cjs");
 
 /** Resolves an Engine-owned cache file under the active Universe, checking each parent for links. */
 async function cachePath(root, symbol) {
@@ -24,18 +26,23 @@ async function cachePath(root, symbol) {
 
 /** Creates a content-validated disk/memory market cache with request coalescing. Network failures return explicitly stale saved prices when available. */
 function createDailyPriceService({
-  price = engine.price,
+  price = (...args) =>
+    require("./engines/daily-price/index.cjs").price(...args),
   clock = Date.now,
 } = {}) {
   const memory = new Map();
   const pending = new Map();
   /** Loads a ticker's bounded cached snapshot or fetches current Yahoo data. Returns timestamps and explicit cache/failure state to the Portal. */
-  async function get(root, input, force = false) {
-    const symbol = engine.normalizeSymbol(input);
+  async function get(root, input, force = false, grant = null) {
+    const symbol = normalizeSymbol(input);
     if (typeof force !== "boolean")
       throw new Error("Refresh must be a boolean.");
     const target = await cachePath(root, symbol);
-    if (pending.has(target)) return pending.get(target);
+    // Only callers admitted under the same Entity grant share a provider request.
+    const pendingKey = grant
+      ? JSON.stringify([target, grant.key, force])
+      : target;
+    if (pending.has(pendingKey)) return pending.get(pendingKey);
     /** Performs one ticker refresh, surfacing disk failures and retaining valid cached data for offline viewing. */
     async function refresh() {
       let saved = memory.get(target) ?? null;
@@ -63,7 +70,9 @@ function createDailyPriceService({
       let fresh;
       try {
         fresh = engine.snapshotSchema.parse(
-          await price(symbol, { previous: saved, force }),
+          grant
+            ? await grant.fetch({ symbol })
+            : await price(symbol, { previous: saved, force }),
         );
       } catch (error) {
         if (saved)
@@ -90,16 +99,29 @@ function createDailyPriceService({
       return { snapshot: fresh, stale: false, cached: false, warning };
     }
     const job = refresh();
-    pending.set(target, job);
+    pending.set(pendingKey, job);
     try {
       return await job;
     } finally {
-      pending.delete(target);
+      pending.delete(pendingKey);
     }
   }
-  return { get };
+  // Compatibility callers may provide additional host context. Only the private package path accepts a grant.
+  return {
+    get: (root, input, force) => get(root, input, force),
+    getWithGrant: get,
+  };
 }
-const dailyPriceService = createDailyPriceService();
+const packageCache = createDailyPriceService();
+const dailyPriceService = {
+  /** Resolves the reviewed package before consulting the compatible on-disk cache. */
+  async get(root, symbol, force, entityId, stillApplied) {
+    const grant = await admitYahoo(root, entityId, "price", stillApplied);
+    const value = await packageCache.getWithGrant(root, symbol, force, grant);
+    await grant.verify();
+    return value;
+  },
+};
 
 /** Authorizes a saved entity ticker before and after asynchronous network/cache work, rejecting concurrent ticker changes. */
 async function getEntityPrice(root, id, force = false) {
@@ -107,7 +129,15 @@ async function getEntityPrice(root, id, force = false) {
   const state = await knowledge.readKnowledgeIndex(root, id);
   if (!state.priceSymbol)
     throw new Error("Save a ticker for this entity first.");
-  const result = await dailyPriceService.get(root, state.priceSymbol, force);
+  const result = await dailyPriceService.get(
+    root,
+    state.priceSymbol,
+    force,
+    id,
+    async () =>
+      (await knowledge.readKnowledgeIndex(root, id)).priceSymbol ===
+      state.priceSymbol,
+  );
   const current = await knowledge.readKnowledgeIndex(root, id);
   if (current.priceSymbol !== state.priceSymbol)
     throw new Error("Entity ticker changed. Reload Prices.");
@@ -130,13 +160,20 @@ async function resolveIndexedPrice(root, id, menuId, priceId) {
     throw new Error(
       'This yahooPrice() source needs an entity ticker. Specify yahooPrice("TICKER") in the index.',
     );
-  return engine.normalizeSymbol(symbol);
+  return normalizeSymbol(symbol);
 }
 
 /** Retrieves an applied section's Yahoo source and reauthorizes it after asynchronous cache/network work. Concurrent removal or ticker changes reject. */
 async function getIndexedPrice(root, id, menuId, priceId, force = false) {
   const symbol = await resolveIndexedPrice(root, id, menuId, priceId);
-  const result = await dailyPriceService.get(root, symbol, force);
+  const result = await dailyPriceService.get(
+    root,
+    symbol,
+    force,
+    id,
+    async () =>
+      (await resolveIndexedPrice(root, id, menuId, priceId)) === symbol,
+  );
   if ((await resolveIndexedPrice(root, id, menuId, priceId)) !== symbol)
     throw new Error(
       "Indexed ticker changed. Reload the Knowledge Card section.",

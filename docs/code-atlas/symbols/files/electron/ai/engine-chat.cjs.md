@@ -524,7 +524,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 14.
 
-- z .object({ runId: z.string().uuid(), month: require("./chronoz-adapter.cjs").monthSchema, researchStatus: z.enum(&#91;"PUBLISHED", "PARTIAL", "READY"&#93;), sha256: z.string().regex(/^&#91;a- — external-or-dynamic-dispatch; [electron/ai/engine-chat.cjs:306](<../../../../../../electron/ai/engine-chat.cjs#L306>)
+- z .object({ runId: z.string().uuid(), month: require("./chronoz-contract.cjs").monthSchema, researchStatus: z.enum(&#91;"PUBLISHED", "PARTIAL", "READY"&#93;), sha256: z.string().regex(/^&#91;a — external-or-dynamic-dispatch; [electron/ai/engine-chat.cjs:306](<../../../../../../electron/ai/engine-chat.cjs#L306>)
 - z .object — external-or-dynamic-dispatch; [electron/ai/engine-chat.cjs:306](<../../../../../../electron/ai/engine-chat.cjs#L306>)
 - z.string().uuid — external-or-dynamic-dispatch; [electron/ai/engine-chat.cjs:308](<../../../../../../electron/ai/engine-chat.cjs#L308>)
 - z.string — external-or-dynamic-dispatch; [electron/ai/engine-chat.cjs:308](<../../../../../../electron/ai/engine-chat.cjs#L308>)

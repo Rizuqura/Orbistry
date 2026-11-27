@@ -10,8 +10,8 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [MODULES](<catalog.cjs.md#s-8e32e0098d4ac13f>) (VariableDeclaration)
 - [MODULES.&lt;anonymous@161:7&gt;](<catalog.cjs.md#s-5ec114d485d7f1ea>) (ArrowFunction)
 - [moduleFor](<catalog.cjs.md#s-760ea599ad9258b2>) (FunctionDeclaration)
-- [roleFor](<catalog.cjs.md#s-923feac876424dc9>) (FunctionDeclaration)
-- [portable](<catalog.cjs.md#s-60683316afa4a320>) (FunctionDeclaration)
+- [roleFor](<catalog.cjs.md#s-83de78c6acc3c1e2>) (FunctionDeclaration)
+- [portable](<catalog.cjs.md#s-c39d81ba81a8717f>) (FunctionDeclaration)
 
 <a id="s-22b5449a26473c71"></a>
 
@@ -131,7 +131,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [analyze](<analyze.cjs.md#s-50c93f94f5c6bf5b>) — [scripts/code-atlas/analyze.cjs:277](<../../../../../../scripts/code-atlas/analyze.cjs#L277>)
 - [appendPowerShell](<powershell.cjs.md#s-ebdb565846169f3a>) — [scripts/code-atlas/powershell.cjs:38](<../../../../../../scripts/code-atlas/powershell.cjs#L38>)
 
-Unresolved / external call sites: 40.
+Unresolved / external call sites: 41.
 
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:165](<../../../../../../scripts/code-atlas/catalog.cjs#L165>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:166](<../../../../../../scripts/code-atlas/catalog.cjs#L166>)
@@ -141,17 +141,17 @@ Unresolved / external call sites: 40.
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:170](<../../../../../../scripts/code-atlas/catalog.cjs#L170>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:171](<../../../../../../scripts/code-atlas/catalog.cjs#L171>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:172](<../../../../../../scripts/code-atlas/catalog.cjs#L172>)
-- 32 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- 33 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-923feac876424dc9"></a>
+<a id="s-83de78c6acc3c1e2"></a>
 
 ## roleFor
 
-[scripts/code-atlas/catalog.cjs:245](<../../../../../../scripts/code-atlas/catalog.cjs#L245>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:246](<../../../../../../scripts/code-atlas/catalog.cjs#L246>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Classifies evidence sources without equating test association with executable coverage.
 
@@ -179,22 +179,22 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 6.
 
-- /\\.test\\.&#91;cm&#93;?&#91;jt&#93;sx?$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:246](<../../../../../../scripts/code-atlas/catalog.cjs#L246>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:247](<../../../../../../scripts/code-atlas/catalog.cjs#L247>)
-- /\\.d\\.&#91;cm&#93;?ts$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:248](<../../../../../../scripts/code-atlas/catalog.cjs#L248>)
+- /\\.test\\.&#91;cm&#93;?&#91;jt&#93;sx?$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:247](<../../../../../../scripts/code-atlas/catalog.cjs#L247>)
 - file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:248](<../../../../../../scripts/code-atlas/catalog.cjs#L248>)
-- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:250](<../../../../../../scripts/code-atlas/catalog.cjs#L250>)
-- /^(app&#124;components&#124;features&#124;electron)\\//.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:251](<../../../../../../scripts/code-atlas/catalog.cjs#L251>)
+- /\\.d\\.&#91;cm&#93;?ts$/.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:249](<../../../../../../scripts/code-atlas/catalog.cjs#L249>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:249](<../../../../../../scripts/code-atlas/catalog.cjs#L249>)
+- file.startsWith — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:251](<../../../../../../scripts/code-atlas/catalog.cjs#L251>)
+- /^(app&#124;components&#124;features&#124;electron)\\//.test — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:252](<../../../../../../scripts/code-atlas/catalog.cjs#L252>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-60683316afa4a320"></a>
+<a id="s-c39d81ba81a8717f"></a>
 
 ## portable
 
-[scripts/code-atlas/catalog.cjs:256](<../../../../../../scripts/code-atlas/catalog.cjs#L256>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/code-atlas/catalog.cjs:257](<../../../../../../scripts/code-atlas/catalog.cjs#L257>) · FunctionDeclaration · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 Normalizes generated paths so output is byte-identical across supported operating systems.
 
@@ -222,8 +222,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- file.split(path.sep).join — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:257](<../../../../../../scripts/code-atlas/catalog.cjs#L257>)
-- file.split — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:257](<../../../../../../scripts/code-atlas/catalog.cjs#L257>)
+- file.split(path.sep).join — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:258](<../../../../../../scripts/code-atlas/catalog.cjs#L258>)
+- file.split — external-or-dynamic-dispatch; [scripts/code-atlas/catalog.cjs:258](<../../../../../../scripts/code-atlas/catalog.cjs#L258>)
 
 **Related tests / acceptance harnesses:**
 

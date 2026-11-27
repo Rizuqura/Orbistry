@@ -38,8 +38,13 @@ export function EngineNodeSettings({
                 instanceId: config.instanceId,
                 engineId: selected.id,
                 engineVersion: selected.version,
+                ...(selected.packageDigest
+                  ? { packageDigest: selected.packageDigest }
+                  : {}),
                 operation: selected.operations[0],
-                permissionPolicy: "read-only-auto",
+                permissionPolicy: selected.packageDigest
+                  ? "read-only-approval"
+                  : "read-only-auto",
                 parameters: {},
               });
           }}
@@ -91,7 +96,12 @@ export function EngineNodeSettings({
             })
           }
         >
-          <option value="read-only-auto">Automatic read-only access</option>
+          <option
+            disabled={Boolean(config.packageDigest)}
+            value="read-only-auto"
+          >
+            Automatic read-only access
+          </option>
           <option value="disabled">Disabled</option>
           <option value="read-only-approval">
             Read-only with human approval

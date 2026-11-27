@@ -13,11 +13,11 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [EngineNodeSettings.&lt;anonymous@18:39&gt;](<engine-node-settings.tsx.md#s-5e436acb2b03f747>) (ArrowFunction)
 - [EngineNodeSettings.&lt;anonymous@32:21&gt;](<engine-node-settings.tsx.md#s-11e410cf534d137e>) (ArrowFunction)
 - [EngineNodeSettings.&lt;anonymous@32:21&gt;.&lt;anonymous@34:15&gt;](<engine-node-settings.tsx.md#s-6c8803d585864e78>) (ArrowFunction)
-- [EngineNodeSettings.&lt;anonymous@52:28&gt;](<engine-node-settings.tsx.md#s-fb712712d2ec08dd>) (ArrowFunction)
-- [EngineNodeSettings.&lt;anonymous@65:21&gt;](<engine-node-settings.tsx.md#s-49ecada67368ebd2>) (ArrowFunction)
-- [EngineNodeSettings.&lt;anonymous@73:39&gt;](<engine-node-settings.tsx.md#s-c10eadf66cb7fab5>) (ArrowFunction)
-- [EngineNodeSettings.&lt;anonymous@86:21&gt;](<engine-node-settings.tsx.md#s-79a95eeb7f4fd31b>) (ArrowFunction)
-- [EngineNodeSettings.&lt;anonymous@107:21&gt;](<engine-node-settings.tsx.md#s-4239cffec1696653>) (ArrowFunction)
+- [EngineNodeSettings.&lt;anonymous@57:28&gt;](<engine-node-settings.tsx.md#s-34d1d7cb5b96d76e>) (ArrowFunction)
+- [EngineNodeSettings.&lt;anonymous@70:21&gt;](<engine-node-settings.tsx.md#s-ede358e6d18174f0>) (ArrowFunction)
+- [EngineNodeSettings.&lt;anonymous@78:39&gt;](<engine-node-settings.tsx.md#s-a948f30753efddc6>) (ArrowFunction)
+- [EngineNodeSettings.&lt;anonymous@91:21&gt;](<engine-node-settings.tsx.md#s-fc1eb5b4867c812d>) (ArrowFunction)
+- [EngineNodeSettings.&lt;anonymous@117:21&gt;](<engine-node-settings.tsx.md#s-703593c1eb4d8b45>) (ArrowFunction)
 
 <a id="s-fac1ef41c9324262"></a>
 
@@ -101,12 +101,13 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 4.
+Unresolved / external call sites: 5.
 
 - definitions.find — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:18](<../../../../../../features/agents/engine-node-settings.tsx#L18>)
-- definitions.map — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:52](<../../../../../../features/agents/engine-node-settings.tsx#L52>)
-- definition?.operations.map — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:73](<../../../../../../features/agents/engine-node-settings.tsx#L73>)
-- definition?.operations.includes — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:115](<../../../../../../features/agents/engine-node-settings.tsx#L115>)
+- definitions.map — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:57](<../../../../../../features/agents/engine-node-settings.tsx#L57>)
+- definition?.operations.map — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:78](<../../../../../../features/agents/engine-node-settings.tsx#L78>)
+- Boolean — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:100](<../../../../../../features/agents/engine-node-settings.tsx#L100>)
+- definition?.operations.includes — external-or-dynamic-dispatch; [features/agents/engine-node-settings.tsx:125](<../../../../../../features/agents/engine-node-settings.tsx#L125>)
 
 **Related tests / acceptance harnesses:**
 
@@ -246,78 +247,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-fb712712d2ec08dd"></a>
+<a id="s-34d1d7cb5b96d76e"></a>
 
-## EngineNodeSettings.&lt;anonymous@52:28&gt;
+## EngineNodeSettings.&lt;anonymous@57:28&gt;
 
-[features/agents/engine-node-settings.tsx:52](<../../../../../../features/agents/engine-node-settings.tsx#L52>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [EngineNodeSettings](<engine-node-settings.tsx.md#s-288e279cf9770500>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| item | any | compiler-inferred | required |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-49ecada67368ebd2"></a>
-
-## EngineNodeSettings.&lt;anonymous@65:21&gt;
-
-[features/agents/engine-node-settings.tsx:65](<../../../../../../features/agents/engine-node-settings.tsx#L65>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [EngineNodeSettings](<engine-node-settings.tsx.md#s-288e279cf9770500>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| event | any | compiler-inferred | required |
-
-Returns: void (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 1.
-
-- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:66](<../../../../../../features/agents/engine-node-settings.tsx#L66>)
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-c10eadf66cb7fab5"></a>
-
-## EngineNodeSettings.&lt;anonymous@73:39&gt;
-
-[features/agents/engine-node-settings.tsx:73](<../../../../../../features/agents/engine-node-settings.tsx#L73>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/engine-node-settings.tsx:57](<../../../../../../features/agents/engine-node-settings.tsx#L57>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -346,11 +280,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-79a95eeb7f4fd31b"></a>
+<a id="s-ede358e6d18174f0"></a>
 
-## EngineNodeSettings.&lt;anonymous@86:21&gt;
+## EngineNodeSettings.&lt;anonymous@70:21&gt;
 
-[features/agents/engine-node-settings.tsx:86](<../../../../../../features/agents/engine-node-settings.tsx#L86>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/engine-node-settings.tsx:70](<../../../../../../features/agents/engine-node-settings.tsx#L70>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -374,17 +308,50 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:87](<../../../../../../features/agents/engine-node-settings.tsx#L87>)
+- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:71](<../../../../../../features/agents/engine-node-settings.tsx#L71>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4239cffec1696653"></a>
+<a id="s-a948f30753efddc6"></a>
 
-## EngineNodeSettings.&lt;anonymous@107:21&gt;
+## EngineNodeSettings.&lt;anonymous@78:39&gt;
 
-[features/agents/engine-node-settings.tsx:107](<../../../../../../features/agents/engine-node-settings.tsx#L107>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+[features/agents/engine-node-settings.tsx:78](<../../../../../../features/agents/engine-node-settings.tsx#L78>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [EngineNodeSettings](<engine-node-settings.tsx.md#s-288e279cf9770500>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| item | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-fc1eb5b4867c812d"></a>
+
+## EngineNodeSettings.&lt;anonymous@91:21&gt;
+
+[features/agents/engine-node-settings.tsx:91](<../../../../../../features/agents/engine-node-settings.tsx#L91>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -408,7 +375,41 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:108](<../../../../../../features/agents/engine-node-settings.tsx#L108>)
+- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:92](<../../../../../../features/agents/engine-node-settings.tsx#L92>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-703593c1eb4d8b45"></a>
+
+## EngineNodeSettings.&lt;anonymous@117:21&gt;
+
+[features/agents/engine-node-settings.tsx:117](<../../../../../../features/agents/engine-node-settings.tsx#L117>) · ArrowFunction · production · [Agent workspace and construction (Portal)](<../../../../modules/portal-agents.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [EngineNodeSettings](<engine-node-settings.tsx.md#s-288e279cf9770500>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| event | any | compiler-inferred | required |
+
+Returns: void (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- onChange — declaration-without-runtime-body; [features/agents/engine-node-settings.tsx:118](<../../../../../../features/agents/engine-node-settings.tsx#L118>)
 
 **Related tests / acceptance harnesses:**
 

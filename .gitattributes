@@ -1,1 +1,2 @@
 *.pdf binary
+examples/engines/**/index.cjs text eol=lf

@@ -60,6 +60,18 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [&lt;anonymous@661:86&gt;.&lt;anonymous@703:19&gt;.&lt;anonymous@705:11&gt;](<engine-packages.test.cjs.md#s-43eee00dfa3baf0b>) (ArrowFunction)
 - [&lt;anonymous@724:101&gt;](<engine-packages.test.cjs.md#s-69abd07329d9cef3>) (ArrowFunction)
 - [&lt;anonymous@724:101&gt;.cli](<engine-packages.test.cjs.md#s-59542ee5d2b7a2ea>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.status.&lt;anonymous@821:42&gt;](<engine-packages.test.cjs.md#s-4cca25df1f64677a>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.trust](<engine-packages.test.cjs.md#s-75b377043cc5628b>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.link](<engine-packages.test.cjs.md#s-1e41b548a6cdae8c>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.&lt;anonymous@835:53&gt;](<engine-packages.test.cjs.md#s-b4425a0843dc411c>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.&lt;anonymous@855:42&gt;](<engine-packages.test.cjs.md#s-5ae4596bd85ffa5e>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.&lt;anonymous@859:54&gt;](<engine-packages.test.cjs.md#s-b50d43b2ba75fb9e>) (ArrowFunction)
+- [&lt;anonymous@796:89&gt;.&lt;anonymous@861:54&gt;](<engine-packages.test.cjs.md#s-5b8aeecef64f6c6e>) (ArrowFunction)
+- [&lt;anonymous@864:112&gt;](<engine-packages.test.cjs.md#s-b50f9582b28483cb>) (ArrowFunction)
+- [&lt;anonymous@864:112&gt;.&lt;anonymous@895:40&gt;](<engine-packages.test.cjs.md#s-6aa579d6306aaaa0>) (ArrowFunction)
+- [&lt;anonymous@864:112&gt;.&lt;anonymous@907:33&gt;](<engine-packages.test.cjs.md#s-799d1b513dc82410>) (ArrowFunction)
 
 <a id="s-10188b1e39545648"></a>
 
@@ -79,7 +91,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 31.
+Unresolved / external call sites: 33.
 
 - require — module-loader; [electron/engine-packages.test.cjs:1](<../../../../../electron/engine-packages.test.cjs#L1>)
 - require — module-loader; [electron/engine-packages.test.cjs:2](<../../../../../electron/engine-packages.test.cjs#L2>)
@@ -89,7 +101,7 @@ Unresolved / external call sites: 31.
 - require — module-loader; [electron/engine-packages.test.cjs:6](<../../../../../electron/engine-packages.test.cjs#L6>)
 - require — module-loader; [electron/engine-packages.test.cjs:7](<../../../../../electron/engine-packages.test.cjs#L7>)
 - require — module-loader; [electron/engine-packages.test.cjs:8](<../../../../../electron/engine-packages.test.cjs#L8>)
-- 23 additional sites in [symbol-index.json](<../../symbol-index.json>).
+- 25 additional sites in [symbol-index.json](<../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
@@ -116,7 +128,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [initPackage](<engines/registry/authoring.cjs.md#s-bbfb28bee2f9c0b0>) — [electron/engine-packages.test.cjs:41](<../../../../../electron/engine-packages.test.cjs#L41>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:42](<../../../../../electron/engine-packages.test.cjs#L42>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:42](<../../../../../electron/engine-packages.test.cjs#L42>)
 
 **Called by (statically resolved):**
 
@@ -138,6 +150,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@606:86&gt;](<engine-packages.test.cjs.md#s-1631cd253604baa9>) — [electron/engine-packages.test.cjs:607](<../../../../../electron/engine-packages.test.cjs#L607>)
 - [&lt;anonymous@661:86&gt;](<engine-packages.test.cjs.md#s-61bdae00820745a0>) — [electron/engine-packages.test.cjs:662](<../../../../../electron/engine-packages.test.cjs#L662>)
 - [&lt;anonymous@724:101&gt;](<engine-packages.test.cjs.md#s-69abd07329d9cef3>) — [electron/engine-packages.test.cjs:725](<../../../../../electron/engine-packages.test.cjs#L725>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:797](<../../../../../electron/engine-packages.test.cjs#L797>)
+- [&lt;anonymous@864:112&gt;](<engine-packages.test.cjs.md#s-b50f9582b28483cb>) — [electron/engine-packages.test.cjs:865](<../../../../../electron/engine-packages.test.cjs#L865>)
 
 Unresolved / external call sites: 8.
 
@@ -170,6 +184,8 @@ Unresolved / external call sites: 8.
 - [electron/engine-packages.test.cjs:607](<../../../../../electron/engine-packages.test.cjs#L607>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:662](<../../../../../electron/engine-packages.test.cjs#L662>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:725](<../../../../../electron/engine-packages.test.cjs#L725>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:797](<../../../../../electron/engine-packages.test.cjs#L797>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:865](<../../../../../electron/engine-packages.test.cjs#L865>) — static-call-site; coverage not established.
 
 <a id="s-720d20bfc95a43f7"></a>
 
@@ -326,9 +342,9 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:62](<../../../../../electron/engine-packages.test.cjs#L62>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:113](<../../../../../electron/engine-packages.test.cjs#L113>)
-- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engine-packages.test.cjs:116](<../../../../../electron/engine-packages.test.cjs#L116>)
-- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engine-packages.test.cjs:123](<../../../../../electron/engine-packages.test.cjs#L123>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:113](<../../../../../electron/engine-packages.test.cjs#L113>)
+- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engine-packages.test.cjs:116](<../../../../../electron/engine-packages.test.cjs#L116>)
+- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engine-packages.test.cjs:123](<../../../../../electron/engine-packages.test.cjs#L123>)
 
 **Called by (statically resolved):**
 
@@ -405,8 +421,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:135](<../../../../../electron/engine-packages.test.cjs#L135>)
 - [activate](<engine-packages.test.cjs.md#s-171e5ed034af8a29>) — [electron/engine-packages.test.cjs:136](<../../../../../electron/engine-packages.test.cjs#L136>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:155](<../../../../../electron/engine-packages.test.cjs#L155>)
-- [EnginePackageRegistry.executeTool](<engines/registry/registry.cjs.md#s-340eb5dbd3aa5064>) — [electron/engine-packages.test.cjs:157](<../../../../../electron/engine-packages.test.cjs#L157>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:155](<../../../../../electron/engine-packages.test.cjs#L155>)
+- [EnginePackageRegistry.executeTool](<engines/registry/registry.cjs.md#s-f025f9ee5da1f3ed>) — [electron/engine-packages.test.cjs:157](<../../../../../electron/engine-packages.test.cjs#L157>)
 
 **Called by (statically resolved):**
 
@@ -447,8 +463,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:167](<../../../../../electron/engine-packages.test.cjs#L167>)
 - [activate](<engine-packages.test.cjs.md#s-171e5ed034af8a29>) — [electron/engine-packages.test.cjs:168](<../../../../../electron/engine-packages.test.cjs#L168>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:171](<../../../../../electron/engine-packages.test.cjs#L171>)
-- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engine-packages.test.cjs:178](<../../../../../electron/engine-packages.test.cjs#L178>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:171](<../../../../../electron/engine-packages.test.cjs#L171>)
+- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engine-packages.test.cjs:178](<../../../../../electron/engine-packages.test.cjs#L178>)
 
 **Called by (statically resolved):**
 
@@ -554,12 +570,12 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:193](<../../../../../electron/engine-packages.test.cjs#L193>)
 - [activate](<engine-packages.test.cjs.md#s-171e5ed034af8a29>) — [electron/engine-packages.test.cjs:194](<../../../../../electron/engine-packages.test.cjs#L194>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:203](<../../../../../electron/engine-packages.test.cjs#L203>)
-- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engine-packages.test.cjs:206](<../../../../../electron/engine-packages.test.cjs#L206>)
-- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engine-packages.test.cjs:210](<../../../../../electron/engine-packages.test.cjs#L210>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:215](<../../../../../electron/engine-packages.test.cjs#L215>)
-- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engine-packages.test.cjs:218](<../../../../../electron/engine-packages.test.cjs#L218>)
-- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engine-packages.test.cjs:222](<../../../../../electron/engine-packages.test.cjs#L222>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:203](<../../../../../electron/engine-packages.test.cjs#L203>)
+- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engine-packages.test.cjs:206](<../../../../../electron/engine-packages.test.cjs#L206>)
+- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engine-packages.test.cjs:210](<../../../../../electron/engine-packages.test.cjs#L210>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:215](<../../../../../electron/engine-packages.test.cjs#L215>)
+- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engine-packages.test.cjs:218](<../../../../../electron/engine-packages.test.cjs#L218>)
+- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engine-packages.test.cjs:222](<../../../../../electron/engine-packages.test.cjs#L222>)
 
 **Called by (statically resolved):**
 
@@ -751,7 +767,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [manifest](<engines/contracts/contract.cjs.md#s-b1886f302525e88e>) — [electron/engine-packages.test.cjs:279](<../../../../../electron/engine-packages.test.cjs#L279>)
+- [manifest](<engines/contracts/contract.cjs.md#s-419652773bdad136>) — [electron/engine-packages.test.cjs:279](<../../../../../electron/engine-packages.test.cjs#L279>)
 
 **Called by (statically resolved):**
 
@@ -784,7 +800,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [manifest](<engines/contracts/contract.cjs.md#s-b1886f302525e88e>) — [electron/engine-packages.test.cjs:282](<../../../../../electron/engine-packages.test.cjs#L282>)
+- [manifest](<engines/contracts/contract.cjs.md#s-419652773bdad136>) — [electron/engine-packages.test.cjs:282](<../../../../../electron/engine-packages.test.cjs#L282>)
 
 **Called by (statically resolved):**
 
@@ -851,7 +867,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [checkSchema](<engines/contracts/contract.cjs.md#s-0dde703b8b1c929a>) — [electron/engine-packages.test.cjs:319](<../../../../../electron/engine-packages.test.cjs#L319>)
+- [checkSchema](<engines/contracts/contract.cjs.md#s-760f3047fac594e7>) — [electron/engine-packages.test.cjs:319](<../../../../../electron/engine-packages.test.cjs#L319>)
 
 **Called by (statically resolved):**
 
@@ -1282,10 +1298,10 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:460](<../../../../../electron/engine-packages.test.cjs#L460>)
 - [activate](<engine-packages.test.cjs.md#s-171e5ed034af8a29>) — [electron/engine-packages.test.cjs:461](<../../../../../electron/engine-packages.test.cjs#L461>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:470](<../../../../../electron/engine-packages.test.cjs#L470>)
-- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-d6c27a69455a5f09>) — [electron/engine-packages.test.cjs:473](<../../../../../electron/engine-packages.test.cjs#L473>)
-- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/engine-packages.test.cjs:489](<../../../../../electron/engine-packages.test.cjs#L489>)
-- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-a35bb6e14bafba1e>) — [electron/engine-packages.test.cjs:498](<../../../../../electron/engine-packages.test.cjs#L498>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:470](<../../../../../electron/engine-packages.test.cjs#L470>)
+- [EnginePackageRegistry.readResult](<engines/registry/registry.cjs.md#s-34db5a148ab121e2>) — [electron/engine-packages.test.cjs:473](<../../../../../electron/engine-packages.test.cjs#L473>)
+- [EnginePackageRegistry.constructor](<engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/engine-packages.test.cjs:489](<../../../../../electron/engine-packages.test.cjs#L489>)
+- [EnginePackageRegistry.execute](<engines/registry/registry.cjs.md#s-61267d4d373b62b8>) — [electron/engine-packages.test.cjs:498](<../../../../../electron/engine-packages.test.cjs#L498>)
 
 **Called by (statically resolved):**
 
@@ -2168,3 +2184,453 @@ Unresolved / external call sites: 3.
 - [electron/engine-packages.test.cjs:751](<../../../../../electron/engine-packages.test.cjs#L751>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:764](<../../../../../electron/engine-packages.test.cjs#L764>) — static-call-site; coverage not established.
 - [electron/engine-packages.test.cjs:781](<../../../../../electron/engine-packages.test.cjs#L781>) — static-call-site; coverage not established.
+
+<a id="s-d8ce262c4b7b63c7"></a>
+
+## &lt;anonymous@796:89&gt;
+
+[electron/engine-packages.test.cjs:796](<../../../../../electron/engine-packages.test.cjs#L796>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [electron/engine-packages.test.cjs](<engine-packages.test.cjs.md#s-10188b1e39545648>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| t | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+- [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:797](<../../../../../electron/engine-packages.test.cjs#L797>)
+- [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/engine-packages.test.cjs:809](<../../../../../electron/engine-packages.test.cjs#L809>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:822](<../../../../../electron/engine-packages.test.cjs#L822>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:832](<../../../../../electron/engine-packages.test.cjs#L832>)
+- [&lt;anonymous@796:89&gt;.trust](<engine-packages.test.cjs.md#s-75b377043cc5628b>) — [electron/engine-packages.test.cjs:833](<../../../../../electron/engine-packages.test.cjs#L833>)
+- [&lt;anonymous@796:89&gt;.link](<engine-packages.test.cjs.md#s-1e41b548a6cdae8c>) — [electron/engine-packages.test.cjs:834](<../../../../../electron/engine-packages.test.cjs#L834>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:835](<../../../../../electron/engine-packages.test.cjs#L835>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:838](<../../../../../electron/engine-packages.test.cjs#L838>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:840](<../../../../../electron/engine-packages.test.cjs#L840>)
+- [readKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-c0c55e94f399d0ad>) — [electron/engine-packages.test.cjs:846](<../../../../../electron/engine-packages.test.cjs#L846>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:850](<../../../../../electron/engine-packages.test.cjs#L850>)
+- [&lt;anonymous@796:89&gt;.trust](<engine-packages.test.cjs.md#s-75b377043cc5628b>) — [electron/engine-packages.test.cjs:851](<../../../../../electron/engine-packages.test.cjs#L851>)
+- [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>) — [electron/engine-packages.test.cjs:852](<../../../../../electron/engine-packages.test.cjs#L852>)
+- [&lt;anonymous@796:89&gt;.link](<engine-packages.test.cjs.md#s-1e41b548a6cdae8c>) — [electron/engine-packages.test.cjs:853](<../../../../../electron/engine-packages.test.cjs#L853>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:855](<../../../../../electron/engine-packages.test.cjs#L855>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:859](<../../../../../electron/engine-packages.test.cjs#L859>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:861](<../../../../../electron/engine-packages.test.cjs#L861>)
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 22.
+
+- require — module-loader; [electron/engine-packages.test.cjs:801](<../../../../../electron/engine-packages.test.cjs#L801>)
+- require — module-loader; [electron/engine-packages.test.cjs:802](<../../../../../electron/engine-packages.test.cjs#L802>)
+- path.join — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:803](<../../../../../electron/engine-packages.test.cjs#L803>)
+- fs.cp — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:804](<../../../../../electron/engine-packages.test.cjs#L804>)
+- path.resolve — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:804](<../../../../../electron/engine-packages.test.cjs#L804>)
+- assert.equal — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:822](<../../../../../electron/engine-packages.test.cjs#L822>)
+- f.registry.install — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:823](<../../../../../electron/engine-packages.test.cjs#L823>)
+- assert.equal — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:832](<../../../../../electron/engine-packages.test.cjs#L832>)
+- 14 additional sites in [symbol-index.json](<../../symbol-index.json>).
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-981c8a99e0c29c28"></a>
+
+## &lt;anonymous@796:89&gt;.status
+
+[electron/engine-packages.test.cjs:820](<../../../../../electron/engine-packages.test.cjs#L820>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: unknown (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:821](<../../../../../electron/engine-packages.test.cjs#L821>)
+
+**Called by (statically resolved):**
+
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:822](<../../../../../electron/engine-packages.test.cjs#L822>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:832](<../../../../../electron/engine-packages.test.cjs#L832>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:838](<../../../../../electron/engine-packages.test.cjs#L838>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:840](<../../../../../electron/engine-packages.test.cjs#L840>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:850](<../../../../../electron/engine-packages.test.cjs#L850>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:852](<../../../../../electron/engine-packages.test.cjs#L852>)
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:822](<../../../../../electron/engine-packages.test.cjs#L822>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:832](<../../../../../electron/engine-packages.test.cjs#L832>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:838](<../../../../../electron/engine-packages.test.cjs#L838>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:840](<../../../../../electron/engine-packages.test.cjs#L840>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:850](<../../../../../electron/engine-packages.test.cjs#L850>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:852](<../../../../../electron/engine-packages.test.cjs#L852>) — static-call-site; coverage not established.
+
+<a id="s-4cca25df1f64677a"></a>
+
+## &lt;anonymous@796:89&gt;.status.&lt;anonymous@821:42&gt;
+
+[electron/engine-packages.test.cjs:821](<../../../../../electron/engine-packages.test.cjs#L821>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;.status](<engine-packages.test.cjs.md#s-981c8a99e0c29c28>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-75b377043cc5628b"></a>
+
+## &lt;anonymous@796:89&gt;.trust
+
+[electron/engine-packages.test.cjs:824](<../../../../../electron/engine-packages.test.cjs#L824>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:833](<../../../../../electron/engine-packages.test.cjs#L833>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:851](<../../../../../electron/engine-packages.test.cjs#L851>)
+
+Unresolved / external call sites: 1.
+
+- f.registry.trust — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:824](<../../../../../electron/engine-packages.test.cjs#L824>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:833](<../../../../../electron/engine-packages.test.cjs#L833>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:851](<../../../../../electron/engine-packages.test.cjs#L851>) — static-call-site; coverage not established.
+
+<a id="s-1e41b548a6cdae8c"></a>
+
+## &lt;anonymous@796:89&gt;.link
+
+[electron/engine-packages.test.cjs:825](<../../../../../electron/engine-packages.test.cjs#L825>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:834](<../../../../../electron/engine-packages.test.cjs#L834>)
+- [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:853](<../../../../../electron/engine-packages.test.cjs#L853>)
+
+Unresolved / external call sites: 1.
+
+- f.registry.link — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:826](<../../../../../electron/engine-packages.test.cjs#L826>)
+
+**Related tests / acceptance harnesses:**
+
+- [electron/engine-packages.test.cjs:834](<../../../../../electron/engine-packages.test.cjs#L834>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:853](<../../../../../electron/engine-packages.test.cjs#L853>) — static-call-site; coverage not established.
+
+<a id="s-b4425a0843dc411c"></a>
+
+## &lt;anonymous@796:89&gt;.&lt;anonymous@835:53&gt;
+
+[electron/engine-packages.test.cjs:835](<../../../../../electron/engine-packages.test.cjs#L835>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-5ae4596bd85ffa5e"></a>
+
+## &lt;anonymous@796:89&gt;.&lt;anonymous@855:42&gt;
+
+[electron/engine-packages.test.cjs:855](<../../../../../electron/engine-packages.test.cjs#L855>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-b50d43b2ba75fb9e"></a>
+
+## &lt;anonymous@796:89&gt;.&lt;anonymous@859:54&gt;
+
+[electron/engine-packages.test.cjs:859](<../../../../../electron/engine-packages.test.cjs#L859>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-5b8aeecef64f6c6e"></a>
+
+## &lt;anonymous@796:89&gt;.&lt;anonymous@861:54&gt;
+
+[electron/engine-packages.test.cjs:861](<../../../../../electron/engine-packages.test.cjs#L861>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@796:89&gt;](<engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-b50f9582b28483cb"></a>
+
+## &lt;anonymous@864:112&gt;
+
+[electron/engine-packages.test.cjs:864](<../../../../../electron/engine-packages.test.cjs#L864>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [electron/engine-packages.test.cjs](<engine-packages.test.cjs.md#s-10188b1e39545648>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| t | any | compiler-inferred | required |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+- [fixture](<engine-packages.test.cjs.md#s-b71f48b3abd96309>) — [electron/engine-packages.test.cjs:865](<../../../../../electron/engine-packages.test.cjs#L865>)
+- [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/engine-packages.test.cjs:877](<../../../../../electron/engine-packages.test.cjs#L877>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:895](<../../../../../electron/engine-packages.test.cjs#L895>)
+- [packageSource](<domains/knowledge/package-source.cjs.md#s-1884c4d4b5872c82>) — [electron/engine-packages.test.cjs:907](<../../../../../electron/engine-packages.test.cjs#L907>)
+- [readKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-c0c55e94f399d0ad>) — [electron/engine-packages.test.cjs:910](<../../../../../electron/engine-packages.test.cjs#L910>)
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 21.
+
+- require — module-loader; [electron/engine-packages.test.cjs:869](<../../../../../electron/engine-packages.test.cjs#L869>)
+- require — module-loader; [electron/engine-packages.test.cjs:870](<../../../../../electron/engine-packages.test.cjs#L870>)
+- path.join — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:871](<../../../../../electron/engine-packages.test.cjs#L871>)
+- fs.cp — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:872](<../../../../../electron/engine-packages.test.cjs#L872>)
+- path.resolve — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:872](<../../../../../electron/engine-packages.test.cjs#L872>)
+- path.join — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:882](<../../../../../electron/engine-packages.test.cjs#L882>)
+- JSON.parse — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:883](<../../../../../electron/engine-packages.test.cjs#L883>)
+- fs.readFile — external-or-dynamic-dispatch; [electron/engine-packages.test.cjs:883](<../../../../../electron/engine-packages.test.cjs#L883>)
+- 13 additional sites in [symbol-index.json](<../../symbol-index.json>).
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-6aa579d6306aaaa0"></a>
+
+## &lt;anonymous@864:112&gt;.&lt;anonymous@895:40&gt;
+
+[electron/engine-packages.test.cjs:895](<../../../../../electron/engine-packages.test.cjs#L895>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@864:112&gt;](<engine-packages.test.cjs.md#s-b50f9582b28483cb>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-799d1b513dc82410"></a>
+
+## &lt;anonymous@864:112&gt;.&lt;anonymous@907:33&gt;
+
+[electron/engine-packages.test.cjs:907](<../../../../../electron/engine-packages.test.cjs#L907>) · ArrowFunction · test · [Electron composition and IPC security](<../../../modules/desktop.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [&lt;anonymous@864:112&gt;](<engine-packages.test.cjs.md#s-b50f9582b28483cb>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: boolean (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.

@@ -291,8 +291,8 @@ Returns: { id: any; mode: any; sources: any; } (compiler-inferred). Implementati
 
 **Called by (statically resolved):**
 
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:299](<../../../../../../electron/ai/agents/agent-construction.cjs#L299>)
-- [validateConstruction](<agents/agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:305](<../../../../../../electron/ai/agents/agent-construction.cjs#L305>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:323](<../../../../../../electron/ai/agents/agent-construction.cjs#L323>)
+- [validateConstruction](<agents/agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:329](<../../../../../../electron/ai/agents/agent-construction.cjs#L329>)
 - [loadBox](<agents/construction-context.cjs.md#s-4f4ef58489b1d9b8>) — [electron/ai/agents/construction-context.cjs:51](<../../../../../../electron/ai/agents/construction-context.cjs#L51>)
 - [readFile](<agents/construction-context.cjs.md#s-92e0b43be6c8bdfa>) — [electron/ai/agents/construction-context.cjs:99](<../../../../../../electron/ai/agents/construction-context.cjs#L99>)
 - [validateConversation](<chat/conversation-store.cjs.md#s-8fcc95a0b5a57e3e>) — [electron/ai/chat/conversation-store.cjs:36](<../../../../../../electron/ai/chat/conversation-store.cjs#L36>)

@@ -31,9 +31,9 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [EngineSettings.&lt;anonymous@153:27&gt;.&lt;anonymous@158:26&gt;](<engine-settings.tsx.md#s-46c78641f208da77>) (ArrowFunction)
 - [EngineSettings.&lt;anonymous@180:28&gt;](<engine-settings.tsx.md#s-4befdc5513da40e0>) (ArrowFunction)
 - [EngineSettings.&lt;anonymous@180:28&gt;.&lt;anonymous@185:26&gt;](<engine-settings.tsx.md#s-13b635eef750b024>) (ArrowFunction)
-- [EngineSettings.&lt;anonymous@265:34&gt;](<engine-settings.tsx.md#s-d997a0adfe0d2311>) (ArrowFunction)
-- [EngineSettings.&lt;anonymous@279:38&gt;](<engine-settings.tsx.md#s-14bb03733a47fecd>) (ArrowFunction)
-- [EngineSettings.&lt;anonymous@356:45&gt;](<engine-settings.tsx.md#s-36fac759371fe1ca>) (ArrowFunction)
+- [EngineSettings.&lt;anonymous@269:34&gt;](<engine-settings.tsx.md#s-34189cf8bac1828d>) (ArrowFunction)
+- [EngineSettings.&lt;anonymous@283:38&gt;](<engine-settings.tsx.md#s-897b162e8d133717>) (ArrowFunction)
+- [EngineSettings.&lt;anonymous@360:45&gt;](<engine-settings.tsx.md#s-d8f452fd7937a876>) (ArrowFunction)
 
 <a id="s-2e33911143ea00a5"></a>
 
@@ -890,11 +890,11 @@ Unresolved / external call sites: 1.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d997a0adfe0d2311"></a>
+<a id="s-34189cf8bac1828d"></a>
 
-## EngineSettings.&lt;anonymous@265:34&gt;
+## EngineSettings.&lt;anonymous@269:34&gt;
 
-[features/model-settings/engine-settings.tsx:265](<../../../../../../features/model-settings/engine-settings.tsx#L265>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
+[features/model-settings/engine-settings.tsx:269](<../../../../../../features/model-settings/engine-settings.tsx#L269>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -918,17 +918,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- link.operations.join — external-or-dynamic-dispatch; [features/model-settings/engine-settings.tsx:271](<../../../../../../features/model-settings/engine-settings.tsx#L271>)
+- link.operations.join — external-or-dynamic-dispatch; [features/model-settings/engine-settings.tsx:275](<../../../../../../features/model-settings/engine-settings.tsx#L275>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-14bb03733a47fecd"></a>
+<a id="s-897b162e8d133717"></a>
 
-## EngineSettings.&lt;anonymous@279:38&gt;
+## EngineSettings.&lt;anonymous@283:38&gt;
 
-[features/model-settings/engine-settings.tsx:279](<../../../../../../features/model-settings/engine-settings.tsx#L279>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
+[features/model-settings/engine-settings.tsx:283](<../../../../../../features/model-settings/engine-settings.tsx#L283>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -952,17 +952,17 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- JSON.stringify — external-or-dynamic-dispatch; [features/model-settings/engine-settings.tsx:315](<../../../../../../features/model-settings/engine-settings.tsx#L315>)
+- JSON.stringify — external-or-dynamic-dispatch; [features/model-settings/engine-settings.tsx:319](<../../../../../../features/model-settings/engine-settings.tsx#L319>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-36fac759371fe1ca"></a>
+<a id="s-d8f452fd7937a876"></a>
 
-## EngineSettings.&lt;anonymous@356:45&gt;
+## EngineSettings.&lt;anonymous@360:45&gt;
 
-[features/model-settings/engine-settings.tsx:356](<../../../../../../features/model-settings/engine-settings.tsx#L356>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
+[features/model-settings/engine-settings.tsx:360](<../../../../../../features/model-settings/engine-settings.tsx#L360>) · ArrowFunction · production · [Settings and Engine list](<../../../../modules/portal-settings.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 

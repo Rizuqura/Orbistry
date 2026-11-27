@@ -15,17 +15,18 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) (FunctionDeclaration)
 - [main.&lt;anonymous@94:7&gt;](<electron-entity-agents-smoke.cjs.md#s-d2cf3a36349e023a>) (ArrowFunction)
 - [main.&lt;anonymous@100:7&gt;](<electron-entity-agents-smoke.cjs.md#s-c888c99d528d7f82>) (ArrowFunction)
-- [main.&lt;anonymous@269:7&gt;](<electron-entity-agents-smoke.cjs.md#s-c02971d134683851>) (ArrowFunction)
-- [main.&lt;anonymous@322:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6e736348823faaf3>) (ArrowFunction)
-- [main.&lt;anonymous@322:24&gt;.&lt;anonymous@338:33&gt;](<electron-entity-agents-smoke.cjs.md#s-1e9466135d8c335a>) (ArrowFunction)
-- [main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;](<electron-entity-agents-smoke.cjs.md#s-8ff1b0285c5d8920>) (ArrowFunction)
-- [main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;.&lt;anonymous@364:45&gt;](<electron-entity-agents-smoke.cjs.md#s-4b0e8b3eed71a18d>) (ArrowFunction)
-- [main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;.&lt;anonymous@377:11&gt;](<electron-entity-agents-smoke.cjs.md#s-0eedfb15d771fcc0>) (ArrowFunction)
-- [main.&lt;anonymous@401:26&gt;](<electron-entity-agents-smoke.cjs.md#s-87ec34bb7b0e8c54>) (ArrowFunction)
-- [main.&lt;anonymous@409:26&gt;](<electron-entity-agents-smoke.cjs.md#s-59c47f59693d9b8c>) (ArrowFunction)
-- [main.&lt;anonymous@420:26&gt;](<electron-entity-agents-smoke.cjs.md#s-10ab51e351eebf6c>) (ArrowFunction)
-- [main.&lt;anonymous@435:26&gt;](<electron-entity-agents-smoke.cjs.md#s-92171e459273f89c>) (ArrowFunction)
-- [&lt;anonymous@455:14&gt;](<electron-entity-agents-smoke.cjs.md#s-d8c82be1f867aced>) (ArrowFunction)
+- [main.&lt;anonymous@272:7&gt;](<electron-entity-agents-smoke.cjs.md#s-7f1b4c0168c45d6d>) (ArrowFunction)
+- [main.&lt;anonymous@325:25&gt;](<electron-entity-agents-smoke.cjs.md#s-928ceefccce2de6e>) (ArrowFunction)
+- [main.&lt;anonymous@331:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6d7a07f923381431>) (ArrowFunction)
+- [main.&lt;anonymous@331:24&gt;.&lt;anonymous@348:33&gt;](<electron-entity-agents-smoke.cjs.md#s-20b6c73ab078ec47>) (ArrowFunction)
+- [main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;](<electron-entity-agents-smoke.cjs.md#s-785ee2bbd7b52ad9>) (ArrowFunction)
+- [main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;.&lt;anonymous@374:45&gt;](<electron-entity-agents-smoke.cjs.md#s-79302703e7f89f12>) (ArrowFunction)
+- [main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;.&lt;anonymous@387:11&gt;](<electron-entity-agents-smoke.cjs.md#s-1ef5a7fcb706837d>) (ArrowFunction)
+- [main.&lt;anonymous@411:26&gt;](<electron-entity-agents-smoke.cjs.md#s-32c0f7cdf16313ba>) (ArrowFunction)
+- [main.&lt;anonymous@419:26&gt;](<electron-entity-agents-smoke.cjs.md#s-2e88914bc8612bc7>) (ArrowFunction)
+- [main.&lt;anonymous@430:26&gt;](<electron-entity-agents-smoke.cjs.md#s-3a74a809a49bddb8>) (ArrowFunction)
+- [main.&lt;anonymous@445:26&gt;](<electron-entity-agents-smoke.cjs.md#s-654e2271951b87ca>) (ArrowFunction)
+- [&lt;anonymous@465:14&gt;](<electron-entity-agents-smoke.cjs.md#s-2fedb39efafc2e89>) (ArrowFunction)
 
 <a id="s-7153cef18dd6c471"></a>
 
@@ -39,7 +40,7 @@ Purpose evidence: structural.
 
 **Calls (statically resolved):**
 
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:455](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L455>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:465](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L465>)
 
 **Called by (statically resolved):**
 
@@ -54,7 +55,7 @@ Unresolved / external call sites: 8.
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:5](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L5>)
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:6](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L6>)
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:7](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L7>)
-- main().catch — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:455](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L455>)
+- main().catch — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:465](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L465>)
 
 **Related tests / acceptance harnesses:**
 
@@ -82,19 +83,19 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [createChip](<electron-worldview-smoke.cjs.md#s-a98134da941ff00c>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:91](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L91>)
 - [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:92](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L92>)
-- [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:123](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L123>)
-- [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:204](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L204>)
-- [createChip](<electron-worldview-smoke.cjs.md#s-a98134da941ff00c>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:267](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L267>)
-- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:274](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L274>)
-- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:294](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L294>)
-- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:309](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L309>)
-- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:387](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L387>)
+- [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:126](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L126>)
+- [readChips](<electron-worldview-smoke.cjs.md#s-ad27b3f857382c88>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:207](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L207>)
+- [createChip](<electron-worldview-smoke.cjs.md#s-a98134da941ff00c>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:270](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L270>)
+- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:277](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L277>)
+- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:297](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L297>)
+- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:312](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L312>)
+- [main.openAssignments](<electron-entity-agents-smoke.cjs.md#s-adbcc526c074baee>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:397](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L397>)
 
 **Called by (statically resolved):**
 
-- [scripts/acceptance/electron-entity-agents-smoke.cjs](<electron-entity-agents-smoke.cjs.md#s-7153cef18dd6c471>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:455](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L455>)
+- [scripts/acceptance/electron-entity-agents-smoke.cjs](<electron-entity-agents-smoke.cjs.md#s-7153cef18dd6c471>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:465](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L465>)
 
-Unresolved / external call sites: 214.
+Unresolved / external call sites: 215.
 
 - fs.mkdtemp — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:11](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L11>)
 - path.join — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:11](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L11>)
@@ -104,11 +105,11 @@ Unresolved / external call sites: 214.
 - path.resolve — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:14](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L14>)
 - fs.mkdir — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:18](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L18>)
 - fs.mkdir — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:19](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L19>)
-- 206 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- 207 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:455](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L455>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:465](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L465>) — static-call-site; coverage not established.
 
 <a id="s-b8375b7ae0d1912c"></a>
 
@@ -276,10 +277,10 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:274](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L274>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:294](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L294>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:309](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L309>)
-- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:387](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L387>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:277](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L277>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:297](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L297>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:312](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L312>)
+- [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>) — [scripts/acceptance/electron-entity-agents-smoke.cjs:397](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L397>)
 
 Unresolved / external call sites: 11.
 
@@ -295,10 +296,10 @@ Unresolved / external call sites: 11.
 
 **Related tests / acceptance harnesses:**
 
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:274](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L274>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:294](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L294>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:309](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L309>) — static-call-site; coverage not established.
-- [scripts/acceptance/electron-entity-agents-smoke.cjs:387](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L387>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:277](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L277>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:297](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L297>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:312](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L312>) — static-call-site; coverage not established.
+- [scripts/acceptance/electron-entity-agents-smoke.cjs:397](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L397>) — static-call-site; coverage not established.
 
 <a id="s-d2cf3a36349e023a"></a>
 
@@ -362,7 +363,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 8.
+Unresolved / external call sites: 10.
 
 - process .getBuiltinModule("node:module") .createRequire — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:101](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L101>)
 - process .getBuiltinModule — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:101](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L101>)
@@ -370,18 +371,19 @@ Unresolved / external call sites: 8.
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:104](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L104>)
 - require( repository + "/electron/domains/knowledge/knowledge-store.cjs", ).saveKnowledgeIndex — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:107](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L107>)
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:107](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L107>)
-- require( repository + "/electron/engines/backend-identity/identity-compiler.cjs", ).generate — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:116](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L116>)
+- require( repository + "/scripts/fixtures/assigned-yahoo-package.cjs", ).linkMockYahoo — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:116](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L116>)
 - require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:116](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L116>)
+- 2 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-c02971d134683851"></a>
+<a id="s-7f1b4c0168c45d6d"></a>
 
-## main.&lt;anonymous@269:7&gt;
+## main.&lt;anonymous@272:7&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:269](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L269>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:272](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L272>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -405,18 +407,52 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 2.
 
-- /Saving&#124;Loading/.test — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:270](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L270>)
-- document.querySelector — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:271](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L271>)
+- /Saving&#124;Loading/.test — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:273](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L273>)
+- document.querySelector — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:274](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L274>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-6e736348823faaf3"></a>
+<a id="s-928ceefccce2de6e"></a>
 
-## main.&lt;anonymous@322:24&gt;
+## main.&lt;anonymous@325:25&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:322](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L322>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:325](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L325>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 1.
+
+- window.orbistryDesktop.ai.saveCredential — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:326](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L326>)
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-6d7a07f923381431"></a>
+
+## main.&lt;anonymous@331:24&gt;
+
+[scripts/acceptance/electron-entity-agents-smoke.cjs:331](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L331>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -441,31 +477,31 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 9.
 
-- process .getBuiltinModule("node:module") .createRequire — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:323](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L323>)
-- process .getBuiltinModule — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:323](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L323>)
-- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:326](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L326>)
-- require(repository + "/electron/ai/json-store.cjs").writeJson — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:327](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L327>)
-- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:327](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L327>)
-- path.join — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:328](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L328>)
-- app.getPath — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:328](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L328>)
-- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:330](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L330>)
+- process .getBuiltinModule("node:module") .createRequire — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:332](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L332>)
+- process .getBuiltinModule — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:332](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L332>)
+- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:335](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L335>)
+- require(repository + "/electron/ai/json-store.cjs").writeJson — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:336](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L336>)
+- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:336](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L336>)
+- path.join — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:337](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L337>)
+- app.getPath — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:337](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L337>)
+- require — module-loader; [scripts/acceptance/electron-entity-agents-smoke.cjs:339](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L339>)
 - 1 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-1e9466135d8c335a"></a>
+<a id="s-20b6c73ab078ec47"></a>
 
-## main.&lt;anonymous@322:24&gt;.&lt;anonymous@338:33&gt;
+## main.&lt;anonymous@331:24&gt;.&lt;anonymous@348:33&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:338](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L338>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:348](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L348>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [main.&lt;anonymous@322:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6e736348823faaf3>).
+Lexical owner: [main.&lt;anonymous@331:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6d7a07f923381431>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -489,17 +525,17 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-8ff1b0285c5d8920"></a>
+<a id="s-785ee2bbd7b52ad9"></a>
 
-## main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;
+## main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:363](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L363>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:373](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L373>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [main.&lt;anonymous@322:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6e736348823faaf3>).
+Lexical owner: [main.&lt;anonymous@331:24&gt;](<electron-entity-agents-smoke.cjs.md#s-6d7a07f923381431>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -517,28 +553,28 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 6.
 
-- body.messages.find — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:364](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L364>)
-- JSON.parse — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:367](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L367>)
-- metadata.content.split("\\n").slice(1).join — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:368](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L368>)
-- metadata.content.split("\\n").slice — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:368](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L368>)
-- metadata.content.split — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:368](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L368>)
-- context.engines.find — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:376](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L376>)
+- body.messages.find — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:374](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L374>)
+- JSON.parse — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:377](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L377>)
+- metadata.content.split("\\n").slice(1).join — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:378](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L378>)
+- metadata.content.split("\\n").slice — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:378](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L378>)
+- metadata.content.split — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:378](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L378>)
+- context.engines.find — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:386](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L386>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4b0e8b3eed71a18d"></a>
+<a id="s-79302703e7f89f12"></a>
 
-## main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;.&lt;anonymous@364:45&gt;
+## main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;.&lt;anonymous@374:45&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:364](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L364>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:374](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L374>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;](<electron-entity-agents-smoke.cjs.md#s-8ff1b0285c5d8920>).
+Lexical owner: [main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;](<electron-entity-agents-smoke.cjs.md#s-785ee2bbd7b52ad9>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -556,23 +592,23 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- message.content.startsWith — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:365](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L365>)
+- message.content.startsWith — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:375](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L375>)
 
 **Related tests / acceptance harnesses:**
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-0eedfb15d771fcc0"></a>
+<a id="s-1ef5a7fcb706837d"></a>
 
-## main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;.&lt;anonymous@377:11&gt;
+## main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;.&lt;anonymous@387:11&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:377](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L377>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:387](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L387>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
 Purpose evidence: undocumented.
 
-Lexical owner: [main.&lt;anonymous@322:24&gt;.&lt;anonymous@363:52&gt;](<electron-entity-agents-smoke.cjs.md#s-8ff1b0285c5d8920>).
+Lexical owner: [main.&lt;anonymous@331:24&gt;.&lt;anonymous@373:52&gt;](<electron-entity-agents-smoke.cjs.md#s-785ee2bbd7b52ad9>).
 
 | Parameter | Contract | Evidence | Optional / rest |
 | --- | --- | --- | --- |
@@ -595,44 +631,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-87ec34bb7b0e8c54"></a>
+<a id="s-32c0f7cdf16313ba"></a>
 
-## main.&lt;anonymous@401:26&gt;
+## main.&lt;anonymous@411:26&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:401](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L401>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| (none) | — | source syntax | — |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-59c47f59693d9b8c"></a>
-
-## main.&lt;anonymous@409:26&gt;
-
-[scripts/acceptance/electron-entity-agents-smoke.cjs:409](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L409>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:411](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L411>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -661,44 +664,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-10ab51e351eebf6c"></a>
+<a id="s-2e88914bc8612bc7"></a>
 
-## main.&lt;anonymous@420:26&gt;
+## main.&lt;anonymous@419:26&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:420](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L420>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| (none) | — | source syntax | — |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-92171e459273f89c"></a>
-
-## main.&lt;anonymous@435:26&gt;
-
-[scripts/acceptance/electron-entity-agents-smoke.cjs:435](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L435>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:419](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L419>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -727,11 +697,77 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-d8c82be1f867aced"></a>
+<a id="s-3a74a809a49bddb8"></a>
 
-## &lt;anonymous@455:14&gt;
+## main.&lt;anonymous@430:26&gt;
 
-[scripts/acceptance/electron-entity-agents-smoke.cjs:455](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L455>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+[scripts/acceptance/electron-entity-agents-smoke.cjs:430](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L430>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-654e2271951b87ca"></a>
+
+## main.&lt;anonymous@445:26&gt;
+
+[scripts/acceptance/electron-entity-agents-smoke.cjs:445](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L445>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [main](<electron-entity-agents-smoke.cjs.md#s-2c78af71e5677987>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-2fedb39efafc2e89"></a>
+
+## &lt;anonymous@465:14&gt;
+
+[scripts/acceptance/electron-entity-agents-smoke.cjs:465](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L465>) · ArrowFunction · tooling · [Development and acceptance tooling](<../../../../modules/tooling.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -755,7 +791,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:456](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L456>)
+- console.error — external-or-dynamic-dispatch; [scripts/acceptance/electron-entity-agents-smoke.cjs:466](<../../../../../../scripts/acceptance/electron-entity-agents-smoke.cjs#L466>)
 
 **Related tests / acceptance harnesses:**
 

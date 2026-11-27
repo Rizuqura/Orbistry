@@ -125,10 +125,10 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:291](<../../../../../../../electron/ai/agents/agent-construction.cjs#L291>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:345](<../../../../../../../electron/ai/agents/agent-construction.cjs#L345>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:346](<../../../../../../../electron/ai/agents/agent-construction.cjs#L346>)
-- [validateConstruction](<agent-construction.cjs.md#s-c40c24f689846a0d>) — [electron/ai/agents/agent-construction.cjs:366](<../../../../../../../electron/ai/agents/agent-construction.cjs#L366>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:315](<../../../../../../../electron/ai/agents/agent-construction.cjs#L315>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:369](<../../../../../../../electron/ai/agents/agent-construction.cjs#L369>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:370](<../../../../../../../electron/ai/agents/agent-construction.cjs#L370>)
+- [validateConstruction](<agent-construction.cjs.md#s-818f4b1aaf6e1b48>) — [electron/ai/agents/agent-construction.cjs:390](<../../../../../../../electron/ai/agents/agent-construction.cjs#L390>)
 - [AgentStore.save.&lt;anonymous@580:23&gt;](<agent-store.cjs.md#s-92c7ebeb214bb98f>) — [electron/ai/agents/agent-store.cjs:591](<../../../../../../../electron/ai/agents/agent-store.cjs#L591>)
 - [buildContextMessages](<../inference/prompt-builder.cjs.md#s-241c37ad734d8bcd>) — [electron/ai/inference/prompt-builder.cjs:99](<../../../../../../../electron/ai/inference/prompt-builder.cjs#L99>)
 

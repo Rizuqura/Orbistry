@@ -654,7 +654,7 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [initializeVault](<domains/universe/vault-settings.cjs.md#s-50d69121ed2233a7>) — [electron/main.cjs:164](<../../../../../electron/main.cjs#L164>)
-- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/main.cjs:170](<../../../../../electron/main.cjs#L170>)
+- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/main.cjs:170](<../../../../../electron/main.cjs#L170>)
 - [guardedIpc.handle](<core/security/desktop-security.cjs.md#s-9b10b864799d9edb>) — [electron/main.cjs:178](<../../../../../electron/main.cjs#L178>)
 - [guardedIpc.handle](<core/security/desktop-security.cjs.md#s-9b10b864799d9edb>) — [electron/main.cjs:179](<../../../../../electron/main.cjs#L179>)
 - [guardedIpc.handle](<core/security/desktop-security.cjs.md#s-9b10b864799d9edb>) — [electron/main.cjs:180](<../../../../../electron/main.cjs#L180>)
@@ -1416,7 +1416,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EngineRegistry.shutdown](<ai/engine-registry.cjs.md#s-922650a4d5052117>) — [electron/main.cjs:278](<../../../../../electron/main.cjs#L278>)
+- [EngineRegistry.shutdown](<ai/engine-registry.cjs.md#s-82da9094ec0d68df>) — [electron/main.cjs:278](<../../../../../electron/main.cjs#L278>)
 
 **Called by (statically resolved):**
 

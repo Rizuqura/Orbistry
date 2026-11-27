@@ -375,7 +375,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/excel-service.test.cjs:162](<../../../../../electron/excel-service.test.cjs#L162>)
+- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/excel-service.test.cjs:162](<../../../../../electron/excel-service.test.cjs#L162>)
 
 **Called by (statically resolved):**
 
@@ -554,7 +554,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [workbook](<../scripts/fixtures/excel.cjs.md#s-e5526a486067cf6f>) — [electron/excel-service.test.cjs:207](<../../../../../electron/excel-service.test.cjs#L207>)
 - [createExcelService](<excel-service.cjs.md#s-adfd4f07e6ae9eaf>) — [electron/excel-service.test.cjs:218](<../../../../../electron/excel-service.test.cjs#L218>)
-- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-9fddfe3a6bc8df63>) — [electron/excel-service.test.cjs:259](<../../../../../electron/excel-service.test.cjs#L259>)
+- [registerWorldViewIpc](<core/ipc/worldview-ipc.cjs.md#s-a743a4d867b92345>) — [electron/excel-service.test.cjs:259](<../../../../../electron/excel-service.test.cjs#L259>)
 
 **Called by (statically resolved):**
 

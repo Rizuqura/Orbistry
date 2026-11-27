@@ -64,7 +64,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [main](<build/build-excel-engine.cjs.md#s-c4423626340c2941>) — [scripts/build/build-excel-engine.cjs:106](<../../../../../scripts/build/build-excel-engine.cjs#L106>)
-- [main](<build/build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:54](<../../../../../scripts/build/build-yahoo-financials-engine.cjs#L54>)
+- [main](<build/build-yahoo-financials-engine.cjs.md#s-226388a0515524ab>) — [scripts/build/build-yahoo-financials-engine.cjs:69](<../../../../../scripts/build/build-yahoo-financials-engine.cjs#L69>)
 
 Unresolved / external call sites: 9.
 

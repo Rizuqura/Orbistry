@@ -70,7 +70,7 @@ Returns: {} (compiler-inferred). Implementation present.
 - [&lt;anonymous@270:118&gt;](<../../backend-identity.test.cjs.md#s-06d03ee2d489e037>) — [electron/backend-identity.test.cjs:307](<../../../../../../../electron/backend-identity.test.cjs#L307>)
 - [&lt;anonymous@270:118&gt;](<../../backend-identity.test.cjs.md#s-06d03ee2d489e037>) — [electron/backend-identity.test.cjs:308](<../../../../../../../electron/backend-identity.test.cjs#L308>)
 - [&lt;anonymous@311:107&gt;](<../../backend-identity.test.cjs.md#s-d1130f1134dcd1ff>) — [electron/backend-identity.test.cjs:316](<../../../../../../../electron/backend-identity.test.cjs#L316>)
-- [generate.compileIdentity.encodeSource](<identity-compiler.cjs.md#s-ae162f23d69f55da>) — [electron/engines/backend-identity/identity-compiler.cjs:279](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L279>)
+- [generate.compileIdentity.encodeSource](<identity-compiler.cjs.md#s-80e161a08d14a00f>) — [electron/engines/backend-identity/identity-compiler.cjs:294](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L294>)
 
 Unresolved / external call sites: 13.
 

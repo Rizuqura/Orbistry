@@ -198,7 +198,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [client](<yahoo-engine-contract.test.cjs.md#s-7fcb8c837289945b>) — [electron/yahoo-engine-contract.test.cjs:61](<../../../../../electron/yahoo-engine-contract.test.cjs#L61>)
 - [executeNativeEngine](<engines/native.cjs.md#s-acb52912a7e235f5>) — [electron/yahoo-engine-contract.test.cjs:62](<../../../../../electron/yahoo-engine-contract.test.cjs#L62>)
-- [createFinancialEngine.getQuote](<engines/yahoo-financials/index.cjs.md#s-2238407e6ff5dbe9>) — [electron/yahoo-engine-contract.test.cjs:72](<../../../../../electron/yahoo-engine-contract.test.cjs#L72>)
+- [createFinancialEngine.getQuote](<../packages/yahoo-finance/src/financials.cjs.md#s-8078a931afed3bac>) — [electron/yahoo-engine-contract.test.cjs:72](<../../../../../electron/yahoo-engine-contract.test.cjs#L72>)
 - [executeNativeEngine](<engines/native.cjs.md#s-acb52912a7e235f5>) — [electron/yahoo-engine-contract.test.cjs:83](<../../../../../electron/yahoo-engine-contract.test.cjs#L83>)
 - [executeNativeEngine](<engines/native.cjs.md#s-acb52912a7e235f5>) — [electron/yahoo-engine-contract.test.cjs:86](<../../../../../electron/yahoo-engine-contract.test.cjs#L86>)
 - [client](<yahoo-engine-contract.test.cjs.md#s-7fcb8c837289945b>) — [electron/yahoo-engine-contract.test.cjs:96](<../../../../../electron/yahoo-engine-contract.test.cjs#L96>)
@@ -244,8 +244,8 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [client](<yahoo-engine-contract.test.cjs.md#s-7fcb8c837289945b>) — [electron/yahoo-engine-contract.test.cjs:102](<../../../../../electron/yahoo-engine-contract.test.cjs#L102>)
-- [createFinancialEngine.getPriceHistory](<engines/yahoo-financials/index.cjs.md#s-4f24f7870860aa94>) — [electron/yahoo-engine-contract.test.cjs:104](<../../../../../electron/yahoo-engine-contract.test.cjs#L104>)
-- [createFinancialEngine.getPriceHistory](<engines/yahoo-financials/index.cjs.md#s-4f24f7870860aa94>) — [electron/yahoo-engine-contract.test.cjs:111](<../../../../../electron/yahoo-engine-contract.test.cjs#L111>)
+- [createFinancialEngine.getPriceHistory](<../packages/yahoo-finance/src/financials.cjs.md#s-6be68267c6d4bc33>) — [electron/yahoo-engine-contract.test.cjs:104](<../../../../../electron/yahoo-engine-contract.test.cjs#L104>)
+- [createFinancialEngine.getPriceHistory](<../packages/yahoo-finance/src/financials.cjs.md#s-6be68267c6d4bc33>) — [electron/yahoo-engine-contract.test.cjs:111](<../../../../../electron/yahoo-engine-contract.test.cjs#L111>)
 
 **Called by (statically resolved):**
 
@@ -478,24 +478,31 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [client](<yahoo-engine-contract.test.cjs.md#s-7fcb8c837289945b>) — [electron/yahoo-engine-contract.test.cjs:167](<../../../../../electron/yahoo-engine-contract.test.cjs#L167>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/yahoo-engine-contract.test.cjs:172](<../../../../../electron/yahoo-engine-contract.test.cjs#L172>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/yahoo-engine-contract.test.cjs:191](<../../../../../electron/yahoo-engine-contract.test.cjs#L191>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/yahoo-engine-contract.test.cjs:172](<../../../../../electron/yahoo-engine-contract.test.cjs#L172>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:177](<../../../../../electron/yahoo-engine-contract.test.cjs#L177>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:179](<../../../../../electron/yahoo-engine-contract.test.cjs#L179>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:182](<../../../../../electron/yahoo-engine-contract.test.cjs#L182>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:183](<../../../../../electron/yahoo-engine-contract.test.cjs#L183>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:185](<../../../../../electron/yahoo-engine-contract.test.cjs#L185>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:187](<../../../../../electron/yahoo-engine-contract.test.cjs#L187>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/yahoo-engine-contract.test.cjs:191](<../../../../../electron/yahoo-engine-contract.test.cjs#L191>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:197](<../../../../../electron/yahoo-engine-contract.test.cjs#L197>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/yahoo-engine-contract.test.cjs:201](<../../../../../electron/yahoo-engine-contract.test.cjs#L201>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 16.
+Unresolved / external call sites: 8.
 
 - Date.now — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:166](<../../../../../electron/yahoo-engine-contract.test.cjs#L166>)
 - engine.createFinancialEngine — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:168](<../../../../../electron/yahoo-engine-contract.test.cjs#L168>)
-- service.get — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:177](<../../../../../electron/yahoo-engine-contract.test.cjs#L177>)
 - assert.equal — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:178](<../../../../../electron/yahoo-engine-contract.test.cjs#L178>)
-- service.get — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:179](<../../../../../electron/yahoo-engine-contract.test.cjs#L179>)
-- service.get — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:182](<../../../../../electron/yahoo-engine-contract.test.cjs#L182>)
-- service.get — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:183](<../../../../../electron/yahoo-engine-contract.test.cjs#L183>)
-- service.get — signature-only-candidate; [electron/yahoo-engine-contract.test.cjs:185](<../../../../../electron/yahoo-engine-contract.test.cjs#L185>)
-- 8 additional sites in [symbol-index.json](<../../symbol-index.json>).
+- assert.equal — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:186](<../../../../../electron/yahoo-engine-contract.test.cjs#L186>)
+- assert.equal — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:190](<../../../../../electron/yahoo-engine-contract.test.cjs#L190>)
+- assert.equal — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:198](<../../../../../electron/yahoo-engine-contract.test.cjs#L198>)
+- assert.match — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:199](<../../../../../electron/yahoo-engine-contract.test.cjs#L199>)
+- assert.rejects — external-or-dynamic-dispatch; [electron/yahoo-engine-contract.test.cjs:200](<../../../../../electron/yahoo-engine-contract.test.cjs#L200>)
 
 **Related tests / acceptance harnesses:**
 
@@ -724,9 +731,9 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/yahoo-engine-contract.test.cjs:221](<../../../../../electron/yahoo-engine-contract.test.cjs#L221>)
-- [getAuthorizedHistory](<financial-service.cjs.md#s-468568001e3c5ce7>) — [electron/yahoo-engine-contract.test.cjs:243](<../../../../../electron/yahoo-engine-contract.test.cjs#L243>)
-- [getAuthorizedHistory](<financial-service.cjs.md#s-468568001e3c5ce7>) — [electron/yahoo-engine-contract.test.cjs:246](<../../../../../electron/yahoo-engine-contract.test.cjs#L246>)
-- [getAuthorizedHistory](<financial-service.cjs.md#s-468568001e3c5ce7>) — [electron/yahoo-engine-contract.test.cjs:257](<../../../../../electron/yahoo-engine-contract.test.cjs#L257>)
+- [getAuthorizedHistory](<financial-service.cjs.md#s-e00c905ba349043c>) — [electron/yahoo-engine-contract.test.cjs:243](<../../../../../electron/yahoo-engine-contract.test.cjs#L243>)
+- [getAuthorizedHistory](<financial-service.cjs.md#s-e00c905ba349043c>) — [electron/yahoo-engine-contract.test.cjs:246](<../../../../../electron/yahoo-engine-contract.test.cjs#L246>)
+- [getAuthorizedHistory](<financial-service.cjs.md#s-e00c905ba349043c>) — [electron/yahoo-engine-contract.test.cjs:257](<../../../../../electron/yahoo-engine-contract.test.cjs#L257>)
 
 **Called by (statically resolved):**
 

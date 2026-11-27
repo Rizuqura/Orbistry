@@ -7,7 +7,7 @@ const {
 } = require("../entity/worldview-store.cjs");
 const { readVaultPreview } = require("../universe/vault-service.cjs");
 const { parseKnowledgeIndex } = require("../indexing/knowledge-index.cjs");
-const { normalizeSymbol } = require("../../engines/daily-price/index.cjs");
+const { normalizeSymbol } = require("../indexing/ticker-syntax.cjs");
 const {
   readRecord,
   resolveKnowledgeSource,

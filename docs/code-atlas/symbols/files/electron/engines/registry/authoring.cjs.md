@@ -78,7 +78,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [initTemporaryEntry](<../../engine-signing.test.cjs.md#s-2db75a0c9a167587>) — [electron/engine-signing.test.cjs:172](<../../../../../../../electron/engine-signing.test.cjs#L172>)
 - [main](<../../../scripts/acceptance/electron-backend-reset-smoke.cjs.md#s-648eff2573c5a425>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:65](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L65>)
 - [main](<../../../scripts/acceptance/electron-backend-reset-smoke.cjs.md#s-648eff2573c5a425>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:89](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L89>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:112](<../../../../../../../scripts/orbistry-engine.cjs#L112>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:113](<../../../../../../../scripts/orbistry-engine.cjs#L113>)
 
 Unresolved / external call sites: 11.
 
@@ -127,9 +127,9 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:71](<../../../../../../../electron/engines/registry/authoring.cjs#L71>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:73](<../../../../../../../electron/engines/registry/authoring.cjs#L73>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:82](<../../../../../../../electron/engines/registry/authoring.cjs#L82>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:71](<../../../../../../../electron/engines/registry/authoring.cjs#L71>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:73](<../../../../../../../electron/engines/registry/authoring.cjs#L73>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:82](<../../../../../../../electron/engines/registry/authoring.cjs#L82>)
 
 **Called by (statically resolved):**
 
@@ -176,13 +176,13 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:101](<../../../../../../../electron/engines/registry/authoring.cjs#L101>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:111](<../../../../../../../electron/engines/registry/authoring.cjs#L111>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:101](<../../../../../../../electron/engines/registry/authoring.cjs#L101>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:111](<../../../../../../../electron/engines/registry/authoring.cjs#L111>)
 - [download](<authoring.cjs.md#s-0041180bfde21954>) — [electron/engines/registry/authoring.cjs:117](<../../../../../../../electron/engines/registry/authoring.cjs#L117>)
-- [manifest](<../contracts/contract.cjs.md#s-b1886f302525e88e>) — [electron/engines/registry/authoring.cjs:118](<../../../../../../../electron/engines/registry/authoring.cjs#L118>)
+- [manifest](<../contracts/contract.cjs.md#s-419652773bdad136>) — [electron/engines/registry/authoring.cjs:118](<../../../../../../../electron/engines/registry/authoring.cjs#L118>)
 - [parseJson](<package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/registry/authoring.cjs:118](<../../../../../../../electron/engines/registry/authoring.cjs#L118>)
 - [safeDirectory](<../../core/persistence/json-store.cjs.md#s-429fa54bc1a890a0>) — [electron/engines/registry/authoring.cjs:123](<../../../../../../../electron/engines/registry/authoring.cjs#L123>)
-- [fail](<../contracts/contract.cjs.md#s-85aeb8bea7b60d5e>) — [electron/engines/registry/authoring.cjs:140](<../../../../../../../electron/engines/registry/authoring.cjs#L140>)
+- [fail](<../contracts/contract.cjs.md#s-b26f7a166006912b>) — [electron/engines/registry/authoring.cjs:140](<../../../../../../../electron/engines/registry/authoring.cjs#L140>)
 - [download](<authoring.cjs.md#s-0041180bfde21954>) — [electron/engines/registry/authoring.cjs:144](<../../../../../../../electron/engines/registry/authoring.cjs#L144>)
 - [safeDirectory](<../../core/persistence/json-store.cjs.md#s-429fa54bc1a890a0>) — [electron/engines/registry/authoring.cjs:152](<../../../../../../../electron/engines/registry/authoring.cjs#L152>)
 - [inspectPackage](<package.cjs.md#s-71ed017a00706142>) — [electron/engines/registry/authoring.cjs:155](<../../../../../../../electron/engines/registry/authoring.cjs#L155>)
@@ -193,7 +193,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@574:106&gt;](<../../engine-packages.test.cjs.md#s-dd8dd447d9bb9292>) — [electron/engine-packages.test.cjs:585](<../../../../../../../electron/engine-packages.test.cjs#L585>)
 - [&lt;anonymous@574:106&gt;](<../../engine-packages.test.cjs.md#s-dd8dd447d9bb9292>) — [electron/engine-packages.test.cjs:590](<../../../../../../../electron/engine-packages.test.cjs#L590>)
 - [&lt;anonymous@194:103&gt;](<../../engine-signing.test.cjs.md#s-41839bdef2512cfd>) — [electron/engine-signing.test.cjs:213](<../../../../../../../electron/engine-signing.test.cjs#L213>)
-- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:130](<../../../../../../../scripts/orbistry-engine.cjs#L130>)
+- [main](<../../../scripts/orbistry-engine.cjs.md#s-74bbb93b9a0b7abf>) — [scripts/orbistry-engine.cjs:131](<../../../../../../../scripts/orbistry-engine.cjs#L131>)
 
 Unresolved / external call sites: 22.
 

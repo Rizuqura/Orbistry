@@ -57,16 +57,20 @@ Unresolved / external call sites: 8.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-11f72856c775c5cf"></a>
@@ -89,7 +93,7 @@ Returns: { sourceNotes?: any; priceSymbol?: any; draft: any; applied: any; menus
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [normalizeSymbol](<../indexing/ticker-syntax.cjs.md#s-fa1b2f32fc2cc10e>) — [electron/domains/knowledge/knowledge-store.cjs:24](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L24>)
 
 **Called by (statically resolved):**
 
@@ -99,24 +103,27 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [saveKnowledgeNote.saveSourceNote](<knowledge-store.cjs.md#s-1654fd018e79f10a>) — [electron/domains/knowledge/knowledge-store.cjs:159](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L159>)
 - [savePriceSymbol.writePriceSymbol](<knowledge-store.cjs.md#s-f9823235072108c5>) — [electron/domains/knowledge/knowledge-store.cjs:186](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L186>)
 
-Unresolved / external call sites: 2.
+Unresolved / external call sites: 1.
 
-- normalizeSymbol — signature-only-candidate; [electron/domains/knowledge/knowledge-store.cjs:24](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L24>)
 - Array.isArray — external-or-dynamic-dispatch; [electron/domains/knowledge/knowledge-store.cjs:26](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L26>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-c0c55e94f399d0ad"></a>
@@ -147,13 +154,15 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
+- [&lt;anonymous@1366:119&gt;](<../../ai/agents/entity-agents.test.cjs.md#s-58653e683a59839a>) — [electron/ai/agents/entity-agents.test.cjs:1385](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1385>)
 - [&lt;anonymous@357:94&gt;.&lt;anonymous@358:11&gt;](<../../backend-identity.test.cjs.md#s-7efbda7815859ecb>) — [electron/backend-identity.test.cjs:362](<../../../../../../../electron/backend-identity.test.cjs#L362>)
 - [&lt;anonymous@453:103&gt;.&lt;anonymous@454:11&gt;](<../../backend-identity.test.cjs.md#s-90ca171901a43834>) — [electron/backend-identity.test.cjs:456](<../../../../../../../electron/backend-identity.test.cjs#L456>)
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:627](<../../../../../../../electron/backend-identity.test.cjs#L627>)
-- [registerWorldViewIpc."knowledge-load"](<../../core/ipc/worldview-ipc.cjs.md#s-d4da3d49912a4a8f>) — [electron/core/ipc/worldview-ipc.cjs:209](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L209>)
-- [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/daily-price-service.cjs:107](<../../../../../../../electron/daily-price-service.cjs#L107>)
-- [getEntityPrice](<../../daily-price-service.cjs.md#s-d2b17dd7b406f45e>) — [electron/daily-price-service.cjs:111](<../../../../../../../electron/daily-price-service.cjs#L111>)
-- [resolveIndexedPrice](<../../daily-price-service.cjs.md#s-ed4eb674fb9b15e6>) — [electron/daily-price-service.cjs:119](<../../../../../../../electron/daily-price-service.cjs#L119>)
+- [registerWorldViewIpc."knowledge-load"](<../../core/ipc/worldview-ipc.cjs.md#s-a63b1c679edfd19d>) — [electron/core/ipc/worldview-ipc.cjs:216](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L216>)
+- [getEntityPrice](<../../daily-price-service.cjs.md#s-228713be9d1393e3>) — [electron/daily-price-service.cjs:129](<../../../../../../../electron/daily-price-service.cjs#L129>)
+- [getEntityPrice.&lt;anonymous@137:5&gt;](<../../daily-price-service.cjs.md#s-c585afe75536c141>) — [electron/daily-price-service.cjs:138](<../../../../../../../electron/daily-price-service.cjs#L138>)
+- [getEntityPrice](<../../daily-price-service.cjs.md#s-228713be9d1393e3>) — [electron/daily-price-service.cjs:141](<../../../../../../../electron/daily-price-service.cjs#L141>)
+- [resolveIndexedPrice](<../../daily-price-service.cjs.md#s-bc6ef6804f3a2ab0>) — [electron/daily-price-service.cjs:149](<../../../../../../../electron/daily-price-service.cjs#L149>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:222](<../../../../../../../electron/daily-price.test.cjs#L222>)
 - [&lt;anonymous@98:86&gt;.&lt;anonymous@99:22&gt;](<knowledge-store.test.cjs.md#s-bf2d9cd52533bc64>) — [electron/domains/knowledge/knowledge-store.test.cjs:108](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L108>)
 - [&lt;anonymous@98:86&gt;.&lt;anonymous@99:22&gt;](<knowledge-store.test.cjs.md#s-bf2d9cd52533bc64>) — [electron/domains/knowledge/knowledge-store.test.cjs:136](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L136>)
@@ -163,12 +172,17 @@ Returns: unknown (compiler-inferred). Implementation present.
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:277](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L277>)
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:278](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L278>)
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:287](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L287>)
+- [packageSource.reference](<package-source.cjs.md#s-5a15f265f6ea6ea9>) — [electron/domains/knowledge/package-source.cjs:18](<../../../../../../../electron/domains/knowledge/package-source.cjs#L18>)
+- [&lt;anonymous@796:89&gt;](<../../engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:846](<../../../../../../../electron/engine-packages.test.cjs#L846>)
+- [&lt;anonymous@864:112&gt;](<../../engine-packages.test.cjs.md#s-b50f9582b28483cb>) — [electron/engine-packages.test.cjs:910](<../../../../../../../electron/engine-packages.test.cjs#L910>)
 - [capture](<../../engines/backend-identity/identity-compiler.cjs.md#s-1f99e7da5df73158>) — [electron/engines/backend-identity/identity-compiler.cjs:153](<../../../../../../../electron/engines/backend-identity/identity-compiler.cjs#L153>)
-- [resolve](<../../financial-service.cjs.md#s-7c53c7bf0ebb20eb>) — [electron/financial-service.cjs:133](<../../../../../../../electron/financial-service.cjs#L133>)
-- [getAuthorizedHistory.symbol](<../../financial-service.cjs.md#s-a226ab5b25a63d89>) — [electron/financial-service.cjs:170](<../../../../../../../electron/financial-service.cjs#L170>)
+- [resolve](<../../financial-service.cjs.md#s-8f8dd0c6e55aec18>) — [electron/financial-service.cjs:168](<../../../../../../../electron/financial-service.cjs#L168>)
+- [getAuthorizedHistory.symbol](<../../financial-service.cjs.md#s-2e1b4d6265e710ac>) — [electron/financial-service.cjs:211](<../../../../../../../electron/financial-service.cjs#L211>)
 - [&lt;anonymous@164:95&gt;.&lt;anonymous@165:16&gt;.&lt;anonymous@198:30&gt;](<../../financial-service.test.cjs.md#s-ab684a8a69ff8a78>) — [electron/financial-service.test.cjs:199](<../../../../../../../electron/financial-service.test.cjs#L199>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:456](<../../../../../../../electron/image-parser.test.cjs#L456>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:466](<../../../../../../../electron/image-parser.test.cjs#L466>)
+- [main](<../../../scripts/acceptance/yahoo-package-lifecycle.cjs.md#s-a519dde3e44c97fd>) — [scripts/acceptance/yahoo-package-lifecycle.cjs:136](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L136>)
+- [main](<../../../scripts/acceptance/yahoo-package-lifecycle.cjs.md#s-a519dde3e44c97fd>) — [scripts/acceptance/yahoo-package-lifecycle.cjs:144](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L144>)
 
 Unresolved / external call sites: 1.
 
@@ -176,6 +190,7 @@ Unresolved / external call sites: 1.
 
 **Related tests / acceptance harnesses:**
 
+- [electron/ai/agents/entity-agents.test.cjs:1385](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1385>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:362](<../../../../../../../electron/backend-identity.test.cjs#L362>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:456](<../../../../../../../electron/backend-identity.test.cjs#L456>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:627](<../../../../../../../electron/backend-identity.test.cjs#L627>) — static-call-site; coverage not established.
@@ -188,20 +203,28 @@ Unresolved / external call sites: 1.
 - [electron/domains/knowledge/knowledge-store.test.cjs:277](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L277>) — static-call-site; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:278](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L278>) — static-call-site; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:287](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L287>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:846](<../../../../../../../electron/engine-packages.test.cjs#L846>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:910](<../../../../../../../electron/engine-packages.test.cjs#L910>) — static-call-site; coverage not established.
 - [electron/financial-service.test.cjs:199](<../../../../../../../electron/financial-service.test.cjs#L199>) — static-call-site; coverage not established.
 - [electron/image-parser.test.cjs:456](<../../../../../../../electron/image-parser.test.cjs#L456>) — static-call-site; coverage not established.
 - [electron/image-parser.test.cjs:466](<../../../../../../../electron/image-parser.test.cjs#L466>) — static-call-site; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:136](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L136>) — static-call-site; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:144](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L144>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-a34679b5e2ad30eb"></a>
@@ -228,11 +251,11 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/domains/knowledge/knowledge-store.cjs:40](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L40>)
+- [parseKnowledgeIndex](<../indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/domains/knowledge/knowledge-store.cjs:40](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L40>)
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-validate"](<../../core/ipc/worldview-ipc.cjs.md#s-8cd8b2b9c2fc5a44>) — [electron/core/ipc/worldview-ipc.cjs:221](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L221>)
+- [registerWorldViewIpc."knowledge-validate"](<../../core/ipc/worldview-ipc.cjs.md#s-b73e4e433c888784>) — [electron/core/ipc/worldview-ipc.cjs:228](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L228>)
 - [saveKnowledgeIndex.writeIndex](<knowledge-store.cjs.md#s-b342ffff622fda36>) — [electron/domains/knowledge/knowledge-store.cjs:87](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L87>)
 - [&lt;anonymous@156:76&gt;.&lt;anonymous@157:22&gt;](<knowledge-store.test.cjs.md#s-9421e865c0095163>) — [electron/domains/knowledge/knowledge-store.test.cjs:197](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L197>)
 - [&lt;anonymous@180:84&gt;.&lt;anonymous@181:17&gt;](<../../image-parser.test.cjs.md#s-04ceff0e6632aa1b>) — [electron/image-parser.test.cjs:320](<../../../../../../../electron/image-parser.test.cjs#L320>)
@@ -251,16 +274,20 @@ Unresolved / external call sites: 4.
 - [electron/image-parser.test.cjs:320](<../../../../../../../electron/image-parser.test.cjs#L320>) — static-call-site; coverage not established.
 - [electron/image-parser.test.cjs:418](<../../../../../../../electron/image-parser.test.cjs#L418>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-fbc572146eb68745"></a>
@@ -295,16 +322,20 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-813b6fb999314028"></a>
@@ -346,16 +377,20 @@ Unresolved / external call sites: 6.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-23c92923d2d74292"></a>
@@ -389,11 +424,12 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [fixture](<../../ai/agents/entity-agents.test.cjs.md#s-9ad48d6b7854c1ed>) — [electron/ai/agents/entity-agents.test.cjs:99](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L99>)
+- [&lt;anonymous@1366:119&gt;](<../../ai/agents/entity-agents.test.cjs.md#s-58653e683a59839a>) — [electron/ai/agents/entity-agents.test.cjs:1386](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1386>)
 - [fixture](<../../backend-identity.test.cjs.md#s-2a2eeb9f70975c0c>) — [electron/backend-identity.test.cjs:243](<../../../../../../../electron/backend-identity.test.cjs#L243>)
 - [&lt;anonymous@453:103&gt;.&lt;anonymous@454:11&gt;](<../../backend-identity.test.cjs.md#s-90ca171901a43834>) — [electron/backend-identity.test.cjs:457](<../../../../../../../electron/backend-identity.test.cjs#L457>)
 - [&lt;anonymous@616:111&gt;.&lt;anonymous@617:11&gt;](<../../backend-identity.test.cjs.md#s-04a3ff3542bf8529>) — [electron/backend-identity.test.cjs:628](<../../../../../../../electron/backend-identity.test.cjs#L628>)
-- [registerWorldViewIpc."knowledge-draft"](<../../core/ipc/worldview-ipc.cjs.md#s-53c5d331072f32cd>) — [electron/core/ipc/worldview-ipc.cjs:212](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L212>)
-- [registerWorldViewIpc."knowledge-apply"](<../../core/ipc/worldview-ipc.cjs.md#s-7dd86d37e11e955f>) — [electron/core/ipc/worldview-ipc.cjs:224](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L224>)
+- [registerWorldViewIpc."knowledge-draft"](<../../core/ipc/worldview-ipc.cjs.md#s-9928e353d722b5d4>) — [electron/core/ipc/worldview-ipc.cjs:219](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L219>)
+- [registerWorldViewIpc."knowledge-apply"](<../../core/ipc/worldview-ipc.cjs.md#s-1994c6971e851ac7>) — [electron/core/ipc/worldview-ipc.cjs:231](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L231>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:205](<../../../../../../../electron/daily-price.test.cjs#L205>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<../../daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:274](<../../../../../../../electron/daily-price.test.cjs#L274>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<../../daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:321](<../../../../../../../electron/daily-price.test.cjs#L321>)
@@ -409,6 +445,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:270](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L270>)
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:271](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L271>)
 - [&lt;anonymous@267:91&gt;.&lt;anonymous@268:22&gt;](<knowledge-store.test.cjs.md#s-a8cffca973c1888b>) — [electron/domains/knowledge/knowledge-store.test.cjs:289](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L289>)
+- [&lt;anonymous@796:89&gt;](<../../engine-packages.test.cjs.md#s-d8ce262c4b7b63c7>) — [electron/engine-packages.test.cjs:809](<../../../../../../../electron/engine-packages.test.cjs#L809>)
+- [&lt;anonymous@864:112&gt;](<../../engine-packages.test.cjs.md#s-b50f9582b28483cb>) — [electron/engine-packages.test.cjs:877](<../../../../../../../electron/engine-packages.test.cjs#L877>)
 - [withUniverse](<../../excel-service.test.cjs.md#s-6b5e67b62cf4c0be>) — [electron/excel-service.test.cjs:40](<../../../../../../../electron/excel-service.test.cjs#L40>)
 - [&lt;anonymous@164:95&gt;.&lt;anonymous@165:16&gt;](<../../financial-service.test.cjs.md#s-9f14ebe7f6ca5195>) — [electron/financial-service.test.cjs:174](<../../../../../../../electron/financial-service.test.cjs#L174>)
 - [&lt;anonymous@164:95&gt;.&lt;anonymous@165:16&gt;.&lt;anonymous@198:30&gt;](<../../financial-service.test.cjs.md#s-ab684a8a69ff8a78>) — [electron/financial-service.test.cjs:200](<../../../../../../../electron/financial-service.test.cjs#L200>)
@@ -416,6 +454,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 - [&lt;anonymous@205:82&gt;.&lt;anonymous@206:12&gt;](<../../yahoo-engine-contract.test.cjs.md#s-12071c09bac274ad>) — [electron/yahoo-engine-contract.test.cjs:221](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L221>)
 - [&lt;anonymous@205:82&gt;.&lt;anonymous@206:12&gt;.&lt;anonymous@247:30&gt;](<../../yahoo-engine-contract.test.cjs.md#s-519b3330d462084f>) — [electron/yahoo-engine-contract.test.cjs:248](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L248>)
 - [main](<../../../scripts/acceptance/electron-backend-reset-smoke.cjs.md#s-648eff2573c5a425>) — [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>)
+- [main](<../../../scripts/acceptance/yahoo-package-lifecycle.cjs.md#s-a519dde3e44c97fd>) — [scripts/acceptance/yahoo-package-lifecycle.cjs:49](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L49>)
 
 Unresolved / external call sites: 3.
 
@@ -426,6 +465,7 @@ Unresolved / external call sites: 3.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:99](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L99>) — static-call-site; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1386](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1386>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:243](<../../../../../../../electron/backend-identity.test.cjs#L243>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:457](<../../../../../../../electron/backend-identity.test.cjs#L457>) — static-call-site; coverage not established.
 - [electron/backend-identity.test.cjs:628](<../../../../../../../electron/backend-identity.test.cjs#L628>) — static-call-site; coverage not established.
@@ -444,6 +484,8 @@ Unresolved / external call sites: 3.
 - [electron/domains/knowledge/knowledge-store.test.cjs:270](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L270>) — static-call-site; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:271](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L271>) — static-call-site; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:289](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L289>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:809](<../../../../../../../electron/engine-packages.test.cjs#L809>) — static-call-site; coverage not established.
+- [electron/engine-packages.test.cjs:877](<../../../../../../../electron/engine-packages.test.cjs#L877>) — static-call-site; coverage not established.
 - [electron/excel-service.test.cjs:40](<../../../../../../../electron/excel-service.test.cjs#L40>) — static-call-site; coverage not established.
 - [electron/financial-service.test.cjs:174](<../../../../../../../electron/financial-service.test.cjs#L174>) — static-call-site; coverage not established.
 - [electron/financial-service.test.cjs:200](<../../../../../../../electron/financial-service.test.cjs#L200>) — static-call-site; coverage not established.
@@ -451,17 +493,22 @@ Unresolved / external call sites: 3.
 - [electron/yahoo-engine-contract.test.cjs:221](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L221>) — static-call-site; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:248](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L248>) — static-call-site; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — static-call-site; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:49](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L49>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-b342ffff622fda36"></a>
@@ -506,16 +553,20 @@ Unresolved / external call sites: 5.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-258b76b0d80b1e40"></a>
@@ -560,16 +611,20 @@ Unresolved / external call sites: 4.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-17aaa7ec7432d76d"></a>
@@ -604,16 +659,20 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-9ef7afbb1492aa63"></a>
@@ -648,16 +707,20 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-5b3b21e330d3d260"></a>
@@ -688,7 +751,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."knowledge-preview"](<../../core/ipc/worldview-ipc.cjs.md#s-877b0d81f821ed15>) — [electron/core/ipc/worldview-ipc.cjs:233](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L233>)
+- [registerWorldViewIpc."knowledge-preview"](<../../core/ipc/worldview-ipc.cjs.md#s-ebb15580a5ceaea7>) — [electron/core/ipc/worldview-ipc.cjs:240](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L240>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:225](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L225>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:242](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L242>)
 - [&lt;anonymous@205:99&gt;.&lt;anonymous@206:22&gt;](<knowledge-store.test.cjs.md#s-2462cd3fd9106de3>) — [electron/domains/knowledge/knowledge-store.test.cjs:246](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L246>)
@@ -713,16 +776,20 @@ Unresolved / external call sites: 5.
 - [electron/domains/knowledge/knowledge-store.test.cjs:260](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L260>) — static-call-site; coverage not established.
 - [electron/excel-service.test.cjs:75](<../../../../../../../electron/excel-service.test.cjs#L75>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-99313261c10e747c"></a>
@@ -758,16 +825,20 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-34066ab7f012366d"></a>
@@ -801,7 +872,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [&lt;anonymous@357:94&gt;.&lt;anonymous@358:11&gt;](<../../backend-identity.test.cjs.md#s-7efbda7815859ecb>) — [electron/backend-identity.test.cjs:365](<../../../../../../../electron/backend-identity.test.cjs#L365>)
-- [registerWorldViewIpc."knowledge-note"](<../../core/ipc/worldview-ipc.cjs.md#s-020e86e40012b397>) — [electron/core/ipc/worldview-ipc.cjs:151](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L151>)
+- [registerWorldViewIpc."knowledge-note"](<../../core/ipc/worldview-ipc.cjs.md#s-291c001bba4e1430>) — [electron/core/ipc/worldview-ipc.cjs:163](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L163>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:457](<../../../../../../../electron/image-parser.test.cjs#L457>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:468](<../../../../../../../electron/image-parser.test.cjs#L468>)
 - [&lt;anonymous@429:82&gt;.&lt;anonymous@452:17&gt;](<../../image-parser.test.cjs.md#s-0b451ba0258339da>) — [electron/image-parser.test.cjs:478](<../../../../../../../electron/image-parser.test.cjs#L478>)
@@ -818,16 +889,20 @@ Unresolved / external call sites: 2.
 - [electron/image-parser.test.cjs:468](<../../../../../../../electron/image-parser.test.cjs#L468>) — static-call-site; coverage not established.
 - [electron/image-parser.test.cjs:478](<../../../../../../../electron/image-parser.test.cjs#L478>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-1654fd018e79f10a"></a>
@@ -872,16 +947,20 @@ Unresolved / external call sites: 6.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-23f9a4ec3f6f2b88"></a>
@@ -916,16 +995,20 @@ Unresolved / external call sites: 0.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-7f44c4c9083f4688"></a>
@@ -953,20 +1036,19 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [normalizeSymbol](<../indexing/ticker-syntax.cjs.md#s-fa1b2f32fc2cc10e>) — [electron/domains/knowledge/knowledge-store.cjs:165](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L165>)
 
 **Called by (statically resolved):**
 
-- [registerWorldViewIpc."price-symbol"](<../../core/ipc/worldview-ipc.cjs.md#s-adb03781844853b3>) — [electron/core/ipc/worldview-ipc.cjs:109](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L109>)
+- [registerWorldViewIpc."price-symbol"](<../../core/ipc/worldview-ipc.cjs.md#s-ca32e5f63491434c>) — [electron/core/ipc/worldview-ipc.cjs:121](<../../../../../../../electron/core/ipc/worldview-ipc.cjs#L121>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:212](<../../../../../../../electron/daily-price.test.cjs#L212>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:226](<../../../../../../../electron/daily-price.test.cjs#L226>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:229](<../../../../../../../electron/daily-price.test.cjs#L229>)
 - [&lt;anonymous@203:71&gt;.&lt;anonymous@204:22&gt;](<../../daily-price.test.cjs.md#s-6ee60d633344ad90>) — [electron/daily-price.test.cjs:230](<../../../../../../../electron/daily-price.test.cjs#L230>)
 - [&lt;anonymous@265:68&gt;.&lt;anonymous@266:22&gt;](<../../daily-price.test.cjs.md#s-4ed15f29548b98c0>) — [electron/daily-price.test.cjs:311](<../../../../../../../electron/daily-price.test.cjs#L311>)
 
-Unresolved / external call sites: 2.
+Unresolved / external call sites: 1.
 
-- normalizeSymbol — signature-only-candidate; [electron/domains/knowledge/knowledge-store.cjs:165](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L165>)
 - withWorldViewMutation — signature-only-candidate; [electron/domains/knowledge/knowledge-store.cjs:166](<../../../../../../../electron/domains/knowledge/knowledge-store.cjs#L166>)
 
 **Related tests / acceptance harnesses:**
@@ -977,16 +1059,20 @@ Unresolved / external call sites: 2.
 - [electron/daily-price.test.cjs:230](<../../../../../../../electron/daily-price.test.cjs#L230>) — static-call-site; coverage not established.
 - [electron/daily-price.test.cjs:311](<../../../../../../../electron/daily-price.test.cjs#L311>) — static-call-site; coverage not established.
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.
 
 <a id="s-f9823235072108c5"></a>
@@ -1029,14 +1115,18 @@ Unresolved / external call sites: 5.
 **Related tests / acceptance harnesses:**
 
 - [electron/ai/agents/entity-agents.test.cjs:18](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L18>) — file-import-only; coverage not established.
+- [electron/ai/agents/entity-agents.test.cjs:1384](<../../../../../../../electron/ai/agents/entity-agents.test.cjs#L1384>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:15](<../../../../../../../electron/backend-identity.test.cjs#L15>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:361](<../../../../../../../electron/backend-identity.test.cjs#L361>) — file-import-only; coverage not established.
 - [electron/daily-price.test.cjs:16](<../../../../../../../electron/daily-price.test.cjs#L16>) — file-import-only; coverage not established.
 - [electron/domains/knowledge/knowledge-store.test.cjs:12](<../../../../../../../electron/domains/knowledge/knowledge-store.test.cjs#L12>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:801](<../../../../../../../electron/engine-packages.test.cjs#L801>) — file-import-only; coverage not established.
+- [electron/engine-packages.test.cjs:869](<../../../../../../../electron/engine-packages.test.cjs#L869>) — file-import-only; coverage not established.
 - [electron/excel-service.test.cjs:17](<../../../../../../../electron/excel-service.test.cjs#L17>) — file-import-only; coverage not established.
 - [electron/financial-service.test.cjs:23](<../../../../../../../electron/financial-service.test.cjs#L23>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:25](<../../../../../../../electron/image-parser.test.cjs#L25>) — file-import-only; coverage not established.
 - [electron/image-parser.test.cjs:455](<../../../../../../../electron/image-parser.test.cjs#L455>) — file-import-only; coverage not established.
 - [electron/yahoo-engine-contract.test.cjs:212](<../../../../../../../electron/yahoo-engine-contract.test.cjs#L212>) — file-import-only; coverage not established.
 - [scripts/acceptance/electron-backend-reset-smoke.cjs:44](<../../../../../../../scripts/acceptance/electron-backend-reset-smoke.cjs#L44>) — file-import-only; coverage not established.
+- [scripts/acceptance/yahoo-package-lifecycle.cjs:12](<../../../../../../../scripts/acceptance/yahoo-package-lifecycle.cjs#L12>) — file-import-only; coverage not established.
 - [tests/integration/architecture-contract.test.cjs:236](<../../../../../../../tests/integration/architecture-contract.test.cjs#L236>) — file-import-only; coverage not established.

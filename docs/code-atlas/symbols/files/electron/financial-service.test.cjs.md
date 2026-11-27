@@ -247,8 +247,8 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/financial-service.test.cjs:79](<../../../../../electron/financial-service.test.cjs#L79>)
-- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-e76591326346a1da>) — [electron/financial-service.test.cjs:93](<../../../../../electron/financial-service.test.cjs#L93>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/financial-service.test.cjs:79](<../../../../../electron/financial-service.test.cjs#L79>)
+- [parseKnowledgeIndex](<domains/indexing/knowledge-index.cjs.md#s-d6105072a8fa3f5f>) — [electron/financial-service.test.cjs:93](<../../../../../electron/financial-service.test.cjs#L93>)
 
 **Called by (statically resolved):**
 
@@ -505,24 +505,27 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixtureClient](<financial-service.test.cjs.md#s-dbfb7863dc38a19b>) — [electron/financial-service.test.cjs:133](<../../../../../electron/financial-service.test.cjs#L133>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/financial-service.test.cjs:140](<../../../../../electron/financial-service.test.cjs#L140>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/financial-service.test.cjs:148](<../../../../../electron/financial-service.test.cjs#L148>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/financial-service.test.cjs:140](<../../../../../electron/financial-service.test.cjs#L140>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:142](<../../../../../electron/financial-service.test.cjs#L142>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:143](<../../../../../electron/financial-service.test.cjs#L143>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:148](<../../../../../electron/financial-service.test.cjs#L148>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/financial-service.test.cjs:148](<../../../../../electron/financial-service.test.cjs#L148>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:152](<../../../../../electron/financial-service.test.cjs#L152>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 12.
+Unresolved / external call sites: 8.
 
 - createFinancialEngine — signature-only-candidate; [electron/financial-service.test.cjs:133](<../../../../../electron/financial-service.test.cjs#L133>)
 - Promise.all — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:141](<../../../../../electron/financial-service.test.cjs#L141>)
-- service.get — signature-only-candidate; [electron/financial-service.test.cjs:142](<../../../../../electron/financial-service.test.cjs#L142>)
-- service.get — signature-only-candidate; [electron/financial-service.test.cjs:143](<../../../../../electron/financial-service.test.cjs#L143>)
 - assert.equal — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:145](<../../../../../electron/financial-service.test.cjs#L145>)
 - assert.equal — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:147](<../../../../../electron/financial-service.test.cjs#L147>)
-- createFinancialService({ fetch }).get — signature-only-candidate; [electron/financial-service.test.cjs:148](<../../../../../electron/financial-service.test.cjs#L148>)
-- service.get — signature-only-candidate; [electron/financial-service.test.cjs:152](<../../../../../electron/financial-service.test.cjs#L152>)
-- 4 additional sites in [symbol-index.json](<../../symbol-index.json>).
+- assert.equal — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:153](<../../../../../electron/financial-service.test.cjs#L153>)
+- assert.equal — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:154](<../../../../../electron/financial-service.test.cjs#L154>)
+- assert.match — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:158](<../../../../../electron/financial-service.test.cjs#L158>)
+- assert.rejects — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:159](<../../../../../electron/financial-service.test.cjs#L159>)
 
 **Related tests / acceptance harnesses:**
 
@@ -584,15 +587,14 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-No resolved sites. This does not prove absence of runtime callers or callees.
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:160](<../../../../../electron/financial-service.test.cjs#L160>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 1.
+Unresolved / external call sites: 0.
 
-- service.get — signature-only-candidate; [electron/financial-service.test.cjs:160](<../../../../../electron/financial-service.test.cjs#L160>)
 
 **Related tests / acceptance harnesses:**
 
@@ -653,7 +655,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [saveKnowledgeIndex](<domains/knowledge/knowledge-store.cjs.md#s-23c92923d2d74292>) — [electron/financial-service.test.cjs:174](<../../../../../electron/financial-service.test.cjs#L174>)
 - [fixtureClient](<financial-service.test.cjs.md#s-dbfb7863dc38a19b>) — [electron/financial-service.test.cjs:185](<../../../../../electron/financial-service.test.cjs#L185>)
-- [getIndexedFinance](<financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/financial-service.test.cjs:190](<../../../../../electron/financial-service.test.cjs#L190>)
+- [getIndexedFinance](<financial-service.cjs.md#s-5cdbc96d6a69cfe2>) — [electron/financial-service.test.cjs:190](<../../../../../electron/financial-service.test.cjs#L190>)
 
 **Called by (statically resolved):**
 
@@ -725,7 +727,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getIndexedFinance](<financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/financial-service.test.cjs:195](<../../../../../electron/financial-service.test.cjs#L195>)
+- [getIndexedFinance](<financial-service.cjs.md#s-5cdbc96d6a69cfe2>) — [electron/financial-service.test.cjs:195](<../../../../../electron/financial-service.test.cjs#L195>)
 
 **Called by (statically resolved):**
 
@@ -792,7 +794,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [getIndexedFinance](<financial-service.cjs.md#s-c1c4f6362733e9d7>) — [electron/financial-service.test.cjs:210](<../../../../../electron/financial-service.test.cjs#L210>)
+- [getIndexedFinance](<financial-service.cjs.md#s-5cdbc96d6a69cfe2>) — [electron/financial-service.test.cjs:210](<../../../../../electron/financial-service.test.cjs#L210>)
 
 **Called by (statically resolved):**
 
@@ -931,14 +933,16 @@ Returns: any (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [fixtureClient](<financial-service.test.cjs.md#s-dbfb7863dc38a19b>) — [electron/financial-service.test.cjs:233](<../../../../../electron/financial-service.test.cjs#L233>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/financial-service.test.cjs:242](<../../../../../electron/financial-service.test.cjs#L242>)
-- [createFinancialService](<financial-service.cjs.md#s-b66de62a4b41c1b8>) — [electron/financial-service.test.cjs:248](<../../../../../electron/financial-service.test.cjs#L248>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:242](<../../../../../electron/financial-service.test.cjs#L242>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/financial-service.test.cjs:242](<../../../../../electron/financial-service.test.cjs#L242>)
+- [createFinancialService](<financial-service.cjs.md#s-f177f750334ab374>) — [electron/financial-service.test.cjs:248](<../../../../../electron/financial-service.test.cjs#L248>)
+- [createFinancialService.get](<financial-service.cjs.md#s-e2161e05437c3fe9>) — [electron/financial-service.test.cjs:254](<../../../../../electron/financial-service.test.cjs#L254>)
 
 **Called by (statically resolved):**
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 14.
+Unresolved / external call sites: 12.
 
 - createFinancialEngine — signature-only-candidate; [electron/financial-service.test.cjs:233](<../../../../../electron/financial-service.test.cjs#L233>)
 - path.join — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:234](<../../../../../electron/financial-service.test.cjs#L234>)
@@ -948,7 +952,7 @@ Unresolved / external call sites: 14.
 - createHash("sha256").update — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:238](<../../../../../electron/financial-service.test.cjs#L238>)
 - createHash — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:238](<../../../../../electron/financial-service.test.cjs#L238>)
 - JSON.stringify — external-or-dynamic-dispatch; [electron/financial-service.test.cjs:240](<../../../../../electron/financial-service.test.cjs#L240>)
-- 6 additional sites in [symbol-index.json](<../../symbol-index.json>).
+- 4 additional sites in [symbol-index.json](<../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 

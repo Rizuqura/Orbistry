@@ -115,7 +115,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.context](<entity-agents.cjs.md#s-af667f98349ddd78>) — [electron/ai/agents/entity-agents.cjs:629](<../../../../../../../electron/ai/agents/entity-agents.cjs#L629>)
+- [EntityAgentService.context](<entity-agents.cjs.md#s-af667f98349ddd78>) — [electron/ai/agents/entity-agents.cjs:718](<../../../../../../../electron/ai/agents/entity-agents.cjs#L718>)
 - [issueDispatch](<entity-jurisdiction.cjs.md#s-23dd0ba5b5db37d6>) — [electron/ai/agents/entity-jurisdiction.cjs:56](<../../../../../../../electron/ai/agents/entity-jurisdiction.cjs#L56>)
 
 Unresolved / external call sites: 6.
@@ -158,8 +158,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.decide.&lt;anonymous@1150:27&gt;](<entity-agents.cjs.md#s-cea770872989154b>) — [electron/ai/agents/entity-agents.cjs:1172](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1172>)
-- [EntityAgentService.send](<entity-agents.cjs.md#s-f0e1bb96978016d3>) — [electron/ai/agents/entity-agents.cjs:1422](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1422>)
+- [EntityAgentService.decide.&lt;anonymous@1239:27&gt;](<entity-agents.cjs.md#s-b34d125c0675ddf4>) — [electron/ai/agents/entity-agents.cjs:1261](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1261>)
+- [EntityAgentService.send](<entity-agents.cjs.md#s-606ff3968c11b3f5>) — [electron/ai/agents/entity-agents.cjs:1511](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1511>)
 
 Unresolved / external call sites: 9.
 
@@ -281,7 +281,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-5e1a2fcddec46961>) — [electron/ai/agents/entity-agents.cjs:1484](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1484>)
+- [EntityAgentService.sendTurn](<entity-agents.cjs.md#s-680c60784ebeb982>) — [electron/ai/agents/entity-agents.cjs:1573](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1573>)
 
 Unresolved / external call sites: 2.
 
@@ -318,8 +318,8 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.decide.&lt;anonymous@1150:27&gt;](<entity-agents.cjs.md#s-cea770872989154b>) — [electron/ai/agents/entity-agents.cjs:1190](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1190>)
-- [EntityAgentService.send](<entity-agents.cjs.md#s-f0e1bb96978016d3>) — [electron/ai/agents/entity-agents.cjs:1471](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1471>)
+- [EntityAgentService.decide.&lt;anonymous@1239:27&gt;](<entity-agents.cjs.md#s-b34d125c0675ddf4>) — [electron/ai/agents/entity-agents.cjs:1279](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1279>)
+- [EntityAgentService.send](<entity-agents.cjs.md#s-606ff3968c11b3f5>) — [electron/ai/agents/entity-agents.cjs:1560](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1560>)
 
 Unresolved / external call sites: 1.
 
@@ -357,7 +357,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Called by (statically resolved):**
 
-- [EntityAgentService.toolRuntime.dispatch](<entity-agents.cjs.md#s-c98f87fd645bdd3b>) — [electron/ai/agents/entity-agents.cjs:1233](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1233>)
+- [EntityAgentService.toolRuntime.dispatch](<entity-agents.cjs.md#s-c10c2134a7cd7043>) — [electron/ai/agents/entity-agents.cjs:1322](<../../../../../../../electron/ai/agents/entity-agents.cjs#L1322>)
 
 Unresolved / external call sites: 2.
 

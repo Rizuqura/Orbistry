@@ -13,8 +13,8 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [IdentityLogEntry](<backend-identity.ts.md#s-1fcc0c365da66d26>) (TypeAliasDeclaration)
 - [IdentityConnection](<backend-identity.ts.md#s-3f5cfa6204606a95>) (TypeAliasDeclaration)
 - [IdentityManifest](<backend-identity.ts.md#s-aa91ba36f0e5be90>) (TypeAliasDeclaration)
-- [BackendIdentityState](<backend-identity.ts.md#s-33fd1adfdfac41f1>) (TypeAliasDeclaration)
-- [IdentityChunkPage](<backend-identity.ts.md#s-09fc2b5745fc6542>) (TypeAliasDeclaration)
+- [BackendIdentityState](<backend-identity.ts.md#s-13d52ea672dc4e1d>) (TypeAliasDeclaration)
+- [IdentityChunkPage](<backend-identity.ts.md#s-2dc474f1aa68f8ae>) (TypeAliasDeclaration)
 
 <a id="s-da251ce37ccbe8a3"></a>
 
@@ -227,11 +227,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-33fd1adfdfac41f1"></a>
+<a id="s-13d52ea672dc4e1d"></a>
 
 ## BackendIdentityState
 
-[types/backend-identity.ts:110](<../../../../../types/backend-identity.ts#L110>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/backend-identity.ts:121](<../../../../../types/backend-identity.ts#L121>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -258,11 +258,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-09fc2b5745fc6542"></a>
+<a id="s-2dc474f1aa68f8ae"></a>
 
 ## IdentityChunkPage
 
-[types/backend-identity.ts:122](<../../../../../types/backend-identity.ts#L122>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
+[types/backend-identity.ts:133](<../../../../../types/backend-identity.ts#L133>) · TypeAliasDeclaration · declaration · [Cross-boundary TypeScript contracts](<../../../modules/contracts.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 

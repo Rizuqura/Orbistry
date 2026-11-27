@@ -1278,6 +1278,12 @@ async function main() {
     await page.screenshot({ path: "test-results/worldview-grid.png" });
     await page.getByRole("button", { name: "AGENT", exact: true }).click();
     await page
+      .getByRole("button", {
+        name: "Manage agents & conversations",
+        exact: true,
+      })
+      .click();
+    await page
       .getByRole("region", { name: "Agent contacts", exact: true })
       .getByRole("button", { name: "+ Add agent", exact: true })
       .click();
@@ -1289,12 +1295,16 @@ async function main() {
       .getByRole("button", { name: "Create agent", exact: true })
       .click();
     await add.waitFor({ state: "hidden" });
-    await page.evaluate(() =>
-      window.orbistryDesktop.ai.settings({
-        providerId: "ollama",
-        modelId: "qwen3:4b",
-      }),
-    );
+    await page.evaluate(async () => {
+      await window.orbistryDesktop.ai.saveCredential({
+        providerId: "nvidia",
+        apiKey: "nvapi-synthetic-smoke-key",
+      });
+      await window.orbistryDesktop.ai.settings({
+        providerId: "nvidia",
+        modelId: "nvidia/nemotron-smoke",
+      });
+    });
     await page.getByRole("button", { name: "+ New Chat", exact: true }).click();
     const setup = page.getByRole("dialog", {
       name: "New Reset agent chat",
@@ -1308,35 +1318,79 @@ async function main() {
       name: "Chat question",
       exact: true,
     });
-    await input.fill("Say hello.");
-    await page
-      .getByRole("button", { name: "Send message", exact: true })
-      .click();
-    await page.locator(".chat-message-assistant .chat-run-id").waitFor();
-    const first = await app.evaluate(() =>
-      globalThis.onlineSmoke.localRequests.at(-1),
-    );
-    assert.deepEqual(
-      first.messages.map((m) => m.role),
-      ["system", "user"],
-    );
-    assert.doesNotMatch(
-      JSON.stringify(first),
-      /VAULT_SENTINEL_NEVER_INJECT|original.md|approved-source|agent-construction-reference/,
-    );
-    assert.equal(first.tools, undefined);
-    await input.fill("Remember my greeting.");
-    await page
-      .getByRole("button", { name: "Send message", exact: true })
-      .click();
-    await page.locator(".chat-message-assistant .chat-run-id").nth(1).waitFor();
-    const second = await app.evaluate(() =>
-      globalThis.onlineSmoke.localRequests.at(-1),
-    );
-    assert.deepEqual(
-      second.messages.map((m) => m.role),
-      ["system", "user", "assistant", "user"],
-    );
+    const reset = process.argv.includes("--universe-chat-reset");
+    let historyRoles = [];
+    if (reset) {
+      await input.fill("Say hello.");
+      assert.ok(
+        await page
+          .getByRole("button", { name: "Send message", exact: true })
+          .isDisabled(),
+      );
+      const before = await page.evaluate(() =>
+        window.orbistryDesktop.ai.listConversations(),
+      );
+      const count = () =>
+        app.evaluate(
+          () =>
+            globalThis.onlineSmoke.requests.length +
+            globalThis.onlineSmoke.localRequests.length,
+        );
+      const originalCount = await count();
+      const conversationId = before.at(-1).id;
+      await assert.rejects(
+        page.evaluate(
+          (id) =>
+            window.orbistryDesktop.ai.chat({
+              conversationId: id,
+              question: "Say hello.",
+            }),
+          conversationId,
+        ),
+        /Universe chat has been reset/i,
+      );
+      assert.deepEqual(
+        await page.evaluate(() =>
+          window.orbistryDesktop.ai.listConversations(),
+        ),
+        before,
+      );
+      assert.equal(await count(), originalCount);
+    } else {
+      await input.fill("Say hello.");
+      await page
+        .getByRole("button", { name: "Send message", exact: true })
+        .click();
+      await page.locator(".chat-message-assistant .chat-run-id").waitFor();
+      const first = await app.evaluate(() =>
+        globalThis.onlineSmoke.requests.at(-1),
+      );
+      assert.deepEqual(
+        first.messages.map((m) => m.role),
+        ["system", "user"],
+      );
+      assert.doesNotMatch(
+        JSON.stringify(first),
+        /VAULT_SENTINEL_NEVER_INJECT|original.md|approved-source|agent-construction-reference/,
+      );
+      assert.equal(first.tools, undefined);
+      await input.fill("Remember my greeting.");
+      await page
+        .getByRole("button", { name: "Send message", exact: true })
+        .click();
+      await page
+        .locator(".chat-message-assistant .chat-run-id")
+        .nth(1)
+        .waitFor();
+      const second = await app.evaluate(() =>
+        globalThis.onlineSmoke.requests.at(-1),
+      );
+      assert.deepEqual(
+        second.messages.map((m) => m.role),
+        ["system", "user", "assistant", "user"],
+      );
+      historyRoles = second.messages.map((m) => m.role);
+    }
     await page.screenshot({ path: "test-results/worldview-agent-chat.png" });
     const conversations = await page.evaluate(() =>
       window.orbistryDesktop.ai.listConversations(),
@@ -1379,8 +1433,10 @@ async function main() {
           deletion,
           worldview:
             "isometric grid; four-direction pan without drift; cursor zoom; limits; reset; resize; legacy-state isolation",
-          agent: "created and answered two turns without sources/tools",
-          historyRoles: second.messages.map((m) => m.role),
+          agent: reset
+            ? "Universe chat reset verified with no provider traffic or persisted turn"
+            : "created and answered two turns without sources/tools",
+          historyRoles,
           vaultSourceHash: digest(source),
           errors,
         },

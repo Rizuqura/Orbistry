@@ -41,11 +41,11 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [BackendIdentityWindow.&lt;anonymous@488:29&gt;](<backend-identity-window.tsx.md#s-b978e87ff6ff4f48>) (ArrowFunction)
 - [BackendIdentityWindow.&lt;anonymous@510:32&gt;](<backend-identity-window.tsx.md#s-3889b8776c4b7408>) (ArrowFunction)
 - [BackendIdentityWindow.&lt;anonymous@517:32&gt;](<backend-identity-window.tsx.md#s-0e45333ab9260fa2>) (ArrowFunction)
-- [BackendIdentityWindow.&lt;anonymous@543:56&gt;](<backend-identity-window.tsx.md#s-b40c6fc5ff8075a5>) (ArrowFunction)
-- [BackendIdentityWindow.&lt;anonymous@548:56&gt;](<backend-identity-window.tsx.md#s-85b58dcd4f9db969>) (ArrowFunction)
-- [BackendIdentityWindow.&lt;anonymous@560:20&gt;](<backend-identity-window.tsx.md#s-4792b9d6a35f6341>) (ArrowFunction)
-- [BackendIdentityWindow.&lt;anonymous@571:24&gt;](<backend-identity-window.tsx.md#s-462b50082d173ab7>) (ArrowFunction)
-- [BackendIdentityWindow.&lt;anonymous@575:20&gt;](<backend-identity-window.tsx.md#s-eea63e779289c832>) (ArrowFunction)
+- [BackendIdentityWindow.&lt;anonymous@549:56&gt;](<backend-identity-window.tsx.md#s-ab425eae23673897>) (ArrowFunction)
+- [BackendIdentityWindow.&lt;anonymous@554:56&gt;](<backend-identity-window.tsx.md#s-0e3844ff2ad0a282>) (ArrowFunction)
+- [BackendIdentityWindow.&lt;anonymous@566:20&gt;](<backend-identity-window.tsx.md#s-0912745d40ba60a4>) (ArrowFunction)
+- [BackendIdentityWindow.&lt;anonymous@577:24&gt;](<backend-identity-window.tsx.md#s-62bcde0705a85469>) (ArrowFunction)
+- [BackendIdentityWindow.&lt;anonymous@581:20&gt;](<backend-identity-window.tsx.md#s-86c6906cf4190989>) (ArrowFunction)
 
 <a id="s-b0bee35911ed94b1"></a>
 
@@ -203,7 +203,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 22.
+Unresolved / external call sites: 23.
 
 - useRef — external-or-dynamic-dispatch; [features/worldview/backend-identity-window.tsx:70](<../../../../../../features/worldview/backend-identity-window.tsx#L70>)
 - useRef — external-or-dynamic-dispatch; [features/worldview/backend-identity-window.tsx:71](<../../../../../../features/worldview/backend-identity-window.tsx#L71>)
@@ -213,7 +213,7 @@ Unresolved / external call sites: 22.
 - useState — external-or-dynamic-dispatch; [features/worldview/backend-identity-window.tsx:86](<../../../../../../features/worldview/backend-identity-window.tsx#L86>)
 - useState — external-or-dynamic-dispatch; [features/worldview/backend-identity-window.tsx:87](<../../../../../../features/worldview/backend-identity-window.tsx#L87>)
 - useState — external-or-dynamic-dispatch; [features/worldview/backend-identity-window.tsx:88](<../../../../../../features/worldview/backend-identity-window.tsx#L88>)
-- 14 additional sites in [symbol-index.json](<../../../symbol-index.json>).
+- 15 additional sites in [symbol-index.json](<../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
@@ -666,8 +666,8 @@ Returns: Promise&lt;void&gt; (annotation). Implementation present.
 
 **Called by (statically resolved):**
 
-- [BackendIdentityWindow.&lt;anonymous@543:56&gt;](<backend-identity-window.tsx.md#s-b40c6fc5ff8075a5>) — [features/worldview/backend-identity-window.tsx:543](<../../../../../../features/worldview/backend-identity-window.tsx#L543>)
-- [BackendIdentityWindow.&lt;anonymous@548:56&gt;](<backend-identity-window.tsx.md#s-85b58dcd4f9db969>) — [features/worldview/backend-identity-window.tsx:548](<../../../../../../features/worldview/backend-identity-window.tsx#L548>)
+- [BackendIdentityWindow.&lt;anonymous@549:56&gt;](<backend-identity-window.tsx.md#s-ab425eae23673897>) — [features/worldview/backend-identity-window.tsx:549](<../../../../../../features/worldview/backend-identity-window.tsx#L549>)
+- [BackendIdentityWindow.&lt;anonymous@554:56&gt;](<backend-identity-window.tsx.md#s-0e3844ff2ad0a282>) — [features/worldview/backend-identity-window.tsx:554](<../../../../../../features/worldview/backend-identity-window.tsx#L554>)
 
 Unresolved / external call sites: 12.
 
@@ -709,7 +709,7 @@ Returns: Promise&lt;void&gt; (annotation). Implementation present.
 
 **Called by (statically resolved):**
 
-- [BackendIdentityWindow.&lt;anonymous@560:20&gt;](<backend-identity-window.tsx.md#s-4792b9d6a35f6341>) — [features/worldview/backend-identity-window.tsx:560](<../../../../../../features/worldview/backend-identity-window.tsx#L560>)
+- [BackendIdentityWindow.&lt;anonymous@566:20&gt;](<backend-identity-window.tsx.md#s-0912745d40ba60a4>) — [features/worldview/backend-identity-window.tsx:566](<../../../../../../features/worldview/backend-identity-window.tsx#L566>)
 
 Unresolved / external call sites: 3.
 
@@ -747,7 +747,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [BackendIdentityWindow.&lt;anonymous@393:24&gt;](<backend-identity-window.tsx.md#s-e3d1f4d73178d6ff>) — [features/worldview/backend-identity-window.tsx:393](<../../../../../../features/worldview/backend-identity-window.tsx#L393>)
-- [BackendIdentityWindow.&lt;anonymous@571:24&gt;](<backend-identity-window.tsx.md#s-462b50082d173ab7>) — [features/worldview/backend-identity-window.tsx:571](<../../../../../../features/worldview/backend-identity-window.tsx#L571>)
+- [BackendIdentityWindow.&lt;anonymous@577:24&gt;](<backend-identity-window.tsx.md#s-62bcde0705a85469>) — [features/worldview/backend-identity-window.tsx:577](<../../../../../../features/worldview/backend-identity-window.tsx#L577>)
 
 Unresolved / external call sites: 5.
 
@@ -857,7 +857,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 **Called by (statically resolved):**
 
 - [BackendIdentityWindow.&lt;anonymous@397:20&gt;](<backend-identity-window.tsx.md#s-6b264e94c1319373>) — [features/worldview/backend-identity-window.tsx:397](<../../../../../../features/worldview/backend-identity-window.tsx#L397>)
-- [BackendIdentityWindow.&lt;anonymous@575:20&gt;](<backend-identity-window.tsx.md#s-eea63e779289c832>) — [features/worldview/backend-identity-window.tsx:575](<../../../../../../features/worldview/backend-identity-window.tsx#L575>)
+- [BackendIdentityWindow.&lt;anonymous@581:20&gt;](<backend-identity-window.tsx.md#s-86c6906cf4190989>) — [features/worldview/backend-identity-window.tsx:581](<../../../../../../features/worldview/backend-identity-window.tsx#L581>)
 
 Unresolved / external call sites: 3.
 
@@ -1282,44 +1282,11 @@ Unresolved / external call sites: 1.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-b40c6fc5ff8075a5"></a>
+<a id="s-ab425eae23673897"></a>
 
-## BackendIdentityWindow.&lt;anonymous@543:56&gt;
+## BackendIdentityWindow.&lt;anonymous@549:56&gt;
 
-[features/worldview/backend-identity-window.tsx:543](<../../../../../../features/worldview/backend-identity-window.tsx#L543>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
-
-No purpose documentation on this declaration; inspect the linked implementation.
-
-Purpose evidence: undocumented.
-
-Lexical owner: [BackendIdentityWindow](<backend-identity-window.tsx.md#s-fb5159cd91ef0b97>).
-
-| Parameter | Contract | Evidence | Optional / rest |
-| --- | --- | --- | --- |
-| (none) | — | source syntax | — |
-
-Returns: any (compiler-inferred). Implementation present.
-
-**Calls (statically resolved):**
-
-- [BackendIdentityWindow.run](<backend-identity-window.tsx.md#s-a5a0b225615eb1eb>) — [features/worldview/backend-identity-window.tsx:543](<../../../../../../features/worldview/backend-identity-window.tsx#L543>)
-
-**Called by (statically resolved):**
-
-No resolved sites. This does not prove absence of runtime callers or callees.
-
-Unresolved / external call sites: 0.
-
-
-**Related tests / acceptance harnesses:**
-
-No direct static call/import association found; coverage unknown.
-
-<a id="s-85b58dcd4f9db969"></a>
-
-## BackendIdentityWindow.&lt;anonymous@548:56&gt;
-
-[features/worldview/backend-identity-window.tsx:548](<../../../../../../features/worldview/backend-identity-window.tsx#L548>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
+[features/worldview/backend-identity-window.tsx:549](<../../../../../../features/worldview/backend-identity-window.tsx#L549>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1335,7 +1302,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [BackendIdentityWindow.run](<backend-identity-window.tsx.md#s-a5a0b225615eb1eb>) — [features/worldview/backend-identity-window.tsx:548](<../../../../../../features/worldview/backend-identity-window.tsx#L548>)
+- [BackendIdentityWindow.run](<backend-identity-window.tsx.md#s-a5a0b225615eb1eb>) — [features/worldview/backend-identity-window.tsx:549](<../../../../../../features/worldview/backend-identity-window.tsx#L549>)
 
 **Called by (statically resolved):**
 
@@ -1348,11 +1315,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-4792b9d6a35f6341"></a>
+<a id="s-0e3844ff2ad0a282"></a>
 
-## BackendIdentityWindow.&lt;anonymous@560:20&gt;
+## BackendIdentityWindow.&lt;anonymous@554:56&gt;
 
-[features/worldview/backend-identity-window.tsx:560](<../../../../../../features/worldview/backend-identity-window.tsx#L560>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
+[features/worldview/backend-identity-window.tsx:554](<../../../../../../features/worldview/backend-identity-window.tsx#L554>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1368,7 +1335,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [BackendIdentityWindow.copy](<backend-identity-window.tsx.md#s-c68c8aa0bf7cccc6>) — [features/worldview/backend-identity-window.tsx:560](<../../../../../../features/worldview/backend-identity-window.tsx#L560>)
+- [BackendIdentityWindow.run](<backend-identity-window.tsx.md#s-a5a0b225615eb1eb>) — [features/worldview/backend-identity-window.tsx:554](<../../../../../../features/worldview/backend-identity-window.tsx#L554>)
 
 **Called by (statically resolved):**
 
@@ -1381,11 +1348,44 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-462b50082d173ab7"></a>
+<a id="s-0912745d40ba60a4"></a>
 
-## BackendIdentityWindow.&lt;anonymous@571:24&gt;
+## BackendIdentityWindow.&lt;anonymous@566:20&gt;
 
-[features/worldview/backend-identity-window.tsx:571](<../../../../../../features/worldview/backend-identity-window.tsx#L571>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
+[features/worldview/backend-identity-window.tsx:566](<../../../../../../features/worldview/backend-identity-window.tsx#L566>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
+
+No purpose documentation on this declaration; inspect the linked implementation.
+
+Purpose evidence: undocumented.
+
+Lexical owner: [BackendIdentityWindow](<backend-identity-window.tsx.md#s-fb5159cd91ef0b97>).
+
+| Parameter | Contract | Evidence | Optional / rest |
+| --- | --- | --- | --- |
+| (none) | — | source syntax | — |
+
+Returns: any (compiler-inferred). Implementation present.
+
+**Calls (statically resolved):**
+
+- [BackendIdentityWindow.copy](<backend-identity-window.tsx.md#s-c68c8aa0bf7cccc6>) — [features/worldview/backend-identity-window.tsx:566](<../../../../../../features/worldview/backend-identity-window.tsx#L566>)
+
+**Called by (statically resolved):**
+
+No resolved sites. This does not prove absence of runtime callers or callees.
+
+Unresolved / external call sites: 0.
+
+
+**Related tests / acceptance harnesses:**
+
+No direct static call/import association found; coverage unknown.
+
+<a id="s-62bcde0705a85469"></a>
+
+## BackendIdentityWindow.&lt;anonymous@577:24&gt;
+
+[features/worldview/backend-identity-window.tsx:577](<../../../../../../features/worldview/backend-identity-window.tsx#L577>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1401,7 +1401,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [BackendIdentityWindow.start](<backend-identity-window.tsx.md#s-495a346383eeb224>) — [features/worldview/backend-identity-window.tsx:571](<../../../../../../features/worldview/backend-identity-window.tsx#L571>)
+- [BackendIdentityWindow.start](<backend-identity-window.tsx.md#s-495a346383eeb224>) — [features/worldview/backend-identity-window.tsx:577](<../../../../../../features/worldview/backend-identity-window.tsx#L577>)
 
 **Called by (statically resolved):**
 
@@ -1414,11 +1414,11 @@ Unresolved / external call sites: 0.
 
 No direct static call/import association found; coverage unknown.
 
-<a id="s-eea63e779289c832"></a>
+<a id="s-86c6906cf4190989"></a>
 
-## BackendIdentityWindow.&lt;anonymous@575:20&gt;
+## BackendIdentityWindow.&lt;anonymous@581:20&gt;
 
-[features/worldview/backend-identity-window.tsx:575](<../../../../../../features/worldview/backend-identity-window.tsx#L575>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
+[features/worldview/backend-identity-window.tsx:581](<../../../../../../features/worldview/backend-identity-window.tsx#L581>) · ArrowFunction · production · [WorldView and Knowledge Cards (Portal)](<../../../../modules/portal-worldview.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -1434,7 +1434,7 @@ Returns: void (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [BackendIdentityWindow.positionByKey](<backend-identity-window.tsx.md#s-d815b725027b8bc9>) — [features/worldview/backend-identity-window.tsx:575](<../../../../../../features/worldview/backend-identity-window.tsx#L575>)
+- [BackendIdentityWindow.positionByKey](<backend-identity-window.tsx.md#s-d815b725027b8bc9>) — [features/worldview/backend-identity-window.tsx:581](<../../../../../../features/worldview/backend-identity-window.tsx#L581>)
 
 **Called by (statically resolved):**
 

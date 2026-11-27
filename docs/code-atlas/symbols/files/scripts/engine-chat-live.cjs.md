@@ -75,14 +75,14 @@ Returns: any (compiler-inferred). Implementation present.
 - [AgentStore.create](<../electron/ai/agents/agent-store.cjs.md#s-a855b2d37033dc99>) — [scripts/engine-chat-live.cjs:68](<../../../../../scripts/engine-chat-live.cjs#L68>)
 - [AgentStore.saveConstruction](<../electron/ai/agents/agent-store.cjs.md#s-79e9bb1291ef0de1>) — [scripts/engine-chat-live.cjs:82](<../../../../../scripts/engine-chat-live.cjs#L82>)
 - [EngineRegistry.constructor](<../electron/ai/engine-registry.cjs.md#s-ce9e7ec9029897d3>) — [scripts/engine-chat-live.cjs:88](<../../../../../scripts/engine-chat-live.cjs#L88>)
-- [EngineRegistry.configure](<../electron/ai/engine-registry.cjs.md#s-296305f9b4abd79c>) — [scripts/engine-chat-live.cjs:93](<../../../../../scripts/engine-chat-live.cjs#L93>)
+- [EngineRegistry.configure](<../electron/ai/engine-registry.cjs.md#s-3e866b331ac40f05>) — [scripts/engine-chat-live.cjs:93](<../../../../../scripts/engine-chat-live.cjs#L93>)
 - [ChatService.constructor](<../electron/ai/chat/chat-service.cjs.md#s-821f32a93ec900a8>) — [scripts/engine-chat-live.cjs:99](<../../../../../scripts/engine-chat-live.cjs#L99>)
 - [ChatService.create](<../electron/ai/chat/chat-service.cjs.md#s-a451abff9275ccde>) — [scripts/engine-chat-live.cjs:101](<../../../../../scripts/engine-chat-live.cjs#L101>)
 - [ChatService.run](<../electron/ai/chat/chat-service.cjs.md#s-bed13c7861a5021f>) — [scripts/engine-chat-live.cjs:106](<../../../../../scripts/engine-chat-live.cjs#L106>)
-- [EngineRegistry.open](<../electron/ai/engine-registry.cjs.md#s-d94730f5ef785e5f>) — [scripts/engine-chat-live.cjs:128](<../../../../../scripts/engine-chat-live.cjs#L128>)
+- [EngineRegistry.open](<../electron/ai/engine-registry.cjs.md#s-3478cb94d7277ce5>) — [scripts/engine-chat-live.cjs:128](<../../../../../scripts/engine-chat-live.cjs#L128>)
 - [ChatService.resume](<../electron/ai/chat/chat-service.cjs.md#s-6b62ce1e48251c45>) — [scripts/engine-chat-live.cjs:153](<../../../../../scripts/engine-chat-live.cjs#L153>)
 - [ChatService.cancelAll](<../electron/ai/chat/chat-service.cjs.md#s-a13b96186264285e>) — [scripts/engine-chat-live.cjs:164](<../../../../../scripts/engine-chat-live.cjs#L164>)
-- [EngineRegistry.shutdown](<../electron/ai/engine-registry.cjs.md#s-922650a4d5052117>) — [scripts/engine-chat-live.cjs:165](<../../../../../scripts/engine-chat-live.cjs#L165>)
+- [EngineRegistry.shutdown](<../electron/ai/engine-registry.cjs.md#s-82da9094ec0d68df>) — [scripts/engine-chat-live.cjs:165](<../../../../../scripts/engine-chat-live.cjs#L165>)
 
 **Called by (statically resolved):**
 

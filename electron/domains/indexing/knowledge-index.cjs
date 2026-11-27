@@ -1,5 +1,38 @@
 const { createHash } = require("node:crypto");
-const { normalizeSymbol } = require("../../engines/daily-price/index.cjs");
+const { normalizeSymbol } = require("./ticker-syntax.cjs");
+
+const { id: packageId } = require("../../engines/contracts/contract.cjs");
+
+/** Parses literal JSON arguments only. A major version pins the declaration across compatible package replacements. */
+function parsePackageSource(text, menuId) {
+  const match = /^engineSource\s*\((.*)\)$/.exec(text);
+  let args;
+  try {
+    args = match && JSON.parse("[" + match[1] + "]");
+  } catch {
+    throw new Error(
+      "Use JSON literals in engineSource(packageId, sourceId, major, input).",
+    );
+  }
+  if (
+    !args ||
+    args.length !== 4 ||
+    !packageId.safeParse(args[0]).success ||
+    !packageId.safeParse(args[1]).success ||
+    !Number.isSafeInteger(args[2]) ||
+    args[2] < 0 ||
+    !args[3] ||
+    Array.isArray(args[3]) ||
+    typeof args[3] !== "object" ||
+    Buffer.byteLength(text) > 65536
+  )
+    throw new Error("Invalid package source declaration.");
+  const [engineId, sourceId, major, input] = args;
+  const id = createHash("sha256")
+    .update(JSON.stringify([menuId, ...args]))
+    .digest("hex");
+  return { id, engineId, sourceId, major, input };
+}
 
 /** Parses headings, file references, registered literal Yahoo calls and image views with line errors. Parsing produces data and performs no network or code execution. */
 function parseKnowledgeIndex(text, { allowLegacyParsing = false } = {}) {
@@ -148,7 +181,16 @@ function parseKnowledgeIndex(text, { allowLegacyParsing = false } = {}) {
         });
         continue;
       }
-      if (/^yahoo(?:Financials|Earnings)\s*\(/i.test(sourceId)) {
+      if (/^engineSource\s*\(/.test(sourceId)) {
+        try {
+          const reference = parsePackageSource(sourceId, current.id);
+          if (current.packageSources?.some((item) => item.id === reference.id))
+            throw new Error("Duplicate package source in this menu.");
+          (current.packageSources ??= []).push(reference);
+        } catch (error) {
+          errors.push({ line: index + 1, message: error.message });
+        }
+      } else if (/^yahoo(?:Financials|Earnings)\s*\(/i.test(sourceId)) {
         const call =
           /^yahoo(Financials|Earnings)\s*\(\s*(?:"([^"]+)"|'([^']+)')\s*\)$/.exec(
             sourceId,

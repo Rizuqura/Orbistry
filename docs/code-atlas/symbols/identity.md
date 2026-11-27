@@ -13,5 +13,6 @@ Generated from AST declarations. Compiler-inferred contracts are approximate and
 - [electron/engines/backend-identity/identity-compiler.cjs](<files/electron/engines/backend-identity/identity-compiler.cjs.md#s-6deb7cc0d03e2756>) (production; 20 declarations)
 - [electron/engines/backend-identity/identity-runtime.cjs](<files/electron/engines/backend-identity/identity-runtime.cjs.md#s-c3f3dbcf91eecead>) (production; 19 declarations)
 - [electron/engines/backend-identity/markdown-chunker.cjs](<files/electron/engines/backend-identity/markdown-chunker.cjs.md#s-6cc2fc3a5e3b8dd8>) (production; 3 declarations)
+- [electron/engines/backend-identity/package-sources.cjs](<files/electron/engines/backend-identity/package-sources.cjs.md#s-2af530469af95fa2>) (production; 9 declarations)
 - [electron/engines/backend-identity/schema.cjs](<files/electron/engines/backend-identity/schema.cjs.md#s-278f7199664f7a84>) (production; 12 declarations)
 - [electron/engines/backend-identity/snapshot-store.cjs](<files/electron/engines/backend-identity/snapshot-store.cjs.md#s-92351d084d994c00>) (production; 15 declarations)

@@ -62,8 +62,8 @@ Returns: any (compiler-inferred). Implementation present.
 
 - [parseJson](<../registry/package.cjs.md#s-fb6b0b1816d9018a>) — [electron/engines/runtime/worker.cjs:13](<../../../../../../../electron/engines/runtime/worker.cjs#L13>)
 - [inspectPackage](<../registry/package.cjs.md#s-71ed017a00706142>) — [electron/engines/runtime/worker.cjs:14](<../../../../../../../electron/engines/runtime/worker.cjs#L14>)
-- [validateData](<../contracts/contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/runtime/worker.cjs:20](<../../../../../../../electron/engines/runtime/worker.cjs#L20>)
-- [validateData](<../contracts/contract.cjs.md#s-5f70c362b7bc04d9>) — [electron/engines/runtime/worker.cjs:33](<../../../../../../../electron/engines/runtime/worker.cjs#L33>)
+- [validateData](<../contracts/contract.cjs.md#s-567344da6db54f40>) — [electron/engines/runtime/worker.cjs:20](<../../../../../../../electron/engines/runtime/worker.cjs#L20>)
+- [validateData](<../contracts/contract.cjs.md#s-567344da6db54f40>) — [electron/engines/runtime/worker.cjs:33](<../../../../../../../electron/engines/runtime/worker.cjs#L33>)
 
 **Called by (statically resolved):**
 

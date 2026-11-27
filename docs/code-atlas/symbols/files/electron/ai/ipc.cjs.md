@@ -2185,7 +2185,7 @@ Returns: any (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [engineDefinitions](<agents/entity-agents.cjs.md#s-e58c462131613935>) — [electron/ai/ipc.cjs:256](<../../../../../../electron/ai/ipc.cjs#L256>)
+- [engineDefinitions](<agents/entity-agents.cjs.md#s-99b74eaea80453a5>) — [electron/ai/ipc.cjs:256](<../../../../../../electron/ai/ipc.cjs#L256>)
 
 **Called by (statically resolved):**
 
@@ -2225,8 +2225,8 @@ Returns: unknown (compiler-inferred). Implementation present.
 **Calls (statically resolved):**
 
 - [ModelRuntimeError.constructor](<../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/ipc.cjs:277](<../../../../../../electron/ai/ipc.cjs#L277>)
-- [EnginePackageRegistry.catalog](<../engines/registry/registry.cjs.md#s-31238ee0e1cb396f>) — [electron/ai/ipc.cjs:282](<../../../../../../electron/ai/ipc.cjs#L282>)
-- [EnginePackageRegistry.constructor](<../engines/registry/registry.cjs.md#s-67d4e7282499da54>) — [electron/ai/ipc.cjs:282](<../../../../../../electron/ai/ipc.cjs#L282>)
+- [EnginePackageRegistry.catalog](<../engines/registry/registry.cjs.md#s-f5eb01ad09f4b0a0>) — [electron/ai/ipc.cjs:282](<../../../../../../electron/ai/ipc.cjs#L282>)
+- [EnginePackageRegistry.constructor](<../engines/registry/registry.cjs.md#s-0e6ad7bd522e9fad>) — [electron/ai/ipc.cjs:282](<../../../../../../electron/ai/ipc.cjs#L282>)
 - [ModelRuntimeError.constructor](<../shared/runtime-errors.cjs.md#s-66422d0cde496ce3>) — [electron/ai/ipc.cjs:287](<../../../../../../electron/ai/ipc.cjs#L287>)
 
 **Called by (statically resolved):**
@@ -2502,7 +2502,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.open](<agents/entity-agents.cjs.md#s-34702ed2b007581b>) — [electron/ai/ipc.cjs:298](<../../../../../../electron/ai/ipc.cjs#L298>)
+- [EntityAgentService.open](<agents/entity-agents.cjs.md#s-bfc1e695eb6cb3f7>) — [electron/ai/ipc.cjs:298](<../../../../../../electron/ai/ipc.cjs#L298>)
 
 **Called by (statically resolved):**
 
@@ -2616,7 +2616,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.retrieve](<agents/entity-agents.cjs.md#s-52be5a126b6378d9>) — [electron/ai/ipc.cjs:303](<../../../../../../electron/ai/ipc.cjs#L303>)
+- [EntityAgentService.retrieve](<agents/entity-agents.cjs.md#s-d420d4afebc9fae9>) — [electron/ai/ipc.cjs:303](<../../../../../../electron/ai/ipc.cjs#L303>)
 
 **Called by (statically resolved):**
 
@@ -2692,7 +2692,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.send](<agents/entity-agents.cjs.md#s-f0e1bb96978016d3>) — [electron/ai/ipc.cjs:307](<../../../../../../electron/ai/ipc.cjs#L307>)
+- [EntityAgentService.send](<agents/entity-agents.cjs.md#s-606ff3968c11b3f5>) — [electron/ai/ipc.cjs:307](<../../../../../../electron/ai/ipc.cjs#L307>)
 
 **Called by (statically resolved):**
 
@@ -2768,7 +2768,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.execute](<agents/entity-agents.cjs.md#s-ee5a72445424fcad>) — [electron/ai/ipc.cjs:311](<../../../../../../electron/ai/ipc.cjs#L311>)
+- [EntityAgentService.execute](<agents/entity-agents.cjs.md#s-7309a9246eec543d>) — [electron/ai/ipc.cjs:311](<../../../../../../electron/ai/ipc.cjs#L311>)
 
 **Called by (statically resolved):**
 
@@ -2844,7 +2844,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.propose](<agents/entity-agents.cjs.md#s-ade8b4b474635517>) — [electron/ai/ipc.cjs:314](<../../../../../../electron/ai/ipc.cjs#L314>)
+- [EntityAgentService.propose](<agents/entity-agents.cjs.md#s-b3966d31126f80e1>) — [electron/ai/ipc.cjs:314](<../../../../../../electron/ai/ipc.cjs#L314>)
 
 **Called by (statically resolved):**
 
@@ -2920,7 +2920,7 @@ Returns: unknown (compiler-inferred). Implementation present.
 
 **Calls (statically resolved):**
 
-- [EntityAgentService.decide](<agents/entity-agents.cjs.md#s-bba614a97f270a11>) — [electron/ai/ipc.cjs:318](<../../../../../../electron/ai/ipc.cjs#L318>)
+- [EntityAgentService.decide](<agents/entity-agents.cjs.md#s-a92de0fbe4a76fba>) — [electron/ai/ipc.cjs:318](<../../../../../../electron/ai/ipc.cjs#L318>)
 
 **Called by (statically resolved):**
 

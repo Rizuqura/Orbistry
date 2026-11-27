@@ -94,6 +94,17 @@ export type IdentityManifest = Readonly<{
     chunkIndexHash: string;
     retrieval: "entity-scoped-chunks";
   }>;
+  packageSources?: readonly {
+    declarationId: string;
+    menuId?: string;
+    grantId?: string;
+    engineId: string;
+    sourceId: string;
+    version: string | null;
+    digest: string | null;
+    operation: string | null;
+    status: string;
+  }[];
   capabilities: readonly Pick<
     IdentityCapability,
     | "capabilityId"

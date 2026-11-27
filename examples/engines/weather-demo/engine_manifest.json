@@ -1,0 +1,90 @@
+{
+  "schema_version": 3,
+  "protocol": "orbistry.engine/1",
+  "engine_id": "weather-demo",
+  "engine_version": "1.0.0",
+  "name": "Weather demo",
+  "description": "Synthetic hourly temperatures.",
+  "entry": "index.cjs",
+  "operations": [
+    {
+      "id": "temperature",
+      "description": "Return two synthetic hourly readings.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "station": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "station"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "station": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "C"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "synthetic"
+            ]
+          },
+          "observations": {
+            "type": "array",
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "time",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "station",
+          "unit",
+          "origin",
+          "observations"
+        ],
+        "additionalProperties": false
+      },
+      "network": "none",
+      "read_only": true,
+      "timeout_ms": 10000
+    }
+  ],
+  "sources": [
+    {
+      "id": "hourly",
+      "operation": "temperature",
+      "kind": "time_series",
+      "presentation": "json"
+    }
+  ],
+  "files": {
+    "index.cjs": "470efd02f7a838d7263a268de4952002fbad7abe9c1d303f00befe11aebd425e"
+  }
+}

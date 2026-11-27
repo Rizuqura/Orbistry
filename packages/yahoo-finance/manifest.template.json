@@ -1,0 +1,1311 @@
+{
+  "schema_version": 3,
+  "protocol": "orbistry.engine/1",
+  "engine_id": "yahoo-finance",
+  "engine_version": "1.0.0",
+  "name": "Yahoo Finance",
+  "description": "Price snapshots, quotes, price history, financial statements and earnings.",
+  "entry": "index.cjs",
+  "operations": [
+    {
+      "id": "price",
+      "description": "Retrieve Yahoo Finance price for the specified listing.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "enum": [
+              1
+            ]
+          },
+          "engineVersion": {
+            "type": "string",
+            "enum": [
+              "0.1.0"
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Yahoo Finance"
+            ]
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12
+          },
+          "exchangeTimezone": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0
+          },
+          "previousClose": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "marketTime": {
+            "type": "string"
+          },
+          "marketState": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "delayMinutes": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fetchedAt": {
+            "type": "string"
+          },
+          "historyFetchedAt": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "marketCap": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "trailingPE": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "eps": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "week52Low": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "week52High": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "volume": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "marketCap",
+              "trailingPE",
+              "eps",
+              "week52Low",
+              "week52High",
+              "volume"
+            ],
+            "additionalProperties": false
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "close": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "date",
+                "close"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 400
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "engineVersion",
+          "provider",
+          "symbol",
+          "currency",
+          "exchangeTimezone",
+          "price",
+          "previousClose",
+          "marketTime",
+          "marketState",
+          "delayMinutes",
+          "fetchedAt",
+          "historyFetchedAt",
+          "history"
+        ],
+        "additionalProperties": false
+      },
+      "network": "outbound",
+      "read_only": true,
+      "timeout_ms": 40000
+    },
+    {
+      "id": "quote",
+      "description": "Retrieve Yahoo Finance quote for the specified listing.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Yahoo Finance"
+            ]
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "fetchedAt": {
+            "type": "string"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "exchange": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "marketTime": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "price": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "change": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "changePercent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "marketCap": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "trailingPE": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "eps": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "week52Low": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "week52High": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "volume": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "delayMinutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "marketState": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "provider",
+          "symbol",
+          "fetchedAt",
+          "currency",
+          "exchange",
+          "marketTime",
+          "price",
+          "change",
+          "changePercent",
+          "marketCap",
+          "trailingPE",
+          "eps",
+          "week52Low",
+          "week52High",
+          "volume",
+          "delayMinutes",
+          "marketState"
+        ],
+        "additionalProperties": false
+      },
+      "network": "outbound",
+      "read_only": true,
+      "timeout_ms": 40000
+    },
+    {
+      "id": "history",
+      "description": "Retrieve Yahoo Finance history for the specified listing.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          },
+          "range": {
+            "type": "string",
+            "enum": [
+              "1M",
+              "3M",
+              "6M",
+              "1Y",
+              "5Y",
+              "MAX"
+            ]
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Yahoo Finance"
+            ]
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "fetchedAt": {
+            "type": "string"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "range": {
+            "type": "string",
+            "enum": [
+              "1M",
+              "3M",
+              "6M",
+              "1Y",
+              "5Y",
+              "MAX"
+            ]
+          },
+          "interval": {
+            "type": "string",
+            "enum": [
+              "1d",
+              "1wk",
+              "1mo"
+            ]
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "open": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "high": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "low": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "close": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "volume": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "open",
+                "high",
+                "low",
+                "close",
+                "volume"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20000
+          },
+          "dividends": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "amount": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "amount"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20000
+          },
+          "splits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "numerator": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "denominator": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "numerator",
+                "denominator"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20000
+          }
+        },
+        "required": [
+          "provider",
+          "symbol",
+          "fetchedAt",
+          "currency",
+          "range",
+          "interval",
+          "observations",
+          "dividends",
+          "splits"
+        ],
+        "additionalProperties": false
+      },
+      "network": "outbound",
+      "read_only": true,
+      "timeout_ms": 40000
+    },
+    {
+      "id": "financials",
+      "description": "Retrieve Yahoo Finance financials for the specified listing.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "enum": [
+              1
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Yahoo Finance"
+            ]
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "financials",
+              "earnings"
+            ]
+          },
+          "fetchedAt": {
+            "type": "string"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statements": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "annual": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "periodEnd": {
+                        "type": "string"
+                      },
+                      "periodType": {
+                        "type": "string",
+                        "enum": [
+                          "3M",
+                          "12M"
+                        ]
+                      },
+                      "currency": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "values": {
+                        "type": "object",
+                        "properties": {},
+                        "required": [],
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "periodEnd",
+                      "periodType",
+                      "currency",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                },
+                "quarterly": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "periodEnd": {
+                        "type": "string"
+                      },
+                      "periodType": {
+                        "type": "string",
+                        "enum": [
+                          "3M",
+                          "12M"
+                        ]
+                      },
+                      "currency": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "values": {
+                        "type": "object",
+                        "properties": {},
+                        "required": [],
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "periodEnd",
+                      "periodType",
+                      "currency",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                }
+              },
+              "required": [
+                "annual",
+                "quarterly"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "periodEnd": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "announcementDate": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "currency": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "estimate": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "actual": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "surprise": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "surpriseBasis": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "provider",
+                        "computed"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "periodEnd",
+                "announcementDate",
+                "currency",
+                "estimate",
+                "actual",
+                "surprise",
+                "surpriseBasis"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "scheduled": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "estimated": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "estimated"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "provider",
+          "symbol",
+          "kind",
+          "fetchedAt",
+          "currency",
+          "warnings",
+          "statements",
+          "history",
+          "scheduled"
+        ],
+        "additionalProperties": false
+      },
+      "network": "outbound",
+      "read_only": true,
+      "timeout_ms": 40000
+    },
+    {
+      "id": "earnings",
+      "description": "Retrieve Yahoo Finance earnings for the specified listing.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "enum": [
+              1
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Yahoo Finance"
+            ]
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "financials",
+              "earnings"
+            ]
+          },
+          "fetchedAt": {
+            "type": "string"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statements": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "annual": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "periodEnd": {
+                        "type": "string"
+                      },
+                      "periodType": {
+                        "type": "string",
+                        "enum": [
+                          "3M",
+                          "12M"
+                        ]
+                      },
+                      "currency": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "values": {
+                        "type": "object",
+                        "properties": {},
+                        "required": [],
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "periodEnd",
+                      "periodType",
+                      "currency",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                },
+                "quarterly": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "periodEnd": {
+                        "type": "string"
+                      },
+                      "periodType": {
+                        "type": "string",
+                        "enum": [
+                          "3M",
+                          "12M"
+                        ]
+                      },
+                      "currency": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "values": {
+                        "type": "object",
+                        "properties": {},
+                        "required": [],
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "periodEnd",
+                      "periodType",
+                      "currency",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "maxItems": 100
+                }
+              },
+              "required": [
+                "annual",
+                "quarterly"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "periodEnd": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "announcementDate": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "currency": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "estimate": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "actual": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "surprise": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "surpriseBasis": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "provider",
+                        "computed"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "periodEnd",
+                "announcementDate",
+                "currency",
+                "estimate",
+                "actual",
+                "surprise",
+                "surpriseBasis"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 100
+          },
+          "scheduled": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "estimated": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "date",
+                "estimated"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "provider",
+          "symbol",
+          "kind",
+          "fetchedAt",
+          "currency",
+          "warnings",
+          "statements",
+          "history",
+          "scheduled"
+        ],
+        "additionalProperties": false
+      },
+      "network": "outbound",
+      "read_only": true,
+      "timeout_ms": 40000
+    }
+  ],
+  "sources": [
+    {
+      "id": "price",
+      "operation": "price",
+      "kind": "time_series",
+      "presentation": "json"
+    },
+    {
+      "id": "quote",
+      "operation": "quote",
+      "kind": "table",
+      "presentation": "json"
+    },
+    {
+      "id": "history",
+      "operation": "history",
+      "kind": "time_series",
+      "presentation": "json"
+    },
+    {
+      "id": "financials",
+      "operation": "financials",
+      "kind": "table",
+      "presentation": "json"
+    },
+    {
+      "id": "earnings",
+      "operation": "earnings",
+      "kind": "table",
+      "presentation": "json"
+    }
+  ],
+  "files": {}
+}

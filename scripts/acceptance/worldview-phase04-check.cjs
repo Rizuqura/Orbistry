@@ -68,9 +68,20 @@ async function verifyKnowledgeCards({
   assert.equal(await open.count(), 0, "hover does not expose entity actions");
   await select(tsmc);
   await page.getByRole("button", { name: "Zoom in", exact: true }).click();
-  await page.mouse.move(bounds.x + 100, bounds.y + 150);
+  // The Entity sidebar now covers the old top-left drag origin. Start on exposed ground.
+  const panStart = await canvas.evaluate((element) => {
+    const box = element.getBoundingClientRect();
+    for (const fx of [0.15, 0.8, 0.35])
+      for (const fy of [0.8, 0.7, 0.2]) {
+        const x = box.x + box.width * fx,
+          y = box.y + box.height * fy;
+        if (document.elementFromPoint(x, y) === element) return { x, y };
+      }
+    throw Error("No exposed canvas ground for pan test.");
+  });
+  await page.mouse.move(panStart.x, panStart.y);
   await page.mouse.down();
-  await page.mouse.move(bounds.x + 171, bounds.y + 113, { steps: 8 });
+  await page.mouse.move(panStart.x + 71, panStart.y - 37, { steps: 8 });
   await page.mouse.up();
   assert.equal(await open.count(), 0, "empty ground deselects during pan");
   // Select the chip at its translated and zoomed location.

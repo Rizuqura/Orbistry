@@ -68,6 +68,8 @@ contextBridge.exposeInMainWorld("orbistryDesktop", {
           "price-symbol",
           "price-get",
           "price-index",
+          "package-source-status",
+          "package-source-run",
           "price-history",
           "finance-index",
           "knowledge-excel",

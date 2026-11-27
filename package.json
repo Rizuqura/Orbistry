@@ -68,7 +68,8 @@
     "test:front-office:electron": "npm run build && node scripts/acceptance/electron-front-office-smoke.cjs",
     "benchmark:front-office": "node scripts/front-office-benchmark.cjs --mock",
     "benchmark:front-office:live": "node scripts/front-office-benchmark.cjs --live",
-    "test:worldview:electron": "npm run build && node scripts/acceptance/electron-worldview-smoke.cjs",
+    "test:worldview:electron": "npm run build && node scripts/acceptance/electron-worldview-smoke.cjs --universe-chat-reset",
+    "test:worldview:legacy-generation:electron": "npm run build && node scripts/acceptance/electron-worldview-smoke.cjs",
     "test:identity:electron": "npm run build && node scripts/acceptance/electron-backend-identity-smoke.cjs",
     "test:entity-agents:electron": "npm run build && node scripts/acceptance/electron-entity-agents-smoke.cjs",
     "test:entity-runtime:live": "npm run build && node scripts/acceptance/electron-entity-runtime-live.cjs"
@@ -114,6 +115,7 @@
     "files": [
       "out/**/*",
       "electron/**/*",
+      "packages/yahoo-finance/src/**/*",
       "!electron/**/*.test.cjs",
       "!electron/**/*.d.cts",
       "!electron/ai/policies/orbistry-host-policy-v19.md",

@@ -5,13 +5,19 @@ const {
   rejectSymlink,
   writeJson,
 } = require("./core/persistence/json-store.cjs");
-const engine = require("./engines/yahoo-financials/index.cjs");
-const market = require("./engines/yahoo-financials/market.cjs");
+const engine = require("./engines/contracts/yahoo-legacy/financials.cjs");
+const { normalizeSymbol } = require("./domains/indexing/ticker-syntax.cjs");
+const { admitYahoo } = require("./domains/knowledge/yahoo-package.cjs");
+const market = require("./engines/contracts/yahoo-legacy/market.cjs");
 
 /** Creates a bounded, coalesced Universe cache using the existing atomic JSON storage conventions. TTL defaults to 24 hours. */
 function createFinancialService({
   fetch = (symbol, operation, range) =>
-    engine.execute({ symbol, operation, ...(range ? { range } : {}) }),
+    require("./engines/yahoo-financials/index.cjs").execute({
+      symbol,
+      operation,
+      ...(range ? { range } : {}),
+    }),
   clock = Date.now,
   ttlMs = 86400000,
   ttlByKind = {},
@@ -33,8 +39,8 @@ function createFinancialService({
   )
     throw new Error("Invalid market cache TTL.");
   /** Reads a validated snapshot or refreshes it, preserving successful data on provider failure and reporting corrupt caches. */
-  async function get(root, input, kind, force = false, range) {
-    const symbol = engine.normalizeSymbol(input);
+  async function get(root, input, kind, force = false, range, grant = null) {
+    const symbol = normalizeSymbol(input);
     if (
       !["financials", "earnings", "quote", "history"].includes(kind) ||
       typeof force !== "boolean"
@@ -64,7 +70,11 @@ function createFinancialService({
       target = path.join(target, part);
       await rejectSymlink(target);
     }
-    if (pending.has(target)) return pending.get(target);
+    // Only callers admitted under the same Entity grant share a provider request.
+    const pendingKey = grant
+      ? JSON.stringify([target, grant.key, force])
+      : target;
+    if (pending.has(pendingKey)) return pending.get(pendingKey);
     /** Coalesces one disk read and provider refresh, with explicit stale fallback. */
     async function refresh() {
       let saved = null,
@@ -90,7 +100,11 @@ function createFinancialService({
         return { snapshot: saved, cached: true, stale: false, warning };
       let snapshot;
       try {
-        snapshot = schema.parse(await fetch(symbol, kind, range));
+        snapshot = schema.parse(
+          grant
+            ? await grant.fetch({ symbol, ...(range ? { range } : {}) })
+            : await fetch(symbol, kind, range),
+        );
         if (
           snapshot.symbol !== symbol ||
           (snapshot.kind && snapshot.kind !== kind) ||
@@ -117,16 +131,37 @@ function createFinancialService({
       return { snapshot, cached: false, stale: false, warning };
     }
     const job = refresh();
-    pending.set(target, job);
+    pending.set(pendingKey, job);
     try {
       return await job;
     } finally {
-      pending.delete(target);
+      pending.delete(pendingKey);
     }
   }
-  return { get };
+  // Compatibility callers may provide additional host context. Only the private package path accepts a grant.
+  return {
+    get: (root, input, kind, force, range) =>
+      get(root, input, kind, force, range),
+    getWithGrant: get,
+  };
 }
-const financialService = createFinancialService();
+const packageCache = createFinancialService();
+const financialService = {
+  /** Admits package reads before serving a cached or receipt-backed provider snapshot. */
+  async get(root, symbol, operation, force, range, entityId, stillApplied) {
+    const grant = await admitYahoo(root, entityId, operation, stillApplied);
+    const value = await packageCache.getWithGrant(
+      root,
+      symbol,
+      operation,
+      force,
+      range,
+      grant,
+    );
+    await grant.verify();
+    return value;
+  },
+};
 /** Resolves an applied entity/menu/source triple. Draft-only, removed and forged declarations reject before provider access. */
 async function resolve(root, id, menuId, financeId) {
   const state =
@@ -148,6 +183,12 @@ async function getIndexedFinance(root, id, menuId, financeId, force = false) {
     source.symbol,
     source.kind,
     force,
+    undefined,
+    id,
+    async () => {
+      const current = await resolve(root, id, menuId, financeId);
+      return current.symbol === source.symbol && current.kind === source.kind;
+    },
   );
   const current = await resolve(root, id, menuId, financeId);
   if (current.symbol !== source.symbol || current.kind !== source.kind)
@@ -175,7 +216,7 @@ async function getAuthorizedHistory(root, input) {
       throw new Error(
         "Save a ticker or choose an applied Yahoo price source first.",
       );
-    return engine.normalizeSymbol(state.priceSymbol);
+    return normalizeSymbol(state.priceSymbol);
   }
   const ticker = await symbol();
   const result = await financialService.get(
@@ -184,6 +225,8 @@ async function getAuthorizedHistory(root, input) {
     "history",
     input.force ?? false,
     input.range,
+    input.id,
+    async () => (await symbol()) === ticker,
   );
   if ((await symbol()) !== ticker)
     throw new Error("Price source changed. Reopen this section.");

@@ -64,7 +64,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 1.
 
-- JSON.stringify — external-or-dynamic-dispatch; [features/model-settings/engine-development-guide.tsx:71](<../../../../../../features/model-settings/engine-development-guide.tsx#L71>)
+- JSON.stringify — external-or-dynamic-dispatch; [features/model-settings/engine-development-guide.tsx:78](<../../../../../../features/model-settings/engine-development-guide.tsx#L78>)
 
 **Related tests / acceptance harnesses:**
 

@@ -17,8 +17,8 @@ Compiler-inferred contracts exclude external/global types. No static relationshi
 - [capabilitySchema](<schema.cjs.md#s-536b8e5354ed62f7>) (SchemaBinding)
 - [logSchema](<schema.cjs.md#s-fe81b4b135922b2c>) (SchemaBinding)
 - [manifestSchema](<schema.cjs.md#s-19a6d9f8e49548b2>) (SchemaBinding)
-- [manifestSchema.&lt;anonymous@170:16&gt;](<schema.cjs.md#s-e6550e95e25190df>) (ArrowFunction)
-- [digest](<schema.cjs.md#s-56a5f5eb264276e9>) (FunctionDeclaration)
+- [manifestSchema.&lt;anonymous@198:16&gt;](<schema.cjs.md#s-84a403b736f4ea23>) (ArrowFunction)
+- [digest](<schema.cjs.md#s-8316a9ba320bcd76>) (FunctionDeclaration)
 
 <a id="s-278f7199664f7a84"></a>
 
@@ -43,7 +43,7 @@ Unresolved / external call sites: 4.
 - require — module-loader; [electron/engines/backend-identity/schema.cjs:1](<../../../../../../../electron/engines/backend-identity/schema.cjs#L1>)
 - require — module-loader; [electron/engines/backend-identity/schema.cjs:2](<../../../../../../../electron/engines/backend-identity/schema.cjs#L2>)
 - Object.freeze — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:4](<../../../../../../../electron/engines/backend-identity/schema.cjs#L4>)
-- Object.freeze — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:196](<../../../../../../../electron/engines/backend-identity/schema.cjs#L196>)
+- Object.freeze — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:224](<../../../../../../../electron/engines/backend-identity/schema.cjs#L224>)
 
 **Related tests / acceptance harnesses:**
 
@@ -398,7 +398,7 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 No resolved sites. This does not prove absence of runtime callers or callees.
 
-Unresolved / external call sites: 51.
+Unresolved / external call sites: 65.
 
 - z .object({ schemaVersion: z.literal(1), compilerVersion: z.string().regex(/^\\d+\\.\\d+\\.\\d+$/), entityId: id, identityVersion: hash, sourceFingerprint: hash, compiledAt: z.string(). — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:106](<../../../../../../../electron/engines/backend-identity/schema.cjs#L106>)
 - z .object({ schemaVersion: z.literal(1), compilerVersion: z.string().regex(/^\\d+\\.\\d+\\.\\d+$/), entityId: id, identityVersion: hash, sourceFingerprint: hash, compiledAt: z.string(). — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:106](<../../../../../../../electron/engines/backend-identity/schema.cjs#L106>)
@@ -408,18 +408,18 @@ Unresolved / external call sites: 51.
 - z.string — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:109](<../../../../../../../electron/engines/backend-identity/schema.cjs#L109>)
 - z.string().datetime — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:113](<../../../../../../../electron/engines/backend-identity/schema.cjs#L113>)
 - z.string — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:113](<../../../../../../../electron/engines/backend-identity/schema.cjs#L113>)
-- 43 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
+- 57 additional sites in [symbol-index.json](<../../../../symbol-index.json>).
 
 **Related tests / acceptance harnesses:**
 
 - [electron/backend-identity.test.cjs:22](<../../../../../../../electron/backend-identity.test.cjs#L22>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:35](<../../../../../../../electron/backend-identity.test.cjs#L35>) — file-import-only; coverage not established.
 
-<a id="s-e6550e95e25190df"></a>
+<a id="s-84a403b736f4ea23"></a>
 
-## manifestSchema.&lt;anonymous@170:16&gt;
+## manifestSchema.&lt;anonymous@198:16&gt;
 
-[electron/engines/backend-identity/schema.cjs:170](<../../../../../../../electron/engines/backend-identity/schema.cjs#L170>) · ArrowFunction · production · [Backend Identity Engine](<../../../../../modules/identity.md>)
+[electron/engines/backend-identity/schema.cjs:198](<../../../../../../../electron/engines/backend-identity/schema.cjs#L198>) · ArrowFunction · production · [Backend Identity Engine](<../../../../../modules/identity.md>)
 
 No purpose documentation on this declaration; inspect the linked implementation.
 
@@ -444,22 +444,22 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- Object.entries — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:171](<../../../../../../../electron/engines/backend-identity/schema.cjs#L171>)
-- Array.isArray — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:174](<../../../../../../../electron/engines/backend-identity/schema.cjs#L174>)
-- connections.entries — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:175](<../../../../../../../electron/engines/backend-identity/schema.cjs#L175>)
-- &#91;connection.sourceEntityId, connection.targetEntityId&#93;.includes — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:184](<../../../../../../../electron/engines/backend-identity/schema.cjs#L184>)
-- context.addIssue — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:188](<../../../../../../../electron/engines/backend-identity/schema.cjs#L188>)
+- Object.entries — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:199](<../../../../../../../electron/engines/backend-identity/schema.cjs#L199>)
+- Array.isArray — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:202](<../../../../../../../electron/engines/backend-identity/schema.cjs#L202>)
+- connections.entries — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:203](<../../../../../../../electron/engines/backend-identity/schema.cjs#L203>)
+- &#91;connection.sourceEntityId, connection.targetEntityId&#93;.includes — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:212](<../../../../../../../electron/engines/backend-identity/schema.cjs#L212>)
+- context.addIssue — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:216](<../../../../../../../electron/engines/backend-identity/schema.cjs#L216>)
 
 **Related tests / acceptance harnesses:**
 
 - [electron/backend-identity.test.cjs:22](<../../../../../../../electron/backend-identity.test.cjs#L22>) — file-import-only; coverage not established.
 - [electron/backend-identity.test.cjs:35](<../../../../../../../electron/backend-identity.test.cjs#L35>) — file-import-only; coverage not established.
 
-<a id="s-56a5f5eb264276e9"></a>
+<a id="s-8316a9ba320bcd76"></a>
 
 ## digest
 
-[electron/engines/backend-identity/schema.cjs:212](<../../../../../../../electron/engines/backend-identity/schema.cjs#L212>) · FunctionDeclaration · production · [Backend Identity Engine](<../../../../../modules/identity.md>)
+[electron/engines/backend-identity/schema.cjs:240](<../../../../../../../electron/engines/backend-identity/schema.cjs#L240>) · FunctionDeclaration · production · [Backend Identity Engine](<../../../../../modules/identity.md>)
 
 Hashes bytes or canonical caller-ordered structured data without retaining source text in manifests.
 
@@ -483,11 +483,11 @@ No resolved sites. This does not prove absence of runtime callers or callees.
 
 Unresolved / external call sites: 5.
 
-- createHash("sha256") .update( typeof value === "string" &#124;&#124; Buffer.isBuffer(value) ? value : JSON.stringify(value), ) .digest — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:213](<../../../../../../../electron/engines/backend-identity/schema.cjs#L213>)
-- createHash("sha256") .update — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:213](<../../../../../../../electron/engines/backend-identity/schema.cjs#L213>)
-- createHash — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:213](<../../../../../../../electron/engines/backend-identity/schema.cjs#L213>)
-- Buffer.isBuffer — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:215](<../../../../../../../electron/engines/backend-identity/schema.cjs#L215>)
-- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:217](<../../../../../../../electron/engines/backend-identity/schema.cjs#L217>)
+- createHash("sha256") .update( typeof value === "string" &#124;&#124; Buffer.isBuffer(value) ? value : JSON.stringify(value), ) .digest — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:241](<../../../../../../../electron/engines/backend-identity/schema.cjs#L241>)
+- createHash("sha256") .update — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:241](<../../../../../../../electron/engines/backend-identity/schema.cjs#L241>)
+- createHash — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:241](<../../../../../../../electron/engines/backend-identity/schema.cjs#L241>)
+- Buffer.isBuffer — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:243](<../../../../../../../electron/engines/backend-identity/schema.cjs#L243>)
+- JSON.stringify — external-or-dynamic-dispatch; [electron/engines/backend-identity/schema.cjs:245](<../../../../../../../electron/engines/backend-identity/schema.cjs#L245>)
 
 **Related tests / acceptance harnesses:**
 

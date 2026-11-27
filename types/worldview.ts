@@ -59,6 +59,8 @@ export type WorldViewOperation =
   | "knowledge-preview"
   | "price-symbol"
   | "price-get"
+  | "package-source-status"
+  | "package-source-run"
   | "price-index"
   | "price-history"
   | "finance-index"
@@ -95,6 +97,7 @@ export type WorldViewRequest = {
   symbol?: string;
   menuId?: string;
   priceId?: string;
+  declarationId?: string;
   range?: "1M" | "3M" | "6M" | "1Y" | "5Y" | "MAX";
   financeId?: string;
   sheetIndex?: number;
@@ -138,6 +141,13 @@ export type IndexedKnowledgeMenu = Readonly<{
   sourceIds: readonly string[];
   line: number;
   carousels?: readonly KnowledgeCarousel[];
+  packageSources?: readonly {
+    id: string;
+    engineId: string;
+    sourceId: string;
+    major: number;
+    input: Record<string, unknown>;
+  }[];
   prices?: readonly IndexedPriceSource[];
   finance?: readonly IndexedFinanceSource[];
 }>;
